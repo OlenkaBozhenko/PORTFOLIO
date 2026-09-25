@@ -35,7 +35,7 @@ Built from [`inspiration.md`](inspiration.md) (decisions D1–D9) and [`cv.md`](
 ## Hero copy
 - Eyebrow: Olena Bozhenko · Senior Product Designer
 - Headline: **I design B2B products from the idea to ▢.** — the visitor finishes it (see Structure → Hero). Until then screen readers hear *…to production.* (was *…to the design system.* until 2026-09-26) Was *…from the first interview to the design system.* until 2026-09-25.
-- Sub: Working with different products every day: research, user interviews, prototypes, design systems and AI tools. (Was *Senior product designer working remotely with a Ukrainian product team. Research, prototypes, design systems and AI tools, for SaaS used every day.* until 2026-09-26.)
+- Sub: Working with different products every day: research, user interviews, prototypes and design systems. (Was *Senior product designer working remotely with a Ukrainian product team. Research, prototypes, design systems and AI tools, for SaaS used every day.* until 2026-09-26.)
 
 ## Work — in the designer's order (D3)
 
