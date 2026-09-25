@@ -8,7 +8,7 @@ Built from [`inspiration.md`](inspiration.md) (decisions D1–D9) and [`cv.md`](
 ## Structure
 1. **Nav** — name on the left; Work · About · Contact on the right.
 2. **Hero** (D9, page-grid.com) — one large headline; around it, outlined interface blocks with small blue labels that drift slowly. The blocks name what she does: *Design system · Prototype · User interview · Analytics · AI tools · WCAG 2.2*. A visible **Pause motion** button (WCAG 2.2.2); motion is off under `prefers-reduced-motion`.
-3. **Work** (D2–D5; karoliskosas.com titles + rmd-studio.com rows) — eight rows. Left: "Name — descriptor", one-paragraph description, meta (Role · Year · Platform), a **View {project} project** link on a full-width rule. Right: a large image on a pale background, no device mockup. SaaS projects show UI fragments on a gridded panel (ramos-app).
+3. **Work** (D2–D5; karoliskosas.com titles + rmd-studio.com rows) — seven rows. Left: "Name — descriptor", one-paragraph description, meta (Role · Year · Platform), a **View {project} project** link on a full-width rule. Right: a large image on a pale background, no device mockup. SaaS projects show UI fragments on a gridded panel (ramos-app).
 4. **About** (D6, joshmateo.com) — photo, short bio, personal qualities, link to the full About page.
 5. **Testimonials** (D6) — quote, name, role.
 6. **Learning** — courses, certificates, conferences.
@@ -27,10 +27,11 @@ Built from [`inspiration.md`](inspiration.md) (decisions D1–D9) and [`cv.md`](
 | 2 | Warmy — email deliverability | Warms up mailboxes and domains automatically so campaigns land in the inbox, not in spam. | UI/UX Designer | 2021 – present | Web SaaS | UI fragments: mailbox health, inbox placement *(placeholder)* |
 | 3 | Idretsfader | *to fill* | *to fill* | *to fill* | *to fill* | *to come* |
 | 4 | Book — a family history in print | Layout and design of a 432-page family history book with more than 300 images, printed by LOS DIGITAL AS in 2024. | Book design, layout | 2023 – 2024 | Print | *to come* |
-| 5 | Maya logo | *to fill* | *to fill* | *to fill* | *to fill* | *to come* |
-| 6 | Styupan Translation — brand mark | Logo for Stiupan Translations ENK, an Oslo translation and copywriting company, followed by UI/UX and book work over more than a year. | Logo, UI/UX | 2023 – 2024 | Brand | *to come* |
-| 7 | School — personal project | *to fill* | *to fill* | *to fill* | *to fill* | *to come* |
-| 8 | DRON — drone services, end to end | A drone-as-a-service platform taken from research to a 134-page clickable prototype, a token-based design system, and a WCAG and HIG check on every decision — built with Claude Code. | Research, UX, UI, design system | 2026 | Mobile web | DRON order screen + drone render (`assets/work/dron/`) |
+| 5 | Styupan Translation — brand mark | Logo for Stiupan Translations ENK, an Oslo translation and copywriting company, followed by UI/UX and book work over more than a year. | Logo, UI/UX | 2023 – 2024 | Brand | *to come* |
+| 6 | School — personal project | *to fill* | *to fill* | *to fill* | *to fill* | *to come* |
+| 7 | DRON — drone services, end to end | A drone-as-a-service platform taken from research to a 134-page clickable prototype, a token-based design system, and a WCAG and HIG check on every decision — built with Claude Code. | Research, UX, UI, design system | 2026 | Mobile web | DRON order screen + drone render (`assets/work/dron/`) |
+
+Maya logo removed 2026-09-25 (designer): it is the Styupan Translation mark, already row 5.
 
 Research note, for her to decide: hiring managers spend about 10 s on the homepage, so the strongest cases usually go first. The order above is hers and is kept.
 
