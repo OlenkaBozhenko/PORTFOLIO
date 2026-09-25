@@ -73,6 +73,7 @@ h1{font-size:clamp(40px,7.4vw,104px);line-height:.98;letter-spacing:-.05em}
   .blk{cursor:grab;user-select:none;-webkit-user-select:none;touch-action:none}
   .blk.dragging{cursor:grabbing;z-index:5}
   .blk.moved{animation:none;z-index:4}
+  .blk.back{transition:translate .6s cubic-bezier(.2,.8,.2,1)}
 }
 
 @keyframes drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(var(--x,6px),var(--y,-10px),0)}}
@@ -118,7 +119,7 @@ button.blk{font:inherit;color:inherit;background:none;border:0;padding:0;margin:
 .phrase.fly{transition:translate .9s cubic-bezier(.2,.8,.2,1),scale .9s cubic-bezier(.2,.8,.2,1),opacity .35s ease}
 .p3{left:40%;bottom:6%;--d:9.5s;--y:-6px}
 .p5{right:18%;bottom:20%;--d:10.5s;--y:8px}
-@media (prefers-reduced-motion:reduce){.slot.filled .slot-text{animation:none}.phrase.fly{transition:none}}
+@media (prefers-reduced-motion:reduce){.slot.filled .slot-text{animation:none}.phrase.fly,.blk.back{transition:none}}
 @media (max-width:900px){
   .hero .wrap{min-height:auto;display:block;text-align:left}
   .hero-phrases{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
@@ -571,10 +572,23 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   var wrap=hero.querySelector('.wrap'),hint=slot.querySelector('.slot-hint');
   /* only a phrase fits the slot; any other block over it shows the error stroke */
   var wrong=function(on){slot.classList.toggle('wrong',on);hint.textContent=on?'only a phrase fits here':'drop a phrase here';};
+  /* a block that is not a phrase, dropped on the slot, flies back to where it was before the drag */
+  var back=function(el,prev){
+    var a=el.getBoundingClientRect();
+    if(prev.style===null)el.removeAttribute('style');else el.setAttribute('style',prev.style);
+    el.classList.toggle('moved',prev.moved);
+    var b=el.getBoundingClientRect();
+    if(calm.matches){wrong(false);return;}
+    el.style.translate=(a.left-b.left)+'px '+(a.top-b.top)+'px';
+    el.getBoundingClientRect();
+    el.classList.add('back');el.style.translate='';
+    setTimeout(function(){el.classList.remove('back');if(prev.style===null&&!el.getAttribute('style'))el.removeAttribute('style');wrong(false);},600);
+  };
   hero.querySelectorAll('.blk').forEach(function(el){
-    var sx,sy,ox,oy,id=null;
+    var sx,sy,ox,oy,id=null,prev;
     el.addEventListener('pointerdown',function(e){
       if(!wide.matches||(e.pointerType==='mouse'&&e.button!==0))return;
+      prev={style:el.getAttribute('style'),moved:el.classList.contains('moved')};
       var r=el.getBoundingClientRect(),w=wrap.getBoundingClientRect();
       el.style.transform='none';
       el.style.left=(r.left-w.left)+'px';el.style.top=(r.top-w.top)+'px';
@@ -592,7 +606,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       el.style.left=x+'px';el.style.top=y+'px';
     });
     function end(e){if(e.pointerId!==id)return;id=null;el.classList.remove('dragging');
-      if(!el.classList.contains('phrase')){wrong(false);return;}
+      if(!el.classList.contains('phrase')){if(e.type==='pointerup'&&over(e))back(el,prev);else wrong(false);return;}
       slot.classList.remove('over');
       var far=Math.abs(e.clientX-sx)+Math.abs(e.clientY-sy)>6;
       if(e.type==="pointerup"&&(!far||over(e)))finish(el);
