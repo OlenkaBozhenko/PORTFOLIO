@@ -24,7 +24,7 @@ Built from [`inspiration.md`](inspiration.md) (decisions D1–D9) and [`cv.md`](
    - *Standards:* no WCAG 2.2 criterion covers the pointer's appearance, so this conforms. The only risk is legibility for low-vision users who enlarge the system pointer — their enlarged pointer is hidden too. Keyboard focus is untouched (2.4.7): the focus ring still shows on every control.
 
 ## Hero copy
-- Eyebrow: Olena Bozhenko · Senior Product Designer · Oslo
+- Eyebrow: Olena Bozhenko · Senior Product Designer
 - Headline: **I design B2B products from the first interview to the design system.**
 - Sub: Senior product designer working remotely with a Ukrainian product team. Research, prototypes, design systems and AI tools, for SaaS used every day.
 
