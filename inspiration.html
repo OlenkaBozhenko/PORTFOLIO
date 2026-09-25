@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio Inspiration</title>
+<!-- Display layer only. Source of truth: inspiration.md -->
+<style>
+:root{
+  --bg:#FFFFFF; --ink:#111111; --muted:#5E5E5E; --line:#E4E4E4; --soft:#F5F5F5; --label:#2F3DDB;
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--sans);padding-inline:clamp(16px,5vw,64px);padding-block:48px 96px}
+.wrap{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:88px}
+h1,h2,h3{margin:0;font-weight:500;letter-spacing:-.02em;text-wrap:balance}
+h1{font-size:clamp(40px,7vw,88px);line-height:1}
+h2{font-size:clamp(26px,3.4vw,40px);line-height:1.1}
+h3{font-size:20px;line-height:1.25}
+p{margin:0;max-width:62ch}
+a{color:inherit;text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--label);outline-offset:3px}
+.label{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+header{display:flex;flex-direction:column;gap:20px}
+header p{color:var(--muted);font-size:18px}
+section{display:flex;flex-direction:column;gap:32px}
+.decisions{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 40px}
+.decisions li{display:grid;grid-template-columns:40px 1fr;gap:8px;padding-block:16px;border-top:1px solid var(--line)}
+.decisions b{font-weight:500;color:var(--muted);font-variant-numeric:tabular-nums}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--ink);border-radius:999px;padding:6px 14px;font-size:14px}
+.chip.own{background:var(--ink);color:var(--bg)}
+.ref{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;padding-top:32px;border-top:1px solid var(--line)}
+.ref .text{display:flex;flex-direction:column;gap:14px}
+.ref .text a.src{font-size:20px;font-weight:500}
+.ref ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;color:var(--muted)}
+.ref ul b{color:var(--ink);font-weight:500}
+.shots{display:flex;flex-direction:column;gap:16px}
+figure{margin:0;background:var(--soft);border-radius:4px;overflow:hidden}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:12px;color:var(--muted);padding:8px 12px;background:var(--bg)}
+.noshot{border:1px dashed var(--line);border-radius:4px;padding:24px;color:var(--muted);font-size:14px}
+@media (max-width:820px){.ref{grid-template-columns:1fr;gap:20px}}
+.links{list-style:none;margin:0;padding:0;columns:2 260px;gap:40px}
+.links li{padding-block:10px;border-top:1px solid var(--line);break-inside:avoid}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:14px}
+th,td{text-align:left;vertical-align:top;padding:12px 16px 12px 0;border-top:1px solid var(--line)}
+th{font-weight:500}
+thead th{color:var(--muted);font-size:12px;letter-spacing:.06em;text-transform:uppercase;border-top:0}
+td code{font-size:13px}
+ol.q{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:10px;font-size:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="label">Portfolio · Inspiration · 25 Sep 2026</span>
+  <h1>What the site takes from others</h1>
+  <p>References the designer picked for her portfolio site, what to borrow from each, and what each needs to meet WCAG 2.2 AA. Mirrored in Notion: <a href="https://app.notion.com/p/For-Portfolio-39e64a1387ca80e98e48d4e879cc2649">For Portfolio</a>.</p>
+</header>
+
+<section aria-labelledby="h-dec">
+  <h2 id="h-dec">Decisions</h2>
+  <ul class="decisions">
+    <li><b>D1</b><span>The site is white. Every page, in every case.</span></li>
+    <li><b>D2</b><span>Every project opens as its own page.</span></li>
+    <li><b>D4</b><span>Each project shows its name, a short description, my role, a large image and a way to open it.</span></li>
+    <li><b>D5</b><span>Previews are large images on a background, not device mockups.</span></li>
+    <li><b>D6</b><span>About: photo, bio, dated journey, personal qualities, and testimonials with name and contacts.</span></li>
+    <li><b>D7</b><span>Resume opens as a classic white PDF.</span></li>
+    <li><b>D8</b><span>Typeface close to Aeonik Regular or Neue Haas Grotesk.</span></li>
+    <li><b>D9</b><span>Hero: a large headline with animated interface elements drawn in outline.</span></li>
+  </ul>
+  <div class="chips" aria-label="Projects (D3)">
+    <span class="chip">AnyBiz</span><span class="chip">Warmy</span><span class="chip">Idretsfader</span><span class="chip">Book</span><span class="chip">Maya logo</span><span class="chip">Styupan Translation</span><span class="chip own">School · personal</span><span class="chip own">DRON · personal</span>
+  </div>
+</section>
+
+<section aria-labelledby="h-refs">
+  <h2 id="h-refs">References by page</h2>
+
+  <article class="ref">
+    <div class="text">
+      <span class="label">Home · Hero</span>
+      <a class="src" href="https://page-grid.com/">page-grid.com</a>
+      <ul>
+        <li>A very large headline in a tight grotesk.</li>
+        <li>Interface elements (Image, Slider, Button, Code, Video) drawn as outlined boxes with small blue labels, in motion.</li>
+        <li><b>Borrow:</b> the headline scale and the labelled, outlined UI blocks. For a product designer they read as components on a canvas.</li>
+      </ul>
+    </div>
+    <div class="shots">
+      <figure><img src="inspiration/08-page-grid-hero.png" alt="page-grid.com hero: the headline 'Build your page from a wide range of customizable blocks' surrounded by outlined interface blocks labelled Image, Slider, Group, Navigation, Button, Code, Rich Text and Video." loading="lazy"><figcaption>08 · page-grid.com</figcaption></figure>
+    </div>
+  </article>
+
+  <article class="ref">
+    <div class="text">
+      <span class="label">Home · Work list</span>
+      <a class="src" href="https://karoliskosas.com/">karoliskosas.com</a>
+      <ul>
+        <li>Fully white. Each project titled “Name — descriptor”, a short paragraph, one black pill button.</li>
+        <li>The case opens with one large statement, then two columns: My role and Results.</li>
+        <li><b>Borrow:</b> the whiteness, the title pattern, the My role / Results pair.</li>
+        <li><b>Skip:</b> the device mockups (D5).</li>
+      </ul>
+    </div>
+    <div class="shots">
+      <figure><img src="inspiration/01-karoliskosas-work-list.png" alt="karoliskosas.com: 'Anchovy — Gradient Maker' title with a short description and a black 'Get the app' pill, phones to the right, then an Archive section of project images." loading="lazy"><figcaption>01 · karoliskosas.com — work list</figcaption></figure>
+      <figure><img src="inspiration/02-karoliskosas-role-results.png" alt="karoliskosas.com MUBI case: a large statement sentence, then two columns listing My role and Results." loading="lazy"><figcaption>02 · karoliskosas.com — My role / Results</figcaption></figure>
+    </div>
+  </article>
+
+  <article class="ref">
+    <div class="text">
+      <span class="label">Home · Work list structure</span>
+      <a class="src" href="https://rmd-studio.com/">rmd-studio.com</a>
+      <ul>
+        <li>Title on the left in two lines, an underlined “View project” link at the bottom of the text column.</li>
+        <li>A large image on the right at the same height.</li>
+        <li><b>Borrow:</b> the row: text column plus large image, link anchored at the bottom on a full-width rule.</li>
+      </ul>
+    </div>
+    <div class="shots">
+      <figure><img src="inspiration/03-rmd-studio-work-list.png" alt="rmd-studio.com: project rows with a two-line title on the left, a 'Ver projeto' link on a rule at the bottom, and a large monitor image on the right." loading="lazy"><figcaption>03 · rmd-studio.com</figcaption></figure>
+    </div>
+  </article>
+
+  <article class="ref">
+    <div class="text">
+      <span class="label">Project page</span>
+      <a class="src" href="https://reinostudio.com.br/works/berrics/">reinostudio.com.br/works/berrics</a>
+      <ul>
+        <li>Project name → big statement headline → meta row → large image → About / Objective → story with images.</li>
+        <li>The meta row becomes <b>Role · Year · Platform · Team</b>.</li>
+        <li><b>Open:</b> the dark header band conflicts with D1.</li>
+      </ul>
+    </div>
+    <div class="shots">
+      <figure><img src="inspiration/04-reino-berrics-hero.png" alt="Berrics case header: small project name, the headline 'A Revitalized Brand for a Connected Skateboarding Community', a Deliverables and Location row, and a large photo running past the dark band." loading="lazy"><figcaption>04 · Berrics — header</figcaption></figure>
+      <figure><img src="inspiration/05-reino-berrics-about-objective.png" alt="Berrics case: About and Objective labels on the left with paragraphs on the right, then the Berrics logo on white." loading="lazy"><figcaption>05 · Berrics — About / Objective</figcaption></figure>
+      <figure><img src="inspiration/06-reino-berrics-text-image.png" alt="Berrics case: a short paragraph followed by an image of a cap with the new logo, at text width." loading="lazy"><figcaption>06 · Berrics — text then image</figcaption></figure>
+    </div>
+  </article>
+
+  <article class="ref">
+    <div class="text">
+      <span class="label">SaaS projects</span>
+      <a class="src" href="https://ramos-app.webflow.io/#tools">ramos-app.webflow.io</a>
+      <ul>
+        <li>Real UI fragments (metric cards, a chart) floating on a pale panel with a faint grid.</li>
+        <li>A short heading and two lines of text under each panel.</li>
+        <li><b>Borrow:</b> show SaaS work as live UI pieces, not whole screenshots. For AnyBiz and Warmy.</li>
+      </ul>
+    </div>
+    <div class="shots">
+      <figure><img src="inspiration/07-ramos-saas-cards.png" alt="Ramos: two gridded panels with floating UI cards, Conversion rate 2.3 percent and Sales revenue on one, Insights with total profit and a bar chart on the other, headings beneath." loading="lazy"><figcaption>07 · Ramos — SaaS cards</figcaption></figure>
+    </div>
+  </article>
+
+  <article class="ref">
+    <div class="text">
+      <span class="label">About</span>
+      <a class="src" href="https://joshmateo.com/about.html">joshmateo.com/about</a>
+      <ul>
+        <li>Photo, bio, a journey with the date and description on the right, personal qualities at the end.</li>
+        <li><b>Add:</b> testimonials from previous employers and clients: quote, name, role, company, contact.</li>
+      </ul>
+    </div>
+    <div class="noshot">No screenshot yet. Open the link to see the page.</div>
+  </article>
+
+  <article class="ref">
+    <div class="text">
+      <span class="label">Resume</span>
+      <a class="src" href="https://joshmateo.com/media/JoshMateo-Resume.pdf">Josh Mateo — Resume PDF</a>
+      <ul><li>A classic white PDF that opens in the browser.</li></ul>
+    </div>
+    <div class="noshot">No screenshot yet. Open the link to see the PDF.</div>
+  </article>
+</section>
+
+<section aria-labelledby="h-more">
+  <h2 id="h-more">Also saved in Notion, not yet annotated</h2>
+  <ul class="links">
+    <li><a href="https://whereisrussell.com/">whereisrussell.com</a></li>
+    <li><a href="https://www.victorberbel.work/about">victorberbel.work/about</a></li>
+    <li><a href="https://edwinle.com/">edwinle.com</a></li>
+    <li><a href="https://reinostudio.com.br/works/">reinostudio.com.br/works</a></li>
+    <li><a href="https://vandslab.com/">vandslab.com</a></li>
+    <li><a href="https://www.proweb.gr/">proweb.gr</a></li>
+    <li><a href="https://www.bloom3d.studio/">bloom3d.studio</a></li>
+  </ul>
+</section>
+
+<section aria-labelledby="h-std">
+  <h2 id="h-std">Standards check, WCAG 2.2 AA</h2>
+  <p>Every pattern above can be built to conform. This is what each one needs.</p>
+  <div class="scroll" tabindex="0" role="region" aria-label="Standards check">
+  <table>
+    <thead><tr><th scope="col">Pattern</th><th scope="col">Criterion</th><th scope="col">Requirement</th><th scope="col">Status</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">White site</th><td>1.4.3 Contrast</td><td>Text ≥ 4.5:1 on white. Lightest passing grey: <code>#767676</code> (4.54:1).</td><td>Conforms if greys stay at or below <code>#767676</code>.</td></tr>
+      <tr><th scope="row">Animated hero</th><td>2.2.2 Pause, Stop, Hide</td><td>Auto-motion over 5 s needs a visible pause.</td><td>Pause button, or motion that stops within 5 s.</td></tr>
+      <tr><th scope="row"></th><td><code>prefers-reduced-motion</code></td><td>Honour the OS setting (2.3.3 is AAA, advisory).</td><td>Plan a still version.</td></tr>
+      <tr><th scope="row"></th><td>1.4.3</td><td>Small blue labels need 4.5:1.</td><td>Measure once the blue is chosen.</td></tr>
+      <tr><th scope="row">Image previews</th><td>1.1.1 Non-text content</td><td>Alt text naming the project and what is shown.</td><td>Content task.</td></tr>
+      <tr><th scope="row">“View project”</th><td>2.4.4 Link purpose</td><td>Unique accessible names, e.g. “View AnyBiz project”.</td><td>Add hidden text or <code>aria-label</code>.</td></tr>
+      <tr><th scope="row"></th><td>2.5.8 Target size</td><td>≥ 24 × 24 px.</td><td>Conforms at reference sizes.</td></tr>
+      <tr><th scope="row">Testimonials</th><td>Privacy / GDPR</td><td>Consent to publish each person’s name and contact.</td><td>Ask each referee.</td></tr>
+      <tr><th scope="row">Resume PDF</th><td>1.3.1, PDF/UA</td><td>Tagged PDF with real text.</td><td>Export setting.</td></tr>
+      <tr><th scope="row">Typeface</th><td>Licence</td><td>Aeonik and Neue Haas Grotesk need a paid web licence. Free open-licence grotesks: Inter Tight, Geist, Hanken Grotesk.</td><td>Open.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section aria-labelledby="h-q">
+  <h2 id="h-q">Open questions</h2>
+  <ol class="q">
+    <li>Project page header: white like the rest of the site, or a dark band as on Berrics?</li>
+    <li>Typeface: a web licence for Aeonik or Neue Haas Grotesk, or a free grotesk close to them?</li>
+  </ol>
+</section>
+
+</div>
+</body>
+</html>
