@@ -2,9 +2,9 @@
 
 Personal portfolio website of **Olena Bozhenko**, a senior product designer based in Oslo, working remotely with a Ukrainian product team on B2B SaaS. The site is built for her Senior Product Designer job search in Ukraine, Norway, Europe and the USA.
 
-**Website → https://olenkabozhenko.github.io/PORTFOLIO/** (opens the landing page [`Olena Bozhenko.html`](Olena%20Bozhenko.html))
+**Landing page (on this computer) →** `file:///C:/Users/Olena/PORTFOLIO/Olena%20Bozhenko.html#top`
 
-The address works once the repository is public and GitHub Pages is switched on (Settings → Pages → Deploy from branch `master`, folder `/`). GitHub Pages is not available for private repositories on the free plan, so until then open `Olena Bozhenko.html` from a clone of the repository in any browser.
+Paste the address into a browser on the computer that holds the `PORTFOLIO` folder. It opens the local file, so it works only there; GitHub does not make `file:///` links clickable. When the portfolio is ready, this link is replaced by the public website address.
 
 ## What is on the landing page
 - **Hero** — a large headline surrounded by outlined interface and code blocks (Figma component icons, `</>` code icons) that drift and can be dragged within the first screen; a Play / Pause music control.
