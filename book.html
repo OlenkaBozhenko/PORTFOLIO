@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book — Olena Bozhenko</title>
+<meta name="description" content="Røtter i Blix – Thomesen – Inderberg – Johansen Stamsund: book design and layout of a 432-page family history, by Olena Bozhenko.">
+<!-- Display layer. Content source: book.md -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500&display=swap">
+<style>
+:root{
+  --bg:#FFFFFF;      /* D1: white, always */
+  --ink:#0E0E0E;     /* 19.3:1 */
+  --muted:#6B6B6B;   /* 5.33:1 on white, 4.8:1 on wells */
+  --rule:#E6E6E6;
+  --well:#F3F3F1;
+  --stage:#E9E9E6;   /* mockup ground, ink on it 16.2:1 */
+  --label:#2B3BD6;
+  --sans:"Inter Tight","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --gutter:clamp(16px,4vw,56px);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{background:var(--bg);scroll-behavior:smooth;scroll-padding-top:80px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--label);outline-offset:3px;border-radius:2px}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{font-weight:400;letter-spacing:-.035em;text-wrap:balance}
+.wrap{max-width:1320px;margin:0 auto;padding-inline:var(--gutter)}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--ink);color:var(--bg);padding:10px 14px;border-radius:999px;z-index:20}
+.skip:focus{left:16px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* nav (same as the landing) */
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:64px}
+.brand{font-weight:500;text-decoration:none;letter-spacing:-.01em}
+.nav ul{display:flex;gap:clamp(16px,3vw,40px);list-style:none;margin:0;padding:0;font-size:15px}
+.nav ul a{text-decoration:none;padding-block:12px;display:inline-block}
+.nav ul a:hover{text-decoration:underline;text-underline-offset:4px}
+
+/* header (reinostudio / Berrics order: name, statement, meta) */
+.head{padding-block:clamp(48px,8vw,112px) clamp(32px,5vw,64px);display:flex;flex-direction:column;gap:28px}
+.back{font-size:15px;text-decoration:none;color:var(--muted);align-self:flex-start;padding-block:10px}
+.back:hover{color:var(--ink)}
+.eyebrow{font-size:15px;font-weight:500}
+h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-width:18ch}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px 32px;margin:0;padding-top:12px}
+.meta div{display:flex;flex-direction:column;gap:4px}
+.meta dt{font-size:13px;color:var(--muted)}
+.meta dd{margin:0;font-size:16px}
+
+/* 3D mockup stage */
+.stage{background:var(--stage);position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);align-items:center;justify-items:center;gap:clamp(24px,5vw,80px);padding:clamp(48px,7vw,110px) clamp(24px,5vw,80px)}
+.scene{perspective:1600px;width:100%;display:flex;justify-content:center}
+.b3d{--w:clamp(180px,24vw,340px);--h:calc(var(--w) * 297 / 210);--d:calc(var(--w) * 34 / 210);
+  position:relative;width:var(--w);height:var(--h);transform-style:preserve-3d;
+  transform:rotateX(6deg) rotateY(30deg);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.face{position:absolute;left:0;top:0;backface-visibility:hidden}
+.face img{width:100%;height:100%;object-fit:cover}
+.front{width:var(--w);height:var(--h);transform:translateZ(calc(var(--d) / 2));border-radius:1px 3px 3px 1px;overflow:hidden}
+.front::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.18) 0,rgba(0,0,0,0) 3%,rgba(255,255,255,.08) 4.5%,rgba(0,0,0,0) 7%)}
+.back-face{width:var(--w);height:var(--h);transform:rotateY(180deg) translateZ(calc(var(--d) / 2))}
+.spine{width:var(--d);height:var(--h);left:calc(50% - var(--d) / 2);transform:rotateY(-90deg) translateZ(calc(var(--w) / 2));overflow:hidden}
+.spine::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.25),rgba(0,0,0,.05) 40%,rgba(0,0,0,.2))}
+.edge{width:calc(var(--d) - 4px);height:calc(var(--h) - 6px);top:3px;left:calc(50% - var(--d) / 2 + 2px);
+  transform:rotateY(90deg) translateZ(calc(var(--w) / 2 - 3px));
+  background:repeating-linear-gradient(90deg,#f7f6f2 0 1px,#e3e1da 1px 2px)}
+.top{width:calc(var(--w) - 3px);height:calc(var(--d) - 4px);top:calc(50% - var(--d) / 2 + 2px);
+  transform:rotateX(90deg) translateZ(calc(var(--h) / 2 - 3px));
+  background:repeating-linear-gradient(0deg,#f7f6f2 0 1px,#e3e1da 1px 2px)}
+.flat{width:min(100%,clamp(170px,20vw,300px));height:auto;box-shadow:0 1px 2px rgba(0,0,0,.08),0 24px 40px -18px rgba(0,0,0,.35)}
+.stage figcaption{grid-column:1/-1;justify-self:start;font-size:14px;color:var(--muted)}
+@media (hover:hover){.scene:hover .b3d{transform:rotateX(4deg) rotateY(20deg)}}
+@media (prefers-reduced-motion:reduce){.b3d{transition:none}.scene:hover .b3d{transform:rotateX(6deg) rotateY(30deg)}}
+@media (max-width:720px){.stage{grid-template-columns:1fr}.flat{display:none}}
+
+/* About / Objective */
+.story{display:flex;flex-direction:column;gap:clamp(32px,4vw,56px);padding-block:clamp(64px,9vw,120px)}
+.pair{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(16px,4vw,64px)}
+.pair h2{font-size:clamp(26px,3vw,40px);line-height:1.1}
+.pair p{max-width:62ch;font-size:clamp(17px,1.5vw,19px)}
+.pair p em{font-style:italic}
+blockquote{margin:0;font-size:clamp(22px,2.6vw,34px);line-height:1.25;letter-spacing:-.02em;max-width:34ch}
+.cite{margin-top:16px;font-size:15px;color:var(--muted)}
+@media (max-width:720px){.pair{grid-template-columns:1fr}}
+
+/* spreads */
+.spreads{display:flex;flex-direction:column;gap:clamp(24px,3vw,40px);padding-bottom:clamp(72px,10vw,140px)}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;padding-bottom:24px;border-bottom:1px solid var(--ink)}
+.sec-head h2{font-size:clamp(32px,4.4vw,56px);line-height:1}
+.sec-head span{color:var(--muted);font-size:15px}
+.spread{margin:0;background:var(--stage);padding:clamp(20px,5vw,80px);display:flex;flex-direction:column;gap:16px}
+.page-pair{position:relative;box-shadow:0 1px 2px rgba(0,0,0,.08),0 30px 50px -24px rgba(0,0,0,.35)}
+.page-pair::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,rgba(0,0,0,0) 44%,rgba(0,0,0,.06) 48.5%,rgba(0,0,0,.16) 50%,rgba(0,0,0,.05) 51.5%,rgba(0,0,0,0) 56%)}
+.page-pair img{width:100%;height:auto;aspect-ratio:2200/1556}
+.spread figcaption{display:flex;gap:16px;font-size:14px;color:var(--muted)}
+.spread figcaption b{color:var(--ink);font-weight:500;font-variant-numeric:tabular-nums;min-width:5.5em}
+.next{display:flex;justify-content:space-between;gap:16px;padding-block:28px;border-top:1px solid var(--ink);font-size:15px;text-transform:uppercase;letter-spacing:.02em;text-decoration:none}
+.next:hover .arrow{transform:translateX(6px)}
+.arrow{transition:transform .2s ease}
+footer{border-top:1px solid var(--rule);padding-block:28px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<a class="skip" href="#spreads">Skip to the spreads</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="Olena%20Bozhenko.html#top">Olena Bozhenko</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="Olena%20Bozhenko.html#work">Work</a></li>
+        <li><a href="Olena%20Bozhenko.html#about">About</a></li>
+        <li><a href="Olena%20Bozhenko.html#contact">Contact</a></li>
+        <li><a href="assets/Olena-Bozhenko-Resume.pdf" target="_blank" rel="noopener">Resume <span class="vh">(PDF, opens in a new tab)</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap head">
+    <a class="back" href="Olena%20Bozhenko.html#work">← All work</a>
+    <p class="eyebrow">Book</p>
+    <h1>The history of four Lofoten families, set as a 432-page hardcover.</h1>
+    <dl class="meta">
+      <div><dt>Role</dt><dd>Book design, layout, cover</dd></div>
+      <div><dt>Year</dt><dd>2023 – 2024</dd></div>
+      <div><dt>Format</dt><dd>A4 hardcover, 432 pages</dd></div>
+      <div><dt>Printer</dt><dd>LOS DIGITAL AS, Larvik</dd></div>
+    </dl>
+  </div>
+
+  <div class="wrap">
+    <figure class="stage" style="margin:0">
+      <div class="scene" role="img" aria-label="3D mockup of the hardcover book Røtter i Blix – Thomesen – Inderberg – Johansen Stamsund by Amund Gulsvik, turned to show the front cover with a Lofoten sunset photograph and the spine.">
+        <div class="b3d">
+          <div class="face front"><img src="assets/work/book/cover-front.jpg" alt="" width="1200" height="1697"></div>
+          <div class="face spine"><img src="assets/work/book/cover-spine.jpg" alt="" width="240" height="2103"></div>
+          <div class="face edge"></div>
+          <div class="face top"></div>
+          <div class="face back-face"><img src="assets/work/book/cover-back.jpg" alt="" width="1200" height="1697"></div>
+        </div>
+      </div>
+      <img class="flat" src="assets/work/book/cover-back.jpg" alt="Back cover: a painting of a Lofoten landscape above the title and a short text about Haldis Blix Gulsvik and the families." width="1200" height="1697" loading="lazy">
+      <figcaption>Cover, spine and back, built from the print file. 210 × 297 mm, 34 mm spine.</figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap story">
+    <div class="pair">
+      <h2>About</h2>
+      <p><em>Røtter i Blix – Thomesen – Inderberg – Johansen Stamsund</em> follows the families behind Haldis Blix Gulsvik, who grew up in the fishing village of Stamsund in Lofoten; the families are traced back to the 1500s. The author, Amund Gulsvik, gathered the family stories, archive photographs and maps, and wrote the book for the coming generations who look for their roots.</p>
+    </div>
+    <div class="pair">
+      <h2>Objective</h2>
+      <p>Turn a long family history, more than 300 archive photographs and maps, into a book that reads calmly from the title page to the list of sources, and prepare it for print.</p>
+    </div>
+    <div class="pair">
+      <span></span>
+      <figure style="margin:0">
+        <blockquote>“She has done the work on the book to our great satisfaction and with great accuracy.”</blockquote>
+        <figcaption class="cite">Amund Gulsvik, author · translated from Norwegian</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <section class="wrap spreads" id="spreads" aria-labelledby="spreads-title">
+    <div class="sec-head"><h2 id="spreads-title">Spreads</h2><span>8 of 216</span></div>
+
+    <figure class="spread"><div class="page-pair"><img src="assets/work/book/spread-002-003.jpg" alt="Pages 2 and 3: the title page and colophon, opposite two portraits." width="2200" height="1556" loading="lazy"></div><figcaption><b>Pages 2–3</b>Title page and colophon</figcaption></figure>
+    <figure class="spread"><div class="page-pair"><img src="assets/work/book/spread-010-011.jpg" alt="Pages 10 and 11: family photographs on the left, the foreword on the right." width="2200" height="1556" loading="lazy"></div><figcaption><b>Pages 10–11</b>Family photographs and the foreword</figcaption></figure>
+    <figure class="spread"><div class="page-pair"><img src="assets/work/book/spread-024-025.jpg" alt="Pages 24 and 25: running text with a map of the area." width="2200" height="1556" loading="lazy"></div><figcaption><b>Pages 24–25</b>Running text with a map</figcaption></figure>
+    <figure class="spread"><div class="page-pair"><img src="assets/work/book/spread-042-043.jpg" alt="Pages 42 and 43: the chapter on Generation II with archive photographs." width="2200" height="1556" loading="lazy"></div><figcaption><b>Pages 42–43</b>Generation II, archive photographs</figcaption></figure>
+    <figure class="spread"><div class="page-pair"><img src="assets/work/book/spread-196-197.jpg" alt="Pages 196 and 197: archive photographs of houses in Stamsund with text." width="2200" height="1556" loading="lazy"></div><figcaption><b>Pages 196–197</b>Houses in Stamsund</figcaption></figure>
+    <figure class="spread"><div class="page-pair"><img src="assets/work/book/spread-286-287.jpg" alt="Pages 286 and 287: a black-and-white portrait opposite a page of text." width="2200" height="1556" loading="lazy"></div><figcaption><b>Pages 286–287</b>A portrait opposite a chapter</figcaption></figure>
+    <figure class="spread"><div class="page-pair"><img src="assets/work/book/spread-324-325.jpg" alt="Pages 324 and 325: two black-and-white portraits, one on each page." width="2200" height="1556" loading="lazy"></div><figcaption><b>Pages 324–325</b>Two portraits</figcaption></figure>
+    <figure class="spread"><div class="page-pair"><img src="assets/work/book/spread-416-417.jpg" alt="Pages 416 and 417: the list of sources." width="2200" height="1556" loading="lazy"></div><figcaption><b>Pages 416–417</b>List of sources</figcaption></figure>
+
+    <a class="next" href="Olena%20Bozhenko.html#work"><span>Back to all work</span><span class="arrow" aria-hidden="true">→</span></a>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Olena Bozhenko</span><span>Oslo, Norway · works remotely</span></div>
+</footer>
+</body>
+</html>

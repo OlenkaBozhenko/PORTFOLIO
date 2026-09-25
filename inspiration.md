@@ -62,6 +62,20 @@ New references are added here first, then to the HTML and to Notion.
 **[Josh Mateo — Resume PDF](https://joshmateo.com/media/JoshMateo-Resume.pdf)**
 - A classic white one-page PDF that opens in the browser.
 
+### 2.7 Book project — presenting a printed book (added 2026-09-26)
+**[Ashwini Chacko — Architecture Portfolio 2023 (Behance)](https://www.behance.net/gallery/185093841/ARCHITECTURE-PORTFOLIO-2023)** · `09-behance-architecture-portfolio-covers.png`, `10-behance-architecture-portfolio-thumb.png`
+- The closed book lies flat on a pale grey ground with a soft shadow; the cover is shown whole, then in context shots.
+- Inside, the spreads are shown open, one after another, on the same calm ground.
+- To borrow: **the project page for Book** — the cover as a 3D mockup first, then the open spreads in sequence.
+
+**[Fabric Book Cover Mockup (Behance)](https://www.behance.net/gallery/229150887/Fabric-Book-Cover-Mockup)** · `11-behance-fabric-book-stack.png`
+- Several identical hardcovers fanned in a stack, seen from above at an angle; the spines repeat the title.
+- To borrow: **the Book thumbnail in the work list** — several copies of the same book in a stack.
+
+**Her decisions for Book (2026-09-26):**
+- The mockups are built from her own print files: the cover `omslag_34_18.pdf` and the book `Slekstbok_Røtter i Blix_for utskrift_.pdf`.
+- Clicking the Book project opens its own page with the spreads **2–3, 10–11, 24–25, 42–43, 196–197, 286–287, 324–325, 416–417**.
+
 ---
 
 ## 3. Also saved in Notion, not yet annotated

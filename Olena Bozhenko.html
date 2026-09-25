@@ -187,6 +187,21 @@ section{padding-block:clamp(72px,10vw,140px)}
 .dron-screen{width:34%;border-radius:22px;border:1px solid var(--rule);background:#fff}
 .dron-drone{position:absolute;width:34%;right:8%;top:14%}
 
+/* Book thumbnail: three copies fanned in a stack (book.md, 3D mockup) */
+.stack-well{background:#E9E9E6;perspective:1400px;text-decoration:none}
+.stack{--w:clamp(120px,15vw,210px);--h:calc(var(--w) * 297 / 210);--d:calc(var(--w) * 34 / 210);position:relative;width:var(--w);height:var(--h);transform-style:preserve-3d;transform:rotateX(56deg) rotateZ(-32deg) translateY(4%)}
+.copy{position:absolute;inset:0;transform-style:preserve-3d}
+.copy .lid{position:absolute;inset:0;transform:translateZ(var(--d));box-shadow:0 0 0 1px rgba(0,0,0,.04)}
+.copy .lid img,.copy .side img{width:100%;height:100%;object-fit:cover}
+.copy .side{position:absolute;left:0;top:0;width:var(--d);height:var(--h);transform-origin:left top;transform:translateZ(var(--d)) rotateY(90deg);filter:brightness(.82)}
+.copy .tail,.copy .fore{position:absolute;background:repeating-linear-gradient(0deg,#f6f5f1 0 1px,#dedcd5 1px 2px)}
+.copy .tail{left:0;top:var(--h);width:var(--w);height:var(--d);transform-origin:top;transform:translateZ(var(--d)) rotateX(-90deg)}
+.copy .fore{left:var(--w);top:0;width:var(--d);height:var(--h);transform-origin:left;transform:translateZ(var(--d)) rotateY(90deg);background:repeating-linear-gradient(90deg,#f6f5f1 0 1px,#dedcd5 1px 2px)}
+.copy.c1{transform:translateZ(calc(var(--d) * 2)) rotateZ(-9deg) translate(6%,-4%)}
+.copy.c2{transform:translateZ(var(--d)) rotateZ(-3deg) translate(2%,-1%)}
+.copy.c3{transform:translateZ(0)}
+.copy.c3::before{content:"";position:absolute;inset:-6% -10% -10% -4%;background:radial-gradient(closest-side,rgba(0,0,0,.3),rgba(0,0,0,0));filter:blur(10px);transform:translateZ(-1px)}
+
 /* about */
 .about{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,4vw,64px);padding-top:48px}
 .photo{margin:0;aspect-ratio:986/1280;background:var(--well);overflow:hidden}
@@ -368,9 +383,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
           <h3>Book <span>— a family history in print</span></h3>
           <p>Layout and design of a 432-page family history book with more than 300 images, printed by LOS DIGITAL AS in 2024.</p>
           <dl class="meta"><dt>Role</dt><dd>Book design, layout</dd><dt>Year</dt><dd>2023 – 2024</dd><dt>Platform</dt><dd>Print</dd></dl>
-          <a class="view" href="#work" aria-disabled="true">View Book project <span class="vh">(case study in preparation)</span><span class="arrow" aria-hidden="true">→</span></a>
+          <a class="view" href="book.html">View Book project <span class="arrow" aria-hidden="true">→</span></a>
         </div>
-        <div class="well" aria-hidden="true"><span class="big">432 pages</span><span class="soon">Images to come</span></div>
+        <a class="well stack-well" href="book.html" tabindex="-1" aria-hidden="true">
+          <div class="stack">
+            <div class="copy c3"><div class="lid"><img src="assets/work/book/cover-front.jpg" alt="" loading="lazy" width="1200" height="1697"></div><div class="side"><img src="assets/work/book/cover-spine.jpg" alt="" loading="lazy" width="240" height="2103"></div><div class="tail"></div><div class="fore"></div></div>
+            <div class="copy c2"><div class="lid"><img src="assets/work/book/cover-front.jpg" alt="" loading="lazy" width="1200" height="1697"></div><div class="side"><img src="assets/work/book/cover-spine.jpg" alt="" loading="lazy" width="240" height="2103"></div><div class="tail"></div><div class="fore"></div></div>
+            <div class="copy c1"><div class="lid"><img src="assets/work/book/cover-front.jpg" alt="" loading="lazy" width="1200" height="1697"></div><div class="side"><img src="assets/work/book/cover-spine.jpg" alt="" loading="lazy" width="240" height="2103"></div><div class="tail"></div><div class="fore"></div></div>
+          </div>
+        </a>
       </li>
 
       <li class="row">
