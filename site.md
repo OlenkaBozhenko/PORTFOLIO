@@ -46,8 +46,8 @@ Built from [`inspiration.md`](inspiration.md) (decisions D1–D9) and [`cv.md`](
 | 3 | Idretsfader | *to fill* | *to fill* | *to fill* | *to fill* | *to come* |
 | 4 | Book — a family history in print | Layout and design of a 432-page family history book with more than 300 images, printed by LOS DIGITAL AS in 2024. | Book design, layout | 2023 – 2024 | Print | *to come* |
 | 5 | Styupan Translation — brand mark | Logo for Stiupan Translations ENK, an Oslo translation and copywriting company, followed by UI/UX and book work over more than a year. | Logo, UI/UX | 2023 – 2024 | Brand | *to come* |
-| 6 | School — personal project | *to fill* | *to fill* | *to fill* | *to fill* | *to come* |
-| 7 | DRON — drone services, end to end | A drone-as-a-service platform taken from research to a 134-page clickable prototype, a token-based design system, and a WCAG and HIG check on every decision — built with Claude Code. | Research, UX, UI, design system | 2026 | Mobile web | DRON order screen + drone render (`assets/work/dron/`) |
+| 6 | DRON — drone services, end to end | A drone-as-a-service platform taken from research to a 134-page clickable prototype, a token-based design system, and a WCAG and HIG check on every decision — built with Claude Code. | Research, UX, UI, design system | 2026 | Mobile web | DRON order screen + drone render (`assets/work/dron/`) |
+| 7 | School — personal project | *to fill* | *to fill* | *to fill* | *to fill* | *to come* |
 
 Maya logo removed 2026-09-25 (designer): it is the Styupan Translation mark, already row 5.
 
