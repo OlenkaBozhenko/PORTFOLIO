@@ -1,0 +1,271 @@
+<title>Senior Designer Market Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F3F5F7; --surface:#FFFFFF; --sunk:#E9EDF1; --ink:#16202A; --muted:#566371;
+  --line:#D7DDE3; --accent:#2B55D9; --accent-soft:#E3EAFD; --bar:#2B55D9; --bar-2:#9DB2F0;
+  --warn:#8A5A00; --warn-soft:#FBF1DC;
+  --sans:"Schibsted Grotesk",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0F1419; --surface:#171E26; --sunk:#1D252F; --ink:#E4E9EE; --muted:#9BA7B3;
+    --line:#2B3540; --accent:#8AA6FF; --accent-soft:#1E2A48; --bar:#7C9BFF; --bar-2:#3A4C80;
+    --warn:#E9B866; --warn-soft:#2E2512;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0F1419; --surface:#171E26; --sunk:#1D252F; --ink:#E4E9EE; --muted:#9BA7B3;
+  --line:#2B3540; --accent:#8AA6FF; --accent-soft:#1E2A48; --bar:#7C9BFF; --bar-2:#3A4C80;
+  --warn:#E9B866; --warn-soft:#2E2512;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--sans);padding-inline:16px;padding-block:32px 64px}
+.wrap{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:48px}
+h1,h2,h3{text-wrap:balance;margin:0;line-height:1.2}
+h1{font-size:clamp(28px,4.4vw,44px);font-weight:700;letter-spacing:-.02em}
+h2{font-size:22px;font-weight:700;letter-spacing:-.01em}
+h3{font-size:16px;font-weight:600}
+p{margin:0;max-width:68ch}
+a{color:var(--accent);text-underline-offset:2px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+header{display:flex;flex-direction:column;gap:14px}
+.lede{color:var(--muted);font-size:16px}
+.meta{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:500 12px/1 var(--mono);padding:6px 9px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:var(--surface)}
+section{display:flex;flex-direction:column;gap:16px}
+.head{display:flex;flex-direction:column;gap:6px}
+.note{color:var(--muted);font-size:13px}
+
+/* salary chart */
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.row{display:grid;grid-template-columns:120px 1fr 130px;gap:12px;align-items:center}
+.row .lbl{font-weight:600;font-size:14px}
+.row .lbl small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+.track{position:relative;height:22px;background:var(--sunk);border-radius:4px;overflow:hidden}
+.fill{position:absolute;inset:0 auto 0 0;background:var(--bar);border-radius:4px}
+.fill.net{background:var(--bar-2)}
+.val{font:500 14px var(--mono);font-variant-numeric:tabular-nums;text-align:right}
+.val small{display:block;color:var(--muted);font-size:11px;font-weight:400}
+.axis{display:grid;grid-template-columns:120px 1fr 130px;gap:12px}
+.ticks{display:flex;justify-content:space-between;font:11px var(--mono);color:var(--muted)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px;background:var(--bar)}
+.legend i.net{background:var(--bar-2)}
+@media (max-width:560px){
+  .row,.axis{grid-template-columns:78px 1fr}
+  .row .val{grid-column:2;text-align:left;margin-top:-6px}
+  .axis>span:last-child{display:none}
+}
+
+/* comparison table */
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:separate;border-spacing:0;width:100%;font-size:13.5px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+tr:last-child>*{border-bottom:0}
+thead th{position:sticky;top:0;background:var(--sunk);font-weight:600;white-space:nowrap}
+thead th .cc{display:block;font:500 11px var(--mono);letter-spacing:.06em;color:var(--muted)}
+.cmp{min-width:1100px}
+.cmp tbody th{position:sticky;left:0;background:var(--surface);font-weight:600;width:150px;min-width:150px;font-size:13px;border-right:1px solid var(--line)}
+.cmp thead th:first-child{position:sticky;left:0;z-index:2;border-right:1px solid var(--line)}
+.cmp td{min-width:130px}
+.cmp tr.key td{font-family:var(--mono);font-variant-numeric:tabular-nums;font-weight:500}
+.cmp tr.key td b{display:block;font-size:15px;color:var(--accent)}
+.tag{display:inline-block;font:500 11px/1.3 var(--mono);padding:2px 6px;border-radius:4px;background:var(--sunk);color:var(--muted);margin:2px 0}
+.tag.yes{background:var(--accent-soft);color:var(--accent)}
+.tag.no{background:var(--warn-soft);color:var(--warn)}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.card p{font-size:14px;color:var(--muted)}
+.card .k{font:500 12px var(--mono);color:var(--accent)}
+.flags{background:var(--warn-soft);border-radius:12px;padding:16px;color:var(--ink);font-size:14px}
+.flags b{color:var(--warn)}
+.top td:first-child{font:500 13px var(--mono);color:var(--muted);width:36px}
+.top{min-width:720px}
+.top td:nth-child(2) a{font-weight:600}
+footer{color:var(--muted);font-size:12.5px;display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:20px}
+</style>
+
+<div class="wrap">
+<header>
+  <span class="eyebrow">Job market research · 24 Sep 2026</span>
+  <h1>Senior Product Designer: seven markets compared</h1>
+  <p class="lede">Salary, requirements, skills and work format for Senior Product Designer roles in Ukraine, Norway, Germany, the Netherlands, Poland, the UK and the USA, and what recruiters want to see in a senior portfolio.</p>
+  <div class="meta">
+    <span class="chip">DOU · Djinni</span><span class="chip">LinkedIn · NAV</span><span class="chip">levels.fyi · Glassdoor</span><span class="chip">Just Join IT · IT Jobs Watch</span><span class="chip">60+ live vacancies read</span>
+  </div>
+</header>
+
+<section aria-labelledby="h-salary">
+  <div class="head">
+    <h2 id="h-salary">Median salary, € per year gross</h2>
+    <p class="note">Converted at ECB rates of 23 Sep 2026. USA is total compensation (base + bonus + equity). Ukraine is DOU net pay converted to an estimated gross for a sole trader (ФОП).</p>
+  </div>
+  <div class="chart" role="img" aria-label="Bar chart of median senior product designer salary in euros per year: USA 184 thousand, UK 106, Germany 85, Netherlands 84, Norway 76 gross and 57 net, Poland 57, Ukraine 37.">
+    <div class="row"><span class="lbl">USA<small>total comp</small></span><span class="track"><span class="fill" style="width:92%"></span></span><span class="val">€184k<small>$210k</small></span></div>
+    <div class="row"><span class="lbl">UK<small>London</small></span><span class="track"><span class="fill" style="width:53%"></span></span><span class="val">€106k<small>£91–93k</small></span></div>
+    <div class="row"><span class="lbl">Germany</span><span class="track"><span class="fill" style="width:42.5%"></span></span><span class="val">€85k<small>€77.5–90k</small></span></div>
+    <div class="row"><span class="lbl">Netherlands</span><span class="track"><span class="fill" style="width:42%"></span></span><span class="val">€84k<small>€81.6–87k</small></span></div>
+    <div class="row"><span class="lbl">Norway<small>Oslo</small></span><span class="track"><span class="fill" style="width:38%"></span><span class="fill net" style="width:28.5%"></span></span><span class="val">€76k<small>net ≈ €57k</small></span></div>
+    <div class="row"><span class="lbl">Poland</span><span class="track"><span class="fill" style="width:28.5%"></span></span><span class="val">€57k<small>PLN 257k</small></span></div>
+    <div class="row"><span class="lbl">Ukraine</span><span class="track"><span class="fill" style="width:18.5%"></span></span><span class="val">€37k<small>$3,400/mo net</small></span></div>
+    <div class="axis" aria-hidden="true"><span></span><span class="ticks"><span>0</span><span>€50k</span><span>€100k</span><span>€150k</span><span>€200k</span></span><span></span></div>
+    <div class="legend"><span><i></i>gross median</span><span><i class="net"></i>Norway after ~29% tax</span></div>
+  </div>
+</section>
+
+<section aria-labelledby="h-cmp">
+  <div class="head">
+    <h2 id="h-cmp">Comparison by country</h2>
+    <p class="note">Scroll the table sideways on a phone. Counts like “13 / 15” mean the skill appeared in 13 of the 15 vacancies read for that market.</p>
+  </div>
+  <div class="scroll" tabindex="0" role="region" aria-label="Comparison table by country">
+  <table class="cmp">
+    <thead><tr>
+      <th scope="col"></th>
+      <th scope="col"><span class="cc">UA</span>Ukraine</th>
+      <th scope="col"><span class="cc">NO</span>Norway</th>
+      <th scope="col"><span class="cc">DE</span>Germany</th>
+      <th scope="col"><span class="cc">NL</span>Netherlands</th>
+      <th scope="col"><span class="cc">PL</span>Poland</th>
+      <th scope="col"><span class="cc">GB</span>UK (London)</th>
+      <th scope="col"><span class="cc">US</span>USA</th>
+    </tr></thead>
+    <tbody>
+    <tr class="key"><th scope="row">Median salary</th>
+      <td><b>$3,400/mo</b>net · Djinni hired median $3,300</td>
+      <td><b>NOK 780–863k</b>per year gross</td>
+      <td><b>€77.5–90k</b>per year</td>
+      <td><b>€81.6–87k</b>per year</td>
+      <td><b>PLN 257k</b>B2B ads PLN 20–28k/mo</td>
+      <td><b>£75–93k</b>per year</td>
+      <td><b>$150–210k</b>base · TC median $210k</td></tr>
+    <tr class="key"><th scope="row">≈ € per year</th>
+      <td>≈ €36–38k</td><td>≈ €72–80k<br>net ≈ €57k</td><td>€77–90k</td><td>€82–87k</td><td>≈ €55–59k</td><td>≈ €87–108k</td><td>≈ €131–184k</td></tr>
+    <tr><th scope="row">Range</th>
+      <td class="num">Q1–Q3 $2,760–4,330/mo · Lead median $4,200</td>
+      <td class="num">NOK 711k–1.01M</td><td class="num">€67–131k</td><td class="num">€75–127k</td><td class="num">€50–80k</td><td class="num">£57–188k</td><td class="num">TC $160–400k · Big Tech $250–360k</td></tr>
+    <tr><th scope="row">Open roles, 30 days</th>
+      <td>DOU 11 · Djinni ~14 (5+ yrs)</td><td>LinkedIn 53 · NAV ~4 real senior ads</td><td>LinkedIn 515</td><td>LinkedIn 200</td><td>LinkedIn 199</td><td>LinkedIn 1,000+</td><td>very large; 21 sampled</td></tr>
+    <tr><th scope="row">Competition</th>
+      <td>~46 applications per vacancy</td><td>small market</td><td>200+ applicants on a JetBrains role</td><td>—</td><td>—</td><td>—</td><td>remote roles draw the most</td></tr>
+    <tr><th scope="row">Experience</th>
+      <td>5+ yrs (11 / 15)</td><td>5+ · lead 8+</td><td>5–8+</td><td>5+</td><td>senior</td><td>mid–senior</td><td>5–8+, median ~6</td></tr>
+    <tr><th scope="row">Language</th>
+      <td>English B2; C1 in 4 / 15</td><td><span class="tag no">Norwegian required in ~2 of 5</span></td><td>English</td><td>English</td><td>Business English; <span class="tag no">some Polish C1</span></td><td>English</td><td>English</td></tr>
+    <tr><th scope="row">Top hard skills</th>
+      <td>Design systems 13/15 · advanced Figma (variables, tokens) 12/15 · end-to-end 11/15 · AI tools 9/15 · prototyping 10/15 · research 8/15 · analytics 6/15</td>
+      <td>Design systems · research · prototyping · AI</td>
+      <td>Design systems ~17/20 · Figma ~13/20 · AI ~13/20 · research ~13/20 · B2B data-dense UI ~7/20</td>
+      <td>as Germany</td><td>as Germany</td>
+      <td>UX 46% · Figma 41% · accessibility 29% · interaction design 24% of ads</td>
+      <td>Visual craft 20/21 · metrics &amp; experiments 19/21 · AI 19/21 · research 16/21 · strategy 16/21 · prototyping 14/21</td></tr>
+    <tr><th scope="row">Top soft skills</th>
+      <td>Cross-functional 13/15 · defending decisions 11/15 · stakeholders 8/15 · ownership 8/15 · mentoring 5/15</td>
+      <td>Clear point of view, open to user evidence</td>
+      <td>Cross-functional ~18/20 · defending rationale ~9/20 · ownership ~8/20 · ambiguity ~6/20</td>
+      <td>as Germany</td><td>as Germany</td><td>as Germany</td>
+      <td>Storytelling 18/21 · PM + eng partnership 17/21 · influence 14/21 · ambiguity 13/21</td></tr>
+    <tr><th scope="row">AI expectation</th>
+      <td>Claude Code / Cursor live prototypes in 6 / 15</td><td>rising</td><td>named in most ads</td><td>named in most ads</td><td>named in most ads</td><td>rising</td><td>8/21 AI in workflow · 5/21 design AI products</td></tr>
+    <tr><th scope="row">Work format</th>
+      <td><span class="tag yes">remote ~60%</span> hybrid/office ~33%</td>
+      <td>onsite / hybrid, Oslo</td>
+      <td>hybrid 2–3 office days; some fully remote</td>
+      <td>hybrid 2–3 days</td>
+      <td>hybrid; B2B remote</td>
+      <td><span class="tag no">remote 4 of 41</span></td>
+      <td>tech: remote ~35–40%; all US: 87% onsite</td></tr>
+    <tr><th scope="row">Contract, visa</th>
+      <td>ФОП, Diia City (highest median $3,000), staff</td>
+      <td>employment; foreign employer needs a Norwegian entity</td>
+      <td>EU Blue Card from €50.7k</td>
+      <td>HSM visa from €5,942/mo</td>
+      <td>B2B (JDG) needs Polish registration</td>
+      <td>Skilled Worker visa</td>
+      <td>non-US via Deel contractor</td></tr>
+    <tr><th scope="row">Realistic from Ukraine</th>
+      <td><span class="tag yes">yes</span></td>
+      <td><span class="tag no">relocation</span> collective protection, 1-yr renewals</td>
+      <td><span class="tag yes">EU-remote</span> or relocation</td>
+      <td><span class="tag no">relocation</span></td>
+      <td><span class="tag no">relocation</span> or B2B</td>
+      <td><span class="tag no">rare</span></td>
+      <td>“Remote US” = US residents only. Global-remote roles: $60–140k</td></tr>
+    <tr><th scope="row">Interview</th>
+      <td>live critique / workshop 30–60 min</td><td>—</td><td>portfolio → take-home → panel</td><td>—</td><td>—</td><td>—</td><td>live 25-min Figma problem, round one</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section aria-labelledby="h-same">
+  <div class="head"><h2 id="h-same">What every market asks for</h2></div>
+  <div class="grid">
+    <div class="card"><span class="k">Experience</span><h3>5+ years, end to end</h3><p>Owning a product area from discovery to release, not a single feature.</p></div>
+    <div class="card"><span class="k">Most requested</span><h3>Design systems</h3><p>13 of 15 Ukrainian ads, about 17 of 20 European ones. Figma at token and variable level.</p></div>
+    <div class="card"><span class="k">New in 2026</span><h3>AI you can show</h3><p>Working prototypes in Cursor or Claude Code. Designer Fund: half of designers have shipped AI-generated code.</p></div>
+    <div class="card"><span class="k">Evidence</span><h3>Metrics and impact</h3><p>19 of 21 US postings. Experiments, funnels, conversion.</p></div>
+    <div class="card"><span class="k">Soft skill #1</span><h3>Defending decisions</h3><p>Explaining trade-offs to PMs, engineers and stakeholders.</p></div>
+    <div class="card"><span class="k">Regulated domains</span><h3>Accessibility</h3><p>WCAG 2.1 / 2.2 AA in health and fintech; 29% of UK ads.</p></div>
+  </div>
+</section>
+
+<section aria-labelledby="h-pf">
+  <div class="head"><h2 id="h-pf">What recruiters want in a senior portfolio</h2></div>
+  <div class="scroll" tabindex="0" role="region" aria-label="Portfolio expectations">
+  <table>
+    <tbody>
+      <tr><th scope="row">Number of cases</th><td>3–5 focused cases (NN/g, Tom Scott). Figma’s recruiter: 2–3 end to end.</td></tr>
+      <tr><th scope="row">Case structure</th><td>Problem → your role and team → how solutions developed → the solution → rejected concepts and why → user and business impact → lessons (NN/g, 204 hiring managers).</td></tr>
+      <tr><th scope="row">Time spent</th><td class="num">~10 s on the homepage, then 2–3 min per case if it earns it.</td></tr>
+      <tr><th scope="row">Order</th><td>Outcome first, process second. Most recent work over most polished old work.</td></tr>
+      <tr><th scope="row">Seniority signals</th><td>Initiative (co-writing the brief), product thinking, scope across teams, trade-offs under uncertainty, influence, mentoring.</td></tr>
+      <tr><th scope="row">AI signal</th><td>Interactive prototypes, a case about how you changed the team’s workflow, short video walkthroughs.</td></tr>
+      <tr><th scope="row">Homepage</th><td>One line on who you are and what you do; cases one click away; Work / About / Resume / Contact.</td></tr>
+      <tr><th scope="row">NDA work</th><td>Show artefacts, redact, or rebuild generically. Give the password in the application. A fully locked site is a red flag.</td></tr>
+      <tr><th scope="row">The site itself</th><td>Mobile layout, speed, HTTPS, WCAG 2.2 AA: one H1, keyboard access, visible focus, 4.5:1 contrast, alt text.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="flags"><b>Red flags:</b> “we” everywhere with no personal role · process diagrams without outcomes · no shipped work · a template more impressive than the work · long text · heavy animation · typos and broken links · a Senior title with feature-level scope.</p>
+</section>
+
+<section aria-labelledby="h-top">
+  <div class="head">
+    <h2 id="h-top">Top 10 live senior portfolios</h2>
+    <p class="note">Every site checked live on 24 Sep 2026.</p>
+  </div>
+  <div class="scroll" tabindex="0" role="region" aria-label="Top 10 portfolios">
+  <table class="top">
+    <thead><tr><th scope="col">#</th><th scope="col">Designer</th><th scope="col">Role, region</th><th scope="col">Borrow this</th></tr></thead>
+    <tbody>
+      <tr><td>01</td><td><a href="https://joshmateo.com">Josh Mateo</a></td><td>Sr Manager, Design Systems, Netflix · US</td><td>“Company · Project — the thesis” subtitles; cases end at org-level impact.</td></tr>
+      <tr><td>02</td><td><a href="https://www.helenastening.com">Helena Stening</a></td><td>Google Meet, ex-Lead Spotify · Stockholm</td><td>Names rejected concepts and why; hard numbers (1.1% lift, ~250k subscribers a year).</td></tr>
+      <tr><td>03</td><td><a href="https://buzzusborne.com">Buzz Usborne</a></td><td>Principal, Help Scout · Sydney</td><td>The strongest AI case: design system rebuilt for AI, prompt-to-code tool.</td></tr>
+      <tr><td>04</td><td><a href="https://heckhouse.com">Bethany Heck</a></td><td>Ex-Head of Product Design, Tumblr · US</td><td>Business case before design; dated index with type tags.</td></tr>
+      <tr><td>05</td><td><a href="https://www.oliviatruong.design">Olivia Truong</a></td><td>Senior PD, Shopify work · US</td><td>Case titles phrased as the user’s question; link to the live product.</td></tr>
+      <tr><td>06</td><td><a href="https://www.atulkhola.com">Atul Khola</a></td><td>Head of Design, Zero, ex-CRED · India</td><td>An “Influence” section. Its desktop-only layout is the part not to copy.</td></tr>
+      <tr><td>07</td><td><a href="https://brianlovin.com">Brian Lovin</a></td><td>Designer, Notion AI · US</td><td>Portfolio as a product: shipped tools, writing, open source.</td></tr>
+      <tr><td>08</td><td><a href="https://anthonyhobday.com">Anthony Hobday</a></td><td>Independent senior PD · UK</td><td>Plain fast HTML, ~15 KB and 0.13 s: performance as craft.</td></tr>
+      <tr><td>09</td><td><a href="https://karoliskosas.com">Karolis Kosas</a></td><td>OpenAI, ex-Stripe · London</td><td>Tight index, one strong image per project. Cases date from 2014–16.</td></tr>
+      <tr><td>10</td><td><a href="https://www.vilinskyy.com">Alexander Vilinskyy</a></td><td>Ex-Lead Grammarly, ex-Readdle · London</td><td>Named testimonials from collaborators as proof of influence.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<footer>
+  <span>Sources: DOU salary survey June 2026 (Senior median calculated from DOU raw data, n = 46), Djinni salary stats, LinkedIn, NAV arbeidsplassen, levels.fyi, Glassdoor, IT Jobs Watch, Just Join IT, Built In, Robert Half, Designer Fund, NN/g, Verified Insider. Full links in <span class="num">research/sources/*.md</span>.</span>
+  <span>Not reached: robota.ua and work.ua blocked automated access. Glassdoor and StepStone figures come from search summaries only.</span>
+</footer>
+</div>
