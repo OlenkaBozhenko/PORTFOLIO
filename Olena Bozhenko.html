@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Olena Bozhenko — Senior Product Designer</title>
+<meta name="description" content="Olena Bozhenko, senior product designer in Oslo. B2B SaaS from the first interview to the design system.">
+<!-- Display layer. Content source: site.md, cv.md, inspiration.md -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Inter Tight: stand-in for Aeonik / Neue Haas Grotesk (inspiration D8) until the typeface is chosen -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500&display=swap">
+<style>
+:root{
+  --bg:#FFFFFF;      /* D1: white, always */
+  --ink:#0E0E0E;     /* 19.3:1 */
+  --muted:#6B6B6B;   /* 5.33:1 on white, 4.8:1 on wells */
+  --rule:#E6E6E6;
+  --well:#F3F3F1;
+  --label:#2B3BD6;   /* 7.78:1 on white */
+  --grid:#E4E4E0;
+  --sans:"Inter Tight","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --gutter:clamp(16px,4vw,56px);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{background:var(--bg);scroll-behavior:smooth;scroll-padding-top:80px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--label);outline-offset:3px;border-radius:2px}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{font-weight:400;letter-spacing:-.035em;text-wrap:balance}
+.wrap{max-width:1320px;margin:0 auto;padding-inline:var(--gutter)}
+.label{font-size:12px;line-height:1;letter-spacing:.02em;color:var(--label)}
+.eyebrow{font-size:14px;color:var(--muted)}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--ink);color:var(--bg);padding:10px 14px;border-radius:999px;z-index:20}
+.skip:focus{left:16px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid transparent}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:64px}
+.brand{font-weight:500;text-decoration:none;letter-spacing:-.01em}
+.nav ul{display:flex;gap:clamp(16px,3vw,40px);list-style:none;margin:0;padding:0;font-size:15px}
+.nav ul a{text-decoration:none;padding-block:12px;display:inline-block}
+.nav ul a:hover{text-decoration:underline;text-underline-offset:4px}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(56px,9vw,120px) clamp(64px,9vw,120px);overflow:hidden}
+.hero .wrap{position:relative;min-height:clamp(520px,62vw,760px);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.h1box{position:relative;border:1px solid var(--label);padding:clamp(10px,1.4vw,18px) clamp(12px,2vw,28px);max-width:1080px;z-index:2;background:var(--bg)}
+.h1box>.label{position:absolute;left:-1px;top:-18px}
+h1{font-size:clamp(40px,7.4vw,104px);line-height:.98;letter-spacing:-.05em}
+.hero-sub{margin-top:28px;max-width:56ch;color:var(--muted);font-size:clamp(16px,1.6vw,19px);position:relative;z-index:2;background:var(--bg)}
+.hero-meta{margin-bottom:28px;position:relative;z-index:2}
+.blk{position:absolute;z-index:1;display:flex;flex-direction:column;gap:6px;animation:drift var(--d,9s) ease-in-out infinite alternate}
+.blk .box{border:1px solid var(--label);background:var(--bg);padding:12px;display:flex;align-items:center;justify-content:center;gap:8px}
+.blk svg{display:block;stroke:var(--ink);stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.hero.paused .blk{animation-play-state:paused}
+@keyframes drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(var(--x,6px),var(--y,-10px),0)}}
+@media (prefers-reduced-motion:reduce){.blk{animation:none}}
+.b-ds{left:2%;top:6%;--d:10s}
+.b-proto{right:3%;top:2%;--d:12s;--x:-8px;--y:8px}
+.b-int{left:0;bottom:16%;--d:11s;--x:8px}
+.b-an{right:1%;bottom:12%;--d:9s;--y:10px}
+.b-ai{left:24%;bottom:0;--d:13s;--x:-6px}
+.b-wcag{right:24%;bottom:2%;--d:10.5s;--y:-8px}
+.b-btn{left:18%;top:0;--d:8.5s;--x:10px}
+.chip{border:1px solid var(--ink);border-radius:999px;padding:6px 14px;font-size:14px;white-space:nowrap}
+.chip.fill{background:var(--ink);color:var(--bg)}
+.tok{width:22px;height:22px;border:1.5px solid var(--ink)}
+.prompt{font-size:13px;display:flex;align-items:center;gap:8px;white-space:nowrap}
+.caret{width:1.5px;height:16px;background:var(--ink);animation:blink 1.1s steps(1) infinite}
+.hero.paused .caret{animation-play-state:paused}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.caret{animation:none}}
+.ratio{font-size:13px;display:flex;gap:8px;align-items:baseline;white-space:nowrap}
+.ratio b{font-weight:500;font-size:22px;letter-spacing:-.03em}
+.pause{position:absolute;right:var(--gutter);bottom:-40px;z-index:3;font:inherit;font-size:13px;background:var(--bg);color:var(--ink);border:1px solid var(--ink);border-radius:999px;padding:8px 14px;min-height:36px;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.pause:hover{background:var(--ink);color:var(--bg)}
+@media (prefers-reduced-motion:reduce){.pause{display:none}}
+@media (max-width:900px){
+  .hero .wrap{min-height:auto;display:block;text-align:left}
+  .blk{position:static;animation:none;display:none}
+  .b-ds,.b-ai,.b-wcag{display:flex}
+  .hero-blocks{display:flex;flex-wrap:wrap;gap:24px 16px;margin-top:48px}
+  .pause{display:none}
+  .h1box>.label{top:-18px}
+}
+
+/* sections */
+section{padding-block:clamp(72px,10vw,140px)}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;padding-bottom:28px;border-bottom:1px solid var(--ink)}
+.sec-head h2{font-size:clamp(36px,5vw,64px);line-height:1}
+.count{color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* work */
+.work-list{list-style:none;margin:0;padding:0}
+.row{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,3vw,48px);padding-block:clamp(40px,5vw,64px);border-bottom:1px solid var(--rule)}
+.row .text{display:flex;flex-direction:column;gap:20px;min-height:100%}
+.row .num{color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums}
+.row h3{font-size:clamp(28px,3.2vw,44px);line-height:1.05}
+.row h3 span{color:var(--muted)}
+.row p{color:var(--ink);max-width:46ch}
+.meta{display:grid;grid-template-columns:auto 1fr;gap:6px 20px;font-size:15px;margin:0}
+.meta dt{color:var(--muted)}
+.meta dd{margin:0}
+.tag{display:inline-block;font-size:12px;border:1px solid var(--ink);border-radius:999px;padding:3px 10px;margin-left:6px;vertical-align:middle;letter-spacing:0}
+.view{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:14px 10px;border-bottom:1px solid var(--ink);text-decoration:none;font-size:15px;letter-spacing:.02em;text-transform:uppercase}
+.view:hover .arrow{transform:translateX(6px)}
+.arrow{transition:transform .2s ease}
+.view[aria-disabled="true"]{color:var(--muted);border-bottom-color:var(--rule);pointer-events:none}
+.well{background:var(--well);aspect-ratio:4/3;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.well.grid{background-color:var(--well);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:56px 56px;background-position:-1px -1px}
+.well .soon{position:absolute;left:20px;bottom:18px;font-size:13px;color:var(--muted)}
+.well .big{font-size:clamp(40px,6vw,88px);font-weight:300;letter-spacing:-.05em;color:var(--ink);opacity:.9;padding:24px;text-align:center;line-height:1}
+@media (max-width:820px){
+  .row{grid-template-columns:1fr}.row .well{order:-1}
+  .well.grid{aspect-ratio:auto;flex-direction:column;align-items:stretch;gap:16px;padding:32px 20px}
+  .well.grid .ui{position:static;width:auto!important}
+}
+
+/* UI fragments (placeholders until real screens, see site.md) */
+.ui{position:absolute;background:#fff;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:12px;font-size:14px;box-shadow:0 1px 0 rgba(0,0,0,.04),0 12px 32px -18px rgba(0,0,0,.25)}
+.ui .t{font-size:12px;color:var(--muted)}
+.ui .h{font-size:17px;font-weight:500;letter-spacing:-.02em}
+.steps{display:flex;flex-direction:column;gap:8px;margin:0;padding:0;list-style:none}
+.steps li{display:flex;align-items:center;gap:10px}
+.dot{width:26px;height:26px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;font-size:12px;flex:none}
+.dot.on{background:var(--ink);color:#fff}
+.wait{color:var(--muted);font-size:12px;padding-left:36px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:12px;border:1px solid var(--rule);border-radius:999px;padding:4px 10px}
+.bar{height:8px;border-radius:999px;background:var(--well);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ink);border-radius:inherit}
+.mb{display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:center}
+.state{font-size:12px;border-radius:999px;padding:3px 9px;border:1px solid var(--ink)}
+.state.ok{background:var(--ink);color:#fff}
+.dron-screen{width:34%;border-radius:22px;border:1px solid var(--rule);background:#fff}
+.dron-drone{position:absolute;width:34%;right:8%;top:14%}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,4vw,64px);padding-top:48px}
+.photo{aspect-ratio:4/5;background:var(--well);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.about .bio{display:flex;flex-direction:column;gap:20px;font-size:clamp(19px,1.9vw,24px);line-height:1.4;letter-spacing:-.015em;max-width:40ch}
+.qual{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0 32px}
+.qual li{padding-block:14px;border-top:1px solid var(--rule);font-size:16px}
+.more{display:inline-block;margin-top:32px;font-size:15px;text-underline-offset:4px}
+.more[aria-disabled="true"]{color:var(--muted);text-decoration:none;pointer-events:none}
+@media (max-width:820px){.about{grid-template-columns:1fr}.photo{max-width:360px}}
+
+/* testimonials */
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,4vw,64px);padding-top:48px}
+figure.q{margin:0;display:flex;flex-direction:column;gap:24px}
+figure.q blockquote{margin:0;font-size:clamp(20px,2.2vw,28px);line-height:1.3;letter-spacing:-.02em}
+figure.q figcaption{font-size:15px;color:var(--muted)}
+figure.q figcaption b{display:block;color:var(--ink);font-weight:500}
+
+/* learning */
+.learn{list-style:none;margin:0;padding:0}
+.learn li{display:grid;grid-template-columns:120px minmax(0,1fr) minmax(0,220px);gap:24px;padding-block:18px;border-bottom:1px solid var(--rule);align-items:baseline}
+.learn time{color:var(--muted);font-variant-numeric:tabular-nums;font-size:15px}
+.learn .who{color:var(--muted);font-size:15px}
+@media (max-width:640px){.learn li{grid-template-columns:1fr;gap:4px}}
+
+/* contact */
+.contact h2{font-size:clamp(44px,8vw,120px);line-height:.95;letter-spacing:-.05em}
+.mail{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;margin-top:40px}
+.mail .addr{font-size:clamp(20px,2.6vw,32px);letter-spacing:-.02em;user-select:all}
+.btn{font:inherit;font-size:15px;border-radius:999px;padding:12px 22px;min-height:44px;cursor:pointer;border:1px solid var(--ink);background:var(--ink);color:var(--bg);text-decoration:none;display:inline-flex;align-items:center}
+.btn.ghost{background:var(--bg);color:var(--ink)}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.status{font-size:14px;color:var(--muted);min-height:1.5em;margin-top:12px}
+footer{border-top:1px solid var(--rule);padding-block:28px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+<a class="skip" href="#work">Skip to work</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Olena Bozhenko</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero" id="hero" aria-labelledby="hero-title">
+  <div class="wrap">
+    <p class="eyebrow hero-meta">Senior Product Designer · Oslo, Norway</p>
+    <div class="h1box">
+      <span class="label" aria-hidden="true">Headline H1</span>
+      <h1 id="hero-title">I design B2B products from the first interview to the design system.</h1>
+    </div>
+    <p class="hero-sub">Working remotely with a Ukrainian product team on SaaS used every day: research, prototypes, design systems and AI tools.</p>
+
+    <div class="hero-blocks" aria-hidden="true">
+      <div class="blk b-btn"><span class="label">Button</span><div class="box"><span class="chip fill">View project</span></div></div>
+      <div class="blk b-ds"><span class="label">Design system</span><div class="box">
+        <span class="tok" style="border-radius:4px"></span><span class="tok" style="border-radius:8px"></span><span class="tok" style="border-radius:999px"></span>
+        <span style="font-size:22px;letter-spacing:-.03em;padding-left:4px">Aa</span>
+      </div></div>
+      <div class="blk b-proto"><span class="label">Prototype</span><div class="box">
+        <svg width="148" height="64" viewBox="0 0 148 64"><rect x="1" y="4" width="34" height="56" rx="6"/><rect x="57" y="4" width="34" height="56" rx="6"/><rect x="113" y="4" width="34" height="56" rx="6"/><path d="M38 32h14m-4-4 4 4-4 4M94 32h14m-4-4 4 4-4 4"/><path d="M8 14h20M8 20h12M64 14h20M64 44h20M120 14h14"/></svg>
+      </div></div>
+      <div class="blk b-int"><span class="label">User interview</span><div class="box">
+        <svg width="112" height="58" viewBox="0 0 112 58"><path d="M2 4h60v26H22l-10 10V30H2z"/><path d="M50 22h60v26h-10v10L90 48H50z"/><path d="M12 13h40M12 21h26M60 31h40M60 39h28"/></svg>
+      </div></div>
+      <div class="blk b-an"><span class="label">Analytics</span><div class="box">
+        <svg width="120" height="64" viewBox="0 0 120 64"><path d="M2 62h116"/><rect x="8" y="36" width="14" height="26"/><rect x="32" y="24" width="14" height="38"/><rect x="56" y="40" width="14" height="22"/><rect x="80" y="10" width="14" height="52"/><path d="M4 30 30 18l26 12 26-26 30 10"/></svg>
+      </div></div>
+      <div class="blk b-ai"><span class="label">AI tools</span><div class="box"><span class="prompt">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg>
+        Prototype the onboarding flow<span class="caret"></span></span></div></div>
+      <div class="blk b-wcag"><span class="label">WCAG 2.2</span><div class="box"><span class="ratio"><b>19.3:1</b> text on white · AA</span></div></div>
+    </div>
+
+    <button class="pause" type="button" aria-pressed="false" id="pause">
+      <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 2v8M9 2v8" stroke="currentColor" stroke-width="1.7" fill="none"/></svg>
+      <span>Pause motion</span>
+    </button>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work" aria-labelledby="work-title">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="work-title">Selected work</h2><span class="count">8 projects</span></div>
+    <ol class="work-list">
+
+      <li class="row">
+        <div class="text">
+          <span class="num">01</span>
+          <h3>AnyBiz <span>— AI sales outreach</span></h3>
+          <p>A B2B platform that finds prospects and reaches them by email, LinkedIn and phone, with AI sales agents, drip campaigns and CRM integration.</p>
+          <dl class="meta"><dt>Role</dt><dd>Product Designer</dd><dt>Year</dt><dd>2021 – present</dd><dt>Platform</dt><dd>Web SaaS</dd></dl>
+          <a class="view" href="#work" aria-disabled="true">View AnyBiz project <span class="vh">(case study in preparation)</span><span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <div class="well grid" role="img" aria-label="AnyBiz interface fragments: an outreach sequence of email, LinkedIn and call steps, and the channels a campaign uses.">
+          <div class="ui" style="left:8%;top:12%;width:46%">
+            <span class="t">Campaign</span><span class="h">Q4 outreach · Nordic SaaS</span>
+            <ol class="steps">
+              <li><span class="dot on">1</span>Email · intro</li>
+              <li class="wait">wait 2 days</li>
+              <li><span class="dot">2</span>LinkedIn · connect</li>
+              <li class="wait">wait 3 days</li>
+              <li><span class="dot">3</span>Call · AI agent</li>
+            </ol>
+          </div>
+          <div class="ui" style="right:7%;bottom:14%;width:40%">
+            <span class="t">Channels</span>
+            <div class="chips"><span>Email</span><span>LinkedIn</span><span>Phone</span><span>CRM sync</span></div>
+            <span class="t">Follow-ups</span><div class="bar"><i style="width:62%"></i></div>
+          </div>
+        </div>
+      </li>
+
+      <li class="row">
+        <div class="text">
+          <span class="num">02</span>
+          <h3>Warmy <span>— email deliverability</span></h3>
+          <p>Warms up mailboxes and domains automatically, so campaigns land in the inbox and not in spam.</p>
+          <dl class="meta"><dt>Role</dt><dd>UI/UX Designer</dd><dt>Year</dt><dd>2021 – present</dd><dt>Platform</dt><dd>Web SaaS</dd></dl>
+          <a class="view" href="#work" aria-disabled="true">View Warmy project <span class="vh">(case study in preparation)</span><span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <div class="well grid" role="img" aria-label="Warmy interface fragments: mailbox health with warm-up states, and warm-up progress.">
+          <div class="ui" style="left:9%;top:14%;width:52%">
+            <span class="t">Mailbox health</span>
+            <div class="mb"><span>sales@northwind.io</span><span class="state ok">Ready</span><span>hello@northwind.io</span><span class="state">Warming up</span><span>team@northwind.io</span><span class="state">Warming up</span></div>
+          </div>
+          <div class="ui" style="right:8%;bottom:16%;width:36%">
+            <span class="t">Warm-up</span><span class="h">Day 14 of 21</span><div class="bar"><i style="width:66%"></i></div>
+          </div>
+        </div>
+      </li>
+
+      <li class="row">
+        <div class="text">
+          <span class="num">03</span>
+          <h3>Idretsfader</h3>
+          <p>Case study in preparation.</p>
+          <a class="view" href="#work" aria-disabled="true">View Idretsfader project <span class="vh">(in preparation)</span><span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <div class="well" aria-hidden="true"><span class="big">Idretsfader</span><span class="soon">Images to come</span></div>
+      </li>
+
+      <li class="row">
+        <div class="text">
+          <span class="num">04</span>
+          <h3>Book <span>— a family history in print</span></h3>
+          <p>Layout and design of a 432-page family history book with more than 300 images, printed by LOS DIGITAL AS in 2024.</p>
+          <dl class="meta"><dt>Role</dt><dd>Book design, layout</dd><dt>Year</dt><dd>2023 – 2024</dd><dt>Platform</dt><dd>Print</dd></dl>
+          <a class="view" href="#work" aria-disabled="true">View Book project <span class="vh">(case study in preparation)</span><span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <div class="well" aria-hidden="true"><span class="big">432 pages</span><span class="soon">Images to come</span></div>
+      </li>
+
+      <li class="row">
+        <div class="text">
+          <span class="num">05</span>
+          <h3>Maya logo</h3>
+          <p>Case study in preparation.</p>
+          <a class="view" href="#work" aria-disabled="true">View Maya logo project <span class="vh">(in preparation)</span><span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <div class="well" aria-hidden="true"><span class="big">Maya</span><span class="soon">Images to come</span></div>
+      </li>
+
+      <li class="row">
+        <div class="text">
+          <span class="num">06</span>
+          <h3>Styupan Translation <span>— brand mark</span></h3>
+          <p>Logo for Stiupan Translations ENK, an Oslo translation and copywriting company, followed by UI/UX and book work over more than a year.</p>
+          <dl class="meta"><dt>Role</dt><dd>Logo, UI/UX</dd><dt>Year</dt><dd>2023 – 2024</dd><dt>Platform</dt><dd>Brand</dd></dl>
+          <a class="view" href="#work" aria-disabled="true">View Styupan Translation project <span class="vh">(case study in preparation)</span><span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <div class="well" aria-hidden="true"><span class="big">Styupan</span><span class="soon">Images to come</span></div>
+      </li>
+
+      <li class="row">
+        <div class="text">
+          <span class="num">07</span>
+          <h3>School <span class="tag">Personal</span></h3>
+          <p>Case study in preparation.</p>
+          <a class="view" href="#work" aria-disabled="true">View School project <span class="vh">(in preparation)</span><span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <div class="well" aria-hidden="true"><span class="big">School</span><span class="soon">Images to come</span></div>
+      </li>
+
+      <li class="row">
+        <div class="text">
+          <span class="num">08</span>
+          <h3>DRON <span>— drone services, end to end</span> <span class="tag">Personal</span></h3>
+          <p>A drone-as-a-service platform taken from research to a 134-page clickable prototype, a token-based design system, and a WCAG and HIG check on every decision. Built with Claude Code.</p>
+          <dl class="meta"><dt>Role</dt><dd>Research, UX, UI, design system</dd><dt>Year</dt><dd>2026</dd><dt>Platform</dt><dd>Mobile web</dd></dl>
+          <a class="view" href="#work" aria-disabled="true">View DRON project <span class="vh">(case study in preparation)</span><span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <div class="well">
+          <img class="dron-screen" src="assets/work/dron/dron-order-screen.png" alt="DRON order screen on mobile: tabs for delivery, aerial photo and inspection, and three service cards, each with a drone." loading="lazy" width="375" height="812">
+          <img class="dron-drone" src="assets/work/dron/drone-flight-camera.png" alt="" loading="lazy" width="392" height="291">
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" aria-labelledby="about-title">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="about-title">About</h2></div>
+    <div class="about">
+      <div class="photo" role="img" aria-label="Photo of Olena Bozhenko, to come">Photo</div>
+      <div>
+        <div class="bio">
+          <p>I'm a senior product designer in Oslo. Since 2021 I've designed B2B SaaS for sales outreach and email deliverability at AnyBiz and Warmy: design systems, prototypes, user interviews, research and analytics, more and more of it with AI tools.</p>
+          <p>Before design I spent seven years in law. It taught me to read the fine print, write things down precisely and stand behind a decision.</p>
+        </div>
+        <ul class="qual">
+          <li>Keeps learning: courses and certificates every year</li>
+          <li>Goes to design and AI conferences</li>
+          <li>Precise and accountable, from seven years in law</li>
+          <li>Works in Ukrainian, English and Norwegian</li>
+        </ul>
+        <a class="more" href="#about" aria-disabled="true">Full About page: journey and testimonials, in preparation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section aria-labelledby="kind-title" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="kind-title">What clients say</h2></div>
+    <div class="quotes">
+      <figure class="q">
+        <blockquote>“An exceptionally talented designer with a sharp eye for detail. She consistently meets deadlines and keeps communication open throughout the design process.”</blockquote>
+        <figcaption><b>Maiia Stiupan</b>Owner, Stiupan Translations ENK, Oslo</figcaption>
+      </figure>
+      <figure class="q">
+        <blockquote>“She has done the work on the book to our great satisfaction and with great accuracy. Her friendly, helpful manner made our collaboration easy and good.”</blockquote>
+        <figcaption><b>Amund Gulsvik, MD, PhD</b>Professor emeritus, University of Bergen</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- LEARNING -->
+<section aria-labelledby="learn-title" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="learn-title">Learning</h2><span class="count">Courses · certificates · conferences</span></div>
+    <ul class="learn">
+      <li><time datetime="2026-06">Jun 2026</time><span>Subagents · Agent skills</span><span class="who">Anthropic</span></li>
+      <li><time datetime="2026-03">Mar 2026</time><span>Claude</span><span class="who">Anthropic</span></li>
+      <li><time datetime="2025-11">Nov 2025</time><span>Email deliverability expert</span><span class="who">Warmy</span></li>
+      <li><time datetime="2023-06">Jun 2023</time><span>AI in Web Design Conf 23</span><span class="who">Conference · Geekle</span></li>
+      <li><time datetime="2023-02">Feb 2023</time><span>UI UX Online Summit 23</span><span class="who">Conference · Geekle</span></li>
+      <li><time datetime="2022">2022</time><span>Foundations of User Experience Design</span><span class="who">Google</span></li>
+      <li><time datetime="2020">2020</time><span>Contemporary trends and award-winning experiences</span><span class="who">Awwwards Academy</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <h2 id="contact-title">Hiring a senior product designer?<br>Write to me.</h2>
+    <div class="mail">
+      <span class="addr" id="addr">Bozhenko.ui.ux@gmail.com</span>
+      <button class="btn" type="button" id="copy">Copy email</button>
+    </div>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+    <div class="links">
+      <a class="btn ghost" href="https://www.linkedin.com/in/olena-bozhenko-b36071180/">LinkedIn</a>
+      <a class="btn ghost" href="https://www.behance.net/bozhenkoUI59ac">Behance</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Olena Bozhenko</span><span>Oslo, Norway · works remotely</span></div>
+</footer>
+
+<script>
+(function(){
+  var hero=document.getElementById('hero'),btn=document.getElementById('pause');
+  if(btn){btn.addEventListener('click',function(){
+    var p=hero.classList.toggle('paused');
+    btn.setAttribute('aria-pressed',p?'true':'false');
+    btn.querySelector('span').textContent=p?'Play motion':'Pause motion';
+  });}
+  var copy=document.getElementById('copy'),addr=document.getElementById('addr'),st=document.getElementById('status');
+  copy.addEventListener('click',function(){
+    var t=addr.textContent.trim();
+    function sel(){var r=document.createRange();r.selectNodeContents(addr);var s=getSelection();s.removeAllRanges();s.addRange(r);st.textContent='Email selected. Press Ctrl+C to copy.';}
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(t).then(function(){st.textContent='Email copied.';},sel);
+    } else sel();
+  });
+})();
+</script>
+</body>
+</html>
