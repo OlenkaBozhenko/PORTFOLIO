@@ -8,7 +8,7 @@ Paste the address into a browser on the computer that holds the `PORTFOLIO` fold
 
 ## What is on the landing page
 - **Hero** — a large headline surrounded by outlined interface and code blocks (Figma component icons, `</>` code icons) that drift and can be dragged within the first screen; a Play / Pause music control.
-- **Selected work** — AnyBiz, Warmy, Idretsfader, Book, Styupan Translation, School and DRON: name, description, role, year, platform and a large preview.
+- **Case Studies** — AnyBiz, Warmy, Idretsfader, Book, Styupan Translation, School and DRON: name, description, role, year, platform and a large preview.
 - **About** — portrait, short bio and personal qualities.
 - **Testimonials** — clients and collaborators.
 - **Learning** — certificates and conferences.
