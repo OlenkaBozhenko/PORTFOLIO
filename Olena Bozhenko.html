@@ -58,6 +58,21 @@ h1{font-size:clamp(40px,7.4vw,104px);line-height:.98;letter-spacing:-.05em}
 .blk .box{border:1px solid var(--label);background:var(--bg);padding:12px;display:flex;align-items:center;justify-content:center;gap:8px}
 .blk svg{display:block;stroke:var(--ink);stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .hero.paused .blk{animation-play-state:paused}
+.blk .label{display:inline-flex;align-items:center;gap:5px;align-self:center;white-space:nowrap}
+.blk .label .ico{stroke:none;fill:currentColor;flex:none}
+.blk .label .ico.code{fill:none;stroke:currentColor;stroke-width:1.4}
+.blk code{font:400 13px/1.2 ui-monospace,"SFMono-Regular","JetBrains Mono",Consolas,monospace;color:var(--ink);white-space:pre}
+.blk code .caret{display:inline-block;vertical-align:middle;margin-left:2px}
+.blk code .k{color:var(--ink);font-weight:500}.blk code .a{color:var(--label)}.blk code .v{color:var(--muted)}
+.b-code1{left:37%;top:1%;--d:11.5s;--x:-8px}
+.b-code2{left:1%;bottom:0;--d:12.5s;--y:-8px}
+.b-code3{left:57%;top:7%;--d:10s;--x:-6px}
+@media (min-width:901px){
+  .blk{cursor:grab;user-select:none;-webkit-user-select:none;touch-action:none}
+  .blk.dragging{cursor:grabbing;z-index:5}
+  .blk.moved{animation:none;z-index:4}
+}
+
 @keyframes drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(var(--x,6px),var(--y,-10px),0)}}
 @media (prefers-reduced-motion:reduce){.blk{animation:none}}
 .b-ds{left:2%;top:6%;--d:10s}
@@ -83,7 +98,7 @@ h1{font-size:clamp(40px,7.4vw,104px);line-height:.98;letter-spacing:-.05em}
 @media (max-width:900px){
   .hero .wrap{min-height:auto;display:block;text-align:left}
   .blk{position:static;animation:none;display:none}
-  .b-ds,.b-ai,.b-wcag{display:flex}
+  .b-ds,.b-ai,.b-wcag,.b-code1{display:flex}
   .hero-blocks{display:flex;flex-wrap:wrap;gap:24px 16px;margin-top:48px}
   .pause{display:none}
   .h1box>.label{top:-18px}
@@ -206,24 +221,27 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <p class="hero-sub">Working remotely with a Ukrainian product team on SaaS used every day: research, prototypes, design systems and AI tools.</p>
 
     <div class="hero-blocks" aria-hidden="true">
-      <div class="blk b-btn"><span class="label">Button</span><div class="box"><span class="chip fill">View project</span></div></div>
-      <div class="blk b-ds"><span class="label">Design system</span><div class="box">
+      <div class="blk b-btn"><span class="label"><svg class="ico" width="11" height="11" viewBox="0 0 12 12"><path d="M6 .8 7.7 2.5 6 4.2 4.3 2.5zM2.5 4.3 4.2 6 2.5 7.7.8 6zM9.5 4.3 11.2 6 9.5 7.7 7.8 6zM6 7.8 7.7 9.5 6 11.2 4.3 9.5z"/></svg>Button</span><div class="box"><span class="chip fill">View project</span></div></div>
+      <div class="blk b-ds"><span class="label"><svg class="ico" width="11" height="11" viewBox="0 0 12 12"><path d="M6 .8 7.7 2.5 6 4.2 4.3 2.5zM2.5 4.3 4.2 6 2.5 7.7.8 6zM9.5 4.3 11.2 6 9.5 7.7 7.8 6zM6 7.8 7.7 9.5 6 11.2 4.3 9.5z"/></svg>Design system</span><div class="box">
         <span class="tok" style="border-radius:4px"></span><span class="tok" style="border-radius:8px"></span><span class="tok" style="border-radius:999px"></span>
         <span style="font-size:22px;letter-spacing:-.03em;padding-left:4px">Aa</span>
       </div></div>
-      <div class="blk b-proto"><span class="label">Prototype</span><div class="box">
+      <div class="blk b-proto"><span class="label"><svg class="ico" width="11" height="11" viewBox="0 0 12 12"><path d="M6 .8 7.7 2.5 6 4.2 4.3 2.5zM2.5 4.3 4.2 6 2.5 7.7.8 6zM9.5 4.3 11.2 6 9.5 7.7 7.8 6zM6 7.8 7.7 9.5 6 11.2 4.3 9.5z"/></svg>Prototype</span><div class="box">
         <svg width="148" height="64" viewBox="0 0 148 64"><rect x="1" y="4" width="34" height="56" rx="6"/><rect x="57" y="4" width="34" height="56" rx="6"/><rect x="113" y="4" width="34" height="56" rx="6"/><path d="M38 32h14m-4-4 4 4-4 4M94 32h14m-4-4 4 4-4 4"/><path d="M8 14h20M8 20h12M64 14h20M64 44h20M120 14h14"/></svg>
       </div></div>
-      <div class="blk b-int"><span class="label">User interview</span><div class="box">
+      <div class="blk b-int"><span class="label"><svg class="ico" width="11" height="11" viewBox="0 0 12 12"><path d="M6 .8 7.7 2.5 6 4.2 4.3 2.5zM2.5 4.3 4.2 6 2.5 7.7.8 6zM9.5 4.3 11.2 6 9.5 7.7 7.8 6zM6 7.8 7.7 9.5 6 11.2 4.3 9.5z"/></svg>User interview</span><div class="box">
         <svg width="112" height="58" viewBox="0 0 112 58"><path d="M2 4h60v26H22l-10 10V30H2z"/><path d="M50 22h60v26h-10v10L90 48H50z"/><path d="M12 13h40M12 21h26M60 31h40M60 39h28"/></svg>
       </div></div>
-      <div class="blk b-an"><span class="label">Analytics</span><div class="box">
+      <div class="blk b-an"><span class="label"><svg class="ico" width="11" height="11" viewBox="0 0 12 12"><path d="M6 .8 7.7 2.5 6 4.2 4.3 2.5zM2.5 4.3 4.2 6 2.5 7.7.8 6zM9.5 4.3 11.2 6 9.5 7.7 7.8 6zM6 7.8 7.7 9.5 6 11.2 4.3 9.5z"/></svg>Analytics</span><div class="box">
         <svg width="120" height="64" viewBox="0 0 120 64"><path d="M2 62h116"/><rect x="8" y="36" width="14" height="26"/><rect x="32" y="24" width="14" height="38"/><rect x="56" y="40" width="14" height="22"/><rect x="80" y="10" width="14" height="52"/><path d="M4 30 30 18l26 12 26-26 30 10"/></svg>
       </div></div>
-      <div class="blk b-ai"><span class="label">AI tools</span><div class="box"><span class="prompt">
+      <div class="blk b-ai"><span class="label"><svg class="ico" width="11" height="11" viewBox="0 0 12 12"><path d="M6 .8 7.7 2.5 6 4.2 4.3 2.5zM2.5 4.3 4.2 6 2.5 7.7.8 6zM9.5 4.3 11.2 6 9.5 7.7 7.8 6zM6 7.8 7.7 9.5 6 11.2 4.3 9.5z"/></svg>AI tools</span><div class="box"><span class="prompt">
         <svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg>
         Prototype the onboarding flow<span class="caret"></span></span></div></div>
-      <div class="blk b-wcag"><span class="label">WCAG 2.2</span><div class="box"><span class="ratio"><b>19.3:1</b> text on white · AA</span></div></div>
+      <div class="blk b-wcag"><span class="label"><svg class="ico" width="11" height="11" viewBox="0 0 12 12"><path d="M6 .8 7.7 2.5 6 4.2 4.3 2.5zM2.5 4.3 4.2 6 2.5 7.7.8 6zM9.5 4.3 11.2 6 9.5 7.7 7.8 6zM6 7.8 7.7 9.5 6 11.2 4.3 9.5z"/></svg>WCAG 2.2</span><div class="box"><span class="ratio"><b>19.3:1</b> text on white · AA</span></div></div>
+      <div class="blk b-code1 code"><span class="label"><svg class="ico code" width="12" height="11" viewBox="0 0 12 12"><path d="M3.8 3 1 6l2.8 3M8.2 3 11 6 8.2 9M7 2 5 10"/></svg>Button.tsx</span><div class="box"><code><span class="k">&lt;Button</span> <span class="a">variant</span>=<span class="v">"primary"</span> <span class="k">/&gt;</span></code></div></div>
+      <div class="blk b-code2 code"><span class="label"><svg class="ico code" width="12" height="11" viewBox="0 0 12 12"><path d="M3.8 3 1 6l2.8 3M8.2 3 11 6 8.2 9M7 2 5 10"/></svg>tokens.css</span><div class="box"><code><span class="a">--color-action</span>: <span class="v">#0E0E0E</span>;</code></div></div>
+      <div class="blk b-code3 code"><span class="label"><svg class="ico code" width="12" height="11" viewBox="0 0 12 12"><path d="M3.8 3 1 6l2.8 3M8.2 3 11 6 8.2 9M7 2 5 10"/></svg>Claude Code</span><div class="box"><code><span class="k">&gt;</span> build the order screen<span class="caret"></span></code></div></div>
     </div>
 
     <button class="pause" type="button" aria-pressed="false" id="pause">
@@ -435,6 +453,34 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     btn.setAttribute('aria-pressed',p?'true':'false');
     btn.querySelector('span').textContent=p?'Play motion':'Pause motion';
   });}
+
+  /* Drag the hero blocks; they stay inside the first screen (site.md, Hero) */
+  var wide=window.matchMedia('(min-width:901px)');
+  var wrap=hero.querySelector('.wrap');
+  hero.querySelectorAll('.blk').forEach(function(el){
+    var sx,sy,ox,oy,id=null;
+    el.addEventListener('pointerdown',function(e){
+      if(!wide.matches||(e.pointerType==='mouse'&&e.button!==0))return;
+      var r=el.getBoundingClientRect(),w=wrap.getBoundingClientRect();
+      el.style.transform='none';
+      el.style.left=(r.left-w.left)+'px';el.style.top=(r.top-w.top)+'px';
+      el.style.right='auto';el.style.bottom='auto';
+      el.classList.add('moved','dragging');
+      sx=e.clientX;sy=e.clientY;ox=r.left-w.left;oy=r.top-w.top;id=e.pointerId;
+      el.setPointerCapture(id);e.preventDefault();
+    });
+    el.addEventListener('pointermove',function(e){
+      if(e.pointerId!==id)return;
+      var w=wrap.getBoundingClientRect(),h=hero.getBoundingClientRect(),r=el.getBoundingClientRect();
+      var minX=Math.max(h.left,0)-w.left, maxX=Math.min(h.right,document.documentElement.clientWidth)-w.left-r.width;
+      var minY=h.top-w.top, maxY=h.bottom-w.top-r.height;
+      var x=Math.min(Math.max(ox+e.clientX-sx,minX),maxX), y=Math.min(Math.max(oy+e.clientY-sy,minY),maxY);
+      el.style.left=x+'px';el.style.top=y+'px';
+    });
+    function end(e){if(e.pointerId!==id)return;id=null;el.classList.remove('dragging');}
+    el.addEventListener('pointerup',end);el.addEventListener('pointercancel',end);
+  });
+  wide.addEventListener&&wide.addEventListener('change',function(){if(!wide.matches)hero.querySelectorAll('.blk.moved').forEach(function(el){el.classList.remove('moved');el.removeAttribute('style');});});
   var copy=document.getElementById('copy'),addr=document.getElementById('addr'),st=document.getElementById('status');
   copy.addEventListener('click',function(){
     var t=addr.textContent.trim();
