@@ -29,8 +29,11 @@ Sources: the print files (`omslag_34_18.pdf`, `Slekstbok_Røtter i Blix_for utsk
 
 ## 3D mockup
 Built in CSS from her own cover file, no stock mockup: front, spine and back panels are cut from `omslag_34_18.pdf` at its fold marks — back 43.4–253.4 mm, hinge, spine 263.6–297.4 mm (34 mm), hinge, front 307.4–517.4 mm; height 43.4–340.4 mm (18 mm turn-in). Files in `assets/work/book/`: `cover-front.jpg`, `cover-spine.jpg`, `cover-back.jpg`.
-- **Project page:** one closed book, turned three-quarters to show the front and the spine, on a pale well with a soft shadow; the back cover beside it.
-- **Work-list thumbnail:** three copies fanned in a stack, seen from above at an angle.
+- **Reference:** her photos of the printed book (2026-09-26, Notion *For Portfolio* → "Book mockup: the real hardcover"): matte white case binding, rounded spine with a hinge groove, boards overhanging the page block, a sewn block that curves into the gutter.
+- **Light:** from the right on every mockup, so shadows fall to the left onto the ground.
+- **Project page:** one closed book, turned three-quarters to show the front and the spine, on a pale well; hinge groove on the front, rounded spine, shadow on the backdrop to the left; the back cover beside it.
+- **Work-list thumbnail:** three hardcover copies fanned in a stack, seen from above at an angle, filling about three quarters of the card height. Each copy shows the board thickness (2.5 mm) above and below the page block, the 3 mm square where the boards overhang the pages, the rounded spine and the hinge groove; each copy casts a contact shadow on the one below, and the stack casts a long soft shadow to the left.
+- **Spreads:** each spread sits on the white cover board, which shows around the pages as the square. Page edges stack at the outer sides, thicker on the side that holds more pages (left share = first page ÷ 432). The pages curve down into a sewn gutter: the top and bottom edges dip toward the spine, the crease is dark, and the shadow is wider on the right page, which faces away from the light.
 
 ## Spreads (her selection)
 Rendered from the print PDF at 150 dpi, 2200 px wide (`assets/work/book/spread-LLL-RRR.jpg`). In the print file, PDF page *n* holds book pages 2(*n* − 2) and 2(*n* − 2) + 1.
