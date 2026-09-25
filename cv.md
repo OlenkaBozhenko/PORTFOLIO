@@ -104,6 +104,12 @@ Both letters are attached to the 2024 CV PDF, written in Norwegian. English tran
 - Key lines (translated): "She has done the work on the book to our great satisfaction and with great accuracy." · "She has a good understanding of the Norwegian language, writes correct Norwegian, and has the necessary skills in design and layout." · "Olena is intelligent and honest, with a friendly personality and a helpful manner that made our collaboration easy and good." · "I strongly recommend Olena Bozhenko for similar work with a future employer."
 - The letter also contains personal details (date of birth, home address, residence status). **These are not carried into this file or onto the site.**
 
+### Tor Martin Olsen — Scale Group AS, Oslo
+- Source: LinkedIn [linkedin.com/in/tormartinolsen](https://www.linkedin.com/in/tormartinolsen/) — profile lists Scale Group AS; his job title is not confirmed yet.
+- Worked together at Scale Development AS (May 2023 – Jul 2024).
+- **No letter exists. This quote is a draft written from her summary (2026-09-25), not his words.** It goes on the live site only after Tor reads it, edits it if he wants, and approves it with his name and title.
+- Draft (for his approval): "I always enjoy working with Olena. We have taken on very different projects together, and she helps develop each one from the first idea to a finished product."
+
 ---
 
 ## Where the sources disagree (hers to settle)

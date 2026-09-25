@@ -41,7 +41,7 @@ Research note, for her to decide: hiring managers spend about 10 s on the homepa
 - Qualities: loves learning · goes to design and AI conferences · precise and accountable (seven years in law) · works in Ukrainian, English and Norwegian.
 
 ## Testimonials
-Maiia Stiupan (Owner, Stiupan Translations ENK) and Amund Gulsvik (Professor emeritus, University of Bergen) — quotes from `cv.md`. **Contacts are not shown on the landing; consent to publish names is still to be confirmed.**
+Maiia Stiupan (Owner, Stiupan Translations ENK) and Amund Gulsvik (Professor emeritus, University of Bergen) — quotes from `cv.md`. Tor Martin Olsen (Scale Group AS) — **draft quote, not his words yet; needs his approval and job title before launch** (`cv.md`). **Contacts are not shown on the landing; consent to publish names is still to be confirmed.**
 
 ## Learning
 Anthropic — Subagents, Agent skills (Jun 2026), Claude (Mar 2026) · Warmy — Email deliverability expert (Nov 2025) · AI in Web Design Conf 23 (Jun 2023) · UI UX Online Summit 23 (Feb 2023) · Google — Foundations of UX Design · Awwwards Academy (2020).
