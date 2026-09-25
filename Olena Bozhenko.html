@@ -157,7 +157,8 @@ section{padding-block:clamp(72px,10vw,140px)}
 
 /* about */
 .about{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,4vw,64px);padding-top:48px}
-.photo{aspect-ratio:4/5;background:var(--well);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.photo{margin:0;aspect-ratio:986/1280;background:var(--well);overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
 .about .bio{display:flex;flex-direction:column;gap:20px;font-size:clamp(19px,1.9vw,24px);line-height:1.4;letter-spacing:-.015em;max-width:40ch}
 .qual{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0 32px}
 .qual li{padding-block:14px;border-top:1px solid var(--rule);font-size:16px}
@@ -368,7 +369,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="wrap">
     <div class="sec-head"><h2 id="about-title">About</h2></div>
     <div class="about">
-      <div class="photo" role="img" aria-label="Photo of Olena Bozhenko, to come">Photo</div>
+      <figure class="photo"><img src="assets/about/olena-bozhenko.jpg" alt="Olena Bozhenko, black-and-white portrait" width="720" height="935" loading="lazy"></figure>
       <div>
         <div class="bio">
           <p>I'm a senior product designer in Oslo. Since 2021 I've designed B2B SaaS for sales outreach and email deliverability at AnyBiz and Warmy: design systems, prototypes, user interviews, research and analytics, more and more of it with AI tools.</p>

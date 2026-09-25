@@ -41,7 +41,7 @@ Maya logo removed 2026-09-25 (designer): it is the Styupan Translation mark, alr
 Research note, for her to decide: hiring managers spend about 10 s on the homepage, so the strongest cases usually go first. The order above is hers and is kept.
 
 ## About (teaser)
-- Photo: *to come*.
+- Photo: black-and-white portrait from her Figma file (My projects, node 159:59103), 2026-09-25 — `assets/about/olena-bozhenko.jpg` (720 × 935, served) and `olena-bozhenko-master.jpg` (986 × 1280). Shown uncropped at its own 986:1280 ratio.
 - Bio: the About draft in `cv.md`, shortened to two paragraphs.
 - Qualities: loves learning · goes to design and AI conferences · precise and accountable (seven years in law) · works in Ukrainian, English and Norwegian.
 
