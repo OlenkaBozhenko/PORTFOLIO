@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Olena Bozhenko — Resume</title>
+<!-- Display layer for the resume PDF. Content source: resume.md. Black and white only. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap">
+<style>
+@page{size:A4;margin:11mm 15mm 10mm 15mm}
+:root{--ink:#000;--mid:#555;--rule:#000;--sans:"Inter Tight","Helvetica Neue",Helvetica,Arial,sans-serif}
+*{box-sizing:border-box}
+html,body{background:#fff;color:var(--ink)}
+body{margin:0;font:400 9.4pt/1.42 var(--sans);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{max-width:180mm;margin:0 auto;padding-block:8mm}
+@media screen{body{padding-inline:16px}}
+@media print{.page{padding:0}}
+h1,h2,h3,p,ul{margin:0}
+a{color:inherit;text-decoration:none}
+header{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.name{font-size:17pt;font-weight:600;letter-spacing:-.02em}
+.contacts{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:8.5pt;color:var(--mid)}
+.statement{font-size:18pt;line-height:1.15;font-weight:500;letter-spacing:-.03em;margin:4.5mm 0 5mm;max-width:150mm;text-wrap:balance}
+.cols{display:grid;grid-template-columns:54mm 1fr;gap:9mm}
+h2{font-size:11.5pt;font-weight:600;letter-spacing:-.01em;padding-bottom:1.5mm;border-bottom:1px solid var(--rule);margin-bottom:2.5mm}
+aside section+section{margin-top:3.4mm}
+aside p,aside li{font-size:8.6pt}
+aside ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:1.6mm}
+aside b{font-weight:600}
+.muted{color:var(--mid)}
+.job{break-inside:avoid;padding-bottom:3.4mm}
+.job+.job{padding-top:1mm}
+.job h3{font-size:10pt;font-weight:600;letter-spacing:-.01em}
+.job h3 span{font-weight:400;color:var(--mid)}
+.where{font-size:8.5pt;color:var(--mid);margin-top:.5mm}
+.job p.lead{margin-top:1.2mm}
+.job ul{padding-left:4mm;margin-top:1.2mm;display:flex;flex-direction:column;gap:.8mm}
+.job li::marker{content:"– "}
+.earlier{list-style:none;padding:0;display:flex;flex-direction:column;gap:1.5mm}
+@media screen and (max-width:640px){.cols{grid-template-columns:1fr}.statement{font-size:20px}}
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1 class="name">Olena Bozhenko</h1>
+    <div class="contacts">
+      <a href="mailto:Bozhenko.ui.ux@gmail.com">Bozhenko.ui.ux@gmail.com</a>
+      <span>+47 925 66 987</span>
+      <a href="https://www.linkedin.com/in/olena-bozhenko-b36071180/">linkedin.com/in/olena-bozhenko-b36071180</a>
+      <a href="https://www.behance.net/bozhenkoUI59ac">behance.net/bozhenkoUI59ac</a>
+    </div>
+  </header>
+
+  <p class="statement">Senior product designer for B2B SaaS, from the first user interview to the design system.</p>
+
+  <div class="cols">
+    <aside>
+      <section>
+        <h2>Summary</h2>
+        <p>I design B2B SaaS products end to end: research and user interviews, prototypes, design systems and analytics, with AI tools built into the work. Before design I spent seven years in law, which taught me precision and accountability for every decision.</p>
+      </section>
+      <section>
+        <h2>Skills</h2>
+        <ul>
+          <li><b>Product design</b><br>Design systems, prototyping, user research, user interviews, analytics, AI tools</li>
+          <li><b>Accessibility</b><br>WCAG 2.2, Apple HIG</li>
+          <li><b>Tools</b><br>Figma, Claude Code, Illustrator, Photoshop, InDesign, After Effects (basic), HTML/CSS basics</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Languages</h2>
+        <p>Ukrainian and Russian (native)<br>English (B2)<br>Norwegian (B1)</p>
+      </section>
+      <section>
+        <h2>Education</h2>
+        <ul>
+          <li>Yaroslav the Wise National Law Academy<br><span class="muted">Master of Law, 2009</span></li>
+          <li>Vinnytsia IT Academy<br><span class="muted">Web design (UI/UX), 2018 – 2020</span></li>
+          <li>Google<br><span class="muted">Foundations of User Experience Design</span></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Learning</h2>
+        <ul>
+          <li>Anthropic<br><span class="muted">Claude · Agent skills · Subagents, 2026</span></li>
+          <li>Warmy<br><span class="muted">Email deliverability expert, 2025</span></li>
+          <li>Conferences<br><span class="muted">AI in Web Design Conf · UI UX Online Summit, 2023</span></li>
+          <li>Awwwards Academy<br><span class="muted">2020</span></li>
+        </ul>
+      </section>
+    </aside>
+
+    <main>
+      <h2>Experience</h2>
+
+      <article class="job">
+        <h3>AnyBiz LTD <span>/ Product Designer / 2024 – Present</span></h3>
+        <p class="where">Remote, Ukrainian team</p>
+        <p class="lead">AI platform for B2B sales prospecting and outreach across email, LinkedIn and phone.</p>
+        <ul>
+          <li>Design product features end to end, from user interviews and research to prototypes and handoff.</li>
+          <li>Build and maintain the design system the product is designed in.</li>
+          <li>Use product analytics to decide what to change and to check the result.</li>
+          <li>Prototype with AI tools to test flows before they reach engineering.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <h3>Warmy <span>/ UI/UX Designer / 2021 – Present</span></h3>
+        <p class="lead">Email warm-up and deliverability tool that keeps campaigns out of spam.</p>
+        <ul>
+          <li>Design the web app for mailbox health, warm-up progress and deliverability.</li>
+          <li>Certified Email deliverability expert, Warmy Inbox Academy, 2025.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <h3>Scale Development AS <span>/ Senior Product Designer / 2023 – 2024</span></h3>
+        <p class="where">Oslo, hybrid, part-time</p>
+      </article>
+
+      <article class="job">
+        <h3>AnyBiz LTD <span>/ UI/UX Designer / 2021 – 2022</span></h3>
+        <p class="where">Ukraine / Israel</p>
+        <p class="lead">Web and admin-panel design for the outreach platform.</p>
+      </article>
+
+      <article class="job">
+        <h3>Freelance <span>/ Brand and book design / 2023 – 2024</span></h3>
+        <p class="where">Oslo</p>
+        <ul>
+          <li>Logo for Stiupan Translations ENK, then UI/UX and book design for the same client.</li>
+          <li>Layout of a 432-page family history book with 300+ images, printed by LOS DIGITAL AS in 2024.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <h3>DRON <span>/ Personal project / 2026</span></h3>
+        <ul>
+          <li>Drone-as-a-service platform taken from research to a 134-page clickable prototype and a token-based design system, with a WCAG and HIG check on every decision. Built with Claude Code.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <h3>Earlier</h3>
+        <ul class="earlier">
+          <li>Fakkeltog, Oslo <span class="muted">/ Project Manager / 2023</span></li>
+          <li>IT-Academy, Vinnytsia <span class="muted">/ Web Designer / 2018 – 2020</span></li>
+          <li>Vinnytsia city department of justice <span class="muted">/ Leading specialist / 2009 – 2016</span></li>
+        </ul>
+      </article>
+    </main>
+  </div>
+</div>
+</body>
+</html>

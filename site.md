@@ -6,13 +6,13 @@ Built from [`inspiration.md`](inspiration.md) (decisions D1–D9) and [`cv.md`](
 ---
 
 ## Structure
-1. **Nav** — name on the left; Work · About · Contact on the right.
+1. **Nav** — name on the left; Work · About · Contact · Resume on the right. Resume opens `assets/Olena-Bozhenko-Resume.pdf` in a new tab (joshmateo.com pattern; source `resume.md` → `resume.html`).
 2. **Hero** (D9, page-grid.com) — one large headline; around it, outlined interface blocks with small blue labels that drift slowly. The blocks name what she does: *Design system · Prototype · User interview · Analytics · AI tools · WCAG 2.2*. A visible **Pause motion** button (WCAG 2.2.2); motion is off under `prefers-reduced-motion`.
 3. **Work** (D2–D5; karoliskosas.com titles + rmd-studio.com rows) — seven rows. Left: "Name — descriptor", one-paragraph description, meta (Role · Year · Platform), a **View {project} project** link on a full-width rule. Right: a large image on a pale background, no device mockup. SaaS projects show UI fragments on a gridded panel (ramos-app).
 4. **About** (D6, joshmateo.com) — photo, short bio, personal qualities, link to the full About page.
 5. **Testimonials** (D6) — quote, name, role.
 6. **Learning** — courses, certificates, conferences.
-7. **Contact** — email (selectable text + Copy), LinkedIn, Behance.
+7. **Contact** — email (selectable text + Copy), LinkedIn, Behance, Resume (PDF).
 
 ## Hero copy
 - Eyebrow: Olena Bozhenko · Senior Product Designer · Oslo
