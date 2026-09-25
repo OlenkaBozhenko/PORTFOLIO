@@ -2,9 +2,9 @@
 
 Personal portfolio website of **Olena Bozhenko**, a senior product designer based in Oslo, working remotely with a Ukrainian product team on B2B SaaS. The site is built for her Senior Product Designer job search in Ukraine, Norway, Europe and the USA.
 
-**Live preview → [Olena Bozhenko](https://claude.ai/artifact/TZajshUY8roLsqNuWBmrZV)** · source: [`Olena Bozhenko.html`](Olena%20Bozhenko.html)
+**Website → https://olenkabozhenko.github.io/PORTFOLIO/** (opens the landing page [`Olena Bozhenko.html`](Olena%20Bozhenko.html))
 
-The preview is a private Claude Artifact: it opens for the owner and for people she shares it with from the page's Share menu. It is built from the landing by `tools/build-preview.py`, which also leaves out any testimonial marked DRAFT. After changing the landing, rebuild and republish the preview so the link shows the current version.
+The address works once the repository is public and GitHub Pages is switched on (Settings → Pages → Deploy from branch `master`, folder `/`). GitHub Pages is not available for private repositories on the free plan, so until then open `Olena Bozhenko.html` from a clone of the repository in any browser.
 
 ## What is on the landing page
 - **Hero** — a large headline surrounded by outlined interface and code blocks (Figma component icons, `</>` code icons) that drift and can be dragged within the first screen; a Play / Pause music control.
@@ -24,7 +24,7 @@ The preview is a private Claude Artifact: it opens for the owner and for people 
 | [`resume.md`](resume.md) → [`resume.html`](resume.html) → [`assets/Olena-Bozhenko-Resume.pdf`](assets/Olena-Bozhenko-Resume.pdf) | Black-and-white one-page resume |
 | [`inspiration.md`](inspiration.md) / [`inspiration.html`](inspiration.html) | Visual references and the designer's decisions |
 | [`research/market-research.md`](research/market-research.md) | Senior Product Designer job market: Ukraine, Norway, Europe, USA |
-| [`tools/build-preview.py`](tools/build-preview.py) | Builds the preview copy of the landing for the Claude Artifact |
+| [`index.html`](index.html) | Site root for GitHub Pages; opens the landing page |
 | [`CLAUDE.md`](CLAUDE.md) | Project brief and working rules |
 
 ## Working rules
