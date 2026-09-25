@@ -2,9 +2,9 @@
 
 Personal portfolio website of **Olena Bozhenko**, a senior product designer based in Oslo, working remotely with a Ukrainian product team on B2B SaaS. The site is built for her Senior Product Designer job search in Ukraine, Norway, Europe and the USA.
 
-**Landing page → [Olena Bozhenko.html](Olena%20Bozhenko.html)**
+**Live preview → [Olena Bozhenko](https://claude.ai/artifact/TZajshUY8roLsqNuWBmrZV)** · source: [`Olena Bozhenko.html`](Olena%20Bozhenko.html)
 
-The repository is private, so GitHub shows the file's source, not the rendered page. To view the site, clone the repository and open `Olena Bozhenko.html` in a browser.
+The preview is a private Claude Artifact: it opens for the owner and for people she shares it with from the page's Share menu. It is built from the landing by `tools/build-preview.py`, which also leaves out any testimonial marked DRAFT. After changing the landing, rebuild and republish the preview so the link shows the current version.
 
 ## What is on the landing page
 - **Hero** — a large headline surrounded by outlined interface and code blocks (Figma component icons, `</>` code icons) that drift and can be dragged within the first screen; a Play / Pause music control.
@@ -24,6 +24,7 @@ The repository is private, so GitHub shows the file's source, not the rendered p
 | [`resume.md`](resume.md) → [`resume.html`](resume.html) → [`assets/Olena-Bozhenko-Resume.pdf`](assets/Olena-Bozhenko-Resume.pdf) | Black-and-white one-page resume |
 | [`inspiration.md`](inspiration.md) / [`inspiration.html`](inspiration.html) | Visual references and the designer's decisions |
 | [`research/market-research.md`](research/market-research.md) | Senior Product Designer job market: Ukraine, Norway, Europe, USA |
+| [`tools/build-preview.py`](tools/build-preview.py) | Builds the preview copy of the landing for the Claude Artifact |
 | [`CLAUDE.md`](CLAUDE.md) | Project brief and working rules |
 
 ## Working rules
