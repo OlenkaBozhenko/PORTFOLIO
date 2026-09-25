@@ -49,8 +49,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.035em;text-wrap:balance}
 /* hero */
 .hero{position:relative;padding-block:clamp(56px,9vw,120px) clamp(64px,9vw,120px);overflow:hidden}
 .hero .wrap{position:relative;min-height:clamp(520px,62vw,760px);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
-.h1box{position:relative;border:1px solid var(--label);padding:clamp(10px,1.4vw,18px) clamp(12px,2vw,28px);max-width:1080px;z-index:2;background:var(--bg)}
-.h1box>.label{position:absolute;left:-1px;top:-18px}
+.h1box{position:relative;max-width:1080px;z-index:2;background:var(--bg)}
 h1{font-size:clamp(40px,7.4vw,104px);line-height:.98;letter-spacing:-.05em}
 .hero-sub{margin-top:28px;max-width:56ch;color:var(--muted);font-size:clamp(16px,1.6vw,19px);position:relative;z-index:2;background:var(--bg)}
 .hero-meta{margin-bottom:28px;position:relative;z-index:2}
@@ -101,7 +100,6 @@ h1{font-size:clamp(40px,7.4vw,104px);line-height:.98;letter-spacing:-.05em}
   .b-ds,.b-ai,.b-wcag,.b-code1{display:flex}
   .hero-blocks{display:flex;flex-wrap:wrap;gap:24px 16px;margin-top:48px}
   .pause{display:none}
-  .h1box>.label{top:-18px}
 }
 
 /* sections */
@@ -216,7 +214,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="wrap">
     <p class="eyebrow hero-meta">Senior Product Designer · Oslo, Norway</p>
     <div class="h1box">
-      <span class="label" aria-hidden="true">Headline H1</span>
       <h1 id="hero-title">I design B2B products from the first interview to the design system.</h1>
     </div>
     <p class="hero-sub">Working remotely with a Ukrainian product team on SaaS used every day: research, prototypes, design systems and AI tools.</p>
