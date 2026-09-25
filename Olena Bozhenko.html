@@ -94,7 +94,7 @@ h1{font-size:clamp(40px,7.4vw,104px);line-height:.98;letter-spacing:-.05em}
 .ratio b{font-weight:500;font-size:22px;letter-spacing:-.03em}
 .pause{position:absolute;right:var(--gutter);bottom:-40px;z-index:3;font:inherit;font-size:13px;background:var(--bg);color:var(--ink);border:1px solid var(--ink);border-radius:999px;padding:8px 14px;min-height:36px;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
 .pause:hover{background:var(--ink);color:var(--bg)}
-@media (prefers-reduced-motion:reduce){.pause{display:none}}
+.pause[hidden]{display:none}
 @media (max-width:900px){
   .hero .wrap{min-height:auto;display:block;text-align:left}
   .blk{position:static;animation:none;display:none}
@@ -244,10 +244,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="blk b-code3 code"><span class="label"><svg class="ico code" width="12" height="11" viewBox="0 0 12 12"><path d="M3.8 3 1 6l2.8 3M8.2 3 11 6 8.2 9M7 2 5 10"/></svg>Claude Code</span><div class="box"><code><span class="k">&gt;</span> build the order screen<span class="caret"></span></code></div></div>
     </div>
 
-    <button class="pause" type="button" aria-pressed="false" id="pause">
-      <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 2v8M9 2v8" stroke="currentColor" stroke-width="1.7" fill="none"/></svg>
-      <span>Pause motion</span>
+    <button class="pause" type="button" id="sound" aria-label="Play music" hidden>
+      <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5v9L10.5 6z" fill="currentColor"/></svg>
+      <span>Play</span>
     </button>
+    <audio id="music" src="assets/music.mp3" loop preload="metadata"></audio>
   </div>
 </section>
 
@@ -447,12 +448,26 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <script>
 (function(){
-  var hero=document.getElementById('hero'),btn=document.getElementById('pause');
-  if(btn){btn.addEventListener('click',function(){
-    var p=hero.classList.toggle('paused');
-    btn.setAttribute('aria-pressed',p?'true':'false');
-    btn.querySelector('span').textContent=p?'Play motion':'Pause motion';
-  });}
+  var hero=document.getElementById('hero');
+
+  /* Music: starts only on Play, loops, hidden if the file is missing (site.md, Hero) */
+  var btn=document.getElementById('sound'),music=document.getElementById('music');
+  if(btn&&music){
+    var PLAY='<path d="M3 1.5v9L10.5 6z" fill="currentColor"/>',
+        PAUSE='<path d="M3 2v8M9 2v8" stroke="currentColor" stroke-width="1.7" fill="none"/>';
+    var show=function(on){
+      btn.querySelector('span').textContent=on?'Pause':'Play';
+      btn.setAttribute('aria-label',on?'Pause music':'Play music');
+      btn.querySelector('svg').innerHTML=on?PAUSE:PLAY;
+    };
+    music.addEventListener('loadedmetadata',function(){btn.hidden=false;});
+    if(music.readyState>0)btn.hidden=false;
+    btn.addEventListener('click',function(){
+      if(music.paused){music.play().then(function(){show(true);}).catch(function(){});}
+      else{music.pause();show(false);}
+    });
+    music.addEventListener('ended',function(){show(false);});
+  }
 
   /* Drag the hero blocks; they stay inside the first screen (site.md, Hero) */
   var wide=window.matchMedia('(min-width:901px)');

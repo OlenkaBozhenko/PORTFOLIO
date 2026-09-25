@@ -8,6 +8,8 @@ Built from [`inspiration.md`](inspiration.md) (decisions D1–D9) and [`cv.md`](
 ## Structure
 1. **Nav** — name on the left; Work · About · Contact · Resume on the right. Resume opens `assets/Olena-Bozhenko-Resume.pdf` in a new tab (joshmateo.com pattern; source `resume.md` → `resume.html`).
 2. **Hero** (D9, page-grid.com) — one large headline; around it, outlined interface blocks with small blue labels that drift slowly. The blocks name what she does: *Design system · Prototype · User interview · Analytics · AI tools · WCAG 2.2*. A visible **Pause motion** button (WCAG 2.2.2); motion is off under `prefers-reduced-motion`.
+   - *Revised 2026-09-25 (designer):* the **Pause motion** button becomes a **music** control — **Play** / **Pause** (accessible name "Play music" / "Pause music"). Music never starts on its own; it loops `assets/music.mp3` from the first Play. The button is hidden when the file is missing and, as before, on phones (≤ 900 px).
+   - *Standards — a recorded departure, the designer's call:* WCAG 1.4.2 Audio Control passes — sound starts only on Play and stops on Pause. **WCAG 2.2.2 Pause, Stop, Hide now fails:** the blocks drift for longer than 5 s and nothing on the page pauses them; only `prefers-reduced-motion` stops them, which does not satisfy 2.2.2. Options offered were two buttons, or one button for music and motion; she chose music only.
    - *Revised 2026-09-25 (designer):* every design block's label carries the **Figma component icon** (four diamonds) before its name. **Code blocks** join them in the same outlined frames, labelled with a **code icon** `</>`: `<Button variant="primary" />`, a design token from `tokens.css`, and a Claude Code prompt.
    - *Revised 2026-09-25 (designer):* **every block can be dragged** with mouse or touch pen and stays inside the first screen — it cannot be pushed off the edge. A dragged block stops drifting and stays where it was dropped. On phones (≤ 900 px) blocks sit in the page flow and are not draggable, so a finger on a block still scrolls the page.
    - *Standards:* the blocks are decoration (`aria-hidden`), so dragging them carries no information and no function — WCAG 2.5.7 Dragging Movements and 2.1.1 Keyboard apply to functionality, and none is lost for a keyboard or single-pointer user. The label blue `#2B3BD6` on white is 7.78:1, the icons use the same colour.
@@ -54,7 +56,8 @@ Anthropic — Subagents, Agent skills (Jun 2026), Claude (Mar 2026) · Warmy —
 - White page (D1). Ink `#0E0E0E` (19.3:1). Muted `#6B6B6B` (5.33:1 on white, passes 1.4.3). Rules `#E6E6E6`. Image wells `#F3F3F1`. Hero label blue `#2B3BD6` (7.78:1 on white, 7.0:1 on the wells). Muted on the wells: 4.8:1. Outline strokes of hero blocks use ink, so they carry 1.4.11 (≥ 3:1) with room to spare.
 
 ## Standards applied (WCAG 2.2 AA)
-- 2.2.2: hero motion has a Pause button; stops under `prefers-reduced-motion`.
+- 2.2.2: **not met since 2026-09-25** — the Pause button now controls music; hero motion stops only under `prefers-reduced-motion` (see Structure → Hero).
+- 1.4.2: music starts only on Play and has a Pause.
 - 2.4.4: each work link reads "View {project} project".
 - 1.1.1: every image has alt text; decorative hero blocks are `aria-hidden`.
 - 2.4.7 / 2.4.11: visible focus ring, never hidden by sticky nav.
