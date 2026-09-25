@@ -18,6 +18,10 @@ Built from [`inspiration.md`](inspiration.md) (decisions D1–D9) and [`cv.md`](
 5. **Testimonials** (D6) — quote, name, role.
 6. **Learning** — courses, certificates, conferences.
 7. **Contact** — email (selectable text + Copy), LinkedIn, Behance, Resume (PDF).
+8. **Cursor** (designer, 2026-09-25) — on a mouse or trackpad the system pointer is replaced by a **circle** that follows it with a short, smooth lag. 16 px filled, drawn with `mix-blend-mode: difference`, so it reads black on white and white on black buttons. Over a link or button it grows to a 44 px ring; over a draggable hero block it becomes a 44 px ring with a **drag** label; while dragging it shrinks. Hidden when the pointer leaves the window.
+   - Touch screens keep no cursor at all (`hover: none` / `pointer: coarse`): the circle is never drawn there.
+   - `prefers-reduced-motion`: the circle follows the pointer exactly, with no lag and no size transition.
+   - *Standards:* no WCAG 2.2 criterion covers the pointer's appearance, so this conforms. The only risk is legibility for low-vision users who enlarge the system pointer — their enlarged pointer is hidden too. Keyboard focus is untouched (2.4.7): the focus ring still shows on every control.
 
 ## Hero copy
 - Eyebrow: Olena Bozhenko · Senior Product Designer · Oslo

@@ -188,6 +188,16 @@ figure.q figcaption b{display:block;color:var(--ink);font-weight:500}
 .status{font-size:14px;color:var(--muted);min-height:1.5em;margin-top:12px}
 footer{border-top:1px solid var(--rule);padding-block:28px;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+/* custom cursor (site.md, Structure 8) */
+.cursor{position:fixed;left:0;top:0;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:#fff;mix-blend-mode:difference;pointer-events:none;z-index:1000;opacity:0;transition:width .2s ease,height .2s ease,margin .2s ease,background-color .2s ease,border-color .2s ease,opacity .2s ease;border:1.5px solid transparent;display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:.04em;text-transform:uppercase;color:#fff}
+.cursor span{opacity:0;transition:opacity .15s ease}
+.cursor.on{opacity:1}
+.cursor.link,.cursor.drag{width:44px;height:44px;margin:-22px 0 0 -22px;background:transparent;border-color:#fff}
+.cursor.drag span{opacity:1}
+.cursor.down{width:10px;height:10px;margin:-5px 0 0 -5px;background:#fff}
+@media (hover:hover) and (pointer:fine){html.has-cursor,html.has-cursor *{cursor:none!important}}
+@media (hover:none),(pointer:coarse){.cursor{display:none}}
+@media (prefers-reduced-motion:reduce){.cursor{transition:opacity .01s}}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 </style>
 </head>
@@ -444,6 +454,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="wrap"><span>© 2026 Olena Bozhenko</span><span>Oslo, Norway · works remotely</span></div>
 </footer>
 
+<div class="cursor" aria-hidden="true"><span>drag</span></div>
 <script>
 (function(){
   var hero=document.getElementById('hero');
@@ -467,6 +478,29 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     music.addEventListener('ended',function(){show(false);});
   }
 
+
+  /* Custom cursor: a circle instead of the pointer (site.md, Structure 8) */
+  var fine=window.matchMedia('(hover:hover) and (pointer:fine)'),still=window.matchMedia('(prefers-reduced-motion:reduce)');
+  var cur=document.querySelector('.cursor');
+  if(cur&&fine.matches){
+    document.documentElement.classList.add('has-cursor');
+    var tx=-100,ty=-100,cx=-100,cy=-100,raf=null;
+    var place=function(){cur.style.transform='translate3d('+cx+'px,'+cy+'px,0)';};
+    var tick=function(){cx+=(tx-cx)*.22;cy+=(ty-cy)*.22;place();
+      raf=(Math.abs(tx-cx)>.1||Math.abs(ty-cy)>.1)?requestAnimationFrame(tick):null;};
+    document.addEventListener('pointermove',function(e){
+      if(e.pointerType!=='mouse')return;
+      tx=e.clientX;ty=e.clientY;cur.classList.add('on');
+      if(still.matches){cx=tx;cy=ty;place();}else if(!raf)raf=requestAnimationFrame(tick);
+      var t=e.target.closest?e.target:null;
+      var dragZone=t&&t.closest('.blk')&&window.matchMedia('(min-width:901px)').matches;
+      cur.classList.toggle('drag',!!dragZone);
+      cur.classList.toggle('link',!dragZone&&!!(t&&t.closest('a,button')));
+    },{passive:true});
+    document.addEventListener('pointerdown',function(e){if(e.pointerType==='mouse')cur.classList.add('down');});
+    document.addEventListener('pointerup',function(){cur.classList.remove('down');});
+    document.documentElement.addEventListener('mouseleave',function(){cur.classList.remove('on');});
+  }
   /* Drag the hero blocks; they stay inside the first screen (site.md, Hero) */
   var wide=window.matchMedia('(min-width:901px)');
   var wrap=hero.querySelector('.wrap');
