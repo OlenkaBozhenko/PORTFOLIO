@@ -8,8 +8,9 @@
 <!-- Display layer. Content source: site.md, cv.md, inspiration.md -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Instrument Serif italic: only the headline phrases (site.md, Hero) -->
 <!-- Inter Tight: stand-in for Aeonik / Neue Haas Grotesk (inspiration D8) until the typeface is chosen -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500&family=Instrument+Serif:ital@1&display=swap">
 <style>
 :root{
   --bg:#FFFFFF;      /* D1: white, always */
@@ -59,6 +60,7 @@ h1{font-size:clamp(40px,7.4vw,104px);line-height:.98;letter-spacing:-.05em}
 .hero.paused .blk{animation-play-state:paused}
 .blk .label{display:inline-flex;align-items:center;gap:5px;align-self:center;white-space:nowrap}
 .blk .label .ico{stroke:none;fill:currentColor;flex:none}
+.phrase .label .ico{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}
 .blk .label .ico.code{fill:none;stroke:currentColor;stroke-width:1.4}
 .blk code{font:400 13px/1.2 ui-monospace,"SFMono-Regular","JetBrains Mono",Consolas,monospace;color:var(--ink);white-space:pre}
 .blk code .caret{display:inline-block;vertical-align:middle;margin-left:2px}
@@ -94,8 +96,33 @@ h1{font-size:clamp(40px,7.4vw,104px);line-height:.98;letter-spacing:-.05em}
 .pause{position:absolute;right:var(--gutter);bottom:-40px;z-index:3;font:inherit;font-size:13px;background:var(--bg);color:var(--ink);border:1px solid var(--ink);border-radius:999px;padding:8px 14px;min-height:36px;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
 .pause:hover{background:var(--ink);color:var(--bg)}
 .pause[hidden]{display:none}
+/* headline slot + phrase blocks (site.md, Hero) */
+.slot{display:inline-block;position:relative;min-width:3.4em;height:.84em;vertical-align:-.08em;border:2px dashed var(--ink);border-radius:.14em;transition:background-color .2s ease}
+.slot-hint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:400 14px/1.2 var(--sans);letter-spacing:.02em;color:var(--label)}
+.slot.over{background:var(--well)}
+.slot.filled{display:inline;min-width:0;height:auto;border:0;vertical-align:baseline}
+.slot.filled .slot-hint{display:none}
+.serif{font-family:"Instrument Serif",Georgia,"Times New Roman",serif;font-style:italic;font-weight:400;letter-spacing:-.015em}
+.slot.filled .slot-text{animation:land .5s ease-out}
+@keyframes land{from{opacity:0}}
+.hero-phrases{display:contents}
+button.blk{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;text-align:inherit}
+.phrase{z-index:1}
+.phrase .box{padding:10px 16px;min-height:44px}
+.phrase .say{font-size:26px;line-height:1;color:var(--ink);white-space:nowrap}
+.phrase.used{visibility:hidden}
+.phrase.fly{transition:translate .9s cubic-bezier(.2,.8,.2,1),scale .9s cubic-bezier(.2,.8,.2,1),opacity .35s ease}
+.p1{left:4%;top:24%;--d:10s;--y:8px}
+.p2{right:4%;top:22%;--d:11s;--x:-6px}
+.p3{left:40%;bottom:6%;--d:9.5s;--y:-6px}
+.p4{left:20%;bottom:22%;--d:12s;--x:6px}
+.p5{right:18%;bottom:20%;--d:10.5s;--y:8px}
+@media (prefers-reduced-motion:reduce){.slot.filled .slot-text{animation:none}.phrase.fly{transition:none}}
 @media (max-width:900px){
   .hero .wrap{min-height:auto;display:block;text-align:left}
+  .hero-phrases{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+  .blk.phrase{display:flex}
+  .phrase.used{display:none}
   .blk{position:static;animation:none;display:none}
   .b-ds,.b-ai,.b-wcag,.b-code1{display:flex}
   .hero-blocks{display:flex;flex-wrap:wrap;gap:24px 16px;margin-top:48px}
@@ -225,7 +252,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="wrap">
     <p class="eyebrow hero-meta">Senior Product Designer</p>
     <div class="h1box">
-      <h1 id="hero-title">I design B2B products from the first interview to the design system.</h1>
+      <h1 id="hero-title">I design B2B products from the idea to <span class="slot" id="slot"><span class="slot-text serif"></span><span class="vh slot-sr">the design system</span><span class="slot-hint" aria-hidden="true">drop a phrase here</span></span>.</h1>
     </div>
     <p class="hero-sub">Working remotely with a Ukrainian product team on SaaS used every day: research, prototypes, design systems and AI tools.</p>
 
@@ -252,6 +279,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="blk b-code2 code"><span class="label"><svg class="ico code" width="12" height="11" viewBox="0 0 12 12"><path d="M3.8 3 1 6l2.8 3M8.2 3 11 6 8.2 9M7 2 5 10"/></svg>tokens.css</span><div class="box"><code><span class="a">--color-action</span>: <span class="v">#0E0E0E</span>;</code></div></div>
       <div class="blk b-code3 code"><span class="label"><svg class="ico code" width="12" height="11" viewBox="0 0 12 12"><path d="M3.8 3 1 6l2.8 3M8.2 3 11 6 8.2 9M7 2 5 10"/></svg>Claude Code</span><div class="box"><code><span class="k">&gt;</span> build the order screen<span class="caret"></span></code></div></div>
     </div>
+
+    <div class="hero-phrases" role="group" aria-label="Finish the headline">
+      <button class="blk phrase p1" type="button" data-phrase="the design system" aria-label="Finish the headline with: the design system"><span class="label" aria-hidden="true"><svg class="ico" width="11" height="11" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 2h8M6 2v8.5"/></svg>Headline</span><span class="box"><span class="say serif">the design system</span></span></button>
+      <button class="blk phrase p2" type="button" data-phrase="the last pixel" aria-label="Finish the headline with: the last pixel"><span class="label" aria-hidden="true"><svg class="ico" width="11" height="11" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 2h8M6 2v8.5"/></svg>Headline</span><span class="box"><span class="say serif">the last pixel</span></span></button>
+      <button class="blk phrase p3" type="button" data-phrase="production" aria-label="Finish the headline with: production"><span class="label" aria-hidden="true"><svg class="ico" width="11" height="11" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 2h8M6 2v8.5"/></svg>Headline</span><span class="box"><span class="say serif">production</span></span></button>
+      <button class="blk phrase p4" type="button" data-phrase="the first paying customer" aria-label="Finish the headline with: the first paying customer"><span class="label" aria-hidden="true"><svg class="ico" width="11" height="11" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 2h8M6 2v8.5"/></svg>Headline</span><span class="box"><span class="say serif">the first paying customer</span></span></button>
+      <button class="blk phrase p5" type="button" data-phrase="a product people open every day" aria-label="Finish the headline with: a product people open every day"><span class="label" aria-hidden="true"><svg class="ico" width="11" height="11" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 2h8M6 2v8.5"/></svg>Headline</span><span class="box"><span class="say serif">a product people open every day</span></span></button>
+    </div>
+    <p class="vh" id="said" role="status" aria-live="polite"></p>
 
     <button class="pause" type="button" id="sound" aria-label="Play music" hidden>
       <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5v9L10.5 6z" fill="currentColor"/></svg>
@@ -458,7 +494,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <div class="cursor" aria-hidden="true"><span>drag</span></div>
 <script>
 (function(){
-  var hero=document.getElementById('hero');
+  var hero=document.getElementById('hero'),wide=window.matchMedia('(min-width:901px)');
 
   /* Music: starts only on Play, loops, hidden if the file is missing (site.md, Hero) */
   var btn=document.getElementById('sound'),music=document.getElementById('music');
@@ -502,8 +538,39 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     document.addEventListener('pointerup',function(){cur.classList.remove('down');});
     document.documentElement.addEventListener('mouseleave',function(){cur.classList.remove('on');});
   }
+  /* The visitor finishes the headline (site.md, Hero) */
+  var slot=document.getElementById('slot'),said=document.getElementById('said'),current=null;
+  var calm=window.matchMedia('(prefers-reduced-motion:reduce)');
+  var over=function(e){var r=slot.getBoundingClientRect(),m=24;
+    return e.clientX>r.left-m&&e.clientX<r.right+m&&e.clientY>r.top-m&&e.clientY<r.bottom+m;};
+  /* fly a phrase from the slot to its own place */
+  var fly=function(el,delay){
+    if(calm.matches||!window.matchMedia('(min-width:901px)').matches)return;
+    var a=slot.getBoundingClientRect(),b=el.getBoundingClientRect();
+    el.classList.remove('fly');
+    el.style.translate=((a.left+a.width/2)-(b.left+b.width/2))+'px '+((a.top+a.height/2)-(b.top+b.height/2))+'px';
+    el.style.scale='.4';el.style.opacity='0';
+    el.getBoundingClientRect();
+    el.style.transitionDelay=(delay||0)+'ms';el.classList.add('fly');
+    el.style.translate='';el.style.scale='';el.style.opacity='';
+  };
+  var finish=function(el){
+    var t=el.getAttribute('data-phrase');
+    if(current&&current!==el){current.classList.remove('used','moved');current.removeAttribute('style');fly(current);}
+    el.classList.add('used');current=el;
+    slot.classList.add('filled');
+    var txt=slot.querySelector('.slot-text');txt.textContent=t;
+    txt.style.animation='none';txt.getBoundingClientRect();txt.style.animation='';
+    slot.querySelector('.slot-sr').textContent='';
+    said.textContent='Headline: I design B2B products from the idea to '+t+'.';
+    if(document.activeElement===el){var n=el.parentNode.querySelector('.phrase:not(.used)');if(n)n.focus();}
+  };
+  hero.querySelectorAll('.phrase').forEach(function(el,i){
+    el.addEventListener('click',function(e){if(wide.matches&&e.detail>0)return;finish(el);});
+    fly(el,120+i*70);
+  });
+
   /* Drag the hero blocks; they stay inside the first screen (site.md, Hero) */
-  var wide=window.matchMedia('(min-width:901px)');
   var wrap=hero.querySelector('.wrap');
   hero.querySelectorAll('.blk').forEach(function(el){
     var sx,sy,ox,oy,id=null;
@@ -525,7 +592,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       var x=Math.min(Math.max(ox+e.clientX-sx,minX),maxX), y=Math.min(Math.max(oy+e.clientY-sy,minY),maxY);
       el.style.left=x+'px';el.style.top=y+'px';
     });
-    function end(e){if(e.pointerId!==id)return;id=null;el.classList.remove('dragging');}
+    function end(e){if(e.pointerId!==id)return;id=null;el.classList.remove('dragging');
+      if(!el.classList.contains('phrase'))return;
+      slot.classList.remove('over');
+      var far=Math.abs(e.clientX-sx)+Math.abs(e.clientY-sy)>6;
+      if(e.type==="pointerup"&&(!far||over(e)))finish(el);
+    }
+    if(el.classList.contains('phrase'))el.addEventListener('pointermove',function(e){if(e.pointerId===id)slot.classList.toggle('over',over(e));});
     el.addEventListener('pointerup',end);el.addEventListener('pointercancel',end);
   });
   wide.addEventListener&&wide.addEventListener('change',function(){if(!wide.matches)hero.querySelectorAll('.blk.moved').forEach(function(el){el.classList.remove('moved');el.removeAttribute('style');});});
