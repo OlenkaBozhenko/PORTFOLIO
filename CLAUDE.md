@@ -7,6 +7,7 @@
 ## Working process
 
 1. Research → `research/` (done 2026-09-24: [`research/market-research.md`](research/market-research.md))
+   - CV and testimonials → [`cv.md`](cv.md); visual references → [`inspiration.md`](inspiration.md)
 2. Positioning and content (target market, case selection, copy)
 3. Structure / wireframes
 4. Visual design
