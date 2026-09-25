@@ -19,6 +19,7 @@
   --rule:#E6E6E6;
   --well:#F3F3F1;
   --label:#2B3BD6;   /* 7.78:1 on white */
+  --error:#C8102E;   /* 5.9:1 on white */
   --grid:#E4E4E0;
   --sans:"Inter Tight","Helvetica Neue",Helvetica,Arial,sans-serif;
   --gutter:clamp(16px,4vw,56px);
@@ -100,6 +101,10 @@ h1{font-size:clamp(40px,7.4vw,104px);line-height:.98;letter-spacing:-.05em}
 .slot{display:inline-block;position:relative;min-width:3.4em;height:.84em;vertical-align:-.08em;border:2px dashed var(--ink);border-radius:.14em;transition:background-color .2s ease}
 .slot-hint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:400 14px/1.2 var(--sans);letter-spacing:.02em;color:var(--label)}
 .slot.over{background:var(--well)}
+/* a block that is not a phrase over the slot: error stroke + hint (not colour alone, 1.4.1) */
+.slot.wrong{border-color:var(--error);background:none}
+.slot.wrong .slot-hint{color:var(--error)}
+.slot.filled.wrong{outline:2px solid var(--error);outline-offset:.12em}
 .slot.filled{display:inline;min-width:0;height:auto;border:0;vertical-align:baseline}
 .slot.filled .slot-hint{display:none}
 .serif{font-family:"Instrument Serif",Georgia,"Times New Roman",serif;font-style:italic;font-weight:400;letter-spacing:-.015em}
@@ -112,10 +117,7 @@ button.blk{font:inherit;color:inherit;background:none;border:0;padding:0;margin:
 .phrase .say{font-size:26px;line-height:1;color:var(--ink);white-space:nowrap}
 .phrase.used{visibility:hidden}
 .phrase.fly{transition:translate .9s cubic-bezier(.2,.8,.2,1),scale .9s cubic-bezier(.2,.8,.2,1),opacity .35s ease}
-.p1{left:4%;top:24%;--d:10s;--y:8px}
-.p2{right:4%;top:22%;--d:11s;--x:-6px}
 .p3{left:40%;bottom:6%;--d:9.5s;--y:-6px}
-.p4{left:20%;bottom:22%;--d:12s;--x:6px}
 .p5{right:18%;bottom:20%;--d:10.5s;--y:8px}
 @media (prefers-reduced-motion:reduce){.slot.filled .slot-text{animation:none}.phrase.fly{transition:none}}
 @media (max-width:900px){
@@ -252,7 +254,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="wrap">
     <p class="eyebrow hero-meta">Senior Product Designer</p>
     <div class="h1box">
-      <h1 id="hero-title">I design B2B products from the idea to <span class="slot" id="slot"><span class="slot-text serif"></span><span class="vh slot-sr">the design system</span><span class="slot-hint" aria-hidden="true">drop a phrase here</span></span>.</h1>
+      <h1 id="hero-title">I design B2B products from the idea to <span class="slot" id="slot"><span class="slot-text serif"></span><span class="vh slot-sr">production</span><span class="slot-hint" aria-hidden="true">drop a phrase here</span></span>.</h1>
     </div>
     <p class="hero-sub">Working remotely with a Ukrainian product team on SaaS used every day: research, prototypes, design systems and AI tools.</p>
 
@@ -281,10 +283,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     </div>
 
     <div class="hero-phrases" role="group" aria-label="Finish the headline">
-      <button class="blk phrase p1" type="button" data-phrase="the design system" aria-label="Finish the headline with: the design system"><span class="label" aria-hidden="true"><svg class="ico" width="11" height="11" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 2h8M6 2v8.5"/></svg>Headline</span><span class="box"><span class="say serif">the design system</span></span></button>
-      <button class="blk phrase p2" type="button" data-phrase="the last pixel" aria-label="Finish the headline with: the last pixel"><span class="label" aria-hidden="true"><svg class="ico" width="11" height="11" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 2h8M6 2v8.5"/></svg>Headline</span><span class="box"><span class="say serif">the last pixel</span></span></button>
       <button class="blk phrase p3" type="button" data-phrase="production" aria-label="Finish the headline with: production"><span class="label" aria-hidden="true"><svg class="ico" width="11" height="11" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 2h8M6 2v8.5"/></svg>Headline</span><span class="box"><span class="say serif">production</span></span></button>
-      <button class="blk phrase p4" type="button" data-phrase="the first paying customer" aria-label="Finish the headline with: the first paying customer"><span class="label" aria-hidden="true"><svg class="ico" width="11" height="11" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 2h8M6 2v8.5"/></svg>Headline</span><span class="box"><span class="say serif">the first paying customer</span></span></button>
       <button class="blk phrase p5" type="button" data-phrase="a product people open every day" aria-label="Finish the headline with: a product people open every day"><span class="label" aria-hidden="true"><svg class="ico" width="11" height="11" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 2h8M6 2v8.5"/></svg>Headline</span><span class="box"><span class="say serif">a product people open every day</span></span></button>
     </div>
     <p class="vh" id="said" role="status" aria-live="polite"></p>
@@ -571,7 +570,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   });
 
   /* Drag the hero blocks; they stay inside the first screen (site.md, Hero) */
-  var wrap=hero.querySelector('.wrap');
+  var wrap=hero.querySelector('.wrap'),hint=slot.querySelector('.slot-hint');
+  /* only a phrase fits the slot; any other block over it shows the error stroke */
+  var wrong=function(on){slot.classList.toggle('wrong',on);hint.textContent=on?'only a phrase fits here':'drop a phrase here';};
   hero.querySelectorAll('.blk').forEach(function(el){
     var sx,sy,ox,oy,id=null;
     el.addEventListener('pointerdown',function(e){
@@ -593,12 +594,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       el.style.left=x+'px';el.style.top=y+'px';
     });
     function end(e){if(e.pointerId!==id)return;id=null;el.classList.remove('dragging');
-      if(!el.classList.contains('phrase'))return;
+      if(!el.classList.contains('phrase')){wrong(false);return;}
       slot.classList.remove('over');
       var far=Math.abs(e.clientX-sx)+Math.abs(e.clientY-sy)>6;
       if(e.type==="pointerup"&&(!far||over(e)))finish(el);
     }
-    if(el.classList.contains('phrase'))el.addEventListener('pointermove',function(e){if(e.pointerId===id)slot.classList.toggle('over',over(e));});
+    el.addEventListener('pointermove',function(e){if(e.pointerId!==id)return;
+      if(el.classList.contains('phrase'))slot.classList.toggle('over',over(e));else wrong(over(e));});
     el.addEventListener('pointerup',end);el.addEventListener('pointercancel',end);
   });
   wide.addEventListener&&wide.addEventListener('change',function(){if(!wide.matches)hero.querySelectorAll('.blk.moved').forEach(function(el){el.classList.remove('moved');el.removeAttribute('style');});});
