@@ -35,6 +35,5 @@
 2. Scale Development AS: what she did there, for the resume.
 3. AnyBiz timeline on the site: one continuous role (Aug 2021 – present) or two periods.
 4. Typeface: Inter Tight is a stand-in for Aeonik / Neue Haas Grotesk.
-5. "8 projects" on the landing while seven are listed.
-6. Tor Martin Olsen's testimonial is a DRAFT on the landing — needs his approval before the site goes public; referee contacts in `cv.md` and the phone in the resume PDF need a decision before the repo is public.
-7. `assets/music.mp3` is missing, so the Play / Pause music button stays hidden.
+5. Tor Martin Olsen's testimonial is a DRAFT on the landing — needs his approval before the site goes public; referee contacts in `cv.md` and the phone in the resume PDF need a decision before the repo is public.
+6. `assets/music.mp3` is missing, so the Play / Pause music button stays hidden.
