@@ -22,7 +22,7 @@ Sources: Instagram [@nortranslations](https://www.instagram.com/nortranslations/
 
 ## Page copy
 - **Eyebrow:** Brand mark
-- **Headline:** A mark for an Oslo translation studio: two letters on the pages of an open book.
+- **Headline:** A mark for an Oslo translation studio.
 - **Meta row:** Role — Logo, brand identity · Year — 2023 – 2024 · Client — Stiupan Translations ENK, Oslo · Typeface — Crimson Text
 - **About:** Stiupan Translations is a multilingual translation studio in Oslo. The small team translates, proofreads, localises and writes copy in Norwegian, English, Ukrainian, Russian, German and Polish, under the line "Lost words found here".
 - **Objective** *(draft — to confirm with her)*: a mark that says "language and text" at a glance, reads at favicon size and in print, and works in one colour as well as two.
@@ -30,7 +30,7 @@ Sources: Instagram [@nortranslations](https://www.instagram.com/nortranslations/
 - **Quote:** "She played a decisive role in creating the company's logo." — Maiia Stiupan, owner (translated from her reference letter; consent to publish her name still to confirm, see `cv.md`).
 
 ## Sections, in order
-1. **Intro** — her Figma frame 462:2703 (the purple cover with the round logo, the name, OVERSETTELSESBURÅ and scattered letters), exported at 2× (3072 × 954): `assets/work/styupan/intro-3072.webp` + `intro-1536.webp`.
+1. **Intro** — her Figma frame 462:2703 (the purple cover with the round logo, the name, OVERSETTELSESBURÅ and scattered letters), exported at 2×. No grey stage (2026-09-29): the purple band fills the full content width and the grey strip below it is dropped, so the round logo (Figma 462:2742, exported on its own and completed at the bottom, where the frame had clipped it) hangs below the purple edge onto the white page. Transparent WebP, 3072 × 970: `assets/work/styupan/intro-3072.webp` + `intro-1536.webp`.
 2. **About / Objective / Idea / Quote.**
 3. **Construction** — the mark on a construction grid, built in SVG from the logo vectors (Figma 881:83892, 169 × 127 units). Guides follow the real geometry: the outer box, the spine at 84.5, the right page 84.5–153.6 × 15–112, the S and T boxes, cap line 37 and baselines 85 / 90.2, and the two page-top arcs, each a circle of radius 85.3 through the page corners. Yellow mark on the purple ground, dashed light guides, a large faint copy of the mark behind (references: Bexel, RR and octopus grids).
 4. **Colour and type** — Purple #3C1A5B (RGB 60, 26, 91), Yellow #FFF748 (RGB 255, 247, 72), Paper #F5F5F5 (RGB 245, 245, 245), with CMYK as a plain RGB-to-CMYK conversion, marked as an estimate (Purple 34 71 0 64, Yellow 0 3 72 0, Paper 0 0 0 4; not a print-proofed profile); the Crimson Text specimen.
