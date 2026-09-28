@@ -180,7 +180,7 @@ book.position.y = ZOB + 0.005;   // resting on the table
 scene.add(book);
 
 // floor: shadow only, so the PNG sits on any pale ground
-const floor = new THREE.Mesh(new THREE.PlaneGeometry(4000, 4000), new THREE.ShadowMaterial({ opacity: num('so', 0.42) }));
+const floor = new THREE.Mesh(new THREE.PlaneGeometry(4000, 4000), new THREE.ShadowMaterial({ color: new THREE.Color(P.get('sc') || '#4a4a46'), opacity: num('so', 0.42) }));
 floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; scene.add(floor);
 
 // Soft light like a large softbox on the right plus open sky: each pass moves the light to another point
@@ -196,14 +196,14 @@ scene.add(new THREE.HemisphereLight(0xffffff, 0xe9e9e6, num('bounce', 0.35)));
 {
   const PX = 4, W0 = 300, H0 = 360, cc = document.createElement('canvas'); cc.width = W0 * PX; cc.height = H0 * PX;
   const cg = cc.getContext('2d'); const x0 = -120.7, x1 = XF, z0 = -H / 2, z1 = H / 2, ox = -7.4;
-  const rect = (inset, blur, a) => { cg.filter = `blur(${blur * PX}px)`; cg.fillStyle = `rgba(0,0,0,${a})`;
+  const rect = (inset, blur, a) => { cg.filter = `blur(${blur * PX}px)`; cg.fillStyle = `rgba(74,74,70,${a})`;
     cg.fillRect((x0 + inset - ox + W0 / 2) * PX, (z0 + inset + H0 / 2) * PX, (x1 - x0 - 2 * inset) * PX, (z1 - z0 - 2 * inset) * PX); };
-  rect(-0.3, 1.0, num('c1', 0.7)); rect(0, 4.5, num('c2', 0.28));
+  rect(0, 6, num('c2', 0.3));   // soft only: no dark line along the edge
   const m = new THREE.Mesh(new THREE.PlaneGeometry(W0, H0), new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(cc), transparent: true, depthWrite: false, toneMapped: false }));
   m.rotation.x = -Math.PI / 2; m.position.set(ox, 0.02, 0); scene.add(m);
 }
 const SOFTBOX = new THREE.Vector3(num('kx', 600), num('ky', 900), num('kz', -60)).normalize();
-const PASSES = num('passes', 128), SKY = num('sky', 0.35), SPREAD = num('spread', 0.55);
+const PASSES = num('passes', 128), SKY = num('sky', 0.35), SPREAD = num('spread', 0.85);
 function lightDir(i) {
   const a = (i + 0.5) / PASSES, t = i * 2.39996;                    // golden-angle spiral, even coverage
   if (i % Math.round(1 / SKY) === 0) {                               // sky: anywhere above, from 35 deg up
@@ -216,7 +216,14 @@ function lightDir(i) {
 }
 
 const camera = new THREE.PerspectiveCamera(num('fov', 11), OUT_W / OUT_H, 10, 5000);
-camera.up.set(0, 0, -1); camera.position.set(CAM_X, CAM_Y, CAM_Z); camera.lookAt(-6, 0, 8);
+// looking straight down, so the book stays a true rectangle; the frame is shifted (like a shift lens)
+// to bring the book to the centre, and the offset position still shows the fore edge and the tail
+camera.up.set(0, 0, -1); camera.position.set(CAM_X, CAM_Y, CAM_Z); camera.lookAt(CAM_X, 0, CAM_Z);
+{
+  const tx = -7, tz = 0, th = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)), D = CAM_Y;
+  const nx = (tx - CAM_X) / (D * th * camera.aspect), ny = (CAM_Z - tz) / (D * th);
+  camera.setViewOffset(OUT_W, OUT_H, nx * OUT_W / 2, -ny * OUT_H / 2, OUT_W, OUT_H);
+}
 
 const passRT = new THREE.WebGLRenderTarget(OUT_W, OUT_H, { type: THREE.HalfFloatType, samples: 4 });
 const accRT = new THREE.WebGLRenderTarget(OUT_W, OUT_H, { type: THREE.FloatType });
@@ -240,7 +247,8 @@ for (let i = 0; i < PASSES; i++) {
 // to the canvas, with tone mapping and sRGB
 const outMat = new THREE.MeshBasicMaterial({ map: accRT.texture, transparent: true });
 const outScene = new THREE.Scene(); outScene.add(new THREE.Mesh(quadGeo, outMat));
-outMat.onBeforeCompile = sh => { sh.vertexShader = sh.vertexShader.replace('#include <project_vertex>', 'gl_Position = vec4(position.xy, 0.0, 1.0);'); };
+outMat.onBeforeCompile = sh => { sh.vertexShader = sh.vertexShader.replace('#include <project_vertex>', 'gl_Position = vec4(position.xy, 0.0, 1.0);');
+  sh.fragmentShader = sh.fragmentShader.replace('#include <map_fragment>', '#include <map_fragment>\n diffuseColor.rgb /= max(diffuseColor.a, 0.0001);'); };   // passes are premultiplied
 renderer.setRenderTarget(null); renderer.clear(); renderer.render(outScene, quadCam);
 window.__done = true;
 </script>
