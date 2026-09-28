@@ -1,11 +1,14 @@
 <!doctype html>
 <html><head><meta charset="utf-8"><title>Open book render</title>
 <style>html,body{margin:0;background:#F5F5F5}canvas{display:block;width:1000px;height:auto}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@700&family=Inter+Tight:wght@500;600&display=swap">
 <script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
 </head><body>
 <script type="module">
 // Offline render of an open white hardcover, close up, for the type block on styupan.html (styupan.md). Units: mm.
 // Pages are single curved sheets that rise from the gutter and fan out; a ribbon bookmark runs out of the gutter.
+// The two top sheets carry a day planner for the head of a translation bureau, drawn on a canvas in the brand colours (?plan=0 leaves them blank).
+// ?save=1 posts the finished frame as a PNG data URL to /save on the serving host.
 import * as THREE from 'three';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
@@ -28,6 +31,47 @@ scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
 scene.environmentIntensity = num('env', 0.55);
 
 const paper = new THREE.MeshStandardMaterial({ color: 0xfbfaf6, roughness: 0.9, side: THREE.DoubleSide });
+
+// ---- planner spread: a canvas per page, 10 px per mm; the gutter margin is on the spine side ----
+const PUR = '#3C1A5B', YEL = '#FFF748', TINT = '#E4DEE9', PAPER = '#fbfaf6', PX = 10;
+await Promise.all(['700 100px "Crimson Text"', '600 40px "Inter Tight"', '500 30px "Inter Tight"'].map(f => document.fonts.load(f)));
+const SPREAD_PAGES = {
+  '-1': { title: 'Dagsplan', a: ['Dagens oppdrag', 'Kunde  ·  Språkpar  ·  Frist', 5, 'Viktige notater'], b: ['Frister i dag', 3, 'Å gjøre'] },
+  '1':  { title: 'Oppfølging', a: ['Fordeling', 'Oversetter  ·  Oppdrag  ·  Ord', 5, 'Korrektur'], b: ['Fakturering', 3, 'Ring kunder'] },
+};
+function tab(g, x, y, w, h, fill, label, size = 40) {
+  g.fillStyle = fill; g.beginPath(); g.roundRect(x, y, w, h, [12, h * 0.62, 12, 12]); g.fill();
+  if (label) { g.fillStyle = YEL; g.font = `600 ${size}px "Inter Tight"`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(label, x + w / 2, y + h / 2 + 2); }
+}
+function plannerPage(side) {
+  const pg = SPREAD_PAGES[side], c = document.createElement('canvas'); c.width = W * PX; c.height = D * PX;
+  const g = c.getContext('2d'); g.fillStyle = PAPER; g.fillRect(0, 0, c.width, c.height);
+  const gut = 17 * PX, out = 12 * PX, x0 = side < 0 ? out : gut, iw = c.width - gut - out, bottom = c.height - 14 * PX;
+  // title and date
+  g.fillStyle = PUR; g.font = '700 118px "Crimson Text"'; g.textAlign = 'left'; g.textBaseline = 'alphabetic'; g.fillText(pg.title, x0, 250);
+  const bx = x0 + iw - 3 * 84; for (let i = 0; i < 3; i++) { g.fillStyle = TINT; g.fillRect(bx + i * 84, 168, 72, 72); }
+  tab(g, bx - 190, 168, 176, 72, PUR, 'Dato', 34);
+  // column A: header, hint, rows, then a lined notes block
+  const aw = Math.round(iw * 0.6), bw = iw - aw - 44, xb = x0 + aw + 44, top = 320;
+  tab(g, x0, top, aw, 92, PUR, pg.a[0]);
+  g.fillStyle = PUR; g.globalAlpha = 0.6; g.font = '500 30px "Inter Tight"'; g.textAlign = 'left'; g.fillText(pg.a[1], x0 + 26, top + 142); g.globalAlpha = 1;
+  let y = top + 172; for (let i = 0; i < pg.a[2]; i++, y += 142) tab(g, x0, y, aw - 18, 110, TINT);
+  y += 30; tab(g, x0, y, aw, 92, PUR, pg.a[3]);
+  g.strokeStyle = PUR; g.globalAlpha = 0.4; g.lineWidth = 4; g.setLineDash([20, 14]);
+  for (let ly = y + 210; ly < bottom; ly += 118) { g.beginPath(); g.moveTo(x0 + 8, ly); g.lineTo(x0 + aw - 8, ly); g.stroke(); }
+  g.setLineDash([]); g.globalAlpha = 1;
+  // column B: header, short rows, then a numbered list in a tinted box
+  tab(g, xb, top, bw, 92, PUR, pg.b[0]);
+  y = top + 122; for (let i = 0; i < pg.b[1]; i++, y += 142) tab(g, xb, y, bw, 110, TINT);
+  y += 30; g.fillStyle = TINT; g.fillRect(xb, y + 46, bw, bottom - y - 46); tab(g, xb, y, bw, 92, PUR, pg.b[2]);
+  g.fillStyle = PUR; g.font = '500 32px "Inter Tight"'; g.textAlign = 'left';
+  for (let i = 1, ny = y + 190; ny < bottom - 40; i++, ny += 128) g.fillText(String(i).padStart(2, '0') + '.', xb + 30, ny);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.flipY = false; t.anisotropy = 16;
+  if (side < 0) { t.repeat.x = -1; t.offset.x = 1; }   // the left sheet runs from the gutter outward, so its u axis is mirrored
+  return new THREE.MeshStandardMaterial({ map: t, roughness: 0.9, side: THREE.DoubleSide });
+}
+const PLAN = P.get('plan') !== '0';
+const planMat = PLAN ? { '1': plannerPage(1), '-1': plannerPage(-1) } : null;
 const board = new THREE.MeshStandardMaterial({ color: 0xf2f1ec, roughness: 0.7 });
 const ribbonMat = new THREE.MeshStandardMaterial({ color: 0xf4f2ec, roughness: 0.35, metalness: 0.0, side: THREE.DoubleSide });
 
@@ -48,7 +92,7 @@ function sheet(side, i) {
     p.setXYZ(k, side * (x + 0.6 * t), base + lift * r, p.getY(k));
   }
   geo.computeVertexNormals();
-  const m = new THREE.Mesh(geo, paper); m.castShadow = m.receiveShadow = true; return m;
+  const m = new THREE.Mesh(geo, PLAN && i === N - 1 ? planMat[side] : paper); m.castShadow = m.receiveShadow = true; return m;
 }
 const book = new THREE.Group();
 for (const side of [1, -1]) for (let i = 0; i < N; i++) book.add(sheet(side, i));
@@ -121,6 +165,7 @@ const outMat = new THREE.MeshBasicMaterial({ map: accRT.texture });
 outMat.onBeforeCompile = sh => { sh.vertexShader = sh.vertexShader.replace('#include <project_vertex>', 'gl_Position = vec4(position.xy, 0.0, 1.0);'); };
 const outScene = new THREE.Scene(); outScene.add(new THREE.Mesh(quadGeo, outMat));
 renderer.setRenderTarget(null); renderer.clear(); renderer.render(outScene, quadCam);
+if (P.has('save')) await fetch('/save', { method: 'POST', body: renderer.domElement.toDataURL('image/png') });
 window.__done = true;
 </script>
 </body></html>
