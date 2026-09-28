@@ -37,7 +37,7 @@ Sources: Instagram [@nortranslations](https://www.instagram.com/nortranslations/
 5. **On light and dark** — the lockup (mark + name + OVERSETTELSESBURÅ) on Paper and on Purple, then the round seals (Figma 882:83893 purple, 882:83894 yellow): `seal-purple.svg` on Paper, `seal-yellow.svg` on Purple. In the yellow seal the S is purple, the colour of the ground (2026-09-29).
 6. **Signage** — the office sign, as in her Seraj Law reference. *Waiting for her decision on the image* (a photo she provides, or a rendered mockup).
 7. **In use** — the folder photo, her Figma frame 881:83891, 2× export scaled to `folder-2400.webp` + `folder-1200.webp`.
-8. **Stationery** — letterhead, business cards and envelope laid out flat on a dark ground (reference: broot). Built in HTML and CSS from the brand; names and contacts are placeholders, not real people. Letterhead (2026-09-29): the footer divider is purple; the purple round seal, small (about 17 % of the letterhead width), stamped where a Norwegian company stamp goes: beside the name at the sign-off, partly over it; no handwritten signature (her decision, 2026-09-29).
+8. **Stationery** — letterhead, business cards and envelope laid out flat on a dark ground (reference: broot). Built in HTML and CSS from the brand; names and contacts are placeholders, not real people. Letterhead (2026-09-29): the footer divider is purple; a made-up handwritten signature (an SVG scribble, not a real person's) between "Med vennlig hilsen" and the name; the purple round seal (about 21 % of the letterhead width) stamped to the right of it, partly over the signature, where a Norwegian company stamp goes.
 
 ## Accessibility
 - Each image has a text alternative; the construction grid and stationery have one description each.
