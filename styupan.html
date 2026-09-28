@@ -82,11 +82,14 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 .sw.p{grid-row:1/3;background:var(--purple);color:var(--yellow)}
 .sw.y{background:var(--yellow);color:var(--purple)}
 .sw.w{background:var(--paper);color:var(--purple);box-shadow:inset 0 0 0 1px var(--rule)}
-.type{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(8px,1vw,14px)}
-.type>div{background:var(--paper);color:var(--purple);padding:clamp(20px,3vw,40px);display:flex;flex-direction:column;justify-content:flex-end;gap:12px}
-.type .aa{font-family:"Crimson Text",Georgia,serif;font-size:clamp(72px,10vw,140px);line-height:.9}
-.type .set{font-family:"Crimson Text",Georgia,serif;font-size:clamp(20px,2vw,26px);line-height:1.35}
-.type .lbl{font-size:14px;color:var(--muted)}
+/* type specimen over a rendered open book (tools/book-render/open-book.html) */
+.type{position:relative;aspect-ratio:2/1;background:#e6e6e6;color:var(--purple);overflow:hidden}
+.type>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.type .aa{position:absolute;left:5%;bottom:6%;font-family:"Crimson Text",Georgia,serif;font-size:clamp(80px,13vw,200px);line-height:.8}
+.type .spec{position:absolute;left:64%;right:5%;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:clamp(6px,1vw,14px)}
+.type .set{font-family:"Crimson Text",Georgia,serif;font-size:clamp(18px,2.1vw,30px);line-height:1.25}
+.type .set.big{font-size:clamp(24px,3vw,44px);font-weight:700;line-height:1.05}
+.type .lbl{position:absolute;left:64%;bottom:7%;font-size:14px;color:#5a5560}
 /* light and dark */
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(8px,1vw,14px)}
 .tile{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:6%}
@@ -123,7 +126,7 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 .bc.b{left:70%;top:58%;background:var(--purple);color:var(--yellow);font-size:.8cqw;font-weight:600;line-height:1.55;--m:var(--yellow);--g:var(--purple)}
 .bc.b strong{font-family:"Crimson Text",Georgia,serif;font-size:1.3cqw;font-weight:700}
 .bc.b .rule{height:.2cqw;width:22%;background:var(--yellow);margin:.6cqw 0}
-@media (max-width:720px){.duo,.type{grid-template-columns:1fr}.swatches{grid-template-columns:1fr;grid-template-rows:auto}.sw.p{grid-row:auto;min-height:220px}}
+@media (max-width:720px){.type{aspect-ratio:auto;min-height:420px}.type .spec{left:6%;top:auto;bottom:18%;transform:none}.type .lbl{left:6%}.type .aa{top:6%;bottom:auto}.duo{grid-template-columns:1fr}.swatches{grid-template-columns:1fr;grid-template-rows:auto}.sw.p{grid-row:auto;min-height:220px}}
 /* About / Objective */
 .story{display:flex;flex-direction:column;gap:clamp(32px,4vw,56px);padding-block:clamp(64px,9vw,120px)}
 .pair{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(16px,4vw,64px)}
@@ -219,8 +222,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="sw w"><b>Paper</b><dl><dt>HEX</dt><dd>#F5F5F5</dd><dt>RGB</dt><dd>245, 245, 245</dd><dt>CMYK</dt><dd>0, 0, 0, 4*</dd></dl></div>
     </div>
     <div class="type">
-      <div><span class="aa" aria-hidden="true">Aa</span><span class="lbl">Crimson Text — Bold and Regular</span></div>
-      <div lang="nb"><span class="set" style="font-weight:700" lang="en">Stiupan Translations</span><span class="set" style="letter-spacing:.06em">OVERSETTELSESBURÅ</span><span class="set">Oversettelse, korrektur, lokalisering og tekstforfatting.</span></div>
+      <img src="assets/work/styupan/type-book-1200.webp" srcset="assets/work/styupan/type-book-1200.webp 1200w, assets/work/styupan/type-book-2400.webp 2400w" sizes="(min-width:1320px) 1200px, 92vw" alt="" width="1200" height="600" loading="lazy">
+      <span class="aa" aria-hidden="true">Aa</span>
+      <div class="spec" lang="nb"><span class="set big" lang="en">Stiupan Translations</span><span class="set" style="letter-spacing:.06em">OVERSETTELSESBURÅ</span><span class="set">Oversettelse, korrektur, lokalisering og tekstforfatting.</span></div>
+      <span class="lbl">Crimson Text — Bold and Regular</span>
     </div>
     <p class="note">* CMYK is a plain conversion from RGB, an estimate, not a print-proofed profile. Contrast: yellow on purple 12.5 : 1, purple on paper 12.9 : 1.</p>
   </section>
