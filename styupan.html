@@ -123,9 +123,11 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 .bc.f{left:45%;top:50%;background:var(--purple);align-items:center;gap:1cqw;color:var(--yellow);--m:var(--yellow);--g:var(--purple)}
 .bc.f svg{width:6.6cqw;height:auto}
 .bc.f .nm{font-family:"Crimson Text",Georgia,serif;font-weight:700;font-size:1.35cqw}
-.bc.b{left:70%;top:58%;background:var(--purple);color:var(--yellow);font-size:.8cqw;font-weight:600;line-height:1.55;--m:var(--yellow);--g:var(--purple)}
+.bc.b{left:70%;top:58%;justify-content:flex-start;background:var(--purple);color:var(--yellow);font-size:.8cqw;font-weight:600;line-height:1.55;--m:var(--yellow);--g:var(--purple)}
+.bc.b svg{position:absolute;top:2cqw;right:2cqw;width:2.6cqw;height:auto}
+.bc.b .who{margin-top:auto;display:flex;flex-direction:column;line-height:1.3}
 .bc.b strong{font-family:"Crimson Text",Georgia,serif;font-size:1.3cqw;font-weight:700}
-.bc.b .rule{height:.2cqw;width:22%;background:var(--yellow);margin:.6cqw 0}
+.bc.b .ct{margin-top:1.6cqw;display:flex;flex-direction:column}
 @media (max-width:720px){.type{aspect-ratio:auto;min-height:420px}.type .spec{left:6%;top:auto;bottom:18%;transform:none}.type .lbl{left:6%}.type .aa{top:6%;bottom:auto}.duo{grid-template-columns:1fr}.swatches{grid-template-columns:1fr;grid-template-rows:auto}.sw.p{grid-row:auto;min-height:220px}}
 /* About / Objective */
 .story{display:flex;flex-direction:column;gap:clamp(32px,4vw,56px);padding-block:clamp(64px,9vw,120px)}
@@ -248,7 +250,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <img src="assets/work/styupan/folder-1200.webp" srcset="assets/work/styupan/folder-1200.webp 1200w, assets/work/styupan/folder-2400.webp 2400w" sizes="(min-width:1320px) 1200px, 92vw" alt="A woman in a light jacket holds a purple Stiupan Translations folder with the yellow round logo, outside a glass office building." width="1200" height="825" loading="lazy">
     </figure>
     <figure class="panel">
-      <div class="desk" role="img" aria-label="Stationery laid flat on a dark purple ground: an A4 letterhead with the logo, a short letter in Norwegian a handwritten signature to the right of the sign-off with the purple round seal stamped over it, a yellow envelope with the lockup and a stripe in purple, and a business card, front in purple with the yellow mark and back also in purple with a name and contact lines in bold yellow.">
+      <div class="desk" role="img" aria-label="Stationery laid flat on a dark purple ground: an A4 letterhead with the logo, a short letter in Norwegian a handwritten signature to the right of the sign-off with the purple round seal stamped over it, a yellow envelope with the lockup and a stripe in purple, and a business card, front in purple with the yellow mark and back also in purple with a small yellow mark in the top right corner, a name and title on the left, and contact lines below them in bold yellow.">
         <div class="lh" aria-hidden="true" lang="nb">
           <div class="top"><svg viewBox="0 0 169 127" width="169" height="127" aria-hidden="true" focusable="false"><use href="#st"/></svg><div class="addr">Stiupan Translations ENK<br>Oslo, Norge<br>nortranslations.no</div></div>
           <span class="nm">Stiupan Translations</span>
@@ -261,7 +263,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         </div>
         <div class="env" aria-hidden="true"><div class="lockup"><svg viewBox="0 0 169 127" width="169" height="127" aria-hidden="true" focusable="false"><use href="#st"/></svg><div><span class="nm">Stiupan Translations</span><span class="sub">OVERSETTELSESBURÅ</span></div></div><span class="stripe"></span></div>
         <div class="bc f" aria-hidden="true"><svg viewBox="0 0 169 127" width="169" height="127" aria-hidden="true" focusable="false"><use href="#st"/></svg><span class="nm">Stiupan Translations</span></div>
-        <div class="bc b" aria-hidden="true" lang="nb"><strong>[Navn Etternavn]</strong><span>Oversetter</span><span class="rule"></span><span>nortranslations.no</span><span>Oslo, Norge</span></div>
+        <div class="bc b" aria-hidden="true" lang="nb"><svg viewBox="0 0 169 127" width="169" height="127" aria-hidden="true" focusable="false"><use href="#st"/></svg><div class="who"><strong>[Navn Etternavn]</strong><span>Oversetter</span></div><div class="ct"><span>Oslo, Norge</span><span>nortranslations.no</span></div></div>
       </div>
       <figcaption>Letterhead, envelope and business card, built from the brand. Names and contacts are placeholders.</figcaption>
     </figure>
