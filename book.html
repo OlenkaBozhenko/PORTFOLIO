@@ -20,6 +20,11 @@
   --label:#2B3BD6;
   --sans:"Inter Tight","Helvetica Neue",Helvetica,Arial,sans-serif;
   --gutter:clamp(16px,4vw,56px);
+  /* mockup shadows (same light as the landing render): dark grey, light from the right,
+     layered so they fade out smoothly into the ground instead of ending in a patch */
+  --sh:74,74,70;
+  --soft-shadow:-1px 1px 2px rgba(var(--sh),.12),-3px 3px 6px rgba(var(--sh),.09),-7px 6px 14px rgba(var(--sh),.08),
+    -14px 12px 28px rgba(var(--sh),.07),-28px 22px 56px rgba(var(--sh),.06),-48px 36px 100px rgba(var(--sh),.05);
   color-scheme:light;
 }
 *{box-sizing:border-box}
@@ -58,9 +63,9 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 /* 3D mockup stage */
 .stage{background:var(--stage);position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);align-items:center;justify-items:center;gap:clamp(24px,5vw,80px);padding:clamp(48px,7vw,110px) clamp(24px,5vw,80px)}
 .scene{--w:clamp(180px,24vw,340px);--h:calc(var(--w) * 297 / 210);--d:calc(var(--w) * 34 / 210);perspective:1600px;width:100%;display:flex;justify-content:center;position:relative}
-.scene::before{content:"";position:absolute;left:50%;top:50%;width:calc(var(--w) * .95);height:calc(var(--h) * .96);transform:translate(-74%,-47%) skewX(3deg);background:rgba(0,0,0,.26);filter:blur(20px);pointer-events:none}
+.scene::before{content:"";position:absolute;left:50%;top:50%;width:calc(var(--w) * .95);height:calc(var(--h) * .96);transform:translate(-70%,-48%) skewX(3deg);background:radial-gradient(closest-side,rgba(var(--sh),.42),rgba(var(--sh),.2) 55%,rgba(var(--sh),0));filter:blur(28px);pointer-events:none}
 .b3d{
-  position:relative;width:var(--w);height:var(--h);transform-style:preserve-3d;
+  position:relative;z-index:1;width:var(--w);height:var(--h);transform-style:preserve-3d;
   transform:rotateX(6deg) rotateY(30deg);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
 .face{position:absolute;left:0;top:0;backface-visibility:hidden}
 .face img{width:100%;height:100%;object-fit:cover}
@@ -70,15 +75,16 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 .spine{width:var(--d);height:var(--h);left:calc(50% - var(--d) / 2);transform:rotateY(-90deg) translateZ(calc(var(--w) / 2));overflow:hidden}
 .spine{border-radius:40% / 2%}
 .spine::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.34),rgba(0,0,0,.1) 30%,rgba(255,255,255,.06) 50%,rgba(0,0,0,.1) 70%,rgba(0,0,0,.36))}
-.b3d::after{content:"";position:absolute;left:-60%;top:calc(var(--h) - var(--w) * .4);width:calc(var(--w) * 1.9);height:calc(var(--w) * .8);transform:rotateX(90deg);pointer-events:none;
-  background:radial-gradient(ellipse 34% 10% at 58% 50%,rgba(0,0,0,.4),rgba(0,0,0,0)),radial-gradient(ellipse 50% 40% at 42% 42%,rgba(0,0,0,.22),rgba(0,0,0,0));filter:blur(6px)}
+/* where the standing book meets the ground: a soft grey shade, wider to the left (light from the right) */
+.scene::after{content:"";position:absolute;left:50%;top:calc(50% + var(--h) / 2);width:calc(var(--w) * 1.5);height:calc(var(--w) * .16);transform:translate(-60%,-55%);pointer-events:none;
+  background:radial-gradient(ellipse 40% 30% at 58% 50%,rgba(var(--sh),.34),rgba(var(--sh),0)),radial-gradient(ellipse 50% 50% at 45% 50%,rgba(var(--sh),.14),rgba(var(--sh),0));filter:blur(8px)}
 .edge{width:calc(var(--d) - 4px);height:calc(var(--h) - 6px);top:3px;left:calc(50% - var(--d) / 2 + 2px);
   transform:rotateY(90deg) translateZ(calc(var(--w) / 2 - 3px));
   background:repeating-linear-gradient(90deg,#f7f6f2 0 1px,#e3e1da 1px 2px)}
 .top{width:calc(var(--w) - 3px);height:calc(var(--d) - 4px);top:calc(50% - var(--d) / 2 + 2px);
   transform:rotateX(90deg) translateZ(calc(var(--h) / 2 - 3px));
   background:repeating-linear-gradient(0deg,#f7f6f2 0 1px,#e3e1da 1px 2px)}
-.flat{width:min(100%,clamp(170px,20vw,300px));height:auto;box-shadow:-1px 1px 2px rgba(0,0,0,.1),-18px 24px 40px -18px rgba(0,0,0,.35)}
+.flat{width:min(100%,clamp(170px,20vw,300px));height:auto;box-shadow:var(--soft-shadow)}
 .stage figcaption{grid-column:1/-1;justify-self:start;font-size:14px;color:var(--muted)}
 @media (hover:hover){.scene:hover .b3d{transform:rotateX(4deg) rotateY(20deg)}}
 @media (prefers-reduced-motion:reduce){.b3d{transition:none}.scene:hover .b3d{transform:rotateX(6deg) rotateY(30deg)}}
@@ -99,12 +105,12 @@ blockquote{margin:0;font-size:clamp(22px,2.6vw,34px);line-height:1.25;letter-spa
 .sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;padding-bottom:24px;border-bottom:1px solid var(--ink)}
 .sec-head h2{font-size:clamp(32px,4.4vw,56px);line-height:1}
 .sec-head span{color:var(--muted);font-size:15px}
-.spread{margin:0;background:var(--stage);padding:clamp(20px,5vw,80px);display:flex;flex-direction:column;gap:16px}
+.spread{margin:0;background:var(--stage);overflow:hidden;padding:clamp(20px,5vw,80px);display:flex;flex-direction:column;gap:16px}
 /* open book: hard cover board under a sewn page block; light from the right, shadow to the left */
 .page-pair{--s:clamp(4px,1vw,12px);--k:clamp(3px,.9vw,11px);--lt:calc(var(--k) * var(--pl,.5) + 1px);--rt:calc(var(--k) * (1 - var(--pl,.5)) + 1px);
   position:relative;padding:var(--s);border-radius:2px;
   background:linear-gradient(90deg,rgba(0,0,0,0) 48.6%,rgba(0,0,0,.1) 49.2%,rgba(0,0,0,.04) 50%,rgba(0,0,0,.1) 50.8%,rgba(0,0,0,0) 51.4%),linear-gradient(#fbfaf7,#eeede8);
-  box-shadow:-1px 2px 0 #d5d3cb,0 1px 2px rgba(0,0,0,.18),-18px 22px 34px -14px rgba(0,0,0,.36),-44px 44px 70px -30px rgba(0,0,0,.16)}
+  box-shadow:-1px 2px 0 #d5d3cb,var(--soft-shadow)}
 .leaf{position:absolute;z-index:0;top:calc(var(--s) + 2px)}
 .leaf.l{left:calc(var(--s) - var(--lt));right:50%;bottom:calc(var(--s) - var(--lt) * .6);
   background:repeating-linear-gradient(90deg,#faf9f5 0 1px,#d9d6cd 1px 2px) left / var(--lt) 100% no-repeat,repeating-linear-gradient(0deg,#faf9f5 0 1px,#d9d6cd 1px 2px) bottom / 100% calc(var(--lt) * .6) no-repeat,#f3f1eb}
