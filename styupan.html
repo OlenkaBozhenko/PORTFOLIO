@@ -100,6 +100,41 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 .lockup .nm{font-family:"Crimson Text",Georgia,serif;font-weight:700;font-size:clamp(18px,2.5vw,38px);line-height:1;display:block}
 .lockup .sub{font-family:"Crimson Text",Georgia,serif;font-size:clamp(10px,1.3vw,19px);letter-spacing:.06em;margin-top:6px;display:block}
 .tile img{width:62%;height:auto}
+/* badge and lanyard */
+.tile.sq{aspect-ratio:1/1;padding:0}
+.tile.sq svg{width:100%;height:100%;display:block}
+.tile.y{background:var(--yellow)}
+.badge-card{filter:drop-shadow(-3px 6px 10px rgba(0,0,0,.22))}
+/* metro billboard, after the broot reference */
+.metro{position:relative;aspect-ratio:2/1;overflow:hidden;background:#a7a8a6}
+.metro .ceil{position:absolute;inset:0 0 auto 0;height:11%;background:linear-gradient(#2d2e30,#4d4f52);box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.metro .ceil::after{content:"";position:absolute;left:8%;right:8%;bottom:28%;height:6%;background:linear-gradient(90deg,transparent,#e9ecef 20% 80%,transparent);opacity:.8}
+.metro .wall{position:absolute;inset:11% 0 17% 0;background:radial-gradient(ellipse 70% 60% at 58% 20%,rgba(255,255,255,.22),transparent 70%),repeating-linear-gradient(90deg,rgba(0,0,0,.09) 0 1px,transparent 1px 11%),repeating-linear-gradient(0deg,rgba(0,0,0,.07) 0 1px,transparent 1px 25%),linear-gradient(#b3b4b2,#9d9e9c)}
+.metro .wall::before{content:"";position:absolute;inset:0 auto 0 0;width:17%;background:repeating-linear-gradient(0deg,rgba(0,0,0,.1) 0 1px,transparent 1px 20%),repeating-linear-gradient(90deg,rgba(0,0,0,.1) 0 1px,transparent 1px 50%),#bdbcb8}
+.metro .floor{position:absolute;inset:auto 0 0 0;height:17%;background:linear-gradient(#8f908e,#b9bab8)}
+.bb{position:absolute;left:27%;top:25%;width:64%;aspect-ratio:2.3/1;background:#cfd0d1;padding:.7%;display:grid;grid-template-columns:1fr 1fr;gap:.6%;box-shadow:0 0 0 2px #8d8e90,-10px 18px 40px rgba(0,0,0,.35);container-type:inline-size}
+.pst{position:relative;overflow:hidden;font-family:"Crimson Text",Georgia,serif}
+.pst p{margin:0}
+.pst.p{background:var(--purple);color:var(--yellow);--m:var(--yellow);--g:var(--purple)}
+.pst.y{background:var(--yellow);color:var(--purple);--m:var(--purple);--g:var(--yellow)}
+.pst .l{position:absolute;font-size:3cqw;line-height:1}
+.pst .l.f{opacity:.18}
+.pst.p .nm{position:absolute;left:24%;top:30%;font-weight:700;font-size:3.1cqw;line-height:1}
+.pst.p .sub{position:absolute;left:24%;top:45%;font-size:1.8cqw;letter-spacing:.03em}
+.pst .disc{position:absolute;left:-6%;bottom:-12%;width:36%;aspect-ratio:1;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 .3cqw var(--paper);display:flex;align-items:center;justify-content:center;padding:0 0 4% 4%;--m:var(--purple);--g:var(--yellow)}
+.pst .disc svg{width:52%;height:auto}
+.pst .copy{position:absolute;font-family:"Inter Tight",Helvetica,Arial,sans-serif;font-size:.62cqw;line-height:1.45}
+.pst.p .copy{left:46%;bottom:14%;width:44%}
+.pst .url{position:absolute;right:6%;bottom:5%;font-family:"Inter Tight",Helvetica,Arial,sans-serif;font-size:.6cqw;font-weight:600}
+.pst.y .bar{position:absolute;left:0;right:0;top:0;height:22%;display:flex;justify-content:space-between;align-items:center;padding:0 6%;border-bottom:.6cqw solid var(--purple)}
+.pst.y .bar .copy{position:static;width:44%}
+.pst.y .lk{display:flex;align-items:center;gap:.8cqw;font-weight:700;font-size:1.6cqw}
+.pst.y .lk svg{width:3.4cqw;height:auto}
+.pst.y .big{position:absolute;left:6%;top:30%;font-weight:700;font-size:3.6cqw;line-height:.95}
+.pst.y .box{position:absolute;right:6%;top:31%;bottom:8%;width:42%;background:var(--purple);display:flex;align-items:center;justify-content:center;--m:var(--yellow);--g:var(--purple)}
+.pst.y .box svg{width:62%;height:auto}
+.pst.y .langs{left:6%;bottom:8%;width:40%}
+@media (max-width:720px){.metro{aspect-ratio:4/3}.bb{left:4%;width:92%;top:28%}}
 /* photo */
 .photo-fig{margin:0}
 .photo-fig img{width:100%;height:auto;aspect-ratio:1512/1040;object-fit:cover}
@@ -266,6 +301,67 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="bc b" aria-hidden="true" lang="nb"><svg viewBox="0 0 169 127" width="169" height="127" aria-hidden="true" focusable="false"><use href="#st"/></svg><div class="who"><strong>[Navn Etternavn]</strong><span>Oversetter</span></div><div class="ct"><span>Oslo, Norge</span><span>nortranslations.no</span></div></div>
       </div>
       <figcaption>Letterhead, envelope and business card, built from the brand. Names and contacts are placeholders.</figcaption>
+    </figure>
+  </section>
+
+  <section class="wrap brand-sec" aria-labelledby="badge-title">
+    <div class="sec-head"><h2 id="badge-title">Badge and metro</h2><span>Lanyard, badge and a billboard</span></div>
+    <div class="duo">
+      <div class="tile l sq" role="img" aria-label="A purple staff badge on a purple lanyard, on light grey. The lanyard carries the words Stiupan Translations in yellow; the badge has the yellow mark, the name, a placeholder name and the title Oversetter.">
+        <svg viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+          <defs><path id="lyL" d="M118 -12 L192 150"/><path id="lyR" d="M282 -12 L208 150"/></defs>
+          <path d="M118 -12 L192 150" stroke="#3C1A5B" stroke-width="22" fill="none"/>
+          <path d="M282 -12 L208 150" stroke="#3C1A5B" stroke-width="22" fill="none"/>
+          <text font-family="Inter Tight,Helvetica,Arial,sans-serif" font-size="7.5" font-weight="600" letter-spacing=".8" fill="#FFF748" dy="2.6"><textPath href="#lyL">STIUPAN TRANSLATIONS · LOST WORDS FOUND HERE · STIUPAN TRANSLATIONS · LOST WORDS FOUND HERE · STIUPAN TRANSLATIONS · LOST WORDS FOUND HERE · </textPath></text>
+          <text font-family="Inter Tight,Helvetica,Arial,sans-serif" font-size="7.5" font-weight="600" letter-spacing=".8" fill="#FFF748" dy="2.6"><textPath href="#lyR">STIUPAN TRANSLATIONS · LOST WORDS FOUND HERE · STIUPAN TRANSLATIONS · LOST WORDS FOUND HERE · STIUPAN TRANSLATIONS · LOST WORDS FOUND HERE · </textPath></text>
+          <rect x="186" y="138" width="28" height="18" rx="4" fill="#9a9b9d"/><rect x="192" y="143" width="16" height="8" rx="2" fill="#F5F5F5"/>
+          <path d="M200 156 V172" stroke="#9a9b9d" stroke-width="4" fill="none"/>
+          <g class="badge-card">
+            <rect x="136" y="166" width="128" height="204" rx="9" fill="#3C1A5B"/>
+            <rect x="182" y="176" width="36" height="6" rx="3" fill="#F5F5F5"/>
+            <g style="--m:#FFF748;--g:#3C1A5B"><use href="#st" x="165" y="200" width="70" height="53"/></g>
+            <text x="200" y="283" text-anchor="middle" font-family="Crimson Text,Georgia,serif" font-weight="700" font-size="13" fill="#FFF748">Stiupan Translations</text>
+            <text x="200" y="297" text-anchor="middle" font-family="Crimson Text,Georgia,serif" font-weight="600" font-size="7.5" letter-spacing=".6" fill="#FFF748">OVERSETTELSESBURÅ</text>
+            <rect x="184" y="311" width="32" height="1.6" fill="#FFF748"/>
+            <text x="200" y="332" text-anchor="middle" font-family="Inter Tight,Helvetica,Arial,sans-serif" font-weight="600" font-size="10" fill="#FFF748">[Navn Etternavn]</text>
+            <text x="200" y="347" text-anchor="middle" font-family="Inter Tight,Helvetica,Arial,sans-serif" font-weight="600" font-size="8.5" fill="#FFF748">Oversetter</text>
+          </g>
+        </svg>
+      </div>
+      <div class="tile y sq" role="img" aria-label="Close-up of the lanyard: a purple strap across a yellow ground, printed in yellow with the mark and the words Stiupan Translations, Lost words found here.">
+        <svg viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+          <g transform="rotate(-24 200 200)">
+            <rect x="-120" y="140" width="640" height="120" fill="#3C1A5B"/>
+            <path d="M-120 150 H520 M-120 250 H520" stroke="#FFF748" stroke-opacity=".45" stroke-width="1.2" stroke-dasharray="6 5" fill="none"/>
+            <g style="--m:#FFF748;--g:#3C1A5B"><use href="#st" x="-40" y="176" width="64" height="48"/><use href="#st" x="376" y="176" width="64" height="48"/></g>
+            <text x="44" y="210" font-family="Crimson Text,Georgia,serif" font-weight="700" font-size="34" fill="#FFF748">Stiupan Translations</text>
+            <text x="46" y="236" font-family="Inter Tight,Helvetica,Arial,sans-serif" font-weight="600" font-size="11" letter-spacing="2.4" fill="#FFF748">LOST WORDS FOUND HERE</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <figure class="panel">
+      <div class="metro" role="img" aria-label="A metro underpass with concrete walls and a lit billboard frame holding two posters. The left poster is purple with scattered yellow letters, the name Stiupan Translations, OVERSETTELSESBURÅ, the round yellow logo and a line about the six languages. The right poster is yellow with the purple lockup, the words Lost words found here, and the yellow mark on a purple panel.">
+        <div class="ceil"></div><div class="wall"></div><div class="floor"></div>
+        <div class="bb" aria-hidden="true">
+          <div class="pst p" lang="nb">
+            <span class="l" style="left:5%;top:6%">B</span><span class="l" style="left:9%;top:20%">U</span><span class="l" style="left:4%;top:34%">R</span><span class="l" style="left:8%;top:48%">Å</span>
+            <span class="l f" style="left:21%;top:18%;font-size:4.6cqw">S</span><span class="l f" style="left:52%;top:8%;transform:rotate(28deg)">T</span><span class="l f" style="left:38%;top:64%;transform:rotate(38deg)">I</span>
+            <span class="l" style="left:80%;top:6%">E</span><span class="l" style="left:86%;top:36%;transform:rotate(-30deg)">R</span><span class="l" style="left:90%;top:50%">V</span><span class="l" style="left:78%;top:58%;transform:rotate(-40deg)">u</span>
+            <span class="nm">Stiupan Translations</span><span class="sub">OVERSETTELSESBURÅ</span>
+            <div class="disc"><svg viewBox="0 0 169 127" width="169" height="127" aria-hidden="true" focusable="false"><use href="#st"/></svg></div>
+            <p class="copy">Vi oversetter, korrekturleser og lokaliserer tekster mellom norsk, engelsk, ukrainsk, russisk, tysk og polsk.</p>
+            <span class="url">nortranslations.no</span>
+          </div>
+          <div class="pst y" lang="nb">
+            <div class="bar"><p class="copy">Fra søknader til nettsider: vi finner ordene som treffer målgruppen, på seks språk.</p><div class="lk"><svg viewBox="0 0 169 127" width="169" height="127" aria-hidden="true" focusable="false"><use href="#st"/></svg><span>Stiupan Translations</span></div></div>
+            <span class="big" lang="en">Lost<br>words<br>found<br>here</span>
+            <div class="box"><svg viewBox="0 0 169 127" width="169" height="127" aria-hidden="true" focusable="false"><use href="#st"/></svg></div>
+            <p class="copy langs">Norsk · English · Українська · Русский · Deutsch · Polski<br>nortranslations.no · Oslo</p>
+          </div>
+        </div>
+      </div>
+      <figcaption>A billboard in a metro underpass, built from the brand after a broot reference. The posters are a mockup, not a real campaign.</figcaption>
     </figure>
     <a class="next" href="book.html"><span>Next project: Book</span><span class="arrow" aria-hidden="true">→</span></a>
   </section>
