@@ -61,8 +61,8 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 .meta dd{margin:0;font-size:16px}
 
 /* 3D mockup stage */
-.stage{background:var(--stage);position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);align-items:center;justify-items:center;gap:clamp(24px,5vw,80px);padding:clamp(48px,7vw,110px) clamp(24px,5vw,80px)}
-.scene{--w:clamp(180px,24vw,340px);--h:calc(var(--w) * 297 / 210);--d:calc(var(--w) * 34 / 210);perspective:1600px;width:100%;display:flex;justify-content:center;position:relative}
+.stage{--w:clamp(180px,24vw,340px);--h:calc(var(--w) * 297 / 210);--d:calc(var(--w) * 34 / 210);background:var(--stage);position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);align-items:center;justify-items:center;gap:clamp(24px,5vw,80px);padding:clamp(48px,7vw,110px) clamp(24px,5vw,80px)}
+.scene{perspective:1600px;width:100%;display:flex;justify-content:center;position:relative}
 .scene::before{content:"";position:absolute;left:50%;top:50%;width:calc(var(--w) * .95);height:calc(var(--h) * .96);transform:translate(-70%,-48%) skewX(3deg);background:radial-gradient(closest-side,rgba(var(--sh),.42),rgba(var(--sh),.2) 55%,rgba(var(--sh),0));filter:blur(28px);pointer-events:none}
 .b3d{
   position:relative;z-index:1;width:var(--w);height:var(--h);transform-style:preserve-3d;
@@ -70,10 +70,13 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 .face{position:absolute;left:0;top:0;backface-visibility:hidden}
 .face img{width:100%;height:100%;object-fit:cover}
 .front{width:var(--w);height:var(--h);transform:translateZ(calc(var(--d) / 2));border-radius:1px clamp(4px,.7vw,8px) clamp(4px,.7vw,8px) 1px;overflow:hidden}
-.front::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.16) 0,rgba(0,0,0,0) 2.4%,rgba(255,255,255,.4) 3.4%,rgba(0,0,0,.16) 4.3%,rgba(0,0,0,0) 5.6%),linear-gradient(110deg,rgba(0,0,0,.05),rgba(0,0,0,0) 45%,rgba(255,255,255,.1))}
+.front::after{content:"";position:absolute;inset:0;--c:calc(var(--w) * .035);
+  --fold:rgba(var(--sh),0) 44%,rgba(var(--sh),.22) 48.5%,rgba(var(--sh),.32) 50%,rgba(255,255,255,.9) 51.5%,rgba(255,255,255,0) 57%;
+  background:linear-gradient(135deg,var(--fold)) right top / var(--c) var(--c) no-repeat,linear-gradient(45deg,var(--fold)) right bottom / var(--c) var(--c) no-repeat,
+    linear-gradient(90deg,rgba(var(--sh),.18) 0,rgba(var(--sh),0) 2.4%,rgba(255,255,255,.4) 3.4%,rgba(var(--sh),.16) 4.3%,rgba(var(--sh),0) 5.6%),linear-gradient(110deg,rgba(var(--sh),.05),rgba(var(--sh),0) 45%,rgba(255,255,255,.1));
+  box-shadow:inset -1px 0 0 rgba(255,255,255,.7),inset 0 -1px 0 rgba(var(--sh),.08)}
 .back-face{width:var(--w);height:var(--h);transform:rotateY(180deg) translateZ(calc(var(--d) / 2))}
 .spine{width:var(--d);height:var(--h);left:calc(50% - var(--d) / 2);transform:rotateY(-90deg) translateZ(calc(var(--w) / 2));overflow:hidden}
-.spine{border-radius:40% / 2%}
 .spine::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.34),rgba(0,0,0,.1) 30%,rgba(255,255,255,.06) 50%,rgba(0,0,0,.1) 70%,rgba(0,0,0,.36))}
 /* where the standing book meets the ground: a soft grey shade, wider to the left (light from the right) */
 .scene::after{content:"";position:absolute;left:50%;top:calc(50% + var(--h) / 2);width:calc(var(--w) * 1.5);height:calc(var(--w) * .16);transform:translate(-60%,-55%);pointer-events:none;
@@ -84,7 +87,13 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 .top{width:calc(var(--w) - 3px);height:calc(var(--d) - 4px);top:calc(50% - var(--d) / 2 + 2px);
   transform:rotateX(90deg) translateZ(calc(var(--h) / 2 - 3px));
   background:repeating-linear-gradient(0deg,#f7f6f2 0 1px,#e3e1da 1px 2px)}
-.flat{width:min(100%,clamp(170px,20vw,300px));height:auto;border-radius:1px clamp(3px,.6vw,7px) clamp(3px,.6vw,7px) 1px;box-shadow:var(--soft-shadow)}
+.flat{position:relative;width:min(var(--w),100%);aspect-ratio:210/297;border-radius:clamp(4px,.7vw,8px) 1px 1px clamp(4px,.7vw,8px);overflow:hidden;box-shadow:var(--soft-shadow)}
+.flat img{width:100%;height:100%;object-fit:cover}
+.flat::after{content:"";position:absolute;inset:0;pointer-events:none;--c:calc(var(--w) * .035);
+  --fold:rgba(var(--sh),0) 44%,rgba(var(--sh),.22) 48.5%,rgba(var(--sh),.32) 50%,rgba(255,255,255,.9) 51.5%,rgba(255,255,255,0) 57%;
+  background:linear-gradient(45deg,var(--fold)) left top / var(--c) var(--c) no-repeat,linear-gradient(135deg,var(--fold)) left bottom / var(--c) var(--c) no-repeat,
+    linear-gradient(270deg,rgba(var(--sh),.16) 0,rgba(var(--sh),0) 2.4%,rgba(255,255,255,.4) 3.4%,rgba(var(--sh),.14) 4.3%,rgba(var(--sh),0) 5.6%),linear-gradient(250deg,rgba(var(--sh),.04),rgba(var(--sh),0) 45%,rgba(255,255,255,.08));
+  box-shadow:inset 1px 0 0 rgba(255,255,255,.7),inset 0 1px 0 rgba(255,255,255,.8),inset 0 -1px 0 rgba(var(--sh),.08)}
 .stage figcaption{grid-column:1/-1;justify-self:start;font-size:14px;color:var(--muted)}
 @media (hover:hover){.scene:hover .b3d{transform:rotateX(4deg) rotateY(20deg)}}
 @media (prefers-reduced-motion:reduce){.b3d{transition:none}.scene:hover .b3d{transform:rotateX(6deg) rotateY(30deg)}}
@@ -180,7 +189,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
           <div class="face back-face"><img src="assets/work/book/cover-back.jpg" alt="" width="1200" height="1697"></div>
         </div>
       </div>
-      <img class="flat" src="assets/work/book/cover-back.jpg" alt="Back cover: a painting of a Lofoten landscape above the title and a short text about Haldis Blix Gulsvik and the families." width="1200" height="1697" loading="lazy">
+      <div class="flat"><img src="assets/work/book/cover-back.jpg" alt="Back cover: a painting of a Lofoten landscape above the title and a short text about Haldis Blix Gulsvik and the families." width="1200" height="1697" loading="lazy"></div>
       <figcaption>Cover, spine and back, built from the print file. 210 × 297 mm, 34 mm spine.</figcaption>
     </figure>
   </div>
