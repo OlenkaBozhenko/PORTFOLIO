@@ -1,0 +1,168 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Book render</title>
+<style>html,body{margin:0;background:#E9E9E6}canvas{display:block;width:800px;height:600px}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+// Offline render of the hardcover (book.md, 3D mockup). Units: mm. Output: transparent PNG, shadow included.
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { mergeVertices } from 'three/addons/utils/BufferGeometryUtils.js';
+
+const P = new URLSearchParams(location.search);
+const OUT_W = +(P.get('w') || 1600), OUT_H = +(P.get('h') || 1200);
+const ROT = +(P.get('rot') || 0), CAM_X = +(P.get('cx') || 300), CAM_Y = +(P.get('cy') || 2150), CAM_Z = +(P.get('cz') || 520);
+
+const H = 297;          // board height
+const TB = 1.0;         // board thickness in the shape, bevel adds the rest (about 2.8 mm)
+const ZO = 16.2, ZI = ZO - TB;
+const BEV = 0.9;
+
+const load = src => new Promise(r => { const i = new Image(); i.onload = () => r(i); i.src = src; });
+const [front, spine, back] = await Promise.all(['cover-front.jpg','cover-spine.jpg','cover-back.jpg'].map(f => load('../../assets/work/book/' + f)));
+
+// one wrap texture: white | back | spine | front | white (the print file order)
+const CH = 1697, SW = Math.round(spine.width * CH / spine.height), M = 48;
+const wrapC = document.createElement('canvas'); wrapC.width = M + 1200 + SW + 1200 + M; wrapC.height = CH;
+const g = wrapC.getContext('2d'); g.fillStyle = '#fff'; g.fillRect(0, 0, wrapC.width, CH);
+g.drawImage(back, M, 0, 1200, CH); g.drawImage(spine, M + 1200, 0, SW, CH); g.drawImage(front, M + 1200 + SW, 0, 1200, CH);
+const WW = wrapC.width;
+const U = { whiteL: (M / 2) / WW, back0: M / WW, spine0: (M + 1200) / WW, front0: (M + 1200 + SW) / WW, front1: (M + 2400 + SW) / WW, whiteR: (WW - M / 2) / WW };
+const wrapTex = new THREE.CanvasTexture(wrapC); wrapTex.colorSpace = THREE.SRGBColorSpace; wrapTex.anisotropy = 16;
+
+// page edges: fine, slightly irregular lines
+const pc = document.createElement('canvas'); pc.width = 2048; pc.height = 64;
+const pg = pc.getContext('2d'); pg.fillStyle = '#f5f2ea'; pg.fillRect(0, 0, 2048, 64);
+let x = 0, seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+while (x < 2048) { const w = 1 + rnd() * 1.6; const a = 0.05 + rnd() * 0.16; pg.fillStyle = `rgba(90,80,60,${a})`; pg.fillRect(x, 0, 0.8, 64); x += w + 2.2 + rnd() * 1.5; }
+const pageTex = new THREE.CanvasTexture(pc); pageTex.colorSpace = THREE.SRGBColorSpace; pageTex.anisotropy = 16;
+
+// case cross-section (x, z) -> Shape(x, -z); fore edge at x = 105, rounded spine at x = -108
+function caseShape() {
+  const s = new THREE.Shape(); const r = 0.8;
+  const m = (x, z) => s.moveTo(x, -z), l = (x, z) => s.lineTo(x, -z);
+  const q = (cx, cz, x, z) => s.quadraticCurveTo(cx, -cz, x, -z);
+  const b = (ax, az, bx, bz, x, z) => s.bezierCurveTo(ax, -az, bx, -bz, x, -z);
+  m(105 - r, ZO);
+  l(-93.5, ZO);
+  b(-95.5, ZO, -96.2, ZO - 1.1, -97.4, ZO - 1.1);   // hinge groove
+  b(-98.6, ZO - 1.1, -99.2, ZO - 0.2, -100.4, ZO - 0.1);
+  b(-105.6, ZO, -108.2, 8.5, -108.2, 0);             // rounded spine
+  b(-108.2, -8.5, -105.6, -ZO, -100.4, -ZO + 0.1);
+  b(-99.2, -ZO + 0.2, -98.6, -ZO + 1.1, -97.4, -ZO + 1.1);
+  b(-96.2, -ZO + 1.1, -95.5, -ZO, -93.5, -ZO);
+  l(105 - r, -ZO); q(105, -ZO, 105, -ZO + r); l(105, -ZI - r); q(105, -ZI, 105 - r, -ZI);
+  l(-94, -ZI);
+  b(-100, -ZI, -106.4, -7.5, -106.4, 0);             // inside of the spine
+  b(-106.4, 7.5, -100, ZI, -94, ZI);
+  l(105 - r, ZI); q(105, ZI, 105, ZI + r); l(105, ZO - r); q(105, ZO, 105 - r, ZO);
+  return s;
+}
+// page block: square 3 mm, fore edge slightly concave, back rounded to follow the spine
+function blockShape() {
+  const s = new THREE.Shape(); const Z = ZI - BEV - 0.35;
+  s.moveTo(101.6, -Z);
+  s.quadraticCurveTo(100.4, 0, 101.6, Z);
+  s.lineTo(-96, Z);
+  s.bezierCurveTo(-102, Z, -105.2, 7, -105.2, 0);
+  s.bezierCurveTo(-105.2, -7, -102, -Z, -96, -Z);
+  s.lineTo(101.6, -Z);
+  return s;
+}
+function extrude(shape, depth, bevel, segs) {
+  let geo = new THREE.ExtrudeGeometry(shape, { depth, bevelEnabled: true, bevelThickness: bevel, bevelSize: bevel, bevelSegments: segs, curveSegments: 48, steps: 1 });
+  geo.deleteAttribute('normal'); geo.deleteAttribute('uv');
+  geo = mergeVertices(geo, 1e-3); geo.computeVertexNormals();
+  geo.rotateX(-Math.PI / 2);            // shape y -> world -z, extrusion -> world +y
+  geo.translate(0, -depth / 2, 0);
+  return geo;
+}
+
+const caseGeo = extrude(caseShape(), H - 2 * BEV, BEV, 7);
+{ // UVs for the case from position and normal
+  const p = caseGeo.attributes.position, n = caseGeo.attributes.normal, uv = new Float32Array(p.count * 2);
+  for (let i = 0; i < p.count; i++) {
+    const X = p.getX(i), Y = p.getY(i), Z = p.getZ(i), nz = n.getZ(i);
+    let u;
+    const v = THREE.MathUtils.clamp((Y + H / 2) / H, 0, 1);
+    if (X < -99.8) { // spine: angle from back (0) to front (1)
+      const t = THREE.MathUtils.clamp(0.5 + Math.atan2(Z, -X - 97) / Math.PI, 0, 1);
+      u = U.spine0 + t * (U.front0 - U.spine0);
+    } else if (Z > 0) {
+      u = nz < -0.35 ? U.whiteR : U.front0 + THREE.MathUtils.clamp((X + 105) / 210, 0.004, 0.996) * (U.front1 - U.front0);
+    } else {
+      u = nz > 0.35 ? U.whiteL : U.back0 + THREE.MathUtils.clamp((105 - X) / 210, 0.004, 0.996) * (U.spine0 - U.back0);
+    }
+    uv[2 * i] = u; uv[2 * i + 1] = v;
+  }
+  caseGeo.setAttribute('uv', new THREE.BufferAttribute(uv, 2));
+}
+const blockGeo = extrude(blockShape(), H - 6 - 0.6, 0.3, 2);
+{
+  const p = blockGeo.attributes.position, n = blockGeo.attributes.normal, uv = new Float32Array(p.count * 2);
+  const Z = ZI;
+  for (let i = 0; i < p.count; i++) {
+    const X = p.getX(i), Y = p.getY(i), Zp = p.getZ(i), ny = Math.abs(n.getY(i));
+    uv[2 * i] = (Zp + Z) / (2 * Z);
+    uv[2 * i + 1] = ny > 0.6 ? (X + 110) / 220 : (Y + H / 2) / H;
+  }
+  blockGeo.setAttribute('uv', new THREE.BufferAttribute(uv, 2));
+}
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1); renderer.setSize(OUT_W, OUT_H, false);
+renderer.setClearColor(0x000000, 0);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.NeutralToneMapping; renderer.toneMappingExposure = +(P.get('ex') || 1.0);
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.VSMShadowMap;
+document.body.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+scene.environmentIntensity = +(P.get('env') || 0.22);
+
+// matte laminate grain
+const nc = document.createElement('canvas'); nc.width = nc.height = 512;
+const ng = nc.getContext('2d'); const nd = ng.createImageData(512, 512);
+for (let i = 0; i < nd.data.length; i += 4) { const v = 118 + rnd() * 20; nd.data[i] = nd.data[i + 1] = nd.data[i + 2] = v; nd.data[i + 3] = 255; }
+ng.putImageData(nd, 0, 0);
+const grain = new THREE.CanvasTexture(nc); grain.wrapS = grain.wrapT = THREE.RepeatWrapping; grain.repeat.set(9, 6);
+const coverMat = new THREE.MeshPhysicalMaterial({ map: wrapTex, roughness: 0.55, roughnessMap: grain, bumpMap: grain, bumpScale: 0.25, clearcoat: 0.2, clearcoatRoughness: 0.45 });
+const pageMat = new THREE.MeshStandardMaterial({ map: pageTex, roughness: 0.95 });
+const book = new THREE.Group();
+const caseMesh = new THREE.Mesh(caseGeo, coverMat), blockMesh = new THREE.Mesh(blockGeo, pageMat);
+for (const m of [caseMesh, blockMesh]) { m.castShadow = true; m.receiveShadow = true; book.add(m); }
+// lying on the table, front up, head away from the camera
+book.rotation.x = -Math.PI / 2;
+book.rotation.z = THREE.MathUtils.degToRad(ROT);
+book.position.y = ZO + BEV + 0.01;
+scene.add(book);
+
+// floor: shadow only, so the PNG sits on any pale ground
+const floor = new THREE.Mesh(new THREE.PlaneGeometry(4000, 4000), new THREE.ShadowMaterial({ opacity: 0.26 }));
+floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; scene.add(floor);
+// contact shadow under the book
+const cc = document.createElement('canvas'); cc.width = cc.height = 256;
+const cg = cc.getContext('2d'); const grd = cg.createRadialGradient(128, 128, 0, 128, 128, 128);
+grd.addColorStop(0, 'rgba(0,0,0,0.55)'); grd.addColorStop(0.55, 'rgba(0,0,0,0.25)'); grd.addColorStop(1, 'rgba(0,0,0,0)');
+cg.fillStyle = grd; cg.fillRect(0, 0, 256, 256);
+const contact = new THREE.Mesh(new THREE.PlaneGeometry(262, 350), new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(cc), transparent: true, depthWrite: false }));
+contact.rotation.x = -Math.PI / 2; contact.position.set(-6, 0.05, 2);
+const contactHolder = new THREE.Group(); contactHolder.rotation.y = book.rotation.z; contactHolder.add(contact); scene.add(contactHolder);
+
+// key light from the right, soft
+const key = new THREE.DirectionalLight(0xffffff, +(P.get('ki') || 2.3));
+key.position.set(+(P.get('kx') || 600), +(P.get('ky') || 900), +(P.get('kz') || -60)); key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048); key.shadow.radius = 14; key.shadow.blurSamples = 25;
+key.shadow.bias = -0.0004; key.shadow.normalBias = 0.6;
+Object.assign(key.shadow.camera, { left: -420, right: 420, top: 420, bottom: -420, near: 100, far: 2000 });
+scene.add(key);
+const fill = new THREE.DirectionalLight(0xffffff, 0.18); fill.position.set(-600, 300, 500); scene.add(fill);
+
+const camera = new THREE.PerspectiveCamera(+(P.get('fov') || 11), OUT_W / OUT_H, 10, 5000);
+camera.up.set(0, 0, -1); camera.position.set(CAM_X, CAM_Y, CAM_Z); camera.lookAt(0, 0, 8);
+renderer.render(scene, camera);
+window.__done = true;
+</script>
+</body></html>
