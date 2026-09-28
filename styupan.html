@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Styupan Translation — Olena Bozhenko</title>
+<meta name="description" content="Stiupan Translations: a brand mark for a multilingual translation studio in Oslo, by Olena Bozhenko.">
+<!-- Display layer. Content source: styupan.md -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Inter+Tight:wght@300;400;500&display=swap">
+<style>
+:root{
+  --bg:#FFFFFF;      /* D1: white, always */
+  --ink:#0E0E0E;     /* 19.3:1 */
+  --muted:#6B6B6B;   /* 5.33:1 on white, 4.8:1 on wells */
+  --rule:#E6E6E6;
+  --well:#F3F3F1;
+  --stage:#E9E9E6;   /* mockup ground, ink on it 16.2:1 */
+  --label:#2B3BD6;
+  --sans:"Inter Tight","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --gutter:clamp(16px,4vw,56px);
+  /* mockup shadows (same light as the landing render): dark grey, light from the right,
+     layered so they fade out smoothly into the ground instead of ending in a patch */
+  --sh:74,74,70;
+  --soft-shadow:-1px 1px 2px rgba(var(--sh),.07),-3px 3px 8px rgba(var(--sh),.05),-8px 7px 20px rgba(var(--sh),.045),
+    -16px 14px 40px rgba(var(--sh),.04),-30px 24px 80px rgba(var(--sh),.035),-50px 40px 140px rgba(var(--sh),.03);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{background:var(--bg);scroll-behavior:smooth;scroll-padding-top:80px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--label);outline-offset:3px;border-radius:2px}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{font-weight:400;letter-spacing:-.035em;text-wrap:balance}
+.wrap{max-width:1320px;margin:0 auto;padding-inline:var(--gutter)}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--ink);color:var(--bg);padding:10px 14px;border-radius:999px;z-index:20}
+.skip:focus{left:16px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* nav (same as the landing) */
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:64px}
+.brand{font-weight:500;text-decoration:none;letter-spacing:-.01em}
+.nav ul{display:flex;gap:clamp(16px,3vw,40px);list-style:none;margin:0;padding:0;font-size:15px}
+.nav ul a{text-decoration:none;padding-block:12px;display:inline-block}
+.nav ul a:hover{text-decoration:underline;text-underline-offset:4px}
+
+/* header (reinostudio / Berrics order: name, statement, meta) */
+.head{padding-block:clamp(48px,8vw,112px) clamp(32px,5vw,64px);display:flex;flex-direction:column;gap:28px}
+.back{font-size:15px;text-decoration:none;color:var(--muted);align-self:flex-start;padding-block:10px}
+.back:hover{color:var(--ink)}
+.eyebrow{font-size:15px;font-weight:500}
+h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-width:18ch}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px 32px;margin:0;padding-top:12px}
+.meta div{display:flex;flex-direction:column;gap:4px}
+.meta dt{font-size:13px;color:var(--muted)}
+.meta dd{margin:0;font-size:16px}
+
+
+/* brand (styupan.md) */
+:root{--purple:#3C1A5B;--yellow:#FFF748;--paper:#F5F5F5;--deep:#26103A;--sh:74,74,70}
+/* intro */
+.intro{margin:0;background:var(--stage);padding:clamp(20px,5vw,80px)}
+.intro img{width:100%;height:auto;aspect-ratio:3072/954;box-shadow:-1px 1px 2px rgba(var(--sh),.07),-8px 7px 20px rgba(var(--sh),.045),-30px 24px 80px rgba(var(--sh),.035)}
+/* brand sections */
+.brand-sec{display:flex;flex-direction:column;gap:clamp(20px,3vw,32px);padding-bottom:clamp(64px,9vw,120px)}
+.panel{margin:0;display:flex;flex-direction:column;gap:14px}
+.panel figcaption,.note{font-size:14px;color:var(--muted);margin:0}
+.construct{background:var(--purple);aspect-ratio:4/3}
+.construct svg{width:100%;height:100%;display:block}
+/* colour and type */
+.swatches{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);grid-template-rows:1fr 1fr;gap:clamp(8px,1vw,14px);min-height:clamp(320px,42vw,560px)}
+.sw{padding:clamp(18px,2.4vw,32px);display:flex;flex-direction:column;justify-content:flex-end;gap:10px;font-size:15px}
+.sw b{font-family:"Crimson Text",Georgia,serif;font-size:clamp(24px,2.6vw,34px);font-weight:700}
+.sw dl{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;margin:0;font-variant-numeric:tabular-nums}
+.sw dt{opacity:.8}.sw dd{margin:0}
+.sw.p{grid-row:1/3;background:var(--purple);color:var(--yellow)}
+.sw.y{background:var(--yellow);color:var(--purple)}
+.sw.w{background:var(--paper);color:var(--purple);box-shadow:inset 0 0 0 1px var(--rule)}
+.type{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(8px,1vw,14px)}
+.type>div{background:var(--paper);color:var(--purple);padding:clamp(20px,3vw,40px);display:flex;flex-direction:column;justify-content:flex-end;gap:12px}
+.type .aa{font-family:"Crimson Text",Georgia,serif;font-size:clamp(72px,10vw,140px);line-height:.9}
+.type .set{font-family:"Crimson Text",Georgia,serif;font-size:clamp(20px,2vw,26px);line-height:1.35}
+.type .lbl{font-size:14px;color:var(--muted)}
+/* light and dark */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(8px,1vw,14px)}
+.tile{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:6%}
+.tile.l{background:var(--paper);--m:var(--purple);--g:var(--paper);color:var(--purple)}
+.tile.d{background:var(--purple);--m:var(--yellow);--g:var(--purple);color:var(--yellow)}
+.lockup{display:flex;align-items:center;gap:clamp(10px,1.6vw,22px)}
+.lockup svg{width:clamp(48px,7vw,104px);height:auto;flex:none}
+.lockup .nm{font-family:"Crimson Text",Georgia,serif;font-weight:700;font-size:clamp(18px,2.5vw,38px);line-height:1;display:block}
+.lockup .sub{font-family:"Crimson Text",Georgia,serif;font-size:clamp(10px,1.3vw,19px);letter-spacing:.06em;margin-top:6px;display:block}
+.tile img{width:62%;height:auto}
+/* photo */
+.photo-fig{margin:0}
+.photo-fig img{width:100%;height:auto;aspect-ratio:1512/1040;object-fit:cover}
+/* stationery, laid flat; sizes follow the desk width */
+.desk{background:var(--deep);aspect-ratio:16/10;position:relative;overflow:hidden;container-type:inline-size}
+.desk>div{position:absolute;box-shadow:-1px 1px 2px rgba(0,0,0,.22),-6px 6px 16px rgba(0,0,0,.18),-24px 22px 60px rgba(0,0,0,.22)}
+.lh{left:8%;top:8%;width:30%;aspect-ratio:210/297;background:#fff;color:#2b2b2b;padding:3cqw 2.8cqw;display:flex;flex-direction:column;gap:1.1cqw;font-size:.72cqw;line-height:1.5;--m:var(--purple);--g:#fff}
+.lh .top{display:flex;justify-content:space-between;align-items:flex-start;gap:2cqw;margin-bottom:1.6cqw}
+.lh .top svg{width:5.4cqw;height:auto}
+.lh .addr{text-align:right;color:#666}
+.lh .nm{font-family:"Crimson Text",Georgia,serif;font-weight:700;font-size:1.25cqw;color:var(--purple);line-height:1.1}
+.lh p{margin:0}
+.lh .foot{margin-top:auto;border-top:.25cqw solid var(--yellow);padding-top:1cqw;color:#777;display:flex;justify-content:space-between}
+.env{left:45%;top:8%;width:38%;aspect-ratio:220/110;background:var(--paper);color:var(--purple);padding:2.2cqw;display:flex;flex-direction:column;justify-content:space-between;--m:var(--purple);--g:var(--paper)}
+.env .lockup{gap:1.2cqw}.env .lockup svg{width:4.6cqw}.env .nm{font-size:1.5cqw}.env .sub{font-size:.8cqw;margin-top:.3cqw}
+.env .stripe{height:.5cqw;background:var(--yellow);width:30%;align-self:flex-end}
+.bc{width:23%;aspect-ratio:85/55;display:flex;flex-direction:column;justify-content:center;padding:2cqw}
+.bc.f{left:45%;top:50%;background:var(--purple);align-items:center;gap:1cqw;color:var(--yellow);--m:var(--yellow);--g:var(--purple)}
+.bc.f svg{width:6.6cqw;height:auto}
+.bc.f .nm{font-family:"Crimson Text",Georgia,serif;font-weight:700;font-size:1.35cqw}
+.bc.b{left:70%;top:58%;background:var(--paper);color:#333;font-size:.8cqw;line-height:1.55;--m:var(--purple);--g:var(--paper)}
+.bc.b strong{font-family:"Crimson Text",Georgia,serif;font-size:1.3cqw;color:var(--purple)}
+.bc.b .rule{height:.2cqw;width:22%;background:var(--yellow);margin:.6cqw 0}
+@media (max-width:720px){.duo,.type{grid-template-columns:1fr}.swatches{grid-template-columns:1fr;grid-template-rows:auto}.sw.p{grid-row:auto;min-height:220px}}
+/* About / Objective */
+.story{display:flex;flex-direction:column;gap:clamp(32px,4vw,56px);padding-block:clamp(64px,9vw,120px)}
+.pair{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(16px,4vw,64px)}
+.pair h2{font-size:clamp(26px,3vw,40px);line-height:1.1}
+.pair p{max-width:62ch;font-size:clamp(17px,1.5vw,19px)}
+.pair p em{font-style:italic}
+blockquote{margin:0;font-size:clamp(22px,2.6vw,34px);line-height:1.25;letter-spacing:-.02em;max-width:34ch}
+.cite{margin-top:16px;font-size:15px;color:var(--muted)}
+@media (max-width:720px){.pair{grid-template-columns:1fr}}
+
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;padding-bottom:24px;border-bottom:1px solid var(--ink)}
+.sec-head h2{font-size:clamp(32px,4.4vw,56px);line-height:1}
+.sec-head span{color:var(--muted);font-size:15px}
+.next{display:flex;justify-content:space-between;gap:16px;padding-block:28px;border-top:1px solid var(--ink);font-size:15px;text-transform:uppercase;letter-spacing:.02em;text-decoration:none}
+.next:hover .arrow{transform:translateX(6px)}
+.arrow{transition:transform .2s ease}
+footer{border-top:1px solid var(--rule);padding-block:28px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="st" viewBox="0 0 169 127"><path fill-rule="evenodd" clip-rule="evenodd" style="fill:var(--m)" d="M153.632 3.73592C145.108 1.12183 135.739 0 126.75 0C111.772 0 95.6434 2.9845 84.5 11.2077C73.3566 2.9845 57.2276 0 42.25 0C27.2724 0 11.1434 2.9845 0 11.2077V120.65C0 122.523 1.92237 124.386 3.84475 124.386L5.75656 124.016C16.1289 119.147 31.1066 115.792 42.25 115.792C57.2276 115.792 73.3566 118.787 84.5 127C94.8724 120.65 113.695 115.792 126.75 115.792C139.425 115.792 152.48 118.036 163.243 123.645L165.155 124.016C167.078 124.016 169 122.142 169 120.269V11.2077C164.395 7.85283 159.399 5.60917 153.632 3.73592ZM153.632 104.584C145.182 101.981 135.971 100.859 126.75 100.859C113.695 100.859 94.8724 105.706 84.5 112.056V26.1514C94.8724 19.8014 113.695 14.9437 126.75 14.9437C135.971 14.9437 145.182 16.0655 153.632 18.6796V104.584Z"/><path style="fill:var(--m)" d="M112.467 85C112.28 84.8112 112.187 84.4336 112.187 83.8673C112.187 82.8761 112.257 82.3805 112.397 82.3805C112.77 82.3805 113.306 82.2861 114.005 82.0973C114.704 81.9086 115.357 81.6726 115.963 81.3894C116.569 81.1062 116.918 80.8466 117.011 80.6106C117.198 79.9499 117.314 79.1711 117.361 78.2743C117.454 77.3776 117.501 76.3392 117.501 75.1593V49.531C117.501 45.8496 117.314 43.6785 116.941 43.0177L116.592 42.3805C116.405 42.1917 115.799 42.0501 114.774 41.9558C113.749 41.8142 112.56 41.7434 111.208 41.7434C109.297 41.7434 107.736 42.2861 106.524 43.3717C105.312 44.41 104.379 46.1799 103.727 48.6814C103.634 48.9174 103.401 49.0354 103.028 49.0354C102.002 49.0354 101.326 48.8702 101 48.5398L102.328 37C103.354 37.236 104.263 37.4248 105.055 37.5664C105.848 37.708 106.547 37.7788 107.153 37.7788C109.53 37.7788 112.07 37.8496 114.774 37.9912C117.524 38.1327 120.088 38.2035 122.465 38.2035C124.842 38.2035 127.406 38.1327 130.156 37.9912C132.906 37.8496 135.47 37.7788 137.847 37.7788C138.453 37.7788 139.152 37.708 139.945 37.5664C140.737 37.4248 141.646 37.236 142.672 37L144 48.6106C143.674 48.941 142.998 49.1062 141.972 49.1062C141.599 49.1062 141.366 48.9882 141.273 48.7522C140.108 44.0796 137.614 41.7434 133.792 41.7434C130.063 41.7434 128.082 42.1681 127.849 43.0177C127.662 43.6785 127.522 44.528 127.429 45.5664C127.336 46.6047 127.289 47.8555 127.289 49.3186V74.8761C127.289 76.056 127.336 77.118 127.429 78.0619C127.522 79.0059 127.662 79.8555 127.849 80.6106C127.942 80.7994 128.268 81.0354 128.828 81.3186C129.434 81.6018 130.063 81.8614 130.715 82.0973C131.415 82.2861 131.904 82.3805 132.184 82.3805C132.37 82.3805 132.463 82.8289 132.463 83.7257C132.463 84.1976 132.417 84.6224 132.324 85C132.137 85 131.694 84.9764 130.995 84.9292C130.296 84.882 129.34 84.8112 128.128 84.7168C126.917 84.6224 125.844 84.5516 124.912 84.5044C123.98 84.4572 123.211 84.4336 122.605 84.4336C121.766 84.4336 120.624 84.4808 119.179 84.5752C117.734 84.6696 116.359 84.7404 115.054 84.7876C113.795 84.882 112.933 84.9528 112.467 85Z"/><path style="fill:var(--g)" d="M43.297 90.2344C41.1315 90.2344 38.7765 90.0448 36.232 89.6658C33.6875 89.3409 30.8995 88.8264 27.8677 88.1225C27.5971 86.9311 27.2993 85.442 26.9745 83.655C26.7038 81.868 26.4602 80.1351 26.2436 78.4565C26.0812 76.7236 26 75.451 26 74.6388C26.1624 74.0973 26.6497 73.8265 27.4617 73.8265C29.14 73.8265 30.0062 73.989 30.0603 74.3139C30.3851 75.9384 31.116 77.6442 32.2529 79.4312C33.3898 81.164 34.7703 82.6261 36.3944 83.8174C38.0727 85.0088 39.8322 85.6044 41.6729 85.6044C47.0325 85.6044 49.7123 82.6532 49.7123 76.7507C49.7123 75.1803 49.0897 73.7453 47.8445 72.4457C46.6535 71.146 45.2459 69.9818 43.6218 68.9529C42.0518 67.924 40.6984 67.0305 39.5615 66.2724L37.1253 64.6479C35.2846 63.4024 33.5522 62.1298 31.9281 60.8302C30.3039 59.4764 28.9776 57.9331 27.949 56.2002C26.9745 54.4133 26.4872 52.2472 26.4872 49.7021C26.4872 46.9404 27.3264 44.4494 29.0046 42.2292C30.6829 40.009 32.8484 38.2491 35.5012 36.9494C38.1539 35.6498 40.9149 35 43.7842 35C44.9211 35 46.0851 35.0812 47.2761 35.2437C48.5213 35.4061 49.577 35.5686 50.4432 35.731C52.0673 36.056 53.4478 36.3809 54.5847 36.7058C55.7757 36.9765 56.7231 37.1661 57.4269 37.2744C57.6976 39.9278 57.9141 42.3646 58.0766 44.5848C58.239 46.805 58.3202 48.8627 58.3202 50.758C58.1036 51.2996 57.6976 51.5703 57.1021 51.5703C55.478 51.5703 54.6388 51.3808 54.5847 51.0017C54.3681 49.1606 53.7726 47.3736 52.7981 45.6407C51.8237 43.9079 50.5785 42.4729 49.0626 41.3357C47.5468 40.1444 45.8144 39.5487 43.8654 39.5487C42.0247 39.5487 40.4548 40.1173 39.1555 41.2545C37.9103 42.3917 37.2877 44.2057 37.2877 46.6967C37.2877 48.9169 38.2622 50.8663 40.2111 52.545C42.2142 54.2237 44.7858 56.0649 47.9258 58.0685L52.0673 60.6677C53.5831 61.5883 55.0178 62.6172 56.3712 63.7544C57.7247 64.8374 58.8345 66.2724 59.7007 68.0594C60.5669 69.7922 61 72.1749 61 75.2074C61 78.0774 60.1609 80.6496 58.4826 82.9239C56.8585 85.1983 54.693 86.9853 51.9861 88.2849C49.3333 89.5846 46.437 90.2344 43.297 90.2344Z"/></symbol></defs></svg>
+<a class="skip" href="#construction">Skip to the brand</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="Olena%20Bozhenko.html#top">Olena Bozhenko</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="Olena%20Bozhenko.html#work">Work</a></li>
+        <li><a href="Olena%20Bozhenko.html#about">About</a></li>
+        <li><a href="Olena%20Bozhenko.html#contact">Contact</a></li>
+        <li><a href="assets/Olena-Bozhenko-Resume.pdf" target="_blank" rel="noopener">Resume <span class="vh">(PDF, opens in a new tab)</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap head">
+    <a class="back" href="Olena%20Bozhenko.html#work">← All work</a>
+    <p class="eyebrow">Brand mark</p>
+    <h1>A mark for an Oslo translation studio: two letters on the pages of an open book.</h1>
+    <dl class="meta">
+      <div><dt>Role</dt><dd>Logo, brand identity</dd></div>
+      <div><dt>Year</dt><dd>2023 – 2024</dd></div>
+      <div><dt>Client</dt><dd>Stiupan Translations ENK, Oslo</dd></div>
+      <div><dt>Typeface</dt><dd>Crimson Text</dd></div>
+    </dl>
+  </div>
+
+  <div class="wrap">
+    <figure class="intro">
+      <img src="assets/work/styupan/intro-1536.webp" srcset="assets/work/styupan/intro-1536.webp 1536w, assets/work/styupan/intro-3072.webp 3072w" sizes="(min-width:1320px) 1100px, 92vw" alt="Stiupan Translations cover: the round yellow logo with S and T on an open book, the name and the word OVERSETTELSESBURÅ in yellow serif on dark purple, with loose letters scattered around." width="1536" height="477">
+    </figure>
+  </div>
+
+  <div class="wrap story">
+    <div class="pair">
+      <h2>About</h2>
+      <p>Stiupan Translations is a multilingual translation studio in Oslo. The small team translates, proofreads, localises and writes copy in Norwegian, English, Ukrainian, Russian, German and Polish, under the line “Lost words found here”.</p>
+    </div>
+    <div class="pair">
+      <h2>Objective</h2>
+      <p>A mark that says “language and text” at a glance, reads at favicon size and in print, and works in one colour as well as two.</p>
+    </div>
+    <div class="pair">
+      <h2>Idea</h2>
+      <p>The initials S and T sit on the two pages of an open book. The left page is solid and the S is cut out of it; the right page is open and carries the T. Because the S is always the colour of the ground, the mark swaps cleanly between light and dark.</p>
+    </div>
+    <div class="pair">
+      <span></span>
+      <figure style="margin:0">
+        <blockquote>“She played a decisive role in creating the company’s logo.”</blockquote>
+        <figcaption class="cite">Maiia Stiupan, owner, Stiupan Translations · translated from her reference letter</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <section class="wrap brand-sec" id="construction" aria-labelledby="construction-title">
+    <div class="sec-head"><h2 id="construction-title">Construction</h2><span>Grid from the logo geometry</span></div>
+    <figure class="panel">
+      <div class="construct" role="img" aria-label="The Stiupan Translations mark in yellow on purple, laid over a construction grid: dashed guides for the outer box, the spine, the open right page, the S and T, the cap line and baselines, and two large circles that draw the curved tops of the pages."><svg viewBox="-155.5 -116.5 480 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><g transform="translate(-150 -150) scale(2.9)" opacity=".07" style="--m:#F5F5F5;--g:transparent"><use href="#st" width="169" height="127"/></g><line x1="0" y1="-116.5" x2="0" y2="243.5" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="15.4" y1="-116.5" x2="15.4" y2="243.5" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="26" y1="-116.5" x2="26" y2="243.5" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="61" y1="-116.5" x2="61" y2="243.5" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="84.5" y1="-116.5" x2="84.5" y2="243.5" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="101" y1="-116.5" x2="101" y2="243.5" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="144" y1="-116.5" x2="144" y2="243.5" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="153.6" y1="-116.5" x2="153.6" y2="243.5" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="169" y1="-116.5" x2="169" y2="243.5" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="-155.5" y1="0" x2="324.5" y2="0" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="-155.5" y1="15" x2="324.5" y2="15" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="-155.5" y1="37" x2="324.5" y2="37" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="-155.5" y1="85" x2="324.5" y2="85" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="-155.5" y1="90.2" x2="324.5" y2="90.2" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="-155.5" y1="112" x2="324.5" y2="112" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="-155.5" y1="127" x2="324.5" y2="127" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><circle cx="42.25" cy="85.3" r="85.3" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><circle cx="126.75" cy="85.3" r="85.3" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><circle cx="43.5" cy="48" r="12.5" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><circle cx="43.5" cy="75.5" r="15" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="-155.5" y1="-116.5" x2="324.5" y2="243.5" stroke="rgba(245,245,245,.16)" stroke-width=".45" fill="none"/><line x1="324.5" y1="-116.5" x2="-155.5" y2="243.5" stroke="rgba(245,245,245,.16)" stroke-width=".45" fill="none"/><text x="87" y="233.5" font-family="Inter Tight,Helvetica,Arial,sans-serif" font-size="6" fill="rgba(245,245,245,.6)">84.5</text><text x="-147.5" y="34.5" font-family="Inter Tight,Helvetica,Arial,sans-serif" font-size="6" fill="rgba(245,245,245,.6)">37</text><text x="-147.5" y="88" font-family="Inter Tight,Helvetica,Arial,sans-serif" font-size="6" fill="rgba(245,245,245,.6)">90.2</text><text x="176" y="30" font-family="Inter Tight,Helvetica,Arial,sans-serif" font-size="6" fill="rgba(245,245,245,.6)">R 85.3</text><g style="--m:#FFF748;--g:#3C1A5B"><use href="#st" width="169" height="127"/></g></svg></div>
+      <figcaption>The spine sits on the centre line; each page top is an arc of a circle with radius 85.3; the S and T share a cap line and sit on the page grid.</figcaption>
+    </figure>
+  </section>
+
+  <section class="wrap brand-sec" aria-labelledby="colour-title">
+    <div class="sec-head"><h2 id="colour-title">Colour and type</h2><span>Three colours, one serif</span></div>
+    <div class="swatches">
+      <div class="sw p"><b>Purple</b><dl><dt>HEX</dt><dd>#3C1A5B</dd><dt>RGB</dt><dd>60, 26, 91</dd><dt>CMYK</dt><dd>34, 71, 0, 64*</dd></dl></div>
+      <div class="sw y"><b>Yellow</b><dl><dt>HEX</dt><dd>#FFF748</dd><dt>RGB</dt><dd>255, 247, 72</dd><dt>CMYK</dt><dd>0, 3, 72, 0*</dd></dl></div>
+      <div class="sw w"><b>Paper</b><dl><dt>HEX</dt><dd>#F5F5F5</dd><dt>RGB</dt><dd>245, 245, 245</dd><dt>CMYK</dt><dd>0, 0, 0, 4*</dd></dl></div>
+    </div>
+    <div class="type">
+      <div><span class="aa" aria-hidden="true">Aa</span><span class="lbl">Crimson Text — Bold and Regular</span></div>
+      <div lang="nb"><span class="set" style="font-weight:700" lang="en">Stiupan Translations</span><span class="set" style="letter-spacing:.06em">OVERSETTELSESBURÅ</span><span class="set">Oversettelse, korrektur, lokalisering og tekstforfatting.</span></div>
+    </div>
+    <p class="note">* CMYK is a plain conversion from RGB, an estimate, not a print-proofed profile. Contrast: yellow on purple 12.5 : 1, purple on paper 12.9 : 1.</p>
+  </section>
+
+  <section class="wrap brand-sec" aria-labelledby="grounds-title">
+    <div class="sec-head"><h2 id="grounds-title">On light and dark</h2><span>Lockup and seal</span></div>
+    <div class="duo" role="img" aria-label="The logo with the name Stiupan Translations and the word OVERSETTELSESBURÅ: purple on light grey, and yellow on purple.">
+      <div class="tile l" aria-hidden="true"><div class="lockup"><svg viewBox="0 0 169 127" width="169" height="127" aria-hidden="true" focusable="false"><use href="#st"/></svg><div><span class="nm">Stiupan Translations</span><span class="sub">OVERSETTELSESBURÅ</span></div></div></div>
+      <div class="tile d" aria-hidden="true"><div class="lockup"><svg viewBox="0 0 169 127" width="169" height="127" aria-hidden="true" focusable="false"><use href="#st"/></svg><div><span class="nm">Stiupan Translations</span><span class="sub">OVERSETTELSESBURÅ</span></div></div></div>
+    </div>
+    <div class="duo">
+      <div class="tile l"><img src="assets/work/styupan/seal-purple.svg" alt="Round seal: the purple mark inside the words Stiupan Translations set in a circle, on light grey." width="369" height="368" loading="lazy"></div>
+      <div class="tile d"><img src="assets/work/styupan/seal-yellow.svg" alt="The same round seal in yellow on purple." width="369" height="368" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="wrap brand-sec" aria-labelledby="use-title">
+    <div class="sec-head"><h2 id="use-title">In use</h2><span>Folder and stationery</span></div>
+    <figure class="photo-fig">
+      <img src="assets/work/styupan/folder-1200.webp" srcset="assets/work/styupan/folder-1200.webp 1200w, assets/work/styupan/folder-2400.webp 2400w" sizes="(min-width:1320px) 1200px, 92vw" alt="A woman in a light jacket holds a purple Stiupan Translations folder with the yellow round logo, outside a glass office building." width="1200" height="825" loading="lazy">
+    </figure>
+    <figure class="panel">
+      <div class="desk" role="img" aria-label="Stationery laid flat on a dark purple ground: an A4 letterhead with the logo and a short letter in Norwegian, an envelope with the lockup and a yellow stripe, and a business card, front in purple with the yellow mark and back in light grey with a name and contact lines.">
+        <div class="lh" aria-hidden="true" lang="nb">
+          <div class="top"><svg viewBox="0 0 169 127" width="169" height="127" aria-hidden="true" focusable="false"><use href="#st"/></svg><div class="addr">Stiupan Translations ENK<br>Oslo, Norge<br>nortranslations.no</div></div>
+          <span class="nm">Stiupan Translations</span>
+          <p>Oslo, 12. mars 2024</p>
+          <p>Kjære [mottaker],</p>
+          <p>Takk for at du valgte Stiupan Translations. Vi oversetter, korrekturleser og lokaliserer tekster mellom norsk, engelsk, ukrainsk, russisk, tysk og polsk, og skriver tekster som treffer målgruppen.</p>
+          <p>Vedlagt finner du tilbudet for oppdraget. Ta gjerne kontakt hvis du har spørsmål.</p>
+          <p>Med vennlig hilsen<br>[Navn Etternavn]<br>Oversetter</p>
+          <div class="foot"><span lang="en">Lost words found here</span><span>nortranslations.no</span></div>
+        </div>
+        <div class="env" aria-hidden="true"><div class="lockup"><svg viewBox="0 0 169 127" width="169" height="127" aria-hidden="true" focusable="false"><use href="#st"/></svg><div><span class="nm">Stiupan Translations</span><span class="sub">OVERSETTELSESBURÅ</span></div></div><span class="stripe"></span></div>
+        <div class="bc f" aria-hidden="true"><svg viewBox="0 0 169 127" width="169" height="127" aria-hidden="true" focusable="false"><use href="#st"/></svg><span class="nm">Stiupan Translations</span></div>
+        <div class="bc b" aria-hidden="true" lang="nb"><strong>[Navn Etternavn]</strong><span>Oversetter</span><span class="rule"></span><span>nortranslations.no</span><span>Oslo, Norge</span></div>
+      </div>
+      <figcaption>Letterhead, envelope and business card, built from the brand. Names and contacts are placeholders.</figcaption>
+    </figure>
+    <a class="next" href="book.html"><span>Next project: Book</span><span class="arrow" aria-hidden="true">→</span></a>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Olena Bozhenko</span><span>Oslo, Norway · works remotely</span></div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,44 @@
+# Styupan Translation — project page content
+
+**Source of truth for** [`styupan.html`](styupan.html), the page that opens from the **Styupan Translation** row of the landing's work list (first build 2026-09-29).
+Layout follows [`book.md`](book.md): the header (back link, eyebrow, headline, meta row), a large first image on a pale stage, then About / Objective and the brand pieces one after another. References she sent on 2026-09-29 are in Notion *For Portfolio* → "Styupan brand page".
+
+---
+
+## Facts
+| | |
+|---|---|
+| Client | Stiupan Translations ENK, Oslo |
+| What they do | A multilingual translation studio: translation, proofreading, localisation, copywriting |
+| Languages | Norwegian, English, Ukrainian, Russian, German, Polish |
+| Tagline | "Lost words found here" |
+| Size | 2–10 employees |
+| Website | nortranslations.no |
+| Her role | Logo and brand identity, then UI/UX and book design for the same client |
+| Year | 2023 – 2024 |
+| Typeface | Crimson Text (Bold for the name, Regular in capitals for OVERSETTELSESBURÅ) |
+
+Sources: Instagram [@nortranslations](https://www.instagram.com/nortranslations/) bio (services, languages, Oslo, website) and the LinkedIn company page [stiupan-translations](https://www.linkedin.com/company/stiupan-translations/) (tagline, size, Oslo), both read 2026-09-29; her Figma file MY-PROJECTS (logo, colours, typeface); Maiia Stiupan's reference letter (`cv.md`).
+
+## Page copy
+- **Eyebrow:** Brand mark
+- **Headline:** A mark for an Oslo translation studio: two letters on the pages of an open book.
+- **Meta row:** Role — Logo, brand identity · Year — 2023 – 2024 · Client — Stiupan Translations ENK, Oslo · Typeface — Crimson Text
+- **About:** Stiupan Translations is a multilingual translation studio in Oslo. The small team translates, proofreads, localises and writes copy in Norwegian, English, Ukrainian, Russian, German and Polish, under the line "Lost words found here".
+- **Objective** *(draft — to confirm with her)*: a mark that says "language and text" at a glance, reads at favicon size and in print, and works in one colour as well as two.
+- **Idea:** the initials S and T sit on the two pages of an open book. The left page is solid and the S is cut out of it; the right page is open and carries the T. Because the S is always the colour of the ground, the mark swaps cleanly between light and dark.
+- **Quote:** "She played a decisive role in creating the company's logo." — Maiia Stiupan, owner (translated from her reference letter; consent to publish her name still to confirm, see `cv.md`).
+
+## Sections, in order
+1. **Intro** — her Figma frame 462:2703 (the purple cover with the round logo, the name, OVERSETTELSESBURÅ and scattered letters), exported at 2× (3072 × 954): `assets/work/styupan/intro-3072.webp` + `intro-1536.webp`.
+2. **About / Objective / Idea / Quote.**
+3. **Construction** — the mark on a construction grid, built in SVG from the logo vectors (Figma 881:83892, 169 × 127 units). Guides follow the real geometry: the outer box, the spine at 84.5, the right page 84.5–153.6 × 15–112, the S and T boxes, cap line 37 and baselines 85 / 90.2, and the two page-top arcs, each a circle of radius 85.3 through the page corners. Yellow mark on the purple ground, dashed light guides, a large faint copy of the mark behind (references: Bexel, RR and octopus grids).
+4. **Colour and type** — Purple #3C1A5B (RGB 60, 26, 91), Yellow #FFF748 (RGB 255, 247, 72), Paper #F5F5F5 (RGB 245, 245, 245), with CMYK as a plain RGB-to-CMYK conversion, marked as an estimate (Purple 34 71 0 64, Yellow 0 3 72 0, Paper 0 0 0 4; not a print-proofed profile); the Crimson Text specimen.
+5. **On light and dark** — the lockup (mark + name + OVERSETTELSESBURÅ) on Paper and on Purple, then the round seals (Figma 882:83893 purple, 882:83894 yellow): `seal-purple.svg` on Paper, `seal-yellow.svg` on Purple.
+6. **Signage** — the office sign, as in her Seraj Law reference. *Waiting for her decision on the image* (a photo she provides, or a rendered mockup).
+7. **In use** — the folder photo, her Figma frame 881:83891, 2× export scaled to `folder-2400.webp` + `folder-1200.webp`.
+8. **Stationery** — letterhead, business cards and envelope laid out flat on a dark ground (reference: broot). Built in HTML and CSS from the brand; names and contacts are placeholders, not real people.
+
+## Accessibility
+- Each image has a text alternative; the construction grid and stationery have one description each.
+- Yellow #FFF748 on purple #3C1A5B: 12.5 : 1. Purple on Paper: 12.9 : 1. Yellow on Paper fails (1.03 : 1), so the yellow seal is shown only on purple.
