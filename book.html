@@ -69,16 +69,16 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
   transform:rotateX(6deg) rotateY(30deg);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
 .face{position:absolute;left:0;top:0;backface-visibility:hidden}
 .face img{width:100%;height:100%;object-fit:cover}
-.front::before{content:"";position:absolute;left:0;top:0;bottom:0;width:10%;background:#fff;z-index:1}
+.front::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5%;background:#fff;z-index:1}
 .front{width:var(--w);height:var(--h);transform:translateZ(calc(var(--d) / 2));border-radius:1px clamp(4px,.7vw,8px) clamp(4px,.7vw,8px) 1px;overflow:hidden}
 .front::after{content:"";position:absolute;inset:0;z-index:2;
   /* the spine rounds into the board: a soft highlight on the bend, the hinge groove as a gentle shade, then the flat board */
-  background:linear-gradient(90deg,rgba(255,255,255,.14) 0,rgba(255,255,255,0) 1.5%,rgba(var(--sh),0) 9%,rgba(var(--sh),.1) 9.7%,rgba(var(--sh),.14) 10%,rgba(var(--sh),.05) 10.4%,rgba(255,255,255,.25) 10.8%,rgba(255,255,255,0) 11.8%),
+  background:linear-gradient(90deg,rgba(var(--sh),.14) 0,rgba(var(--sh),.04) .6%,rgba(255,255,255,.35) 1.4%,rgba(255,255,255,.12) 2.2%,rgba(var(--sh),.06) 2.9%,rgba(var(--sh),.16) 3.7%,rgba(var(--sh),.08) 4.4%,rgba(255,255,255,.28) 5%,rgba(255,255,255,0) 6.2%),
     linear-gradient(110deg,rgba(var(--sh),.05),rgba(var(--sh),0) 45%,rgba(255,255,255,.1));
   box-shadow:inset -1px 0 0 rgba(255,255,255,.7),inset 0 -1px 0 rgba(var(--sh),.08)}
 .back-face{width:var(--w);height:var(--h);transform:rotateY(180deg) translateZ(calc(var(--d) / 2))}
 .spine{width:calc(var(--d) + 1px);height:var(--h);left:calc(50% - var(--d) / 2);transform:rotateY(-90deg) translateZ(calc(var(--w) / 2));overflow:hidden}
-.spine::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(var(--sh),.34),rgba(var(--sh),.14) 25%,rgba(var(--sh),.04) 55%,rgba(255,255,255,.08) 85%,rgba(255,255,255,.1))}
+.spine::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(var(--sh),.2),rgba(var(--sh),.12) 8%,rgba(var(--sh),.12) 92%,rgba(var(--sh),.06))}
 /* where the standing book meets the ground: a soft grey shade, wider to the left (light from the right) */
 .scene::after{content:"";position:absolute;left:50%;top:calc(50% + var(--h) / 2);width:calc(var(--w) * 1.5);height:calc(var(--w) * .16);transform:translate(-60%,-55%);pointer-events:none;
   background:radial-gradient(ellipse 40% 30% at 58% 50%,rgba(var(--sh),.34),rgba(var(--sh),0)),radial-gradient(ellipse 50% 50% at 45% 50%,rgba(var(--sh),.14),rgba(var(--sh),0));filter:blur(8px)}
