@@ -36,8 +36,8 @@ const paper = new THREE.MeshStandardMaterial({ color: 0xfbfaf6, roughness: 0.9, 
 const PUR = '#3C1A5B', YEL = '#FFF748', TINT = '#E4DEE9', PAPER = '#fbfaf6', PX = 10;
 await Promise.all(['700 100px "Crimson Text"', '600 40px "Inter Tight"', '500 30px "Inter Tight"'].map(f => document.fonts.load(f)));
 const SPREAD_PAGES = {
-  '-1': { title: 'Dagsplan', a: ['Dagens oppdrag', 'Kunde  ·  Språkpar  ·  Frist', 5, 'Viktige notater'], b: ['Frister i dag', 3, 'Å gjøre'] },
-  '1':  { title: 'Oppfølging', a: ['Fordeling', 'Oversetter  ·  Oppdrag  ·  Ord', 5, 'Korrektur'], b: ['Fakturering', 3, 'Ring kunder'] },
+  '1':  { title: 'Dagsplan', a: ['Dagens oppdrag', 'Kunde  ·  Språkpar  ·  Frist', 5, 'Viktige notater'], b: ['Frister i dag', 3, 'Å gjøre'] },
+  '-1': { title: 'Oppfølging', a: ['Fordeling', 'Oversetter  ·  Oppdrag  ·  Ord', 5, 'Korrektur'], b: ['Fakturering', 3, 'Ring kunder'] },
 };
 function tab(g, x, y, w, h, fill, label, size = 40) {
   g.fillStyle = fill; g.beginPath(); g.roundRect(x, y, w, h, [12, h * 0.62, 12, 12]); g.fill();
@@ -81,7 +81,8 @@ let seed = 3; const rnd = () => (seed = (seed * 16807) % 2147483647) / 214748364
 function sheet(side, i) {
   const t = i / (N - 1);
   const base = 0.045 * i;
-  const lift = (2 + 26 * Math.pow(t, 2.2)) * (0.95 + 0.1 * rnd());
+  const k = 0.95 + 0.1 * rnd();                          // always drawn, so the other sheets keep their shapes
+  const lift = (2 + 26 * Math.pow(t, 2.2)) * (i === N - 1 ? 1.08 : k);   // the top sheet (the planner page) stays highest
   const crest = 14 + 34 * t;                              // where the sheet stops rising
   const fall = 0.25 + 0.25 * (1 - t);                     // how much of the lift is left at the fore edge
   const geo = new THREE.PlaneGeometry(1, D, 120, 1);
