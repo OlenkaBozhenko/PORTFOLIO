@@ -36,24 +36,24 @@ const pageTex = new THREE.CanvasTexture(pc); pageTex.colorSpace = THREE.SRGBColo
 // outer run of the case, front fore edge -> hinge -> rounded spine -> hinge -> back fore edge, in (x, z)
 function outerRun(p) {
   const b = (ax, az, bx, bz, x, z) => p.bezierCurveTo(ax, az, bx, bz, x, z);
-  p.lineTo(-103, ZO);
+  p.lineTo(101, ZO); p.lineTo(-103, ZO);
   b(-105.8, ZO, -106.6, ZO - 1.7, -108.4, ZO - 1.7);   // soft, wide hinge groove
   b(-110.2, ZO - 1.7, -110.8, ZO - 0.2, -112.2, ZO - 0.1);
   b(-117.4, ZO, -119.8, 8.5, -119.8, 0);                  // rounded spine
   b(-119.8, -8.5, -117.4, -ZO, -112.2, -ZO + 0.1);
   b(-110.8, -ZO + 0.2, -110.2, -ZO + 1.7, -108.4, -ZO + 1.7);
   b(-106.6, -ZO + 1.7, -105.8, -ZO, -103, -ZO);
-  p.lineTo(105, -ZO);
+  p.lineTo(101, -ZO); p.lineTo(105, -ZO);
 }
 function caseShape() {
   // Shape space is (x, -z); build in (x, z) and flip at the end
   const p = new THREE.Path(); const r = 0.8;
   p.moveTo(105 - r, ZO); outerRun(p);
   p.quadraticCurveTo(105, -ZO, 105, -ZO + r); p.lineTo(105, -ZI - r); p.quadraticCurveTo(105, -ZI, 105 - r, -ZI);
-  p.lineTo(-104, -ZI);
+  p.lineTo(101, -ZI); p.lineTo(-104, -ZI);
   p.bezierCurveTo(-111, -ZI, -118, -7.5, -118, 0);        // inside of the spine
   p.bezierCurveTo(-118, 7.5, -111, ZI, -104, ZI);
-  p.lineTo(105 - r, ZI); p.quadraticCurveTo(105, ZI, 105, ZI + r); p.lineTo(105, ZO - r); p.quadraticCurveTo(105, ZO, 105 - r, ZO);
+  p.lineTo(101, ZI); p.lineTo(105 - r, ZI); p.quadraticCurveTo(105, ZI, 105, ZI + r); p.lineTo(105, ZO - r); p.quadraticCurveTo(105, ZO, 105 - r, ZO);
   return new THREE.Shape(p.getPoints(48).map(v => new THREE.Vector2(v.x, -v.y)));
 }
 // page block: 3 mm squares, fore edge slightly concave, back rounded to follow the spine
@@ -67,8 +67,8 @@ function blockShape() {
   s.lineTo(101.6, -Z);
   return s;
 }
-function extrude(shape, depth, bevel, segs) {
-  let geo = new THREE.ExtrudeGeometry(shape, { depth, bevelEnabled: true, bevelThickness: bevel, bevelSize: bevel, bevelSegments: segs, curveSegments: 48, steps: 1 });
+function extrude(shape, depth, bevel, segs, steps = 1) {
+  let geo = new THREE.ExtrudeGeometry(shape, { depth, bevelEnabled: true, bevelThickness: bevel, bevelSize: bevel, bevelSegments: segs, curveSegments: 48, steps });
   geo.deleteAttribute('normal'); geo.deleteAttribute('uv');
   geo = mergeVertices(geo, 1e-3); geo.computeVertexNormals();
   geo.rotateX(-Math.PI / 2);            // shape y -> world -z, extrusion -> world +y
@@ -87,7 +87,22 @@ function nearest(x, z) {
   return { s: acc[bi], d: Math.sqrt(bd) };
 }
 
-const caseGeo = extrude(caseShape(), H - 2 * BEV, BEV, 7);
+const caseGeo = extrude(caseShape(), H - 2 * BEV, BEV, 7, 300);
+// fore corners: rounded in plan (the cover folded over the board), a little thicker where the turn-ins overlap
+{
+  const CR = num('cr', 2.6), BULGE = num('bulge', 0.3), p = caseGeo.attributes.position;
+  const cx = XF - CR, cy = H / 2 - CR;
+  for (let i = 0; i < p.count; i++) {
+    let X = p.getX(i), Y = p.getY(i), Z = p.getZ(i);
+    if (X < 60) continue;
+    const vx = X - cx, vy = Math.abs(Y) - cy;
+    if (vx > 0 && vy > 0) { const k = Math.max(vx, vy) / Math.hypot(vx, vy); X = cx + vx * k; Y = Math.sign(Y) * (cy + vy * k); }
+    const dc = Math.hypot(Math.max(XF - X, 0), Math.max(H / 2 - Math.abs(Y), 0));
+    if (Z > 0) Z += BULGE * (1 - THREE.MathUtils.smoothstep(dc, 0, 9));   // front board only: the back lies flat on the table
+    p.setXYZ(i, X, Y, Z);
+  }
+  caseGeo.computeVertexNormals();
+}
 {
   const p = caseGeo.attributes.position, n = caseGeo.attributes.normal, uv = new Float32Array(p.count * 2);
   for (let i = 0; i < p.count; i++) {
@@ -122,7 +137,7 @@ renderer.setPixelRatio(1); renderer.setSize(OUT_W, OUT_H, false);
 renderer.setClearColor(0x000000, 0);
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.NeutralToneMapping; renderer.toneMappingExposure = num('ex', 1.0);
-renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.VSMShadowMap;
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 document.body.appendChild(renderer.domElement);
 
 const scene = new THREE.Scene();
@@ -150,9 +165,9 @@ coverMat.onBeforeCompile = sh => {
       float dz = ${ZOB.toFixed(2)} - abs(vObj.z);
       float zone = (1.0 - smoothstep(14.0, 18.0, dx)) * (1.0 - smoothstep(14.0, 18.0, dy)) * smoothstep(0.08, 0.3, dz);
       float m = abs(dx - dy) - dz;
-      float fold = 1.0 - smoothstep(0.03, 0.22, abs(m));
-      float lip = 1.0 - smoothstep(0.05, 0.4, abs(m - 0.3));
-      diffuseColor.rgb *= 1.0 - zone * (0.32 * fold - 0.06 * lip);
+      float fold = 1.0 - smoothstep(0.06, 0.4, abs(m));
+      float lip = 1.0 - smoothstep(0.1, 0.6, abs(m - 0.55));
+      diffuseColor.rgb *= 1.0 - zone * (0.42 * fold - 0.1 * lip);
     }`);
 };
 const pageMat = new THREE.MeshStandardMaterial({ map: pageTex, roughness: 0.95 });
@@ -161,32 +176,72 @@ const caseMesh = new THREE.Mesh(caseGeo, coverMat), blockMesh = new THREE.Mesh(b
 for (const m of [caseMesh, blockMesh]) { m.castShadow = true; m.receiveShadow = true; book.add(m); }
 // lying on the table, front up, head away from the camera
 book.rotation.x = -Math.PI / 2;
-book.position.y = ZOB + 0.01;
+book.position.y = ZOB + 0.005;   // resting on the table
 scene.add(book);
 
 // floor: shadow only, so the PNG sits on any pale ground
-const floor = new THREE.Mesh(new THREE.PlaneGeometry(4000, 4000), new THREE.ShadowMaterial({ opacity: num('so', 0.2) }));
+const floor = new THREE.Mesh(new THREE.PlaneGeometry(4000, 4000), new THREE.ShadowMaterial({ opacity: num('so', 0.42) }));
 floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; scene.add(floor);
-// contact shadow under the book, soft
-const cc = document.createElement('canvas'); cc.width = cc.height = 256;
-const cg = cc.getContext('2d'); const grd = cg.createRadialGradient(128, 128, 0, 128, 128, 128);
-grd.addColorStop(0, 'rgba(0,0,0,0.4)'); grd.addColorStop(0.6, 'rgba(0,0,0,0.16)'); grd.addColorStop(1, 'rgba(0,0,0,0)');
-cg.fillStyle = grd; cg.fillRect(0, 0, 256, 256);
-const contact = new THREE.Mesh(new THREE.PlaneGeometry(275, 360), new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(cc), transparent: true, depthWrite: false }));
-contact.rotation.x = -Math.PI / 2; contact.position.set(-10, 0.05, 2); scene.add(contact);
 
-// key light from the right, soft shadow
-const key = new THREE.DirectionalLight(0xffffff, num('ki', 2.3));
-key.position.set(num('kx', 600), num('ky', 900), num('kz', -60)); key.castShadow = true;
-key.shadow.mapSize.set(2048, 2048); key.shadow.radius = num('sr', 34); key.shadow.blurSamples = 48;
-key.shadow.bias = -0.0004; key.shadow.normalBias = 0.6;
-Object.assign(key.shadow.camera, { left: -420, right: 420, top: 420, bottom: -420, near: 100, far: 2000 });
-scene.add(key);
+// Soft light like a large softbox on the right plus open sky: each pass moves the light to another point
+// of that area, and the passes are averaged, so shadows fade out smoothly instead of ending in a patch.
+const key = new THREE.DirectionalLight(0xffffff, num('ki', 2.3)); key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048); key.shadow.bias = -0.0002; key.shadow.normalBias = 0.15;
+Object.assign(key.shadow.camera, { left: -460, right: 460, top: 460, bottom: -460, near: 100, far: 3000 });
+scene.add(key); scene.add(key.target);
 const fill = new THREE.DirectionalLight(0xffffff, 0.2); fill.position.set(-600, 300, 500); scene.add(fill);
+// light bounced from the pale table onto the edges that face down
+scene.add(new THREE.HemisphereLight(0xffffff, 0xe9e9e6, num('bounce', 0.35)));
+// contact shadow: dark right where the book meets the table, gone within a few millimetres
+{
+  const PX = 4, W0 = 300, H0 = 360, cc = document.createElement('canvas'); cc.width = W0 * PX; cc.height = H0 * PX;
+  const cg = cc.getContext('2d'); const x0 = -120.7, x1 = XF, z0 = -H / 2, z1 = H / 2, ox = -7.4;
+  const rect = (inset, blur, a) => { cg.filter = `blur(${blur * PX}px)`; cg.fillStyle = `rgba(0,0,0,${a})`;
+    cg.fillRect((x0 + inset - ox + W0 / 2) * PX, (z0 + inset + H0 / 2) * PX, (x1 - x0 - 2 * inset) * PX, (z1 - z0 - 2 * inset) * PX); };
+  rect(-0.3, 1.0, num('c1', 0.7)); rect(0, 4.5, num('c2', 0.28));
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(W0, H0), new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(cc), transparent: true, depthWrite: false, toneMapped: false }));
+  m.rotation.x = -Math.PI / 2; m.position.set(ox, 0.02, 0); scene.add(m);
+}
+const SOFTBOX = new THREE.Vector3(num('kx', 600), num('ky', 900), num('kz', -60)).normalize();
+const PASSES = num('passes', 128), SKY = num('sky', 0.35), SPREAD = num('spread', 0.55);
+function lightDir(i) {
+  const a = (i + 0.5) / PASSES, t = i * 2.39996;                    // golden-angle spiral, even coverage
+  if (i % Math.round(1 / SKY) === 0) {                               // sky: anywhere above, from 35 deg up
+    const el = THREE.MathUtils.degToRad(55 + 35 * Math.sqrt(a)), az = t;
+    return new THREE.Vector3(Math.cos(el) * Math.cos(az), Math.sin(el), Math.cos(el) * Math.sin(az));
+  }
+  const up = new THREE.Vector3(0, 1, 0), u = new THREE.Vector3().crossVectors(SOFTBOX, up).normalize(), v = new THREE.Vector3().crossVectors(u, SOFTBOX);
+  const r = SPREAD * Math.sqrt(a);
+  return SOFTBOX.clone().addScaledVector(u, r * Math.cos(t)).addScaledVector(v, r * Math.sin(t)).normalize();
+}
 
 const camera = new THREE.PerspectiveCamera(num('fov', 11), OUT_W / OUT_H, 10, 5000);
 camera.up.set(0, 0, -1); camera.position.set(CAM_X, CAM_Y, CAM_Z); camera.lookAt(-6, 0, 8);
-renderer.render(scene, camera);
+
+const passRT = new THREE.WebGLRenderTarget(OUT_W, OUT_H, { type: THREE.HalfFloatType, samples: 4 });
+const accRT = new THREE.WebGLRenderTarget(OUT_W, OUT_H, { type: THREE.FloatType });
+accRT.texture.colorSpace = THREE.LinearSRGBColorSpace;
+const quadCam = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1), quadGeo = new THREE.PlaneGeometry(2, 2);
+const addMat = new THREE.ShaderMaterial({
+  uniforms: { t: { value: passRT.texture }, k: { value: 1 / PASSES } },
+  vertexShader: 'varying vec2 vUv; void main(){ vUv = uv; gl_Position = vec4(position.xy, 0.0, 1.0); }',
+  fragmentShader: 'uniform sampler2D t; uniform float k; varying vec2 vUv; void main(){ gl_FragColor = texture2D(t, vUv) * k; }',
+  blending: THREE.CustomBlending, blendSrc: THREE.OneFactor, blendDst: THREE.OneFactor, blendSrcAlpha: THREE.OneFactor, blendDstAlpha: THREE.OneFactor,
+  depthTest: false, depthWrite: false, toneMapped: false,
+});
+const addScene = new THREE.Scene(); addScene.add(new THREE.Mesh(quadGeo, addMat));
+renderer.setRenderTarget(accRT); renderer.setClearColor(0x000000, 0); renderer.clear();
+for (let i = 0; i < PASSES; i++) {
+  key.position.copy(lightDir(i)).multiplyScalar(1400);
+  renderer.setRenderTarget(passRT); renderer.clear(); renderer.render(scene, camera);
+  renderer.autoClear = false; renderer.setRenderTarget(accRT); renderer.render(addScene, quadCam); renderer.autoClear = true;
+  if (i % 8 === 7) await new Promise(r => setTimeout(r, 0));
+}
+// to the canvas, with tone mapping and sRGB
+const outMat = new THREE.MeshBasicMaterial({ map: accRT.texture, transparent: true });
+const outScene = new THREE.Scene(); outScene.add(new THREE.Mesh(quadGeo, outMat));
+outMat.onBeforeCompile = sh => { sh.vertexShader = sh.vertexShader.replace('#include <project_vertex>', 'gl_Position = vec4(position.xy, 0.0, 1.0);'); };
+renderer.setRenderTarget(null); renderer.clear(); renderer.render(outScene, quadCam);
 window.__done = true;
 </script>
 </body></html>
