@@ -69,12 +69,11 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
   transform:rotateX(6deg) rotateY(30deg);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
 .face{position:absolute;left:0;top:0;backface-visibility:hidden}
 .face img{width:100%;height:100%;object-fit:cover}
-.front{background:#fff}
-.front img{position:absolute;left:7%;top:50%;width:93%;height:auto;transform:translateY(-50%)}
+.front::before{content:"";position:absolute;left:0;top:0;bottom:0;width:10%;background:#fff;z-index:1}
 .front{width:var(--w);height:var(--h);transform:translateZ(calc(var(--d) / 2));border-radius:1px clamp(4px,.7vw,8px) clamp(4px,.7vw,8px) 1px;overflow:hidden}
-.front::after{content:"";position:absolute;inset:0;
+.front::after{content:"";position:absolute;inset:0;z-index:2;
   /* the spine rounds into the board: a soft highlight on the bend, the hinge groove as a gentle shade, then the flat board */
-  background:linear-gradient(90deg,rgba(255,255,255,.08) 0,rgba(var(--sh),.03) 1.6%,rgba(var(--sh),.1) 3.4%,rgba(var(--sh),.13) 4.4%,rgba(var(--sh),.06) 5.4%,rgba(255,255,255,.3) 6.6%,rgba(255,255,255,0) 8.6%),
+  background:linear-gradient(90deg,rgba(var(--sh),.06) 0,rgba(255,255,255,.18) 2.5%,rgba(255,255,255,.3) 4.5%,rgba(255,255,255,.12) 7%,rgba(var(--sh),.05) 8.8%,rgba(var(--sh),.13) 9.8%,rgba(var(--sh),.06) 10.6%,rgba(255,255,255,.25) 11.4%,rgba(255,255,255,0) 13%),
     linear-gradient(110deg,rgba(var(--sh),.05),rgba(var(--sh),0) 45%,rgba(255,255,255,.1));
   box-shadow:inset -1px 0 0 rgba(255,255,255,.7),inset 0 -1px 0 rgba(var(--sh),.08)}
 .back-face{width:var(--w);height:var(--h);transform:rotateY(180deg) translateZ(calc(var(--d) / 2))}
