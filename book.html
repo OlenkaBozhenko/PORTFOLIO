@@ -77,7 +77,7 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
   box-shadow:inset -1px 0 0 rgba(255,255,255,.7),inset 0 -1px 0 rgba(var(--sh),.08)}
 .back-face{width:var(--w);height:var(--h);transform:rotateY(180deg) translateZ(calc(var(--d) / 2))}
 .spine{width:calc(var(--d) + 1px);height:var(--h);left:calc(50% - var(--d) / 2);transform:rotateY(-90deg) translateZ(calc(var(--w) / 2));overflow:hidden}
-.spine::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(var(--sh),.18) 0,rgba(var(--sh),.12) 6%,rgba(var(--sh),.12) 80%,rgba(255,255,255,.1) 91%,rgba(255,255,255,.45) 97%,rgba(255,255,255,.3) 100%)}
+.spine::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(var(--sh),.18) 0,rgba(var(--sh),.12) 6%,rgba(var(--sh),.12) 58%,rgba(255,255,255,.12) 72%,rgba(255,255,255,.4) 84%,rgba(255,255,255,.45) 94%,rgba(255,255,255,.32) 100%)}
 /* where the standing book meets the ground: a soft grey shade, wider to the left (light from the right) */
 .scene::after{content:"";position:absolute;left:50%;top:calc(50% + var(--h) / 2);width:calc(var(--w) * 1.5);height:calc(var(--w) * .16);transform:translate(-60%,-55%);pointer-events:none;
   background:radial-gradient(ellipse 40% 30% at 58% 50%,rgba(var(--sh),.34),rgba(var(--sh),0)),radial-gradient(ellipse 50% 50% at 45% 50%,rgba(var(--sh),.14),rgba(var(--sh),0));filter:blur(8px)}
