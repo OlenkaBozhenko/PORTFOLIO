@@ -73,7 +73,7 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 .front{width:var(--w);height:var(--h);transform:translateZ(calc(var(--d) / 2));border-radius:1px clamp(4px,.7vw,8px) clamp(4px,.7vw,8px) 1px;overflow:hidden}
 .front::after{content:"";position:absolute;inset:0;z-index:2;
   /* the spine rounds into the board: a soft highlight on the bend, the hinge groove as a gentle shade, then the flat board */
-  background:linear-gradient(90deg,rgba(var(--sh),.14) 0,rgba(var(--sh),.04) .6%,rgba(255,255,255,.35) 1.4%,rgba(255,255,255,.12) 2.2%,rgba(var(--sh),.06) 2.9%,rgba(var(--sh),.16) 3.7%,rgba(var(--sh),.08) 4.4%,rgba(255,255,255,.28) 5%,rgba(255,255,255,0) 6.2%),
+  background:linear-gradient(90deg,rgba(var(--sh),.08) 0,rgba(var(--sh),0) .8%,rgba(255,255,255,0) 1.6%,rgba(255,255,255,.35) 2.8%,rgba(255,255,255,.12) 3.6%,rgba(var(--sh),.06) 4.2%,rgba(var(--sh),.16) 4.9%,rgba(var(--sh),.08) 5.5%,rgba(255,255,255,.28) 6%,rgba(255,255,255,0) 7.2%),
     linear-gradient(110deg,rgba(var(--sh),.05),rgba(var(--sh),0) 45%,rgba(255,255,255,.1));
   box-shadow:inset -1px 0 0 rgba(255,255,255,.7),inset 0 -1px 0 rgba(var(--sh),.08)}
 .back-face{width:var(--w);height:var(--h);transform:rotateY(180deg) translateZ(calc(var(--d) / 2))}
