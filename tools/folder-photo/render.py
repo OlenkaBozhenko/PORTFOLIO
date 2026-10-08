@@ -1,7 +1,7 @@
 """Brand the folder in the Figma AI photo (base.png) for the Styupan "In use" block.
 
 base.png: generated with Figma AI (gpt-image-2.5), 2026-10-08, a plain purple
-string-and-button envelope folder. This script draws the folder face flat, after
+string-and-button envelope folder, hugged to the chest with the arm around it. This script draws the folder face flat, after
 her Kraft Folder reference (Behance, Uneri Space), warps it onto the folder and
 paints it only where the folder paper shows, so her hand, the buttons and the
 string stay in front.
@@ -19,7 +19,17 @@ W, H = 1000, 1375          # flat folder face; the flap ends near y = 205
 SS = 2                     # supersampling for the flat art
 
 # Folder corners in base.png (TL, TR, BR, BL), measured from the purple mask.
-QUAD = [(406, 493), (774, 430), (843, 947), (440, 1005)]
+QUAD = [(481, 462), (814, 397), (889, 866), (541, 935)]
+
+
+# Letter, centre x, centre y, size, rotation (deg), face. Some are cut by the edges.
+SCATTER = [
+    ("R", 40, 1210, 130, 14, "ct600"), ("A", 165, 1250, 80, -22, "ct600"), ("E", 280, 1205, 100, 35, "ct600"),
+    ("T", 395, 1260, 75, -48, "ct600"), ("S", 520, 1215, 120, 8, "ct700"), ("u", 105, 1335, 105, -30, "ct600"),
+    ("I", 240, 1320, 90, 62, "ct600"), ("V", 360, 1345, 140, -12, "ct600"), ("n", 480, 1330, 80, 40, "ct600"),
+    ("Å", 10, 1320, 95, -8, "ct600"), ("E", 600, 1350, 95, 24, "ct600"), ("B", 190, 1400, 110, -16, "ct700"),
+    ("s", 650, 1240, 70, 50, "ct600"), ("R", 300, 1150, 60, -35, "ct600"), ("O", 60, 1110, 70, 20, "ct600"),
+]
 
 
 def font(name, size):
@@ -50,7 +60,16 @@ def flat_art():
     d.text((70 * SS, 300 * SS), "Stiupan\nTranslations.", font=head, fill=YELLOW, spacing=4 * SS)
     small = font("it500", 19)
     d.text((72 * SS, 480 * SS), "NORSK · ENGLISH · УКРАЇНСЬКА\nРУССКИЙ · DEUTSCH · POLSKI", font=small, fill=YELLOW, spacing=10 * SS)
-    d.text((330 * SS, 1290 * SS), "nortranslations.no", font=font("it600", 20), fill=YELLOW)
+    d.text((72 * SS, 570 * SS), "nortranslations.no", font=font("it600", 20), fill=YELLOW)
+
+    # Scattered letters in the bottom left corner, paper at low opacity (as on the billboard).
+    ghost = (245, 245, 245, 78)
+    for ch, x, y, size, rot, face in SCATTER:
+        f = font(face, size)
+        cell = Image.new("RGBA", (size * 2 * SS, size * 2 * SS), (0, 0, 0, 0))
+        ImageDraw.Draw(cell).text((size * SS, size * SS), ch, font=f, fill=ghost, anchor="mm")
+        cell = cell.rotate(rot, resample=Image.BICUBIC)
+        art.alpha_composite(cell, (x * SS - cell.width // 2, y * SS - cell.height // 2))
     return art.resize((W, H), Image.LANCZOS)
 
 
