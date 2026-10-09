@@ -76,3 +76,7 @@ Anthropic — Subagents, Agent skills (Jun 2026), Claude (Mar 2026) · Warmy —
 - 1.1.1: every image has alt text; decorative hero blocks are `aria-hidden`.
 - 2.4.7 / 2.4.11: visible focus ring, never hidden by sticky nav.
 - 1.4.10: one column at 320 px, no horizontal scroll.
+
+## Footer (every page)
+
+"© 2026 Olena Bozhenko" on the left, "Oslo, Norway" on the right ("works remotely" removed 2026-10-09, her request).
