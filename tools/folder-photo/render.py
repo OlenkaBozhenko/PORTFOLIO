@@ -95,18 +95,15 @@ def main():
     face = Image.new("L", base.size, 0)
     ImageDraw.Draw(face).polygon(quad, fill=255)
     face = face.filter(ImageFilter.MinFilter(5))
-    skin = (r > 90) & (r > g + 12) & (g > b - 5) & (r - b > 30) & ~paper
-    nail = (r > 150) & (r > b + 12) & (g > b) & (r + g + b > 420) & ~paper
-    skin |= nail
+    # How much of each pixel is folder: the purple paper is bluer than green (b - g ~ +29),
+    # her skin and sleeve are warmer (b - g < -15), the shirt is bright. Edge pixels that mix
+    # skin and folder get partial print, so the hand covers the letters with no gap and no fringe.
+    lum = (r + g + b) / 3
+    cover = np.clip((b - g + 12) / 30, 0, 1) * np.clip((175 - lum) / 25, 0, 1)
     button = (r > 150) & (g > 130) & (b < 140)
-    above = Image.fromarray(((skin | button) * 255).astype("uint8"))
-    above = above.filter(ImageFilter.MedianFilter(5)).filter(ImageFilter.MaxFilter(5))
-    # Only the folder itself: purple paper and the shadows on it, not her sleeve or shirt.
-    dark = (r + g + b) < 200
-    folder = Image.fromarray(((paper | dark) * 255).astype("uint8"))
-    folder = folder.filter(ImageFilter.MaxFilter(5)).filter(ImageFilter.MinFilter(7))
-    mask = np.minimum(np.minimum(np.asarray(face), np.asarray(folder)), 255 - np.asarray(above))
-    mask = Image.fromarray(mask.astype("uint8")).filter(ImageFilter.GaussianBlur(1.2))
+    cover[np.asarray(Image.fromarray((button * 255).astype("uint8")).filter(ImageFilter.MaxFilter(5))) > 0] = 0
+    mask = np.minimum(np.asarray(face).astype(float), cover * 255)
+    mask = Image.fromarray(mask.astype("uint8")).filter(ImageFilter.GaussianBlur(0.6))
 
     art = flat_art()
     flat = [(0, 0), (art.width, 0), (art.width, art.height), (0, art.height)]
@@ -115,7 +112,7 @@ def main():
     # Print takes the light of the paper: scale the ink by local brightness.
     lum = np.asarray(base.convert("L").filter(ImageFilter.GaussianBlur(3))).astype(float)
     ref = np.median(lum[paper])
-    shade = np.clip(lum / ref, 0.35, 1.15)[..., None]
+    shade = np.clip(lum / ref, 0.5, 1.15)[..., None]
     ink = np.asarray(warped).astype(float)
     rgb = np.clip(ink[..., :3] * shade * 0.97, 0, 255)
     alpha = ink[..., 3:] / 255 * (np.asarray(mask).astype(float)[..., None] / 255) * 0.96
