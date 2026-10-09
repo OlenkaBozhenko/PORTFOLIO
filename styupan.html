@@ -132,8 +132,9 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 .pst.y .lk{display:flex;align-items:center;gap:.8cqw;font-weight:700;font-size:1.6cqw}
 .pst.y .lk svg{width:3.4cqw;height:auto}
 .pst.y .big{position:absolute;left:6%;top:30%;font-weight:700;font-size:3.6cqw;line-height:.95}
-.pst.y .box{position:absolute;right:5%;top:30%;bottom:8%;width:46%;display:flex;align-items:center;justify-content:center;--m:var(--purple);--g:var(--yellow)}
-.pst.y .box svg{width:100%;height:auto}
+/* the mark spans the headline: from the cap top of "Lost" to the baseline of "here" (Crimson Text: cap top .133em, four lines 3.491em) */
+.pst.y .box{position:absolute;right:6%;top:calc(30% + .48cqw);height:12.57cqw;--m:var(--purple);--g:var(--yellow)}
+.pst.y .box svg{height:100%;width:auto;display:block}
 .pst.y .langs{left:6%;bottom:8%;width:40%}
 @media (max-width:720px){.metro{aspect-ratio:4/3}.bb{left:4%;width:92%;top:28%}}
 /* photo */
