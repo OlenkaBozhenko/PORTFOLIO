@@ -89,20 +89,33 @@ def main():
     a = np.asarray(base).astype(np.int32)
     r, g, b = a[..., 0], a[..., 1], a[..., 2]
     paper = (b > r - 15) & (r > g + 15) & (b > g + 15) & (r < 140) & (g < 70)
-    # Close the small holes in the paper texture, then pull back from the skin so no ink lands on her hand.
-    mask = Image.fromarray((paper * 255).astype("uint8"))
-    mask = mask.filter(ImageFilter.MaxFilter(5)).filter(ImageFilter.MinFilter(5))
-    mask = mask.filter(ImageFilter.MinFilter(3)).filter(ImageFilter.GaussianBlur(1.2))
+    # Print covers the whole folder face, shadows included, and stops only at what lies on top:
+    # her hand (skin) and the yellow buttons and string. Like a layer under the hand, not around it.
+    quad = [(x * 2, y * 2) for x, y in QUAD]
+    face = Image.new("L", base.size, 0)
+    ImageDraw.Draw(face).polygon(quad, fill=255)
+    face = face.filter(ImageFilter.MinFilter(5))
+    skin = (r > 90) & (r > g + 12) & (g > b - 5) & (r - b > 30) & ~paper
+    nail = (r > 150) & (r > b + 12) & (g > b) & (r + g + b > 420) & ~paper
+    skin |= nail
+    button = (r > 150) & (g > 130) & (b < 140)
+    above = Image.fromarray(((skin | button) * 255).astype("uint8"))
+    above = above.filter(ImageFilter.MedianFilter(5)).filter(ImageFilter.MaxFilter(5))
+    # Only the folder itself: purple paper and the shadows on it, not her sleeve or shirt.
+    dark = (r + g + b) < 200
+    folder = Image.fromarray(((paper | dark) * 255).astype("uint8"))
+    folder = folder.filter(ImageFilter.MaxFilter(5)).filter(ImageFilter.MinFilter(7))
+    mask = np.minimum(np.minimum(np.asarray(face), np.asarray(folder)), 255 - np.asarray(above))
+    mask = Image.fromarray(mask.astype("uint8")).filter(ImageFilter.GaussianBlur(1.2))
 
     art = flat_art()
     flat = [(0, 0), (art.width, 0), (art.width, art.height), (0, art.height)]
-    quad = [(x * 2, y * 2) for x, y in QUAD]
     warped = art.transform(base.size, Image.PERSPECTIVE, perspective_coeffs(quad, flat), Image.BICUBIC)
 
     # Print takes the light of the paper: scale the ink by local brightness.
-    lum = np.asarray(base.convert("L").filter(ImageFilter.GaussianBlur(6))).astype(float)
+    lum = np.asarray(base.convert("L").filter(ImageFilter.GaussianBlur(3))).astype(float)
     ref = np.median(lum[paper])
-    shade = np.clip(lum / ref, 0.78, 1.15)[..., None]
+    shade = np.clip(lum / ref, 0.35, 1.15)[..., None]
     ink = np.asarray(warped).astype(float)
     rgb = np.clip(ink[..., :3] * shade * 0.97, 0, 255)
     alpha = ink[..., 3:] / 255 * (np.asarray(mask).astype(float)[..., None] / 255) * 0.96
