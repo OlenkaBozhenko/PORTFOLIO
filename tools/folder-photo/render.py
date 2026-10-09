@@ -49,7 +49,7 @@ def flat_art():
     ImageDraw.Draw(strip).text((-x0, -y0), word, font=big, fill=YELLOW)
     strip = strip.rotate(90, expand=True)
     # Whole word on the folder, its foot (the descender of p) a margin in from the right edge.
-    art.alpha_composite(strip, (W * SS - strip.width - 34 * SS, H * SS - strip.height - 40 * SS))
+    art.alpha_composite(strip, (W * SS - strip.width - 8 * SS, H * SS - strip.height - 40 * SS))
 
     # The mark and the descriptor on the flap.
     png = resvg_py.svg_to_bytes(svg_string=open("mark.svg", encoding="utf-8").read(), width=104 * SS)
