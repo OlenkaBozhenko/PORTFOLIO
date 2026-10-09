@@ -50,7 +50,7 @@ def flat_art():
     art.alpha_composite(strip, (W * SS - int(strip.width * 0.74), H * SS - strip.height - 40 * SS))
 
     # The mark and the descriptor on the flap.
-    png = resvg_py.svg_to_bytes(svg_string=open("mark.svg", encoding="utf-8").read(), width=96 * SS)
+    png = resvg_py.svg_to_bytes(svg_string=open("mark.svg", encoding="utf-8").read(), width=104 * SS)
     mark = Image.open(io.BytesIO(bytes(png))).convert("RGBA")
     art.alpha_composite(mark, (70 * SS, 62 * SS))
     d.text((70 * SS, 150 * SS), "OVERSETTELSESBURÅ", font=font("it600", 19), fill=YELLOW, spacing=0)
@@ -70,7 +70,7 @@ def flat_art():
         ImageDraw.Draw(cell).text((size * SS, size * SS), ch, font=f, fill=ghost, anchor="mm")
         cell = cell.rotate(rot, resample=Image.BICUBIC)
         art.alpha_composite(cell, (x * SS - cell.width // 2, y * SS - cell.height // 2))
-    return art.resize((W, H), Image.LANCZOS)
+    return art  # kept at SS x the flat size; the warp scales it
 
 
 def perspective_coeffs(dst, src):
@@ -83,30 +83,36 @@ def perspective_coeffs(dst, src):
 
 
 def main():
-    base = Image.open("base.png").convert("RGB")
+    # Work at twice the photo size, then scale down: smooth edges where her hand covers the print.
+    src = Image.open("base.png").convert("RGB")
+    base = src.resize((src.width * 2, src.height * 2), Image.LANCZOS)
     a = np.asarray(base).astype(np.int32)
     r, g, b = a[..., 0], a[..., 1], a[..., 2]
     paper = (b > r - 15) & (r > g + 15) & (b > g + 15) & (r < 140) & (g < 70)
-    mask = Image.fromarray((paper * 255).astype("uint8")).filter(ImageFilter.MaxFilter(3)).filter(ImageFilter.GaussianBlur(0.8))
+    # Close the small holes in the paper texture, then pull back from the skin so no ink lands on her hand.
+    mask = Image.fromarray((paper * 255).astype("uint8"))
+    mask = mask.filter(ImageFilter.MaxFilter(5)).filter(ImageFilter.MinFilter(5))
+    mask = mask.filter(ImageFilter.MinFilter(3)).filter(ImageFilter.GaussianBlur(1.2))
 
     art = flat_art()
-    flat = [(0, 0), (W, 0), (W, H), (0, H)]
-    warped = art.transform(base.size, Image.PERSPECTIVE, perspective_coeffs(QUAD, flat), Image.BICUBIC)
+    flat = [(0, 0), (art.width, 0), (art.width, art.height), (0, art.height)]
+    quad = [(x * 2, y * 2) for x, y in QUAD]
+    warped = art.transform(base.size, Image.PERSPECTIVE, perspective_coeffs(quad, flat), Image.BICUBIC)
 
     # Print takes the light of the paper: scale the ink by local brightness.
-    lum = np.asarray(base.convert("L").filter(ImageFilter.GaussianBlur(2.5))).astype(float)
+    lum = np.asarray(base.convert("L").filter(ImageFilter.GaussianBlur(6))).astype(float)
     ref = np.median(lum[paper])
-    shade = np.clip(lum / ref, 0.7, 1.2)[..., None]
+    shade = np.clip(lum / ref, 0.78, 1.15)[..., None]
     ink = np.asarray(warped).astype(float)
     rgb = np.clip(ink[..., :3] * shade * 0.97, 0, 255)
     alpha = ink[..., 3:] / 255 * (np.asarray(mask).astype(float)[..., None] / 255) * 0.96
     out = a * (1 - alpha) + rgb * alpha
-    img = Image.fromarray(out.astype("uint8"))
+    img = Image.fromarray(out.astype("uint8")).resize(src.size, Image.LANCZOS)
 
     img.save("folder-branded.png")
     dst = "../../assets/work/styupan/"
-    img.save(dst + "folder-1536.webp", quality=88)
-    img.resize((1200, 800), Image.LANCZOS).save(dst + "folder-1200.webp", quality=86)
+    img.save(dst + "folder-1536.webp", quality=92)
+    img.resize((1200, 800), Image.LANCZOS).save(dst + "folder-1200.webp", quality=90)
 
 
 if __name__ == "__main__":
