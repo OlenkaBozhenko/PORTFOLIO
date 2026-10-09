@@ -15,7 +15,7 @@ Layout follows [`book.md`](book.md): the header (back link, eyebrow, headline, m
 | Size | 2–10 employees |
 | Website | nortranslations.no |
 | Her role | Logo and brand identity, then UI/UX and book design for the same client |
-| Year | 2023 – 2024 |
+| Year | 2023 (her choice, 2026-10-09; the LinkedIn company page lists no founding year) |
 | Typeface | Crimson Text (Bold for the name, Regular in capitals for OVERSETTELSESBURÅ) |
 
 Sources: Instagram [@nortranslations](https://www.instagram.com/nortranslations/) bio (services, languages, Oslo, website) and the LinkedIn company page [stiupan-translations](https://www.linkedin.com/company/stiupan-translations/) (tagline, size, Oslo), both read 2026-09-29; her Figma file MY-PROJECTS (logo, colours, typeface); Maiia Stiupan's reference letter (`cv.md`).
@@ -23,7 +23,7 @@ Sources: Instagram [@nortranslations](https://www.instagram.com/nortranslations/
 ## Page copy
 - **Eyebrow:** Brand mark
 - **Headline:** A mark for an Oslo translation studio.
-- **Meta row:** Role — Logo, brand identity · Year — 2023 – 2024 · Client — Stiupan Translations ENK, Oslo · Typeface — Crimson Text
+- **Meta row:** Role — Logo, brand identity · Year — 2023 · Client — Stiupan Translations ENK, Oslo · Typeface — Crimson Text
 - **About:** Stiupan Translations is a multilingual translation studio in Oslo. The small team translates, proofreads, localises and writes copy in Norwegian, English, Ukrainian, Russian, German and Polish, under the line "Lost words found here".
 - **Objective** *(draft — to confirm with her)*: a mark that says "language and text" at a glance, reads at favicon size and in print, and works in one colour as well as two.
 - **Idea:** the initials S and T sit on the two pages of an open book. The left page is solid and the S is cut out of it; the right page is open and carries the T. Because the S is always the colour of the ground, the mark swaps cleanly between light and dark.
