@@ -31,7 +31,7 @@
 - Every reference she sends is also added, with its screenshot, to the Notion page [For Portfolio](https://app.notion.com/p/For-Portfolio-39e64a1387ca80e98e48d4e879cc2649).
 
 **Open questions for her:**
-1. Idretsfader and School: description, role, year, images.
+1. Idretsfader: description, role, year, images. School: confirm the year (2020 is an estimate from the screens) and the case copy in [`school.md`](school.md).
 2. Scale Development AS: what she did there, for the resume.
 3. AnyBiz timeline on the site: one continuous role (Aug 2021 – present) or two periods.
 4. Typeface: Inter Tight is a stand-in for Aeonik / Neue Haas Grotesk.
