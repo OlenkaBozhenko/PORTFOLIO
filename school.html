@@ -118,7 +118,7 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 .sec-head span{color:var(--muted);font-size:15px}
 
 /* in use: photo, text, two screens; zigzag after the Bright Flag reference */
-.grp{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(12px,2vw,28px);row-gap:clamp(40px,6vw,88px);padding-top:clamp(24px,4vw,56px)}
+.grp{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(12px,2vw,28px);row-gap:clamp(56px,8vw,128px);padding-top:clamp(24px,4vw,56px)}
 .grp+.grp{padding-top:clamp(72px,10vw,150px)}
 .photo{margin:0;overflow:hidden;background:var(--cream)}
 .photo img{width:100%;height:100%;object-fit:cover}
@@ -133,10 +133,10 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 .grp.a .duo,.grp.a .ctx-2{grid-column:5/-1}
 /* b: wide photo, phones on the left with the text beside them */
 .grp.b .duo{grid-column:1/9;grid-row:2}
-.grp.b .copy{grid-column:9/-1;grid-row:2;align-self:start}
+.grp.b .copy{grid-column:9/-1;grid-row:2;align-self:start;padding-left:clamp(12px,3vw,48px)}
 /* c: tall photo with the text beside it, its top on the photo's top; phones below on the right */
 .grp.c .photo{grid-column:1/8;grid-row:1}
-.grp.c .copy{grid-column:9/-1;grid-row:1;align-self:start}
+.grp.c .copy{grid-column:9/-1;grid-row:1;align-self:start;padding-left:clamp(12px,3vw,48px)}
 .grp.c .duo{grid-column:5/-1;grid-row:2}
 .well{margin:0;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .well.y{background:var(--yellow)}
@@ -145,6 +145,7 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 .well .phone{--pw:60%}
 @media (max-width:720px){
   .grp>*{grid-column:1/-1 !important;grid-row:auto !important}
+  .grp .copy{padding-left:0 !important}
   .well .phone{--pw:66%}
 }
 
