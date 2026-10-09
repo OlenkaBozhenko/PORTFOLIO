@@ -41,12 +41,12 @@ Built from [`inspiration.md`](inspiration.md) (decisions D1–D9) and [`cv.md`](
 
 | # | Title | Description | Role | Year | Platform | Image |
 |---|---|---|---|---|---|---|
-| 1 | AnyBiz — AI sales outreach | A B2B platform that finds prospects and reaches them by email, LinkedIn and phone, with AI sales agents, drip campaigns and CRM integration. | Product Designer | 2021 – present | Web SaaS | UI fragments: campaign sequence, channels, prospect list *(placeholder until her real screens)* |
-| 2 | Warmy — email deliverability | Warms up mailboxes and domains automatically so campaigns land in the inbox, not in spam. | UI/UX Designer | 2021 – present | Web SaaS | UI fragments: mailbox health, inbox placement *(placeholder)* |
+| 1 | AnyBiz: AI sales outreach | A B2B platform that finds prospects and reaches them by email, LinkedIn and phone, with AI sales agents, drip campaigns and CRM integration. | Product Designer | 2021 – present | Web SaaS | UI fragments: campaign sequence, channels, prospect list *(placeholder until her real screens)* |
+| 2 | Warmy: email deliverability | Warms up mailboxes and domains automatically so campaigns land in the inbox, not in spam. | UI/UX Designer | 2021 – present | Web SaaS | UI fragments: mailbox health, inbox placement *(placeholder)* |
 | 3 | Idretsfader | *to fill* | *to fill* | *to fill* | *to fill* | *to come* |
-| 4 | Book — a family history in print | Layout and design of a 432-page family history book with more than 300 images, printed by LOS DIGITAL AS in 2024. | Book design, layout | 2023 – 2024 | Print | One hardcover lying face up, a three.js render from her cover file (since 2026-09-28, replaced the CSS stack of three copies; details in `book.md`). **Opens its own page** [`book.html`](book.html), content in [`book.md`](book.md) (2026-09-26). |
-| 5 | Styupan Translation — brand mark | Logo for Stiupan Translations ENK, an Oslo translation and copywriting company, followed by UI/UX and book work over more than a year. | Logo, UI/UX | 2023 | Brand | The logo on yellow with scattered letters, exported from her Figma file MY PROJECTS (node 853:50072, 677 × 508) at 1600 × 1200 plus an 800 × 600 srcset (`assets/work/styupan/`, 2026-09-28). **Opens its own page** [`styupan.html`](styupan.html), content in [`styupan.md`](styupan.md) (2026-09-29). |
-| 6 | DRON — drone services, end to end | A drone-as-a-service platform taken from research to a 134-page clickable prototype, a token-based design system, and a WCAG and HIG check on every decision — built with Claude Code. | Research, UX, UI, design system | 2026 | Mobile web | DRON order screen + drone render (`assets/work/dron/`) |
+| 4 | Book: a family history in print | Layout and design of a 432-page family history book with more than 300 images, printed by LOS DIGITAL AS in 2024. | Book design, layout | 2023 – 2024 | Print | One hardcover lying face up, a three.js render from her cover file (since 2026-09-28, replaced the CSS stack of three copies; details in `book.md`). **Opens its own page** [`book.html`](book.html), content in [`book.md`](book.md) (2026-09-26). |
+| 5 | Styupan Translation: brand mark | Logo for Stiupan Translations ENK, an Oslo translation and copywriting company, followed by UI/UX and book work over more than a year. | Logo, UI/UX | 2023 | Brand | The logo on yellow with scattered letters, exported from her Figma file MY PROJECTS (node 853:50072, 677 × 508) at 1600 × 1200 plus an 800 × 600 srcset (`assets/work/styupan/`, 2026-09-28). **Opens its own page** [`styupan.html`](styupan.html), content in [`styupan.md`](styupan.md) (2026-09-29). |
+| 6 | DRON: drone services, end to end | A drone-as-a-service platform taken from research to a 134-page clickable prototype, a token-based design system, and a WCAG and HIG check on every decision — built with Claude Code. | Research, UX, UI, design system | 2026 | Mobile web | DRON order screen + drone render (`assets/work/dron/`) |
 | 7 | School — personal project | *to fill* | *to fill* | *to fill* | *to fill* | Thumbnail from her Figma file MY-PROJECTS, frame 854:50114 ("IOS App School — remote learning", welcome screen on a phone), exported at 2x: `assets/work/school/thumb.webp` + `thumb-800.webp` (2026-09-28). |
 
 Maya logo removed 2026-09-25 (designer): it is the Styupan Translation mark, already row 5.
@@ -80,3 +80,7 @@ Anthropic — Subagents, Agent skills (Jun 2026), Claude (Mar 2026) · Warmy —
 ## Footer (every page)
 
 "© 2026 Olena Bozhenko" on the left, "Oslo, Norway" on the right ("works remotely" removed 2026-10-09, her request).
+
+## Punctuation on the site
+
+No em dashes (—) in visible text or page titles (2026-10-09, her request: they read as AI-written). Project titles show the name, then the descriptor on its own line in grey (screen readers hear "Name: descriptor"); page titles use "|"; ranges keep the en dash (2023 – 2024).
