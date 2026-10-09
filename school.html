@@ -91,7 +91,7 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 .hero .kick{font-size:1.07cqw;font-weight:500}
 .hero .pill{margin-top:7.4cqw;background:var(--navy);color:#fff;font-size:1.14cqw;font-weight:600;padding:.95cqw 2.3cqw;border-radius:5cqw}
 .hero .name{margin-top:2.3cqw;font-size:4.6cqw;font-weight:700;letter-spacing:-.04em;line-height:1}
-.hero .sub{margin-top:1.4cqw;font-size:1.3cqw;font-weight:500;line-height:1.35;max-width:24ch}
+.hero .sub{margin-top:1.4cqw;font-size:1.3cqw;font-weight:500;line-height:1.35;white-space:nowrap}
 .hero .phone{position:absolute;left:64.4%;top:8.4%;--pw:20.5%}
 .js .hero .phone{animation:rise 1.4s cubic-bezier(.2,.8,.2,1) .2s both}
 @keyframes rise{from{transform:translateY(18%);opacity:0}to{transform:none;opacity:1}}
@@ -100,7 +100,7 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
   .hero .art{aspect-ratio:auto;height:auto;padding:40px 24px 0;background:linear-gradient(var(--yellow) 0 70%,#fff 70%);display:flex;flex-direction:column;gap:36px}
   .hero .txt{position:relative;left:auto;top:auto;width:auto}
   .hero .kick{font-size:13px}.hero .pill{margin-top:28px;font-size:14px;padding:10px 22px;border-radius:99px}
-  .hero .name{margin-top:14px;font-size:48px}.hero .sub{margin-top:10px;font-size:16px}
+  .hero .name{margin-top:14px;font-size:48px}.hero .sub{margin-top:10px;font-size:16px;white-space:normal}
   .hero .c1{left:46%;top:-10%;width:90%}.hero .c2{top:auto;bottom:30%;width:28%;left:-14%}
   .hero .phone{position:relative;left:auto;top:auto;--pw:62%;align-self:center}
 }
@@ -237,7 +237,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
           <p class="kick">UI/UX design concept</p>
           <p class="pill">iOS App</p>
           <p class="name">School</p>
-          <p class="sub">Mobile service for remote learning and development of good habits</p>
+          <p class="sub">Mobile service for remote learning<br> and development of good habits</p>
         </div>
         <div class="phone">
           <div class="body"><div class="screen">
