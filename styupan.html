@@ -55,10 +55,10 @@ h1,h2,h3{font-weight:400;letter-spacing:-.035em;text-wrap:balance}
 .back:hover{color:var(--ink)}
 .eyebrow{font-size:15px;font-weight:500}
 h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-width:18ch}
-.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px 32px;margin:0;padding-top:12px}
+.meta{display:flex;flex-wrap:wrap;gap:16px clamp(32px,5vw,64px);margin:0;padding-top:12px}
 .meta div{display:flex;flex-direction:column;gap:4px}
 .meta dt{font-size:13px;color:var(--muted)}
-.meta dd{margin:0;font-size:16px}
+.meta dd{margin:0;font-size:16px;white-space:nowrap}
 
 
 /* brand (styupan.md) */
