@@ -40,14 +40,16 @@ def flat_art():
     art = Image.new("RGBA", (W * SS, H * SS), (0, 0, 0, 0))
     d = ImageDraw.Draw(art)
 
-    # Huge vertical wordmark, read bottom to top, cut by the right edge.
+    # Huge vertical wordmark, read bottom to top, along the right edge.
     big = font("ct700", 330)
     word = "Stiupan"
     bw = d.textlength(word, font=big)
-    strip = Image.new("RGBA", (int(bw) + 40 * SS, 420 * SS), (0, 0, 0, 0))
-    ImageDraw.Draw(strip).text((20 * SS, 0), word, font=big, fill=YELLOW)
+    x0, y0, x1, y1 = d.textbbox((0, 0), word, font=big)
+    strip = Image.new("RGBA", (x1 - x0, y1 - y0), (0, 0, 0, 0))
+    ImageDraw.Draw(strip).text((-x0, -y0), word, font=big, fill=YELLOW)
     strip = strip.rotate(90, expand=True)
-    art.alpha_composite(strip, (W * SS - int(strip.width * 0.74), H * SS - strip.height - 40 * SS))
+    # Whole word on the folder, its foot (the descender of p) a margin in from the right edge.
+    art.alpha_composite(strip, (W * SS - strip.width - 34 * SS, H * SS - strip.height - 40 * SS))
 
     # The mark and the descriptor on the flap.
     png = resvg_py.svg_to_bytes(svg_string=open("mark.svg", encoding="utf-8").read(), width=104 * SS)
@@ -99,7 +101,10 @@ def main():
     # her skin and sleeve are warmer (b - g < -15), the shirt is bright. Edge pixels that mix
     # skin and folder get partial print, so the hand covers the letters with no gap and no fringe.
     lum = (r + g + b) / 3
-    cover = np.clip((b - g + 12) / 30, 0, 1) * np.clip((175 - lum) / 25, 0, 1)
+    cover = np.clip((b - g + 4) / 26, 0, 1) * np.clip((175 - lum) / 25, 0, 1)
+    skin = Image.fromarray((((r - b > 22) & (r > g) & (b - g < 4)) * 255).astype("uint8"))
+    skin = skin.filter(ImageFilter.MedianFilter(3)).filter(ImageFilter.MaxFilter(3))
+    cover[np.asarray(skin) > 0] = 0
     button = (r > 150) & (g > 130) & (b < 140)
     cover[np.asarray(Image.fromarray((button * 255).astype("uint8")).filter(ImageFilter.MaxFilter(5))) > 0] = 0
     mask = np.minimum(np.asarray(face).astype(float), cover * 255)
