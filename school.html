@@ -194,7 +194,7 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 /* the smile: pops up by the In use heading when you scroll there, then flies after the mouse (Figma 916:70879) */
 .sec-head{position:relative}
 .buddy-home{position:absolute;left:50%;top:-22px;width:1px;height:1px}
-#buddy{position:fixed;left:0;top:0;width:72px;height:auto;overflow:visible;z-index:30;pointer-events:none;opacity:0;transform:translate(-200px,-200px);will-change:transform,opacity;transition:opacity .4s ease}
+#buddy{position:fixed;left:0;top:0;width:72px;height:auto;overflow:visible;transform-origin:50% 50%;z-index:30;pointer-events:none;opacity:0;transform:translate(-200px,-200px);will-change:transform,opacity;transition:opacity .4s ease}
 #buddy.on{opacity:1}
 .next{display:flex;justify-content:space-between;gap:16px;padding-block:28px;border-top:1px solid var(--ink);font-size:15px;text-transform:uppercase;letter-spacing:.02em;text-decoration:none}
 .next:hover .arrow{transform:translateX(6px)}
@@ -441,14 +441,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   var b=document.getElementById('buddy'),home=document.querySelector('.buddy-home'),sec=document.getElementById('in-use');
   if(!b||!home||!sec)return;
   var fine=matchMedia('(hover:hover) and (pointer:fine)').matches,still=matchMedia('(prefers-reduced-motion:reduce)').matches;
-  var arcs=b.querySelector('.arcs'),spin=0,x=-200,y=-200,tx=x,ty=y,mx=null,my=null,inView=false,follow=false,raf=0,t0=performance.now(),W=36,H=38;
+  var arcs=b.querySelector('.arcs'),spin=0,sc=1,x=-200,y=-200,tx=x,ty=y,mx=null,my=null,inView=false,follow=false,raf=0,t0=performance.now(),W=36,H=38;
   function homeXY(){var r=home.getBoundingClientRect();return [r.left-W,r.top-H]}
   addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY},{passive:true});
   function frame(t){
     if(follow&&mx!==null&&fine&&!still){tx=mx+18;ty=my+18}else{var h=homeXY();tx=h[0];ty=h[1]}
     var k=still?1:.09;x+=(tx-x)*k;y+=(ty-y)*k;
     var bob=still?0:Math.sin((t-t0)/420)*5,tilt=still?0:Math.max(-14,Math.min(14,(tx-x)*.08));
-    b.style.transform='translate('+x.toFixed(1)+'px,'+(y+bob).toFixed(1)+'px) rotate('+tilt.toFixed(1)+'deg)';
+    // a little bigger over a photo (not over the phone screens)
+    var under=document.elementFromPoint(x+W,y+H),big=!!(under&&under.closest('.photo'));
+    sc+=((big?1.4:1)-sc)*(still?1:.12);
+    b.style.transform='translate('+x.toFixed(1)+'px,'+(y+bob).toFixed(1)+'px) rotate('+tilt.toFixed(1)+'deg) scale('+sc.toFixed(3)+')';
     // the wi-fi arcs spin around the face, faster the faster it is pulled
     var v=Math.hypot(tx-x,ty-y);spin+=still?0:Math.min(v*.35,12)+.25;
     arcs.setAttribute('transform','rotate('+(spin%360).toFixed(1)+' 79.66 79.18)');
