@@ -74,8 +74,8 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 /* the tab bar stays put while the screen scrolls */
 .vp .bar{position:absolute;left:0;right:0;bottom:0;z-index:1}
 /* the long screens scroll slowly while they are on screen */
-.feed .vp img:not(.bar):not(.tabs){animation:feed var(--t,16s) ease-in-out 1s infinite alternate;animation-play-state:paused}
-.play .feed .vp img:not(.bar){animation-play-state:running}
+.feed .vp img:not(.bar):not(.tabs):not(.nav-bar){animation:feed var(--t,16s) ease-in-out 1s infinite alternate;animation-play-state:paused}
+.play .feed .vp img:not(.bar):not(.nav-bar){animation-play-state:running}
 /* home feed: the search scrolls away, then the category tabs stick under the status bar.
    Sizes in 1x screen points via .vp width (375): tabs 64 pt from the top, scroll 766 pt. */
 .vp.home{container-type:inline-size}
@@ -84,6 +84,12 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 .feed .vp.home .tabs{animation:tabs-home var(--t,16s) 1s infinite alternate;animation-play-state:paused}
 @keyframes feed-home{0%,12%{transform:translateY(0);animation-timing-function:ease-in}18.4%{transform:translateY(-17.07cqw);animation-timing-function:ease-out}88%,100%{transform:translateY(-204.27cqw)}}
 @keyframes tabs-home{0%,12%{transform:translateY(17.07cqw);animation-timing-function:ease-in}18.4%,100%{transform:translateY(0)}}
+/* lesson: the nav bar stays at the top; the content (1489 pt) scrolls under it, 958 pt */
+.vp.lesson{container-type:inline-size}
+.vp .nav-bar{position:absolute;left:0;right:0;top:0;z-index:1}
+.vp.lesson img:not(.bar):not(.nav-bar){margin-top:17.6cqw}
+.feed .vp.lesson img:not(.bar):not(.nav-bar){animation-name:feed-lesson}
+@keyframes feed-lesson{0%,12%{transform:translateY(0)}88%,100%{transform:translateY(-255.47cqw)}}
 @keyframes feed{0%,12%{transform:translateY(0)}88%,100%{transform:translateY(var(--to))}}
 
 /* reveal on scroll (only with JS) */
@@ -303,7 +309,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         </div></div></div></div>
         <div class="well y rv" style="--d:.15s"><div class="phone feed" style="--to:-61.6%;--t:18s"><div class="body"><div class="screen">
           <div class="sb" aria-hidden="true"><span>9:41</span><i class="island"></i><svg><use href="#sbi"/></svg></div>
-          <div class="vp"><img src="assets/work/school/screen-t-lesson.webp" alt="A lesson as pupils see it: the teacher, a photo, the topic, the teacher's notes with files to download, and the homework under it." width="750" height="3110" loading="lazy"><img class="bar" src="assets/work/school/screen-t-lesson-bar.webp" alt="" width="750" height="100" loading="lazy"></div>
+          <div class="vp lesson"><img class="nav-bar" src="assets/work/school/screen-t-lesson-nav.webp" alt="" width="750" height="132" loading="lazy"><img src="assets/work/school/screen-t-lesson.webp" alt="A lesson as pupils see it: the teacher, a photo, the topic, the teacher's notes with files to download, and the homework under it." width="750" height="2978" loading="lazy"><img class="bar" src="assets/work/school/screen-t-lesson-bar.webp" alt="" width="750" height="100" loading="lazy"></div>
         </div></div></div></div>
       </div>
     </div>
