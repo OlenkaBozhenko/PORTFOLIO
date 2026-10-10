@@ -142,6 +142,9 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 .grp.c .photo{grid-column:5/-1;grid-row:1}
 .grp.c .copy{grid-column:1/5;grid-row:1;align-self:start;padding-right:clamp(12px,3vw,48px)}
 .grp.c .duo{grid-column:5/-1;grid-row:2}
+/* c solo: one phone tile under the text, its bottom on the photo's bottom */
+.grp.c .side{grid-column:1/5;grid-row:1;display:flex;flex-direction:column;justify-content:space-between;gap:clamp(32px,4vw,56px)}
+.grp.c .side .copy{padding-right:clamp(12px,3vw,48px)}
 .well{margin:0;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .well.y{background:var(--yellow)}
 .well.n{background:var(--navy)}
@@ -335,20 +338,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       </div>
     </div>
 
-    <div class="grp c">
+    <div class="grp c solo">
       <figure class="photo tall rv"><img src="assets/work/school/kid-crafts-960.webp" srcset="assets/work/school/kid-crafts-480.webp 480w, assets/work/school/kid-crafts-960.webp 960w" sizes="(min-width: 900px) 64vw, 92vw" alt="A girl in a yellow dress proudly showing her parents a paper sunflower and her notebook; both parents smile (AI image)." width="960" height="1280" loading="lazy"></figure>
-      <div class="copy rv">
-        <h3>Progress you can see</h3>
-        <p>Every homework has a status: done, being checked or not done. The teacher grades it out of 100, and the pupil sees the result in the profile.</p>
-      </div>
-      <div class="duo">
+      <div class="side">
+        <div class="copy rv">
+          <h3>Progress you can see</h3>
+          <p>Every homework has a status: done, being checked or not done. The teacher grades it out of 100, and the pupil sees the result in the profile.</p>
+        </div>
         <div class="well n rv"><div class="phone"><div class="body"><div class="screen">
           <div class="sb" aria-hidden="true"><span>9:41</span><i class="island"></i><svg><use href="#sbi"/></svg></div>
           <div class="vp"><img src="assets/work/school/screen-t-grade.webp" alt="The teacher grades a homework: the pupil's comment and files, a grade field and a “Grade” button." width="750" height="1294" loading="lazy"></div>
-        </div></div></div></div>
-        <div class="well y rv" style="--d:.15s"><div class="phone"><div class="body"><div class="screen">
-          <div class="sb" aria-hidden="true"><span>9:41</span><i class="island"></i><svg><use href="#sbi"/></svg></div>
-          <div class="vp"><img src="assets/work/school/screen-p-homework-list.webp" alt="The pupil's lessons: each topic with its status, a grade of 100, being checked, or not done." width="750" height="1294" loading="lazy"></div>
         </div></div></div></div>
       </div>
     </div>
