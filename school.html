@@ -118,25 +118,27 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 .sec-head span{color:var(--muted);font-size:15px}
 
 /* in use: photo, text, two screens; zigzag after the Bright Flag reference */
-.grp{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(12px,2vw,28px);row-gap:clamp(56px,8vw,128px);padding-top:clamp(24px,4vw,56px)}
+:root{--cg:clamp(12px,2vw,28px)}
+.grp{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--cg);row-gap:clamp(56px,8vw,128px);padding-top:clamp(24px,4vw,56px)}
 .grp+.grp{padding-top:clamp(72px,10vw,150px)}
 .photo{margin:0;overflow:hidden;background:var(--cream)}
 .photo img{width:100%;height:100%;object-fit:cover}
 .photo.wide{grid-column:1/-1;aspect-ratio:16/9}
-.photo.tall{aspect-ratio:3/4}
+.photo.tall{aspect-ratio:4/5}
 .copy{display:flex;flex-direction:column;gap:14px}
 .copy h3{font-size:clamp(24px,2.4vw,34px);line-height:1.1}
 .copy p{font-size:clamp(16px,1.3vw,18px);max-width:52ch}
-.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.4vw,20px)}
+/* each phone tile spans exactly 4 columns: tile edges, photos and text share the same grid lines */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:var(--cg)}
 /* a: wide photo, text on the photo's left edge, phones below on the right */
-.grp.a .copy{grid-column:1/6}
+.grp.a .copy{grid-column:1/5}
 .grp.a .duo,.grp.a .ctx-2{grid-column:5/-1}
 /* b: wide photo, phones on the left with the text beside them */
 .grp.b .duo{grid-column:1/9;grid-row:2}
 .grp.b .copy{grid-column:9/-1;grid-row:2;align-self:start;padding-left:clamp(12px,3vw,48px)}
-/* c: tall photo with the text beside it, its top on the photo's top; phones below on the right */
-.grp.c .photo{grid-column:1/8;grid-row:1}
-.grp.c .copy{grid-column:9/-1;grid-row:1;align-self:start;padding-left:clamp(12px,3vw,48px)}
+/* c: text on the left, its top on the photo's top; the tall photo on the right, on the same lines as the right phone tile; phones below on the right */
+.grp.c .photo{grid-column:5/-1;grid-row:1}
+.grp.c .copy{grid-column:1/5;grid-row:1;align-self:start;padding-right:clamp(12px,3vw,48px)}
 .grp.c .duo{grid-column:5/-1;grid-row:2}
 .well{margin:0;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .well.y{background:var(--yellow)}
@@ -145,7 +147,7 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 .well .phone{--pw:60%}
 @media (max-width:720px){
   .grp>*{grid-column:1/-1 !important;grid-row:auto !important}
-  .grp .copy{padding-left:0 !important}
+  .grp .copy{padding:0 !important}
   .well .phone{--pw:66%}
 }
 
@@ -168,9 +170,9 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 .cjm tr.pr td{background:var(--cream)}
 .cjm tr.so td{background:#fff;box-shadow:inset 0 0 0 1px #D9DBE6}
 .cjm+.cjm{margin-top:clamp(32px,4vw,56px)}
-.after{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(12px,2vw,28px);margin-top:clamp(32px,5vw,72px);row-gap:24px}
+.after{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--cg);margin-top:clamp(32px,5vw,72px);row-gap:24px}
 .after .copy{grid-column:1/5;align-self:center}
-.after .duo{grid-column:6/-1}
+.after .duo{grid-column:5/-1}
 @media (max-width:720px){.after>*{grid-column:1/-1 !important}}
 
 .next{display:flex;justify-content:space-between;gap:16px;padding-block:28px;border-top:1px solid var(--ink);font-size:15px;text-transform:uppercase;letter-spacing:.02em;text-decoration:none}
@@ -294,7 +296,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     </div>
 
     <div class="grp c">
-      <figure class="photo tall rv"><img src="assets/work/school/kid-runs-960.webp" srcset="assets/work/school/kid-runs-480.webp 480w, assets/work/school/kid-runs-960.webp 960w" sizes="(min-width: 900px) 56vw, 92vw" alt="A boy in a yellow T-shirt running down a sunny hallway to show his mother something on a phone (AI image)." width="960" height="1280" loading="lazy"></figure>
+      <figure class="photo tall rv"><img src="assets/work/school/kid-runs-960.webp" srcset="assets/work/school/kid-runs-480.webp 480w, assets/work/school/kid-runs-960.webp 960w" sizes="(min-width: 900px) 64vw, 92vw" alt="A boy in a yellow T-shirt running down a sunny hallway to show his mother something on a phone (AI image)." width="960" height="1280" loading="lazy"></figure>
       <div class="copy rv">
         <h3>Homework that answers back</h3>
         <p>Pupils send homework with a comment and files. A notification tells them when the teacher has commented on it or graded it, so nobody waits for a parent to forward a message.</p>
@@ -330,7 +332,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     </div>
 
     <div class="grp c">
-      <figure class="photo tall rv"><img src="assets/work/school/kid-crafts-960.webp" srcset="assets/work/school/kid-crafts-480.webp 480w, assets/work/school/kid-crafts-960.webp 960w" sizes="(min-width: 900px) 56vw, 92vw" alt="A girl in a yellow dress proudly showing her parents a paper sunflower and her notebook; both parents smile (AI image)." width="960" height="1280" loading="lazy"></figure>
+      <figure class="photo tall rv"><img src="assets/work/school/kid-crafts-960.webp" srcset="assets/work/school/kid-crafts-480.webp 480w, assets/work/school/kid-crafts-960.webp 960w" sizes="(min-width: 900px) 64vw, 92vw" alt="A girl in a yellow dress proudly showing her parents a paper sunflower and her notebook; both parents smile (AI image)." width="960" height="1280" loading="lazy"></figure>
       <div class="copy rv">
         <h3>Progress you can see</h3>
         <p>Every homework has a status: done, being checked or not done. The teacher grades it out of 100, and the pupil sees the result in the profile.</p>
