@@ -87,6 +87,11 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 .vp.lesson img:not(.bar):not(.nav-bar){margin-top:17.6cqw}
 .feed .vp.lesson img:not(.bar):not(.nav-bar){animation-name:feed-lesson}
 @keyframes feed-lesson{0%,12%{transform:translateY(0)}88%,100%{transform:translateY(-255.47cqw)}}
+/* comments: nav and the comment field stay put; the comments (930 pt) scroll between them, 455 pt */
+.vp.comments{container-type:inline-size}
+.vp.comments img:not(.bar):not(.nav-bar){margin-top:18.67cqw}
+.feed .vp.comments img:not(.bar):not(.nav-bar){animation-name:feed-comments}
+@keyframes feed-comments{0%,12%{transform:translateY(0)}88%,100%{transform:translateY(-121.33cqw)}}
 @keyframes feed{0%,12%{transform:translateY(0)}88%,100%{transform:translateY(var(--to))}}
 
 /* reveal on scroll (only with JS) */
@@ -357,11 +362,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="side">
         <div class="copy rv">
           <h3>Progress you can see</h3>
-          <p>Every homework has a status: done, being checked or not done. The teacher grades it out of 100, and the pupil sees the result in the profile. Challenges work the same way. In a month-long pull-up challenge, the pupil ticks off every day and logs how many he did, and watches the count grow from 2 to 25.</p>
+          <p>In a challenge, pupils compete with each other. In a month-long pull-up challenge, everyone ticks off every day, logs how many they did and posts a photo. Classmates comment, cheer and try to beat each other's count, and that is what keeps them going: the count grows from 2 to 25. Homework shows progress too: done, being checked, or graded out of 100.</p>
         </div>
-        <div class="well n rv"><div class="phone"><div class="body"><div class="screen">
+        <div class="well n rv"><div class="phone feed" style="--t:14s"><div class="body"><div class="screen">
           <div class="sb" aria-hidden="true"><span>9:41</span><i class="island"></i><svg><use href="#sbi"/></svg></div>
-          <div class="vp"><img src="assets/work/school/screen-t-grade.webp" alt="The teacher grades a homework: the pupil's comment and files, a grade field and a “Grade” button." width="750" height="1294" loading="lazy"></div>
+          <div class="vp comments"><img class="nav-bar" src="assets/work/school/screen-p-comments-nav.webp" alt="" width="750" height="140" loading="lazy"><img src="assets/work/school/screen-p-comments.webp" alt="Comments on a challenge: classmates post a photo and a short note on what they did and how they improved, and there is a field to write a comment." width="750" height="1860" loading="lazy"><img class="bar" src="assets/work/school/screen-p-comments-bar.webp" alt="" width="750" height="204" loading="lazy"></div>
         </div></div></div></div>
       </div>
     </div>
