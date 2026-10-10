@@ -191,6 +191,11 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 .cjm tr.pr td{background:#F6B8C6}
 .cjm+.cjm{margin-top:clamp(40px,5vw,72px)}
 
+/* the smile: pops up by the In use heading when you scroll there, then flies after the mouse (Figma 916:70879) */
+.sec-head{position:relative}
+.buddy-home{position:absolute;left:50%;top:-22px;width:1px;height:1px}
+#buddy{position:fixed;left:0;top:0;width:72px;height:auto;z-index:30;pointer-events:none;opacity:0;transform:translate(-200px,-200px);will-change:transform,opacity;transition:opacity .4s ease}
+#buddy.on{opacity:1}
 .next{display:flex;justify-content:space-between;gap:16px;padding-block:28px;border-top:1px solid var(--ink);font-size:15px;text-transform:uppercase;letter-spacing:.02em;text-decoration:none}
 .next:hover .arrow{transform:translateX(6px)}
 .arrow{transition:transform .2s ease}
@@ -273,7 +278,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 
   <section class="wrap sec" id="in-use" aria-labelledby="use-title">
-    <div class="sec-head"><h2 id="use-title">In use</h2><span>Pupils and teachers, at home</span></div>
+    <div class="sec-head"><i class="buddy-home" aria-hidden="true"></i><h2 id="use-title">In use</h2><span>Pupils and teachers, at home</span></div>
 
     <div class="grp a">
       <figure class="photo wide rv"><img src="assets/work/school/kids-home-1536.webp" srcset="assets/work/school/kids-home-768.webp 768w, assets/work/school/kids-home-1536.webp 1536w" sizes="(min-width: 1320px) 1210px, 92vw" alt="Two children lying on a living-room floor among open books, laughing at something on a phone (AI image)." width="1536" height="864" loading="lazy"></figure>
@@ -413,6 +418,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <a class="next" href="Olena%20Bozhenko.html#work"><span>Back to all work</span><span class="arrow" aria-hidden="true">→</span></a>
   </div>
 </main>
+<img id="buddy" src="assets/work/school/smile-wifi.svg" alt="" aria-hidden="true" width="70" height="76">
 
 <footer>
   <div class="wrap"><span>© 2026 Olena Bozhenko</span><span>Oslo, Norway</span></div>
@@ -427,6 +433,38 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     e.target.classList.toggle('play',e.isIntersecting)
   })},{rootMargin:'0px 0px -10% 0px',threshold:.15});
   els.forEach(function(e){io.observe(e)});
+})();
+</script>
+<script>
+// the smile: appears by the In use heading once you scroll there, then follows the mouse while In use is on screen
+(function(){
+  var b=document.getElementById('buddy'),home=document.querySelector('.buddy-home'),sec=document.getElementById('in-use');
+  if(!b||!home||!sec)return;
+  var fine=matchMedia('(hover:hover) and (pointer:fine)').matches,still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var x=-200,y=-200,tx=x,ty=y,mx=null,my=null,inView=false,follow=false,raf=0,t0=performance.now(),W=36,H=38;
+  function homeXY(){var r=home.getBoundingClientRect();return [r.left-W,r.top-H]}
+  addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY},{passive:true});
+  function frame(t){
+    if(follow&&mx!==null&&fine&&!still){tx=mx+18;ty=my+18}else{var h=homeXY();tx=h[0];ty=h[1]}
+    var k=still?1:.09;x+=(tx-x)*k;y+=(ty-y)*k;
+    var bob=still?0:Math.sin((t-t0)/420)*5,tilt=still?0:Math.max(-14,Math.min(14,(tx-x)*.08));
+    b.style.transform='translate('+x.toFixed(1)+'px,'+(y+bob).toFixed(1)+'px) rotate('+tilt.toFixed(1)+'deg)';
+    raf=inView?requestAnimationFrame(frame):0;
+  }
+  function start(){if(!raf){var h=homeXY();if(!follow){x=h[0];y=h[1]}raf=requestAnimationFrame(frame)}}
+  new IntersectionObserver(function(es){es.forEach(function(e){
+    inView=e.isIntersecting;
+    if(!inView){b.classList.remove('on');follow=false;return}
+  })},{threshold:0}).observe(sec);
+  // it shows up on the first scroll that brings the heading into view, then starts following on the next scroll
+  var lastY=scrollY;
+  addEventListener('scroll',function(){
+    if(!inView)return;
+    var r=home.getBoundingClientRect();
+    if(!b.classList.contains('on')){if(r.top<innerHeight*.9){b.classList.add('on');start()}}
+    else if(Math.abs(scrollY-lastY)>2){follow=true;start()}
+    lastY=scrollY;
+  },{passive:true});
 })();
 </script>
 </body>
