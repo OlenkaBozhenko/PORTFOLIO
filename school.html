@@ -74,14 +74,22 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 /* the tab bar stays put while the screen scrolls */
 .vp .bar{position:absolute;left:0;right:0;bottom:0;z-index:1}
 /* the long screens scroll slowly while they are on screen */
-.feed .vp img:not(.bar){animation:feed var(--t,16s) ease-in-out 1s infinite alternate;animation-play-state:paused}
+.feed .vp img:not(.bar):not(.tabs){animation:feed var(--t,16s) ease-in-out 1s infinite alternate;animation-play-state:paused}
 .play .feed .vp img:not(.bar){animation-play-state:running}
+/* home feed: the search scrolls away, then the category tabs stick under the status bar.
+   Sizes in 1x screen points via .vp width (375): tabs 64 pt from the top, scroll 766 pt. */
+.vp.home{container-type:inline-size}
+.vp .tabs{position:absolute;left:0;right:0;top:0;z-index:1;transform:translateY(17.07cqw)}
+.feed .vp.home img:not(.bar):not(.tabs){animation-name:feed-home}
+.feed .vp.home .tabs{animation:tabs-home var(--t,16s) 1s infinite alternate;animation-play-state:paused}
+@keyframes feed-home{0%,12%{transform:translateY(0);animation-timing-function:ease-in}18.4%{transform:translateY(-17.07cqw);animation-timing-function:ease-out}88%,100%{transform:translateY(-204.27cqw)}}
+@keyframes tabs-home{0%,12%{transform:translateY(17.07cqw);animation-timing-function:ease-in}18.4%,100%{transform:translateY(0)}}
 @keyframes feed{0%,12%{transform:translateY(0)}88%,100%{transform:translateY(var(--to))}}
 
 /* reveal on scroll (only with JS) */
 .js .rv{opacity:0;transform:translateY(48px);transition:opacity .9s ease var(--d,0s),transform 1.1s cubic-bezier(.2,.8,.2,1) var(--d,0s)}
 .js .rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}.feed .vp img{animation:none}}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}.feed .vp img,.feed .vp.home .tabs{animation:none}}
 
 /* first block, after Figma 913:70584 (1400 x 708); the circles are clipped, the phone's shadow is not */
 .hero .bg{position:absolute;inset:0;overflow:hidden}
@@ -273,7 +281,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="duo">
         <div class="well y rv"><div class="phone feed" style="--to:-56.2%"><div class="body"><div class="screen">
           <div class="sb" aria-hidden="true"><span>9:41</span><i class="island"></i><svg><use href="#sbi"/></svg></div>
-          <div class="vp"><img src="assets/work/school/screen-p-home.webp" alt="Pupil home feed: a search field, category icons for sport, travel, creativity, study and rest, and challenge cards with photos, likes and a short description." width="750" height="2726" loading="lazy"><img class="bar" src="assets/work/school/screen-p-home-bar.webp" alt="" width="750" height="100" loading="lazy"></div>
+          <div class="vp home"><img class="tabs" src="assets/work/school/screen-p-home-tabs.webp" alt="" width="750" height="126" loading="lazy"><img src="assets/work/school/screen-p-home.webp" alt="Pupil home feed: a search field, category icons for sport, travel, creativity, study and rest, and challenge cards with photos, likes and a short description." width="750" height="2726" loading="lazy"><img class="bar" src="assets/work/school/screen-p-home-bar.webp" alt="" width="750" height="100" loading="lazy"></div>
         </div></div></div></div>
         <div class="well n rv" style="--d:.15s"><div class="phone"><div class="body"><div class="screen">
           <div class="sb" aria-hidden="true"><span>9:41</span><i class="island"></i><svg><use href="#sbi"/></svg></div>
