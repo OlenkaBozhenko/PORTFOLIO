@@ -56,12 +56,9 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 /* project colours (school.md): navy on yellow 12.2:1, navy on white 17.2:1 */
 :root{--yellow:#FFD60A;--navy:#001059;--cream:#FFF6CC}
 
-/* phone as a fine outline (her request, 2026-10-10): a hairline body in the tile's colour, thin side buttons, the screen floating inside */
+/* phone as a fine outline (her request, 2026-10-10): a hairline body in the tile's colour, no side buttons, the screen floating inside */
 .phone{container-type:inline-size;width:var(--pw,100%);margin:0;position:relative;--line:var(--navy)}
 .phone .body{position:relative;padding:3cqw;border-radius:15.5cqw;border:max(1px,.55cqw) solid var(--line);background:#fff}
-.phone .body::before,.phone .body::after{content:"";position:absolute;width:max(1px,.55cqw);border-radius:1cqw;background:var(--line)}
-.phone .body::before{left:-2.4cqw;top:22%;height:7%;box-shadow:0 12cqw 0 var(--line),0 24cqw 0 var(--line)}
-.phone .body::after{right:-2.4cqw;top:30%;height:12%}
 .well.n .phone{--line:rgba(255,255,255,.55)}
 .well.y .phone{--line:#fff}
 .screen{position:relative;border-radius:12.6cqw;overflow:hidden;background:#fff;isolation:isolate;box-shadow:0 1px 2px rgba(0,16,89,.08),0 18px 40px -12px rgba(0,16,89,.28)}
