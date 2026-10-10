@@ -177,10 +177,6 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 .cjm tbody td{background:#F3F3F1;color:var(--ink);border-radius:18px;padding:14px 16px;vertical-align:top;height:96px}
 .cjm tr.pr td{background:#F6B8C6}
 .cjm+.cjm{margin-top:clamp(40px,5vw,72px)}
-.after{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--cg);margin-top:clamp(32px,5vw,72px);row-gap:24px}
-.after .copy{grid-column:1/5;align-self:center}
-.after .duo{grid-column:5/-1}
-@media (max-width:720px){.after>*{grid-column:1/-1 !important}}
 
 .next{display:flex;justify-content:space-between;gap:16px;padding-block:28px;border-top:1px solid var(--ink);font-size:15px;text-transform:uppercase;letter-spacing:.02em;text-decoration:none}
 .next:hover .arrow{transform:translateX(6px)}
@@ -398,22 +394,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       </table>
     </div>
 
-    <div class="after">
-      <div class="copy rv">
-        <h3>From the map to the screens</h3>
-        <p>Sign-in comes when it is needed, with Google, Facebook or email. Right after it, the pupil or teacher picks the town, school, year and class, so lessons and challenges reach the right people.</p>
-      </div>
-      <div class="duo">
-        <div class="well c rv"><div class="phone"><div class="body"><div class="screen">
-          <div class="sb w" aria-hidden="true"><span>9:41</span><i class="island"></i><svg><use href="#sbi"/></svg></div>
-          <div class="vp" style="--h:667"><img src="assets/work/school/screen-p-sign-in.webp" alt="Sign-in: join with Google or Facebook, or with email and password, and a link to sign up." width="750" height="1334" loading="lazy"></div>
-        </div></div></div></div>
-        <div class="well y rv" style="--d:.15s"><div class="phone"><div class="body"><div class="screen">
-          <div class="sb w" aria-hidden="true"><span>9:41</span><i class="island"></i><svg><use href="#sbi"/></svg></div>
-          <div class="vp" style="--h:667"><img src="assets/work/school/screen-p-select-school.webp" alt="Choosing the school: town, school, school year 2019/2020, and steppers for the class number and letter, with “Save” and “Skip”." width="750" height="1334" loading="lazy"></div>
-        </div></div></div></div>
-      </div>
-    </div>
   </section>
 
   <div class="wrap" style="padding-bottom:clamp(72px,10vw,140px)">
