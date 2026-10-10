@@ -56,24 +56,25 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 /* project colours (school.md): navy on yellow 12.2:1, navy on white 17.2:1 */
 :root{--yellow:#FFD60A;--navy:#001059;--cream:#FFF6CC}
 
-/* modern phone frame: thin black bezel, titanium rim, side buttons, Dynamic Island; sizes follow the phone width */
-.phone{container-type:inline-size;width:var(--pw,100%);margin:0;position:relative}
-.phone .body{position:relative;padding:3.4cqw;border-radius:16cqw;background:#0b0b0d;
-  box-shadow:0 0 0 .55cqw #d9d8d4,0 0 0 .9cqw #a9a8a3,0 0 0 1.05cqw rgba(0,0,0,.25),
-    -2px 3px 6px rgba(0,16,89,.1),-12px 20px 40px rgba(0,16,89,.16),-30px 50px 90px rgba(0,16,89,.14)}
-.phone .body::before,.phone .body::after{content:"";position:absolute;width:1.1cqw;border-radius:1cqw;background:linear-gradient(90deg,#8f8e8a,#d9d8d4)}
-.phone .body::before{left:-1.9cqw;top:24%;height:8%;box-shadow:0 13cqw 0 #b9b8b4,0 26cqw 0 #b9b8b4}
-.phone .body::after{right:-1.9cqw;top:32%;height:14%;background:linear-gradient(270deg,#8f8e8a,#d9d8d4)}
-.screen{position:relative;border-radius:12.8cqw;overflow:hidden;background:#fff;isolation:isolate}
+/* phone as a fine outline (her request, 2026-10-10): a hairline body in the tile's colour, thin side buttons, the screen floating inside */
+.phone{container-type:inline-size;width:var(--pw,100%);margin:0;position:relative;--line:var(--navy)}
+.phone .body{position:relative;padding:3cqw;border-radius:15.5cqw;border:max(1px,.55cqw) solid var(--line);background:#fff}
+.phone .body::before,.phone .body::after{content:"";position:absolute;width:max(1px,.55cqw);border-radius:1cqw;background:var(--line)}
+.phone .body::before{left:-2.4cqw;top:22%;height:7%;box-shadow:0 12cqw 0 var(--line),0 24cqw 0 var(--line)}
+.phone .body::after{right:-2.4cqw;top:30%;height:12%}
+.well.n .phone{--line:rgba(255,255,255,.55)}
+.screen{position:relative;border-radius:12.6cqw;overflow:hidden;background:#fff;isolation:isolate;box-shadow:0 1px 2px rgba(0,16,89,.08),0 18px 40px -12px rgba(0,16,89,.28)}
 .sb{position:relative;height:13.6cqw;display:flex;align-items:center;justify-content:space-between;padding:1.6cqw 7.5cqw 0 10.5cqw;font:600 4.3cqw/1 -apple-system,"SF Pro Text",var(--sans);letter-spacing:-.01em;background:var(--yellow);color:var(--navy)}
 .sb.w{background:#fff;color:#000}
 .sb svg{width:19cqw;height:auto}
 .island{position:absolute;left:50%;top:3cqw;width:31cqw;height:9.2cqw;transform:translateX(-50%);background:#000;border-radius:9cqw}
 .vp{position:relative;overflow:hidden;aspect-ratio:375/var(--h,647)}
 .vp img{width:100%;height:auto}
+/* the tab bar stays put while the screen scrolls */
+.vp .bar{position:absolute;left:0;right:0;bottom:0;z-index:1}
 /* the long screens scroll slowly while they are on screen */
-.feed .vp img{animation:feed var(--t,16s) ease-in-out 1s infinite alternate;animation-play-state:paused}
-.play .feed .vp img{animation-play-state:running}
+.feed .vp img:not(.bar){animation:feed var(--t,16s) ease-in-out 1s infinite alternate;animation-play-state:paused}
+.play .feed .vp img:not(.bar){animation-play-state:running}
 @keyframes feed{0%,12%{transform:translateY(0)}88%,100%{transform:translateY(var(--to))}}
 
 /* reveal on scroll (only with JS) */
@@ -269,9 +270,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <p>Pupils open a feed of challenges from classmates and teachers, sorted by sport, travel, creativity and study. Each one runs for a set time, like “English every day”, and turns a small task into a habit.</p>
       </div>
       <div class="duo">
-        <div class="well y rv"><div class="phone feed" style="--to:-54.2%"><div class="body"><div class="screen">
+        <div class="well y rv"><div class="phone feed" style="--to:-56.2%"><div class="body"><div class="screen">
           <div class="sb" aria-hidden="true"><span>9:41</span><i class="island"></i><svg><use href="#sbi"/></svg></div>
-          <div class="vp"><img src="assets/work/school/screen-p-home.webp" alt="Pupil home feed: a search field, category icons for sport, travel, creativity, study and rest, and challenge cards with photos, likes and a short description." width="750" height="2826" loading="lazy"></div>
+          <div class="vp"><img src="assets/work/school/screen-p-home.webp" alt="Pupil home feed: a search field, category icons for sport, travel, creativity, study and rest, and challenge cards with photos, likes and a short description." width="750" height="2726" loading="lazy"><img class="bar" src="assets/work/school/screen-p-home-bar.webp" alt="" width="750" height="100" loading="lazy"></div>
         </div></div></div></div>
         <div class="well n rv" style="--d:.15s"><div class="phone"><div class="body"><div class="screen">
           <div class="sb" aria-hidden="true"><span>9:41</span><i class="island"></i><svg><use href="#sbi"/></svg></div>
@@ -291,9 +292,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
           <div class="sb" aria-hidden="true"><span>9:41</span><i class="island"></i><svg><use href="#sbi"/></svg></div>
           <div class="vp"><img src="assets/work/school/screen-t-create-lesson.webp" alt="New lesson: a large photo, tabs for gallery, photos and video, a grid of images to choose from and a “Publish” button." width="750" height="1294" loading="lazy"></div>
         </div></div></div></div>
-        <div class="well y rv" style="--d:.15s"><div class="phone feed" style="--to:-59.7%;--t:18s"><div class="body"><div class="screen">
+        <div class="well y rv" style="--d:.15s"><div class="phone feed" style="--to:-61.6%;--t:18s"><div class="body"><div class="screen">
           <div class="sb" aria-hidden="true"><span>9:41</span><i class="island"></i><svg><use href="#sbi"/></svg></div>
-          <div class="vp"><img src="assets/work/school/screen-t-lesson.webp" alt="A lesson as pupils see it: the teacher, a photo, the topic, the teacher's notes with files to download, and the homework under it." width="750" height="3210" loading="lazy"></div>
+          <div class="vp"><img src="assets/work/school/screen-t-lesson.webp" alt="A lesson as pupils see it: the teacher, a photo, the topic, the teacher's notes with files to download, and the homework under it." width="750" height="3110" loading="lazy"><img class="bar" src="assets/work/school/screen-t-lesson-bar.webp" alt="" width="750" height="100" loading="lazy"></div>
         </div></div></div></div>
       </div>
     </div>
