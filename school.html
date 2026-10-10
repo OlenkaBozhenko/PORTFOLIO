@@ -153,25 +153,27 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
   .well .phone{--pw:66%}
 }
 
-/* customer journey map */
+/* customer journey map, after her Figma frame 914:70878 */
 .intro-p{font-size:clamp(17px,1.5vw,19px);max-width:56ch}
 .cjm{overflow-x:auto;margin-inline:-8px}
 .cjm:focus-visible{outline-offset:6px}
-.cjm table{width:100%;min-width:880px;border-collapse:separate;border-spacing:8px;margin:0;font-size:14px;line-height:1.4;table-layout:fixed}
-.cjm caption{text-align:left;padding:0 8px 8px}
-.cjm caption span{display:inline-flex;align-items:center;gap:10px;border-radius:99px;padding:10px 20px;font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
-.cjm.t caption span{background:var(--navy);color:#fff}
-.cjm.p caption span{background:var(--yellow);color:var(--navy)}
-.cjm col.rh{width:150px}
-.cjm thead th{border-radius:99px;padding:10px 12px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-align:center}
-.cjm.t thead th{background:var(--navy);color:#fff}
-.cjm.p thead th{background:var(--yellow);color:var(--navy)}
-.cjm thead td{background:none}
-.cjm tbody th{text-align:left;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);vertical-align:top;padding:14px 8px 0 4px}
-.cjm tbody td{background:#F3F3F5;color:var(--navy);border-radius:16px;padding:14px 16px;vertical-align:top}
-.cjm tr.pr td{background:var(--cream)}
-.cjm tr.so td{background:#fff;box-shadow:inset 0 0 0 1px #D9DBE6}
-.cjm+.cjm{margin-top:clamp(32px,4vw,56px)}
+.cjm table{width:100%;min-width:900px;border-collapse:separate;border-spacing:8px 14px;margin:0;font-size:14px;line-height:1.4;table-layout:fixed}
+.cjm caption{text-align:left;padding:0 8px 4px}
+.cpill{display:inline-flex;align-items:center;gap:10px;border-radius:99px;padding:12px 26px;font-weight:600;font-size:14px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.cpill svg{width:24px;height:17px}
+.cjm.t .cpill{background:var(--navy);color:#fff}
+.cjm.p .cpill{background:var(--yellow);color:var(--navy)}
+.cjm col.rh{width:170px}
+.cjm thead th{padding:0;text-align:left;font-weight:600}
+/* stages joined by a dotted line, as in Figma */
+.cjm thead th>div{display:flex;align-items:center;gap:10px}
+.cjm thead th:not(:last-child)>div::after{content:"";flex:1;min-width:20px;height:8px;margin-right:-10px;background:radial-gradient(circle,var(--dot) 3px,transparent 3.5px) 0 50%/19px 8px repeat-x}
+.cjm.t{--dot:var(--navy)}
+.cjm.p{--dot:var(--yellow)}
+.cjm tbody th{text-align:left;font-size:14px;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--navy);vertical-align:top;padding:14px 8px 0 24px}
+.cjm tbody td{background:#F2F3F7;color:var(--navy);border-radius:18px;padding:14px 16px;vertical-align:top;height:96px}
+.cjm tr.pr td{background:#F6B8C6}
+.cjm+.cjm{margin-top:clamp(40px,5vw,72px)}
 .after{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--cg);margin-top:clamp(32px,5vw,72px);row-gap:24px}
 .after .copy{grid-column:1/5;align-self:center}
 .after .duo{grid-column:5/-1}
@@ -355,7 +357,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <section class="wrap sec" aria-labelledby="ctx-title">
     <div class="sec-head"><h2 id="ctx-title">Context</h2><span>Learning at home, in war and epidemics</span></div>
     <div class="grp a ctx">
-      <figure class="photo wide rv"><img src="assets/work/school/war-home-masks-1376.webp" srcset="assets/work/school/war-home-masks-688.webp 688w, assets/work/school/war-home-masks-1376.webp 1376w" sizes="(min-width: 1320px) 1210px, 92vw" alt="Two boys in medical masks doing homework at a small table by a window at dusk; outside, smoke and fire rise over the city after an explosion (AI image)." width="1376" height="768" loading="lazy"></figure>
+      <figure class="photo wide rv"><img src="assets/work/school/war-home-strike-1376.webp" srcset="assets/work/school/war-home-strike-688.webp 688w, assets/work/school/war-home-strike-1376.webp 1376w" sizes="(min-width: 1320px) 1210px, 92vw" alt="Two boys in medical masks doing homework at a small table by a window at dusk; outside, a drone explodes against an apartment block and other buildings burn under black smoke (AI image)." width="1376" height="768" loading="lazy"></figure>
       <div class="copy rv">
         <h3>When school stays at home</h3>
         <p>Wars and epidemics close schools. During the pandemic, and then the war, children in Ukraine learned from home for months at a time: in masks, at the kitchen table, often in a city where sirens and explosions were part of the day.</p>
@@ -367,17 +369,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
   <section class="wrap sec" aria-labelledby="cjm-title">
     <div class="sec-head"><h2 id="cjm-title">Customer journey map</h2><span>Teacher and pupil, four stages</span></div>
-    <p class="intro-p">The journey map showed the gaps I had missed and helped me fix them in the first stage.</p>
+    <p class="intro-p">Thanks to the customer journey map, I found critical things I had missed, and it helped me fix the mistakes at the first stage.</p>
 
     <div class="cjm t" role="region" aria-label="Teacher journey map, scrolls sideways" tabindex="0">
       <table>
-        <caption><span>Teacher</span></caption>
+        <caption><span class="cpill">Teacher <svg viewBox="0 0 24 17" aria-hidden="true"><circle cx="7" cy="4" r="2" fill="currentColor"/><circle cx="17" cy="4" r="2" fill="currentColor"/><path d="M2 9.5c3 4 7 5.5 10 5.5s7-1.5 10-5.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span></caption>
         <colgroup><col class="rh"><col><col><col><col></colgroup>
-        <thead><tr><td></td><th scope="col">Attraction</th><th scope="col">Activation</th><th scope="col">Involvement</th><th scope="col">Retention</th></tr></thead>
+        <thead><tr><td></td><th scope="col"><div><span class="cpill">Attraction</span></div></th><th scope="col"><div><span class="cpill">Activation</span></div></th><th scope="col"><div><span class="cpill">Involvement</span></div></th><th scope="col"><div><span class="cpill">Retention</span></div></th></tr></thead>
         <tbody>
           <tr><th scope="row">Goal</th><td>Find an interesting tool for teaching remotely</td><td>Create lessons</td><td>Grade homework and make something interesting for the children</td><td>Create challenges between teachers</td></tr>
           <tr><th scope="row">Thoughts and feelings</th><td>Had to register right after installing, did not like it</td><td>Not clear how the children would find the lessons</td><td>Liked watching the children's activity in a challenge, but not clear who can take part</td><td>Children create many events, and some are not safe</td></tr>
-          <tr class="pr"><th scope="row">Problem</th><td>People want to look around before signing up</td><td>No way to see lessons and tasks for one class</td><td>A challenge has no defined audience</td><td>No control</td></tr>
+          <tr class="pr"><th scope="row">Problems</th><td>People want to look around before signing up</td><td>No way to see lessons and tasks for one class</td><td>A challenge has no defined audience</td><td>No control</td></tr>
           <tr class="so"><th scope="row">Solution</th><td>Let people browse first and ask them to sign up only when they act</td><td>Choose the school and class at sign-up</td><td>Choose a category and an audience when creating a challenge</td><td>More filters when creating, and moderation</td></tr>
         </tbody>
       </table>
@@ -385,13 +387,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
     <div class="cjm p" role="region" aria-label="Pupil journey map, scrolls sideways" tabindex="0">
       <table>
-        <caption><span>Pupil</span></caption>
+        <caption><span class="cpill">Pupil <svg viewBox="0 0 24 17" aria-hidden="true"><circle cx="7" cy="4" r="2" fill="currentColor"/><circle cx="17" cy="4" r="2" fill="currentColor"/><path d="M2 9.5c3 4 7 5.5 10 5.5s7-1.5 10-5.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span></caption>
         <colgroup><col class="rh"><col><col><col><col></colgroup>
-        <thead><tr><td></td><th scope="col">Attraction</th><th scope="col">Activation</th><th scope="col">Involvement</th><th scope="col">Retention</th></tr></thead>
+        <thead><tr><td></td><th scope="col"><div><span class="cpill">Attraction</span></div></th><th scope="col"><div><span class="cpill">Activation</span></div></th><th scope="col"><div><span class="cpill">Involvement</span></div></th><th scope="col"><div><span class="cpill">Retention</span></div></th></tr></thead>
         <tbody>
           <tr><th scope="row">Goal</th><td>Distance learning is boring; spend the time in an interesting way</td><td>Create a challenge or join one</td><td>Finish the challenge and send the homework</td><td>Create more challenges</td></tr>
           <tr><th scope="row">Thoughts and feelings</th><td>Had to register right after installing, did not like it</td><td>Made a mistake while creating and could not edit it</td><td>Fun to take part, but how do I know the teacher has seen my homework?</td><td>Cannot create more than one challenge a month</td></tr>
-          <tr class="pr"><th scope="row">Problem</th><td>People want to look around before signing up</td><td>A challenge cannot be edited</td><td>The teacher cannot grade</td><td>Limited options</td></tr>
+          <tr class="pr"><th scope="row">Problems</th><td>People want to look around before signing up</td><td>A challenge cannot be edited</td><td>The teacher cannot grade</td><td>Limited options</td></tr>
           <tr class="so"><th scope="row">Solution</th><td>Let people browse first and ask them to sign up only when they act</td><td>Allow editing</td><td>The teacher gives homework a status and a grade</td><td>More options for a fee</td></tr>
         </tbody>
       </table>
