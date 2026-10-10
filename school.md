@@ -13,7 +13,7 @@ Layout follows [`book.md`](book.md) and [`styupan.md`](styupan.md): the header (
 | Her role | Research, UX, UI (the whole project) |
 | Year | 2020 *(estimate from the screens: the calendars show September 2020 and the school year 2019/2020; to confirm with her)* |
 | Platform | iOS (screens drawn at 375 × 667, iPhone 8 size) |
-| Tools | Sketch; Claude (added to the meta row 2026-10-10, her request) |
+| Tools | Figma, Claude (her choice for the meta row, 2026-10-10; the 2020 screens on Drive are Sketch files, the case frames are in her Figma file MY-PROJECTS) |
 | Language of the UI | Ukrainian |
 | Colours | Yellow #FFD60A, Navy #001059 (from her logo SVG) |
 
@@ -22,7 +22,7 @@ Sources: her Behance case [IOS App_School](https://www.behance.net/gallery/15035
 ## Page copy
 - **Eyebrow:** iOS app
 - **Headline:** Remote learning that works like a social feed, for pupils and their teachers.
-- **Meta row:** Role — Research, UX, UI · Year — 2020 · Platform — iOS · Tools — Sketch, Claude
+- **Meta row:** Role — Research, UX, UI · Year — 2020 · Platform — iOS · Tools — Figma, Claude
 - **About:** School is an iOS app concept for remote learning. Pupils and teachers share one space: lessons and homework come from the teacher, and challenges, small goals that run for a set time, can come from anyone in the class.
 - **Problem:** Wars and pandemics took away children's chance to learn in an interesting way. During the quarantine, lessons moved to Viber and Zoom, and young pupils quickly lost interest.
 - **Goal:** Make distance learning interesting.
