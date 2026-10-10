@@ -132,7 +132,9 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:var(--cg)}
 /* a: wide photo, text on the photo's left edge, phones below on the right */
 .grp.a .copy{grid-column:1/5}
-.grp.a .duo,.grp.a .ctx-2{grid-column:5/-1}
+.grp.a .duo{grid-column:5/-1}
+.grp.ctx .copy{grid-column:1/8}
+.grp.ctx .copy p{max-width:62ch}
 /* b: wide photo, phones on the left with the text beside them */
 .grp.b .duo{grid-column:1/9;grid-row:2}
 .grp.b .copy{grid-column:9/-1;grid-row:2;align-self:start;padding-left:clamp(12px,3vw,48px)}
@@ -352,14 +354,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
   <section class="wrap sec" aria-labelledby="ctx-title">
     <div class="sec-head"><h2 id="ctx-title">Context</h2><span>Learning at home, in war and epidemics</span></div>
-    <div class="grp a">
-      <figure class="photo wide rv"><img src="assets/work/school/war-home-1376.webp" srcset="assets/work/school/war-home-688.webp 688w, assets/work/school/war-home-1376.webp 1376w" sizes="(min-width: 1320px) 1210px, 92vw" alt="Two boys doing homework at a small table by a window at dusk; outside, smoke and fire rise over the city after an explosion (AI image)." width="1376" height="768" loading="lazy"></figure>
+    <div class="grp a ctx">
+      <figure class="photo wide rv"><img src="assets/work/school/war-home-masks-1376.webp" srcset="assets/work/school/war-home-masks-688.webp 688w, assets/work/school/war-home-masks-1376.webp 1376w" sizes="(min-width: 1320px) 1210px, 92vw" alt="Two boys in medical masks doing homework at a small table by a window at dusk; outside, smoke and fire rise over the city after an explosion (AI image)." width="1376" height="768" loading="lazy"></figure>
       <div class="copy rv">
         <h3>When school stays at home</h3>
-        <p>Wars and epidemics close schools. During the pandemic, and then the war, children in Ukraine learned from home for months at a time, often in a city where sirens and explosions were part of the day.</p>
-        <p>Their parents still went to work, in masks during the epidemic, so children studied alone, with a phone and a pile of textbooks. School is built for that moment: lessons, homework and challenges in one place, and classmates close by, even when the classroom is not.</p>
+        <p>Wars and epidemics close schools. During the pandemic, and then the war, children in Ukraine learned from home for months at a time: in masks, at the kitchen table, often in a city where sirens and explosions were part of the day.</p>
+        <p>Their parents still went to work, so children studied alone, with a phone and a pile of textbooks. Classmates turned into names in a group chat, and lessons into files to download. Without a teacher in the room, it was easy to lose interest and fall behind.</p>
+        <p>School is built for that moment: lessons, homework and challenges in one place, a teacher who sees every answer, and classmates close by, even when the classroom is not.</p>
       </div>
-      <figure class="photo wide rv ctx-2"><img src="assets/work/school/parents-masks-1536.webp" srcset="assets/work/school/parents-masks-768.webp 768w, assets/work/school/parents-masks-1536.webp 1536w" sizes="(min-width: 900px) 64vw, 92vw" alt="A mother and a father at their office desks in surgical masks, working on laptops, a photo of their child beside them (AI image)." width="1536" height="864" loading="lazy"></figure>
     </div>
   </section>
 
