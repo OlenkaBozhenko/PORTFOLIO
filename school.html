@@ -163,8 +163,8 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 .cpill svg{width:24px;height:17px}
 .cjm.t .cpill{background:var(--navy);color:#fff}
 .cjm.p .cpill{background:var(--yellow);color:var(--navy)}
-.cjm col.rh{width:170px}
-.cjm thead th{padding:0;text-align:left;font-weight:600}
+.cjm col.rh{width:180px}
+.cjm thead th,.cjm thead td{padding:0;text-align:left;font-weight:600}
 /* stages joined by a dotted line, as in Figma */
 .cjm thead th>div{display:flex;align-items:center;gap:10px}
 .cjm thead th:not(:last-child)>div::after{content:"";flex:1;min-width:20px;height:8px;margin-right:-10px;background:radial-gradient(circle,var(--dot) 3px,transparent 3.5px) 0 50%/19px 8px repeat-x}
@@ -373,9 +373,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
     <div class="cjm t" role="region" aria-label="Teacher journey map, scrolls sideways" tabindex="0">
       <table>
-        <caption><span class="cpill">Teacher <svg viewBox="0 0 24 17" aria-hidden="true"><circle cx="7" cy="4" r="2" fill="currentColor"/><circle cx="17" cy="4" r="2" fill="currentColor"/><path d="M2 9.5c3 4 7 5.5 10 5.5s7-1.5 10-5.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span></caption>
+        <caption class="vh">Teacher journey map</caption>
         <colgroup><col class="rh"><col><col><col><col></colgroup>
-        <thead><tr><td></td><th scope="col"><div><span class="cpill">Attraction</span></div></th><th scope="col"><div><span class="cpill">Activation</span></div></th><th scope="col"><div><span class="cpill">Involvement</span></div></th><th scope="col"><div><span class="cpill">Retention</span></div></th></tr></thead>
+        <thead><tr><td><span class="cpill">Teacher <svg viewBox="0 0 24 17" aria-hidden="true"><circle cx="7" cy="4" r="2" fill="currentColor"/><circle cx="17" cy="4" r="2" fill="currentColor"/><path d="M2 9.5c3 4 7 5.5 10 5.5s7-1.5 10-5.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span></td><th scope="col"><div><span class="cpill">Attraction</span></div></th><th scope="col"><div><span class="cpill">Activation</span></div></th><th scope="col"><div><span class="cpill">Involvement</span></div></th><th scope="col"><div><span class="cpill">Retention</span></div></th></tr></thead>
         <tbody>
           <tr><th scope="row">Goal</th><td>Find an interesting tool for teaching remotely</td><td>Create lessons</td><td>Grade homework and make something interesting for the children</td><td>Create challenges between teachers</td></tr>
           <tr><th scope="row">Thoughts and feelings</th><td>Had to register right after installing, did not like it</td><td>Not clear how the children would find the lessons</td><td>Liked watching the children's activity in a challenge, but not clear who can take part</td><td>Children create many events, and some are not safe</td></tr>
@@ -387,9 +387,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
     <div class="cjm p" role="region" aria-label="Pupil journey map, scrolls sideways" tabindex="0">
       <table>
-        <caption><span class="cpill">Pupil <svg viewBox="0 0 24 17" aria-hidden="true"><circle cx="7" cy="4" r="2" fill="currentColor"/><circle cx="17" cy="4" r="2" fill="currentColor"/><path d="M2 9.5c3 4 7 5.5 10 5.5s7-1.5 10-5.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span></caption>
+        <caption class="vh">Pupil journey map</caption>
         <colgroup><col class="rh"><col><col><col><col></colgroup>
-        <thead><tr><td></td><th scope="col"><div><span class="cpill">Attraction</span></div></th><th scope="col"><div><span class="cpill">Activation</span></div></th><th scope="col"><div><span class="cpill">Involvement</span></div></th><th scope="col"><div><span class="cpill">Retention</span></div></th></tr></thead>
+        <thead><tr><td><span class="cpill">Pupil <svg viewBox="0 0 24 17" aria-hidden="true"><circle cx="7" cy="4" r="2" fill="currentColor"/><circle cx="17" cy="4" r="2" fill="currentColor"/><path d="M2 9.5c3 4 7 5.5 10 5.5s7-1.5 10-5.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span></td><th scope="col"><div><span class="cpill">Attraction</span></div></th><th scope="col"><div><span class="cpill">Activation</span></div></th><th scope="col"><div><span class="cpill">Involvement</span></div></th><th scope="col"><div><span class="cpill">Retention</span></div></th></tr></thead>
         <tbody>
           <tr><th scope="row">Goal</th><td>Distance learning is boring; spend the time in an interesting way</td><td>Create a challenge or join one</td><td>Finish the challenge and send the homework</td><td>Create more challenges</td></tr>
           <tr><th scope="row">Thoughts and feelings</th><td>Had to register right after installing, did not like it</td><td>Made a mistake while creating and could not edit it</td><td>Fun to take part, but how do I know the teacher has seen my homework?</td><td>Cannot create more than one challenge a month</td></tr>
