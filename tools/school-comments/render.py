@@ -1,6 +1,6 @@
 # Rewrites the School "Коментарі" screen for the pull-up challenge: the post photo becomes the pull-up photo,
 # the placeholder names and comments become real ones. base.png: her 2020 screen (375 x 1122);
-# pullups.png: the Progress photo (Figma AI, 2026-10-10). Run from this folder.
+# pullups.png: the Progress photo, the boy seen from behind (Figma AI, 2026-10-12); pullups-face.png: the earlier front view, used only for his avatar. Run from this folder.
 # Writes the scrolling middle of the screen at 2x: ../../assets/work/school/screen-p-comments.webp
 from PIL import Image, ImageDraw, ImageFont
 base = Image.open('base.png').convert('RGB').resize((750, 2244), Image.LANCZOS)
@@ -16,7 +16,7 @@ INK, GREY, WHITE = (40, 40, 36), (180, 180, 178), (255, 255, 255)
 ph = Image.open('pullups.png').convert('RGB')
 box = (30, 130, 720, 431)
 w, h = box[2] - box[0], box[3] - box[1]
-src = ph.crop((120, 40, 120 + 830, 40 + round(830 * h / w))).resize((w, h), Image.LANCZOS)
+src = ph.crop((270, 20, 270 + 690, 20 + round(690 * h / w))).resize((w, h), Image.LANCZOS)
 mask = Image.new('L', (w, h), 0); ImageDraw.Draw(mask).rounded_rectangle((0, 0, w - 1, h - 1), 12, fill=255)
 im.paste(src, box[:2], mask)
 
@@ -25,7 +25,7 @@ def face(path, cx, cy, half):
     return Image.open(path).convert('RGB').crop((cx - half, cy - half, cx + half, cy + half))
 A = '../../assets/work/school/'
 avatars = [
-    face('pullups.png', 393, 140, 62),                      # Maksym, the boy on the bar
+    face('pullups-face.png', 393, 140, 62),                 # Maksym: his face from the earlier front-view photo
     face(A + 'kids-home-1536.webp', 878, 300, 115),         # Ostap
     face(A + 'kids-home-1536.webp', 625, 335, 100),         # Darynka
     face(A + 'kid-runs-960.webp', 347, 290, 78),            # Ivan
