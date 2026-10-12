@@ -16,7 +16,7 @@ INK, GREY, WHITE = (40, 40, 36), (180, 180, 178), (255, 255, 255)
 ph = Image.open('pullups.png').convert('RGB')
 box = (30, 130, 720, 431)
 w, h = box[2] - box[0], box[3] - box[1]
-src = ph.crop((270, 20, 270 + 690, 20 + round(690 * h / w))).resize((w, h), Image.LANCZOS)
+src = ph.crop((270, 40, 270 + 690, 40 + round(690 * h / w))).resize((w, h), Image.LANCZOS)
 mask = Image.new('L', (w, h), 0); ImageDraw.Draw(mask).rounded_rectangle((0, 0, w - 1, h - 1), 12, fill=255)
 im.paste(src, box[:2], mask)
 
