@@ -104,6 +104,7 @@ h1{font-size:clamp(34px,5.2vw,76px);line-height:1.03;letter-spacing:-.045em;max-
 .first{padding-bottom:clamp(56px,8vw,112px)}
 .pfw .panel{aspect-ratio:auto;height:auto}
 .pfw .phone{width:min(100%,300px)}
+.cards .phone{width:100%;padding:5px;border-radius:30px}.cards .phone.pf .vp{border-radius:25px}
 /* the hoodie, full width of the grid, first under Brand */
 .ph.wide{aspect-ratio:16/8}
 /* the teal band stays inside the grid, like every block on her site */
@@ -141,8 +142,8 @@ h1{font-size:clamp(34px,5.2vw,76px);line-height:1.03;letter-spacing:-.045em;max-
 .play.scroll .vp img{animation-play-state:running}
 @keyframes feed{0%,10%{transform:translateY(0)}90%,100%{transform:translateY(var(--to))}}
 .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.6vw,24px);width:100%;align-items:start}
-.cards img{border-radius:8px;box-shadow:0 1px 2px rgba(0,0,0,.06),0 18px 36px -18px rgba(20,60,64,.4)}
-.cards img:nth-child(2){margin-top:12%}.cards img:nth-child(3){margin-top:24%}
+.cards>img{border-radius:8px;box-shadow:0 1px 2px rgba(0,0,0,.06),0 18px 36px -18px rgba(20,60,64,.4)}
+.cards>:nth-child(2){margin-top:12%}.cards>:nth-child(3){margin-top:24%}
 .el{width:100%;max-width:520px;border-radius:8px;box-shadow:0 1px 2px rgba(0,0,0,.06),0 18px 36px -18px rgba(20,60,64,.4)}
 .el.c{max-width:400px}
 .el.d{max-width:360px;border-radius:12px}
@@ -236,11 +237,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="sec-head"><h2 id="h-gal">Product</h2><span>From the donor to the club's admin</span></div>
     <div class="g">
 
-<figure class="c1-8 rv scroll start"><div class="panel"><div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>produkter.supporter.no/idrettsfadder</span></div><div class="vp fx" style="--to:-69.1%;--t:24s;--hd:8.333%"><img class="hd" src="assets/work/sport-guardian/screen-campaign-head.webp" alt="" width="1440" height="120" loading="lazy"><img src="assets/work/sport-guardian/screen-campaign-body.webp" alt="The campaign page on desktop, under a fixed header: a swimming pool banner with the countdown, 60 000 NOK from 200 donors, the donation form, the story, the donor list and sharing." width="1440" height="2521" loading="lazy"></div></div></div><button class="pause sc" type="button" aria-pressed="false"><svg class="pa" aria-hidden="true"><use href="#i-pause"/></svg><svg class="pl" aria-hidden="true"><use href="#i-play"/></svg><span>Pause<span class="vh"> the scrolling campaign page</span></span></button><figcaption>The campaign page: countdown, amount raised, the form to give, and the story the club tells.</figcaption></figure>
+<figure class="c1-12 rv scroll"><div class="panel"><div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>produkter.supporter.no/idrettsfadder</span></div><div class="vp fx" style="--to:-69.1%;--t:24s;--hd:8.333%"><img class="hd" src="assets/work/sport-guardian/screen-campaign-head.webp" alt="" width="1440" height="120" loading="lazy"><img src="assets/work/sport-guardian/screen-campaign-body.webp" alt="The campaign page on desktop, under a fixed header: a swimming pool banner with the countdown, 60 000 NOK from 200 donors, the donation form, the story, the donor list and sharing." width="1440" height="2521" loading="lazy"></div></div></div><button class="pause sc" type="button" aria-pressed="false"><svg class="pa" aria-hidden="true"><use href="#i-pause"/></svg><svg class="pl" aria-hidden="true"><use href="#i-play"/></svg><span>Pause<span class="vh"> the scrolling campaign page</span></span></button><figcaption>The campaign page: countdown, amount raised, the form to give, and the story the club tells.</figcaption></figure>
 
-<figure class="c9-12 rv pfw" style="--d:.1s">
-          <div class="panel t r23">
-            <div class="phone pf" role="img" aria-label="The donation on a phone: the campaign page with a fixed bottom bar, Our donors and Donate; the donor taps Donate, picks Monthly and 600 NOK, which fills the amount field, taps Donate, chooses Vipps, enters a phone number and email, pays 603 NOK in Vipps and sees the thank you screen.">
+
+
+<p class="cap c1-4 end rv"><b>Three steps after Donate</b>How to pay, the payment, and a thank you that asks to share the campaign. On a phone, Donate never leaves the bottom bar.</p>
+
+<figure class="c5-12 rv pfw" style="--d:.1s"><div class="panel r43"><div class="cards"><div class="phone pf" role="img" aria-label="The donation on a phone: the campaign page with a fixed bottom bar, Our donors and Donate; the donor taps Donate, picks Monthly and 600 NOK, which fills the amount field, taps Donate, chooses Vipps, enters a phone number and email, pays 603 NOK in Vipps and sees the thank you screen.">
               <div class="vp" id="flow">
                 <img class="hd" src="assets/work/sport-guardian/screen-mobile-head.webp" alt="" width="750" height="284">
                 <img class="body" src="assets/work/sport-guardian/screen-mobile-body.webp" alt="" width="750" height="5346" loading="lazy">
@@ -256,15 +259,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
                 <img class="st" src="assets/work/sport-guardian/m-step-5.webp" alt="" width="750" height="1624" loading="lazy">
                 <span class="ptr" aria-hidden="true"></span>
               </div>
-            </div>
-          </div>
-          <button class="pause" type="button" aria-pressed="false" data-for="flow"><svg class="pa" aria-hidden="true"><use href="#i-pause"/></svg><svg class="pl" aria-hidden="true"><use href="#i-play"/></svg><span>Pause<span class="vh"> the donation on the phone</span></span></button>
-          <figcaption>The donation on a phone: Donate stays in the bottom bar, one tap away, then Vipps.</figcaption>
-        </figure>
-
-<p class="cap c1-4 end rv"><b>Three steps after Donate</b>How to pay, the payment, and a thank you that asks to share the campaign.</p>
-
-<figure class="c5-12 rv" style="--d:.1s"><div class="panel r43"><div class="cards"><img src="assets/work/sport-guardian/card-payment-method.webp" alt="Payment options: 600 NOK monthly, with the choice to cover the transaction cost, and buttons for Vipps and Credit card." width="820" height="1304" loading="lazy"><img src="assets/work/sport-guardian/card-credit-card.webp" alt="Payment by card: card number, email for the receipt, and a choice between the donor list and staying anonymous." width="820" height="1304" loading="lazy"><img src="assets/work/sport-guardian/card-congrats.webp" alt="Thank you: the donation is received, with a link to the campaign and buttons to share it." width="820" height="1304" loading="lazy"></div></div></figure>
+            </div><img src="assets/work/sport-guardian/card-credit-card.webp" alt="Payment by card: card number, email for the receipt, and a choice between the donor list and staying anonymous." width="820" height="1304" loading="lazy"><img src="assets/work/sport-guardian/card-congrats.webp" alt="Thank you: the donation is received, with a link to the campaign and buttons to share it." width="820" height="1304" loading="lazy"></div></div><button class="pause" type="button" aria-pressed="false" data-for="flow"><svg class="pa" aria-hidden="true"><use href="#i-pause"/></svg><svg class="pl" aria-hidden="true"><use href="#i-play"/></svg><span>Pause<span class="vh"> the donation on the phone</span></span></button><figcaption>The donation on a phone, with Donate in the bottom bar and payment through Vipps; then the card payment and the thank you.</figcaption></figure>
 
 <figure class="c1-4 rv"><div class="panel t r45"><img class="el d" src="assets/work/sport-guardian/el-donors.webp" alt="Our donors: tabs for private persons and companies, names with the time they gave, and a greeting from one donor." width="820" height="1078" loading="lazy"></div><figcaption>Donors can leave their name and a greeting, or give anonymously.</figcaption></figure>
 
