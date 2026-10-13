@@ -41,7 +41,7 @@ def dashboard_sankey(im, H_BLOCK=470, chart=True):
 
     lab = FONT('SemiBold', 10*S); big = FONT('Bold', 26*S); unitf = FONT('SemiBold', 11*S)
     # one row of four cards
-    x0, y0, h0, gap = 132, 212, 106, 12; w4 = (1305-x0-3*gap)//4
+    x0, y0, h0, gap = 132, 236, 106, 12; w4 = (1305-x0-3*gap)//4  # cards 32 px under the Preview button (her request)
     specs = [('RAISED', '360 000', 'NOK', '+18%', 'of the 500 000 NOK goal', 'bar', .72),
              ('DONORS', '1 200', '', '+17', '17 new this week', 'spark', [900, 940, 960, 1000, 1020, 1060, 1080, 1110, 1140, 1160, 1183, 1200]),
              ('RECURRING', '60 000', 'NOK', '+9%', '200 guardians give monthly or quarterly', 'spark', [30, 32, 33, 36, 38, 41, 44, 47, 50, 54, 57, 60]),
