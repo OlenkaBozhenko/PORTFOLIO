@@ -41,28 +41,30 @@ def arrow(x, y, dirn, col, size=7):
     if dirn == 'up': d.line(P(x, y+size, x, y-size), fill=col, width=2*S); d.line([P(x-size*.6, y-size*.4), P(x, y-size), P(x+size*.6, y-size*.4)], fill=col, width=2*S)
     if dirn == 'down': d.line(P(x, y-size, x, y+size), fill=col, width=2*S); d.line([P(x-size*.6, y+size*.4), P(x, y+size), P(x+size*.6, y+size*.4)], fill=col, width=2*S)
     if dirn == 'left': d.line(P(x+size, y, x-size, y), fill=col, width=2*S); d.line([P(x-size*.4, y-size*.6), P(x-size, y), P(x-size*.4, y+size*.6)], fill=col, width=2*S)
-# back link
-arrow(X0+8, 92, 'left', TEAL); text(X0+24, 92, 'Back to campaigns', f('SemiBold', 15), TEAL, 'lm')
+# back link, then the campaign title as the page title, above the card (her request, 2026-10-14)
+arrow(X0+8, 88, 'left', TEAL); text(X0+24, 88, 'Back to campaigns', f('SemiBold', 15), TEAL, 'lm')
+text(X0, 138, 'Become a sports guardian', f('Bold', 28), INK, 'ls')
+text(X0, 164, 'Swimming for everyone · Fjordby Svømmeklubb · started 15 Sep 2024', f('Regular', 14), MUT, 'ls')
 
-# 1. the header card: the campaign on the left, raised and time left on the right
-y0, y1 = 118, 236; card(X0, y0, X1, y1)
-cx, cy, r = X0+58, (y0+y1)/2, 34
-d.ellipse(P(cx-r, cy-r, cx+r, cy+r), fill=(236, 244, 245))
-logo = head.crop((24, 8, 72, 56)).resize((int(52*S), int(52*S)), Image.LANCZOS)
-m = Image.new('L', logo.size, 0); ImageDraw.Draw(m).ellipse((0, 0, logo.width-1, logo.height-1), fill=255)
-im.paste(logo, P(cx-26, cy-26), m)
-text(X0+110, cy-14, 'Become a sports guardian', f('Bold', 24), INK, 'ls')
-text(X0+110, cy+14, 'Swimming for everyone · Fjordby Svømmeklubb · started 15 Sep 2024', f('Regular', 14), MUT, 'ls')
-# raised
-rx = 760
-_tracked(d, P(rx, y0+24), 'RAISED', f('SemiBold', 11), LAB, 1.6*S)
-text(rx, y0+70, '360 000', f('Bold', 30), INK, 'ls')
-nw_ = d.textlength('360 000', font=f('Bold', 30))/S
-text(rx+nw_+8, y0+70, 'of 500 000 NOK', f('SemiBold', 14), MUT, 'ls')
-text(rx+72, y0+31, '+18% this week', f('Bold', 12), UP, 'lm')
-# the progress as a dense field of thin vertical lines (her reference, 2026-10-14): raised in teal to green,
-# the rest as faint grey lines
-bl, br, by, bh = rx, rx+268, y0+80, 22; n = 96; step = (br-bl)/n; on = round(n*.72)
+# 1. the progress card, after her reference: the numbers on top, a full-width bar of thin vertical lines, and marks
+# under it for the critical minimum, the amount that is enough, and the goal. Thresholds are made up for the mockup.
+y0, y1 = 186, 356; card(X0, y0, X1, y1)
+GOAL, RAISED_ = 500000, 360000
+stats = [('RAISED', '360 000', 'NOK', '+18% this week'), ('GOAL', '500 000', 'NOK', ''), ('STILL NEEDED', '140 000', 'NOK', ''),
+         ('DAYS LEFT', '60', 'of 90', ''), ('ENDS', '13 Dec', '2024', '')]
+sx = X0+30; colw = 190
+for k, (lab_, val, unit, extra) in enumerate(stats):
+    x = sx+k*colw
+    _tracked(d, P(x, y0+24), lab_, f('SemiBold', 11), LAB, 1.6*S)
+    vf = f('Bold', 26 if k == 0 else 22); text(x, y0+68, val, vf, INK, 'ls')
+    vw = d.textlength(val, font=vf)/S; text(x+vw+6, y0+68, unit, f('SemiBold', 12), MUT, 'ls')
+    if extra: text(x+d.textlength(lab_, font=f('SemiBold', 11))/S+12+len(lab_)*1.6, y0+30, extra, f('Bold', 12), UP, 'lm')
+    if k: d.line(P(x-18, y0+22, x-18, y0+70), fill=LINE, width=S)
+text(X1-30, y0+66, '72%', f('Bold', 34), INK, 'rs')
+text(X1-30, y0+28, 'of the goal', f('Regular', 12), MUT, 'rm')
+# the bar
+bl, br, by, bh = X0+30, X1-30, y0+86, 30
+n = 300; step = (br-bl)/n; on = round(n*RAISED_/GOAL)
 for k in range(n):
     x = bl+k*step
     if k < on:
@@ -70,22 +72,24 @@ for k in range(n):
     else:
         col = (214, 222, 224)
     d.rectangle(P(x, by, x+1.1, by+bh), fill=col)
-text(br+14, by+bh/2, '72%', f('Bold', 22), INK, 'lm')
-d.line(P(rx+352, y0+22, rx+352, y1-22), fill=LINE, width=S)
-# time left
-tx = rx+384
-_tracked(d, P(tx, y0+24), 'TIME LEFT', f('SemiBold', 11), LAB, 1.6*S)
-text(tx, y0+70, '60', f('Bold', 30), INK, 'ls'); text(tx+40, y0+70, 'days', f('SemiBold', 13), MUT, 'ls')
-text(tx, y0+96, 'of 90 · ends 13 Dec', f('Regular', 12), MUT, 'ls')
-ccx, ccy, cr = X1-52, cy, 28
-d.ellipse(P(ccx-cr, ccy-cr, ccx+cr, ccy+cr), outline=(234, 240, 241), width=6*S)
-d.arc(P(ccx-cr, ccy-cr, ccx+cr, ccy+cr), -90, -90+240, fill=TEAL, width=6*S)
-text(ccx, ccy, '67%', f('Bold', 12), INK, 'mm')
+# the raised mark at the end of the fill
+xr = bl+(br-bl)*RAISED_/GOAL; d.rectangle(P(xr-1, by-6, xr+1, by+bh+6), fill=DEEP)
+# marks under the bar
+CRIT = (176, 20, 74)
+marks = [(150000, 'Critical minimum', '150 000 · fees for 30 children', CRIT), (300000, 'Enough', '300 000 · the season is covered', UP),
+         (500000, 'Goal', '500 000 · gear and travel too', DEEP)]
+for v, name, sub, mc in marks:
+    x = bl+(br-bl)*v/GOAL; a = 'ra' if v == GOAL else 'la'
+    d.line(P(x, by+bh+2, x, by+bh+14), fill=mc, width=2*S)
+    xx = x-4 if v == GOAL else x+6
+    d.ellipse(P(x-4, by+bh+12, x+4, by+bh+20), fill=mc)
+    text(xx-10 if v == GOAL else xx+4, by+bh+22, name, f('Bold', 12), mc if mc != DEEP else INK, 'rm' if v == GOAL else 'lm')
+    text(xx-10 if v == GOAL else xx+4, by+bh+38, sub, f('Regular', 11), MUT, 'rm' if v == GOAL else 'lm')
 
 # 2. the Sankey card: deep teal with a soft glow (as before), the new header with the date range and controls, the
 # chart as it was (its data, tooltip and legend, sankey.flow_body), and the column names along the bottom
 from sankey import flow_body
-y0 = 262; BODY = 420; y1 = y0+92+BODY+52
+y0 = 380; BODY = 420; y1 = y0+92+BODY+52
 sh = Image.new('L', im.size, 0); ImageDraw.Draw(sh).rounded_rectangle(P(X0+2, y0+6, X1-2, y1+3), 16*S, fill=40)
 im.paste(Image.new('RGB', im.size, (30, 60, 66)), (0, 0), sh.filter(ImageFilter.GaussianBlur(10*S)))
 cw, chh = (X1-X0)*S, (y1-y0)*S
