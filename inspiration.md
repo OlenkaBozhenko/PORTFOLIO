@@ -76,6 +76,11 @@ New references are added here first, then to the HTML and to Notion.
 - The mockups are built from her own print files: the cover `omslag_34_18.pdf` and the book `Slekstbok_Røtter i Blix_for utskrift_.pdf`.
 - Clicking the Book project opens its own page with the spreads **2–3, 10–11, 24–25, 42–43, 196–197, 286–287, 324–325, 416–417**.
 
+### 2.8 Sport Guardian thumbnail — a letter as a window (added 2026-10-13)
+**[Salo, Roswell NYC](https://salo.uk/projects/roswell/)** · `12-roswell-nyc-letter-window.png`
+- One very large R: half of it is a pale ghost shape, the other half is a window onto a photo and a website screen. The name and coordinates run vertically beside it.
+- To borrow: **the Sport Guardian well in the work list.** Her brief: a big SG monogram on the brand teal, set in the brand typeface (Candal), the two letters joined into something about sport, which can also stand for the sponsor (Idrettsfadder means "sports sponsor").
+
 ---
 
 ## 3. Also saved in Notion, not yet annotated
