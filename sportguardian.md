@@ -55,3 +55,12 @@ Order (2026-10-13, her request, last change): header → the moving mosaic → A
 ## Logo
 - Vector master: [`tools/sport-guardian/sg_svg.py`](tools/sport-guardian/sg_svg.py) → `sg-mark.svg` (white S, green G), `sg-mark-teal.svg` (teal S, green G, for white grounds), `sg-mark-on-green.svg` (teal S, white G, for green grounds). Built from the Candal glyph outlines (OFL), so no font is needed to show it.
 - The landing thumbnail (`sport-guardian-mark.webp`) is the same construction.
+
+## Admin dashboard, rebuilt 2026-10-14 (her request, after her "Orbit Dashboard" reference)
+The admin screen in the Product section is now drawn from scratch by [`tools/sport-guardian/admin_dash.py`](tools/sport-guardian/admin_dash.py) (called from `fix_screens.py`), in the admin's light colours and Open Sans, under her own admin nav:
+- **Header card** (one card, the most important first): the club logo, "Become a sports guardian", "Swimming for everyone · Fjordby Svømmeklubb · started 15 Sep 2024"; RAISED 360 000 NOK +18% this week with the segmented progress bar, 72% of the 500 000 NOK goal; TIME LEFT 60 days of 90, ends 13 Dec, with a 67% ring.
+- Tabs: Overview, Donors, Payouts, Posters and sharing, Settings; "Latest update: 13.10.2024, 09:41".
+- **Sankey card**, "Where the money comes from": a date range (15.09.2024 – 13.10.2024) and controls in the header; her dotted (hatched) flows kept (her request), teal, the One-time fee path green; node labels as "name · share (amount)"; one tooltip shown as on hover; the column names along the bottom with arrows (Who gives, How often, Raised).
+- **Donor table**: title, search, Filter and Export in the card header, the column headers in the same card (Donor, Frequency, Status, Amount, Since, Next payment), seven made-up donors, status pills with a dot and a text label (Active, Refund, Paused), See details and a menu per row.
+The separate dark "Where the money comes from" block on the page is removed (her choice: the Sankey lives inside the admin). The "What this chart is" and "Other charts" notes stay, under the dashboard. The dashboard scrolls slowly inside the browser frame. All figures are made up for the mockup.
+
