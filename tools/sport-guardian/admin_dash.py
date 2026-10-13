@@ -58,8 +58,8 @@ rx = 760
 _tracked(d, P(rx, y0+24), 'RAISED', f('SemiBold', 11), LAB, 1.6*S)
 text(rx, y0+70, '360 000', f('Bold', 30), INK, 'ls')
 nw_ = d.textlength('360 000', font=f('Bold', 30))/S
-text(rx+nw_+8, y0+70, 'NOK', f('SemiBold', 13), MUT, 'ls')
-text(rx+nw_+48, y0+70, '+18% this week', f('Bold', 13), UP, 'ls')
+text(rx+nw_+8, y0+70, 'of 500 000 NOK', f('SemiBold', 14), MUT, 'ls')
+text(rx+72, y0+31, '+18% this week', f('Bold', 12), UP, 'lm')
 bl, br, by, bh, n = rx, rx+268, y0+84, 14, 40; step = (br-bl)/n; on = round(n*.72)
 for k in range(n):
     if k < on:
@@ -68,7 +68,6 @@ for k in range(n):
         g = (k-on)/max(n-on-1, 1); col = tuple(int(212+(238-212)*g) for _ in range(3))
     d.rounded_rectangle(P(bl+k*step, by, bl+k*step+step*.42, by+bh), S, fill=col)
 text(br+14, by+bh/2, '72%', f('Bold', 22), INK, 'lm')
-text(rx, by+bh+20, 'of the 500 000 NOK goal', f('Regular', 12), MUT, 'ls')
 d.line(P(rx+352, y0+22, rx+352, y1-22), fill=LINE, width=S)
 # time left
 tx = rx+384
@@ -80,95 +79,38 @@ d.ellipse(P(ccx-cr, ccy-cr, ccx+cr, ccy+cr), outline=(234, 240, 241), width=6*S)
 d.arc(P(ccx-cr, ccy-cr, ccx+cr, ccy+cr), -90, -90+240, fill=TEAL, width=6*S)
 text(ccx, ccy, '67%', f('Bold', 12), INK, 'mm')
 
-# tabs, as in the reference
-ty = 268
-tabs = ['Overview', 'Donors', 'Payouts', 'Posters and sharing', 'Settings']; x = X0
-for i, t in enumerate(tabs):
-    fn = f('SemiBold', 15); w = d.textlength(t, font=fn)/S
-    text(x, ty, t, fn, TEAL if i == 0 else (70, 80, 84), 'lm')
-    if i == 0: d.rectangle(P(x-2, ty+20, x+w+2, ty+23), fill=TEAL)
-    x += w+40
-d.line(P(X0, ty+23, X1, ty+23), fill=LINE, width=S)
-text(X1, ty, 'Latest update: 13.10.2024, 09:41', f('Regular', 13), MUT, 'rm')
-
-# 2. the Sankey card
-y0 = 316; y1 = 806; card(X0, y0, X1, y1)
-text(X0+30, y0+40, 'Where the money comes from', f('Bold', 19), INK, 'ls')
-text(X0+30, y0+64, 'Who gives, how often, and what it adds up to', f('Regular', 13), MUT, 'ls')
-# date range and controls in the header
-pill(X1-330, y0+22, 214, 38, '15.09.2024 – 13.10.2024', f('SemiBold', 13), INK, CARD, outline=LINE, r=8)
-for k, cxx in enumerate([X1-88, X1-50]):
-    d.rounded_rectangle(P(cxx-17, y0+24, cxx+17, y0+58), 8*S, outline=LINE, width=S)
-d.line(P(X1-96, y0+35, X1-80, y0+35), fill=INK, width=2*S); d.line(P(X1-96, y0+41, X1-80, y0+41), fill=INK, width=2*S); d.line(P(X1-96, y0+47, X1-80, y0+47), fill=INK, width=2*S)
-for dy in (-7, 0, 7): d.ellipse(P(X1-52, y0+41+dy-2, X1-48, y0+41+dy+2), fill=INK)
-d.line(P(X0, y0+86, X1, y0+86), fill=LINE, width=S)
-# the flows: her dotted (hatched) bands, the one-time path in green
-SRC = ['Private persons', 'Companies']; FRQ = ['Monthly', 'Quarterly', 'Annually', 'One-time fee']
-total = sum(FLOWS.values()); top, bot = y0+124, y1-74; gap = 22
-k_ = (bot-top-gap*3)/total; hh = lambda v: max(v*k_, 4)
-def stack(names, vals, g):
-    tot = sum(hh(v) for v in vals)+g*(len(vals)-1); y = top+((bot-top)-tot)/2; o = {}
-    for nme, v in zip(names, vals): o[nme] = [y, y+hh(v)]; y += hh(v)+g
-    return o
-sv = [sum(v for (a, b), v in FLOWS.items() if a == nme) for nme in SRC]
-fv = [sum(v for (a, b), v in FLOWS.items() if b == nme) for nme in FRQ]
-Pn = stack(SRC, sv, 70); Mn = stack(FRQ, fv, gap); R = [top+((bot-top)-total*k_)/2, top+((bot-top)-total*k_)/2+total*k_]
-xL, xM, xR, NW = X0+70, X0+540, X1-330, 12
-def band(x0, a0, a1, x1, b0, b1, steps=60):
-    t_, b_ = [], []
-    for kk in range(steps+1):
-        t = kk/steps; e = t*t*(3-2*t); xx = x0+(x1-x0)*t
-        t_.append((xx, a0+(b0-a0)*e)); b_.append((xx, a1+(b1-a1)*e))
-    return t_+b_[::-1]
-hatch_t = Image.new('RGB', im.size, (255, 255, 255)); hd = ImageDraw.Draw(hatch_t)
-for xx in range(0, W*S, 6*S//1 if False else 12): hd.rectangle((xx, 0, xx+2, H*S), fill=TEAL)
-hatch_g = Image.new('RGB', im.size, (255, 255, 255)); gd = ImageDraw.Draw(hatch_g)
-for xx in range(0, W*S, 12): gd.rectangle((xx, 0, xx+3, H*S), fill=(13, 181, 122))
-mask_t = Image.new('L', im.size, 0); mask_g = Image.new('L', im.size, 0)
-pc = {nme: Pn[nme][0] for nme in SRC}; mc = {nme: Mn[nme][0] for nme in FRQ}
-for fq in FRQ:
-    for sname in SRC:
-        v = FLOWS.get((sname, fq))
-        if not v: continue
-        h_ = max(v*k_, 2); a0 = pc[sname]; pc[sname] += h_; b0 = mc[fq]; mc[fq] += h_
-        ImageDraw.Draw(mask_g if fq == 'One-time fee' else mask_t).polygon([P(*p) for p in band(xL+NW, a0, a0+h_, xM, b0, b0+h_)], fill=150 if fq == 'One-time fee' else 120)
-rc = R[0]
-for fq, v in zip(FRQ, fv):
-    h_ = max(Mn[fq][1]-Mn[fq][0], 2); a0 = Mn[fq][0]; b0 = rc; rc += Mn[fq][1]-Mn[fq][0]
-    ImageDraw.Draw(mask_g if fq == 'One-time fee' else mask_t).polygon([P(*p) for p in band(xM+NW, a0, a0+h_, xR, b0, b0+h_)], fill=190 if fq == 'One-time fee' else 150)
-im.paste(hatch_t, (0, 0), mask_t); im.paste(hatch_g, (0, 0), mask_g); d = ImageDraw.Draw(im)
-# nodes and labels: "name · share (amount)", as in the reference
-for nme, v in zip(SRC, sv):
-    a, b = Pn[nme]; d.rounded_rectangle(P(xL, a, xL+NW, b), 3*S, fill=(52, 72, 76))
-    l1 = f'{nme} · {round(v/total*100)}%'; wl = max(d.textlength(l1, font=f('Bold', 15)), d.textlength(f'{nok(v)} NOK', font=f('Regular', 13)))/S
-    d.rounded_rectangle(P(xL+NW+6, a+4, xL+NW+20+wl, a+48), 6*S, fill=(255, 255, 255))
-    text(xL+NW+12, a+22, l1, f('Bold', 15), INK, 'ls'); text(xL+NW+12, a+41, f'{nok(v)} NOK', f('Regular', 13), MUT, 'ls')
-for nme, v in zip(FRQ, fv):
-    a, b = Mn[nme]; b = max(b, a+4); hi = nme == 'One-time fee'
-    d.rounded_rectangle(P(xM, a, xM+NW, b), 3*S, fill=(13, 181, 122) if hi else TEAL)
-    sh_ = round(v/total*100); lab_ = f'{nme} · {sh_ if sh_ else "<1"}% ({nok(v)})'
-    ym = (a+b)/2 if b-a > 30 else (a+b)/2
-    fn = f('Bold', 14); wl = d.textlength(lab_, font=fn)/S
-    d.rounded_rectangle(P(xM+NW+8, ym-12, xM+NW+20+wl, ym+12), 6*S, fill=(255, 255, 255))
-    text(xM+NW+14, ym, lab_, fn, (8, 120, 82) if hi else INK, 'lm')
-d.rounded_rectangle(P(xR, R[0], xR+NW, R[1]), 3*S, fill=DEEP)
-ym = (R[0]+R[1])/2
-text(xR+NW+18, ym-24, 'Raised', f('SemiBold', 14), MUT, 'ls')
-text(xR+NW+18, ym+10, '360 000 NOK', f('Bold', 28), INK, 'ls')
-text(xR+NW+18, ym+34, '83% one-time · 17% recurring', f('Regular', 13), MUT, 'ls')
-# a tooltip, as on hover in the reference
-tx0, ty0 = xL+150, Pn['Private persons'][0]+88
-d.rounded_rectangle(P(tx0, ty0, tx0+232, ty0+86), 10*S, fill=(255, 255, 255), outline=LINE, width=S)
-text(tx0+16, ty0+22, 'Who gives', f('Regular', 11), MUT, 'ls'); text(tx0+16, ty0+40, 'Private persons · 63% (228 000)', f('SemiBold', 13), INK, 'ls')
-text(tx0+16, ty0+60, 'How often', f('Regular', 11), MUT, 'ls'); text(tx0+16, ty0+78, 'One-time fee · 79% (180 000)', f('SemiBold', 13), INK, 'ls')
-# column names along the bottom, with arrows, as in the reference
+# 2. the Sankey card: deep teal with a soft glow (as before), the new header with the date range and controls, the
+# chart as it was (its data, tooltip and legend, sankey.flow_body), and the column names along the bottom
+from sankey import flow_body
+y0 = 262; BODY = 420; y1 = y0+92+BODY+52
+sh = Image.new('L', im.size, 0); ImageDraw.Draw(sh).rounded_rectangle(P(X0+2, y0+6, X1-2, y1+3), 16*S, fill=40)
+im.paste(Image.new('RGB', im.size, (30, 60, 66)), (0, 0), sh.filter(ImageFilter.GaussianBlur(10*S)))
+cw, chh = (X1-X0)*S, (y1-y0)*S
+g = Image.new('RGB', (cw, chh), (11, 34, 36)); gl = Image.new('L', (cw, chh), 0)
+ImageDraw.Draw(gl).ellipse((int(cw*.55), -chh//2, int(cw*1.15), chh//2), fill=255)
+g = Image.composite(Image.new('RGB', (cw, chh), (29, 76, 80)), g, gl.filter(ImageFilter.GaussianBlur(90*S)))
+m = Image.new('L', (cw, chh), 0); ImageDraw.Draw(m).rounded_rectangle((0, 0, cw-1, chh-1), 16*S, fill=255)
+im.paste(g, P(X0, y0), m); d = ImageDraw.Draw(im)
+WK, WM, WL = (255, 255, 255), (167, 196, 198), (150, 196, 198)
+text(X0+30, y0+40, 'Where the money comes from', f('Bold', 19), WK, 'ls')
+text(X0+30, y0+64, 'Who gives, how often, and what it adds up to', f('Regular', 13), WM, 'ls')
+d.rounded_rectangle(P(X1-330, y0+22, X1-116, y0+60), 8*S, fill=(24, 58, 62), outline=(62, 100, 104), width=S)
+text(X1-223, y0+41, '15.09.2024 – 13.10.2024', f('SemiBold', 13), WK, 'mm')
+for cxx in (X1-88, X1-50):
+    d.rounded_rectangle(P(cxx-17, y0+24, cxx+17, y0+58), 8*S, fill=(24, 58, 62), outline=(62, 100, 104), width=S)
+for dy in (-6, 0, 6): d.line(P(X1-96, y0+41+dy, X1-80, y0+41+dy), fill=WK, width=2*S)
+for dy in (-7, 0, 7): d.ellipse(P(X1-52, y0+41+dy-2, X1-48, y0+41+dy+2), fill=WK)
+d.line(P(X0, y0+86, X1, y0+86), fill=(40, 74, 78), width=S)
+fb = flow_body(X1-X0, BODY); fb = fb.resize(((X1-X0)*S, BODY*S), Image.LANCZOS)
+im.paste(fb, P(X0, y0+100), fb); d = ImageDraw.Draw(im)
+xL, xM, xR, NW = X0+24, X0+420, X0+806, 10
 for xx, t, a in [(xL, 'Who gives', 'l'), (xM, 'How often', 'l'), (xR+NW, 'Raised', 'r')]:
-    fn = f('SemiBold', 14); w = d.textlength(t, font=fn)/S
-    if a == 'l': arrow(xx+5, y1-35, 'up', (70, 80, 84), 6); text(xx+18, y1-30, t, fn, (70, 80, 84), 'ls')
-    else: arrow(xx-5, y1-35, 'up', (70, 80, 84), 6); text(xx-18, y1-30, t, fn, (70, 80, 84), 'rs')
+    fn = f('SemiBold', 14)
+    if a == 'l': arrow(xx+5, y1-31, 'up', WM, 6); text(xx+18, y1-26, t, fn, WM, 'ls')
+    else: arrow(xx-5, y1-31, 'up', WM, 6); text(xx-18, y1-26, t, fn, WM, 'rs')
 
 # 3. the donor table: search, Filter and Export in its header, the column headers in the same card
-y0 = 838; rows = [('Ingrid Solberg', 'One-time fee', 'Refund', '450', '21.09.2024', '–'),
+y0 = y1+32; rows = [('Ingrid Solberg', 'One-time fee', 'Refund', '450', '21.09.2024', '–'),
                   ('Magnus Hansen', 'Annually', 'Active', '6 600', '20.09.2024', '20.09.2025'),
                   ('Sofie Lie', 'Annually', 'Active', '6 600', '18.09.2024', '18.09.2025'),
                   ('Oliver Berg', 'Monthly', 'Active', '600', '17.09.2024', '17.11.2024'),

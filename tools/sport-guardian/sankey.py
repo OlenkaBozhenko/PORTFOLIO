@@ -194,3 +194,106 @@ def dashboard_sankey(im, H_BLOCK=470, chart=True):
         y += 26*s
     put(c, x0, y1)
     return out
+
+
+def flow_body(w1, h1):
+    """The chart part of the flow card above, on a transparent ground (2026-10-14, her request: keep this chart, its
+    data, tooltip and legend, inside the new dashboard card with its header and filters)."""
+    from PIL import ImageChops
+    s = S; c = Image.new('RGBA', (w1*s, h1*s), (0, 0, 0, 0)); d = ImageDraw.Draw(c)
+    WK, WM, WL = (255, 255, 255), (167, 196, 198), (150, 196, 198)
+    ct, cb, gapn = 40*s, (h1-8)*s, 16*s
+    total = sum(FLOWS.values()); kk = ((cb-ct)-gapn*3)/total
+    hgt = lambda v: max(v*kk, 4*s)
+
+    def stack(names, vals):
+        y = ct+((cb-ct)-(sum(hgt(v) for v in vals)+gapn*(len(vals)-1)))/2; pos = {}
+        for n, v in zip(names, vals):
+            pos[n] = [y, y+hgt(v), y, y]; y += hgt(v)+gapn
+        return pos
+    srcs = ['Private persons', 'Companies']; sv = [sum(v for (a, b), v in FLOWS.items() if a == n) for n in srcs]
+    fr = [n for n, _ in FREQ]; fv = [sum(v for (a, b), v in FLOWS.items() if b == n) for n in fr]
+    # the same four hues, lighter for the dark ground; One-time fee in the brand green
+    col = {'Monthly': (84, 172, 226), 'Quarterly': (72, 210, 222), 'Annually': (240, 172, 64), 'One-time fee': GREEN}; FOCUS = 'One-time fee'
+    xL, xM, xR, nw = 24*s, 420*s, 806*s, 10*s
+    P = stack(srcs, sv); M = stack(fr, fv)
+    ry = ct+((cb-ct)-total*kk)/2; R = [ry, ry+total*kk, ry]
+    masks = {f: Image.new('L', c.size, 0) for f in fr}
+    for f in fr:
+        md = ImageDraw.Draw(masks[f])
+        for sname in srcs:
+            v = FLOWS.get((sname, f))
+            if not v: continue
+            h = max(v*kk, 2*s); a0 = P[sname][2]; P[sname][2] += h; b0 = M[f][2]; M[f][2] += h
+            _ribbon(md, xL+nw, a0, a0+h, xM, b0, b0+h, 255)
+    for f in fr:
+        h = max(M[f][1]-M[f][0], 2*s); a0 = M[f][0]; b0 = R[2]; R[2] += (M[f][1]-M[f][0])
+        _ribbon(ImageDraw.Draw(masks[f]), xM+nw, a0, a0+h, xR, b0, b0+h, 255)
+    # fine vertical lines, 1 px every 4 px; the hovered flow at full strength, the others quieter
+    stripes = Image.new('L', c.size, 0); sd = ImageDraw.Draw(stripes)
+    for x in range(0, c.width, 4*s): sd.rectangle((x, 0, x+s-1, c.height), fill=255)
+    for f in fr:
+        a = ImageChops.multiply(masks[f], stripes).point(lambda v, k=(235 if f == FOCUS else 120): v*k//255)  # (full for the hovered flow)
+        lay = Image.new('RGBA', c.size, col[f]+(0,)); lay.putalpha(a); c = Image.alpha_composite(c, lay)
+    d = ImageDraw.Draw(c)
+    hf = FONT('SemiBold', 10*s)
+    for x, t in ((xL, 'WHO GIVES'), (xM, 'HOW OFTEN')):
+        _tracked(d, (x, 8*s), t, hf, WL, 1.6*s)
+    rt = 'RAISED'; _tracked(d, (xR+nw-(len(rt)*8.2)*s, 8*s), rt, hf, WL, 1.6*s)
+    lf = FONT('SemiBold', 11*s); NODE = (207, 227, 228); PL = (15, 40, 43)
+
+    def plate(x, y, t, fill=WK):  # a small dark plate so a label reads over the lines
+        tw = d.textlength(t, font=lf); d.rounded_rectangle((x-5*s, y-3*s, x+tw+5*s, y+17*s), 5*s, fill=PL)
+        d.text((x, y), t, font=lf, fill=fill)
+    for n in srcs:
+        a, b = P[n][0], P[n][1]; d.rounded_rectangle((xL, a, xL+nw, b), 3*s, fill=NODE)
+        plate(xL+nw+10*s, a+6*s, n)
+    for n in fr:
+        a, b = M[n][0], max(M[n][1], M[n][0]+4*s); ym = (a+b)/2
+        d.rounded_rectangle((xM, a, xM+nw, b), 3*s, fill=col[n])
+        plate(xM+nw+10*s, ym-8*s, n)
+    d.rounded_rectangle((xR, R[0], xR+nw, R[1]), 3*s, fill=(255, 255, 255))
+
+    # the tooltip, as if the pointer rests on the One-time fee flow
+    a, b = M[FOCUS][0], M[FOCUS][1]; ptx, pty = 676*s, (a+b)/2+30*s
+    d.ellipse((ptx-5*s, pty-5*s, ptx+5*s, pty+5*s), fill=(11, 34, 36), outline=col[FOCUS], width=2*s)
+    tx, ty, tw_, th = 556*s, pty-150*s, 240*s, 132*s
+    sh = Image.new('L', c.size, 0); ImageDraw.Draw(sh).rounded_rectangle((tx, ty+6*s, tx+tw_, ty+th+6*s), 12*s, fill=70)
+    shl = Image.new('RGBA', c.size, (0, 10, 12, 0)); shl.putalpha(sh.filter(ImageFilter.GaussianBlur(10*s))); c = Image.alpha_composite(c, shl)
+    d = ImageDraw.Draw(c); TT = (255, 255, 255); TM = (106, 119, 124); TI = (20, 30, 32)
+    d.rounded_rectangle((tx, ty, tx+tw_, ty+th), 12*s, fill=TT)
+    d.polygon([(ptx-8*s, ty+th), (ptx+8*s, ty+th), (ptx, ty+th+8*s)], fill=TT)
+    d.text((tx+16*s, ty+12*s), 'One-time fee', font=FONT('Bold', 14*s), fill=TI)
+    d.text((tx+16*s, ty+32*s), 'Last 30 days · 1 000 donors', font=FONT('Regular', 10*s), fill=TM)
+    ch = '+24%'; cf = FONT('Bold', 10*s); cw = d.textlength(ch, font=cf)
+    d.rounded_rectangle((tx+tw_-16*s-cw-16*s, ty+13*s, tx+tw_-16*s, ty+31*s), 9*s, fill=(221, 251, 240))
+    d.text((tx+tw_-16*s-cw-8*s, ty+16*s), ch, font=cf, fill=(8, 150, 100))
+    _spark(d, (tx+16*s, ty+52*s, tx+tw_-16*s, ty+70*s), [5, 7, 6, 9, 12, 11, 15, 18, 17, 22, 26, 30], (13, 181, 122), None, 2*s)
+    rf, vf2 = FONT('Regular', 11*s), FONT('Bold', 11*s)
+    for k, (dot, t, v) in enumerate([((52, 72, 76), 'Private persons', '180 000 NOK'), ((150, 170, 174), 'Companies', '120 000 NOK'), ((13, 181, 122), 'Share of raised', '83%')]):
+        yy = ty+82*s+k*16*s
+        d.rounded_rectangle((tx+16*s, yy+3*s, tx+24*s, yy+11*s), 2*s, fill=dot)
+        d.text((tx+32*s, yy), t, font=rf, fill=TM)
+        d.text((tx+tw_-16*s-d.textlength(v, font=vf2), yy), v, font=vf2, fill=TI)
+
+    # the legend on the right: every amount next to a marker in its flow's colour
+    lx, rx = 872*s, (w1-24)*s
+    d.line((lx-28*s, 0, lx-28*s, cb), fill=(40, 74, 78), width=s)
+    y = 0
+    d.text((lx, y), 'Raised', font=lf, fill=WM)
+    d.text((lx, y+17*s), '360 000 NOK', font=FONT('Bold', 21*s), fill=WK)
+    d.text((lx, y+46*s), '83% one-time, 17% recurring', font=FONT('Regular', 11*s), fill=WM)
+    vf = FONT('SemiBold', 11*s)
+    y += 80*s
+    rows = [('HOW OFTEN', None, None)] + [(n, v, col[n]) for n, v in zip(fr, fv)] \
+         + [('WHO GIVES', None, None)] + [(n, v, NODE) for n, v in zip(srcs, sv)]
+    for n, v, mc in rows:
+        if v is None:
+            y += 8*s; _tracked(d, (lx, y), n, hf, WL, 1.6*s); y += 22*s; continue
+        yc = y+8*s
+        d.rounded_rectangle((lx, yc-5*s, lx+10*s, yc+5*s), 3*s, fill=mc)
+        if n == FOCUS: d.rounded_rectangle((lx-8*s, yc-12*s, rx+8*s, yc+12*s), 7*s, outline=(46, 110, 92), width=s)
+        d.text((lx+20*s, yc-8*s), n, font=lf, fill=WK)
+        t = f'{v:,}'.replace(',', ' ')+' NOK'; d.text((rx-d.textlength(t, font=vf), yc-8*s), t, font=vf, fill=WK)
+        y += 26*s
+    return c
