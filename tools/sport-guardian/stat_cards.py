@@ -118,26 +118,29 @@ def kpis(im):
     fc = FONT('Bold', 10*S); cb = d.textbbox((0, 0), '+18% this week', font=fc); cx0 = x+aw+42*S
     d.rounded_rectangle((cx0, 27*S, cx0+cb[2]-cb[0]+16*S, 45*S), 9*S, fill=(17, 77, 70))
     d.text((cx0+8*S-cb[0], 36*S-(cb[3]-cb[1])/2-cb[1]), '+18% this week', font=fc, fill=GREEN)
-    bx0, bx1, by = x, int(w*.72), 55*S
+    last = 4*(W+GAP)*S                      # the left edge of the One-time fee card below, in card pixels
+    bx0, bx1, by = x, last-28*S, 55*S
     d.rounded_rectangle((bx0, by, bx1, by+6*S), 3*S, fill=(52, 92, 96))
     fw = int((bx1-bx0)*0.72); grad = Image.new('RGB', (fw, 6*S))
     for i in range(fw):
         t = i/max(fw-1, 1); grad.paste(tuple(int((120, 230, 210)[j]+(GREEN[j]-(120, 230, 210)[j])*t) for j in range(3)), (i, 0, i+1, 6*S))
     gm = Image.new('L', grad.size, 0); ImageDraw.Draw(gm).rounded_rectangle((0, 0, fw-1, 6*S-1), 3*S, fill=255)
     k.paste(grad, (bx0, by), gm)
-    gl = FONT('SemiBold', 10*S); gt = '72% of 500 000 NOK goal'; gb = d.textbbox((0, 0), gt, font=gl)
-    d.text((bx1-(gb[2]-gb[0]), 10*S), gt, font=gl, fill=mut)
-    lx = bx1+28*S; d.line([(lx, 14*S), (lx, h-14*S)], fill=(70, 120, 124), width=S)
-    cx, cy, r = lx+40*S, 41*S, 19*S
+    # the goal, level with the amount and brighter (her request)
+    gl = FONT('Bold', 12*S); gt = '72% of 500 000 NOK goal'; gb = d.textbbox((0, 0), gt, font=gl)
+    d.text((bx1-(gb[2]-gb[0])-gb[0], 38*S-(gb[3]-gb[1])), gt, font=gl, fill=GREEN)
+    # time left, centred over the One-time fee card, no divider (her request)
+    r = 19*S; tx = FONT('Bold', 19*S); tw = max(d.textbbox((0, 0), '60 days', font=tx)[2], d.textbbox((0, 0), 'of 90 · ends 12 Dec', font=FONT('SemiBold', 10*S))[2])
+    gw = 2*r+15*S+tw; cx = last+W*S//2-gw//2+r; cy = 41*S
     d.rounded_rectangle((cx-4*S, cy-r-9*S, cx+4*S, cy-r-3*S), 2*S, fill=WH)
     d.line([(cx+r*0.72, cy-r*0.72-1*S), (cx+r*0.92, cy-r*0.92-1*S)], fill=WH, width=3*S)
     d.ellipse((cx-r, cy-r, cx+r, cy+r), fill=(24, 74, 78), outline=(72, 122, 126), width=4*S)
     d.arc((cx-r, cy-r, cx+r, cy+r), -90, -90+360*60/90, fill=GREEN, width=4*S)
     a = math.radians(-90+360*60/90); d.line([(cx, cy), (cx+math.cos(a)*r*0.62, cy+math.sin(a)*r*0.62)], fill=WH, width=2*S)
     d.ellipse((cx-2.5*S, cy-2.5*S, cx+2.5*S, cy+2.5*S), fill=WH)
-    x = cx+34*S
+    x = cx+r+15*S
     d.text((x, 10*S), 'Time left', font=FONT('SemiBold', 11*S), fill=mut)
-    d.text((x, 24*S), '60 days', font=FONT('Bold', 19*S), fill=WH)
+    d.text((x, 24*S), '60 days', font=tx, fill=WH)
     d.text((x, 48*S), 'of 90 · ends 12 Dec', font=FONT('SemiBold', 10*S), fill=mut)
     ImageDraw.Draw(im).rectangle((X-6, Y-2, X+W2+6, Y+H2+6), fill=bg)
     sh = Image.new('L', im.size, 0); ImageDraw.Draw(sh).rounded_rectangle((X+2, Y+6, X+W2-2, Y+H2+2), 14, fill=40)
