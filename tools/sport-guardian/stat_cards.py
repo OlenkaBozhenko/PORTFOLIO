@@ -92,38 +92,47 @@ def club_logo(im):
     return im
 
 def kpis(im):
-    X, Y, W2, H2 = 132, 214, 780, 72
+    """One card (2026-10-13, her request): on the left the amount raised with a progress bar to the goal,
+    on the right a small stopwatch whose ring shows the time left."""
+    X, Y, W2, H2 = 132, 214, 600, 74
     w, h = W2*S, H2*S; bg = im.getpixel((X-8, Y+10))
-    k = Image.new('RGB', (w, h), bg); d = ImageDraw.Draw(k)
+    k = Image.new('RGBA', (w, h), (0, 0, 0, 0)); d = ImageDraw.Draw(k)
+    d.rounded_rectangle((0, 0, w-1, h-1), 14*S, fill=(255, 255, 255), outline=(228, 234, 238), width=S)
     mut = (106, 119, 124)
-    # time left: a progress ring, 60 of 90 days
-    r0, cx, cy = 26*S, 30*S, 36*S
-    d.ellipse((cx-r0, cy-r0, cx+r0, cy+r0), outline=(226, 233, 236), width=5*S)
-    d.arc((cx-r0, cy-r0, cx+r0, cy+r0), -90, -90+360*60/90, fill=TEAL, width=5*S)
-    ctext = lambda box, t, f, fill: (lambda b: d.text(((box[0]+box[2]-(b[2]-b[0]))/2-b[0], (box[1]+box[3]-(b[3]-b[1]))/2-b[1]), t, font=f, fill=fill))(d.textbbox((0, 0), t, font=f))
-    ctext((cx-r0, cy-r0, cx+r0, cy+r0), '67%', FONT('Bold', 11*S), INK)
-    x = 70*S
-    d.text((x, 12*S), 'Time left', font=FONT('SemiBold', 11*S), fill=mut)
-    d.text((x, 27*S), '60 days', font=FONT('Bold', 20*S), fill=INK)
-    d.text((x, 52*S), 'of 90 · ends 12 Dec', font=FONT('SemiBold', 11*S), fill=mut)
-    d.line([(222*S, 14*S), (222*S, 62*S)], fill=(226, 233, 236), width=S)
-    # raised: the amount, a growth chip and a progress bar to the goal
-    x = 246*S
-    d.text((x, 12*S), 'Raised', font=FONT('SemiBold', 11*S), fill=mut)
-    fa = FONT('Bold', 20*S); d.text((x, 27*S), '360 000', font=fa, fill=INK)
+    # left: raised
+    x = 16*S
+    d.text((x, 9*S), 'Raised', font=FONT('SemiBold', 11*S), fill=mut)
+    fa = FONT('Bold', 20*S); d.text((x, 22*S), '360 000', font=fa, fill=INK)
     aw = d.textbbox((0, 0), '360 000', font=fa)[2]
-    d.text((x+aw+6*S, 35*S), 'NOK', font=FONT('SemiBold', 11*S), fill=mut)
-    cx0 = x+aw+40*S; fc = FONT('Bold', 10*S); cb = d.textbbox((0, 0), '+18% this week', font=fc)
-    d.rounded_rectangle((cx0, 31*S, cx0+cb[2]-cb[0]+16*S, 49*S), 9*S, fill=(221, 251, 240))
-    d.text((cx0+8*S-cb[0], 40*S-(cb[3]-cb[1])/2-cb[1]), '+18% this week', font=fc, fill=(10, 143, 98))
-    bx0, bx1, by = x, x+300*S, 58*S
-    d.rounded_rectangle((bx0, by, bx1, by+6*S), 3*S, fill=(226, 233, 236))
-    fill_w = int((bx1-bx0)*0.72); grad = Image.new('RGB', (fill_w, 6*S))
-    for i in range(fill_w):
-        t = i/max(fill_w-1, 1); grad.paste(tuple(int(TEAL[j]+(GREEN[j]-TEAL[j])*t) for j in range(3)), (i, 0, i+1, 6*S))
-    gm = Image.new('L', grad.size, 0); ImageDraw.Draw(gm).rounded_rectangle((0, 0, fill_w-1, 6*S-1), 3*S, fill=255)
+    d.text((x+aw+6*S, 30*S), 'NOK', font=FONT('SemiBold', 11*S), fill=mut)
+    fc = FONT('Bold', 10*S); cb = d.textbbox((0, 0), '+18% this week', font=fc); cx0 = x+aw+40*S
+    d.rounded_rectangle((cx0, 26*S, cx0+cb[2]-cb[0]+16*S, 44*S), 9*S, fill=(221, 251, 240))
+    d.text((cx0+8*S-cb[0], 35*S-(cb[3]-cb[1])/2-cb[1]), '+18% this week', font=fc, fill=(10, 143, 98))
+    bx0, bx1, by = x, 420*S, 55*S
+    d.rounded_rectangle((bx0, by, bx1, by+6*S), 3*S, fill=(232, 238, 240))
+    fw = int((bx1-bx0)*0.72); grad = Image.new('RGB', (fw, 6*S))
+    for i in range(fw):
+        t = i/max(fw-1, 1); grad.paste(tuple(int(TEAL[j]+(GREEN[j]-TEAL[j])*t) for j in range(3)), (i, 0, i+1, 6*S))
+    gm = Image.new('L', grad.size, 0); ImageDraw.Draw(gm).rounded_rectangle((0, 0, fw-1, 6*S-1), 3*S, fill=255)
     k.paste(grad, (bx0, by), gm)
-    d.text((bx1+12*S, by-5*S), '72% of 500 000 NOK goal', font=FONT('SemiBold', 11*S), fill=mut)
-    d2 = ImageDraw.Draw(im); d2.rectangle((X-6, Y, X+W2+6, Y+H2+4), fill=bg)
-    im.paste(k.resize((W2, H2), Image.LANCZOS), (X, Y))
+    g = FONT('SemiBold', 10*S); gt = '72% of 500 000 NOK goal'; gb = d.textbbox((0, 0), gt, font=g)
+    d.text((bx1-(gb[2]-gb[0]), 10*S), gt, font=g, fill=mut)
+    d.line([(440*S, 14*S), (440*S, h-14*S)], fill=(232, 238, 240), width=S)
+    # right: a stopwatch, the ring is the time left (60 of 90 days)
+    cx, cy, r = 474*S, 41*S, 19*S
+    d.rounded_rectangle((cx-4*S, cy-r-9*S, cx+4*S, cy-r-3*S), 2*S, fill=INK)          # crown
+    d.line([(cx+r*0.72, cy-r*0.72-1*S), (cx+r*0.92, cy-r*0.92-1*S)], fill=INK, width=3*S)  # side button
+    d.ellipse((cx-r, cy-r, cx+r, cy+r), fill=(244, 248, 248), outline=(226, 233, 236), width=4*S)
+    d.arc((cx-r, cy-r, cx+r, cy+r), -90, -90+360*60/90, fill=TEAL, width=4*S)
+    import math
+    a = math.radians(-90+360*60/90); d.line([(cx, cy), (cx+math.cos(a)*r*0.62, cy+math.sin(a)*r*0.62)], fill=INK, width=2*S)
+    d.ellipse((cx-2.5*S, cy-2.5*S, cx+2.5*S, cy+2.5*S), fill=INK)
+    x = 508*S
+    d.text((x, 10*S), 'Time left', font=FONT('SemiBold', 11*S), fill=mut)
+    d.text((x, 24*S), '60 days', font=FONT('Bold', 18*S), fill=INK)
+    d.text((x, 48*S), 'ends 12 Dec', font=FONT('SemiBold', 10*S), fill=mut)
+    ImageDraw.Draw(im).rectangle((X-6, Y-2, 132+5*225+4*12, Y+H2+6), fill=bg)
+    sh = Image.new('L', im.size, 0); ImageDraw.Draw(sh).rounded_rectangle((X+2, Y+6, X+W2-2, Y+H2+2), 14, fill=18)
+    im.paste(Image.new('RGB', im.size, (30, 60, 70)), (0, 0), sh.filter(ImageFilter.GaussianBlur(6)))
+    k = k.resize((W2, H2), Image.LANCZOS); im.paste(k, (X, Y), k)
     return im
