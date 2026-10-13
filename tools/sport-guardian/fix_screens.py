@@ -30,7 +30,8 @@ ab = retext(Image.open(os.path.join(F, '1x', 'admin-business.png')).convert('RGB
              ((366, 698, 600, 725), 'Elvebakken Tennis', (369, 711))], 16)
 save(ab, 'screen-admin-business')
 
-st = Image.open(os.path.join(F, '1x', 'statistik.png')).convert('RGB'); d = ImageDraw.Draw(st)
+from stat_cards import cards
+st = cards(Image.open(os.path.join(F, '1x', 'statistik.png')).convert('RGB')); d = ImageDraw.Draw(st)
 for y, name in [(611, 'Ingrid Solberg'), (703, 'Magnus Hansen'), (795, 'Sofie Lie')]:
     d.rectangle((212, y-16, 525, y+16), fill=(255, 255, 255))
     b = d.textbbox((0, 0), name, font=SEMI); d.text((217-b[0], y-(b[3]-b[1])/2-b[1]), name, font=SEMI, fill=(30, 30, 30))
