@@ -12,7 +12,7 @@ Her brief (2026-10-13): a first screen in a rectangle of the thumbnail's teal, t
 | English name | Sport Guardian (her choice, 2026-10-10) |
 | Client | Scale Group AS (her answer, 2026-10-13); the product is sold under the Supporter.no name |
 | Her role | UX, UI *(estimate from her Figma files: she drew every flow, from the donor form to the admin panel; to confirm)* |
-| Year | 2023 *(estimate: the donor list in the screens is dated 21.09.2023; to confirm)* |
+| Year | 2024 (her answer, 2026-10-14) |
 | Platform | Web, desktop and mobile, with an admin panel for clubs |
 | Colours | Teal #418B91, Green #15EDA3 (Figma variables `418b91_idrettsfadder`, `idrettsfader`), white |
 | Typefaces | Candal (the logo and the name), Open Sans (the product UI and the tagline) |
@@ -25,7 +25,7 @@ No em dashes in visible text (her rule).
 - **Back link:** ← All work
 - **Eyebrow:** Web platform for Scale Group AS
 - **Headline:** Crowdfunding that keeps every child in sport. (Two lines, broken after "keeps", her request 2026-10-13; was *A fundraising page any sports club can open in minutes, so no child leaves sport because of money.*)
-- **Meta row:** Role — UX, UI · Year — 2023 · Platform — Web, mobile web · Client — Scale Group AS
+- **Meta row:** Role — UX, UI · Year — 2024 · Platform — Web, mobile web · Client — Scale Group AS
 - **About:** Sport Guardian (Idrettsfadder in Norwegian) is a crowdfunding solution from Supporter.no. A club starts a campaign, and private people and companies become its sports guardians: they give once or every month, and the money covers fees, gear and travel for children whose families cannot pay.
 - **Problem:** Sport costs money, and the cost is what makes children quit first. 185,000 Norwegians cancelled a sports club membership last year, and the drop was largest among children and young people *(figure as quoted on produkter.supporter.no/idrettsfadder in her presentation frame 198:59192; the page shows no date)*. Clubs had no simple way to ask their community for help.
 - **Solution:** A campaign page that shows the countdown, the amount raised and the people behind it, and a donation that takes four choices: private person or company, once or recurring, the amount, then card or Vipps. Behind it, a builder that lets a club publish a campaign without help, and an admin panel with donors, refunds and statistics.
