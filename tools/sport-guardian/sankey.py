@@ -68,10 +68,10 @@ def dashboard_sankey(im, H_BLOCK=470, chart=True):
         elif kind == 'spark':
             _spark(d, ((w4-100)*S, 20*S, (w4-18)*S, 52*S), data, TEAL, None, 2*S)
         else:
-            cx, cy, r = (w4-42)*S, 44*S, 22*S
-            d.ellipse((cx-r, cy-r, cx+r, cy+r), outline=(234, 240, 241), width=5*S)
-            d.arc((cx-r, cy-r, cx+r, cy+r), -90, -90+360*data, fill=TEAL, width=5*S)
-            f = FONT('Bold', 10*S); b = d.textbbox((0, 0), '67%', font=f)
+            cx, cy, r = (w4-54)*S, 53*S, 34*S  # larger ring (her request, 2026-10-13)
+            d.ellipse((cx-r, cy-r, cx+r, cy+r), outline=(234, 240, 241), width=7*S)
+            d.arc((cx-r, cy-r, cx+r, cy+r), -90, -90+360*data, fill=TEAL, width=7*S)
+            f = FONT('Bold', 14*S); b = d.textbbox((0, 0), '67%', font=f)
             d.text((cx-(b[2]-b[0])/2-b[0], cy-(b[3]-b[1])/2-b[1]), '67%', font=f, fill=INKD)
         put(c, x, y0)
 
