@@ -7,6 +7,7 @@ Sources (her Figma file My-projects-new, YlGWlsWWjKSCxhONMzGG2F, exported 2026-1
                                card_ congratulations 3:75581, at 2x
 The selected states of the widget (Recurring, 600 NOK) are redrawn in Open Sans over the export.
 Run: python tablet_frames.py -> ../../assets/work/sport-guardian/flow-1..6.webp
+(flow-1..3: the page body, 1440 x 2521; flow-4..6: the payment cards over the page, 1440 x 900)
 """
 import os
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
@@ -25,16 +26,19 @@ def chip(d, box, s, on, font, r=6, corners=None):
 
 def save(im, n): im.convert('RGB').save(os.path.join(OUT, f'flow-{n}.webp'), quality=88)
 
-page = Image.open(os.path.join(F, '2x', 'campaign-page.png')).convert('RGB').crop((0, 0, 2880, 1800))
-save(page.resize((1440, 900), Image.LANCZOS), 1)
+# the campaign page frames are the whole page (1440 x 2521 under the fixed 120 px header, screen-campaign-head.webp),
+# so the page can scroll before the taps
+page = Image.open(os.path.join(F, '2x', 'campaign-page.png')).convert('RGB')
+body = lambda im: im.resize((1440, 2641), Image.LANCZOS).crop((0, 120, 1440, 2641))
+save(body(page), 1)
 f = ImageFont.truetype(REG, 30); fb = ImageFont.truetype(BOLD, 31)
 p2 = page.copy(); d = ImageDraw.Draw(p2)
 chip(d, (1729, 826, 2091, 905), 'One-time fee', False, f, corners=(True, False, False, True))
 chip(d, (2091, 826, 2453, 905), 'Recurring', True, f, corners=(False, True, True, False))
-save(p2.resize((1440, 900), Image.LANCZOS), 2)
+save(body(p2), 2)
 p3 = p2.copy(); d = ImageDraw.Draw(p3)
 chip(d, (2213, 990, 2453, 1069), '600 NOK', True, fb, corners=(False, True, True, False))
-save(p3.resize((1440, 900), Image.LANCZOS), 3)
+save(body(p3), 3)
 
 base = Image.open(os.path.join(F, '1x', 'modal-payment-method.png')).convert('RGB')
 ImageDraw.Draw(base).rectangle((470, 125, 970, 870), fill=(255, 255, 255))
