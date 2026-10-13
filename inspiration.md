@@ -116,6 +116,10 @@ Her brief for `SportGuardian.html`: a first screen in a rectangle of the thumbna
 - Flows between node columns drawn as fields of thin vertical lines on a dark ground, one node highlighted in colour.
 - To borrow: **the RAISED progress** in the admin cards; **"Where the money comes from"** as its own block across the page, in our teal and green.
 
+**Orbit Dashboard (source not given)** · `25-orbit-dashboard.png` (sent 2026-10-14)
+- One header card with the title on the left and the key numbers on the right; a Sankey card with a date range and controls in its header, labels as "name - share (amount)", a tooltip and the column names along the bottom; a table card with search, Filter and Import in its header and the column headers in the same card.
+- To borrow: **the Sport Guardian admin dashboard**, rebuilt in this order, keeping her dotted flows.
+
 ---
 
 ## 3. Also saved in Notion, not yet annotated
