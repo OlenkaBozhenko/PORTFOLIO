@@ -22,7 +22,7 @@ def _ribbon(d, x0, a0, a1, x1, b0, b1, col, steps=48):
     d.polygon(top+bot[::-1], fill=col)
 
 
-def dashboard_sankey(im, H_BLOCK=470):
+def dashboard_sankey(im, H_BLOCK=470, chart=True):
     """Returns a new, taller screen: the top of the screen, the new block, then the rest from the donor list."""
     top = im.crop((0, 0, im.width, 207)); rest = im.crop((0, 470, im.width, im.height))
     bg = im.getpixel((10, 300))
@@ -41,8 +41,8 @@ def dashboard_sankey(im, H_BLOCK=470):
 
     lab = FONT('SemiBold', 10*S); big = FONT('Bold', 26*S); unitf = FONT('SemiBold', 11*S)
     # one row of four cards
-    x0, y0, h0, gap = 132, 212, 96, 12; w4 = (1305-x0-3*gap)//4
-    specs = [('RAISED', '360 000', 'NOK', '+18%', '72% of the 500 000 NOK goal', 'bar', .72),
+    x0, y0, h0, gap = 132, 212, 106, 12; w4 = (1305-x0-3*gap)//4
+    specs = [('RAISED', '360 000', 'NOK', '+18%', 'of the 500 000 NOK goal', 'bar', .72),
              ('DONORS', '1 200', '', '+17', '17 new this week', 'spark', [900, 940, 960, 1000, 1020, 1060, 1080, 1110, 1140, 1160, 1183, 1200]),
              ('RECURRING', '60 000', 'NOK', '+9%', '200 guardians give monthly or quarterly', 'spark', [30, 32, 33, 36, 38, 41, 44, 47, 50, 54, 57, 60]),
              ('TIME LEFT', '60', 'days', '', 'of 90 · ends 12 Dec', 'ring', 60/90)]
@@ -53,15 +53,18 @@ def dashboard_sankey(im, H_BLOCK=470):
         uw = 0
         if unit: d.text((18*S+vw+6*S, 39*S), unit, font=unitf, fill=MUT); uw = d.textlength(unit, font=unitf)+6*S
         if ch: d.text((18*S+vw+uw+8*S, 39*S), ch, font=FONT('Bold', 11*S), fill=UP)
-        d.text((18*S, 72*S), sub, font=FONT('Regular', 11*S), fill=MUT)
+        d.text((18*S, 84*S), sub, font=FONT('Regular', 11*S), fill=MUT)
         if kind == 'bar':
-            bl, br, by = 18*S, (w4-18)*S, 62*S
-            d.rounded_rectangle((bl, by, br, by+6*S), 3*S, fill=(234, 240, 241))
-            fw = int((br-bl)*data); g = Image.new('RGB', (fw, 6*S))
-            for k in range(fw):
-                t = k/max(fw-1, 1); g.paste(tuple(int(TEAL[j]+(GREEN[j]-TEAL[j])*t) for j in range(3)), (k, 0, k+1, 6*S))
-            gm = Image.new('L', g.size, 0); ImageDraw.Draw(gm).rounded_rectangle((0, 0, fw-1, 6*S-1), 3*S, fill=255)
-            c.paste(g, (bl, by), gm)
+            pf = FONT('Bold', 24*S); pt = f'{round(data*100)}%'; pw = d.textlength(pt, font=pf)
+            bl, br, by, bh = 18*S, (w4-18)*S-pw-14*S, 64*S, 14*S; n = 34; step = (br-bl)/n; on = round(n*data)
+            pb = d.textbbox((0, 0), pt, font=pf); d.text(((w4-18)*S-pw, by+bh/2-(pb[3]-pb[1])/2-pb[1]), pt, font=pf, fill=INKD)
+            for k in range(n):
+                tx = bl+k*step
+                if k < on:
+                    t = k/max(on-1, 1); col = tuple(int(TEAL[j]+(GREEN[j]-TEAL[j])*t) for j in range(3))
+                else:
+                    f = (k-on)/max(n-on-1, 1); col = tuple(int(214+(240-214)*f) for _ in range(3))
+                d.rounded_rectangle((tx, by, tx+step*.42, by+bh), 1*S, fill=col)
         elif kind == 'spark':
             _spark(d, ((w4-100)*S, 20*S, (w4-18)*S, 52*S), data, TEAL, None, 2*S)
         else:
@@ -72,6 +75,8 @@ def dashboard_sankey(im, H_BLOCK=470):
             d.text((cx-(b[2]-b[0])/2-b[0], cy-(b[3]-b[1])/2-b[1]), '67%', font=f, fill=INKD)
         put(c, x, y0)
 
+    if not chart:
+        return out
     # the Sankey card
     s = S; y1 = y0+h0+16; w1 = 1305-x0; h1 = H_BLOCK-(y1-207)-12
     c = card(x0, y1, w1, h1); d = ImageDraw.Draw(c)

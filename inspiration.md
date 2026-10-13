@@ -111,6 +111,11 @@ Her brief for `SportGuardian.html`: a first screen in a rectangle of the thumbna
 - Light rounded cards with soft shadows; small uppercase, letter-spaced labels; big numbers with the change in green beside them; one line of context and a small sparkline; one dark card highlighted, with a bright progress bar.
 - To borrow: **the admin statistics** on the Sport Guardian page, redrawn in this style.
 
+**Two chart details (sources not given)** · `23-segmented-progress.png`, `24-hatched-flows.png` (sent 2026-10-13)
+- A progress bar made of thin vertical segments that fade from bright to dim, with a large percentage beside it.
+- Flows between node columns drawn as fields of thin vertical lines on a dark ground, one node highlighted in colour.
+- To borrow: **the RAISED progress** in the admin cards; **"Where the money comes from"** as its own block across the page, in our teal and green.
+
 ---
 
 ## 3. Also saved in Notion, not yet annotated
