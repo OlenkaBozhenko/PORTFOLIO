@@ -18,7 +18,8 @@ def save(im, name, widths, q=84):
 op = lambda *p: Image.open(os.path.join(*p))
 # brand photos (AI base photos with the printed mark)
 for n in ['hoodie', 'cap', 'decks']: save(op(HERE, 'photos', n+'.png'), n, [1536, 768])
-for n in ['bottle', 'poster']: save(op(HERE, 'photos', n+'.png'), n, [1024, 640])
+save(op(HERE, 'photos', 'bottle.png'), 'bottle', [1024, 640])
+save(op(HERE, 'photos', 'poster.png'), 'poster', [1024, 640], q=95)  # high quality, so the QR code still scans at 640 px
 # product screens
 save(op(F, '2x', 'campaign-page.png'), 'screen-campaign', [1440])
 save(op(F, '2x', 'mobile-main.png'), 'screen-mobile', [750])

@@ -126,7 +126,7 @@ def poster_art(W=976, H=1862):
     qs = 300; qy = H-80-qs
     q = qr_tile(qs); im.paste(q, (70, qy), q)
     x = 70+qs+44
-    for k, line in enumerate(['Scan to back', 'a young athlete', 'near you.']):
+    for k, line in enumerate(['Scan to keep', 'a child in sport', 'near you.']):
         t = words(line, 52, WHITE, O); im.paste(t, (x, qy+10+k*70), t)
     for k, line in enumerate(['produkter.supporter.no/', 'idrettsfadder']):
         u = words(line, 30, GREEN, O); im.paste(u, (x, qy+qs-84+k*44), u)
