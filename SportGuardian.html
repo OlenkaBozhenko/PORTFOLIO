@@ -73,7 +73,8 @@ h1,h2,h3{font-weight:400;letter-spacing:-.035em;text-wrap:balance}
 @keyframes ring{from{opacity:.9;transform:scale(1)}to{opacity:0;transform:scale(2.6)}}
 .pfw{position:relative}
 .pfw .pause,.pause.sc{position:static;align-self:flex-start;box-shadow:none;border:1px solid var(--rule)}
-.scroll.paused .vp img{animation-play-state:paused !important}
+.scroll.paused .vp img,.scroll .browser[tabindex]:hover .vp img{animation-play-state:paused !important}
+.scroll .browser[tabindex]{cursor:pointer}
 @media (prefers-reduced-motion:reduce){.pause.sc{display:none}}
 @media (prefers-reduced-motion:reduce){.ptr,.pfw .pause{display:none}}
 
@@ -109,9 +110,9 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em;max-
 /* the card and Vipps screens: larger, one higher and one lower, side by side (her request) */
 .panel.match{position:relative;padding:0}
 .cards.pay{position:absolute;inset:0;display:block}
-.cards.pay>img{position:absolute;width:47.5%;margin:0 !important}
-.cards.pay>img:nth-child(1){left:2%;top:6%}
-.cards.pay>img:nth-child(2){right:2%;bottom:6%;z-index:1}
+.cards.pay>img{position:absolute;width:41%;margin:0 !important}
+.cards.pay>img:nth-child(1){left:7%;top:9%}
+.cards.pay>img:nth-child(2){right:7%;bottom:9%;z-index:1}
 @media (max-width:720px){.panel.match{aspect-ratio:4/5}}
 .cards.pay>img{border-radius:22px;box-shadow:0 1px 2px rgba(0,0,0,.06),0 24px 40px -18px rgba(20,60,64,.45)}
 .fc{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
@@ -249,7 +250,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="sec-head"><h2 id="h-gal">Product</h2><span>From the donor to the club's admin</span></div>
     <div class="g">
 
-<figure class="c1-12 rv scroll"><div class="panel"><div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>produkter.supporter.no/idrettsfadder</span></div><div class="vp fx" style="--to:-69.1%;--t:24s;--hd:8.333%"><img class="hd" src="assets/work/sport-guardian/screen-campaign-head.webp" alt="" width="1440" height="120" loading="lazy"><img src="assets/work/sport-guardian/screen-campaign-body.webp" alt="The campaign page on desktop, under a fixed header: a swimming pool banner with the countdown, 60 000 NOK from 200 donors, the donation form, the story, the donor list and sharing." width="1440" height="2521" loading="lazy"></div></div></div><div class="fc"><figcaption>The campaign page: countdown, amount raised, the form to give, and the story the club tells.</figcaption><button class="pause sc" type="button" aria-pressed="false"><svg class="pa" aria-hidden="true"><use href="#i-pause"/></svg><svg class="pl" aria-hidden="true"><use href="#i-play"/></svg><span>Pause<span class="vh"> the scrolling campaign page</span></span></button></div></figure>
+<figure class="c1-12 rv scroll"><div class="panel"><div class="browser" tabindex="0" aria-describedby="page-how"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>produkter.supporter.no/idrettsfadder</span></div><div class="vp fx" style="--to:-69.1%;--t:24s;--hd:8.333%"><img class="hd" src="assets/work/sport-guardian/screen-campaign-head.webp" alt="" width="1440" height="120" loading="lazy"><img src="assets/work/sport-guardian/screen-campaign-body.webp" alt="The campaign page on desktop, under a fixed header: a swimming pool banner with the countdown, 60 000 NOK from 200 donors, the donation form, the story, the donor list and sharing." width="1440" height="2521" loading="lazy"></div></div></div><span id="page-how" class="vh">The page scrolls. Press Enter, or click it, to stop or start it.</span></figure>
 
 
 
@@ -374,9 +375,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 (function(){var g=document.querySelector('.panel.match'),t=document.querySelector('.pfw .panel.t');if(!g||!t)return;
   function fit(){g.style.aspectRatio=innerWidth>720?'auto':'';g.style.height=innerWidth>720?t.offsetHeight+'px':''}
   fit();addEventListener('resize',fit);addEventListener('load',fit)})();
-// Pause for the scrolling campaign page (WCAG 2.2.2)
-document.querySelectorAll('.pause.sc').forEach(function(b){b.addEventListener('click',function(){
-  var f=b.closest('figure'),p=!f.classList.contains('paused');f.classList.toggle('paused',p);b.setAttribute('aria-pressed',p);b.querySelector('span').firstChild.nodeValue=p?'Play':'Pause'})});
+// the scrolling campaign page stops while the pointer is over it; a click, a tap or Enter stops or starts it (WCAG 2.2.2)
+document.querySelectorAll('.scroll .browser[tabindex]').forEach(function(b){var f=b.closest('figure');
+  function t(){f.classList.toggle('paused')}
+  b.addEventListener('click',t);b.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t()}})});
 // the mosaic stops while the pointer is over it (CSS); a click, a tap or Enter stops or starts it (WCAG 2.2.2)
 (function(){
   var m=document.getElementById('mosaic');
