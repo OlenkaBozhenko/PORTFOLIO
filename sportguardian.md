@@ -24,7 +24,7 @@ Sources: her Figma file My-projects-new (`YlGWlsWWjKSCxhONMzGG2F`), section 3:71
 No em dashes in visible text (her rule).
 - **Back link:** ← All work
 - **Eyebrow:** Web platform for Scale Group AS
-- **Headline:** A fundraising page any sports club can open in minutes, so no child leaves sport because of money.
+- **Headline:** Crowdfunding that keeps every child in sport. (Two lines, broken after "keeps", her request 2026-10-13; was *A fundraising page any sports club can open in minutes, so no child leaves sport because of money.*)
 - **Meta row:** Role — UX, UI · Year — 2023 · Platform — Web, mobile web · Client — Scale Group AS
 - **About:** Sport Guardian (Idrettsfadder in Norwegian) is a crowdfunding solution from Supporter.no. A club starts a campaign, and private people and companies become its sports guardians: they give once or every month, and the money covers fees, gear and travel for children whose families cannot pay.
 - **Problem:** Sport costs money, and the cost is what makes children quit first. 185,000 Norwegians cancelled a sports club membership last year, and the drop was largest among children and young people *(figure as quoted on produkter.supporter.no/idrettsfadder in her presentation frame 198:59192; the page shows no date)*. Clubs had no simple way to ask their community for help.
