@@ -37,7 +37,7 @@ for y, name in [(611, 'Ingrid Solberg'), (703, 'Magnus Hansen'), (795, 'Sofie Li
     d.rectangle((212, y-16, 525, y+16), fill=(255, 255, 255))
     b = d.textbbox((0, 0), name, font=SEMI); d.text((217-b[0], y-(b[3]-b[1])/2-b[1]), name, font=SEMI, fill=(30, 30, 30))
 retext(st, [((128, 165, 560, 207), 'Become a sports guardian', (133, 186))], 26)
-st = club_logo(dashboard_sankey(st, H_BLOCK=122, chart=False))  # after the names: the new block pushes the donor list down
+st = club_logo(dashboard_sankey(st, H_BLOCK=540))  # after the names: the new block pushes the donor list down
 save(st, 'screen-statistik')
 save(st.crop((0, 0, 1440, 65)), 'screen-statistik-head'); save(st.crop((0, 65, 1440, st.height)), 'screen-statistik-body')
 

@@ -77,14 +77,16 @@ def dashboard_sankey(im, H_BLOCK=470, chart=True):
 
     if not chart:
         return out
-    # the Sankey card
+    # the flow card (2026-10-13, her request: the "Where the money comes from" chart on the dashboard too, drawn like
+    # the page's own chart as fields of thin vertical lines, One-time fee in green, the rest grey; the amounts are not
+    # written on the chart but in a legend with markers on the right)
     s = S; y1 = y0+h0+16; w1 = 1305-x0; h1 = H_BLOCK-(y1-207)-12
     c = card(x0, y1, w1, h1); d = ImageDraw.Draw(c)
     d.text((22*s, 16*s), 'Where the money comes from', font=FONT('Bold', 15*s), fill=INKD)
     d.text((22*s, 38*s), 'Who gives, how often, and what it adds up to, since the campaign started 30 days ago', font=FONT('Regular', 11*s), fill=MUT)
-    ct, cb, gapn = 74*s, (h1-24)*s, 12*s
+    ct, cb, gapn = 96*s, (h1-22)*s, 14*s
     total = sum(FLOWS.values()); kk = ((cb-ct)-gapn*3)/total
-    hgt = lambda v: max(v*kk, 3*s)
+    hgt = lambda v: max(v*kk, 4*s)
 
     def stack(names, vals):
         y = ct+((cb-ct)-(sum(hgt(v) for v in vals)+gapn*(len(vals)-1)))/2; pos = {}
@@ -93,33 +95,68 @@ def dashboard_sankey(im, H_BLOCK=470, chart=True):
         return pos
     srcs = ['Private persons', 'Companies']; sv = [sum(v for (a, b), v in FLOWS.items() if a == n) for n in srcs]
     fr = [n for n, _ in FREQ]; fv = [sum(v for (a, b), v in FLOWS.items() if b == n) for n in fr]
-    xL, xM, xR, nw = 200*s, 610*s, (w1-260)*s, 12*s
+    xL, xM, xR, nw = 170*s, 470*s, 770*s, 12*s
     P = stack(srcs, sv); M = stack(fr, fv)
     ry = ct+((cb-ct)-total*kk)/2; R = [ry, ry+total*kk, ry]
-    col = dict(FREQ)
-    lay = Image.new('RGBA', c.size, (0, 0, 0, 0)); ld = ImageDraw.Draw(lay)
+    GREY, HI = (128, 150, 155), (13, 181, 122)
+    m_grey = Image.new('L', c.size, 0); m_hi = Image.new('L', c.size, 0)
+    dg, dh = ImageDraw.Draw(m_grey), ImageDraw.Draw(m_hi)
     for f in fr:
         for sname in srcs:
             v = FLOWS.get((sname, f))
             if not v: continue
             h = max(v*kk, 2*s); a0 = P[sname][2]; P[sname][2] += h; b0 = M[f][2]; M[f][2] += h
-            _ribbon(ld, xL+nw, a0, a0+h, xM, b0, b0+h, col[f]+(72,))
+            _ribbon(dh if f == 'One-time fee' else dg, xL+nw, a0, a0+h, xM, b0, b0+h, 255)
     for f in fr:
         h = max(M[f][1]-M[f][0], 2*s); a0 = M[f][0]; b0 = R[2]; R[2] += (M[f][1]-M[f][0])
-        _ribbon(ld, xM+nw, a0, a0+h, xR, b0, b0+h, col[f]+(118,))
-    c = Image.alpha_composite(c, lay); d = ImageDraw.Draw(c)
-    nf, vf = FONT('SemiBold', 12*s), FONT('Bold', 12*s)
-    for n, v in zip(srcs, sv):
-        a, b = P[n][0], P[n][1]; d.rounded_rectangle((xL, a, xL+nw, b), 3*s, fill=(52, 72, 76)); ym = (a+b)/2
-        d.text((xL-14*s-d.textlength(n, font=nf), ym-17*s), n, font=nf, fill=INKD)
-        t = f'{v:,}'.replace(',', ' ')+' NOK'; d.text((xL-14*s-d.textlength(t, font=vf), ym+1*s), t, font=vf, fill=MUT)
-    for n, v in zip(fr, fv):
-        a, b = M[n][0], max(M[n][1], M[n][0]+3*s); d.rounded_rectangle((xM, a, xM+nw, b), 2*s, fill=col[n]); ym = (a+b)/2
-        d.text((xM+nw+10*s, ym-9*s), n, font=nf, fill=INKD); tw = d.textlength(n, font=nf)
-        d.text((xM+nw+10*s+tw+8*s, ym-9*s), f'{v:,}'.replace(',', ' ')+' NOK', font=vf, fill=MUT)
-    d.rounded_rectangle((xR, R[0], xR+nw, R[1]), 3*s, fill=(14, 34, 37)); ym = (R[0]+R[1])/2
-    d.text((xR+nw+16*s, ym-34*s), 'Raised', font=nf, fill=MUT)
-    d.text((xR+nw+16*s, ym-15*s), '360 000 NOK', font=FONT('Bold', 21*s), fill=INKD)
-    d.text((xR+nw+16*s, ym+16*s), '83% one-time, 17% recurring', font=FONT('Regular', 11*s), fill=MUT)
+        _ribbon(dh if f == 'One-time fee' else dg, xM+nw, a0, a0+h, xR, b0, b0+h, 255)
+    # thin vertical lines, 6 px apart, as on the page's chart
+    stripes = Image.new('L', c.size, 0); sd = ImageDraw.Draw(stripes)
+    for x in range(0, c.width, 6*s): sd.rectangle((x, 0, x+int(1.4*s)-1, c.height), fill=255)
+    from PIL import ImageChops
+    for m, colr in ((m_grey, GREY), (m_hi, HI)):
+        lay = Image.new('RGBA', c.size, colr+(0,)); lay.putalpha(ImageChops.multiply(m, stripes)); c = Image.alpha_composite(c, lay)
+    d = ImageDraw.Draw(c)
+    hf = FONT('SemiBold', 10*s)
+    for x, t in ((xL, 'WHO GIVES'), (xM, 'HOW OFTEN'), (xR, 'RAISED')):
+        _tracked(d, (x, 70*s), t, hf, LAB, 1.6*s)
+    nf = FONT('SemiBold', 12*s); NODE = (52, 72, 76)
+    for n in srcs:
+        a, b = P[n][0], P[n][1]; d.rounded_rectangle((xL, a, xL+nw, b), 3*s, fill=NODE); ym = (a+b)/2
+        d.text((xL-12*s-d.textlength(n, font=nf), ym-9*s), n, font=nf, fill=INKD)
+    for n in fr:
+        a, b = M[n][0], max(M[n][1], M[n][0]+4*s); hi = n == 'One-time fee'
+        d.rounded_rectangle((xM, a, xM+nw, b), 2*s, fill=HI if hi else NODE); ym = (a+b)/2
+        tw = d.textlength(n, font=nf)  # a white label plate so the name reads over the lines
+        d.rounded_rectangle((xM+nw+5*s, ym-11*s, xM+nw+15*s+tw, ym+11*s), 5*s, fill=(255, 255, 255))
+        d.text((xM+nw+10*s, ym-9*s), n, font=nf, fill=INKD)
+    d.rounded_rectangle((xR, R[0], xR+nw, R[1]), 3*s, fill=(14, 34, 37))
+    # the legend: every amount next to a marker that matches its flow
+    lx, rx = 860*s, (w1-24)*s
+    d.line((lx-26*s, ct, lx-26*s, cb), fill=(230, 236, 238), width=s)
+    y = ct+4*s
+    d.text((lx, y), 'Raised', font=nf, fill=MUT)
+    d.text((lx, y+18*s), '360 000 NOK', font=FONT('Bold', 21*s), fill=INKD)
+    d.text((lx, y+48*s), '83% one-time, 17% recurring', font=FONT('Regular', 11*s), fill=MUT)
+    vf = FONT('Bold', 12*s)
+
+    def mark(x, yc, kind):
+        box = (x, yc-6*s, x+12*s, yc+6*s)
+        if kind == 'node':
+            d.rounded_rectangle(box, 2*s, fill=NODE); return
+        col = HI if kind == 'hi' else GREY
+        d.rounded_rectangle(box, 2*s, outline=(226, 232, 234), width=s)
+        for k in range(3): d.rectangle((x+(2+4*k)*s, yc-5*s, x+(2+4*k)*s+int(1.4*s)-1, yc+5*s), fill=col)
+
+    y += 84*s
+    rows = [('HOW OFTEN', None, None)] + [(n, v, 'hi' if n == 'One-time fee' else 'grey') for n, v in zip(fr, fv)] \
+         + [('WHO GIVES', None, None)] + [(n, v, 'node') for n, v in zip(srcs, sv)]
+    for n, v, kind in rows:
+        if v is None:
+            y += 6*s; _tracked(d, (lx, y), n, hf, LAB, 1.6*s); y += 22*s; continue
+        yc = y+8*s; mark(lx, yc, kind)
+        d.text((lx+20*s, yc-9*s), n, font=nf, fill=INKD)
+        t = f'{v:,}'.replace(',', ' ')+' NOK'; d.text((rx-d.textlength(t, font=vf), yc-9*s), t, font=vf, fill=INKD)
+        y += 24*s
     put(c, x0, y1)
     return out
