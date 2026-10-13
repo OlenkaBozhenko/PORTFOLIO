@@ -72,7 +72,9 @@ h1,h2,h3{font-weight:400;letter-spacing:-.035em;text-wrap:balance}
 @keyframes press{50%{transform:translate(-50%,-50%) scale(.72)}}
 @keyframes ring{from{opacity:.9;transform:scale(1)}to{opacity:0;transform:scale(2.6)}}
 .pfw{position:relative}
-.pfw .pause{position:static;align-self:flex-start;box-shadow:none;border:1px solid var(--rule)}
+.pfw .pause,.pause.sc{position:static;align-self:flex-start;box-shadow:none;border:1px solid var(--rule)}
+.scroll.paused .vp img{animation-play-state:paused !important}
+@media (prefers-reduced-motion:reduce){.pause.sc{display:none}}
 @media (prefers-reduced-motion:reduce){.ptr,.pfw .pause{display:none}}
 
 
@@ -234,7 +236,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="sec-head"><h2 id="h-gal">Product</h2><span>From the donor to the club's admin</span></div>
     <div class="g">
 
-<figure class="c1-8 rv scroll start"><div class="panel"><div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>produkter.supporter.no/idrettsfadder</span></div><div class="vp fx" style="--to:-69.1%;--t:24s;--hd:8.333%"><img class="hd" src="assets/work/sport-guardian/screen-campaign-head.webp" alt="" width="1440" height="120" loading="lazy"><img src="assets/work/sport-guardian/screen-campaign-body.webp" alt="The campaign page on desktop, under a fixed header: a swimming pool banner with the countdown, 60 000 NOK from 200 donors, the donation form, the story, the donor list and sharing." width="1440" height="2521" loading="lazy"></div></div></div><figcaption>The campaign page: countdown, amount raised, the form to give, and the story the club tells.</figcaption></figure>
+<figure class="c1-8 rv scroll start"><div class="panel"><div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>produkter.supporter.no/idrettsfadder</span></div><div class="vp fx" style="--to:-69.1%;--t:24s;--hd:8.333%"><img class="hd" src="assets/work/sport-guardian/screen-campaign-head.webp" alt="" width="1440" height="120" loading="lazy"><img src="assets/work/sport-guardian/screen-campaign-body.webp" alt="The campaign page on desktop, under a fixed header: a swimming pool banner with the countdown, 60 000 NOK from 200 donors, the donation form, the story, the donor list and sharing." width="1440" height="2521" loading="lazy"></div></div></div><button class="pause sc" type="button" aria-pressed="false"><svg class="pa" aria-hidden="true"><use href="#i-pause"/></svg><svg class="pl" aria-hidden="true"><use href="#i-play"/></svg><span>Pause<span class="vh"> the scrolling campaign page</span></span></button><figcaption>The campaign page: countdown, amount raised, the form to give, and the story the club tells.</figcaption></figure>
 
 <figure class="c9-12 rv pfw" style="--d:.1s">
           <div class="panel t r23">
@@ -361,6 +363,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     paused?stop():play();
   });
 })();
+// Pause for the scrolling campaign page (WCAG 2.2.2)
+document.querySelectorAll('.pause.sc').forEach(function(b){b.addEventListener('click',function(){
+  var f=b.closest('figure'),p=!f.classList.contains('paused');f.classList.toggle('paused',p);b.setAttribute('aria-pressed',p);b.querySelector('span').firstChild.nodeValue=p?'Play':'Pause'})});
 // the mosaic stops while the pointer is over it (CSS); a click, a tap or Enter stops or starts it (WCAG 2.2.2)
 (function(){
   var m=document.getElementById('mosaic');
