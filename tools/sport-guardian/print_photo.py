@@ -57,8 +57,8 @@ def rot(im, a): return im.rotate(a, expand=True, resample=Image.BICUBIC)
 
 def cap():
     base = Image.open(os.path.join(P, 'cap-base.png'))
-    art = rot(stack(mark(), words('SPORT GUARDIAN', 150, WHITE), gap=60), 2)
-    stamp(base, art, 705, 455, 300, strength=.95, blur=.5).save(os.path.join(P, 'cap.png'))
+    art = rot(mark(), 2)  # the mark alone, centred on the front panel (2026-10-13, her request)
+    stamp(base, art, 705, 450, 300, strength=.95, blur=.5).save(os.path.join(P, 'cap.png'))
 
 def decks():
     base = Image.open(os.path.join(P, 'decks-base.png')).convert('RGB')
@@ -89,7 +89,7 @@ def bottle():
     art = rot(mark(s_col=TEAL, g_col=(0x0f, 0xc4, 0x88), trail_col=TEAL), -23.5)
     base = clipped(base, lambda im: stamp(im, art, 300, 372, 250, blur=.5), clip)
     chest = rot(mark(), -4)
-    stamp(base, chest, 700, 880, 120, strength=.9, blur=.5).save(os.path.join(P, 'bottle.png'))
+    stamp(base, chest, 682, 985, 120, strength=.9, blur=.5).save(os.path.join(P, 'bottle.png'))
 
 if __name__ == '__main__':
     bottle(); print('ok3')
