@@ -81,8 +81,16 @@ top = page.crop((0, 0, 750, 186)); tool = page.crop((0, 1458, 750, 1624))
 def phone_card(c):
     c = c.resize((750, 1193), Image.LANCZOS)
     im = Image.new('RGB', (750, 1624), (255, 255, 255)); im.paste(top, (0, 0)); im.paste(c, (0, 186)); im.paste(tool, (0, 1458)); return im
+def fix_card_total(c):
+    # her card frame says "Pay 630 NOK"; the total on Payment options is 603 NOK
+    d = ImageDraw.Draw(c); d.rounded_rectangle((48, 1128, 771, 1215), 8, fill=TEAL)
+    ctext(d, (48, 1128, 771, 1215), 'Pay 603 NOK', FT('Bold', 30), (255, 255, 255)); return c
 for n, card in [(3, 'card-payment-method'), (4, 'card-credit-card'), (5, 'card-congrats')]:
-    save(phone_card(Image.open(os.path.join(F, card+'.png')).convert('RGB').crop((90, 90, 910, 1394))), f'm-step-{n}')
+    c = Image.open(os.path.join(F, card+'.png')).convert('RGB').crop((90, 90, 910, 1394))
+    if card == 'card-credit-card': c = fix_card_total(c)
+    save(phone_card(c), f'm-step-{n}')
+c = fix_card_total(Image.open(os.path.join(F, 'card-credit-card.png')).convert('RGB').crop((90, 90, 910, 1394)))
+c.save(os.path.join(OUT, 'card-credit-card.webp'), quality=84)
 # paying with Vipps (her request): her card_ pay by vipps 3:75438 at 2x, states 1 (the form) and 3 (Åpne Vipps).
 # Her frames say "Pay 630 NOK" and "60 USD"; the total on Payment options is 603 NOK, so both read 603 NOK here.
 vc = Image.open(os.path.join(F, 'vipps-column.png')).convert('RGB')
