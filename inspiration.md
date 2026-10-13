@@ -81,6 +81,12 @@ New references are added here first, then to the HTML and to Notion.
 - One very large R: half of it is a pale ghost shape, the other half is a window onto a photo and a website screen. The name and coordinates run vertically beside it.
 - To borrow: **the Sport Guardian well in the work list.** Her brief: a big SG monogram on the brand teal, set in the brand typeface (Candal), the two letters joined into something about sport, which can also stand for the sponsor (Idrettsfadder means "sports sponsor").
 
+**Three sport marks (sources not given)** · `13-runner-r-mark.png`, `14-chevron-runner-mark.png`, `15-checkered-speed-stripes.png` (sent 2026-10-13)
+- An R cut down to a running figure: a slanted stroke, a half bowl and a round head, drawn on a construction grid of circles and diagonals.
+- A runner built from white chevrons and square blocks beside a silhouette of a sprinting man.
+- Checkered speed stripes: slanted parallelograms that thin out into long bars, like a race flag in motion.
+- Her brief: more variants; the letters **slanted**, perhaps **cut**, and the mark must stand for **sport and support** together.
+
 ---
 
 ## 3. Also saved in Notion, not yet annotated
