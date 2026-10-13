@@ -236,15 +236,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <figure class="c1-4 rv pfw">
           <div class="panel t r23">
-            <div class="phone pf" role="img" aria-label="The donation on a phone: the campaign page scrolls under a fixed menu and a bottom bar with Our donors and Donate; the donor taps Donate, picks 600 NOK a month, taps Donate, chooses Credit card, pays and sees the thank you screen.">
+            <div class="phone pf" role="img" aria-label="The donation on a phone: the campaign page scrolls under a fixed menu and a bottom bar with Our donors and Donate; the donor taps Donate, picks Monthly and 600 NOK, which fills the amount field, taps Donate, chooses Vipps, enters a phone number and email, pays 603 NOK in Vipps and sees the thank you screen.">
               <div class="vp" id="flow">
                 <img class="hd" src="assets/work/sport-guardian/screen-mobile-head.webp" alt="" width="750" height="284">
                 <img class="body" src="assets/work/sport-guardian/screen-mobile-body.webp" alt="" width="750" height="5346" loading="lazy">
                 <img class="bar" src="assets/work/sport-guardian/m-bar.webp" alt="" width="750" height="290">
                 <img class="st" src="assets/work/sport-guardian/m-form-1.webp" alt="" width="750" height="1624" loading="lazy">
+                <img class="st" src="assets/work/sport-guardian/m-form-open.webp" alt="" width="750" height="1624" loading="lazy">
                 <img class="st" src="assets/work/sport-guardian/m-form-2.webp" alt="" width="750" height="1624" loading="lazy">
+                <img class="st" src="assets/work/sport-guardian/m-form-3.webp" alt="" width="750" height="1624" loading="lazy">
                 <img class="st" src="assets/work/sport-guardian/m-step-3.webp" alt="" width="750" height="1624" loading="lazy">
-                <img class="st" src="assets/work/sport-guardian/m-step-4.webp" alt="" width="750" height="1624" loading="lazy">
+                <img class="st" src="assets/work/sport-guardian/m-vipps-1.webp" alt="" width="750" height="1624" loading="lazy">
+                <img class="st" src="assets/work/sport-guardian/m-vipps-2.webp" alt="" width="750" height="1624" loading="lazy">
+                <img class="st" src="assets/work/sport-guardian/m-vipps-3.webp" alt="" width="750" height="1624" loading="lazy">
                 <img class="st" src="assets/work/sport-guardian/m-step-5.webp" alt="" width="750" height="1624" loading="lazy">
                 <span class="ptr" aria-hidden="true"></span>
               </div>
@@ -321,15 +325,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   })},{rootMargin:'0px 0px -10% 0px',threshold:.15});
   els.forEach(function(e){io.observe(e)});
 })();
-// the donor flow on the phone: the page scrolls under the fixed menu and bottom bar, then a pointer taps
-// Donate, 600 NOK, Donate, Credit card and Pay (positions in % of the 750 x 1624 screen)
+// the donor flow on the phone: the page scrolls under the fixed menu and bottom bar, then a pointer taps Donate,
+// opens the frequency list and picks Monthly, taps 600 NOK (the field fills with 600), Donate, Vipps, the phone
+// field (number and email appear), Pay; then Åpne Vipps and Thank you (positions in % of the 750 x 1624 screen)
 (function(){
   var vp=document.getElementById('flow'),btn=document.querySelector('.pause[data-for="flow"]');
   if(!vp||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
   var st=vp.querySelectorAll('.st'),body=vp.querySelector('.body'),ptr=vp.querySelector('.ptr'),box=vp.closest('.pfw');
   var steps=[[900,'scroll',-12],[2600,'scroll',-26],[3000,'scroll',0],[2400,'go',73.6,86.2],[1000,'tap'],[260,'show',0],
-             [1300,'go',80.5,59.9],[1000,'tap'],[220,'show',1],[900,'go',73.6,86.2],[1000,'tap'],[260,'show',2],
-             [1600,'go',50,77.5],[1000,'tap'],[260,'show',3],[1500,'go',62,30],[1100,'go',50,77.5],[1000,'tap'],[260,'show',4],[3400,'reset']];
+             [1300,'go',50,45],[1000,'tap'],[220,'show',1],[900,'go',30,50],[1000,'tap'],[220,'show',2],
+             [900,'go',80.5,59.9],[1000,'tap'],[220,'show',3],[1200,'go',73.6,86.2],[1000,'tap'],[260,'show',4],
+             [1600,'go',50,71.1],[1000,'tap'],[260,'show',5],[1200,'go',40,23.6],[1000,'tap'],[700,'show',6],
+             [1400,'go',50,78],[1000,'tap'],[260,'show',7],[2600,'show',8],[3600,'reset']];
   var i=0,timer=0,paused=false,inView=false;
   function show(n){st.forEach(function(im,k){im.classList.toggle('on',k===n)})}
   function go(x,y){ptr.style.left=x+'%';ptr.style.top=y+'%'}
