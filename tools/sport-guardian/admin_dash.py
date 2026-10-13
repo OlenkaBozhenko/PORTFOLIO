@@ -60,13 +60,16 @@ text(rx, y0+70, '360 000', f('Bold', 30), INK, 'ls')
 nw_ = d.textlength('360 000', font=f('Bold', 30))/S
 text(rx+nw_+8, y0+70, 'of 500 000 NOK', f('SemiBold', 14), MUT, 'ls')
 text(rx+72, y0+31, '+18% this week', f('Bold', 12), UP, 'lm')
-bl, br, by, bh, n = rx, rx+268, y0+84, 14, 40; step = (br-bl)/n; on = round(n*.72)
+# the progress as a dense field of thin vertical lines (her reference, 2026-10-14): raised in teal to green,
+# the rest as faint grey lines
+bl, br, by, bh = rx, rx+268, y0+80, 22; n = 96; step = (br-bl)/n; on = round(n*.72)
 for k in range(n):
+    x = bl+k*step
     if k < on:
         t = k/max(on-1, 1); col = tuple(int(TEAL[j]+(GREEN[j]-TEAL[j])*t) for j in range(3))
     else:
-        g = (k-on)/max(n-on-1, 1); col = tuple(int(212+(238-212)*g) for _ in range(3))
-    d.rounded_rectangle(P(bl+k*step, by, bl+k*step+step*.42, by+bh), S, fill=col)
+        col = (214, 222, 224)
+    d.rectangle(P(x, by, x+1.1, by+bh), fill=col)
 text(br+14, by+bh/2, '72%', f('Bold', 22), INK, 'lm')
 d.line(P(rx+352, y0+22, rx+352, y1-22), fill=LINE, width=S)
 # time left
