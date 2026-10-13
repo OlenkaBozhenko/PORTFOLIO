@@ -103,7 +103,7 @@ h1{font-size:clamp(34px,5.2vw,76px);line-height:1.03;letter-spacing:-.045em;max-
 .gal .g{margin-top:clamp(32px,4vw,56px)}
 .first{padding-bottom:clamp(56px,8vw,112px)}
 .pfw .panel{aspect-ratio:auto;height:auto}
-.pfw .phone{width:min(100%,300px)}
+.pfw .phone{width:min(100%,300px);cursor:pointer}
 .cards.two{grid-template-columns:repeat(2,minmax(0,1fr))}
 .cards.pay>img{border-radius:22px;box-shadow:0 1px 2px rgba(0,0,0,.06),0 24px 40px -18px rgba(20,60,64,.45)}
 .fc{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
@@ -246,7 +246,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 
 <figure class="c1-5 rv start"><div class="panel match"><div class="cards two pay"><img src="assets/work/sport-guardian/m-step-4.webp" alt="Paying by card on a phone: card number, email for the receipt, the donor list or anonymous, and Pay 603 NOK." width="750" height="1624" loading="lazy"><img src="assets/work/sport-guardian/m-vipps-2.webp" alt="Paying with Vipps on a phone: phone number and email filled in, and an orange Pay 603 NOK button." width="750" height="1624" loading="lazy"></div></div></figure>
-<figure class="c6-9 rv pfw" style="--d:.1s"><div class="panel t"><div class="phone pf" role="img" aria-label="The donation on a phone: the campaign page with a fixed bottom bar, Our donors and Donate; the donor taps Donate, picks Monthly and 600 NOK, which fills the amount field, taps Donate, chooses Vipps, enters a phone number and email, pays 603 NOK in Vipps and sees the thank you screen.">
+<figure class="c6-9 rv pfw" style="--d:.1s"><div class="panel t"><div class="phone pf" tabindex="0" aria-describedby="flow-how" role="img" aria-label="The donation on a phone: the campaign page with a fixed bottom bar, Our donors and Donate; the donor taps Donate, picks Monthly and 600 NOK, which fills the amount field, taps Donate, chooses Vipps, enters a phone number and email, pays 603 NOK in Vipps and sees the thank you screen.">
               <div class="vp" id="flow">
                 <img class="hd" src="assets/work/sport-guardian/screen-mobile-head.webp" alt="" width="750" height="284">
                 <img class="body" src="assets/work/sport-guardian/screen-mobile-body.webp" alt="" width="750" height="5346" loading="lazy">
@@ -260,9 +260,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
                 <img class="st" src="assets/work/sport-guardian/m-vipps-2.webp" alt="" width="750" height="1624" loading="lazy">
                 <img class="st" src="assets/work/sport-guardian/m-vipps-3.webp" alt="" width="750" height="1624" loading="lazy">
                 <img class="st" src="assets/work/sport-guardian/m-step-5.webp" alt="" width="750" height="1624" loading="lazy">
-                <span class="ptr" aria-hidden="true"></span>
+                <span class="ptr" aria-hidden="true"></span><span id="flow-how" class="vh">The phone plays the flow. Press Enter, or click it, to stop or start it.</span>
               </div>
-            </div></div><div class="fc"><figcaption>The donation on a phone: Donate in the bottom bar, then Vipps.</figcaption><button class="pause" type="button" aria-pressed="false" data-for="flow"><svg class="pa" aria-hidden="true"><use href="#i-pause"/></svg><svg class="pl" aria-hidden="true"><use href="#i-play"/></svg><span>Pause<span class="vh"> the donation on the phone</span></span></button></div></figure>
+            </div></div></figure>
 <p class="cap c10-12 start rv" style="--d:.2s"><b>Card or Vipps</b>Donors pay by card, or with Vipps, the mobile payment app used only in the Nordic countries: in Norway most people pay with it in one tap, and donors from anywhere else pay by card.</p>
 
 <figure class="c1-4 rv"><div class="panel t r45"><img class="el d" src="assets/work/sport-guardian/el-donors.webp" alt="Our donors: tabs for private persons and companies, names with the time they gave, and a greeting from one donor." width="820" height="1078" loading="lazy"></div><figcaption>Donors can leave their name and a greeting, or give anonymously.</figcaption></figure>
@@ -330,7 +330,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 // opens the frequency list and picks Monthly, taps 600 NOK (the field fills with 600), Donate, Vipps, the phone
 // field (number and email appear), Pay; then Åpne Vipps and Thank you (positions in % of the 750 x 1624 screen)
 (function(){
-  var vp=document.getElementById('flow'),btn=document.querySelector('.pause[data-for="flow"]');
+  var vp=document.getElementById('flow'),ph=vp.closest('.phone');
   if(!vp||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
   var st=vp.querySelectorAll('.st'),body=vp.querySelector('.body'),ptr=vp.querySelector('.ptr'),box=vp.closest('.pfw');
   var steps=[[1200,'go',73.6,86.2],[1000,'tap'],[260,'show',0],
@@ -357,10 +357,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   function play(){if(!timer&&!paused&&inView){box.classList.add('run');run()}}
   function stop(){clearTimeout(timer);timer=0}
   new IntersectionObserver(function(es){inView=es[0].isIntersecting;inView?play():stop()},{threshold:.3}).observe(vp);
-  btn.addEventListener('click',function(){
-    paused=!paused;btn.setAttribute('aria-pressed',paused);btn.querySelector('span').firstChild.nodeValue=paused?'Play':'Pause';
-    paused?stop():play();
-  });
+  function toggle(){paused=!paused;paused?stop():play()}
+  ph.addEventListener('click',toggle);
+  ph.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle()}});
+  ph.addEventListener('mouseenter',function(){if(!paused)stop()});
+  ph.addEventListener('mouseleave',function(){if(!paused)play()});
 })();
 // the grey panel with the two cards takes the height of the teal phone panel next to it
 (function(){var g=document.querySelector('.panel.match'),t=document.querySelector('.pfw .panel.t');if(!g||!t)return;
