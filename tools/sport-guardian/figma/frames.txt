@@ -1,0 +1,701 @@
+3:71633|SCREENS CARD|instance|426,348|9960x1043
+3:71634|SCREENS CARD|instance|430,1502|2596x1043
+3:71635|SCREENS CARD|instance|3145,1502|2596x1043
+3:71636|SCREENS CARD|instance|6057,1502|4332x1043
+3:71637|SCREENS CARD|instance|10657,348|10545x1043
+3:71638|SCREENS CARD|instance|10740,6336|9259x1043
+3:71639|SCREENS CARD|instance|11782,16171|9259x1043
+3:71640|SCREENS CARD|instance|21982,314|5408x1043
+3:71641|SCREENS CARD|instance|7210,16166|4463x1043
+3:71642|SCREENS CARD|instance|27666,314|5408x1043
+3:71643|SCREENS CARD|instance|33666,299|5408x1043
+3:71644|SCREENS CARD|instance|39755,299|13101x1043
+3:71645|SCREENS CARD|instance|27693,6336|20262x1043
+3:71646|SCREENS CARD|instance|27693,6336|20262x1043
+3:71647|SCREENS CARD|instance|27794,18759|30007x1043
+3:71648|SCREENS CARD|instance|20131,6336|7387x1043
+3:71649|Group 14533|frame|7210,17268|1240x900
+3:71652|view_idrettsfader_doner|frame|10690,4740|1440x900
+3:71725|view_idrettsfader_Talk to the collector|frame|15656,5314|1440x900
+3:71798|view_idrettsfader_Report it to us. |frame|17234,5314|1440x900
+3:71871|view_idrettsfader_share via email|frame|18851,5314|1440x900
+3:71963|view_idrettsfader_club`s campaigns|frame|27666,1437|1440x1254
+3:72103|view_idrettsfader_shop|frame|30053,3889|1440x2137
+3:72244|view_idrettsfader_shop|frame|31575,3889|1440x2137
+3:72387|view_idrettsfader_crowdfunding|frame|31719,1678|1440x1340
+3:72547|image 387|rounded-rectangle|31719,3043|556x179
+3:72548|view_idrettsfader_doner|frame|10690,1794|1440x2641
+3:72735|Support|instance|12748,5687|410x168
+3:72736|Frame 2609296|frame|12774,5972|237x20
+3:72739|Support|instance|12748,5382|410x225
+3:72740|view_idrettsfader_doner|frame|18476,2151|1440x1024
+3:72838|image 355|rounded-rectangle|19372,1797|397x149
+3:72839|view_idrettsfader_doner|frame|22099,3811|1440x1340
+3:72914|view_idrettsfader_doner|frame|22099,1683|1440x900
+3:72996|view_idrettsfader_cansel email newslatter|frame|18476,3471|1440x900
+3:73079|view_preview|frame|15759,17268|1440x1168
+3:73214|Rectangle 745|rounded-rectangle|11620,3586|60x62
+3:73215|Group 14784|frame|11695,3586|60x62
+3:73217|Group 14785|frame|11899,3586|60x62
+3:73219|Group 14786|frame|11967,3586|60x62
+3:73221|tf_amount/End of donation drive|symbol|8376,2597|177x87
+3:73251|instagram|frame|1712,7282|84x148
+3:73262|Facebook|frame|1504,7282|84x148
+3:73271|Facebook|frame|1391,7282|84x148
+3:73282|Twitter|frame|1608,7282|84x148
+3:73289|e-post|frame|1816,7282|84x148
+3:73304|Plakat|frame|1920,7282|84x148
+3:73313|QR-code|frame|2033,7282|84x148
+3:73342|Create Sports guardian campaign|frame|10740,7631|1440x5089
+3:73402|Thank you message/Variant2|instance|29523,14388|912x734
+3:73403|alert|symbol|10529,7478|174x218
+3:73411|alert|instance|10529,7713|174x218
+3:73412|Create Sports guardian campaign|frame|0,9243|1440x5832
+3:73449|btn_color|frame|2024,4234|420x140
+3:73462|Create Sports guardian campaign_with media|frame|12235,7631|1440x5501
+3:73520|btn_open tips|symbol|2114,3516|24x24
+3:73522|Create Sports guardian campaign_end data|frame|13779,7631|1440x5501
+3:73565|Thank you message/Variant2|instance|29523,15081|912x975
+3:73566|Create Sports guardian campaign_end time|frame|15323,7631|1440x5501
+3:73623|Vector|frame|11249,6131|84x148
+3:73628|card_donor structure|frame|4823,4442|955x12746
+3:74141|btn_publish|frame|1551,3029|432x172
+3:74146|btn_see preview|frame|1549,2747|432x248
+3:74157|Keyboard picker|frame|8830,3316|328x243
+3:74171|Keyboard picker_2|frame|11113,5819|328x243
+3:74186|Keyboard picker_2|frame|11461,5819|328x243
+3:74200|Time picker_end time|frame|10354,11770|328x243
+3:74214|Date Picker|symbol|8452,3316|360x460
+3:74295|Date Picker_2|frame|10715,5819|360x460
+3:74376|Btn_ok|frame|1786,3512|85x140
+3:74381|Btn_ok_2|frame|11101,6139|85x140
+3:74386|btn_cuncel|frame|1887,3512|110x140
+3:74393|ic_kalendar|frame|518,2783|80x142
+3:74406|btn_bold text|frame|2191,2765|80x142
+3:74419|btn_up image|frame|2289,2756|80x142
+3:74424|btn_up video|frame|2394,2756|80x142
+3:74429|btn_italic|frame|2095,2756|80x142
+3:74440|btn_text color|frame|2283,2923|80x142
+3:74453|ic_text color|frame|2084,3492|24x24
+3:74458|btn_see preview|frame|1335,2647|80x80
+3:74461|btn_settings|frame|1454,2661|39x40
+3:74463|btn_underline|frame|2095,2923|80x142
+3:74474|btn_center align|frame|2095,3090|80x142
+3:74491|btn_wright align|frame|2191,3090|80x142
+3:74508|btn_numbered list|frame|2191,3258|80x142
+3:74515|btn_boolited list|frame|2191,3440|80x142
+3:74522|btn_left align|frame|2191,2923|80x142
+3:74539|ic_kalendar_2|frame|764,3374|80x142
+3:74552|ic_delete|frame|430,2783|80x142
+3:74559|ic_time|frame|606,2783|80x142
+3:74570|ic_time_2|frame|864,3374|80x142
+3:74581|Input|frame|3603,5103|840x140
+3:74588|Input_caption|frame|4615,2764|840x140
+3:74595|Text field|frame|3603,5271|840x559
+3:74638|material-symbols:format-bold-rounded|frame|430,2656|56x92
+3:74643|ph:text-italic-duotone|frame|494,2656|56x92
+3:74648|fluent:text-underline-24-regular|frame|558,2656|56x92
+3:74653|ph:list-numbers-duotone|frame|622,2656|56x92
+3:74658|heroicons:list-bullet-solid|frame|686,2656|56x92
+3:74663|upload media|frame|793,2656|165x310
+3:74674|upload media_thank you page|frame|971,2654|165x310
+3:74685|main image|frame|1144,2654|165x451
+3:74707|ic_drag|symbol|1077,2980|12x12
+3:74714|MediaBlock|frame|9438,2634|954x2233
+3:74768|date picker|frame|4615,2934|275x285
+3:74781|tf_amount|frame|4920,2934|187x132
+3:74793|time picker|frame|4615,3270|160x248
+3:74806|Amount|frame|1551,3512|208x190
+3:74816|btn_add|frame|1767,3251|187x133
+3:74831|btn_add options|frame|1983,3258|187x172
+3:74853|chek box|frame|694,2783|61x102
+3:74862|tab|frame|3165,3867|402x320
+3:74901|tab with sums|frame|2695,4634|412x1196
+3:74986|btn_Save|frame|1551,3251|176x200
+3:75011|btn_Save colors|frame|438,4357|176x200
+3:75036|card_scheduled publication|frame|9459,7448|952x2282
+3:75180|btn_back to form|frame|1551,3950|450x172
+3:75195|btn_publish_preview|frame|1533,4208|482x192
+3:75200|tf_amount|frame|4920,3113|176x260
+3:75221|code|frame|2131,7282|84x148
+3:75236|btn_back to admin|frame|1977,6849|240x172
+3:75253|btn_create image|frame|1516,6849|432x172
+3:75258|card_payment method|frame|12228,1698|541x2119
+3:75350|card_payment method|instance|12769,4653|410x657
+3:75351|card_pay by credit card|frame|12849,1698|540x2258
+3:75436|card_pay by credit card|instance|14709,4147|410x705
+3:75437|card_pay by credit card|instance|12295,4653|410x657
+3:75438|card_ pay by vipps|frame|14034,1698|540x2151
+3:75493|card_ pay by vipps|instance|14709,3390|410x657
+3:75494|card_ pay by vipps|instance|14099,4640|410x657
+3:75495|card_ congratulations|frame|13405,1701|543x2169
+3:75579|Rectangle 739|rounded-rectangle|13578,4271|201x131
+3:75580|card_ congratulations|instance|14099,3873|410x657
+3:75581|card_ congratulations|instance|13472,4674|410x657
+3:75582|btn_vipps|frame|1539,4578|402x148
+3:75589|btn_credit card|frame|1533,4774|402x148
+3:75596|form for donors|frame|14625,1698|3259x843
+3:75771|Group 14757|symbol|14711,1428|149x24
+3:75776|form_header|symbol|14686,1530|410x90
+3:75789|form for donors|instance|36608,2695|410x583
+3:75790|form for donors|instance|36608,2621|410x731
+3:75791|copy link for sharing|symbol|3165,2702|362x40
+3:75799|instagram|frame|430,3374|72x124
+3:75815|email|frame|511,3374|72x124
+3:75828|twitter|frame|592,3374|72x124
+3:75839|facebook|frame|673,3374|72x124
+3:75849|btn_donate|frame|1533,4951|402x212
+3:75865|tt_add product colour|instance|8165,3760|422x40
+3:75866|Btn_share the campaign|frame|1551,3752|402x148
+3:75871|tf_amount|frame|430,3548|402x200
+3:75880|tf_amount|instance|3673,3778|362x40
+3:75881|radiobutton/ic_card|symbol|626,2952|24x24
+3:75884|tf_amount|frame|3158,2809|402x260
+3:75913|tf_email|frame|3574,2809|402x260
+3:75930|radiobutton|frame|694,2913|61x102
+3:75935|btn_pay|frame|1533,5396|402x148
+3:75942|btn_pay by vipps|frame|1533,5609|402x148
+3:75949|instagram|frame|430,3154|90x156
+3:75956|instagram|frame|534,3154|90x156
+3:75963|email|frame|638,3154|90x156
+3:75970|poster|frame|742,3154|90x156
+3:75980|QR-code|frame|846,3154|90x156
+3:76006|Build in|frame|950,3154|90x156
+3:76038|Facebook|frame|1054,3154|90x156
+3:76053|btn_create image|frame|1533,5205|402x148
+3:76060|btn_See more|frame|1504,7568|402x148
+3:76067|btn_See more|frame|1948,7568|402x148
+3:76074|btn_See more|frame|1504,7780|402x148
+3:76081|btn_See more|frame|1948,7781|402x148
+3:76088|btn_send|frame|1949,5609|402x276
+3:76101|enter first name|frame|3165,3489|424x140
+3:76108|enter_ last name|frame|3165,3678|424x140
+3:76115|Enter email|instance|3165,3276|800x40
+3:76116|Enter email|frame|3145,3106|840x140
+3:76125|ic_kalendar_end date|frame|10354,12052|80x140
+3:76138|Btn_ok_end time|frame|10539,12052|85x140
+3:76145|Someone else who offers monthly donations to clubs...|text|16896,1457|365x57
+3:76146|https://manadsgivare.laget.se/KIFOrebroDFF|text|16896,1482|254x15
+3:76147|Exaple landingpage for Sports Guardian (Just better :P) https://manadsgiv.laget.se/|text|16507,1455|314x60
+3:76148|ic_end time new|frame|10446,12052|80x140
+3:76161|tab_privat_bedrift_company|frame|2743,3489|402x574
+3:76210|tab_payment method|frame|2731,4234|402x200
+3:76233|dd_recuring payment|frame|3160,4634|402x533
+3:76264|monthly|frame|4035,2668|394x132
+3:76271|Quarterly|frame|4141,2938|394x132
+3:76278|Quarterly|frame|4141,3097|394x132
+3:76285|Annually|frame|4141,3256|394x132
+3:76292|Congratulation|frame|16977,7631|1440x900
+3:76440|Verification 1|frame|10012,17268|1440x900
+3:76527|Verification 2 error|frame|10012,18264|1440x900
+3:76614|view with campaigns|frame|13681,17268|1440x900
+3:76783|view with campaigns|frame|13681,18443|1440x900
+3:76967|view_statistik|frame|13681,19473|1440x1093
+3:77095|btn_Back to campaign|frame|17023,18859|221x172
+3:77117|donation frequency|symbol|17695,18844|73x24
+3:77119|digitalcrown.horizontal.press.fill|symbol|16024,19134|32x32
+3:77121|view without campaign|frame|12197,17268|1440x900
+3:77197|Frame 2609159|frame|13714,18285|549x52
+3:77209|menu_product|frame|1532,6640|111x188
+3:77218|ic_stop|symbol|1784,6647|24x24
+3:77221|ic_pause|symbol|1816,6647|24x24
+3:77224|ic_edit|symbol|1847,6647|24x24
+3:77229|ic_share|symbol|1932,6643|24x24
+3:77231|view_guardian_compaign_congretulation_instagram|frame|16975,8690|1440x900
+3:77385|view_IMAGE PICKER_uploaded images|frame|22385,8309|1440x900
+3:77497|view_IMAGE PICKER_uploaded images|frame|22385,12306|1440x900
+3:77600|view_IMAGE PICKER_error|frame|22385,13331|1440x900
+3:77703|view_guardian_compaign_congretulation_email hover|frame|20753,8290|1440x900
+3:77815|image picker__сrowdfunding|frame|27662,16746|1440x900
+3:77927|view_guardian_compaign_congretulation_email hover|frame|24712,8309|1440x900
+3:78102|view_IMAGE PICKER_uploaded video|frame|22385,9275|1440x900
+3:78238|view_view_IMAGE PICKER_uploading|frame|22385,11281|1440x900
+3:78385|view_guardian_compaign_congretulation_email hover|frame|22385,10241|1440x900
+3:78532|ic_plus|frame|677,5221|24x24
+3:78534|ic_arrow|symbol|677,5268|24x24
+3:78538|btn_To show сampaign|frame|1977,7045|240x172
+3:78555|tf_amount|frame|4141,3471|402x140
+3:78565|tf_email|frame|4141,3667|402x140
+3:78570|tf_name|frame|4141,3843|402x260
+3:78579|tf_link|frame|3711,3849|402x140
+3:78584|btn_donate more|frame|1533,5772|402x148
+3:78591|card_ send email|frame|15219,3418|450x1374
+3:78637|card_ talk to the collector|symbol|12293,5381|412x657
+3:78663|card_ talk to the collector|instance|15194,2577|412x657
+3:78664|card_ talk to the collector|instance|14696,2577|412x657
+3:78665|card_ send email|instance|13472,5382|410x657
+3:78666|Input chip|symbol|3579,2702|190x32
+3:78671|btn_create campaign|frame|1533,6243|224x140
+3:78676|btn_preview|frame|1791,6243|224x140
+3:78681|btn_edit|frame|1516,6470|143x132
+3:78692|btn_pause|frame|1694,6469|143x133
+3:78705|btn_stop|frame|1872,6470|143x132
+3:78716|btn_delete|frame|2025,6470|143x132
+3:78727|btn_share|frame|2187,6469|143x132
+3:78738|ic_delete|symbol|1784,6692|24x24
+3:78741|btn_menu_2|frame|1650,6640|64x108
+3:78746|row with compaigns|frame|8199,3876|1215x252
+3:78777|tf_phone numer|frame|4141,4144|402x140
+3:78784|form for donors_preview|frame|15216,17268|450x1374
+3:78833|giver|frame|8376,2747|283x323
+3:78888|Donor structure|frame|8689,2596|185x617
+3:78964|Text field_thank you|frame|3603,4664|840x368
+3:79003|ic_image|frame|4536,5023|24x24
+3:79005|ic_video|frame|4506,5024|24x24
+3:79007|ic_donors|frame|1158,3154|80x200
+3:79030|Our donors|frame|17902,1725|540x2740
+3:79355|Group|frame|13454,5164|16x15
+3:79361|btn_edit|frame|722,4081|80x266
+3:79370|ic_description|symbol|2049,3516|40x40
+3:79375|ic_save|frame|604,4143|80x142
+3:79380|ic_link|frame|842,4143|80x142
+3:79393|ic_detuch|frame|950,4143|80x142
+3:79402|ic_save|symbol|557,4143|24x24
+3:79405|btn_ add colour|frame|435,3878|84x212
+3:79418|edit|frame|438,4162|78x136
+3:79425|btn_upload images|frame|405,4774|292x148
+3:79436|btn_upload videos|frame|720,4774|292x148
+3:79447|Group 14568|frame|735,5218|37x29
+3:79450|btn_Save|frame|701,4952|284x212
+3:79463|btn_save|frame|609,4369|855x320
+3:79474|tf_donate|frame|4611,3584|424x234
+3:79486|Input_caption_image picker|frame|4611,3864|284x359
+3:79496|Toggle + Value|frame|405,5214|99x96
+3:79507|btn_next|frame|522,5214|107x108
+3:79514|selected image|frame|24171,8356|332x3950
+3:79639|btn_Save|frame|405,4952|284x212
+3:79646|photo|frame|8994,2612|164x388
+3:79653|tips and tricks|frame|8461,5589|840x230
+3:79668|t&amp;t_pre-defined donation amounts|frame|8461,7665|840x295
+3:79682|t&amp;t_select donation frequency|frame|8461,7303|840x265
+3:79697|t&amp;t_accept donations form|frame|8461,6954|840x252
+3:79711|tips and tricks_thank you message|frame|8461,6597|840x260
+3:79726|tips and tricks_scheduled publication|frame|8461,8057|840x296
+3:79747|tips and tricks_scheduled publication|frame|8461,8450|840x296
+3:79768|t&amp;t_donor greeting|frame|8494,9092|807x250
+3:79783|t&amp;t_donor greeting|frame|8494,9439|807x234
+3:79798|t&amp;t_Newsletter signup option|frame|8494,9770|807x250
+3:79813|t&amp;t_Display total amount received|frame|8494,10117|807x250
+3:79828|t&amp;t_display donor count|frame|8494,10464|807x250
+3:79843|t&amp;t_display donor list|frame|8494,10811|807x250
+3:79858|tips and tricks_name|frame|8481,6016|840x233
+3:79873|tips and tricks_donation form_contribute|frame|8461,4537|840x233
+3:79888|tips and tricks_donation form_donation frequency|frame|8461,4867|840x233
+3:79903|tips and tricks_donation form_donation amounts|frame|8461,5197|840x295
+3:79918|tips and tricks_media|frame|8461,4195|840x245
+3:79933|tips and tricks/tipps and tricks_tittle|symbol|8461,5881|800x72
+3:79938|TitleDescription|frame|9439,4905|952x2220
+3:79981|Error message|text|9521,7052|81x15
+3:79982|tips and tricks_name/tips and tricks_colors|frame|8501,8843|800x152
+3:79987|Contact information|frame|9459,9820|952x771
+3:80015|btn_edit|frame|1338,2940|80x140
+3:80022|btn_edit|frame|1430,2940|80x140
+3:80029|btn_edit/btn_delete/Default|symbol|1454,2893|24x24
+3:80034|Other options|frame|9459,10649|952x1024
+3:80064|card_scheduled publication_end date|frame|3584,10269|952x957
+3:80121|card_scheduled publication_end time|frame|3555,11555|952x955
+3:80166|tips and tricks_name|frame|8481,6297|840x230
+3:80179|tips and tricks_name|instance|8501,11131|800x85
+3:80180|tab_Select colors|frame|397,6172|840x395
+3:80231|tab_Select colors|frame|6235,2545|853x9667
+3:80740|tab_our donors_company|frame|415,5345|402x200
+3:80759|Write a greeting|frame|405,5613|402x194
+3:80764|btn_download your logo|frame|415,5861|402x198
+3:80804|btn_edit_logo|frame|833,5861|80x142
+3:80809|btn_edit_logo|frame|1012,5861|80x142
+3:80818|view_image picker_selected_katalog|frame|23602,2805|1440x900
+3:80926|selected image_katalog|frame|25100,2660|332x3950
+3:80998|view_image picker_selected_katalog|frame|22099,2805|1440x900
+3:81105|Group 14637|frame|3165,5254|402x290
+3:81112|tips and tricks_scheduled publication/ic_t&amp;t|frame|12248,1580|24x24
+3:81124|Group 14642|frame|12305,1583|22x24
+3:81131|btn_velcome text|frame|8494,11736|840x1179
+3:81168|congrats-lettering-typography-drawn-art-260nw-1041737950 1|rounded-rectangle|11614,5523|196x118
+3:81169|Support|frame|15656,2577|540x1727
+3:81239|main image|frame|876,3568|165x310
+3:81255|btn_update|frame|1335,2765|80x140
+3:81262|ic_update|symbol|1430,2785|24x24
+3:81265|tips and tricks_thank you btn|frame|8494,11294|840x209
+3:81280|Thank you message|frame|9493,12621|952x610
+3:81293|Custom button on your thank you page|frame|8501,13017|840x698
+3:81323|btn_cancel|frame|2240,3950|187x133
+3:81336|btn_Save_color|frame|2024,3950|176x200
+3:81361|ic_menu|frame|553,3885|32x32
+3:81366|image 354|frame|20445,2113|757x1427
+3:81377|Group 14650|frame|1959,3752|84x148
+3:81392|Select color_for your compaign|frame|3589,8468|952x832
+3:81405|dd_apply|frame|3190,6686|244x266
+3:81424|dd_apply|instance|3210,6986|204x166
+3:81425|All|frame|3198,7217|236x132
+3:81432|Image|frame|3198,7378|236x132
+3:81439|Video|frame|3198,7532|236x132
+3:81446|ic_kalendar|frame|335,2785|80x142
+3:81459|ic_Close|frame|340,2961|64x108
+3:81464|search_f|frame|3190,6434|376x200
+3:81489|btn_edit_logo|frame|929,5861|72x124
+3:81496|tf_text button|frame|3160,5631|423x755
+3:81533|btn_+ colour|frame|638,3878|84x148
+3:81540|btn_add options|frame|1538,5942|187x172
+3:81562|ic_Close|frame|1149,3574|64x108
+3:81567|ic_kalendar_2|frame|1232,3568|80x142
+3:81580|ic_upgrade|frame|1072,3574|64x108
+3:81587|color picker|frame|7231,6884|420x1429
+3:81790|btn_link|frame|2492,2756|80x142
+3:81803|ic_image|symbol|2606,2756|24x24
+3:81805|ic_video|symbol|2606,2790|24x24
+3:81807|btn_next|frame|534,6620|95x124
+3:81820|btn_back|frame|397,6620|96x124
+3:81831|btn_up image|frame|4480,4859|80x142
+3:81838|btn_up video|frame|4571,4859|80x142
+3:81845|status|frame|29550,1727|143x164
+3:81864|campaign card|frame|29144,1727|386x1361
+3:81928|campaign card|frame|29122,4743|386x1341
+3:81994|Open in full|frame|2053,3582|24x24
+3:81997|Sort by|frame|15419,18840|352x725
+3:82060|check mark|frame|15867,19134|61x102
+3:82067|collected sum: highest|frame|15867,18854|278x122
+3:82078|collected sum: lowest|frame|15867,18994|278x122
+3:82089|Date_newest|frame|16158,18854|278x122
+3:82100|Date_oldest|frame|16158,18994|278x122
+3:82111|Open statistics|frame|16078,19150|159x108
+3:82118|hourglass.tophalf.fill|symbol|15987,19134|32x32
+3:82120|donors|symbol|15939,19134|32x32
+3:82125|view_idrettsfader_doner|frame|33666,1715|1440x2253
+3:82273|view_idrettsfader_doner_main page|frame|35606,1715|375x2815
+3:82411|view_idrettsfader_doner|frame|35215,1715|375x812
+3:82469|view_idrettsfader_doner|frame|36107,2621|375x812
+3:82511|Frame 2609297|frame|36123,3485|344x44
+3:82514|btn_donors|symbol|35215,2577|168x44
+3:82521|btn_back|symbol|35215,2678|168x44
+3:82528|btn_back|instance|37096,3160|168x44
+3:82529|btn_donate|symbol|35403,2577|168x44
+3:82537|ic_penger|symbol|35438,2648|24x24
+3:82539|ic_donor|symbol|35995,2051|24x24
+3:82550|Ic_dollar|symbol|36024,2049|24x24
+3:82554|ic_menu|symbol|35997,1766|44x44
+3:82559|ic_profile|symbol|35997,1866|44x44
+3:82564|ic_curt|symbol|35997,1816|44x44
+3:82566|ic_Languages|symbol|35997,1966|44x44
+3:82570|ic_search|symbol|35997,1916|44x44
+3:82576|Property 1=defoult (1) 1|rounded-rectangle|7231,6121|370x475
+3:82577|Group checkbox|frame|24052,8570|56x92
+3:82584|Frame 2608719|frame|24017,8740|141x19
+3:82587|Date Picker_end date|frame|9439,11753|780x500
+3:82750|Date Picker_end date|frame|28911,13870|360x460
+3:82831|btn_send code|frame|373,7122|588x192
+3:82838|btn_send code|frame|373,6824|588x248
+3:82848|btn_send code|frame|373,7368|556x172
+3:82859|btn_send code|frame|373,7605|556x172
+3:82864|Verification code|frame|4076,7813|472x364
+3:82932|tab_Select colors/slider|symbol|3658,9613|519x261
+3:82951|campaign card_junior|frame|29550,1975|386x925
+3:82994|ic_delete|symbol|1883,6651|16x16
+3:82998|ic_share|symbol|1910,6651|16x16
+3:83003|view sign up|frame|8511,17268|1440x714
+3:83034|view log in|frame|8511,18055|1440x714
+3:83063|forgot password_reset request|frame|8511,18939|1440x714
+3:83081|forgot password_notification  |frame|8511,19808|1440x714
+3:83099|forgot password_new password|frame|8511,20653|1440x714
+3:83117|BankID_logo 1|frame|834,7854|120x156
+3:83122|video_2|frame|10437,3418|207x220
+3:83127|view_idrettsfader_doner_start to search|frame|41356,1707|1440x1709
+3:83249|view_idrettsfader_doner|frame|42859,1707|1440x2176
+3:83394|vipps|frame|966,7854|120x156
+3:83419|facebook|frame|1098,7854|120x156
+3:83428|google|frame|834,8071|202x209
+3:83445|dd_country|frame|3642,6053|383x316
+3:83465|Albania|frame|3642,6475|374x122
+3:83472|Belgium|frame|3642,6644|374x132
+3:83479|Norway|frame|3642,6813|374x132
+3:83486|TF_email addresse|frame|4076,6053|382x338
+3:83500|Password|frame|4076,6454|382x440
+3:83552|Create new password|frame|4076,6912|382x380
+3:83600|Confirm your password|frame|4076,7370|382x380
+3:83648|ic_eye|frame|3873,7236|64x160
+3:83655|ic_eye|frame|774,3876|64x160
+3:83662|btn_sign up|frame|373,7842|412x165
+3:83667|btn_log in|frame|373,8046|412x165
+3:83672|btn_log in|frame|373,8287|412x165
+3:83677|btn_log in|frame|373,8530|412x165
+3:83682|log in|symbol|1080,3711|24x24
+3:83688|instagram|frame|834,8341|84x148
+3:83702|Facebook|frame|926,8341|84x148
+3:83711|TikTok|frame|1024,8341|84x148
+3:83722|footer|symbol|8529,13982|1440x364
+3:83742|campaigns|frame|8638,14598|135x228
+3:83751|Shop|frame|8531,14596|89x228
+3:83760|Shop|frame|8829,14596|119x228
+3:83769|Header|symbol|8531,14416|1440x120
+3:83787|view_idrettsfader_doner|frame|30077,1678|1440x1330
+3:83883|footer|symbol|30077,3158|1440x278
+3:83904|radiobutton|symbol|1052,8081|21x21
+3:83909|radiobutton|instance|1049,8145|21x21
+3:83910|Checkbox|frame|1097,8077|61x102
+3:83916|User admin has the opportunity to cancel subscriptions for all donors, for group or for one donor and make refunds.|text|17624,18900|270x48
+3:83917|cancel subscription|frame|17633,18990|278x122
+3:83927|cancel subscription|frame|17633,19140|278x122
+3:83938|manage subscriptions|frame|17303,18856|275x299
+3:83976|manage subscriptions|instance|17331,19177|219x52
+3:83977|Sort by|instance|17331,19343|141x52
+3:83978|Status|frame|16449,18859|159x152
+3:83985|donation freequency|frame|16645,18859|159x192
+3:83996|see details|frame|16818,18859|191x196
+3:84005|Group 14787|frame|1108,5877|64x108
+3:84017|row|frame|15863,19405|1231x604
+3:84082|ic_download|frame|17323,19802|24x24
+3:84087|row_donor_refound|frame|15871,20114|1215x236
+3:84106|Ic_back|symbol|17117,19072|17x16
+3:84112|tf_search|frame|44949,1765|402x383
+3:84169|ic_close|frame|45368,1765|64x108
+3:84174|club|frame|45368,1928|394x351
+3:84217|form for donors|frame|44362,1765|540x1749
+3:84311|view_idrettsfader_doner|frame|44949,2405|1440x900
+3:84384|card_ congratulations_global|frame|44359,3613|543x1478
+3:84465|card_ congratulations_global|instance|46184,5107|410x657
+3:84466|card_pay by credit card_global|frame|44949,3613|540x2101
+3:84548|card_pay by credit card_global|instance|46762,4495|410x657
+3:84549|card_ pay by vipps_global|frame|45549,3613|540x2151
+3:84604|card_ pay by vipps_global|instance|46760,3784|410x657
+3:84605|view_idrettsfader_doner_global|frame|46452,2399|1440x1024
+3:84683|image global|frame|47955,2399|757x1427
+3:84694|card_payment method_global|frame|46118,3615|541x1474
+3:84769|card_payment method_global|instance|47232,4495|410x657
+3:84770|view_idrettsfader_done_global|frame|48775,2399|1440x1340
+3:84843|Group 14788|frame|39330,1707|345x251
+3:84846|menu_product|frame|17369,19788|156x116
+3:84853|btn_menu_2|frame|17237,19788|64x108
+3:84858|btn_download|frame|17189,19620|173x127
+3:84877|btn_send invoice|frame|17363,19620|193x127
+3:84894|btn_see invoice|frame|17569,19622|188x127
+3:84905|club|frame|17251,20009|394x351
+3:84948|monthly|frame|16744,20497|265x364
+3:84967|Quarterly|frame|16470,20500|265x364
+3:84986|biannually_without donations|frame|16190,20507|265x364
+3:85005|Annually|frame|15908,20506|265x364
+3:85023|one|frame|15913,20884|313x438
+3:85062|ic_eye|instance|17323,19830|24x24
+3:85063|ic_send|frame|17323,19872|24x24
+3:85067|Product|frame|33051,3889|336x1764
+3:85189|btn_add to cart|frame|33051,5779|336x156
+3:85202|filter|frame|29777,3843|233x140
+3:85223|filter_hide_show|frame|29777,4008|233x260
+3:85264|view_idrettsfader_cansel email newslatter|frame|12197,18337|1440x900
+3:85345|btn_campaign|frame|12386,19473|232x536
+3:85364|btn_sponsorship|frame|12631,19473|232x536
+3:85386|btn_Crowdfunding|frame|12904,19473|232x536
+3:85411|Button|frame|14857,18205|190x140
+3:85416|view sign up_business|frame|39753,1707|1440x714
+3:85447|view_admin_business|frame|39753,2464|1440x900
+3:85632|Menu_admin_global donations|frame|39496,2547|175x196
+3:85639|Menu_admin_global donations_st|frame|39496,2816|175x196
+3:85646| view_statistik_business|frame|39753,4450|1440x900
+3:85797| view_statistik_business|frame|39753,3455|1440x900
+3:85947|btn_Back to clubs|frame|52132,2543|221x172
+3:85969|Header_business|symbol|51416,3031|1440x120
+3:85990|side bar|frame|52630,2149|226x394
+3:86008|Statistics|frame|52390,2139|226x326
+3:86026|sports guardien|frame|52132,2139|226x326
+3:86036|view_idrettsfader_Talk to the collector|frame|41294,4045|1440x900
+3:86134|view_idrettsfader_Report it to us. |frame|42872,4045|1440x900
+3:86236|Frame 2609295|frame|39492,1368|100x100
+3:86237|Create Sports guardian_сrowdfunding|frame|27693,7598|1440x4738
+3:86255|Create Sports guardian_сrowdfunding|frame|32323,7598|1440x900
+3:86260|Select color_new|symbol|32538,8626|912x852
+3:86276|view_idrettsfader__сrowdfunding|frame|39950,7931|1440x2641
+3:86447|view_idrettsfader_crowdfunding|frame|27666,2814|1440x1629
+3:86608|view_idrettsfader_Sponsorship|frame|27666,4566|1440x1609
+3:86769|campaign_crowdfunding_ card|frame|29147,3192|386x1394
+3:86842|tf_search|frame|42430,8022|402x383
+3:86899|ic_close|frame|42849,8022|64x108
+3:86904|club|frame|42849,8185|394x351
+3:86947|form for donors_crowdfunding|frame|41843,8022|540x1749
+3:87069|view_idrettsfader_doner|frame|42430,8662|1440x900
+3:87141|card_ congratulations_crowdfunding|frame|41840,9870|543x1478
+3:87222|card_ congratulations_crowdfunding|instance|43030,13176|410x657
+3:87223|card_pay by credit card_crowdfunding|frame|42430,9870|540x2280
+3:87309|card_pay by credit card_crowdfunding|instance|44243,10752|410x705
+3:87310|card_ pay by vipps_crowdfunding|frame|43030,9870|540x2151
+3:87365|card_ pay by vipps_crowdfunding|instance|44241,10041|410x657
+3:87366|view_idrettsfader_doner_global|frame|43933,8656|1440x1024
+3:87444|download|frame|45436,8656|757x1427
+3:87455|card_payment method_crowdfunding|frame|43599,9872|541x1474
+3:87530|card_payment method_crowdfunding|instance|44713,10752|410x657
+3:87531|view_idrettsfader_done_global|frame|46256,8656|1440x1340
+3:87604|view_idrettsfader_Talk to the collector|frame|39796,11394|1440x900
+3:87702|view_idrettsfader_Report it to us. |frame|39796,12604|1440x900
+3:87804|view_idrettsfader_Talk to the collector|frame|39751,23898|1440x900
+3:87902|view_idrettsfader_Report it to us. |frame|39751,25108|1440x900
+3:88004|tips and tricks_crowdfunding_goal|frame|39676,13905|840x249
+3:88019|card_donor structure_CROWDFUNDING|frame|26628,7598|955x12204
+3:88535|tf_amount|frame|28911,14907|432x398
+3:88566|card_alternative collect amount|frame|28911,15394|228x1033
+3:88607|amount I want to collect|frame|27871,13870|930x362
+3:88616|card_define your goal|frame|27871,14388|952x1886
+3:88669|view_IMAGE PICKER_uploaded images|frame|29235,16746|1440x900
+3:88781|Create Sports guardian сrowdfunding_with media|frame|29243,7598|1440x4846
+3:88798|сrowdfunding_end time|frame|30773,7598|1440x5158
+3:88812|donate button|instance|31493,13597|800x116
+3:88813|card_donor structure_CROWDFUNDING|instance|30477,13597|912x703
+3:88814|Congratulation|frame|33985,7598|1440x900
+3:88962|view_guardian_compaign_congretulation_instagram|frame|33983,8657|1440x900
+3:89116|view_preview_сrowdfunding|frame|33983,9705|1440x1168
+3:89289|tt_add product colour|instance|34624,11021|422x40
+3:89290|view with campaigns_сrowdfunding|frame|35670,7598|1440x900
+3:89463|view with campaigns_сrowdfunding|frame|35670,8657|1440x900
+3:89647|Header_admin panel|symbol|35670,8545|1440x64
+3:89666|Auto Layout Vertical|frame|37612,10388|362x164
+3:89672|dd_products|frame|37612,10694|118x84
+3:89677|dd_order|frame|37813,10694|123x124
+3:89683|dd_campaigns|frame|38072,10592|178x164
+3:89690|dd_marketing|frame|37822,11566|103x84
+3:89695|dd_marketing|frame|38067,11574|106x84
+3:89700|monthly|frame|37186,10415|394x132
+3:89707|btn_Back to campaign|frame|37186,10692|221x172
+3:89729|view_statistik_сrowdfunding|frame|35670,9705|1440x1090
+3:89827|tf_date|frame|29145,15394|198x192
+3:89840|ic_kalendar_c|frame|29393,15381|80x142
+3:89853|btn_settings|frame|2283,3090|96x172
+3:89862|btn_back|frame|2391,3090|96x172
+3:89871|btn_back|frame|2498,3170|39x40
+3:89873|new tab_select colors|frame|38491,7642|851x3006
+3:89975|Create Sports guardian_сrowdfunding|frame|16975,9842|1440x900
+3:89980|Vector|symbol|35409,2648|24x24
+3:89982|Btn_Share|frame|36123,3544|149x148
+3:89988|Menu_admin panel|frame|36346,11515|174x362
+3:90008|Menu_admin panel|instance|36219,11968|134x142
+3:90009|Menu_order|frame|36546,11515|217x402
+3:90031|Menu_order|instance|36369,11968|177x182
+3:90032|Menu_Campaigns|frame|36785,11515|234x442
+3:90055|Menu_Campaigns|instance|36647,12008|194x222
+3:90056|Menu_Marketing|frame|37032,11515|180x362
+3:90077|Menu_Marketing|instance|36879,12008|140x142
+3:90078|Menu_Settings|frame|37238,11515|222x522
+3:90103|Menu_Settings|instance|37101,12008|182x302
+3:90104|Add product|frame|37612,10808|146x132
+3:90109|Statistics|frame|37813,10874|146x132
+3:90114|Transactions|frame|37813,11079|146x132
+3:90119|Order processing|frame|37813,11246|193x132
+3:90124|dd_settings|frame|38300,10692|166x244
+3:90133|Add administrator|frame|38298,11032|183x132
+3:90138|Newsletter|frame|37822,11694|183x132
+3:90143|Newsletter|frame|38067,11688|183x132
+3:90148|Newsletter|frame|38067,11894|183x132
+3:90153|Add a partner|frame|38298,11237|168x132
+3:90158|Material|frame|37822,11899|168x132
+3:90163|Social media|frame|38298,11404|158x132
+3:90168|General|frame|38298,11576|131x132
+3:90173|Embed to website|frame|38298,11760|198x132
+3:90178|Add banner|frame|38298,11956|152x132
+3:90183|Create new campaign|frame|38064,10874|206x132
+3:90188|Manage campaigns|frame|38064,11047|191x132
+3:90193|Manage crowdfunding|frame|38064,11225|211x132
+3:90198|Manage sponsorship|frame|38064,11378|210x132
+3:90203|See products|frame|37612,10958|150x132
+3:90208|Filter|frame|37204,7889|92x164
+3:90219|donate button|frame|29536,13752|840x404
+3:90241|view_idrettsfader_doner|frame|48235,20692|1440x2641
+3:90407|Create sponsorship campaign|frame|27794,20179|1440x4243
+3:90422|Create sponsorship campaign_2 screen|frame|29303,20179|1440x4787
+3:90437|Create s campaign_3 screen|frame|30826,20179|1440x4787
+3:90452|Select color_new|frame|32669,21209|912x852
+3:90467|Product name info|frame|37065,25287|955x3023
+3:90536|Input|frame|36006,22415|840x140
+3:90543|Text field|frame|36006,22676|840x559
+3:90586|tips and tricks|frame|38125,21456|840x230
+3:90601|card_donor structure_ sponsorship|frame|33983,20357|952x4283
+3:90787|Group 14762|frame|42076,5618|1280x293
+3:90790|t&amp;t_accept sponsorship|frame|38125,21766|840x252
+3:90804|t&amp;t_select donation frequency|frame|38125,22133|840x265
+3:90819|t&amp;t_pre-defined sponsors amounts|frame|38125,22489|840x112
+3:90826|tf_amount|frame|38125,24555|176x320
+3:90849|Btn_log out|frame|37239,8743|138x140
+3:90866|t&amp;t_Newsletter signup option_sponsorship|frame|38125,22740|807x250
+3:90881|t&amp;t_display sponsor list|frame|38125,23061|807x250
+3:90896|Other options_sponsorship|frame|36006,20372|952x952
+3:90925|image picker_sponsorship|frame|27987,26709|1440x900
+3:91037|image picker_sponsorship_selected|frame|29560,26709|1440x900
+3:91149|MediaBlock_sponsorship|frame|36006,23634|954x2233
+3:91203|Contact information_sponsorship|frame|36006,21506|952x771
+3:91231|tips and tricks_name|frame|38125,23386|840x233
+3:91246|Custom button_sponsorship|frame|38120,20474|840x698
+3:91276|Thank you message_sponsorship|frame|37135,20372|952x2040
+3:91303|s_product publication time|frame|37074,23285|952x1308
+3:91393|ic_kalendar|frame|37574,24731|80x142
+3:91406|ic_kalendar|instance|37768,24700|40x40
+3:91407|tips and tricks_product publication time_sponsorship|frame|38120,23666|840x112
+3:91414|S_Congratulation|frame|32347,22122|1440x900
+3:91562|sponsorship_instagram_congratulation|frame|32338,23065|1440x900
+3:91716|sponsorship_preview|frame|32347,24026|1440x1168
+3:91842|sponsorship_admain|frame|32349,25261|1440x900
+3:92015|sponsorship_admain|frame|32349,26259|1440x900
+3:92201|tips and tricks_thank you btn|frame|38125,23890|840x209
+3:92216|tips and tricks_thank you message|frame|38125,24155|840x260
+3:92231|S_compaign settings|frame|32349,20179|1440x900
+3:92248|tf_search|frame|42126,20435|402x383
+3:92305|ic_close|frame|42545,20435|64x108
+3:92310|club|frame|42545,20598|394x351
+3:92353|form for donors|frame|41539,20435|540x1749
+3:92447|view_idrettsfader_doner|frame|42126,21075|1440x900
+3:92520|card_ congratulation_sponsorship|frame|50420,22074|543x1478
+3:92591|card_ congratulation_sponsorship|instance|43361,23777|410x657
+3:92592|card_pay by credit card_global|frame|42126,22283|540x2101
+3:92674|card_pay by credit card_global|instance|43939,23165|410x657
+3:92675|card_ pay by vipps_global|frame|42726,22283|540x2151
+3:92730|card_ pay by vipps_global|instance|43937,22454|410x657
+3:92731|view_idrettsfader_doner_global|frame|43629,21069|1440x1024
+3:92809|image global|frame|45132,21069|757x1427
+3:92820|card_payment method_global|frame|43295,22285|541x1474
+3:92895|card_payment method_global|instance|44409,23165|410x657
+3:92896|view_idrettsfader_done_global|frame|45952,21069|1440x1340
+3:92969|Group 14763|frame|33983,19875|4982x408
+3:92972|Date Picker_end date|symbol|37086,24731|360x460
+3:93053|Btn_ok_2|frame|37475,24731|85x140
+3:93058|s_form for sponsors|frame|49712,20751|1415x729
+3:93146|btn_buy|frame|49914,21519|248x212
+3:93162|delete|frame|49712,21519|84x208
+3:93172|add|frame|49809,21519|84x208
+3:93185|Buy and count|frame|49712,21770|362x44
+3:93195|view_idrettsfader_share via email|frame|48235,25661|1440x900
+3:93287|view_idrettsfader_share via email|frame|51184,25795|1440x900
+3:93360|Our sponsors_|frame|49767,22074|541x1356
+3:93531|view_guardian_compaign_congretulation_instagram|frame|1776,8062|1440x900
+3:93673|ic_Close|frame|3246,8070|64x108
+3:93678|new tab_select colors_sponsorship|frame|39059,20462|851x3006
+3:93785|view_idrettsfader_Talk to the collector|frame|48235,23509|1440x900
+3:93858|view_idrettsfader_Talk to the collector|frame|51174,20751|1440x900
+3:93997|view_idrettsfader_Talk to the collector|frame|51174,21722|1440x900
+3:94136|view_idrettsfader_Talk to the collector|frame|51184,22677|1440x900
+3:94275|view_idrettsfader_upload your image|frame|55270,20979|1440x900
+3:94417|view_idrettsfader_Talk to the collector|frame|51174,23663|1440x900
+3:94583|view_idrettsfader_Report it to us. |frame|48235,24585|1440x900
+3:94656|view_idrettsfader_Report it to us. |frame|51174,24729|1440x900
+3:94729|Rectangle 744|rounded-rectangle|52577,12016|100x100
+3:94730|checkout_sponsorship|frame|53144,20784|801x3347
+3:94930|btn_continue|frame|50556,21594|279x212
+3:94952|btn_continue|frame|50856,21594|279x212
+3:94968|Btn_back|frame|50420,21597|115x108
+3:94983|Tf_sponsorship|frame|52669,20768|440x1425
+3:95042|Tf_address_sponsorship|frame|52669,22526|364x260
+3:95055|Post code_sponsorship|frame|52669,22826|146x221
+3:95081|Post code_sponsorship|instance|52845,23027|105x40
+3:95082|City_sponsorship|frame|52832,22826|235x140
+3:95093|City_sponsorship|instance|52845,23087|195x40
+3:95094|dd_country_sponsorship|frame|53267,25251|713x316
+3:95114|Shipping options|frame|54061,20801|736x447
+3:95168|payment options|frame|54063,21307|736x245
+3:95195|Frame 2608971|frame|53502,20591|362x128
+3:95199|btn_download your logo_sponsorship|frame|53220,24430|712x198
+3:95239|Write a greeting_sponsorship|frame|53233,24742|712x210
+3:95244|Group 14545|frame|52698,23333|362x116
+3:95248|Group 14783|frame|52705,23188|362x116
+3:95261|btn_buy_card|frame|29263,1437|312x212
+3:95277|btn_donate_card|frame|29624,1437|312x212
+3:95293|btn_donate_card|instance|29714,1850|272x44
+3:95294|download_sponsorship|frame|56823,20943|757x1427
+3:95311|card_pay by credit card_sponsorship|frame|55593,22579|540x787
+3:95322|tf_email|frame|56228,22579|402x140
+3:95327|btn_pay_sponsorship|frame|56237,22788|402x148
+3:95334|caunter|frame|49692,21833|185x148
+3:95345|btn_settings|instance|16902,9692|56x56
+6:59101|Group 64|frame|29569,4303|169x226
+198:59192|Section 4|section|252,15623|3288x3872

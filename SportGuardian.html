@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sport Guardian | Olena Bozhenko</title>
+<meta name="description" content="Sport Guardian (Idrettsfadder), a crowdfunding solution from Supporter.no that lets sports clubs raise money so no child leaves sport because of money: UX and UI by Olena Bozhenko.">
+<!-- Display layer. Content source: sportguardian.md -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&display=swap">
+<link rel="preload" as="image" href="assets/work/sport-guardian/flow-1.webp">
+<style>
+:root{
+  --bg:#FFFFFF;      /* D1: white, always */
+  --ink:#0E0E0E;     /* 19.3:1 */
+  --muted:#6B6B6B;   /* 5.33:1 on white */
+  --rule:#E6E6E6;
+  --label:#2B3BD6;
+  --well:#F3F3F1;
+  --sans:"Inter Tight","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --gutter:clamp(16px,4vw,56px);
+  --cg:clamp(12px,2vw,28px);
+  /* project colours (sportguardian.md): teal #418B91, green #15EDA3 */
+  --teal:#418B91;--green:#15EDA3;--deep:#2F6A6F;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{background:var(--bg);scroll-behavior:smooth;scroll-padding-top:80px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--label);outline-offset:3px;border-radius:2px}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{font-weight:400;letter-spacing:-.035em;text-wrap:balance}
+.wrap{max-width:1320px;margin:0 auto;padding-inline:var(--gutter)}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--ink);color:var(--bg);padding:10px 14px;border-radius:999px;z-index:20}
+.skip:focus{left:16px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* nav (same as the landing) */
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:64px}
+.brand{font-weight:500;text-decoration:none;letter-spacing:-.01em}
+.nav ul{display:flex;gap:clamp(16px,3vw,40px);list-style:none;margin:0;padding:0;font-size:15px}
+.nav ul a{text-decoration:none;padding-block:12px;display:inline-block}
+.nav ul a:hover{text-decoration:underline;text-underline-offset:4px}
+
+.back{font-size:15px;text-decoration:none;color:var(--muted);display:inline-block;padding-block:10px}
+.back:hover{color:var(--ink)}
+
+/* pause button for the moving blocks (WCAG 2.2.2) */
+.pause{position:absolute;z-index:3;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border:0;border-radius:99px;background:#fff;color:var(--ink);font:500 14px/1 var(--sans);cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.pause svg{width:12px;height:12px}
+.pause .pl{display:none}
+.pause[aria-pressed="true"] .pa{display:none}
+.pause[aria-pressed="true"] .pl{display:block}
+
+/* first screen: teal rectangle, logo left, tilted tablet right (Zelt reference) */
+.hero{padding-top:8px}
+.sg{position:relative;container-type:inline-size;background:var(--teal);border-radius:clamp(16px,2vw,28px);overflow:hidden;aspect-ratio:1320/700;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:center}
+.sg .logo{justify-self:center;width:74%;margin-left:6%}
+.sg .stage{position:relative;height:100%;perspective:1800px;perspective-origin:30% 40%}
+.tablet{position:absolute;left:4%;top:13%;width:104%;transform:rotateX(30deg) rotateY(-8deg) rotateZ(-20deg);transform-origin:50% 50%;border-radius:2.6cqw;background:#191B1C;padding:1.15cqw;box-shadow:-2cqw 4cqw 6cqw -1cqw rgba(7,34,37,.55),0 0 0 .12cqw rgba(255,255,255,.08) inset}
+.js .tablet{animation:land 1.6s cubic-bezier(.2,.8,.2,1) .15s both}
+@keyframes land{from{transform:translateY(12%) rotateX(38deg) rotateY(-8deg) rotateZ(-26deg);opacity:0}to{transform:rotateX(30deg) rotateY(-8deg) rotateZ(-20deg);opacity:1}}
+.scr{position:relative;aspect-ratio:1440/900;border-radius:1.4cqw;overflow:hidden;background:#fff}
+.scr img{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity .45s ease}
+.scr img.on{opacity:1}
+.scr img:first-child{opacity:1}
+.ptr{position:absolute;left:58%;top:40%;width:3.4%;aspect-ratio:1;border-radius:50%;background:rgba(14,14,14,.42);border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.3);transform:translate(-50%,-50%);transition:left .85s cubic-bezier(.55,0,.2,1),top .85s cubic-bezier(.55,0,.2,1);opacity:0;z-index:2}
+.run .ptr{opacity:1}
+.ptr::after{content:"";position:absolute;inset:-2px;border-radius:50%;border:2px solid #fff;opacity:0}
+.ptr.tap{animation:press .38s ease}
+.ptr.tap::after{animation:ring .7s ease-out}
+@keyframes press{50%{transform:translate(-50%,-50%) scale(.72)}}
+@keyframes ring{from{opacity:.9;transform:scale(1)}to{opacity:0;transform:scale(2.6)}}
+.sg .pause{left:2.2cqw;bottom:2.2cqw}
+@media (prefers-reduced-motion:reduce){.js .tablet{animation:none}.ptr{display:none}.sg .pause{display:none}}
+@media (max-width:760px){
+  .sg{aspect-ratio:auto;grid-template-columns:1fr;padding:44px 0 0}
+  .sg .logo{width:72%;margin:0}
+  .sg .stage{height:auto;aspect-ratio:1/.78;margin-top:8px}
+  .tablet{left:6%;top:10%;width:112%;border-radius:4cqw;padding:1.8cqw}
+  .scr{border-radius:2.4cqw}
+  .sg .pause{left:16px;bottom:16px}
+}
+
+/* header (reinostudio / Berrics order: name, statement, meta) */
+.head{padding-block:clamp(40px,6vw,88px) clamp(32px,5vw,64px);display:flex;flex-direction:column;gap:28px}
+.eyebrow{font-size:15px;font-weight:500}
+h1{font-size:clamp(34px,5.2vw,76px);line-height:1.03;letter-spacing:-.045em;max-width:20ch}
+.meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px clamp(32px,5vw,64px);margin:0;padding-top:12px}
+.meta div{display:flex;flex-direction:column;gap:4px}
+.meta dt{font-size:13px;color:var(--muted)}
+.meta dd{margin:0;font-size:16px;white-space:nowrap}
+
+/* About / Problem / Solution */
+.story{display:flex;flex-direction:column;gap:clamp(32px,4vw,56px);padding-block:clamp(24px,4vw,48px) clamp(72px,10vw,140px)}
+.pair{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(16px,4vw,64px)}
+.pair h2{font-size:clamp(26px,3vw,40px);line-height:1.1}
+.pair p{max-width:62ch;font-size:clamp(17px,1.5vw,19px)}
+@media (max-width:720px){.pair{grid-template-columns:1fr}}
+
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;padding-bottom:24px;border-bottom:1px solid var(--ink)}
+.sec-head h2{font-size:clamp(32px,4.4vw,56px);line-height:1}
+.sec-head span{color:var(--muted);font-size:15px}
+
+/* product and brand grid (GEN, DIIR): 12 columns, empty cells on purpose */
+.gal{padding-bottom:clamp(72px,10vw,140px)}
+.band{background:linear-gradient(var(--teal) 0 clamp(160px,22vw,320px),transparent 0);padding-top:clamp(40px,6vw,80px);margin-top:clamp(32px,4vw,56px)}
+.g{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--cg);row-gap:clamp(56px,8vw,128px)}
+.g figure{margin:0;display:flex;flex-direction:column;gap:12px;min-width:0}
+.g figcaption,.cap{font-size:15px;line-height:1.45;color:var(--muted);max-width:40ch}
+.cap b{display:block;color:var(--ink);font-weight:500;font-size:17px;margin-bottom:4px}
+.ph{overflow:hidden;background:var(--well)}
+.ph img{width:100%;height:100%;object-fit:cover}
+.panel{background:var(--well);display:flex;align-items:center;justify-content:center;padding:clamp(20px,4vw,64px);overflow:hidden}
+.panel.t{background:var(--teal)}
+.c1-9{grid-column:1/10}.c10-12{grid-column:10/-1}.c1-4{grid-column:1/5}.c5-8{grid-column:5/9}.c9-12{grid-column:9/-1}
+.c1-8{grid-column:1/9}.c1-3{grid-column:1/4}.c4-12{grid-column:4/-1}.c1-5{grid-column:1/6}.c6-12{grid-column:6/-1}
+.c1-6{grid-column:1/7}.c7-12{grid-column:7/-1}.c1-12{grid-column:1/-1}
+.end{align-self:end}.start{align-self:start}
+.r43{aspect-ratio:3/2}.r23{aspect-ratio:2/3}.r45{aspect-ratio:4/5}
+.lift{margin-top:clamp(0px,12vw,180px)}
+@media (max-width:720px){.g>*{grid-column:1/-1 !important}.lift{margin-top:0}}
+
+/* browser and phone frames; the long screens scroll slowly while they are on screen */
+.browser{width:100%;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.06),0 24px 48px -20px rgba(20,60,64,.35)}
+.browser .bar{display:flex;align-items:center;gap:7px;height:34px;padding:0 14px;background:#F7F7F7;border-bottom:1px solid var(--rule)}
+.browser .bar i{width:10px;height:10px;border-radius:50%;background:#D9D9D9}
+.browser .bar span{margin-left:12px;font-size:12px;color:var(--muted);background:#fff;border-radius:6px;padding:3px 12px}
+.vp{position:relative;overflow:hidden}
+.vp img{width:100%;height:auto}
+.browser .vp{aspect-ratio:1440/900}
+.phone{width:min(100%,300px);border:1.5px solid rgba(255,255,255,.75);border-radius:46px;padding:9px;background:transparent}
+.panel:not(.t) .phone{border-color:var(--ink)}
+.phone .vp{border-radius:37px;aspect-ratio:375/760;background:#fff}
+.scroll .vp img{animation:feed var(--t,22s) ease-in-out 1s infinite alternate;animation-play-state:paused}
+.play.scroll .vp img{animation-play-state:running}
+@keyframes feed{0%,10%{transform:translateY(0)}90%,100%{transform:translateY(var(--to))}}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.6vw,24px);width:100%;align-items:start}
+.cards img{border-radius:8px;box-shadow:0 1px 2px rgba(0,0,0,.06),0 18px 36px -18px rgba(20,60,64,.4)}
+.cards img:nth-child(2){margin-top:12%}.cards img:nth-child(3){margin-top:24%}
+.el{width:100%;max-width:520px;border-radius:8px;box-shadow:0 1px 2px rgba(0,0,0,.06),0 18px 36px -18px rgba(20,60,64,.4)}
+.el.c{max-width:400px}
+.el.d{max-width:360px;border-radius:12px}
+
+/* reveal on scroll (only with JS) */
+.js .rv{opacity:0;transform:translateY(48px);transition:opacity .9s ease var(--d,0s),transform 1.1s cubic-bezier(.2,.8,.2,1) var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}.scroll .vp img{animation:none}}
+
+/* closing mosaic (GEN): rows of tiles sliding sideways on the teal ground */
+.mos{position:relative;background:var(--teal);padding-block:clamp(48px,7vw,96px);overflow:hidden}
+.mos h2{color:#fff;font-size:clamp(28px,3.6vw,48px);line-height:1.05;margin-bottom:clamp(28px,4vw,48px)}
+.rows{display:flex;flex-direction:column;gap:clamp(10px,1.2vw,16px);transform:rotate(-4deg) scale(1.06);margin-block:clamp(8px,2vw,24px)}
+.track{display:flex;gap:clamp(10px,1.2vw,16px);width:max-content;animation:slide var(--s,70s) linear infinite}
+.track.rev{animation-direction:reverse}
+.mos.paused .track,.mos:not(.play) .track{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+.tile{height:clamp(130px,17vw,250px);border-radius:6px;overflow:hidden;background:#fff;flex:none}
+.tile img{height:100%;width:100%;object-fit:cover;object-position:top}
+.tile.w{aspect-ratio:16/10}.tile.p{aspect-ratio:2/3}.tile.s{aspect-ratio:4/5}.tile.q{aspect-ratio:1}
+.tile.k{background:var(--deep);display:flex;align-items:center;justify-content:center}
+.tile.k img{width:78%;height:auto;object-fit:contain}
+.tile.pl{background:var(--well);display:flex;align-items:center;justify-content:center}
+.tile.pl img{width:auto;height:88%;object-fit:contain;border-radius:6px}
+.mos .pause{right:var(--gutter);top:clamp(48px,7vw,96px)}
+@media (prefers-reduced-motion:reduce){.track{animation:none}.mos .pause{display:none}}
+
+.next{display:flex;justify-content:space-between;gap:16px;padding-block:28px;border-top:1px solid var(--ink);font-size:15px;text-transform:uppercase;letter-spacing:.02em;text-decoration:none}
+.next:hover .arrow{transform:translateX(6px)}
+.arrow{transition:transform .2s ease}
+footer{border-top:1px solid var(--rule);padding-block:28px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <symbol id="i-pause" viewBox="0 0 12 12"><rect x="1.5" y="1" width="3" height="10" rx="1" fill="currentColor"/><rect x="7.5" y="1" width="3" height="10" rx="1" fill="currentColor"/></symbol>
+  <symbol id="i-play" viewBox="0 0 12 12"><path d="M2.5 1.2v9.6a.6.6 0 0 0 .9.5l7.8-4.8a.6.6 0 0 0 0-1L3.4.7a.6.6 0 0 0-.9.5Z" fill="currentColor"/></symbol>
+</defs></svg>
+<a class="skip" href="#work-grid">Skip to the product</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="Olena%20Bozhenko.html#top">Olena Bozhenko</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="Olena%20Bozhenko.html#work">Work</a></li>
+        <li><a href="Olena%20Bozhenko.html#about">About</a></li>
+        <li><a href="Olena%20Bozhenko.html#contact">Contact</a></li>
+        <li><a href="assets/Olena-Bozhenko-Resume.pdf" target="_blank" rel="noopener">Resume <span class="vh">(PDF, opens in a new tab)</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <a class="back" href="Olena%20Bozhenko.html#work">← All work</a>
+    <section class="sg" aria-label="Sport Guardian">
+      <img class="logo" src="assets/work/sport-guardian/sg-lockup.webp" alt="Sport Guardian, give sports enjoyment" width="1200" height="740">
+      <div class="stage">
+        <div class="tablet" role="img" aria-label="A tablet playing the donor flow: on the campaign page a donor picks Recurring and 600 NOK and taps Donate, chooses to pay by card, pays, and sees the thank you screen.">
+          <div class="scr" id="flow">
+            <img src="assets/work/sport-guardian/flow-1.webp" alt="" width="1440" height="900" class="on">
+            <img src="assets/work/sport-guardian/flow-2.webp" alt="" width="1440" height="900">
+            <img src="assets/work/sport-guardian/flow-3.webp" alt="" width="1440" height="900">
+            <img src="assets/work/sport-guardian/flow-4.webp" alt="" width="1440" height="900">
+            <img src="assets/work/sport-guardian/flow-5.webp" alt="" width="1440" height="900">
+            <img src="assets/work/sport-guardian/flow-6.webp" alt="" width="1440" height="900">
+            <span class="ptr" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+      <button class="pause" type="button" aria-pressed="false" data-for="flow"><svg class="pa" aria-hidden="true"><use href="#i-pause"/></svg><svg class="pl" aria-hidden="true"><use href="#i-play"/></svg><span>Pause<span class="vh"> the donation flow</span></span></button>
+    </section>
+  </div>
+
+  <div class="wrap head">
+    <p class="eyebrow">Web platform for Supporter.no</p>
+    <h1>A fundraising page any sports club can open in minutes, so no child leaves sport because of money.</h1>
+    <dl class="meta">
+      <div><dt>Role</dt><dd>UX, UI</dd></div>
+      <div><dt>Year</dt><dd>2023</dd></div>
+      <div><dt>Platform</dt><dd>Web, mobile web</dd></div>
+      <div><dt>Client</dt><dd>Supporter.no</dd></div>
+    </dl>
+  </div>
+
+  <div class="wrap story">
+    <div class="pair"><h2>About</h2><p>Sport Guardian (Idrettsfadder in Norwegian) is a crowdfunding solution from Supporter.no. A club starts a campaign, and private people and companies become its sports guardians: they give once or every month, and the money covers fees, gear and travel for children whose families cannot pay.</p></div>
+    <div class="pair"><h2>Problem</h2><p>Sport costs money, and the cost is what makes children quit first. 185,000 Norwegians cancelled a sports club membership last year, and the drop was largest among children and young people. Clubs had no simple way to ask their community for help.</p></div>
+    <div class="pair"><h2>Solution</h2><p>A campaign page that shows the countdown, the amount raised and the people behind it, and a donation that takes four choices: private person or company, once or recurring, the amount, then card or Vipps. Behind it, a builder that lets a club publish a campaign without help, and an admin panel with donors, refunds and statistics.</p></div>
+  </div>
+
+  <section class="gal" id="work-grid" aria-labelledby="h-gal">
+    <div class="wrap"><div class="sec-head"><h2 id="h-gal">Product and brand</h2><span>Mockups, not a real campaign</span></div></div>
+    <div class="band">
+      <div class="wrap g">
+        <figure class="c1-9 rv"><div class="ph r43"><img src="assets/work/sport-guardian/hoodie-1536.webp" srcset="assets/work/sport-guardian/hoodie-768.webp 768w, assets/work/sport-guardian/hoodie-1536.webp 1536w" sizes="(max-width:720px) 100vw, 880px" alt="The back of a teal hoodie with the white and green SG mark, SPORT GUARDIAN and GIVE SPORTS ENJOYMENT printed on it, against a dark concrete wall." width="1536" height="1024" loading="lazy"></div></figure>
+        <p class="cap c10-12 end rv" style="--d:.1s"><b>The mark</b>A slanted S and G in Candal, cut into strips with a checkered trail: speed for the sport, and the G that carries the S for the guardian.</p>
+
+        <p class="cap c1-4 end rv"><b>On the street</b>A poster by the pitch, where the people who could help already stand on Saturday mornings.</p>
+        <figure class="c5-8 rv"><div class="ph r23"><img src="assets/work/sport-guardian/poster-1024.webp" srcset="assets/work/sport-guardian/poster-640.webp 640w, assets/work/sport-guardian/poster-1024.webp 1024w" sizes="(max-width:720px) 100vw, 420px" alt="A lit poster case by a football pitch fence at dusk; the teal poster reads SPORT GUARDIAN, GIVE SPORTS ENJOYMENT, with the SG mark running down its right edge." width="1024" height="1536" loading="lazy"></div></figure>
+        <figure class="c9-12 lift rv scroll" style="--d:.1s"><div class="panel t r23"><div class="phone"><div class="vp" style="--to:-72.7%;--t:26s"><img src="assets/work/sport-guardian/screen-mobile.webp" alt="The campaign page on a phone: countdown, Become a sports guardian, the story with photos and a video, and the donor list." width="750" height="5630" loading="lazy"></div></div></div><figcaption>The campaign on a phone, where most donors open the link.</figcaption></figure>
+
+        <figure class="c1-8 rv scroll"><div class="panel"><div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>produkter.supporter.no/idrettsfadder</span></div><div class="vp" style="--to:-65.9%;--t:24s"><img src="assets/work/sport-guardian/screen-campaign.webp" alt="The campaign page on desktop: a swimming pool banner with the countdown, 60 000 NOK from 200 donors, the donation form, the story, the donor list and sharing." width="1440" height="2641" loading="lazy"></div></div></div><figcaption>The campaign page: countdown, amount raised, the form to give, and the story the club tells.</figcaption></figure>
+        <figure class="c9-12 rv" style="--d:.1s"><div class="panel t r45"><img class="el d" src="assets/work/sport-guardian/el-donors.webp" alt="Our donors: tabs for private persons and companies, names with the time they gave, and a greeting from one donor." width="820" height="1078" loading="lazy"></div><figcaption>Donors can leave their name and a greeting, or give anonymously.</figcaption></figure>
+
+        <p class="cap c1-3 end rv"><b>In the club</b>Decks, caps and bottles in the club's teal and green, so the guardians are seen at every training.</p>
+        <figure class="c4-12 rv"><div class="ph r43"><img src="assets/work/sport-guardian/decks-1536.webp" srcset="assets/work/sport-guardian/decks-768.webp 768w, assets/work/sport-guardian/decks-1536.webp 1536w" sizes="(max-width:720px) 100vw, 880px" alt="Three skateboards on concrete: a teal deck with a big SG mark, a white deck with SPORT GUARDIAN along it, and a green deck with the mark between its wheels." width="1536" height="1024" loading="lazy"></div></figure>
+
+        <figure class="c1-5 rv"><div class="ph r23"><img src="assets/work/sport-guardian/bottle-1024.webp" srcset="assets/work/sport-guardian/bottle-640.webp 640w, assets/work/sport-guardian/bottle-1024.webp 1024w" sizes="(max-width:720px) 100vw, 540px" alt="A young football player in a teal shirt with a small SG mark drinks from a white bottle with the SG mark on a pitch at sunset." width="1024" height="1536" loading="lazy"></div></figure>
+        <figure class="c6-12 lift rv" style="--d:.1s"><div class="panel r43"><div class="cards"><img src="assets/work/sport-guardian/card-payment-method.webp" alt="Payment options: 600 NOK monthly, with the choice to cover the transaction cost, and buttons for Vipps and Credit card." width="820" height="1304" loading="lazy"><img src="assets/work/sport-guardian/card-credit-card.webp" alt="Payment by card: card number, email for the receipt, and a choice between the donor list and staying anonymous." width="820" height="1304" loading="lazy"><img src="assets/work/sport-guardian/card-congrats.webp" alt="Thank you: the donation is received, with a link to the campaign and buttons to share it." width="820" height="1304" loading="lazy"></div></div><figcaption>Three steps after Donate: how to pay, the payment, and a thank you that asks to share the campaign.</figcaption></figure>
+
+        <figure class="c1-6 rv"><div class="ph r43"><img src="assets/work/sport-guardian/cap-1536.webp" srcset="assets/work/sport-guardian/cap-768.webp 768w, assets/work/sport-guardian/cap-1536.webp 1536w" sizes="(max-width:720px) 100vw, 640px" alt="A teal five-panel cap with the white and green SG mark and SPORT GUARDIAN on the front." width="1536" height="1024" loading="lazy"></div></figure>
+        <figure class="c7-12 rv" style="--d:.1s"><div class="panel"><img class="el c" src="assets/work/sport-guardian/el-create-donations.webp" alt="From the campaign builder: Accept donations from private persons and companies, and Select donation frequency, from monthly to a one-time fee, each with a short hint." width="1200" height="1183" loading="lazy"></div><figcaption>The club decides who can give and how often, with a hint under every choice.</figcaption></figure>
+
+        <figure class="c1-12 rv scroll"><div class="panel"><div class="browser" style="max-width:1000px"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>admin.supporter.no</span></div><div class="vp" style="--to:-18.4%;--t:12s"><img src="assets/work/sport-guardian/screen-statistik.webp" alt="Campaign statistics in the admin panel: days left and amount raised, totals by frequency from monthly to one-time, and a list of donors with their status." width="1440" height="1103" loading="lazy"></div></div></div><figcaption>The admin panel: what each frequency brings in, and every donor, with refunds and cancellations in one place.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="mos" id="mosaic" aria-labelledby="h-mos">
+    <div class="wrap"><h2 id="h-mos">Sport Guardian, product and brand</h2></div>
+    <button class="pause" type="button" aria-pressed="false" data-for="mosaic"><svg class="pa" aria-hidden="true"><use href="#i-pause"/></svg><svg class="pl" aria-hidden="true"><use href="#i-play"/></svg><span>Pause<span class="vh"> the moving mosaic</span></span></button>
+    <div class="rows" role="img" aria-label="A moving mosaic of Sport Guardian screens and brand pieces: the campaign page, the shop, the club's campaigns, crowdfunding, the admin panel and statistics, the payment cards, the image picker, with the hoodie, cap, skateboards, bottle and poster.">
+      <div class="track" style="--s:80s" data-tiles="screen-campaign:w|hoodie-768:w|screen-shop:w|poster-640:p|screen-admin-business:w|cap-768:w|screen-image-picker:w"></div>
+      <div class="track rev" style="--s:90s" data-tiles="decks-768:w|screen-club-campaigns:w|bottle-640:p|screen-statistik:w|card-congrats:pl|sg-lockup:k|screen-congrats-instagram:w"></div>
+      <div class="track" style="--s:75s" data-tiles="screen-crowdfunding:w|el-donors:pl|screen-admin-campaigns:w|sport-guardian-mark-800:w|card-payment-method:pl|hoodie-768:s|screen-campaign:w"></div>
+    </div>
+  </section>
+
+  <div class="wrap" style="padding-block:clamp(56px,8vw,112px)">
+    <a class="next" href="Olena%20Bozhenko.html#work"><span>Back to all work</span><span class="arrow" aria-hidden="true">→</span></a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Olena Bozhenko</span><span>Oslo, Norway</span></div>
+</footer>
+<script>
+// mosaic tiles: each row is drawn twice so the slide loops; the copy is hidden from screen readers
+(function(){
+  document.querySelectorAll('.track').forEach(function(t){
+    var html=t.dataset.tiles.split('|').map(function(s){var p=s.split(':');return '<div class="tile '+p[1]+'"><img src="assets/work/sport-guardian/'+p[0]+'.webp" alt="" loading="lazy"></div>'}).join('');
+    t.innerHTML=html+html;
+  });
+})();
+// reveal on scroll; the long screens scroll and the mosaic moves only while they are on screen
+(function(){
+  var els=document.querySelectorAll('.rv,.mos');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in','play')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('in')}
+    e.target.classList.toggle('play',e.isIntersecting)
+  })},{rootMargin:'0px 0px -10% 0px',threshold:.15});
+  els.forEach(function(e){io.observe(e)});
+})();
+// the donor flow on the tablet: a pointer taps Recurring, 600 NOK, Donate, Credit card and Pay (positions in % of the 1440 x 900 screen)
+(function(){
+  var scr=document.getElementById('flow'),btn=document.querySelector('.pause[data-for="flow"]');
+  if(!scr||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var imgs=scr.querySelectorAll('img'),ptr=scr.querySelector('.ptr'),sg=scr.closest('.sg');
+  var steps=[[1300,'go',78.9,48.1],[1000,'tap'],[220,'show',1],[900,'go',81,57.2],[1000,'tap'],[220,'show',2],[900,'go',72.6,73.4],[1000,'tap'],[260,'show',3],
+             [1700,'go',50,82.9],[1000,'tap'],[260,'show',4],[1500,'go',57,40],[1100,'go',50,82.9],[1000,'tap'],[260,'show',5],[3400,'reset']];
+  var i=0,timer=0,paused=false,inView=false;
+  function show(n){imgs.forEach(function(im,k){im.classList.toggle('on',k===n)})}
+  function go(x,y){ptr.style.left=x+'%';ptr.style.top=y+'%'}
+  function run(){
+    var s=steps[i];
+    timer=setTimeout(function(){
+      timer=0;
+      if(s[1]==='go')go(s[2],s[3]);
+      else if(s[1]==='tap'){ptr.classList.remove('tap');void ptr.offsetWidth;ptr.classList.add('tap')}
+      else if(s[1]==='show')show(s[2]);
+      else{show(0);go(58,40)}
+      i=(i+1)%steps.length;
+      if(!paused&&inView)run();
+    },s[0]);
+  }
+  function play(){if(!timer&&!paused&&inView){sg.classList.add('run');run()}}
+  function stop(){clearTimeout(timer);timer=0}
+  new IntersectionObserver(function(es){inView=es[0].isIntersecting;inView?play():stop()},{threshold:.3}).observe(scr);
+  btn.addEventListener('click',function(){
+    paused=!paused;btn.setAttribute('aria-pressed',paused);btn.querySelector('span').firstChild.nodeValue=paused?'Play':'Pause';
+    paused?stop():play();
+  });
+})();
+// pause the mosaic
+(function(){
+  var b=document.querySelector('.pause[data-for="mosaic"]'),m=document.getElementById('mosaic');
+  b.addEventListener('click',function(){var p=!m.classList.contains('paused');m.classList.toggle('paused',p);b.setAttribute('aria-pressed',p);b.querySelector('span').firstChild.nodeValue=p?'Play':'Pause'});
+})();
+</script>
+</body>
+</html>
