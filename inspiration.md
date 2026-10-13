@@ -107,6 +107,10 @@ Her brief for `SportGuardian.html`: a first screen in a rectangle of the thumbna
 - The mark printed big on the back of a hoodie, over the dark band; a cap with the mark and name; three skateboards in different colourways.
 - To borrow: **brand goods** with the SG mark, in the project's teal and green, changed rather than copied.
 
+**Sales dashboard (source not given)** · `22-sales-dashboard-cards.png` (sent 2026-10-13)
+- Light rounded cards with soft shadows; small uppercase, letter-spaced labels; big numbers with the change in green beside them; one line of context and a small sparkline; one dark card highlighted, with a bright progress bar.
+- To borrow: **the admin statistics** on the Sport Guardian page, redrawn in this style.
+
 ---
 
 ## 3. Also saved in Notion, not yet annotated

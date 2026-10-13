@@ -147,3 +147,92 @@ def kpis(im):
     im.paste(Image.new('RGB', im.size, (30, 60, 70)), (0, 0), sh.filter(ImageFilter.GaussianBlur(6)))
     k = k.resize((W2, H2), Image.LANCZOS); im.paste(k, (X, Y), k)
     return im
+
+# ---- the whole statistics block, redrawn after her sales dashboard reference (2026-10-13, inspiration 22):
+# light rounded cards, soft shadows, small uppercase letter-spaced labels, big numbers with the change in green,
+# one line of context and a small sparkline; One-time fee is the dark highlighted card with a bright bar.
+def _tracked(d, xy, text, font, fill, track):
+    x, y = xy
+    for ch in text:
+        d.text((x, y), ch, font=font, fill=fill); x += d.textlength(ch, font=font)+track
+    return x
+
+def _spark(d, box, series, col, fill_col, width):
+    l, t, r, b = box; mx = max(max(series), 1); mn = min(series)
+    pts = [(l+(r-l)*i/(len(series)-1), b-(b-t)*((v-mn)/(mx-mn) if mx > mn else 0)) for i, v in enumerate(series)]
+    sm = []
+    for i in range(len(pts)-1):
+        p0, p1, p2, p3 = pts[max(i-1, 0)], pts[i], pts[i+1], pts[min(i+2, len(pts)-1)]
+        for tt in [k/8 for k in range(8)]:
+            t2, t3 = tt*tt, tt*tt*tt
+            sm.append(tuple(.5*((2*p1[j])+(-p0[j]+p2[j])*tt+(2*p0[j]-5*p1[j]+4*p2[j]-p3[j])*t2+(-p0[j]+3*p1[j]-3*p2[j]+p3[j])*t3) for j in (0, 1)))
+    sm.append(pts[-1])
+    if fill_col: d.polygon(sm+[(r, b), (l, b)], fill=fill_col)
+    d.line(sm, fill=col, width=width, joint='curve')
+
+def dashboard(im):
+    bg = im.getpixel((10, 300)); D = ImageDraw.Draw(im); D.rectangle((118, 207, 1322, 470), fill=bg)
+    INKD, MUT, LAB, UP = (20, 30, 32), (112, 124, 128), (52, 112, 118), (8, 150, 100)
+    DARK = (14, 34, 37)
+    def card(x, y, w, h, dark=False):
+        sh = Image.new('L', im.size, 0); ImageDraw.Draw(sh).rounded_rectangle((x+3, y+8, x+w-3, y+h+4), 18, fill=34 if dark else 22)
+        im.paste(Image.new('RGB', im.size, (40, 70, 80)), (0, 0), sh.filter(ImageFilter.GaussianBlur(9)))
+        c = Image.new('RGBA', (w*S, h*S), (0, 0, 0, 0))
+        ImageDraw.Draw(c).rounded_rectangle((0, 0, w*S-1, h*S-1), 18*S, fill=DARK if dark else (255, 255, 255))
+        return c, ImageDraw.Draw(c)
+    def put(c, x, y): c = c.resize((c.width//S, c.height//S), Image.LANCZOS); im.paste(c, (x, y), c)
+    lab = FONT('SemiBold', 10*S)
+    # row 1: raised (wide) and time left (over the One-time fee card)
+    x0, y0, h0 = 132, 212, 84; wT = W; xT = X0+4*(W+GAP); wR = xT-GAP-x0
+    c, d = card(x0, y0, wR, h0)
+    _tracked(d, (20*S, 14*S), 'RAISED', lab, LAB, 1.6*S)
+    big = FONT('Bold', 28*S); d.text((20*S, 26*S), '360 000', font=big, fill=INKD)
+    bw = d.textlength('360 000', font=big)
+    d.text((20*S+bw+8*S, 39*S), 'NOK', font=FONT('SemiBold', 12*S), fill=MUT)
+    d.text((20*S+bw+44*S, 38*S), '+18% this week', font=FONT('Bold', 12*S), fill=UP)
+    # the goal: a bar with its label, on the right half
+    bl, br, by = 470*S, (wR-24)*S, 52*S
+    gt = '72% of the 500 000 NOK goal'; gf = FONT('SemiBold', 11*S)
+    d.text((bl, 32*S), gt, font=gf, fill=MUT)
+    d.rounded_rectangle((bl, by, br, by+8*S), 4*S, fill=(234, 240, 241))
+    fw = int((br-bl)*.72); g = Image.new('RGB', (fw, 8*S))
+    for i in range(fw):
+        t = i/max(fw-1, 1); g.paste(tuple(int(TEAL[j]+(GREEN[j]-TEAL[j])*t) for j in range(3)), (i, 0, i+1, 8*S))
+    gm = Image.new('L', g.size, 0); ImageDraw.Draw(gm).rounded_rectangle((0, 0, fw-1, 8*S-1), 4*S, fill=255); c.paste(g, (bl, by), gm)
+    d.text((20*S, 64*S), '200 donors · 17 new this week', font=FONT('Regular', 11*S), fill=MUT)
+    put(c, x0, y0)
+    c, d = card(xT, y0, wT, h0)
+    _tracked(d, (18*S, 14*S), 'TIME LEFT', lab, LAB, 1.6*S)
+    d.text((18*S, 26*S), '60', font=big, fill=INKD); nw = d.textlength('60', font=big)
+    d.text((18*S+nw+6*S, 39*S), 'days', font=FONT('SemiBold', 12*S), fill=MUT)
+    d.text((18*S, 64*S), 'of 90 · ends 12 Dec', font=FONT('Regular', 11*S), fill=MUT)
+    cx, cy, r = (wT-38)*S, 44*S, 20*S
+    d.ellipse((cx-r, cy-r, cx+r, cy+r), outline=(234, 240, 241), width=5*S)
+    d.arc((cx-r, cy-r, cx+r, cy+r), -90, -90+360*60/90, fill=TEAL, width=5*S)
+    b = d.textbbox((0, 0), '67%', font=FONT('Bold', 10*S)); d.text((cx-(b[2]-b[0])/2-b[0], cy-(b[3]-b[1])/2-b[1]), '67%', font=FONT('Bold', 10*S), fill=INKD)
+    put(c, xT, y0)
+    # row 2: the five frequencies
+    y1, h1 = 308, 142; total = 360000
+    rows = [('MONTHLY', '30 000', 30000, '+12%', '100 donors', DATA[0][4]), ('QUARTERLY', '28 500', 28500, '+8%', '95 donors', DATA[1][4]),
+            ('BIANNUALLY', '0', 0, '0%', 'no donors yet', DATA[2][4]), ('ANNUALLY', '1 500', 1500, '+3%', '5 donors', DATA[3][4]),
+            ('ONE-TIME FEE', '300 000', 300000, '+24%', '1000 donors', DATA[4][4])]
+    for i, (name, amt, val, ch, sub, ser) in enumerate(rows):
+        x = X0+i*(W+GAP); dark = i == 4
+        c, d = card(x, y1, W, h1, dark)
+        fg = (255, 255, 255) if dark else INKD; mut = (150, 180, 182) if dark else MUT
+        d.ellipse((16*S, 18*S, 23*S, 25*S), fill=GREEN if dark else TEAL)
+        _tracked(d, (30*S, 14*S), name, lab, (170, 205, 205) if dark else LAB, 1.4*S)
+        f = FONT('Bold', 22*S); d.text((16*S, 32*S), amt, font=f, fill=fg); aw = d.textlength(amt, font=f)
+        d.text((16*S+aw+5*S, 43*S), 'NOK', font=FONT('SemiBold', 10*S), fill=mut)
+        up = ch != '0%'
+        d.text((16*S+aw+36*S, 43*S), ch, font=FONT('Bold', 10*S), fill=(GREEN if dark else UP) if up else mut)
+        d.text((16*S, 70*S), sub, font=FONT('Regular', 11*S), fill=mut)
+        if max(ser): _spark(d, (118*S, 66*S, (W-16)*S, 94*S), ser, GREEN if dark else TEAL, None, 2*S)
+        else: d.line([(118*S, 90*S), ((W-16)*S, 90*S)], fill=mut, width=S)
+        # share of all money raised
+        bl, br, by = 16*S, (W-16)*S, 112*S; share = val/total
+        d.rounded_rectangle((bl, by, br, by+6*S), 3*S, fill=(40, 64, 66) if dark else (234, 240, 241))
+        if share > 0: d.rounded_rectangle((bl, by, bl+max(int((br-bl)*share), 6*S), by+6*S), 3*S, fill=GREEN if dark else TEAL)
+        d.text((16*S, 122*S), (('<1' if 0 < share < .01 else str(round(share*100)))+'% of all raised'), font=FONT('SemiBold', 9*S), fill=mut)
+        put(c, x, y1)
+    return im
