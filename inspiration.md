@@ -87,6 +87,26 @@ New references are added here first, then to the HTML and to Notion.
 - Checkered speed stripes: slanted parallelograms that thin out into long bars, like a race flag in motion.
 - Her brief: more variants; the letters **slanted**, perhaps **cut**, and the mark must stand for **sport and support** together.
 
+### 2.9 Sport Guardian case page (added 2026-10-13)
+Her brief for `SportGuardian.html`: a first screen in a rectangle of the thumbnail's teal, the logo on the left and a tablet on the right playing a short donation flow; then an asymmetric grid of product images and brand goods (hoodie, cap, skateboards or other sports goods, an athlete drinking from a branded bottle on a football pitch, a poster), all in the project colours; at the end a moving mosaic of product screens and brand pieces. Sources for the product: her Figma prototype and file Scale-Development-AS (donor flow for the animation; single elements from the company creation flow).
+
+**[Cuberto, Zelt](https://cuberto.com/projects/zelt/)** · `16-zelt-tablet-tilted.png`
+- A tablet tilted on a dark rounded card, the web product on its screen.
+- To borrow: **the tablet on the first screen**, playing the donation flow.
+
+**[Reino Studio, GEN](https://reinostudio.com.br/works/gen/)** · `17-reino-gen-grid.png`, `21-reino-gen-mosaic.png`
+- A wide billboard photo that overlaps the dark header band, then a poster and a phone in hand set off to the right of an empty column.
+- The closing block: a mosaic of brand and product tiles in rows on a dark ground, sliding sideways.
+- To borrow: **the asymmetric grid** and **the closing mosaic animation** with product screens and brand pieces.
+
+**[Maria Vasilyeva, DIIR](https://www.mariavasilyeva.com/work/diir)** · `18-diir-grid-wireframe.png`
+- Her wireframe over the page: images of different sizes start on different columns, with empty cells left on purpose, and product UI cards sitting on pale panels.
+- To borrow: **the grid rhythm** for product images.
+
+**[Reino Studio, Berrics](https://reinostudio.com.br/works/berrics/)** · `19-reino-berrics-hoodie.png`, `20-reino-berrics-cap-skateboards.png`
+- The mark printed big on the back of a hoodie, over the dark band; a cap with the mark and name; three skateboards in different colourways.
+- To borrow: **brand goods** with the SG mark, in the project's teal and green, changed rather than copied.
+
 ---
 
 ## 3. Also saved in Notion, not yet annotated
