@@ -73,3 +73,57 @@ def cards(im):
     for i, row in enumerate(DATA):
         c = card(*row); im.paste(c, (X0+i*(W+GAP), Y0), c)
     return im
+
+# ---- the header of the statistics screen (2026-10-13, her request): the club's own logo instead of the "Logo"
+# placeholder, and the time left and the amount raised as dashboard stats, not as button-like chips.
+# The 90-day length, the 500 000 NOK goal and "+18% this week" are made up for the mockup.
+def club_logo(im):
+    page = Image.open(os.path.join(HERE, 'figma', '2x', 'campaign-page.png')).convert('RGB')
+    sw = page.crop((156, 84, 294, 150))  # the swim club's swimmer mark in the campaign page header (2x)
+    c = Image.new('RGB', (48*S, 48*S), (255, 255, 255)); m = Image.new('L', c.size, 0)
+    ImageDraw.Draw(m).ellipse((0, 0, 48*S-1, 48*S-1), fill=255)
+    lw = 36*S; sw = sw.resize((lw, round(sw.height*lw/sw.width)), Image.LANCZOS)
+    c.paste(sw, ((48*S-lw)//2, (48*S-sw.height)//2+S))
+    ring = Image.new('RGBA', c.size, (0, 0, 0, 0)); ImageDraw.Draw(ring).ellipse((0, 0, 48*S-1, 48*S-1), outline=(220, 228, 232, 255), width=S)
+    c = Image.composite(c, Image.new('RGB', c.size, (255, 255, 255)), m).convert('RGBA'); c = Image.alpha_composite(c, ring)
+    mask = m.resize((48, 48), Image.LANCZOS); c = c.resize((48, 48), Image.LANCZOS).convert('RGB')
+    bg = im.getpixel((10, 32)); ImageDraw.Draw(im).ellipse((22, 6, 74, 58), fill=bg)
+    im.paste(c, (24, 8), mask)
+    return im
+
+def kpis(im):
+    X, Y, W2, H2 = 132, 214, 780, 72
+    w, h = W2*S, H2*S; bg = im.getpixel((X-8, Y+10))
+    k = Image.new('RGB', (w, h), bg); d = ImageDraw.Draw(k)
+    mut = (106, 119, 124)
+    # time left: a progress ring, 60 of 90 days
+    r0, cx, cy = 26*S, 30*S, 36*S
+    d.ellipse((cx-r0, cy-r0, cx+r0, cy+r0), outline=(226, 233, 236), width=5*S)
+    d.arc((cx-r0, cy-r0, cx+r0, cy+r0), -90, -90+360*60/90, fill=TEAL, width=5*S)
+    ctext = lambda box, t, f, fill: (lambda b: d.text(((box[0]+box[2]-(b[2]-b[0]))/2-b[0], (box[1]+box[3]-(b[3]-b[1]))/2-b[1]), t, font=f, fill=fill))(d.textbbox((0, 0), t, font=f))
+    ctext((cx-r0, cy-r0, cx+r0, cy+r0), '67%', FONT('Bold', 11*S), INK)
+    x = 70*S
+    d.text((x, 12*S), 'Time left', font=FONT('SemiBold', 11*S), fill=mut)
+    d.text((x, 27*S), '60 days', font=FONT('Bold', 20*S), fill=INK)
+    d.text((x, 52*S), 'of 90 · ends 12 Dec', font=FONT('SemiBold', 11*S), fill=mut)
+    d.line([(222*S, 14*S), (222*S, 62*S)], fill=(226, 233, 236), width=S)
+    # raised: the amount, a growth chip and a progress bar to the goal
+    x = 246*S
+    d.text((x, 12*S), 'Raised', font=FONT('SemiBold', 11*S), fill=mut)
+    fa = FONT('Bold', 20*S); d.text((x, 27*S), '360 000', font=fa, fill=INK)
+    aw = d.textbbox((0, 0), '360 000', font=fa)[2]
+    d.text((x+aw+6*S, 35*S), 'NOK', font=FONT('SemiBold', 11*S), fill=mut)
+    cx0 = x+aw+40*S; fc = FONT('Bold', 10*S); cb = d.textbbox((0, 0), '+18% this week', font=fc)
+    d.rounded_rectangle((cx0, 31*S, cx0+cb[2]-cb[0]+16*S, 49*S), 9*S, fill=(221, 251, 240))
+    d.text((cx0+8*S-cb[0], 40*S-(cb[3]-cb[1])/2-cb[1]), '+18% this week', font=fc, fill=(10, 143, 98))
+    bx0, bx1, by = x, x+300*S, 58*S
+    d.rounded_rectangle((bx0, by, bx1, by+6*S), 3*S, fill=(226, 233, 236))
+    fill_w = int((bx1-bx0)*0.72); grad = Image.new('RGB', (fill_w, 6*S))
+    for i in range(fill_w):
+        t = i/max(fill_w-1, 1); grad.paste(tuple(int(TEAL[j]+(GREEN[j]-TEAL[j])*t) for j in range(3)), (i, 0, i+1, 6*S))
+    gm = Image.new('L', grad.size, 0); ImageDraw.Draw(gm).rounded_rectangle((0, 0, fill_w-1, 6*S-1), 3*S, fill=255)
+    k.paste(grad, (bx0, by), gm)
+    d.text((bx1+12*S, by-5*S), '72% of 500 000 NOK goal', font=FONT('SemiBold', 11*S), fill=mut)
+    d2 = ImageDraw.Draw(im); d2.rectangle((X-6, Y, X+W2+6, Y+H2+4), fill=bg)
+    im.paste(k.resize((W2, H2), Image.LANCZOS), (X, Y))
+    return im
