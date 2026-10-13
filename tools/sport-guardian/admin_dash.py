@@ -48,7 +48,8 @@ text(X0, 164, 'Swimming for everyone · Fjordby Svømmeklubb · started 15 Sep 2
 
 # 1. the progress card, after her reference: the numbers on top, a full-width bar of thin vertical lines, and marks
 # under it for the critical minimum, the amount that is enough, and the goal. Thresholds are made up for the mockup.
-y0, y1 = 186, 356; card(X0, y0, X1, y1)
+GAP_B = 24
+y0, y1 = 200, 362; card(X0, y0, X1, y1)
 GOAL, RAISED_ = 500000, 360000
 stats = [('RAISED', '360 000', 'NOK', '+18% this week'), ('GOAL', '500 000', 'NOK', ''), ('STILL NEEDED', '140 000', 'NOK', ''),
          ('DAYS LEFT', '60', 'of 90', ''), ('ENDS', '13 Dec', '2024', '')]
@@ -58,7 +59,10 @@ for k, (lab_, val, unit, extra) in enumerate(stats):
     _tracked(d, P(x, y0+24), lab_, f('SemiBold', 11), LAB, 1.6*S)
     vf = f('Bold', 26 if k == 0 else 22); text(x, y0+68, val, vf, INK, 'ls')
     vw = d.textlength(val, font=vf)/S; text(x+vw+6, y0+68, unit, f('SemiBold', 12), MUT, 'ls')
-    if extra: text(x+d.textlength(lab_, font=f('SemiBold', 11))/S+12+len(lab_)*1.6, y0+30, extra, f('Bold', 12), UP, 'lm')
+    if extra:
+        bx = x+d.textlength(lab_, font=f('SemiBold', 11))/S+len(lab_)*1.6+10; bw_ = d.textlength(extra, font=f('Bold', 11))/S+18
+        d.rounded_rectangle(P(bx, y0+20, bx+bw_, y0+40), 10*S, fill=(221, 248, 236))
+        text(bx+bw_/2, y0+30, extra, f('Bold', 11), UP, 'mm')
     if k: d.line(P(x-18, y0+22, x-18, y0+70), fill=LINE, width=S)
 text(X1-30, y0+66, '72%', f('Bold', 34), INK, 'rs')
 text(X1-30, y0+28, 'of the goal', f('Regular', 12), MUT, 'rm')
@@ -78,18 +82,18 @@ xr = bl+(br-bl)*RAISED_/GOAL; d.rectangle(P(xr-1, by-6, xr+1, by+bh+6), fill=DEE
 CRIT = (176, 20, 74)
 marks = [(150000, 'Critical minimum', '150 000 · fees for 30 children', CRIT), (300000, 'Enough', '300 000 · the season is covered', UP),
          (500000, 'Goal', '500 000 · gear and travel too', DEEP)]
+ly = by+bh+26
 for v, name, sub, mc in marks:
-    x = bl+(br-bl)*v/GOAL; a = 'ra' if v == GOAL else 'la'
-    d.line(P(x, by+bh+2, x, by+bh+14), fill=mc, width=2*S)
-    xx = x-4 if v == GOAL else x+6
-    d.ellipse(P(x-4, by+bh+12, x+4, by+bh+20), fill=mc)
-    text(xx-10 if v == GOAL else xx+4, by+bh+22, name, f('Bold', 12), mc if mc != DEEP else INK, 'rm' if v == GOAL else 'lm')
-    text(xx-10 if v == GOAL else xx+4, by+bh+38, sub, f('Regular', 11), MUT, 'rm' if v == GOAL else 'lm')
+    x = bl+(br-bl)*v/GOAL; end = v == GOAL
+    d.line(P(x, by+bh+2, x, ly-8), fill=mc, width=2*S)
+    nf, sf = f('Bold', 12), f('Regular', 12); nw = d.textlength(name, font=nf)/S; sw = d.textlength('  '+sub, font=sf)/S
+    x0_ = x-nw-sw if end else x
+    text(x0_, ly, name, nf, mc if mc != DEEP else INK, 'lm'); text(x0_+nw, ly, '  '+sub, sf, MUT, 'lm')
 
 # 2. the Sankey card: deep teal with a soft glow (as before), the new header with the date range and controls, the
 # chart as it was (its data, tooltip and legend, sankey.flow_body), and the column names along the bottom
 from sankey import flow_body
-y0 = 380; BODY = 420; y1 = y0+92+BODY+52
+y0 = y1+GAP_B; BODY = 420; y1 = y0+92+BODY+52
 sh = Image.new('L', im.size, 0); ImageDraw.Draw(sh).rounded_rectangle(P(X0+2, y0+6, X1-2, y1+3), 16*S, fill=40)
 im.paste(Image.new('RGB', im.size, (30, 60, 66)), (0, 0), sh.filter(ImageFilter.GaussianBlur(10*S)))
 cw, chh = (X1-X0)*S, (y1-y0)*S
@@ -117,7 +121,7 @@ for xx, t, a in [(xL, 'Who gives', 'l'), (xM, 'How often', 'l'), (xR+NW, 'Raised
     else: arrow(xx-5, y1-31, 'up', WM, 6); text(xx-18, y1-26, t, fn, WM, 'rs')
 
 # 3. the donor table: search, Filter and Export in its header, the column headers in the same card
-y0 = y1+32; rows = [('Ingrid Solberg', 'One-time fee', 'Refund', '450', '21.09.2024', '–'),
+y0 = y1+GAP_B; rows = [('Ingrid Solberg', 'One-time fee', 'Refund', '450', '21.09.2024', '–'),
                   ('Magnus Hansen', 'Annually', 'Active', '6 600', '20.09.2024', '20.09.2025'),
                   ('Sofie Lie', 'Annually', 'Active', '6 600', '18.09.2024', '18.09.2025'),
                   ('Oliver Berg', 'Monthly', 'Active', '600', '17.09.2024', '17.11.2024'),
