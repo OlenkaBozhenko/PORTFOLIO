@@ -6,6 +6,7 @@ Sources (her Figma file My-projects-new, YlGWlsWWjKSCxhONMzGG2F, exported 2026-1
   figma/2x/card-*.png          card_payment method 3:75350, card_pay by credit card 3:75437,
                                card_ congratulations 3:75581, at 2x
 The selected states of the widget (Recurring, 600 NOK) are redrawn in Open Sans over the export.
+Retired 2026-10-13 (the flow now plays on a phone, mobile_frames.py); kept for the record.
 Run: python tablet_frames.py -> ../../assets/work/sport-guardian/flow-1..6.webp
 (flow-1..3: the page body, 1440 x 2521; flow-4..6: the payment cards over the page, 1440 x 900)
 """

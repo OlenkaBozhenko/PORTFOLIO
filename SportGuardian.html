@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&display=swap">
-<link rel="preload" as="image" href="assets/work/sport-guardian/flow-1.webp">
+<link rel="preload" as="image" href="assets/work/sport-guardian/hoodie-1536.webp">
 <style>
 :root{
   --bg:#FFFFFF;      /* D1: white, always */
@@ -57,38 +57,28 @@ h1,h2,h3{font-weight:400;letter-spacing:-.035em;text-wrap:balance}
 .pause[aria-pressed="true"] .pa{display:none}
 .pause[aria-pressed="true"] .pl{display:block}
 
-/* first screen: teal rectangle, logo left, tilted tablet right (Zelt reference) */
-.hero{padding-bottom:clamp(40px,5vw,72px)}
-.sg{position:relative;container-type:inline-size;background:var(--teal);overflow:hidden;aspect-ratio:1320/700;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:center}
-.sg .logo{justify-self:start;width:70%;margin-left:12%}
-.sg .stage{position:relative;height:100%;perspective:1800px;perspective-origin:30% 40%}
-.tablet{position:absolute;left:3%;top:15%;width:100%;transform:rotateX(12deg) rotateY(-6deg) rotateZ(-7deg);transform-origin:50% 50%;border-radius:2.6cqw;background:#fff;padding:1.4cqw;box-shadow:-1.6cqw 3.2cqw 5cqw -1cqw rgba(7,34,37,.5),0 0 0 .1cqw rgba(14,14,14,.08)}
-.js .tablet{animation:land 1.6s cubic-bezier(.2,.8,.2,1) .15s both}
-@keyframes land{from{transform:translateY(12%) rotateX(20deg) rotateY(-6deg) rotateZ(-12deg);opacity:0}to{transform:rotateX(12deg) rotateY(-6deg) rotateZ(-7deg);opacity:1}}
-.scr{position:relative;aspect-ratio:1440/900;border-radius:1.1cqw;overflow:hidden;background:#fff;box-shadow:0 0 0 .1cqw rgba(14,14,14,.12)}
-.scr .hd{position:absolute;left:0;top:0;width:100%;z-index:1}
-.scr .pg{position:absolute;left:0;top:13.333%;width:100%;transition:transform 2.2s cubic-bezier(.45,0,.25,1)}
-.scr .pg img{position:absolute;left:0;top:0;width:100%;opacity:0;transition:opacity .35s ease}
-.scr .pg img:first-child{position:relative}
-.scr img.md{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity .45s ease;z-index:2}
-.scr img.on{opacity:1}
-.ptr{position:absolute;left:58%;top:40%;width:3.2%;z-index:3;aspect-ratio:1;border-radius:50%;background:rgba(14,14,14,.42);border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.3);transform:translate(-50%,-50%);transition:left .85s cubic-bezier(.55,0,.2,1),top .85s cubic-bezier(.55,0,.2,1);opacity:0;z-index:2}
+/* the phone that plays the donor flow: the page scrolls under the fixed menu and bottom bar, then the steps */
+.phone.pf .vp{aspect-ratio:750/1624;border-radius:37px;background:#fff}
+.pf .hd,.pf .bar{position:absolute;left:0;width:100%;z-index:1}
+.pf .hd{top:0}.pf .bar{bottom:0}
+.pf .body{display:block;margin-top:37.87%;transition:transform 2.2s cubic-bezier(.45,0,.25,1)}
+.pf .st{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity .4s ease;z-index:2}
+.pf .st.on{opacity:1}
+.ptr{position:absolute;left:50%;top:60%;width:11%;aspect-ratio:1;border-radius:50%;background:rgba(14,14,14,.42);border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.3);transform:translate(-50%,-50%);transition:left .8s cubic-bezier(.55,0,.2,1),top .8s cubic-bezier(.55,0,.2,1);opacity:0;z-index:3}
 .run .ptr{opacity:1}
 .ptr::after{content:"";position:absolute;inset:-2px;border-radius:50%;border:2px solid #fff;opacity:0}
 .ptr.tap{animation:press .38s ease}
 .ptr.tap::after{animation:ring .7s ease-out}
 @keyframes press{50%{transform:translate(-50%,-50%) scale(.72)}}
 @keyframes ring{from{opacity:.9;transform:scale(1)}to{opacity:0;transform:scale(2.6)}}
-.sg .pause{left:2.2cqw;bottom:2.2cqw}
-@media (prefers-reduced-motion:reduce){.js .tablet{animation:none}.ptr{display:none}.sg .pause{display:none}}
-@media (max-width:760px){
-  .sg{aspect-ratio:auto;grid-template-columns:1fr;padding:44px 0 0}
-  .sg .logo{width:72%;margin:0}
-  .sg .stage{height:auto;aspect-ratio:1/.78;margin-top:8px}
-  .tablet{left:6%;top:10%;width:112%;border-radius:4cqw;padding:1.8cqw}
-  .scr{border-radius:2.4cqw}
-  .sg .pause{left:16px;bottom:16px}
-}
+.pfw{position:relative}
+.pfw .pause{position:static;align-self:flex-start;box-shadow:none;border:1px solid var(--rule)}
+@media (prefers-reduced-motion:reduce){.ptr,.pfw .pause{display:none}}
+
+/* the logo banner, down with the brand goods */
+.banner{background:var(--teal);aspect-ratio:1320/620;display:flex;align-items:center;justify-content:center}
+.banner img{width:min(46%,560px)}
+@media (max-width:720px){.banner{aspect-ratio:4/3}.banner img{width:70%}}
 
 /* header (reinostudio / Berrics order: name, statement, meta) */
 .head{padding-block:clamp(48px,8vw,112px) clamp(32px,5vw,64px);display:flex;flex-direction:column;gap:28px}
@@ -112,7 +102,10 @@ h1{font-size:clamp(34px,5.2vw,76px);line-height:1.03;letter-spacing:-.045em;max-
 
 /* product and brand grid (GEN, DIIR): 12 columns, empty cells on purpose */
 .gal{padding-bottom:clamp(72px,10vw,140px)}
-.band{background:linear-gradient(var(--teal) 0 clamp(160px,22vw,320px),transparent 0);padding-top:clamp(40px,6vw,80px);margin-top:clamp(32px,4vw,56px)}
+.gal .g{margin-top:clamp(32px,4vw,56px)}
+.first{padding-bottom:clamp(56px,8vw,112px)}
+/* the teal band stays inside the grid, like every block on her site */
+.band{background:linear-gradient(var(--teal) 0 clamp(160px,22vw,320px),transparent 0);padding:clamp(32px,5vw,72px) clamp(24px,4vw,56px) 0}
 .g{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--cg);row-gap:clamp(56px,8vw,128px)}
 .g figure{margin:0;display:flex;flex-direction:column;gap:12px;min-width:0}
 .g figcaption,.cap{font-size:15px;line-height:1.45;color:var(--muted);max-width:40ch}
@@ -123,7 +116,7 @@ h1{font-size:clamp(34px,5.2vw,76px);line-height:1.03;letter-spacing:-.045em;max-
 .panel.t{background:var(--teal)}
 .c1-9{grid-column:1/10}.c10-12{grid-column:10/-1}.c1-4{grid-column:1/5}.c5-8{grid-column:5/9}.c9-12{grid-column:9/-1}
 .c1-8{grid-column:1/9}.c1-3{grid-column:1/4}.c4-12{grid-column:4/-1}.c1-5{grid-column:1/6}.c6-12{grid-column:6/-1}
-.c1-6{grid-column:1/7}.c7-12{grid-column:7/-1}.c1-12{grid-column:1/-1}
+.c1-6{grid-column:1/7}.c7-12{grid-column:7/-1}.c1-12{grid-column:1/-1}.c5-12{grid-column:5/-1}.c1-7{grid-column:1/8}.c8-12{grid-column:8/-1}
 .end{align-self:end}.start{align-self:start}
 .r43{aspect-ratio:3/2}.r23{aspect-ratio:2/3}.r45{aspect-ratio:4/5}
 .lift{margin-top:clamp(0px,12vw,180px)}
@@ -158,7 +151,7 @@ h1{font-size:clamp(34px,5.2vw,76px);line-height:1.03;letter-spacing:-.045em;max-
 @media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}.scroll .vp img{animation:none}}
 
 /* closing mosaic (GEN): rows of tiles sliding sideways on the teal ground */
-.mos{position:relative;background:var(--teal);padding-block:clamp(48px,7vw,96px);overflow:hidden}
+.mos{position:relative;background:var(--teal);padding-block:clamp(48px,7vw,96px);overflow:hidden;margin-bottom:clamp(56px,8vw,112px)}
 .ticker{display:flex;width:max-content;animation:slide 40s linear infinite;margin-bottom:clamp(28px,4vw,56px)}
 .ticker span{flex:none;color:#fff;font-size:clamp(56px,11vw,176px);font-weight:500;line-height:.9;letter-spacing:-.04em;text-transform:uppercase;white-space:nowrap;padding-right:.5em}
 .mos.paused .ticker,.mos:not(.play) .ticker{animation-play-state:paused}
@@ -175,7 +168,7 @@ h1{font-size:clamp(34px,5.2vw,76px);line-height:1.03;letter-spacing:-.045em;max-
 .tile.k img{width:78%;height:auto;object-fit:contain}
 .tile.pl{background:var(--well);display:flex;align-items:center;justify-content:center}
 .tile.pl img{width:auto;height:88%;object-fit:contain;border-radius:6px}
-.mos .pause{right:var(--gutter);bottom:clamp(20px,3vw,36px)}
+.mos .pause{right:clamp(16px,2vw,28px);bottom:clamp(20px,3vw,36px)}
 @media (prefers-reduced-motion:reduce){.track{animation:none}.mos .pause{display:none}}
 
 .next{display:flex;justify-content:space-between;gap:16px;padding-block:28px;border-top:1px solid var(--ink);font-size:15px;text-transform:uppercase;letter-spacing:.02em;text-decoration:none}
@@ -220,28 +213,36 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     </dl>
   </div>
 
-  <div class="wrap hero">
-    <section class="sg" aria-label="Sport Guardian">
-      <img class="logo" src="assets/work/sport-guardian/sg-lockup.webp" alt="Sport Guardian, give sports enjoyment" width="1200" height="740">
-      <div class="stage">
-        <div class="tablet" role="img" aria-label="A tablet playing the donor flow: a donor scrolls the campaign page, then picks Recurring and 600 NOK and taps Donate, chooses to pay by card, pays, and sees the thank you screen.">
-          <div class="scr" id="flow">
-            <img class="hd" src="assets/work/sport-guardian/screen-campaign-head.webp" alt="" width="1440" height="120">
-            <div class="pg">
-              <img src="assets/work/sport-guardian/flow-1.webp" alt="" width="1440" height="2521" class="on">
-              <img src="assets/work/sport-guardian/flow-2.webp" alt="" width="1440" height="2521">
-              <img src="assets/work/sport-guardian/flow-3.webp" alt="" width="1440" height="2521">
+  <section class="wrap first" aria-label="Sport Guardian brand and the donation on a phone">
+    <div class="band">
+      <div class="g">
+        <figure class="c1-9 rv"><div class="ph r43"><img src="assets/work/sport-guardian/hoodie-1536.webp" srcset="assets/work/sport-guardian/hoodie-768.webp 768w, assets/work/sport-guardian/hoodie-1536.webp 1536w" sizes="(max-width:720px) 100vw, 860px" alt="The back of a teal hoodie with the white and green SG mark printed large on it, against a dark concrete wall." width="1536" height="1024" fetchpriority="high"></div></figure>
+        <p class="cap c10-12 end rv" style="--d:.1s"><b>The mark</b>A slanted S and G in Candal, cut into strips with a checkered trail: speed for the sport, and the G that carries the S for the guardian.</p>
+
+        <p class="cap c1-4 end rv"><b>On the street</b>A poster by the pitch, where the people who could help already stand on Saturday mornings.</p>
+        <figure class="c5-8 rv"><div class="ph r23"><img src="assets/work/sport-guardian/poster-1024.webp" srcset="assets/work/sport-guardian/poster-640.webp 640w, assets/work/sport-guardian/poster-1024.webp 1024w" sizes="(max-width:720px) 100vw, 400px" alt="A lit poster case by a football pitch fence at dusk; the teal poster reads SPORT GUARDIAN, GIVE SPORTS ENJOYMENT, with the SG mark running down its right edge." width="1024" height="1536" loading="lazy"></div></figure>
+        <figure class="c9-12 lift rv pfw" style="--d:.1s">
+          <div class="panel t r23">
+            <div class="phone pf" role="img" aria-label="The donation on a phone: the campaign page scrolls under a fixed menu and a bottom bar with Our donors and Donate; the donor taps Donate, picks 600 NOK a month, taps Donate, chooses Credit card, pays and sees the thank you screen.">
+              <div class="vp" id="flow">
+                <img class="hd" src="assets/work/sport-guardian/screen-mobile-head.webp" alt="" width="750" height="284">
+                <img class="body" src="assets/work/sport-guardian/screen-mobile-body.webp" alt="" width="750" height="5346" loading="lazy">
+                <img class="bar" src="assets/work/sport-guardian/m-bar.webp" alt="" width="750" height="290">
+                <img class="st" src="assets/work/sport-guardian/m-form-1.webp" alt="" width="750" height="1624" loading="lazy">
+                <img class="st" src="assets/work/sport-guardian/m-form-2.webp" alt="" width="750" height="1624" loading="lazy">
+                <img class="st" src="assets/work/sport-guardian/m-step-3.webp" alt="" width="750" height="1624" loading="lazy">
+                <img class="st" src="assets/work/sport-guardian/m-step-4.webp" alt="" width="750" height="1624" loading="lazy">
+                <img class="st" src="assets/work/sport-guardian/m-step-5.webp" alt="" width="750" height="1624" loading="lazy">
+                <span class="ptr" aria-hidden="true"></span>
+              </div>
             </div>
-            <img class="md" src="assets/work/sport-guardian/flow-4.webp" alt="" width="1440" height="900">
-            <img class="md" src="assets/work/sport-guardian/flow-5.webp" alt="" width="1440" height="900">
-            <img class="md" src="assets/work/sport-guardian/flow-6.webp" alt="" width="1440" height="900">
-            <span class="ptr" aria-hidden="true"></span>
           </div>
-        </div>
+          <button class="pause" type="button" aria-pressed="false" data-for="flow"><svg class="pa" aria-hidden="true"><use href="#i-pause"/></svg><svg class="pl" aria-hidden="true"><use href="#i-play"/></svg><span>Pause<span class="vh"> the donation on the phone</span></span></button>
+          <figcaption>The donation on a phone: the bottom bar keeps Donate one tap away while the story scrolls.</figcaption>
+        </figure>
       </div>
-      <button class="pause" type="button" aria-pressed="false" data-for="flow"><svg class="pa" aria-hidden="true"><use href="#i-pause"/></svg><svg class="pl" aria-hidden="true"><use href="#i-play"/></svg><span>Pause<span class="vh"> the donation flow</span></span></button>
-    </section>
-  </div>
+    </div>
+  </section>
 
   <div class="wrap story">
     <div class="pair"><h2>About</h2><p>Sport Guardian (Idrettsfadder in Norwegian) is a crowdfunding solution from Supporter.no. A club starts a campaign, and private people and companies become its sports guardians: they give once or every month, and the money covers fees, gear and travel for children whose families cannot pay.</p></div>
@@ -249,35 +250,36 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="pair"><h2>Solution</h2><p>A campaign page that shows the countdown, the amount raised and the people behind it, and a donation that takes four choices: private person or company, once or recurring, the amount, then card or Vipps. Behind it, a builder that lets a club publish a campaign without help, and an admin panel with donors, refunds and statistics.</p></div>
   </div>
 
-  <section class="gal" id="work-grid" aria-labelledby="h-gal">
-    <div class="wrap"><div class="sec-head"><h2 id="h-gal">Product and brand</h2><span>Mockups, not a real campaign</span></div></div>
-    <div class="band">
-      <div class="wrap g">
-        <figure class="c1-9 rv"><div class="ph r43"><img src="assets/work/sport-guardian/hoodie-1536.webp" srcset="assets/work/sport-guardian/hoodie-768.webp 768w, assets/work/sport-guardian/hoodie-1536.webp 1536w" sizes="(max-width:720px) 100vw, 880px" alt="The back of a teal hoodie with the white and green SG mark printed large on it, against a dark concrete wall." width="1536" height="1024" loading="lazy"></div></figure>
-        <p class="cap c10-12 end rv" style="--d:.1s"><b>The mark</b>A slanted S and G in Candal, cut into strips with a checkered trail: speed for the sport, and the G that carries the S for the guardian.</p>
+  <section class="gal wrap" id="work-grid" aria-labelledby="h-gal">
+    <div class="sec-head"><h2 id="h-gal">Product</h2><span>From the donor to the club's admin</span></div>
+    <div class="g">
+      <figure class="c1-8 rv scroll"><div class="panel"><div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>produkter.supporter.no/idrettsfadder</span></div><div class="vp fx" style="--to:-69.1%;--t:24s;--hd:8.333%"><img class="hd" src="assets/work/sport-guardian/screen-campaign-head.webp" alt="" width="1440" height="120" loading="lazy"><img src="assets/work/sport-guardian/screen-campaign-body.webp" alt="The campaign page on desktop, under a fixed header: a swimming pool banner with the countdown, 60 000 NOK from 200 donors, the donation form, the story, the donor list and sharing." width="1440" height="2521" loading="lazy"></div></div></div><figcaption>The campaign page: countdown, amount raised, the form to give, and the story the club tells.</figcaption></figure>
+      <figure class="c9-12 rv" style="--d:.1s"><div class="panel t r45"><img class="el d" src="assets/work/sport-guardian/el-donors.webp" alt="Our donors: tabs for private persons and companies, names with the time they gave, and a greeting from one donor." width="820" height="1078" loading="lazy"></div><figcaption>Donors can leave their name and a greeting, or give anonymously.</figcaption></figure>
 
-        <p class="cap c1-4 end rv"><b>On the street</b>A poster by the pitch, where the people who could help already stand on Saturday mornings.</p>
-        <figure class="c5-8 rv"><div class="ph r23"><img src="assets/work/sport-guardian/poster-1024.webp" srcset="assets/work/sport-guardian/poster-640.webp 640w, assets/work/sport-guardian/poster-1024.webp 1024w" sizes="(max-width:720px) 100vw, 420px" alt="A lit poster case by a football pitch fence at dusk; the teal poster reads SPORT GUARDIAN, GIVE SPORTS ENJOYMENT, with the SG mark running down its right edge." width="1024" height="1536" loading="lazy"></div></figure>
-        <figure class="c9-12 lift rv scroll" style="--d:.1s"><div class="panel t r23"><div class="phone"><div class="vp fx" style="--to:-76.9%;--t:26s;--hd:37.87%"><img class="hd" src="assets/work/sport-guardian/screen-mobile-head.webp" alt="" width="750" height="284" loading="lazy"><img src="assets/work/sport-guardian/screen-mobile-body.webp" alt="The campaign page on a phone, under a fixed menu bar: countdown, Become a sports guardian, the story with photos and a video, and the donor list." width="750" height="5346" loading="lazy"></div></div></div><figcaption>The campaign on a phone, where most donors open the link.</figcaption></figure>
+      <p class="cap c1-4 end rv"><b>Three steps after Donate</b>How to pay, the payment, and a thank you that asks to share the campaign.</p>
+      <figure class="c5-12 rv" style="--d:.1s"><div class="panel r43"><div class="cards"><img src="assets/work/sport-guardian/card-payment-method.webp" alt="Payment options: 600 NOK monthly, with the choice to cover the transaction cost, and buttons for Vipps and Credit card." width="820" height="1304" loading="lazy"><img src="assets/work/sport-guardian/card-credit-card.webp" alt="Payment by card: card number, email for the receipt, and a choice between the donor list and staying anonymous." width="820" height="1304" loading="lazy"><img src="assets/work/sport-guardian/card-congrats.webp" alt="Thank you: the donation is received, with a link to the campaign and buttons to share it." width="820" height="1304" loading="lazy"></div></div></figure>
 
-        <figure class="c1-8 rv scroll"><div class="panel"><div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>produkter.supporter.no/idrettsfadder</span></div><div class="vp fx" style="--to:-69.1%;--t:24s;--hd:8.333%"><img class="hd" src="assets/work/sport-guardian/screen-campaign-head.webp" alt="" width="1440" height="120" loading="lazy"><img src="assets/work/sport-guardian/screen-campaign-body.webp" alt="The campaign page on desktop, under a fixed header: a swimming pool banner with the countdown, 60 000 NOK from 200 donors, the donation form, the story, the donor list and sharing." width="1440" height="2521" loading="lazy"></div></div></div><figcaption>The campaign page: countdown, amount raised, the form to give, and the story the club tells.</figcaption></figure>
-        <figure class="c9-12 rv" style="--d:.1s"><div class="panel t r45"><img class="el d" src="assets/work/sport-guardian/el-donors.webp" alt="Our donors: tabs for private persons and companies, names with the time they gave, and a greeting from one donor." width="820" height="1078" loading="lazy"></div><figcaption>Donors can leave their name and a greeting, or give anonymously.</figcaption></figure>
+      <figure class="c1-7 rv"><div class="panel"><img class="el c" src="assets/work/sport-guardian/el-create-donations.webp" alt="From the campaign builder: Accept donations from private persons and companies, and Select donation frequency, from monthly to a one-time fee, each with a short hint." width="1200" height="1183" loading="lazy"></div></figure>
+      <p class="cap c8-12 end rv" style="--d:.1s"><b>For the club</b>The club decides who can give and how often, with a hint under every choice.</p>
 
-        <p class="cap c1-3 end rv"><b>In the club</b>Decks, caps and bottles in the club's teal and green, so the guardians are seen at every training.</p>
-        <figure class="c4-12 rv"><div class="ph r43"><img src="assets/work/sport-guardian/decks-1536.webp" srcset="assets/work/sport-guardian/decks-768.webp 768w, assets/work/sport-guardian/decks-1536.webp 1536w" sizes="(max-width:720px) 100vw, 880px" alt="Three skateboards on concrete: a teal deck with a big SG mark, a white deck with SPORT GUARDIAN along it, and a green deck with the mark between its wheels." width="1536" height="1024" loading="lazy"></div></figure>
-
-        <figure class="c1-5 rv"><div class="ph r23"><img src="assets/work/sport-guardian/bottle-1024.webp" srcset="assets/work/sport-guardian/bottle-640.webp 640w, assets/work/sport-guardian/bottle-1024.webp 1024w" sizes="(max-width:720px) 100vw, 540px" alt="A young football player in a teal shirt with a small SG mark drinks from a white bottle with the SG mark on a pitch at sunset." width="1024" height="1536" loading="lazy"></div></figure>
-        <figure class="c6-12 lift rv" style="--d:.1s"><div class="panel r43"><div class="cards"><img src="assets/work/sport-guardian/card-payment-method.webp" alt="Payment options: 600 NOK monthly, with the choice to cover the transaction cost, and buttons for Vipps and Credit card." width="820" height="1304" loading="lazy"><img src="assets/work/sport-guardian/card-credit-card.webp" alt="Payment by card: card number, email for the receipt, and a choice between the donor list and staying anonymous." width="820" height="1304" loading="lazy"><img src="assets/work/sport-guardian/card-congrats.webp" alt="Thank you: the donation is received, with a link to the campaign and buttons to share it." width="820" height="1304" loading="lazy"></div></div><figcaption>Three steps after Donate: how to pay, the payment, and a thank you that asks to share the campaign.</figcaption></figure>
-
-        <figure class="c1-6 rv"><div class="ph r43"><img src="assets/work/sport-guardian/cap-1536.webp" srcset="assets/work/sport-guardian/cap-768.webp 768w, assets/work/sport-guardian/cap-1536.webp 1536w" sizes="(max-width:720px) 100vw, 640px" alt="A teal five-panel cap with the white and green SG mark in the middle of the front." width="1536" height="1024" loading="lazy"></div></figure>
-        <figure class="c7-12 rv" style="--d:.1s"><div class="panel"><img class="el c" src="assets/work/sport-guardian/el-create-donations.webp" alt="From the campaign builder: Accept donations from private persons and companies, and Select donation frequency, from monthly to a one-time fee, each with a short hint." width="1200" height="1183" loading="lazy"></div><figcaption>The club decides who can give and how often, with a hint under every choice.</figcaption></figure>
-
-        <figure class="c1-12 rv scroll"><div class="panel"><div class="browser" style="max-width:1000px"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>admin.supporter.no</span></div><div class="vp fx" style="--to:-19.6%;--t:12s;--hd:4.514%"><img class="hd" src="assets/work/sport-guardian/screen-statistik-head.webp" alt="" width="1440" height="65" loading="lazy"><img src="assets/work/sport-guardian/screen-statistik-body.webp" alt="Campaign statistics in the admin panel: days left and amount raised, a card with a growth chart for each frequency from monthly to one-time, and a list of donors with their status." width="1440" height="1038" loading="lazy"></div></div></div><figcaption style="max-width:64ch">The admin panel: what each frequency brings in, and every donor, with refunds and cancellations in one place.</figcaption></figure>
-      </div>
+      <figure class="c1-12 rv scroll"><div class="panel"><div class="browser" style="max-width:1000px"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>admin.supporter.no</span></div><div class="vp fx" style="--to:-19.6%;--t:12s;--hd:4.514%"><img class="hd" src="assets/work/sport-guardian/screen-statistik-head.webp" alt="" width="1440" height="65" loading="lazy"><img src="assets/work/sport-guardian/screen-statistik-body.webp" alt="Campaign statistics in the admin panel: days left and amount raised, a card with a growth chart for each frequency from monthly to one-time, and a list of donors with their status." width="1440" height="1038" loading="lazy"></div></div></div><figcaption style="max-width:64ch">The admin panel: what each frequency brings in, and every donor, with refunds and cancellations in one place.</figcaption></figure>
     </div>
   </section>
 
-  <section class="mos" id="mosaic" aria-labelledby="h-mos">
+  <section class="gal wrap" aria-labelledby="h-brand">
+    <div class="sec-head"><h2 id="h-brand">Brand</h2><span>Mockups, not a real campaign</span></div>
+    <div class="g">
+      <div class="c1-12 banner rv"><img src="assets/work/sport-guardian/sg-lockup.webp" alt="Sport Guardian, give sports enjoyment: the slanted SG mark over the name, on the brand teal." width="1200" height="740" loading="lazy"></div>
+
+      <p class="cap c1-3 end rv"><b>In the club</b>Decks, caps and bottles in the club's teal and green, so the guardians are seen at every training.</p>
+      <figure class="c4-12 rv"><div class="ph r43"><img src="assets/work/sport-guardian/decks-1536.webp" srcset="assets/work/sport-guardian/decks-768.webp 768w, assets/work/sport-guardian/decks-1536.webp 1536w" sizes="(max-width:720px) 100vw, 880px" alt="Three skateboards on concrete: a teal deck with a big SG mark, a white deck with SPORT GUARDIAN along it, and a green deck with the mark between its wheels." width="1536" height="1024" loading="lazy"></div></figure>
+
+      <figure class="c1-5 rv"><div class="ph r23"><img src="assets/work/sport-guardian/bottle-1024.webp" srcset="assets/work/sport-guardian/bottle-640.webp 640w, assets/work/sport-guardian/bottle-1024.webp 1024w" sizes="(max-width:720px) 100vw, 520px" alt="A young football player in a teal shirt with a small SG mark on the chest drinks from a white bottle with the SG mark on a pitch at sunset." width="1024" height="1536" loading="lazy"></div></figure>
+      <figure class="c6-12 lift rv" style="--d:.1s"><div class="ph r43"><img src="assets/work/sport-guardian/cap-1536.webp" srcset="assets/work/sport-guardian/cap-768.webp 768w, assets/work/sport-guardian/cap-1536.webp 1536w" sizes="(max-width:720px) 100vw, 760px" alt="A teal five-panel cap with the white and green SG mark in the middle of the front." width="1536" height="1024" loading="lazy"></div></figure>
+    </div>
+  </section>
+
+  <div class="wrap"><section class="mos" id="mosaic" aria-labelledby="h-mos">
     <h2 id="h-mos" class="vh">Sport Guardian, product and brand</h2>
     <div class="ticker" aria-hidden="true"><span>Sport Guardian · Product and brand ·</span><span>Sport Guardian · Product and brand ·</span></div>
     <button class="pause" type="button" aria-pressed="false" data-for="mosaic"><svg class="pa" aria-hidden="true"><use href="#i-pause"/></svg><svg class="pl" aria-hidden="true"><use href="#i-play"/></svg><span>Pause<span class="vh"> the moving title and mosaic</span></span></button>
@@ -286,7 +288,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="track rev" style="--s:90s" data-tiles="decks-768:w|screen-club-campaigns:w|bottle-640:p|screen-statistik:w|card-congrats:pl|sg-lockup:k|screen-congrats-instagram:w"></div>
       <div class="track" style="--s:75s" data-tiles="screen-crowdfunding:w|el-donors:pl|screen-admin-campaigns:w|sport-guardian-mark-800:w|card-payment-method:pl|hoodie-768:s|screen-campaign:w"></div>
     </div>
-  </section>
+  </section></div>
 
   <div class="wrap" style="padding-block:clamp(56px,8vw,112px)">
     <a class="next" href="Olena%20Bozhenko.html#work"><span>Back to all work</span><span class="arrow" aria-hidden="true">→</span></a>
@@ -314,32 +316,34 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   })},{rootMargin:'0px 0px -10% 0px',threshold:.15});
   els.forEach(function(e){io.observe(e)});
 })();
-// the donor flow on the tablet: the campaign page scrolls down and back under its fixed header, then a pointer taps Recurring, 600 NOK, Donate, Credit card and Pay (positions in % of the 1440 x 900 screen)
+// the donor flow on the phone: the page scrolls under the fixed menu and bottom bar, then a pointer taps
+// Donate, 600 NOK, Donate, Credit card and Pay (positions in % of the 750 x 1624 screen)
 (function(){
-  var scr=document.getElementById('flow'),btn=document.querySelector('.pause[data-for="flow"]');
-  if(!scr||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
-  var imgs=scr.querySelectorAll('.pg img,img.md'),pg=scr.querySelector('.pg'),ptr=scr.querySelector('.ptr'),sg=scr.closest('.sg');
-  var steps=[[900,'scroll',-20],[2600,'scroll',-46],[3000,'scroll',0],[2500,'go',78.9,48.1],[1000,'tap'],[220,'show',1],[900,'go',81,57.2],[1000,'tap'],[220,'show',2],[900,'go',72.6,73.4],[1000,'tap'],[260,'show',3],
-             [1700,'go',50,82.9],[1000,'tap'],[260,'show',4],[1500,'go',57,40],[1100,'go',50,82.9],[1000,'tap'],[260,'show',5],[3400,'reset']];
+  var vp=document.getElementById('flow'),btn=document.querySelector('.pause[data-for="flow"]');
+  if(!vp||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var st=vp.querySelectorAll('.st'),body=vp.querySelector('.body'),ptr=vp.querySelector('.ptr'),box=vp.closest('.pfw');
+  var steps=[[900,'scroll',-12],[2600,'scroll',-26],[3000,'scroll',0],[2400,'go',73.6,86.2],[1000,'tap'],[260,'show',0],
+             [1300,'go',85.3,59.7],[1000,'tap'],[220,'show',1],[900,'go',73.6,86.2],[1000,'tap'],[260,'show',2],
+             [1600,'go',50,77.5],[1000,'tap'],[260,'show',3],[1500,'go',62,30],[1100,'go',50,77.5],[1000,'tap'],[260,'show',4],[3400,'reset']];
   var i=0,timer=0,paused=false,inView=false;
-  function show(n){imgs.forEach(function(im,k){im.classList.toggle('on',k===n)})}
+  function show(n){st.forEach(function(im,k){im.classList.toggle('on',k===n)})}
   function go(x,y){ptr.style.left=x+'%';ptr.style.top=y+'%'}
   function run(){
     var s=steps[i];
     timer=setTimeout(function(){
       timer=0;
       if(s[1]==='go')go(s[2],s[3]);
-      else if(s[1]==='scroll'){pg.style.transform='translateY('+s[2]+'%)';go(40,s[2]?62:52)}
+      else if(s[1]==='scroll'){body.style.transform='translateY('+s[2]+'%)';go(55,s[2]?52:46)}
       else if(s[1]==='tap'){ptr.classList.remove('tap');void ptr.offsetWidth;ptr.classList.add('tap')}
       else if(s[1]==='show')show(s[2]);
-      else{show(0);go(58,40);pg.style.transform=''}
+      else{show(-1);go(50,60);body.style.transform=''}
       i=(i+1)%steps.length;
       if(!paused&&inView)run();
     },s[0]);
   }
-  function play(){if(!timer&&!paused&&inView){sg.classList.add('run');run()}}
+  function play(){if(!timer&&!paused&&inView){box.classList.add('run');run()}}
   function stop(){clearTimeout(timer);timer=0}
-  new IntersectionObserver(function(es){inView=es[0].isIntersecting;inView?play():stop()},{threshold:.3}).observe(scr);
+  new IntersectionObserver(function(es){inView=es[0].isIntersecting;inView?play():stop()},{threshold:.3}).observe(vp);
   btn.addEventListener('click',function(){
     paused=!paused;btn.setAttribute('aria-pressed',paused);btn.querySelector('span').firstChild.nodeValue=paused?'Play':'Pause';
     paused?stop():play();
