@@ -47,7 +47,7 @@ Order (2026-10-13, her request, last change): header → the moving mosaic → A
    - caption "On the street" (1–4), the poster (5–8), the bottle photo (9–12), the small mark on her shirt set on the chest;
    - the skateboards (1–9), caption "In the club" on the right (10–12) (swapped, her request);
    - the cap on the right edge (5–12, her request), the mark alone, centred on the front panel between the top seam and the brim.
-   Photos: AI images generated with Figma AI (gpt-image-2.5, her Pro plan, 2026-10-13), not real people or places; the SG mark is printed on them from the vector master with [`tools/sport-guardian/print_photo.py`](tools/sport-guardian/print_photo.py) (it takes the light of the fabric or surface). The poster line "Back a young athlete near you." is placeholder copy written for the mockup.
+   Photos: AI images generated with Figma AI (gpt-image-2.5, her Pro plan, 2026-10-13), not real people or places; the SG mark is printed on them from the vector master with [`tools/sport-guardian/print_photo.py`](tools/sport-guardian/print_photo.py) (it takes the light of the fabric or surface). The poster (2026-10-13, her request) carries a QR code on a white tile to the crowdfunding page, produkter.supporter.no/idrettsfadder (the product URL in her presentation frame), with "Scan to back a young athlete near you." beside it (placeholder copy written for the mockup) and the address in green; it scans in every served size (checked with OpenCV). Made with segno in `print_photo.py`. The caption adds: "The QR code opens the campaign."
 6. **Back to all work.**
 
 ## Logo

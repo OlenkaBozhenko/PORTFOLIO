@@ -101,16 +101,35 @@ def bottle():
 if __name__ == '__main__':
     bottle(); print('ok3')
 
+QR_URL = 'https://produkter.supporter.no/idrettsfadder'  # the crowdfunding product page in her presentation frame 198:59192
+
+def qr_tile(size):
+    """A white rounded tile with a QR code to the crowdfunding page (2026-10-13, her request). Scannable: quiet zone kept."""
+    import io, segno
+    from PIL import ImageDraw
+    buf = io.BytesIO(); segno.make(QR_URL, error='m').save(buf, kind='png', scale=20, border=0, dark='#0E2A2D', light=None); buf.seek(0)
+    q = Image.open(buf).convert('RGBA'); pad = int(size*.09)
+    q = q.resize((size-2*pad, size-2*pad), Image.NEAREST)
+    t = Image.new('RGBA', (size, size), (0, 0, 0, 0)); ImageDraw.Draw(t).rounded_rectangle((0, 0, size-1, size-1), int(size*.08), fill=WHITE+(255,))
+    t.paste(q, (pad, pad), q); return t
+
 def poster_art(W=976, H=1862):
-    """The poster face: name top left, the mark large down the right edge (cut by it), the line below."""
+    """The poster face: name top left, the mark down the right edge (cut by it), the line, and a QR code to the
+    crowdfunding page with a call to scan it (QR added 2026-10-13, her request)."""
     im = Image.new('RGBA', (W, H), TEAL+(255,))
-    m = rot(mark(), 90); m = m.resize((int(m.width*1080/m.height), 1080), Image.LANCZOS)
-    im.paste(m, (W-m.width+int(m.width*.22), 340), m)
+    m = rot(mark(), 90); m = m.resize((int(m.width*820/m.height), 820), Image.LANCZOS)
+    im.paste(m, (W-m.width+int(m.width*.22), 320), m)
     n = words('SPORT', 120, WHITE); g = words('GUARDIAN', 120, WHITE)
     im.paste(n, (70, 70), n); im.paste(g, (70, 70+n.height+22), g)
     for k, line in enumerate(['GIVE SPORTS', 'ENJOYMENT']):
-        t = words(line, 118, GREEN, O); im.paste(t, (66, 1470+k*150), t)
-    s = words('Back a young athlete near you.', 44, WHITE, O); im.paste(s, (70, H-118), s)
+        t = words(line, 108, GREEN, O); im.paste(t, (66, 1190+k*136), t)
+    qs = 300; qy = H-80-qs
+    q = qr_tile(qs); im.paste(q, (70, qy), q)
+    x = 70+qs+44
+    for k, line in enumerate(['Scan to back', 'a young athlete', 'near you.']):
+        t = words(line, 52, WHITE, O); im.paste(t, (x, qy+10+k*70), t)
+    for k, line in enumerate(['produkter.supporter.no/', 'idrettsfadder']):
+        u = words(line, 30, GREEN, O); im.paste(u, (x, qy+qs-84+k*44), u)
     return im
 
 def poster():
