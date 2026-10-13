@@ -75,10 +75,6 @@ h1,h2,h3{font-weight:400;letter-spacing:-.035em;text-wrap:balance}
 .pfw .pause{position:static;align-self:flex-start;box-shadow:none;border:1px solid var(--rule)}
 @media (prefers-reduced-motion:reduce){.ptr,.pfw .pause{display:none}}
 
-/* the logo banner, down with the brand goods */
-.banner{background:var(--teal);aspect-ratio:1320/620;display:flex;align-items:center;justify-content:center}
-.banner img{width:min(46%,560px)}
-@media (max-width:720px){.banner{aspect-ratio:4/3}.banner img{width:70%}}
 
 /* header (reinostudio / Berrics order: name, statement, meta) */
 .head{padding-block:clamp(48px,8vw,112px) clamp(32px,5vw,64px);display:flex;flex-direction:column;gap:28px}
@@ -106,9 +102,8 @@ h1{font-size:clamp(34px,5.2vw,76px);line-height:1.03;letter-spacing:-.045em;max-
 .first{padding-bottom:clamp(56px,8vw,112px)}
 .pfw .panel{aspect-ratio:auto;height:auto}
 .pfw .phone{width:min(100%,300px)}
-/* the hoodie, full width of the grid, between the product and the brand */
-.divider{padding-bottom:clamp(72px,10vw,140px)}
-.divider .ph{aspect-ratio:16/8}
+/* the hoodie, full width of the grid, first under Brand */
+.ph.wide{aspect-ratio:16/8}
 /* the teal band stays inside the grid, like every block on her site */
 .band{background:linear-gradient(var(--teal) 0 clamp(160px,22vw,320px),transparent 0);padding:clamp(32px,5vw,72px) clamp(24px,4vw,56px) 0}
 .g{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--cg);row-gap:clamp(56px,8vw,128px)}
@@ -159,12 +154,13 @@ h1{font-size:clamp(34px,5.2vw,76px);line-height:1.03;letter-spacing:-.045em;max-
 .mos{position:relative;background:var(--teal);padding-block:clamp(40px,6vw,80px) clamp(72px,8vw,104px);overflow:hidden}
 .ticker{display:flex;width:max-content;animation:slide 40s linear infinite;margin-bottom:clamp(28px,4vw,56px)}
 .ticker span{flex:none;color:#fff;font-size:clamp(56px,11vw,176px);font-weight:500;line-height:.9;letter-spacing:-.04em;text-transform:uppercase;white-space:nowrap;padding-right:.5em}
-.mos.paused .ticker,.mos:not(.play) .ticker{animation-play-state:paused}
+.mos.paused .ticker,.mos:not(.play) .ticker,.mos:hover .ticker{animation-play-state:paused}
+.mos{cursor:pointer}
 @media (prefers-reduced-motion:reduce){.ticker{animation:none}}
 .rows{display:flex;flex-direction:column;gap:clamp(10px,1.2vw,16px)}
 .track{display:flex;gap:clamp(10px,1.2vw,16px);width:max-content;animation:slide var(--s,70s) linear infinite}
 .track.rev{animation-direction:reverse}
-.mos.paused .track,.mos:not(.play) .track{animation-play-state:paused}
+.mos.paused .track,.mos:not(.play) .track,.mos:hover .track{animation-play-state:paused}
 @keyframes slide{to{transform:translateX(-50%)}}
 .tile{height:clamp(130px,17vw,250px);border-radius:6px;overflow:hidden;background:#fff;flex:none}
 .tile img{height:100%;width:100%;object-fit:cover;object-position:top}
@@ -218,10 +214,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     </dl>
   </div>
 
-  <div class="wrap first"><section class="mos" id="mosaic" aria-labelledby="h-mos">
+  <div class="wrap first"><section class="mos" id="mosaic" aria-labelledby="h-mos" tabindex="0" aria-describedby="mos-how">
     <h2 id="h-mos" class="vh">Sport Guardian, product and brand</h2>
-    <div class="ticker" aria-hidden="true"><span>Sport Guardian · Product and brand ·</span><span>Sport Guardian · Product and brand ·</span></div>
-    <button class="pause" type="button" aria-pressed="false" data-for="mosaic"><svg class="pa" aria-hidden="true"><use href="#i-pause"/></svg><svg class="pl" aria-hidden="true"><use href="#i-play"/></svg><span>Pause<span class="vh"> the moving title and mosaic</span></span></button>
+    <p id="mos-how" class="vh">The mosaic moves. Press Enter, or click it, to stop or start it.</p>
+    <div class="ticker" aria-hidden="true"><span>Sport Guardian</span><span>Sport Guardian</span><span>Sport Guardian</span><span>Sport Guardian</span></div>
     <div class="rows" role="img" aria-label="A moving mosaic of Sport Guardian screens and brand pieces: the campaign page, the shop, the club's campaigns, crowdfunding, the admin panel and statistics, the payment cards, the image picker, with the hoodie, cap, skateboards, bottle and poster.">
       <div class="track" style="--s:80s" data-tiles="screen-campaign:w|hoodie-768:w|screen-shop:w|poster-640:p|m-step-3:mb|m-step-4:mb|cap-768:w|screen-image-picker:w"></div>
       <div class="track rev" style="--s:110s" data-tiles="decks-768:w|screen-club-campaigns:w|bottle-640:p|screen-statistik:w|card-congrats:pl|sport-guardian-mark-800:w|screen-congrats-instagram:w|screen-crowdfunding:w|el-donors:pl|screen-admin-campaigns:w|card-payment-method:pl"></div>
@@ -273,13 +269,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </div>
   </section>
 
-  <div class="wrap divider rv"><div class="ph"><img src="assets/work/sport-guardian/hoodie-1536.webp" srcset="assets/work/sport-guardian/hoodie-768.webp 768w, assets/work/sport-guardian/hoodie-1536.webp 1536w" sizes="(max-width:720px) 100vw, 1220px" alt="The back of a teal hoodie with the white and green SG mark printed large on it, against a dark concrete wall." width="1536" height="1024" loading="lazy"></div></div>
-
   <section class="gal wrap" aria-labelledby="h-brand">
     <div class="sec-head"><h2 id="h-brand">Brand</h2><span>Mockups, not a real campaign</span></div>
     <div class="g">
 
-<div class="c1-12 banner rv"><img src="assets/work/sport-guardian/sg-lockup.webp" alt="Sport Guardian, give sports enjoyment: the slanted SG mark over the name, on the brand teal." width="1200" height="740" loading="lazy"></div>
+<figure class="c1-12 rv"><div class="ph wide"><img src="assets/work/sport-guardian/hoodie-1536.webp" srcset="assets/work/sport-guardian/hoodie-768.webp 768w, assets/work/sport-guardian/hoodie-1536.webp 1536w" sizes="(max-width:720px) 100vw, 1220px" alt="The back of a teal hoodie with the white and green SG mark printed large on it, against a dark concrete wall." width="1536" height="1024" loading="lazy"></div></figure>
 <p class="cap c1-5 rv"><b>The mark</b>A slanted S and G in Candal, cut into strips with a checkered trail: speed for the sport, and the G that carries the S for the guardian.</p>
 
 
@@ -360,10 +354,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     paused?stop():play();
   });
 })();
-// pause the mosaic
+// the mosaic stops while the pointer is over it (CSS); a click, a tap or Enter stops or starts it (WCAG 2.2.2)
 (function(){
-  var b=document.querySelector('.pause[data-for="mosaic"]'),m=document.getElementById('mosaic');
-  b.addEventListener('click',function(){var p=!m.classList.contains('paused');m.classList.toggle('paused',p);b.setAttribute('aria-pressed',p);b.querySelector('span').firstChild.nodeValue=p?'Play':'Pause'});
+  var m=document.getElementById('mosaic');
+  function t(){m.classList.toggle('paused')}
+  m.addEventListener('click',t);
+  m.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t()}});
 })();
 </script>
 </body>
