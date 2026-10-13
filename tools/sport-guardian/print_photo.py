@@ -57,10 +57,11 @@ def rot(im, a): return im.rotate(a, expand=True, resample=Image.BICUBIC)
 
 def cap():
     base = Image.open(os.path.join(P, 'cap-base.png'))
-    # the mark alone, centred in the stitched front panel and level with it (2026-10-13, her request): the panel runs
-    # from the left seam (x 400) to the right seam (x 1015) and from the top seam to the brim; the cap is turned a
-    # little, so the print follows the ripstop grid, about 1.5 degrees down to the right
-    art = rot(mark(), -1.5)
+    # the mark alone, centred in the stitched front panel (her request). Measured on the ripstop grid of the
+    # front panel: its horizontal lines are level (0 degrees) and its vertical lines lean about 6 degrees, the cap
+    # being turned a little. So the print is not rotated; it is sheared to follow the vertical lines.
+    m = mark(); k = 0.105  # tan 6 degrees
+    art = m.transform((m.width+int(k*m.height), m.height), Image.AFFINE, (1, k, -k*m.height, 0, 1, 0), resample=Image.BICUBIC)
     stamp(base, art, 707, 476, 290, strength=.95, blur=.5).save(os.path.join(P, 'cap.png'))
 
 def decks():
