@@ -37,8 +37,8 @@ def stack(*parts, gap=18, align='center'):
 
 def hoodie():
     base = Image.open(os.path.join(P, 'hoodie-base.png'))
-    art = stack(mark(), words('SPORT GUARDIAN', 150, WHITE), words('GIVE SPORTS ENJOYMENT', 84, GREEN, O), gap=60)
-    out = stamp(base, art, 770, 600, 400, strength=.93)
+    art = mark()  # the mark alone, no name or tagline (2026-10-13, her request)
+    out = stamp(base, art, 770, 560, 400, strength=.93)
     out.save(os.path.join(P, 'hoodie.png'))
 
 if __name__ == '__main__':
@@ -58,7 +58,8 @@ def rot(im, a): return im.rotate(a, expand=True, resample=Image.BICUBIC)
 def cap():
     base = Image.open(os.path.join(P, 'cap-base.png'))
     art = rot(mark(), 2)  # the mark alone, centred on the front panel (2026-10-13, her request)
-    stamp(base, art, 705, 450, 300, strength=.95, blur=.5).save(os.path.join(P, 'cap.png'))
+    # centred between the top seam and the brim
+    stamp(base, art, 712, 482, 300, strength=.95, blur=.5).save(os.path.join(P, 'cap.png'))
 
 def decks():
     base = Image.open(os.path.join(P, 'decks-base.png')).convert('RGB')
