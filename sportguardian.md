@@ -45,8 +45,8 @@ Order (2026-10-13, her request, last change): header → the moving mosaic → A
 5. **Brand** (mockups, not a real campaign):
    - the hoodie photo (the mark alone on its back) across the grid (1–12), 16:8, in place of the logo banner (her request, 2026-10-13); right under it the caption about the mark, no title, in two lines (64ch; her request);
    - caption "On the street" (1–4), the poster (5–8), the bottle photo (9–12), the small mark on her shirt set on the chest;
-   - caption "In the club" (1–3), the skateboards (4–12);
-   - the cap (1–8), the mark alone, centred on the front panel between the top seam and the brim.
+   - the skateboards (1–9), caption "In the club" on the right (10–12) (swapped, her request);
+   - the cap on the right edge (5–12, her request), the mark alone, centred on the front panel between the top seam and the brim.
    Photos: AI images generated with Figma AI (gpt-image-2.5, her Pro plan, 2026-10-13), not real people or places; the SG mark is printed on them from the vector master with [`tools/sport-guardian/print_photo.py`](tools/sport-guardian/print_photo.py) (it takes the light of the fabric or surface). The poster line "Back a young athlete near you." is placeholder copy written for the mockup.
 6. **Back to all work.**
 
