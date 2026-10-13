@@ -86,7 +86,7 @@ table = ('<table class="vh"><caption>Where the money comes from, in NOK</caption
 block = ('<!-- flow:start -->\n      <figure class="c1-12 rv flowfig"><div class="flowpanel">'
          '<div class="flowhead"><h3>Where the money comes from</h3><p>Who gives, how often, and what it adds up to, one campaign after 30 days.</p></div>'
          '<div class="flowscroll" tabindex="0" aria-label="Where the money comes from, chart">' + ''.join(svg) + '<div class="fltip" aria-hidden="true"></div></div>'
-         + table + '</div><figcaption>Every krone traced from the donor to the total: most of it comes as one-time gifts, and companies give over a third.</figcaption></figure>\n      <!-- flow:end -->')
+         + table + '</div><figcaption style="max-width:64ch">Every krone traced from the donor to the total: most of it comes as one-time gifts, and companies give over a third.</figcaption></figure>\n      <!-- flow:end -->')
 page = open(PAGE, encoding='utf-8').read()
 if '<!-- flow:start -->' in page:
     page = re.sub(r'<!-- flow:start -->.*?<!-- flow:end -->', lambda m: block, page, flags=re.S)
