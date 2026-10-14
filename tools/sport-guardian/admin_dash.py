@@ -21,8 +21,8 @@ head = club_logo(Image.open(os.path.join(HERE, 'figma', '1x', 'statistik.png')).
 club = head.crop((24, 8, 72, 56))  # the swim club's mark, kept for the campaign card
 # the product's own logo in the nav (her request, 2026-10-14): the SG mark (teal S, green G) in the round badge
 from mark import mark as sg_mark, TEAL as T_, GREEN as G_
-_m = sg_mark(SC=1, s_col=T_, g_col=G_, trail_col=T_); _w = 40*4; _m = _m.resize((_w, round(_m.height*_w/_m.width)), Image.LANCZOS)
-_b = Image.new('RGBA', (48*4, 48*4), (255, 255, 255, 255)); ImageDraw.Draw(_b).ellipse((0, 0, 48*4-1, 48*4-1), outline=(220, 228, 232, 255), width=4)
+_m = sg_mark(SC=1, s_col=T_, g_col=G_, trail_col=T_); _w = 46*4; _m = _m.resize((_w, round(_m.height*_w/_m.width)), Image.LANCZOS)
+_b = Image.new('RGBA', (48*4, 48*4), (255, 255, 255, 255)); # no round outline (her request)
 _b.paste(_m, ((48*4-_m.width)//2+2, (48*4-_m.height)//2), _m)
 _mask = Image.new('L', (48*4, 48*4), 0); ImageDraw.Draw(_mask).ellipse((0, 0, 48*4-1, 48*4-1), fill=255)
 head.paste(_b.resize((48, 48), Image.LANCZOS).convert('RGB'), (24, 8), _mask.resize((48, 48), Image.LANCZOS))
