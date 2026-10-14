@@ -18,7 +18,7 @@ UP, DEEP = (8, 150, 100), (14, 34, 37)
 nok = lambda v: f'{v:,}'.replace(',', ' ')
 
 head = club_logo(Image.open(os.path.join(HERE, 'figma', '1x', 'statistik.png')).convert('RGB')).crop((0, 0, W, 65))
-H = 1520
+H = 2400  # tall enough for every block; the image is cropped to the content below
 im = Image.new('RGB', (W*S, H*S), BG); im.paste(head.resize((W*S, 65*S), Image.LANCZOS), (0, 0))
 d = ImageDraw.Draw(im)
 f = lambda w, n: FONT(w, n*S)
@@ -85,10 +85,10 @@ marks = [(150000, 'Critical minimum', '150 000 · fees for 30 children', CRIT), 
 ly = by+bh+26
 for v, name, sub, mc in marks:
     x = bl+(br-bl)*v/GOAL; end = v == GOAL
-    d.line(P(x, by+bh+2, x, ly-8), fill=mc, width=2*S)
+    d.line(P(x, by+bh+2, x, ly+5), fill=mc, width=2*S)
     nf, sf = f('Bold', 12), f('Regular', 12); nw = d.textlength(name, font=nf)/S; sw = d.textlength('  '+sub, font=sf)/S
-    x0_ = x-nw-sw if end else x
-    text(x0_, ly, name, nf, mc if mc != DEEP else INK, 'lm'); text(x0_+nw, ly, '  '+sub, sf, MUT, 'lm')
+    x0_ = x-8-nw-sw if end else x+8
+    text(x0_, ly+5, name, nf, mc if mc != DEEP else INK, 'ls'); text(x0_+nw, ly+5, '  '+sub, sf, MUT, 'ls')
 
 # 2. the Sankey card: deep teal with a soft glow (as before), the new header with the date range and controls, the
 # chart as it was (its data, tooltip and legend, sankey.flow_body), and the column names along the bottom
@@ -127,8 +127,11 @@ y0 = y1+GAP_B; rows = [('Ingrid Solberg', 'One-time fee', 'Refund', '450', '21.0
                   ('Oliver Berg', 'Monthly', 'Active', '600', '17.09.2024', '17.11.2024'),
                   ('Frida Andersen', 'Quarterly', 'Paused', '900', '16.09.2024', '–'),
                   ('Nordlys Rør AS', 'One-time fee', 'Active', '25 000', '15.09.2024', '–'),
-                  ('Olivia Bjørn', 'Monthly', 'Active', '300', '15.09.2024', '15.11.2024')]
-rh = 64; y1 = y0+86+46+rh*len(rows)+12; card(X0, y0, X1, y1)
+                  ('Olivia Bjørn', 'Monthly', 'Active', '300', '15.09.2024', '15.11.2024'),
+                  ('Henrik Dahl', 'Quarterly', 'Active', '750', '15.09.2024', '15.12.2024'),
+                  ('Fjord Bakeri AS', 'One-time fee', 'Active', '10 000', '15.09.2024', '–'),
+                  ('Emma Lunde', 'Monthly', 'Active', '200', '15.09.2024', '15.11.2024')]
+rh = 64; FOOT = 68; y1 = y0+86+46+rh*len(rows)+FOOT; card(X0, y0, X1, y1)
 text(X0+30, y0+48, 'Donors', f('Bold', 19), INK, 'ls'); d.ellipse(P(X0+108, y0+33, X0+124, y0+49), outline=MUT, width=S); text(X0+116, y0+41, 'i', f('Bold', 10), MUT, 'mm')
 sx = X1-500; d.rounded_rectangle(P(sx, y0+22, sx+250, y0+60), 8*S, outline=LINE, width=S)
 d.ellipse(P(sx+14, y0+33, sx+28, y0+47), outline=MUT, width=2*S); d.line(P(sx+26, y0+45, sx+31, y0+50), fill=MUT, width=2*S)
@@ -157,6 +160,23 @@ for i, (nme, fq, st, amt, since, nxt) in enumerate(rows):
     text(cols[5][0], ym, since, f('Regular', 14), (70, 80, 84), 'lm'); text(cols[6][0], ym, nxt, f('Regular', 14), (70, 80, 84), 'lm')
     text(X1-70, ym, 'See details', f('SemiBold', 14), TEAL, 'rm')
     for dy in (-6, 0, 6): d.ellipse(P(X1-40, ym+dy-2, X1-36, ym+dy+2), fill=MUT)
+# pagination after ten rows
+fy = y1-FOOT/2; d.line(P(X0+20, y1-FOOT, X1-20, y1-FOOT), fill=LINE, width=S)
+text(X0+30, fy, 'Showing 1–10 of 1 200 donors', f('Regular', 13), MUT, 'lm')
+pages = ['‹', '1', '2', '3', '…', '120', '›']; bx = X1-30
+for t in reversed(pages):
+    w = 34; bx -= w
+    on = t == '1'
+    if t not in ('…',): d.rounded_rectangle(P(bx, fy-17, bx+w-4, fy+17), 8*S, fill=TEAL if on else CARD, outline=TEAL if on else LINE, width=S)
+    if t in ('‹', '›'):
+        cx_ = bx+(w-4)/2; dx = -3 if t == '‹' else 3
+        d.line([P(cx_-dx, fy-6), P(cx_+dx, fy), P(cx_-dx, fy+6)], fill=INK, width=2*S)
+    else:
+        text(bx+(w-4)/2, fy, t, f('SemiBold', 13), (255, 255, 255) if on else INK, 'mm')
+    bx -= 4
+pp = '10 per page'; ppw = d.textlength(pp, font=f('SemiBold', 13))/S+40; px_ = bx-24-ppw
+d.rounded_rectangle(P(px_, fy-17, px_+ppw, fy+17), 8*S, outline=LINE, width=S)
+text(px_+14, fy, pp, f('SemiBold', 13), INK, 'lm'); d.line([P(px_+ppw-22, fy-3), P(px_+ppw-17, fy+2), P(px_+ppw-12, fy-3)], fill=INK, width=2*S)
 H2 = y1+40
 im = im.crop((0, 0, W*S, H2*S)).resize((W, H2), Image.LANCZOS)
 im.save(os.path.join(OUT, 'screen-statistik.webp'), quality=88)
