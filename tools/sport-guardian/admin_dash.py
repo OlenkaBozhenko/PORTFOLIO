@@ -49,7 +49,7 @@ text(X0, 164, 'Swimming for everyone · Fjordby Svømmeklubb · started 15 Sep 2
 # 1. the progress card, after her reference: the numbers on top, a full-width bar of thin vertical lines, and marks
 # under it for the critical minimum, the amount that is enough, and the goal. Thresholds are made up for the mockup.
 GAP_B = 24
-y0, y1 = 200, 362; card(X0, y0, X1, y1)
+y0, y1 = 200, 380; card(X0, y0, X1, y1)
 GOAL, RAISED_ = 500000, 360000
 stats = [('RAISED', '360 000', 'NOK', '+18% this week'), ('GOAL', '500 000', 'NOK', ''), ('STILL NEEDED', '140 000', 'NOK', ''),
          ('DAYS LEFT', '60', 'of 90', ''), ('ENDS', '13 Dec', '2024', '')]
@@ -84,10 +84,10 @@ marks = [(150000, 'Critical minimum', '150 000 · fees for 30 children', CRIT), 
 ly = by+bh+26
 for v, name, sub, mc in marks:
     x = bl+(br-bl)*v/GOAL; end = v == GOAL
-    d.line(P(x, by+bh+2, x, ly+5), fill=mc, width=2*S)
-    # the secondary text first, then the name (her request: same type, only the order changes)
-    nf, sf = f('Bold', 12), f('Regular', 12); sw = d.textlength(sub+'  ', font=sf)/S
-    text(x+8, ly+5, sub+'  ', sf, MUT, 'ls'); text(x+8+sw, ly+5, name, nf, mc if mc != DEEP else INK, 'ls')
+    # two lines (her request): the secondary text first, the name under it; the line runs down to the name's baseline
+    nf, sf = f('Bold', 12), f('Regular', 12)
+    d.line(P(x, by+bh+2, x, ly+22), fill=mc, width=2*S)
+    text(x+8, ly+4, sub, sf, MUT, 'ls'); text(x+8, ly+22, name, nf, mc if mc != DEEP else INK, 'ls')
 
 # 2. the Sankey card: deep teal with a soft glow (as before), the new header with the date range and controls, the
 # chart as it was (its data, tooltip and legend, sankey.flow_body), and the column names along the bottom
