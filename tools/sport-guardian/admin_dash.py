@@ -80,15 +80,14 @@ for k in range(n):
 xr = bl+(br-bl)*RAISED_/GOAL; d.rectangle(P(xr-1, by-6, xr+1, by+bh+6), fill=DEEP)
 # marks under the bar
 CRIT = (176, 20, 74)
-marks = [(150000, 'Critical minimum', '150 000 · fees for 30 children', CRIT), (300000, 'Enough', '300 000 · the season is covered', UP),
-         (500000, 'Goal', '500 000 · gear and travel too', DEEP)]
+marks = [(150000, 'Critical minimum', '150 000 · fees for 30 children', CRIT), (300000, 'Enough', '300 000 · the season is covered', UP)]  # no Goal mark (her request, 2026-10-14)
 ly = by+bh+26
 for v, name, sub, mc in marks:
     x = bl+(br-bl)*v/GOAL; end = v == GOAL
     d.line(P(x, by+bh+2, x, ly+5), fill=mc, width=2*S)
-    nf, sf = f('Bold', 12), f('Regular', 12); nw = d.textlength(name, font=nf)/S; sw = d.textlength('  '+sub, font=sf)/S
-    x0_ = x-8-nw-sw if end else x+8
-    text(x0_, ly+5, name, nf, mc if mc != DEEP else INK, 'ls'); text(x0_+nw, ly+5, '  '+sub, sf, MUT, 'ls')
+    # the secondary text first, then the name (her request: same type, only the order changes)
+    nf, sf = f('Bold', 12), f('Regular', 12); sw = d.textlength(sub+'  ', font=sf)/S
+    text(x+8, ly+5, sub+'  ', sf, MUT, 'ls'); text(x+8+sw, ly+5, name, nf, mc if mc != DEEP else INK, 'ls')
 
 # 2. the Sankey card: deep teal with a soft glow (as before), the new header with the date range and controls, the
 # chart as it was (its data, tooltip and legend, sankey.flow_body), and the column names along the bottom
