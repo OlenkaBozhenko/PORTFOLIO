@@ -120,6 +120,10 @@ Her brief for `SportGuardian.html`: a first screen in a rectangle of the thumbna
 - One header card with the title on the left and the key numbers on the right; a Sankey card with a date range and controls in its header, labels as "name - share (amount)", a tooltip and the column names along the bottom; a table card with search, Filter and Import in its header and the column headers in the same card.
 - To borrow: **the Sport Guardian admin dashboard**, rebuilt in this order, keeping her dotted flows.
 
+**Choice cards (source not given)** · `26-choice-cards.png` (sent 2026-10-14)
+- A question with a short line, then a grid of cards: a line icon, a bold title and a one-line description; the chosen cards get a light outline.
+- To borrow: **the campaign builder's donation settings** on the Sport Guardian page, as cards with radio buttons or checkboxes.
+
 ---
 
 ## 3. Also saved in Notion, not yet annotated
