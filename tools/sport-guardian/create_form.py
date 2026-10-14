@@ -40,7 +40,7 @@ def i_once(x, y, c):
 def choice(x, y, w, h, icon, title, sub, on, kind):
     c = TEAL if on else (70, 82, 86)
     if on:
-        d.rounded_rectangle(P(x, y, x+w, y+h), 12*S, fill=SEL, outline=TEAL, width=2*S)
+        d.rounded_rectangle(P(x, y, x+w, y+h), 12*S, fill=SEL, outline=(150, 196, 199), width=S)  # a thin, soft outline (her request)
     else:
         d.rounded_rectangle(P(x, y, x+w, y+h), 12*S, fill=CARD, outline=LINE, width=S)
     icon(x+16, y+14, c)
