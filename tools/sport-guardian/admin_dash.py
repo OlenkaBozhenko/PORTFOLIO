@@ -119,7 +119,9 @@ d.rounded_rectangle(P(X1-330, y0+22, X1-116, y0+60), 8*S, fill=(24, 58, 62), out
 text(X1-223, y0+41, '15.09.2024 – 13.10.2024', f('SemiBold', 13), WK, 'mm')
 for cxx in (X1-88, X1-50):
     d.rounded_rectangle(P(cxx-17, y0+24, cxx+17, y0+58), 8*S, fill=(24, 58, 62), outline=(62, 100, 104), width=S)
-for dy in (-6, 0, 6): d.line(P(X1-96, y0+41+dy, X1-80, y0+41+dy), fill=WK, width=2*S)
+# the filter funnel, drawn like the one by Filter in the donor table (her request, 2026-10-17)
+fcx, fcy = X1-88, y0+41
+d.polygon([P(fcx-7, fcy-8), P(fcx+7, fcy-8), P(fcx+2, fcy), P(fcx+2, fcy+8), P(fcx-2, fcy+6), P(fcx-2, fcy)], outline=WK, width=2*S)
 for dy in (-7, 0, 7): d.ellipse(P(X1-52, y0+41+dy-2, X1-48, y0+41+dy+2), fill=WK)
 d.line(P(X0, y0+86, X1, y0+86), fill=(40, 74, 78), width=S)
 fb = flow_body(X1-X0, BODY); fb = fb.resize(((X1-X0)*S, BODY*S), Image.LANCZOS)
