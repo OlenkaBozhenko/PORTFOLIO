@@ -294,25 +294,26 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 /* 10. the customer journey map: personas, then the journey of the chosen one (made-up data) */
 .cjm-note{display:flex;gap:12px;align-items:flex-start;background:#FFF6DB;border-radius:0;padding:14px 18px;font-size:15px;line-height:1.5;max-width:80ch}
 .cjm-note b{flex:none;width:22px;height:22px;border-radius:50%;background:var(--r);color:#fff;display:grid;place-items:center;font-size:13px;margin-top:1px}
-.personas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--cg)}
-.pcard{display:flex;flex-direction:column;gap:14px;padding:20px;border-radius:0;background:var(--well);min-width:0}
 .tabs{display:flex;gap:6px;padding:6px;background:var(--well);border-radius:999px;overflow-x:auto;scrollbar-width:thin}
 .tab{all:unset;box-sizing:border-box;cursor:pointer;flex:1 0 auto;display:flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:8px 18px;border-radius:999px;font-size:16px;font-weight:500;white-space:nowrap;color:var(--muted);transition:background .2s,color .2s}
 .tab i{width:10px;height:10px;border-radius:50%;flex:none}
 .tab:hover{color:var(--ink)}
 .tab:focus-visible{outline:2px solid var(--label);outline-offset:2px}
 .tab[aria-selected="true"]{background:#fff;color:var(--ink);box-shadow:0 6px 18px -10px rgba(0,0,0,.3)}
-.pcard .tn{margin:0;display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:20px;letter-spacing:-.02em;font-weight:500}
-.pcard .tn i{width:12px;height:12px;border-radius:50%;flex:none}
+/* the chosen persona, as text under the tabs */
+.pdesc{padding:clamp(20px,2.4vw,32px) 10px clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:14px}
+.pdesc .ph1{display:flex;align-items:center;gap:12px}
+.pdesc h4{margin:0;font-size:clamp(24px,2.4vw,32px);font-weight:500;letter-spacing:-.02em}
+.pdesc .pstory{max-width:70ch;font-size:clamp(17px,1.5vw,19px)}
+@media (max-width:900px){.pdesc dl{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.pdesc dl{grid-template-columns:1fr}}
 .intent{align-self:flex-start;font:600 12px/1 var(--ui);border-radius:999px;padding:5px 10px;background:#FEE2E2;color:#B91C1C}
 .intent.lt{background:#EDE9FE;color:#5B21B6}
-.pcard dl{margin:0;display:flex;flex-direction:column;gap:10px}
-.pcard dt{font-size:12px;color:var(--muted)}
-.pcard dd{margin:2px 0 0;font-size:14px;line-height:1.45}
-.pcard .churn{border-top:1px dashed #D4D4D4;padding-top:10px}
-.pcard .churn dt{color:#B91C1C}
-@media (max-width:1000px){.personas{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:560px){.personas{grid-template-columns:1fr}}
+.pdesc dl{margin:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px var(--cg);border-top:1px solid var(--rule);padding-top:18px}
+.pdesc dt{font-size:12px;color:var(--muted)}
+.pdesc dd{margin:2px 0 0;font-size:14px;line-height:1.45}
+.pdesc .churn{}
+.pdesc .churn dt{color:#B91C1C}
 /* the journey map without a panel, after the School page: stage pills joined by a dotted line, row labels in
    capitals, soft tinted cells (her request, 2026-10-20) */
 .jwrap{overflow-x:auto;margin-inline:-10px}
@@ -621,8 +622,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <h3 class="big c1-12" id="cjm-big">Who <span class="s">we design</span> for</h3>
       <div class="c1-12 rv" style="display:flex;flex-direction:column;gap:var(--cg)">
         <p style="font-size:clamp(17px,1.5vw,19px);max-width:62ch">Four personas from interviews and cancel reasons, and the journey each one takes. Pick a persona to see its map.</p>
-        <p class="cjm-note"><b aria-hidden="true">!</b><span>All names, quotes, sizes and amounts here are made up, and the text is rewritten. It shows the method, not Warmy's data.</span></p>
-        <div class="personas" id="personas"></div>
         <h4 class="vh" id="jm-h">Journey map by persona</h4>
         <div class="tabs" role="tablist" aria-labelledby="jm-h" id="tabs"></div>
         <div class="jwrap" id="jpanel" role="tabpanel" tabindex="0"></div>
@@ -790,12 +789,7 @@ document.querySelectorAll('.big').forEach(function(h){
        ['Keep the cost predictable as they grow.','"Every new client raises the bill."','Price per mailbox grows faster than their fees.','m|May build in-house.','Volume plans for agencies and a client-billing export.']]}];
   var tabs=document.getElementById('tabs'),panel=document.getElementById('jpanel'),cur=0,RISK={h:'High risk',m:'Medium risk',l:'Low risk'};
   function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
-  var pc=document.getElementById('personas');
   P.forEach(function(p,i){
-    var c=document.createElement('article');c.className='pcard';
-    c.innerHTML='<h4 class="tn">'+esc(p.n)+'<i style="background:'+p.c+'" aria-hidden="true"></i></h4><span class="intent'+(p.lt?' lt':'')+'">'+(p.lt?'Long-term':'One-off')+'</span>'+
-      '<dl><div><dt>Goal</dt><dd>'+esc(p.goal)+'</dd></div><div><dt>Who</dt><dd>'+esc(p.role)+'</dd></div><div><dt>Size</dt><dd>'+esc(p.size)+'</dd></div><div><dt>User story</dt><dd>'+esc(p.story)+'</dd></div><div><dt>Paid on average (made up)</dt><dd>'+p.paid+'</dd></div><div class="churn"><dt>Why they cancel</dt><dd>'+esc(p.churn)+'</dd></div></dl>';
-    pc.appendChild(c);
     var b=document.createElement('button');b.type='button';b.className='tab';b.id='t'+i;b.setAttribute('role','tab');b.setAttribute('aria-controls','jpanel');
     b.innerHTML='<i style="background:'+p.c+'" aria-hidden="true"></i>'+esc(p.n);
     b.addEventListener('click',function(){show(i,false)});
@@ -807,7 +801,10 @@ document.querySelectorAll('.big').forEach(function(h){
     tabs.querySelectorAll('.tab').forEach(function(b,k){b.setAttribute('aria-selected',k===i);b.tabIndex=k===i?0:-1});
     if(focus)tabs.children[i].focus();
     panel.setAttribute('aria-labelledby','t'+i);
-    var h='<table class="jmap"><caption><b>'+esc(p.n)+'</b>: the journey, stage by stage</caption><colgroup><col class="rh"><col><col><col><col></colgroup><thead><tr><td class="e"></td>'+ST.map(function(s){return '<th scope="col"><div><span>'+s[0]+'</span></div><small>'+s[1]+'</small></th>'}).join('')+'</tr></thead><tbody>';
+    var f=function(l,v,c){return '<div'+(c?' class="'+c+'"':'')+'><dt>'+l+'</dt><dd>'+v+'</dd></div>'};
+    var h='<div class="pdesc"><div class="ph1"><h4>'+esc(p.n)+'</h4><span class="intent'+(p.lt?' lt':'')+'">'+(p.lt?'Long-term':'One-off')+'</span></div>'+
+      '<p class="pstory">'+esc(p.story)+'</p><dl>'+f('Goal',esc(p.goal))+f('Who',esc(p.role))+f('Size',esc(p.size))+f('Paid on average (made up)',p.paid)+f('Why they cancel',esc(p.churn),'churn')+'</dl></div>'+
+      '<table class="jmap"><caption class="vh">'+esc(p.n)+': the journey, stage by stage</caption><colgroup><col class="rh"><col><col><col><col></colgroup><thead><tr><td class="e"></td>'+ST.map(function(s){return '<th scope="col"><div><span>'+s[0]+'</span></div></th>'}).join('')+'</tr></thead><tbody>';
     RW.forEach(function(r,ri){h+='<tr class="'+r[2]+'"><th scope="row"><i style="background:'+r[1]+'"></i>'+r[0]+'</th>'+p.j.map(function(st){var v=st[ri];
       if(ri===3){var q=v.split('|');return '<td><span class="risk '+q[0]+'">'+RISK[q[0]]+'</span><br>'+esc(q[1])+'</td>'}return '<td>'+esc(v)+'</td>'}).join('')+'</tr>'});
     panel.innerHTML=h+'</tbody></table>';
