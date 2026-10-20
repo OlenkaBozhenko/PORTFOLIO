@@ -22,7 +22,7 @@
 
 ## Where the work stands (2026-09-25)
 
-**Built:** the landing page [`Olena Bozhenko.html`](Olena%20Bozhenko.html) (source [`site.md`](site.md)); a black-and-white one-page resume PDF ([`resume.md`](resume.md) → [`resume.html`](resume.html) → `assets/Olena-Bozhenko-Resume.pdf`); the market research; the inspiration board. Open the landing locally at `file:///C:/Users/Olena/PORTFOLIO/Olena%20Bozhenko.html#top`.
+**Built:** the Warmy case page [`Warmy.html`](Warmy.html) (source [`warmy.md`](warmy.md), 2026-10-20); the landing page [`Olena Bozhenko.html`](Olena%20Bozhenko.html) (source [`site.md`](site.md)); a black-and-white one-page resume PDF ([`resume.md`](resume.md) → [`resume.html`](resume.html) → `assets/Olena-Bozhenko-Resume.pdf`); the market research; the inspiration board. Open the landing locally at `file:///C:/Users/Olena/PORTFOLIO/Olena%20Bozhenko.html#top`.
 
 **Rules she has set:**
 - The site is white on every page (inspiration D1). The resume is black and white only.

@@ -124,6 +124,18 @@ Her brief for `SportGuardian.html`: a first screen in a rectangle of the thumbna
 - A question with a short line, then a grid of cards: a line icon, a bold title and a one-line description; the chosen cards get a light outline.
 - To borrow: **the campaign builder's donation settings** on the Sport Guardian page, as cards with radio buttons or checkboxes.
 
+
+### 2.10 Warmy case page (added 2026-10-20)
+Her brief for `Warmy.html`: the product's complexity and her part in it (features, user flows, dynamic prototypes, A/B test hypotheses, user interviews, with the rules for writing hypotheses and running interviews), a customer journey map with made-up data, a first screen after her own AI loading frame, and the block titles, feature presentation and animations of Ramos. The public warmy.io design is not a reference, only its information.
+
+**Her Warmy loading frame** (Figma My-projects-new, 207:95960) · `31-warmy-ai-loading.png`
+- A warm cream ground with diagonal streaks of yellow, orange and red light, the logo's three bars in the middle and an AI line in braces with a caret and small sparkles.
+- To borrow: **the first screen**, with "Warmy magic is on the way" typed in large capitals across the whole background.
+
+**[Ramos (Outcrowd), Analytics](https://ramos-app.webflow.io/#explore)** · `27-ramos-headline-chips.png`, `28-ramos-pill-marquee.png`, `29-ramos-feature-accordion.png`, `30-ramos-feature-cards.png` (sent 2026-10-20)
+- Very large headlines with some words in grey and round icon chips set inline, overlapping in pairs; a line that ends in a yellow pill with words sliding inside it; a feature list of white rounded rows with round + buttons next to a laptop and a phone; feature cards on a pale gridded panel with stacked UI pieces, title and text centred under them.
+- To borrow: **the block titles**, **the pill marquee**, **the feature accordion with devices** and **the feature cards**, in Warmy's yellow, orange and red; the words rising into place, the counters and the sliding text as the motion.
+
 ---
 
 ## 3. Also saved in Notion, not yet annotated
