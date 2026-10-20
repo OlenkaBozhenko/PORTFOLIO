@@ -50,11 +50,12 @@ Motion (WCAG 2.2.2): it plays only on screen, stops while the pointer is over it
 
 ### 4. Product (accordion and devices, Ramos)
 Title: **Turning signals into next steps.** Five items, the first open; opening one shows its screens in a browser frame and a phone screen beside the list (crossfade). The frames are the ones of the Sport Guardian page (her request, 2026-10-20: the laptop and phone bezels were too heavy): a light browser bar with three grey dots and app.warmy.io, 10 px corners and a soft shadow; the phone as a rounded screen with a soft shadow, no bezel.
-1. **Sender tracker:** What you send outside Warmy, from any tool: opens, clicks, bounces, spam and unsubscribes in one chart, a warning line when campaign mail falls under the at-risk mark, and the biggest risk named by provider. (`tracker-desktop`, `tracker-mobile`)
-2. **Template score:** A score out of 100 before the email reaches a real inbox, with failed, warning and passed checks by section, and suggestions ranked High and Medium. (`template-desktop`, `template-mobile`)
-3. **Spintax check:** For templates that change in every send: Warmy scores one of 18 variations and asks to preview the rest, so nobody trusts a score that covers one version. (`spintax-desktop`, `template-mobile`)
-4. **Adeline AI:** The AI agent answers in plain words, with three starting questions, a call with an advisor or a human chat one tap away, and a reminder that the AI can be wrong. (`adeline-desktop`, `adeline-mobile`)
-5. **Voice and thinking states:** Asking by voice on the phone, and a Thinking state on desktop, so the wait reads as work, not as a frozen screen. (`adeline-thinking`, `chat-mobile`)
+Order and names (her request, 2026-10-20): Sender tracker first, then the two AI tools, each with an orange "AI tool" tag beside its name, then the rest.
+1. **Sender tracker:** What you send outside Warmy, from any tool: opens, clicks, bounces, spam and unsubscribes in one chart, a warning when campaign mail falls under the at-risk line, and the biggest risk named by provider. (`tracker-desktop`, `tracker-mobile`)
+2. **Adeline AI** [AI tool]: The AI agent answers in plain words, with three starting questions, a call with an advisor or a human chat one tap away, and a reminder that the AI can be wrong. (`adeline-desktop`, `adeline-mobile`)
+3. **Template checker** [AI tool] (was "Template score"): AI reads the email before a real inbox does: a score out of 100, failed, warning and passed checks by section, and fixes it writes itself, ranked High and Medium. (`template-desktop`, `template-mobile`)
+4. **Spintax check:** For templates that change in every send: Warmy scores one of 18 variations and asks to preview the rest, so nobody trusts a score that covers one version. (`spintax-desktop`, `template-mobile`)
+5. **Voice and thinking states:** Asking by voice on the phone, and a Thinking state on desktop, so the wait reads as work and not as a frozen screen. (`adeline-thinking`, `chat-mobile`)
 Accessibility: the list is real buttons with aria-expanded; the screens change with the open item and carry alt text; keyboard and screen readers get the same content.
 
 ### 5. Feature cards (gridded panels with stacked UI pieces, Ramos)
@@ -65,7 +66,7 @@ Two cards side by side, each a pale gridded panel with two overlapping UI pieces
 ### 6. My part (her role)
 Headline (Ramos): I designed [pen chip] the features, tested [flask chip] the ideas and asked [chat chip] the people who use them
 Five numbered items:
-- 01 **Features.** From the problem to the shipped screen: Sender tracker, Template score with spintax, Adeline AI, the custom plan checkout, on desktop and mobile.
+- 01 **Features.** From the problem to the shipped screen: Sender tracker, the AI tools Adeline and Template checker with spintax, and the custom plan checkout, on desktop and mobile.
 - 02 **User flows.** Every path mapped before a screen is drawn, with the empty, loading, error and limit states, so developers build the edges too.
 - 03 **Dynamic prototypes.** Clickable prototypes with real states (typing, thinking, voice, scores filling in) to test with users and to show developers how a screen moves.
 - 04 **A/B test hypotheses.** Written before anything ships, with one change, one metric and a decision rule.
