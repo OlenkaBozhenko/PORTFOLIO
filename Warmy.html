@@ -69,7 +69,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 @media (max-width:720px){.magic{min-height:auto;aspect-ratio:4/5}}
 .loader{position:relative;display:flex;flex-direction:column;align-items:center;gap:clamp(40px,6vw,88px);padding:24px;text-align:center;transform:translateY(-4%)}
 .logo{display:block;width:clamp(56px,6vw,88px);height:auto}
-.play .logo{animation:breathe 1.6s ease-in-out infinite}
+.play:not(.done) .logo{animation:breathe 1.6s ease-in-out infinite}
 @keyframes breathe{50%{transform:scale(.9);opacity:.8}}
 /* the line reserves its full width with an invisible copy, so the caret sits right after the typed letters */
 .tip{position:relative;margin:0;display:inline-grid;font:600 clamp(30px,4.6vw,64px)/1.1 var(--ui);letter-spacing:-.03em;color:var(--w-ink);text-align:left}
@@ -81,16 +81,25 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 /* the AI glow under the line: a soft orange and pink light that breathes while it types */
 .tip::before{content:"";position:absolute;left:-12%;right:-12%;top:-55%;bottom:-75%;z-index:-1;border-radius:50%;
   background:radial-gradient(closest-side,rgba(255,118,88,.30),rgba(255,165,58,.20) 45%,rgba(255,209,92,.10) 70%,transparent);filter:blur(16px)}
-.play .tip::before{animation:glow 2.6s ease-in-out infinite}
+.play:not(.done) .tip::before{animation:glow 2.6s ease-in-out infinite}
 @keyframes glow{50%{opacity:.6;transform:scale(1.06)}}
 .magic .loader{isolation:isolate}
 /* the caret carries the sparkles, so they fly with it as it types */
 .tip .cw{position:relative;display:inline-block}
 .spark{position:absolute;left:.1em;top:.95em;width:1.15em;height:1.35em;color:var(--brand);pointer-events:none}
-.play .spark{animation:twinkle 1.8s ease-in-out infinite}
+.play:not(.done) .spark{animation:twinkle 1.8s ease-in-out infinite}
+/* the trail: tiny stars shed by the caret as it types; they drift down and fade */
+.trail{position:absolute;inset:0;pointer-events:none;overflow:visible}
+.pt{position:absolute;width:var(--s);height:var(--s);margin:calc(var(--s)/-2) 0 0 calc(var(--s)/-2);color:var(--c);opacity:0;animation:shed 1.1s ease-out forwards}
+.pt svg{display:block;width:100%;height:100%}
+@keyframes shed{0%{opacity:0;transform:translate(0,0) scale(.4) rotate(0)}15%{opacity:.95}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(1) rotate(var(--r))}}
+/* when the line is done, everything stops: the caret goes, the sparkles scatter and fade, the glow and the logo stand still */
+.done .tip .cur{animation:none;opacity:0;transition:opacity .4s}
+.done .spark{animation:scatter 1.2s ease-out forwards}
+@keyframes scatter{to{opacity:0;transform:translate(.6em,.5em) scale(1.6);filter:blur(2px)}}
 @keyframes twinkle{50%{opacity:.4;transform:translateY(6px) scale(.85)}}
 .magic.paused .logo,.magic.paused .spark,.magic.paused .tip::before,.magic:hover .logo,.magic:hover .tip::before{animation-play-state:paused}
-@media (prefers-reduced-motion:reduce){.logo,.spark,.tip .cur,.tip::before{animation:none !important}.tip .cur{display:none}}
+@media (prefers-reduced-motion:reduce){.logo,.spark,.tip .cur,.tip::before{animation:none !important}.tip .cur,.trail{display:none}}
 
 /* About / Problem / Solution */
 .story{display:flex;flex-direction:column;gap:clamp(32px,4vw,56px);padding-block:clamp(24px,4vw,48px) clamp(72px,10vw,140px)}
@@ -392,7 +401,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <p id="magic-how" class="vh">The screen types and moves. Press Enter, or click it, to stop or start it.</p>
     <div class="loader">
       <img class="logo" src="assets/work/warmy/warmy-logo-icon.svg" width="48" height="48" alt="">
-      <p class="tip" aria-hidden="true"><span class="ghost">Warmy magic is on the way.....</span><span><span class="tt">Warmy magic is on the way</span><span class="dots">.....</span><span class="cw"><span class="cur"></span><svg class="spark" viewBox="0 0 34 40" aria-hidden="true"><path d="M22 2l1.6 5.4L29 9l-5.4 1.6L22 16l-1.6-5.4L15 9l5.4-1.6z" fill="currentColor"/><path d="M10 18l1 3 3 1-3 1-1 3-1-3-3-1 3-1z" fill="currentColor" opacity=".7"/><circle cx="18" cy="26" r="1.6" fill="currentColor"/><circle cx="7" cy="36" r="1.2" fill="currentColor" opacity=".6"/></svg></span></span></p>
+      <p class="tip" aria-hidden="true"><span class="trail"></span><span class="ghost">Warmy magic is on the way.....</span><span><span class="tt">Warmy magic is on the way</span><span class="dots">.....</span><span class="cw"><span class="cur"></span><svg class="spark" viewBox="0 0 34 40" aria-hidden="true"><path d="M22 2l1.6 5.4L29 9l-5.4 1.6L22 16l-1.6-5.4L15 9l5.4-1.6z" fill="currentColor"/><path d="M10 18l1 3 3 1-3 1-1 3-1-3-3-1 3-1z" fill="currentColor" opacity=".7"/><circle cx="18" cy="26" r="1.6" fill="currentColor"/><circle cx="7" cy="36" r="1.2" fill="currentColor" opacity=".6"/></svg></span></span></p>
 
     </div>
   </section></div>
@@ -663,20 +672,33 @@ document.querySelectorAll('.big').forEach(function(h){
   els.forEach(function(e){io.observe(e)});
 })();
 
-// 1. "Warmy magic is on the way": the line types letter by letter with a caret, then the dots run one by one
+// 1. "Warmy magic is on the way": the line types letter by letter with a caret that sheds a trail of tiny stars,
+// the five dots appear once, then it stops: the caret goes and the sparkles scatter (her request: no loop at the end)
 (function(){
-  var m=document.getElementById('magic'),tt=m.querySelector('.tt'),dots=m.querySelector('.dots');
+  var m=document.getElementById('magic'),tip=m.querySelector('.tip'),tt=m.querySelector('.tt'),dots=m.querySelector('.dots'),cw=m.querySelector('.cw'),trail=m.querySelector('.trail');
   var full=tt.textContent;
   if(RM)return;
-  var tc=0,dc=0,timer=0,inView=false;
+  var tc=0,dc=0,timer=0,inView=false,done=false;
+  var STAR='<svg viewBox="0 0 10 10"><path d="M5 0l1.2 3.8L10 5 6.2 6.2 5 10 3.8 6.2 0 5l3.8-1.2z" fill="currentColor"/></svg>';
+  var COL=['#FF7658','#FFA53A','#FFD15C','#FF453A'];
+  function shed(n){
+    var x=cw.offsetLeft,y=cw.offsetTop+cw.offsetHeight*.9;
+    for(var k=0;k<n;k++){
+      var e=document.createElement('span');e.className='pt';e.innerHTML=STAR;
+      var sz=3+Math.random()*7;
+      e.style.cssText='left:'+(x-Math.random()*8)+'px;top:'+(y+Math.random()*10)+'px;--s:'+sz+'px;--c:'+COL[(Math.random()*4)|0]+
+        ';--dx:'+(-10-Math.random()*36)+'px;--dy:'+(10+Math.random()*34)+'px;--r:'+((Math.random()*180)|0)+'deg';
+      trail.appendChild(e);(function(el){setTimeout(function(){el.remove()},1300)})(e);
+    }
+  }
   function paused(){return m.classList.contains('paused')||m.matches(':hover')||!inView}
   function tick(){
-    timer=0;if(paused())return;
-    if(tc<full.length){tc++;tt.textContent=full.slice(0,tc);timer=setTimeout(tick,22);return}
-    dc=(dc+1)%6;dots.textContent='.'.repeat(dc);
-    timer=setTimeout(tick,dc===5?420:130);
+    timer=0;if(done||paused())return;
+    if(tc<full.length){tc++;tt.textContent=full.slice(0,tc);if(tc%2)shed(1);timer=setTimeout(tick,22);return}
+    if(dc<5){dc++;dots.textContent='.'.repeat(dc);shed(1);timer=setTimeout(tick,130);return}
+    done=true;shed(6);m.classList.add('done');
   }
-  function play(){if(!timer&&!paused())timer=setTimeout(tick,60)}
+  function play(){if(!timer&&!done&&!paused())timer=setTimeout(tick,60)}
   tt.textContent='';dots.textContent='';
   onScreen(m,function(v){inView=v;m.classList.toggle('play',v);v?play():(clearTimeout(timer),timer=0)});
   m.addEventListener('mouseleave',play);
