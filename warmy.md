@@ -73,7 +73,7 @@ Five numbered items:
 - 02 **User flows.** Every path mapped before a screen is drawn, with the empty, loading, error and limit states, so developers build the edges too.
 - 03 **Dynamic prototypes.** Clickable prototypes with real states (typing, thinking, voice, scores filling in) to test with users and to show developers how a screen moves.
 - 04 **A/B test hypotheses.** Written before anything ships, with one change, one metric and a decision rule.
-- 05 **User interviews.** Planned, run and synthesised into the journey map below.
+- 05 **User interviews.** Planned, run and synthesised into personas and a customer journey map.
 
 ### 7. Dynamic prototype (live, in a phone)
 A phone playing the Adeline flow in HTML, as her prototypes do, in the thin outline of the Sport Guardian phone (1.5 px, no heavy bezel): the start screen with three questions; a tap on "Why are my emails landing in spam?"; the question as a bubble; Thinking…; the answer typing in: "Your spam rate at Outlook rose to 14% this week. Two things stand out: your DMARC policy is set to none, and the template Spring offer has three links. Fix DMARC first, then I will check the template." with two buttons, Open DMARC check and Analyze template. Then it starts again. Same motion rules as the first screen. Caption: **A prototype, not a picture.** Prototypes in Warmy carry the real states: the typing, the wait, the answer, the next step. Users react to how it behaves, and developers see the timing they need to build. (The figures in the answer are made up.)
@@ -100,7 +100,9 @@ Three columns, Before, During, After:
 - **After:** Write a summary the same day, while it is fresh. Tag the notes and group them on an affinity map across interviews. Count how many people said a thing before calling it a pattern. Turn the patterns into journey map changes, A/B hypotheses and backlog items, and share them with the team with the quotes attached.
 Sources: Steve Portigal, *Interviewing Users* (2nd ed., 2023); Rob Fitzpatrick, *The Mom Test* (2013); Nielsen Norman Group, user interviews.
 
-### 10. Customer Journey Map (made-up data)
+### 10. Customer Journey Map (taken off the page, kept)
+**Not on the page since 2026-10-20 (her request); kept to put back when she asks.** The block (HTML, CSS and script) is parked in [`tools/warmy/parked/cjm.html`](tools/warmy/parked/cjm.html), with where each part goes; the last page version with it is git commit `f00af7c`. The content below is still the source for it.
+ (made-up data)
 After her CJM artifact "Who We Build Warmy For" (claude.ai, 2026-10): personas, then a journey map per persona with the stages Attraction, Activation, Involvement, Retention and the rows Goal, Thoughts and feelings, Problems, Drop-off, Solution. All names, quotes, sizes and amounts here are made up and the text is rewritten; it shows the method, not Warmy's data. A note says so on the page.
 Layout (her requests, 2026-10-20): no persona cards and no "made up" note box; the tabs sit right under the title, each with the persona's intent tag (One-off or Long-term) beside its name, and the chosen persona is described as text under them (the user story, then Goal, Who, Size, Paid on average (made up), Why they cancel in one row), followed by its journey map; the stages carry no hint line. No panel behind the journey map, after the School page: the four stages as pills in her orange gradient joined by a dotted line, row labels in capitals, soft grey cells with 18 px corners, the drop-off row tinted.
 Title: **Who we design for.** (No intro line under it, her request.)

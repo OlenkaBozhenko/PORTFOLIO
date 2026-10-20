@@ -1,0 +1,124 @@
+<!-- Warmy CJM, taken off Warmy.html on 2026-10-20 (her request); kept to put back on her word.
+     Put back: the HTML before "<!-- 11. Campaign visuals -->", the CSS before "/* 11. the closing mosaic",
+     the script before "// 11. the mosaic". The last page version with it: git commit f00af7c. -->
+
+<!-- HTML -->
+  <!-- 10. Customer journey map -->
+  <section class="gal wrap" aria-labelledby="h-cjm">
+    <div class="sec-head"><h2 id="h-cjm">Customer journey map</h2><span>What the interviews became</span></div>
+    <div class="g">
+      <h3 class="big c1-12" id="cjm-big">Who <span class="s">we design</span> for</h3>
+      <div class="c1-12 rv" style="display:flex;flex-direction:column;gap:var(--cg)">
+        <h4 class="vh" id="jm-h">Journey map by persona</h4>
+        <div class="tabs" role="tablist" aria-labelledby="jm-h" id="tabs"></div>
+        <div class="jwrap" id="jpanel" role="tabpanel" tabindex="0"></div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- CSS -->
+<style>
+/* 10. the customer journey map: personas, then the journey of the chosen one (made-up data) */
+.cjm-note{display:flex;gap:12px;align-items:flex-start;background:#FFF6DB;border-radius:0;padding:14px 18px;font-size:15px;line-height:1.5;max-width:80ch}
+.cjm-note b{flex:none;width:22px;height:22px;border-radius:50%;background:var(--r);color:#fff;display:grid;place-items:center;font-size:13px;margin-top:1px}
+.tabs{display:flex;gap:6px;padding:6px;background:var(--well);border-radius:999px;overflow-x:auto;scrollbar-width:thin}
+.tab{all:unset;box-sizing:border-box;cursor:pointer;flex:1 0 auto;display:flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:8px 18px;border-radius:999px;font-size:16px;font-weight:500;white-space:nowrap;color:var(--muted);transition:background .2s,color .2s}
+.tab i{width:10px;height:10px;border-radius:50%;flex:none}
+.tab:hover{color:var(--ink)}
+.tab:focus-visible{outline:2px solid var(--label);outline-offset:2px}
+.tab[aria-selected="true"]{background:#fff;color:var(--ink);box-shadow:0 6px 18px -10px rgba(0,0,0,.3)}
+/* the chosen persona, as text under the tabs */
+.pdesc{padding:clamp(20px,2.4vw,32px) 10px clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:14px}
+.pdesc .pstory{max-width:70ch;font-size:clamp(17px,1.5vw,19px)}
+@media (max-width:900px){.pdesc dl{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.pdesc dl{grid-template-columns:1fr}}
+.tab .intent{align-self:center}
+/* the persona tabs sit right under the title */
+#cjm-big+div{margin-top:calc(-1*clamp(28px,5vw,80px))}
+.intent{align-self:flex-start;font:600 12px/1 var(--ui);border-radius:999px;padding:5px 10px;background:#FEE2E2;color:#B91C1C}
+.intent.lt{background:#EDE9FE;color:#5B21B6}
+.pdesc dl{margin:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px var(--cg);border-top:1px solid var(--rule);padding-top:18px}
+.pdesc dt{font-size:12px;color:var(--muted)}
+.pdesc dd{margin:2px 0 0;font-size:14px;line-height:1.45}
+.pdesc .churn{}
+.pdesc .churn dt{color:#B91C1C}
+/* the journey map without a panel, after the School page: stage pills joined by a dotted line, row labels in
+   capitals, soft tinted cells (her request, 2026-10-20) */
+.jwrap{overflow-x:auto;margin-inline:-10px}
+.jwrap:focus-visible{outline-offset:6px}
+.jmap{width:100%;min-width:900px;border-collapse:separate;border-spacing:10px 12px;font-size:14px;line-height:1.45;table-layout:fixed}
+.jmap caption{text-align:left;padding:0 10px 6px;font-size:15px;color:var(--muted)}
+.jmap caption b{color:var(--ink);font-weight:500}
+.jmap col.rh{width:170px}
+.jmap th{text-align:left;font-weight:500;vertical-align:top}
+.jmap thead th{padding:0}
+.jmap thead th>div{display:flex;align-items:center;gap:10px}
+.jmap thead th:not(:last-child)>div::after{content:"";flex:1;min-width:20px;height:8px;margin-right:-10px;background:radial-gradient(circle,var(--accent-ink) 2.5px,transparent 3px) 0 50%/16px 8px repeat-x}
+.jmap thead th span{display:inline-flex;align-items:center;border-radius:99px;padding:11px 22px;background:var(--accent);color:var(--ink);font-weight:600;font-size:13px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.jmap thead th small{display:block;font-weight:400;color:var(--muted);font-size:12.5px;margin-top:10px;padding-left:2px}
+.jmap tbody th{font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:14px 8px 0 0}
+.jmap tbody th i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;vertical-align:1px}
+.jmap td{background:var(--well);border-radius:18px;padding:14px 16px;vertical-align:top;height:88px}
+.jmap td.e{background:none;height:auto}
+.jmap tr.pr td{color:#9F1239}
+.jmap tr.dr td{background:#FFF1EC}
+.jmap tr.so td{color:#166534}
+.jmap tr.th td{font-style:italic;color:#44403C}
+.risk{display:inline-block;font:600 11.5px/1 var(--ui);border-radius:999px;padding:4px 8px;margin-bottom:6px}
+.risk.h{background:#B91C1C;color:#fff}.risk.m{background:#FDE68A;color:#713F12}.risk.l{background:#DCFCE7;color:#166534}
+
+</style>
+
+<!-- SCRIPT -->
+<script>
+// 10. the customer journey map (made-up data, warmy.md)
+(function(){
+  var ST=[['Attraction','Hears about Warmy, compares, visits the site'],['Activation','Signs up, connects a mailbox, starts warm-up'],['Involvement','Uses Warmy week to week, sees results'],['Retention','Renews, upgrades, adds mailboxes, recommends']];
+  var RW=[['Goal','#38BDF8','go'],['Thoughts and feelings','#FBBF24','th'],['Problems','#FB7185','pr'],['Drop-off','#DC2626','dr'],['Solution','#34D399','so']];
+  var P=[
+   {n:'The Rescuer',c:'#FFD15C',lt:0,goal:'Fix one broken domain fast, then stop paying.',role:'A marketing lead or COO whose domain landed in spam before a launch.',size:'20–300 employees, one or two domains',story:'As a Rescuer, I want my domain back in the inbox within weeks, with a clear moment when the job is done, so I can return to sending.',churn:'Leaves happy when the fix works: "We\'re back in the inbox, thanks, we\'ll call you if it breaks again."',paid:'≈ $700',
+    j:[['Find a fix for this week.','"Our launch emails are in spam. Who can fix this now?"','Arrives in a hurry from search; needs proof Warmy fixes this exact case.','l|They know what they need.','A landing page per problem, "domain in spam", with a realistic timeline.'],
+       ['Start the fix today.','"Just tell me what to do first."','DNS settings feel like a different language.','m|If setup stalls.','A guided DNS check that says which record to change, in plain words.'],
+       ['See the domain recover.','"Is it working yet?"','No visible finish line.','m|They guess when it\'s enough.','A progress line to a target placement and a clear "done" moment.'],
+       ['Nothing left to fix, keep costs down.','"Good service, but we don\'t need it now."','Warmy looks like a one-time repair.','h|The main drop-off.','A low-cost monitoring plan with alerts, and one click to come back.']]},
+   {n:'The Seasonal Sender',c:'#FFA53A',lt:0,goal:'Get mailboxes ready for a campaign, then pause.',role:'A sales or marketing lead who sends cold email in campaigns, not all year.',size:'200+ employees, few mailboxes for their size',story:'As a Seasonal Sender, I want mailboxes ready when a campaign starts and an easy pause when it ends, so I only pay while we send.',churn:'Cancels between campaigns: "We\'ll be back for the autumn push."',paid:'≈ $900',
+    j:[['Be ready before the next campaign.','"Last campaign, half of it went to spam."','Compares many warm-up tools on price.','m|Price shoppers.','Pricing by campaign length, shown up front.'],
+       ['Warm up the mailboxes in time.','"Will they be ready by the 1st?"','Unclear how many days warm-up needs.','l|Low.','A calculator: start date, volume, ready date.'],
+       ['Run the campaign with no surprises.','"So far so good."','No warning before a mailbox gets tired.','l|Low during the campaign.','A daily health check per mailbox, with alerts.'],
+       ['Pay only while sending.','"We\'ll pause until the autumn push."','No pause, only cancel.','h|After each campaign.','A pause plan that keeps the reputation warm at a small cost.']]},
+   {n:'The Proof Seeker',c:'#FF453A',lt:1,goal:'See placement improve, with numbers to show the boss.',role:'A head of growth or RevOps who has to justify the spend every quarter.',size:'50–200 employees, several sending domains',story:'As a Proof Seeker, I want to see inbox placement rise within weeks, and why when it does not, so I can defend the budget.',churn:'Leaves when the numbers stall: "Opens didn\'t move, and I couldn\'t explain why."',paid:'≈ $1,500',
+    j:[['Find a tool that shows real placement.','"Our ESP says 99% delivered. I don\'t believe it."','Every tool claims better open rates.','m|Medium.','Case studies with before and after placement by provider.'],
+       ['Get the first proof within days.','"Show me something I can put in a report."','The first useful numbers come too late.','h|If nothing shows in week one.','A seed test on day one, with a shareable report.'],
+       ['Watch placement rise.','"Why did Outlook drop on Tuesday?"','Charts without reasons.','m|Medium.','Adeline explains each drop and links the fix.'],
+       ['Defend the budget each quarter.','"Can I show this was worth it?"','No summary of the value over time.','h|When the numbers stall.','A quarterly report: placement, revenue at risk, what was fixed.']]},
+   {n:'The Agency Captain',c:'#334155',lt:1,goal:'Run many mailboxes and domains at a cost they can predict.',role:'An agency owner sending for many clients across many tools.',size:'5–20 employees, 50+ mailboxes',story:'As an Agency Captain, I want warm-up and seed tests to work with every tool my clients use, at volume, so I never build my own.',churn:'Leaves for an in-house tool, or when a client\'s tool will not connect.',paid:'≈ $3,200',
+    j:[['One tool for every client\'s setup.','"Will it work with all our ESPs?"','Has to check integrations one by one.','m|Medium.','An integrations page searchable by tool, with limits listed.'],
+       ['Connect 50 mailboxes without pain.','"I can\'t add these one at a time."','Bulk import breaks on odd SMTP settings.','m|Medium.','Bulk import with a check that names each failed mailbox and why.'],
+       ['Watch every client at a glance.','"Which client is in trouble today?"','Too many dashboards.','l|Low.','One view of all workspaces, sorted by risk.'],
+       ['Keep the cost predictable as they grow.','"Every new client raises the bill."','Price per mailbox grows faster than their fees.','m|May build in-house.','Volume plans for agencies and a client-billing export.']]}];
+  var tabs=document.getElementById('tabs'),panel=document.getElementById('jpanel'),cur=0,RISK={h:'High risk',m:'Medium risk',l:'Low risk'};
+  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+  P.forEach(function(p,i){
+    var b=document.createElement('button');b.type='button';b.className='tab';b.id='t'+i;b.setAttribute('role','tab');b.setAttribute('aria-controls','jpanel');
+    b.innerHTML='<i style="background:'+p.c+'" aria-hidden="true"></i>'+esc(p.n)+'<span class="intent'+(p.lt?' lt':'')+'">'+(p.lt?'Long-term':'One-off')+'</span>';
+    b.addEventListener('click',function(){show(i,false)});
+    b.addEventListener('keydown',function(e){var k=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;
+      if(e.key==='Home'){e.preventDefault();show(0,true)}else if(e.key==='End'){e.preventDefault();show(P.length-1,true)}
+      else if(k){e.preventDefault();show((cur+k+P.length)%P.length,true)}});
+    tabs.appendChild(b)});
+  function show(i,focus){cur=i;var p=P[i];
+    tabs.querySelectorAll('.tab').forEach(function(b,k){b.setAttribute('aria-selected',k===i);b.tabIndex=k===i?0:-1});
+    if(focus)tabs.children[i].focus();
+    panel.setAttribute('aria-labelledby','t'+i);
+    var f=function(l,v,c){return '<div'+(c?' class="'+c+'"':'')+'><dt>'+l+'</dt><dd>'+v+'</dd></div>'};
+    var h='<div class="pdesc"><p class="pstory">'+esc(p.story)+'</p><dl>'+f('Goal',esc(p.goal))+f('Who',esc(p.role))+f('Size',esc(p.size))+f('Paid on average (made up)',p.paid)+f('Why they cancel',esc(p.churn),'churn')+'</dl></div>'+
+      '<table class="jmap"><caption class="vh">'+esc(p.n)+': the journey, stage by stage</caption><colgroup><col class="rh"><col><col><col><col></colgroup><thead><tr><td class="e"></td>'+ST.map(function(s){return '<th scope="col"><div><span>'+s[0]+'</span></div></th>'}).join('')+'</tr></thead><tbody>';
+    RW.forEach(function(r,ri){h+='<tr class="'+r[2]+'"><th scope="row"><i style="background:'+r[1]+'"></i>'+r[0]+'</th>'+p.j.map(function(st){var v=st[ri];
+      if(ri===3){var q=v.split('|');return '<td><span class="risk '+q[0]+'">'+RISK[q[0]]+'</span><br>'+esc(q[1])+'</td>'}return '<td>'+esc(v)+'</td>'}).join('')+'</tr>'});
+    panel.innerHTML=h+'</tbody></table>';
+  }
+  show(0,false);
+})();
+
+</script>
