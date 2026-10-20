@@ -115,14 +115,16 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 @media (max-width:720px){.g>*{grid-column:1/-1 !important}}
 
 /* the big Ramos headlines: grey words and round icon chips inline; words rise into place */
-.big{font-size:clamp(38px,6.6vw,100px);line-height:1.02;letter-spacing:-.05em;font-weight:400}
+.big{font-size:clamp(38px,6.6vw,100px);line-height:1.02;letter-spacing:-.05em;font-weight:400;text-wrap:pretty;max-width:none}
 .big .s{color:var(--soft)}
+.big .nb{white-space:nowrap}
 .chips{display:inline-flex;vertical-align:middle;margin:0 .08em;transform:translateY(-.06em)}
 .chip{display:inline-grid;place-items:center;width:.86em;height:.86em;border-radius:50%;background:var(--well)}
 .chip+.chip{margin-left:-.18em}
 .chip svg{width:38%;height:38%}
 .chip.y{background:var(--y)}.chip.o{background:var(--o)}.chip.r{background:var(--brand)}
-.js .big .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+/* each word rises inside its own mask; the mask runs a little past the letters, so the tight tracking never cuts them */
+.js .big .w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .12em .1em;margin:0 -.12em -.1em}
 .js .big .w>span{display:inline-block;transform:translateY(105%);transition:transform .9s cubic-bezier(.2,.8,.2,1) var(--d,0s)}
 .js .big.in .w>span{transform:none}
 @media (prefers-reduced-motion:reduce){.js .big .w>span{transform:none;transition:none}}
@@ -404,7 +406,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <section class="gal wrap" aria-labelledby="h-cx">
     <div class="sec-head"><h2 id="h-cx">Complexity</h2><span>What sits behind one inbox</span></div>
     <div class="g">
-      <h3 class="big c1-12" id="cx-big">One email <span class="chips" aria-hidden="true"><span class="chip"><svg style="color:var(--r)"><use href="#i-bolt"/></svg></span><span class="chip r"><svg style="color:#fff"><use href="#i-chart"/></svg></span></span> passes <span class="s">a dozen checks</span> before it reaches the inbox</h3>
+      <h3 class="big c1-12" id="cx-big">One email <span class="chips" aria-hidden="true"><span class="chip"><svg style="color:var(--r)"><use href="#i-bolt"/></svg></span><span class="chip r"><svg style="color:#fff"><use href="#i-chart"/></svg></span></span> passes <span class="s">a dozen checks</span> before it reaches <span class="nb">the inbox</span></h3>
       <div class="c1-12 rv">
         <div class="stats">
           <div><b data-count="35000" data-suffix="+">35,000+</b><span>businesses and marketers</span></div>

@@ -38,6 +38,7 @@ Motion (WCAG 2.2.2): it plays only on screen, stops while the pointer is over it
 
 ### 3. How complex it is
 - **Headline (Ramos style, grey words, round chips):** One email [bolt chip] passes a dozen checks [chart chip] before it reaches the inbox
+- **All big headlines** (her request, 2026-10-20): run across the full width of the grid, no balanced short lines; the letters are never cut (each word rises inside a mask that runs a little past its letters); "the inbox" stays together on one line.
 - **Counters (vendor-reported, warmy.io, read 2026-10-20):** 35,000+ businesses and marketers · 650,000+ domains · 35+ email service providers · 4.9 of 5 on G2. A note under them: "Numbers as Warmy reports them, warmy.io, October 2026."
 - **What sits behind one inbox** (six groups, each a card of chips):
   - Authentication: SPF, DKIM, DMARC, BIMI, MX records
