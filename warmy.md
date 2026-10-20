@@ -99,7 +99,7 @@ Intro: A test is only as good as the sentence written before it. I write it down
 Sources for the method: Ron Kohavi, Diane Tang, Ya Xu, *Trustworthy Online Controlled Experiments* (2020); Nielsen Norman Group on A/B testing.
 
 ### 9. How I prepare and run a user interview
-Three columns, Before, During, After:
+Three columns, Before, During, After, laid out like the "My part" items (her request, 2026-10-20): a small grey badge (Plan, Listen, Make sense) above the title, no rules, the points in grey text:
 - **Before:** Write the goal and three to five research questions: what we need to learn, not what we want to hear. Recruit five to eight people per segment with a short screener, current users and people who left. Write a discussion guide: a warm-up, open questions about past behaviour, and the topics to cover, not a script. Pilot the guide once, ask for consent to record, and bring a second person to take notes.
 - **During:** Ask about the past, not the future: "Tell me about the last time a campaign went to spam." Keep questions open and neutral, never leading ("Would you use…" teaches nothing). Listen more than you talk, and let silences run. Dig with "why" and "what happened next" until you reach the real reason. Do not pitch or demo, and do not defend the product. Write down exact quotes and what people do, not only what they say.
 - **After:** Write a summary the same day, while it is fresh. Tag the notes and group them on an affinity map across interviews. Count how many people said a thing before calling it a pattern. Turn the patterns into journey map changes, A/B hypotheses and backlog items, and share them with the team with the quotes attached.
