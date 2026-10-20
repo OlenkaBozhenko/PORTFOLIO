@@ -28,12 +28,8 @@ No em dashes in visible text (her rule).
 - **Meta row:** Role · UI/UX designer (as on the landing and in the resume) · Years · 2021 – present · Platform · Web, mobile web · Product · Warmy.io
 
 ### 1. First screen: "Warmy magic is on the way"
-After her loading frame 207:95960: a warm cream ground with soft diagonal streaks of yellow, orange and red light (they drift slowly); WARMY MAGIC IS ON THE WAY in very large capitals across the whole panel, typed letter by letter with a caret, like an AI writing; in the middle the logo's three bars rise and fall as the loader, and under them a line in braces types itself and changes, as in her frame, with small sparkles:
-- {Match warm-up format to your real campaigns for consistent reputation}
-- {Checking SPF, DKIM and DMARC on 3 domains}
-- {Sending seed tests to Gmail, Outlook and Yahoo}
-- {Scoring your template before it reaches a real inbox}
-Motion (WCAG 2.2.2): it plays only on screen, stops while the pointer is over it, and a click, a tap or Enter / Space stops or starts it (screen readers hear how); with reduced motion everything stands still, typed out.
+After her loading frame 207:95960, simplified (her request, 2026-10-20: no letters and no lines in the background): a plain cream ground (#FFF8EE); in the middle the logo's three bars rise and fall as the loader, and under them "Warmy magic is on the way" in large Figtree SemiBold (30–64 px), typed letter by letter with a caret like an AI writing, then five dots appear one by one and start again; small sparkles beside it.
+Motion (WCAG 2.2.2): it plays only on screen, stops while the pointer is over it, and a click, a tap or Enter / Space stops or starts it (screen readers hear how); with reduced motion it stands still, typed out.
 
 ### 2. About / Problem / Solution (label left, text right)
 - **About:** Warmy keeps email out of spam. It warms up new mailboxes and domains by sending and answering real-looking mail, tests where campaigns land at Gmail, Outlook and Yahoo, checks DNS records and templates, and explains what it finds through Adeline, its AI agent.

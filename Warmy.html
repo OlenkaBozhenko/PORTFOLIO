@@ -63,48 +63,29 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .meta dt{font-size:13px;color:var(--muted)}
 .meta dd{margin:0;font-size:16px;white-space:nowrap}
 
-/* 1. the first screen: "Warmy magic is on the way", typed like an AI over drifting light (her frame 207:95960) */
+/* 1. the first screen: "Warmy magic is on the way" typed like an AI in the middle, on a plain cream ground (her request, 2026-10-20) */
 .first{padding-bottom:clamp(56px,8vw,112px)}
-.magic{container-type:inline-size;position:relative;overflow:hidden;background:var(--cream);min-height:min(84vh,780px);display:grid;place-items:center;cursor:pointer;isolation:isolate}
+.magic{position:relative;overflow:hidden;background:var(--cream);min-height:min(84vh,780px);display:grid;place-items:center;cursor:pointer}
 @media (max-width:720px){.magic{min-height:auto;aspect-ratio:4/5}}
-@media (max-width:720px){.magic .huge{font-size:22cqi;justify-content:space-between;padding-block:24px}.magic .huge span{white-space:normal}.magic .huge span:nth-child(2){padding-left:0}.magic .loader{padding:28px 20px}.magic .loader::before{transform:scale(1.2,1.1)}}
-.streaks{position:absolute;inset:-20%;z-index:-2;filter:blur(7px);
-  background:
-   repeating-linear-gradient(125deg,transparent 0 46px,rgba(255,200,80,.5) 46px 60px,transparent 58px 130px),
-   repeating-linear-gradient(125deg,transparent 0 90px,rgba(255,150,60,.34) 90px 99px,transparent 98px 210px),
-   radial-gradient(60% 50% at 92% 8%,rgba(255,69,58,.35),transparent 70%),
-   radial-gradient(50% 60% at 4% 96%,rgba(255,209,92,.45),transparent 70%);
-  animation:drift 24s linear infinite alternate;animation-play-state:paused}
-@keyframes drift{to{transform:translate(6%,-4%)}}
-.huge{position:absolute;inset:0;z-index:-1;display:flex;flex-direction:column;justify-content:center;padding:clamp(16px,3vw,40px);
-  font-weight:600;text-transform:uppercase;letter-spacing:-.05em;line-height:.86;font-size:12.6cqi;
-  background:linear-gradient(115deg,#FFC23D 0%,#FF9A3A 45%,#FF5A45 100%);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.42;user-select:none}
-.huge span{display:block;white-space:nowrap}
-.huge span:nth-child(2){padding-left:12%}
-.huge span:nth-child(3){text-align:right}
-.huge i{font-style:normal;opacity:0}
-.huge i.on{opacity:1}
-.caret{display:inline-block;width:.06em;height:.78em;margin-left:.03em;vertical-align:-.04em;background:var(--r);opacity:.8;animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-.loader{position:relative;display:flex;flex-direction:column;align-items:center;gap:22px;padding:56px 72px;text-align:center}
-.loader::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(closest-side,rgba(255,248,238,.96) 55%,rgba(255,226,214,.5) 80%,transparent);border-radius:50%;transform:scale(1.5,1.25)}
-.bars{display:flex;align-items:flex-end;gap:5px;height:44px}
-.bars i{display:block;width:13px;border-radius:7px;height:34px;transform-origin:bottom}
-.bars i:nth-child(1){background:var(--y);height:30px}
-.bars i:nth-child(2){background:var(--o);height:36px}
-.bars i:nth-child(3){background:var(--r);height:44px}
+.loader{position:relative;display:flex;flex-direction:column;align-items:center;gap:clamp(20px,2.4vw,32px);padding:24px;text-align:center}
+.bars{display:flex;align-items:flex-end;gap:6px;height:56px}
+.bars i{display:block;width:16px;border-radius:8px;transform-origin:bottom}
+.bars i:nth-child(1){background:var(--y);height:38px}
+.bars i:nth-child(2){background:var(--o);height:46px}
+.bars i:nth-child(3){background:var(--r);height:56px}
 .play .bars i{animation:rise 1.4s ease-in-out infinite}
 .play .bars i:nth-child(2){animation-delay:.15s}.play .bars i:nth-child(3){animation-delay:.3s}
 @keyframes rise{50%{transform:scaleY(.55)}}
-.tip{font:500 clamp(15px,1.4vw,18px)/1.4 var(--ui);color:var(--w-ink);max-width:30ch;min-height:2.8em}
-.tip .cur{display:inline-block;width:1.5px;height:1.05em;background:var(--brand);vertical-align:-.15em;margin-left:1px;animation:blink 1s steps(1) infinite}
-.spark{position:absolute;right:28%;bottom:10px;width:34px;height:40px;color:var(--brand)}
+.tip{margin:0;font:600 clamp(30px,4.6vw,64px)/1.1 var(--ui);letter-spacing:-.03em;color:var(--w-ink);min-height:1.1em;white-space:nowrap}
+@media (max-width:720px){.tip{white-space:normal;max-width:9ch;min-height:2.2em}}
+.tip .dots{display:inline-block;min-width:2.2em;text-align:left}
+.tip .cur{display:inline-block;width:.07em;height:.95em;background:var(--brand);vertical-align:-.1em;margin-left:.04em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.spark{position:absolute;right:2%;bottom:-6px;width:34px;height:40px;color:var(--brand)}
 .play .spark{animation:twinkle 2.4s ease-in-out infinite}
 @keyframes twinkle{50%{opacity:.35;transform:translateY(-4px) scale(.9)}}
-.magic.paused .streaks,.magic:hover .streaks{animation-play-state:paused !important}
-.magic.play .streaks{animation-play-state:running}
 .magic.paused .bars i,.magic.paused .spark,.magic:hover .bars i{animation-play-state:paused}
-@media (prefers-reduced-motion:reduce){.streaks,.bars i,.spark,.caret,.tip .cur{animation:none !important}.huge i{opacity:1}.caret{display:none}}
+@media (prefers-reduced-motion:reduce){.bars i,.spark,.tip .cur{animation:none !important}.tip .cur{display:none}}
 
 /* About / Problem / Solution */
 .story{display:flex;flex-direction:column;gap:clamp(32px,4vw,56px);padding-block:clamp(24px,4vw,48px) clamp(72px,10vw,140px)}
@@ -414,11 +395,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="wrap first"><section class="magic" id="magic" tabindex="0" aria-labelledby="h-magic" aria-describedby="magic-how">
     <h2 id="h-magic" class="vh">Warmy magic is on the way</h2>
     <p id="magic-how" class="vh">The screen types and moves. Press Enter, or click it, to stop or start it.</p>
-    <div class="streaks" aria-hidden="true"></div>
-    <p class="huge" aria-hidden="true"><span>Warmy magic</span><span>is on</span><span>the way</span></p>
     <div class="loader">
       <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
-      <p class="tip" aria-live="off"><span class="tt">{Match warm-up format to your real campaigns for consistent reputation}</span><span class="cur" aria-hidden="true"></span></p>
+      <p class="tip" aria-hidden="true"><span class="tt">Warmy magic is on the way</span><span class="dots">.....</span><span class="cur"></span></p>
       <svg class="spark" viewBox="0 0 34 40" aria-hidden="true"><path d="M22 2l1.6 5.4L29 9l-5.4 1.6L22 16l-1.6-5.4L15 9l5.4-1.6z" fill="currentColor"/><path d="M10 18l1 3 3 1-3 1-1 3-1-3-3-1 3-1z" fill="currentColor" opacity=".7"/><circle cx="18" cy="26" r="1.6" fill="currentColor"/><circle cx="7" cy="36" r="1.2" fill="currentColor" opacity=".6"/></svg>
     </div>
   </section></div>
@@ -695,27 +674,21 @@ document.querySelectorAll('.big').forEach(function(h){
   els.forEach(function(e){io.observe(e)});
 })();
 
-// 1. "Warmy magic is on the way": the capitals type letter by letter with a caret, the tip under the logo bars types and changes
+// 1. "Warmy magic is on the way": the line types letter by letter with a caret, then the dots run one by one
 (function(){
-  var m=document.getElementById('magic'),huge=m.querySelector('.huge'),tt=m.querySelector('.tt');
-  var tips=['{Match warm-up format to your real campaigns for consistent reputation}','{Checking SPF, DKIM and DMARC on 3 domains}','{Sending seed tests to Gmail, Outlook and Yahoo}','{Scoring your template before it reaches a real inbox}'];
-  if(RM){tt.textContent=tips[0];return}
-  var chars=[];huge.querySelectorAll('span').forEach(function(line){var t=line.textContent;line.textContent='';
-    t.split('').forEach(function(c){var i=document.createElement('i');i.textContent=c;line.appendChild(i);chars.push(i)})});
-  var caret=document.createElement('b');caret.className='caret';
-  var n=0,tip=0,tc=0,mode='type',hold=0,timer=0,inView=false;
+  var m=document.getElementById('magic'),tt=m.querySelector('.tt'),dots=m.querySelector('.dots');
+  var full=tt.textContent;
+  if(RM)return;
+  var tc=0,dc=0,timer=0,inView=false;
   function paused(){return m.classList.contains('paused')||m.matches(':hover')||!inView}
   function tick(){
     timer=0;if(paused())return;
-    if(n<chars.length){chars[n].classList.add('on');chars[n].after(caret);n++}
-    var full=tips[tip];
-    if(mode==='type'){tc++;tt.textContent=full.slice(0,tc);if(tc>=full.length){mode='hold';hold=46}}
-    else if(mode==='hold'){if(--hold<=0)mode='erase'}
-    else{tc-=3;if(tc<=0){tc=0;tip=(tip+1)%tips.length;mode='type'}tt.textContent=full.slice(0,tc)}
-    timer=setTimeout(tick,n<chars.length?70:(mode==='erase'?18:42));
+    if(tc<full.length){tc++;tt.textContent=full.slice(0,tc);timer=setTimeout(tick,75);return}
+    dc=(dc+1)%6;dots.textContent='.'.repeat(dc);
+    timer=setTimeout(tick,dc===5?900:380);
   }
   function play(){if(!timer&&!paused())timer=setTimeout(tick,60)}
-  tt.textContent='';
+  tt.textContent='';dots.textContent='';
   onScreen(m,function(v){inView=v;m.classList.toggle('play',v);v?play():(clearTimeout(timer),timer=0)});
   m.addEventListener('mouseleave',play);
   toggler(m,function(p){if(!p)play()});
