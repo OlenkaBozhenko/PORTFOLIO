@@ -27,6 +27,7 @@
   --y:#FFD15C;--o:#FFA53A;--r:#FF453A;--brand:#FF7658;
   /* her orange accent (Figma fill, 2026-10-20): a linear gradient #FFA676 to #FF736D */
   --accent:linear-gradient(90deg,#FFA676,#FF736D);
+  --accent-on:#1A0E08; /* text and icons on the accent: the darkest tone of the Warmy ground, not black */
   /* the dark warm ground of the campaign mosaic, reused for the prototype panel and the hypothesis template */
   --dark:linear-gradient(135deg,#1A0E08,#3A1A0A 60%,#7A3410);--accent-ink:#FF736D;--cream:#FFF8EE;
   --w-ink:#334155;--w-mut:#64748B;--w-line:#E2E8F0;--w-dark:#030712;--w-side:#F8FAFC;
@@ -159,7 +160,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .chip{display:inline-grid;place-items:center;width:.86em;height:.86em;border-radius:50%;background:var(--well)}
 .chip+.chip{margin-left:-.18em}
 .chip svg{width:38%;height:38%}
-.chip.y,.chip.o,.chip.r{background:var(--accent);color:#fff}
+.chip.y,.chip.o,.chip.r{background:var(--accent);color:var(--accent-on)}
 /* each word rises inside its own mask; the mask runs a little past the letters, so the tight tracking never cuts them */
 .js .big .w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .12em .1em;margin:0 -.12em -.1em}
 .js .big .w>span{display:inline-block;transform:translateY(105%);transition:transform .9s cubic-bezier(.2,.8,.2,1) var(--d,0s)}
@@ -191,7 +192,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .acc button:focus-visible{outline:2px solid var(--label);outline-offset:3px}
 .acc .pm{flex:none;width:52px;height:52px;border-radius:50%;background:var(--well);display:grid;place-items:center;transition:background .25s,transform .35s}
 .acc .pm svg{width:16px;height:16px}
-.acc [aria-expanded="true"] .pm{background:var(--accent);transform:rotate(45deg)}
+.acc [aria-expanded="true"] .pm{background:var(--accent);color:var(--accent-on);transform:rotate(45deg)}
 .acc .body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s ease}
 .acc .body>div{overflow:hidden}
 .acc .body p{padding:0 28px 24px;color:var(--muted);font-size:16px;max-width:46ch}
@@ -236,7 +237,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .prov .tr{height:6px;border-radius:3px;background:#F1F5F9;overflow:hidden}
 .prov .tr i{display:block;height:100%;border-radius:3px;background:#22C55E;width:0;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
 .in .prov .tr i{width:var(--v)}
-.big-y{background:var(--accent);border-radius:16px;padding:10px 18px;font-size:54px;font-weight:600;letter-spacing:-.04em;line-height:1;color:#0F172A;display:inline-block;margin:8px 0 6px}
+.big-y{background:var(--accent);border-radius:16px;padding:10px 18px;font-size:54px;font-weight:600;letter-spacing:-.04em;line-height:1;color:var(--accent-on);display:inline-block;margin:8px 0 6px}
 .split{display:flex;height:8px;border-radius:4px;overflow:hidden;gap:3px;margin:12px 0 6px}
 .split i{display:block;border-radius:4px}
 .ring{width:96px;height:96px}
@@ -305,11 +306,11 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .rules li b{font-weight:500}
 .tpl{background:var(--dark);color:#fff;border-radius:0;padding:clamp(24px,3vw,40px);font-size:clamp(20px,2vw,27px);line-height:1.4;letter-spacing:-.02em}
 .tpl .lb{display:block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#BDBDBD;margin-bottom:16px}
-.tpl mark{color:var(--ink);background:var(--accent);border-radius:8px;padding:0 .25em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.tpl mark{color:var(--accent-on);background:var(--accent);border-radius:8px;padding:0 .25em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .ex{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--cg);margin-top:var(--cg)}
 .ex .wc{position:relative;padding:20px}
 .ex .tagx{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:6px;padding:3px 8px;background:#F1F5F9;color:var(--w-ink);margin-bottom:12px}
-.ex .tagx.b{background:var(--accent);color:var(--ink)}
+.ex .tagx.b{background:var(--accent);color:var(--accent-on)}
 .ex .bar{height:8px;border-radius:4px;background:#F1F5F9;margin:10px 0 6px;overflow:hidden}
 .ex .bar i{display:block;height:100%;width:86%;background:var(--accent)}
 .ex .fin{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:13px;color:#15803D;font-weight:600}
