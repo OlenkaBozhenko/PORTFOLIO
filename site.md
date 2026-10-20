@@ -51,7 +51,7 @@ Built from [`inspiration.md`](inspiration.md) (decisions D1–D9) and [`cv.md`](
 
 Maya logo removed 2026-09-25 (designer): it is the Styupan Translation mark, already row 5.
 
-No rules between the rows, and no underline under a link that is not live yet (her request, 2026-10-20).
+No rules between the rows and no underline under any "View … project" link (her request, 2026-10-20).
 
 Research note, for her to decide: hiring managers spend about 10 s on the homepage, so the strongest cases usually go first. The order above is hers and is kept.
 
