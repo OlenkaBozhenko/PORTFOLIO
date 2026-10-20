@@ -60,4 +60,4 @@ Rendered from the print PDF (trim box, 420 × 297 mm) at 3600 px wide, about 218
 The spreads show family photographs and names of private people. **Before the site is public, confirm with Amund Gulsvik that these spreads may be shown.**
 
 ## End of the page
-**View next work:** Warmy (`Warmy.html`), in the order of the landing's work list (DRON and AnyBiz have no page yet, so they are skipped; the last page leads back to the first). Her request, 2026-10-20.
+**Back to all work** (the last page of the list; every other page ends with View next work). Her request, 2026-10-20.

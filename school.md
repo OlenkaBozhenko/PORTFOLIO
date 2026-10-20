@@ -54,4 +54,4 @@ The app name in running text is set in capitals, bold, in quotes: “SCHOOL” (
 - Motion (the phones rising in, the long screens scrolling) stops with `prefers-reduced-motion`.
 
 ## End of the page
-**View next work:** Styupan Translation (`styupan.html`), in the order of the landing's work list (DRON and AnyBiz have no page yet, so they are skipped; the last page leads back to the first). Her request, 2026-10-20.
+**View next work:** Styupan Translation (`styupan.html`), in the order of the landing's work list (DRON and AnyBiz have no page yet, so they are skipped; the last page, Book, ends with Back to all work). Her request, 2026-10-20.
