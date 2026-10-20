@@ -67,14 +67,14 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 
 /* 1. the first screen: "Warmy magic is on the way" typed like an AI in the middle, on a plain cream ground (her request, 2026-10-20) */
 .first{padding-bottom:clamp(56px,8vw,112px)}
-.magic{position:relative;overflow:hidden;background:var(--cream);min-height:min(84vh,780px);display:grid;place-items:center;cursor:pointer}
+.magic{position:relative;overflow:hidden;background:var(--cream) url(assets/work/warmy/hero-paper.webp) center/cover no-repeat;min-height:min(84vh,780px);display:grid;place-items:center;cursor:pointer}
 @media (max-width:720px){.magic{min-height:auto;aspect-ratio:4/5}}
-.loader{position:relative;display:flex;flex-direction:column;align-items:center;gap:clamp(40px,6vw,88px);padding:24px;text-align:center;transform:translateY(-4%)}
-.logo{display:block;width:clamp(56px,6vw,88px);height:auto}
+.loader{position:relative;display:flex;flex-direction:column;align-items:center;gap:clamp(18px,2.4vw,32px);padding:24px;text-align:center;transform:translateY(-4%)}
+.logo{display:block;width:clamp(40px,4vw,56px);height:auto}
 .play:not(.done) .logo{animation:breathe 1.6s ease-in-out infinite}
 @keyframes breathe{50%{transform:scale(.9);opacity:.8}}
 /* the line reserves its full width with an invisible copy, so the caret sits right after the typed letters */
-.tip{position:relative;margin:0;display:inline-grid;font:600 clamp(30px,4.6vw,64px)/1.1 var(--ui);letter-spacing:-.03em;color:var(--w-ink);text-align:left}
+.tip{position:relative;margin:0;display:inline-grid;font:600 clamp(26px,3.2vw,44px)/1.1 var(--ui);letter-spacing:-.03em;color:var(--w-ink);text-align:left}
 .tip>span{grid-area:1/1}
 .tip .ghost{visibility:hidden}
 @media (max-width:720px){.tip{max-width:9ch}}
@@ -103,6 +103,25 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .magic.paused .logo,.magic.paused .spark,.magic.paused .tip::before,.magic:hover .logo,.magic:hover .tip::before{animation-play-state:paused}
 @media (prefers-reduced-motion:reduce){.logo,.spark,.tip .cur,.tip::before{animation:none !important}.tip .cur,.trail{display:none}}
 
+/* the prompt bar under the line, glass on the paper (her reference, 2026-10-20: a tilted glass input) */
+.prompt{--tilt:perspective(1400px) rotateX(10deg) rotateY(-12deg) rotateZ(-3deg);width:min(760px,86vw);margin-top:clamp(12px,2vw,28px);transform:var(--tilt);
+  border-radius:30px;padding:20px 22px 16px;text-align:left;font-family:var(--ui);color:var(--w-ink);
+  background:linear-gradient(180deg,rgba(255,255,255,.72),rgba(255,255,255,.42));backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);
+  border:1px solid rgba(255,255,255,.9);box-shadow:inset 0 1px 0 #fff,inset 0 -1px 0 rgba(0,0,0,.06),0 2px 4px rgba(120,60,20,.06),0 30px 60px -28px rgba(120,60,20,.35)}
+.prompt .pq{display:flex;align-items:center;min-height:1.6em;font-size:clamp(16px,1.5vw,19px)}
+.prompt .ph{color:var(--w-mut)}
+.prompt .pcur{display:inline-block;width:2px;height:1.1em;background:var(--accent-ink);margin-left:1px;opacity:0}
+.prompt.typing .pcur{opacity:1;animation:blink .8s steps(1) infinite}
+.prompt .prow{display:flex;align-items:center;gap:18px;margin-top:18px;font-size:14px;color:var(--w-ink)}
+.prompt .prow svg{width:18px;height:18px;display:block}
+.prompt .tools{display:flex;align-items:center;gap:6px}
+.prompt .sp{flex:1}
+.prompt .mic{color:var(--w-mut)}
+.prompt .go{width:42px;height:42px;border-radius:50%;background:var(--accent);display:grid;place-items:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 6px 14px -6px rgba(255,115,109,.8)}
+.prompt .go img{width:20px;height:20px}
+.prompt.sent .go{animation:press .5s ease}
+@media (max-width:720px){.prompt{--tilt:none;padding:14px 16px 12px;border-radius:22px}.prompt .prow{margin-top:12px}}
+@media (prefers-reduced-motion:reduce){.prompt{--tilt:none}}
 /* About / Problem / Solution */
 .story{display:flex;flex-direction:column;gap:clamp(32px,4vw,56px);padding-block:clamp(24px,4vw,48px) clamp(72px,10vw,140px)}
 .pair{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(16px,4vw,64px)}
@@ -364,6 +383,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="loader">
       <img class="logo" src="assets/work/warmy/warmy-logo-icon.svg" width="48" height="48" alt="">
       <p class="tip" aria-hidden="true"><span class="trail"></span><span class="ghost">Warmy magic is on the way.....</span><span><span class="tt">Warmy magic is on the way</span><span class="dots">.....</span><span class="cw"><span class="cur"></span><svg class="spark" viewBox="0 0 34 40" aria-hidden="true"><path d="M22 2l1.6 5.4L29 9l-5.4 1.6L22 16l-1.6-5.4L15 9l5.4-1.6z" fill="currentColor"/><path d="M10 18l1 3 3 1-3 1-1 3-1-3-3-1 3-1z" fill="currentColor" opacity=".7"/><circle cx="18" cy="26" r="1.6" fill="currentColor"/><circle cx="7" cy="36" r="1.2" fill="currentColor" opacity=".6"/></svg></span></span></p>
+      <div class="prompt" aria-hidden="true">
+        <div class="pq"><span class="ph">Ask Adeline anything</span><span class="pt2"></span><span class="pcur"></span></div>
+        <div class="prow"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="tools"><svg viewBox="0 0 24 24"><path d="M4 8h9M17 8h3M4 16h3M11 16h9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="15" cy="8" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="16" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Tools</span><span class="sp"></span><svg class="mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="go"><img src="assets/work/warmy/warmy-logo-icon.svg" alt="" width="20" height="20"></span></div>
+      </div>
 
     </div>
   </section></div>
@@ -624,7 +647,8 @@ document.querySelectorAll('.big').forEach(function(h){
   var m=document.getElementById('magic'),tip=m.querySelector('.tip'),tt=m.querySelector('.tt'),dots=m.querySelector('.dots'),cw=m.querySelector('.cw'),trail=m.querySelector('.trail');
   var full=tt.textContent;
   if(RM)return;
-  var tc=0,dc=0,timer=0,inView=false,done=false;
+  var tc=0,dc=0,qc=0,timer=0,inView=false,done=false;
+  var bar=m.querySelector('.prompt'),pq=bar.querySelector('.pt2'),ph=bar.querySelector('.ph'),Q='Why are my emails landing in spam?';
   var STAR='<svg viewBox="0 0 10 10"><path d="M5 0l1.2 3.8L10 5 6.2 6.2 5 10 3.8 6.2 0 5l3.8-1.2z" fill="currentColor"/></svg>';
   var COL=['#FF7658','#FFA53A','#FFD15C','#FF453A'];
   function shed(n){
@@ -642,7 +666,8 @@ document.querySelectorAll('.big').forEach(function(h){
     timer=0;if(done||paused())return;
     if(tc<full.length){tc++;tt.textContent=full.slice(0,tc);if(tc%2)shed(1);timer=setTimeout(tick,22);return}
     if(dc<5){dc++;dots.textContent='.'.repeat(dc);shed(1);timer=setTimeout(tick,130);return}
-    done=true;shed(6);m.classList.add('done');
+    if(qc<Q.length){if(!qc){ph.style.display='none';bar.classList.add('typing')}qc++;pq.textContent=Q.slice(0,qc);timer=setTimeout(tick,34);return}
+    done=true;shed(6);m.classList.add('done');bar.classList.remove('typing');bar.classList.add('sent');
   }
   function play(){if(!timer&&!done&&!paused())timer=setTimeout(tick,60)}
   tt.textContent='';dots.textContent='';
