@@ -150,7 +150,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .note{font-size:13px;color:var(--muted);margin-top:16px}
 @media (max-width:720px){.stats{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:28px}}
 .layers{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--cg)}
-.layers li{background:var(--well);border-radius:0;padding:22px 22px 24px;display:flex;flex-direction:column;gap:14px}
+.layers li{background:var(--well);border-radius:20px;padding:22px 22px 24px;display:flex;flex-direction:column;gap:14px}
 .layers h3{font-size:20px;font-weight:500;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
 .layers h3 i{width:10px;height:10px;border-radius:50%;flex:none}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
@@ -161,8 +161,8 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 
 /* 4. the feature accordion next to a browser and a phone (Ramos; the frames of the Sport Guardian page) */
 .acc{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
-.acc li{background:#fff;border-radius:0;box-shadow:0 1px 2px rgba(0,0,0,.04),0 18px 40px -24px rgba(0,0,0,.22);border:1px solid #F0F0F0}
-.acc button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 18px 18px 28px;font-size:clamp(20px,1.9vw,26px);letter-spacing:-.02em;border-radius:0}
+.acc li{background:#fff;border-radius:20px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 18px 40px -24px rgba(0,0,0,.22);border:1px solid #F0F0F0}
+.acc button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 18px 18px 28px;font-size:clamp(20px,1.9vw,26px);letter-spacing:-.02em;border-radius:20px}
 .acc button:focus-visible{outline:2px solid var(--label);outline-offset:3px}
 .acc .pm{flex:none;width:52px;height:52px;border-radius:50%;background:var(--well);display:grid;place-items:center;transition:background .25s,transform .35s}
 .acc .pm svg{width:16px;height:16px}
@@ -184,6 +184,8 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .vp img{position:absolute;inset:0;width:100%;height:auto;opacity:0;transition:opacity .5s ease}
 .vp img.on{opacity:1}
 @media (prefers-reduced-motion:reduce){.vp img{transition:none}}
+/* on wide screens the device panel takes the height of the feature list beside it */
+@media (min-width:721px){.stagefig{align-self:stretch}.stagefig .stage{aspect-ratio:auto;height:100%;min-height:440px}}
 @media (max-width:720px){.stage{aspect-ratio:1/1}.dev{width:32%;bottom:-10%}.browser .bar{height:22px;padding:0 8px;gap:4px}.browser .bar i{width:6px;height:6px}.browser .bar span{font-size:9px;padding:1px 6px;margin-left:6px}}
 
 /* 5. the feature cards: stacked UI pieces on a gridded panel, title and text centred under them (Ramos) */
@@ -341,7 +343,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .mos.paused .ticker,.mos:not(.play) .ticker,.mos:hover .ticker,.mos.paused .track,.mos:not(.play) .track,.mos:hover .track{animation-play-state:paused}
 .tile{height:clamp(150px,19vw,280px);border-radius:6px;overflow:hidden;background:#fff;flex:none}
 .tile img{height:100%;width:100%;object-fit:cover;object-position:top}
-.tile.sq{aspect-ratio:1}.tile.x{aspect-ratio:3/2}.tile.w{aspect-ratio:5/4}.tile.l{aspect-ratio:16/10;background:#fff}.tile.mb{aspect-ratio:375/812;background:#fff}
+.tile.sq{aspect-ratio:1}.tile.x{aspect-ratio:3/2}.tile.bn{aspect-ratio:3000/2480}.tile.w{aspect-ratio:5/4}.tile.l{aspect-ratio:16/10;background:#fff}.tile.mb{aspect-ratio:375/812;background:#fff}
 @media (prefers-reduced-motion:reduce){.ticker,.track{animation:none}}
 
 /* reveal on scroll (only with JS) */
@@ -452,7 +454,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <li><button type="button" aria-expanded="false" aria-controls="ac3" id="ab3">Spintax check<span class="pm" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></button><div class="body" id="ac3" role="region" aria-labelledby="ab3"><div><p>For templates that change in every send: Warmy scores one of 18 variations and asks to preview the rest, so nobody trusts a score that covers one version.</p></div></div></li>
         <li><button type="button" aria-expanded="false" aria-controls="ac5" id="ab5">Voice and thinking states<span class="pm" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></button><div class="body" id="ac5" role="region" aria-labelledby="ab5"><div><p>Asking by voice on the phone, and a Thinking state on desktop, so the wait reads as work and not as a frozen screen.</p></div></div></li>
       </ul>
-      <figure class="c6-12 rv" style="--d:.1s"><div class="stage">
+      <figure class="c6-12 rv stagefig" style="--d:.1s"><div class="stage">
         <div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>app.warmy.io</span></div><div class="vp" id="lap">
           <img class="on" src="assets/work/warmy/tracker-desktop.webp" alt="Sender tracker on desktop: filters for source and campaign, five cards for opened, clicked, bounced, spam and unsubscribed with their change, an overview chart for a week, and a warning that campaign emails open at 9% of sent." width="1440" height="2306">
           <img src="assets/work/warmy/adeline-desktop.webp" alt="The home screen with the Adeline AI panel open: Supercharge your knowledge, three starting questions, Meet an Advisor and Chat with a Human, and a message field." width="1440" height="1024" loading="lazy">
@@ -627,12 +629,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <h2 id="h-mos" class="vh">Campaign visuals</h2>
     <p id="mos-how" class="vh">The mosaic moves. Press Enter, or click it, to stop or start it.</p>
     <div class="ticker" aria-hidden="true"><span>Warmy</span><span>Warmy</span><span>Warmy</span><span>Warmy</span><span>Warmy</span><span>Warmy</span></div>
-    <div class="rows" role="img" aria-label="A moving mosaic of Warmy campaign visuals and screens: social posts for iGaming CRM teams with the tiger mascot in a Warmy T-shirt; the banner Stop betting on luck to get your emails delivered on an expo booth, with the Sender tracker on its screen; and product screens.">
-      <div class="track" style="--s:70s" data-tiles="post-1:sq|template-desktop:l|expo-booth:x|post-roi:sq|adeline-mobile:mb|post-2:sq|tracker-desktop:l"></div>
+    <div class="rows" role="img" aria-label="A moving mosaic of Warmy campaign visuals and screens: social posts with the tiger mascot in a Warmy T-shirt; the banner Stop betting on luck to get your emails delivered; the banner Stop betting on luck to get your emails delivered on an expo booth, with the Sender tracker on its screen; and product screens.">
+      <div class="track" style="--s:70s" data-tiles="post-1:sq|template-desktop:l|expo-booth:x|banner:bn|adeline-mobile:mb|post-2:sq|tracker-desktop:l"></div>
       <div class="track rev" style="--s:90s" data-tiles="spintax-desktop:l|post-4:sq|chat-mobile:mb|adeline-desktop:l|post-2:sq|template-mobile:mb|expo-booth:x"></div>
     </div>
   </section>
-  <p class="cap" style="margin-top:16px;max-width:64ch">Social posts for iGaming CRM teams and the banner on an expo booth, in the brand's dark orange, with product screens. The booth is an AI mockup, not a real event.</p></div>
+  <p class="cap" style="margin-top:16px;max-width:64ch">Social posts, a banner and the banner on an expo booth, in the brand's dark orange, with product screens. The booth is an AI mockup, not a real event.</p></div>
 
   <div class="wrap" style="padding-bottom:clamp(56px,8vw,112px)">
     <a class="next" href="Olena%20Bozhenko.html#work"><span>Back to all work</span><span class="arrow" aria-hidden="true">→</span></a>
