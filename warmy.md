@@ -28,7 +28,7 @@ No em dashes in visible text (her rule).
 - **Meta row:** Role · UI/UX designer (as on the landing and in the resume) · Years · 2021 – present · Platform · Web, mobile web · Product · Warmy.io
 
 ### 1. First screen: "Warmy magic is on the way"
-After her loading frame 207:95960, simplified (her request, 2026-10-20: no letters and no lines in the background): a plain cream ground (#FFF8EE); in the middle the logo's three bars rise and fall as the loader, and under them "Warmy magic is on the way" in large Figtree SemiBold (30–64 px), typed letter by letter with a caret like an AI writing, then five dots appear one by one and start again; small sparkles beside it.
+After her loading frame 207:95960, simplified (her requests, 2026-10-20: no letters and no lines in the background; faster; the caret close to the text; bigger sparkles; a glow under the text so it reads as an AI writing; her logo): a plain cream ground (#FFF8EE); in the middle her Warmy logotype icon (Figma "Logotype / Icon", I207:95973;19711:154723, 48 × 48, `assets/work/warmy/warmy-logo-icon.svg`) breathing as the loader, and under it "Warmy magic is on the way" in large Figtree SemiBold (30–64 px), typed letter by letter (38 ms a letter) with an orange caret right after the last letter, then five dots appear one by one and start again; a soft orange and pink glow breathes under the line, and larger sparkles sit at its top right.
 Motion (WCAG 2.2.2): it plays only on screen, stops while the pointer is over it, and a click, a tap or Enter / Space stops or starts it (screen readers hear how); with reduced motion it stands still, typed out.
 
 ### 2. About / Problem / Solution (label left, text right)
@@ -46,10 +46,9 @@ Motion (WCAG 2.2.2): it plays only on screen, stops while the pointer is over it
   - Content: templates, spintax, links and images, unsubscribe link, AI optimisation
   - Mailbox providers: Gmail, Outlook, Yahoo, Google Workspace, Microsoft 365, 35+ ESPs
   - People and plans: founders with one domain, agencies with hundreds of mailboxes, iGaming CRM teams, AI SDRs; custom plans paid through Stripe
-- **Pill marquee (Ramos):** "Designed for" then a yellow pill sliding: deliverability, warm-up, placement tests, template checks, AI answers.
 
 ### 4. Product (accordion and devices, Ramos)
-Title: **Turning signals into next steps.** Five items, the first open; opening one shows its screens in the laptop and the phone beside the list (crossfade):
+Title: **Turning signals into next steps.** Five items, the first open; opening one shows its screens in a browser frame and a phone screen beside the list (crossfade). The frames are the ones of the Sport Guardian page (her request, 2026-10-20: the laptop and phone bezels were too heavy): a light browser bar with three grey dots and app.warmy.io, 10 px corners and a soft shadow; the phone as a rounded screen with a soft shadow, no bezel.
 1. **Sender tracker:** What you send outside Warmy, from any tool: opens, clicks, bounces, spam and unsubscribes in one chart, a warning line when campaign mail falls under the at-risk mark, and the biggest risk named by provider. (`tracker-desktop`, `tracker-mobile`)
 2. **Template score:** A score out of 100 before the email reaches a real inbox, with failed, warning and passed checks by section, and suggestions ranked High and Medium. (`template-desktop`, `template-mobile`)
 3. **Spintax check:** For templates that change in every send: Warmy scores one of 18 variations and asks to preview the rest, so nobody trusts a score that covers one version. (`spintax-desktop`, `template-mobile`)
@@ -72,7 +71,7 @@ Five numbered items:
 - 05 **User interviews.** Planned, run and synthesised into the journey map below.
 
 ### 7. Dynamic prototype (live, in a phone)
-A phone playing the Adeline flow in HTML, as her prototypes do: the start screen with three questions; a tap on "Why are my emails landing in spam?"; the question as a bubble; Thinking…; the answer typing in: "Your spam rate at Outlook rose to 14% this week. Two things stand out: your DMARC policy is set to none, and the template Spring offer has three links. Fix DMARC first, then I will check the template." with two buttons, Open DMARC check and Analyze template. Then it starts again. Same motion rules as the first screen. Caption: **A prototype, not a picture.** Prototypes in Warmy carry the real states: the typing, the wait, the answer, the next step. Users react to how it behaves, and developers see the timing they need to build. (The figures in the answer are made up.)
+A phone playing the Adeline flow in HTML, as her prototypes do, in the thin outline of the Sport Guardian phone (1.5 px, no heavy bezel): the start screen with three questions; a tap on "Why are my emails landing in spam?"; the question as a bubble; Thinking…; the answer typing in: "Your spam rate at Outlook rose to 14% this week. Two things stand out: your DMARC policy is set to none, and the template Spring offer has three links. Fix DMARC first, then I will check the template." with two buttons, Open DMARC check and Analyze template. Then it starts again. Same motion rules as the first screen. Caption: **A prototype, not a picture.** Prototypes in Warmy carry the real states: the typing, the wait, the answer, the next step. Users react to how it behaves, and developers see the timing they need to build. (The figures in the answer are made up.)
 
 ### 8. How I write an A/B hypothesis
 Intro: A test is only as good as the sentence written before it. I write it down before the design is final, and the team agrees on it before launch.
@@ -129,6 +128,6 @@ Title: **Who we design for.** Text: Four personas from interviews and cancel rea
   - Retention: Keep the cost predictable as they grow. / "Every new client raises the bill." / Price per mailbox grows faster than their fees. / Medium: may build in-house. / Volume plans for agencies and a client-billing export.
 
 ### 11. Campaign visuals
-A moving row of her social posts and the print ad for iGaming CRM teams (the tiger mascot in a Warmy T-shirt), over WARMY repeated as a running line, as the mosaic on the Sport Guardian page; same motion rules. Caption: **Campaign visuals.** Social posts and a print ad for iGaming CRM teams, in the brand's dark orange.
+A moving row of her social posts and the print ad for iGaming CRM teams (the tiger mascot in a Warmy T-shirt), over WARMY repeated as a running line, as the mosaic on the Sport Guardian page, with the same 6 px tile corners and no frame around the tiles; same motion rules. Caption: **Campaign visuals.** Social posts and a print ad for iGaming CRM teams, in the brand's dark orange.
 
 ### 12. Back to all work.

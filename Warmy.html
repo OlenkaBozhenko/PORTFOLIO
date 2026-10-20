@@ -68,24 +68,27 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .magic{position:relative;overflow:hidden;background:var(--cream);min-height:min(84vh,780px);display:grid;place-items:center;cursor:pointer}
 @media (max-width:720px){.magic{min-height:auto;aspect-ratio:4/5}}
 .loader{position:relative;display:flex;flex-direction:column;align-items:center;gap:clamp(20px,2.4vw,32px);padding:24px;text-align:center}
-.bars{display:flex;align-items:flex-end;gap:6px;height:56px}
-.bars i{display:block;width:16px;border-radius:8px;transform-origin:bottom}
-.bars i:nth-child(1){background:var(--y);height:38px}
-.bars i:nth-child(2){background:var(--o);height:46px}
-.bars i:nth-child(3){background:var(--r);height:56px}
-.play .bars i{animation:rise 1.4s ease-in-out infinite}
-.play .bars i:nth-child(2){animation-delay:.15s}.play .bars i:nth-child(3){animation-delay:.3s}
-@keyframes rise{50%{transform:scaleY(.55)}}
-.tip{margin:0;font:600 clamp(30px,4.6vw,64px)/1.1 var(--ui);letter-spacing:-.03em;color:var(--w-ink);min-height:1.1em;white-space:nowrap}
-@media (max-width:720px){.tip{white-space:normal;max-width:9ch;min-height:2.2em}}
-.tip .dots{display:inline-block;min-width:2.2em;text-align:left}
-.tip .cur{display:inline-block;width:.07em;height:.95em;background:var(--brand);vertical-align:-.1em;margin-left:.04em;animation:blink 1s steps(1) infinite}
+.logo{display:block;width:48px;height:48px}
+.play .logo{animation:breathe 1.6s ease-in-out infinite}
+@keyframes breathe{50%{transform:scale(.9);opacity:.8}}
+/* the line reserves its full width with an invisible copy, so the caret sits right after the typed letters */
+.tip{position:relative;margin:0;display:inline-grid;font:600 clamp(30px,4.6vw,64px)/1.1 var(--ui);letter-spacing:-.03em;color:var(--w-ink);text-align:left}
+.tip>span{grid-area:1/1}
+.tip .ghost{visibility:hidden}
+@media (max-width:720px){.tip{max-width:9ch}}
+.tip .cur{display:inline-block;width:.06em;height:.92em;background:var(--brand);vertical-align:-.1em;margin-left:.02em;border-radius:1px;animation:blink .8s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
-.spark{position:absolute;right:2%;bottom:-6px;width:34px;height:40px;color:var(--brand)}
-.play .spark{animation:twinkle 2.4s ease-in-out infinite}
-@keyframes twinkle{50%{opacity:.35;transform:translateY(-4px) scale(.9)}}
-.magic.paused .bars i,.magic.paused .spark,.magic:hover .bars i{animation-play-state:paused}
-@media (prefers-reduced-motion:reduce){.bars i,.spark,.tip .cur{animation:none !important}.tip .cur{display:none}}
+/* the AI glow under the line: a soft orange and pink light that breathes while it types */
+.tip::before{content:"";position:absolute;left:-12%;right:-12%;top:-55%;bottom:-75%;z-index:-1;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(255,118,88,.30),rgba(255,165,58,.20) 45%,rgba(255,209,92,.10) 70%,transparent);filter:blur(16px)}
+.play .tip::before{animation:glow 2.6s ease-in-out infinite}
+@keyframes glow{50%{opacity:.6;transform:scale(1.06)}}
+.magic .loader{isolation:isolate}
+.spark{position:absolute;right:-1.3em;top:-.9em;width:1.15em;height:1.35em;color:var(--brand);pointer-events:none}
+.play .spark{animation:twinkle 1.8s ease-in-out infinite}
+@keyframes twinkle{50%{opacity:.4;transform:translateY(-6px) scale(.85)}}
+.magic.paused .logo,.magic.paused .spark,.magic.paused .tip::before,.magic:hover .logo,.magic:hover .tip::before{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){.logo,.spark,.tip .cur,.tip::before{animation:none !important}.tip .cur{display:none}}
 
 /* About / Problem / Solution */
 .story{display:flex;flex-direction:column;gap:clamp(32px,4vw,56px);padding-block:clamp(24px,4vw,48px) clamp(72px,10vw,140px)}
@@ -140,19 +143,8 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 @media (max-width:900px){.layers{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.layers{grid-template-columns:1fr}}
 
-/* the pill marquee (Ramos): a line, and a yellow pill with the words sliding inside it */
-.pillrow{display:flex;align-items:center;flex-wrap:wrap;gap:16px clamp(16px,3vw,40px)}
-.pillrow .big{flex:none}
-.pill{position:relative;flex:1 1 380px;min-width:0;height:clamp(64px,8.6vw,124px);border-radius:999px;background:var(--y);overflow:hidden;display:flex;align-items:center}
-.pill .run{display:flex;width:max-content;animation:slide 26s linear infinite;animation-play-state:paused}
-.pill.play .run{animation-play-state:running}
-.pill:hover .run,.pill.paused .run{animation-play-state:paused}
-.pill .run span{font-size:clamp(34px,5.6vw,84px);letter-spacing:-.045em;line-height:1;white-space:nowrap;padding-right:.6em}
-.pill .run span::after{content:"•";padding-left:.6em;color:rgba(14,14,14,.35)}
-@keyframes slide{to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.pill .run{animation:none}}
 
-/* 4. the feature accordion next to a laptop and a phone (Ramos) */
+/* 4. the feature accordion next to a browser and a phone (Ramos; the frames of the Sport Guardian page) */
 .acc{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
 .acc li{background:#fff;border-radius:28px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 18px 40px -24px rgba(0,0,0,.22);border:1px solid #F0F0F0}
 .acc button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 18px 18px 28px;font-size:clamp(20px,1.9vw,26px);letter-spacing:-.02em;border-radius:28px}
@@ -166,18 +158,17 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .acc li.open .body{grid-template-rows:1fr}
 @media (prefers-reduced-motion:reduce){.acc .body,.acc .pm{transition:none}}
 .stage{position:relative;background:var(--well);border-radius:32px;overflow:hidden;aspect-ratio:7/6;min-height:0}
-.laptop{position:absolute;right:-6%;top:9%;width:92%}
-.laptop .scr{position:relative;background:#14161a;border-radius:18px 18px 0 0;padding:2.2% 2.2% 0;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
-.laptop .scr::before{content:"";position:absolute;left:50%;top:.8%;width:1.2%;aspect-ratio:1;border-radius:50%;background:#2a2e35;transform:translateX(-50%)}
-.laptop .vp{position:relative;aspect-ratio:16/10;overflow:hidden;background:#fff;border-radius:6px 6px 0 0}
-.laptop .base{height:clamp(8px,1.4vw,18px);background:linear-gradient(#cfd3d9,#a9aeb6);border-radius:0 0 14px 14px;margin:0 -4%}
-.dev{position:absolute;bottom:-26%;left:5%;width:30%}
-.dev .scr{background:#14161a;border-radius:clamp(22px,3vw,40px);padding:3.5%;box-shadow:0 30px 60px -24px rgba(0,0,0,.5)}
-.dev .vp{position:relative;aspect-ratio:375/760;overflow:hidden;border-radius:clamp(18px,2.6vw,34px);background:#fff}
+.browser{position:absolute;right:-8%;top:8%;width:92%;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.06),0 24px 48px -20px rgba(60,40,20,.3)}
+.browser .bar{display:flex;align-items:center;gap:7px;height:34px;padding:0 14px;background:#F7F7F7;border-bottom:1px solid var(--rule)}
+.browser .bar i{width:10px;height:10px;border-radius:50%;background:#D9D9D9}
+.browser .bar span{margin-left:12px;font-size:12px;color:var(--muted);background:#fff;border-radius:6px;padding:3px 12px}
+.browser .vp{position:relative;aspect-ratio:1440/900;overflow:hidden;background:#fff}
+.dev{position:absolute;bottom:-14%;left:6%;width:27%}
+.dev .vp{position:relative;aspect-ratio:375/760;overflow:hidden;border-radius:clamp(14px,1.8vw,22px);background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.06),0 24px 40px -18px rgba(60,40,20,.4)}
 .vp img{position:absolute;inset:0;width:100%;height:auto;opacity:0;transition:opacity .5s ease}
 .vp img.on{opacity:1}
 @media (prefers-reduced-motion:reduce){.vp img{transition:none}}
-@media (max-width:720px){.stage{aspect-ratio:1/1}.dev{width:34%;bottom:-18%}}
+@media (max-width:720px){.stage{aspect-ratio:1/1}.dev{width:32%;bottom:-10%}.browser .bar{height:22px;padding:0 8px;gap:4px}.browser .bar i{width:6px;height:6px}.browser .bar span{font-size:9px;padding:1px 6px;margin-left:6px}}
 
 /* 5. the feature cards: stacked UI pieces on a gridded panel, title and text centred under them (Ramos) */
 .fcard{background:#FAFAFA;border-radius:32px;overflow:hidden;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 clamp(20px,3vw,48px) clamp(28px,3.4vw,48px);
@@ -217,8 +208,8 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 /* 7. the live Adeline prototype in a phone */
 .protopanel{background:var(--cream);border-radius:32px;display:flex;justify-content:center;padding:clamp(28px,4vw,64px);position:relative;overflow:hidden;cursor:pointer}
 .protopanel::before{content:"";position:absolute;inset:-30%;background:radial-gradient(40% 40% at 80% 20%,rgba(255,118,88,.25),transparent 70%),radial-gradient(40% 40% at 15% 85%,rgba(255,209,92,.35),transparent 70%);pointer-events:none}
-.ph{position:relative;width:min(100%,330px);background:#14161a;border-radius:46px;padding:10px;box-shadow:0 30px 60px -24px rgba(0,0,0,.45)}
-.ph .sc{position:relative;aspect-ratio:375/760;border-radius:37px;background:#fff;overflow:hidden;display:flex;flex-direction:column;font-family:var(--ui);color:var(--w-ink)}
+.ph{position:relative;width:min(100%,320px);border:1.5px solid var(--ink);border-radius:46px;padding:9px;background:transparent}
+.ph .sc{position:relative;aspect-ratio:375/760;border-radius:37px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.05),0 24px 44px -24px rgba(60,40,20,.35);overflow:hidden;display:flex;flex-direction:column;font-family:var(--ui);color:var(--w-ink)}
 .ph .top{display:flex;align-items:center;gap:10px;padding:34px 16px 12px;border-bottom:1px solid var(--w-line);font-size:16px;font-weight:600;color:#0F172A}
 .alogo{width:30px;height:30px;border-radius:8px;background:#111;display:grid;place-items:center;flex:none}
 .alogo svg{width:60%;height:60%}
@@ -333,9 +324,9 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .track{display:flex;gap:clamp(10px,1.2vw,16px);width:max-content;animation:slide var(--s,70s) linear infinite}
 .track.rev{animation-direction:reverse}
 .mos.paused .ticker,.mos:not(.play) .ticker,.mos:hover .ticker,.mos.paused .track,.mos:not(.play) .track,.mos:hover .track{animation-play-state:paused}
-.tile{height:clamp(150px,19vw,280px);border-radius:8px;overflow:hidden;background:#000;flex:none}
+.tile{height:clamp(150px,19vw,280px);border-radius:6px;overflow:hidden;background:#fff;flex:none}
 .tile img{height:100%;width:100%;object-fit:cover;object-position:top}
-.tile.q{aspect-ratio:1}.tile.w{aspect-ratio:5/4}.tile.l{aspect-ratio:16/10;background:#fff}.tile.mb{aspect-ratio:375/812;background:#fff}
+.tile.sq{aspect-ratio:1}.tile.w{aspect-ratio:5/4}.tile.l{aspect-ratio:16/10;background:#fff}.tile.mb{aspect-ratio:375/812;background:#fff}
 @media (prefers-reduced-motion:reduce){.ticker,.track{animation:none}}
 
 /* reveal on scroll (only with JS) */
@@ -396,9 +387,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <h2 id="h-magic" class="vh">Warmy magic is on the way</h2>
     <p id="magic-how" class="vh">The screen types and moves. Press Enter, or click it, to stop or start it.</p>
     <div class="loader">
-      <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
-      <p class="tip" aria-hidden="true"><span class="tt">Warmy magic is on the way</span><span class="dots">.....</span><span class="cur"></span></p>
-      <svg class="spark" viewBox="0 0 34 40" aria-hidden="true"><path d="M22 2l1.6 5.4L29 9l-5.4 1.6L22 16l-1.6-5.4L15 9l5.4-1.6z" fill="currentColor"/><path d="M10 18l1 3 3 1-3 1-1 3-1-3-3-1 3-1z" fill="currentColor" opacity=".7"/><circle cx="18" cy="26" r="1.6" fill="currentColor"/><circle cx="7" cy="36" r="1.2" fill="currentColor" opacity=".6"/></svg>
+      <img class="logo" src="assets/work/warmy/warmy-logo-icon.svg" width="48" height="48" alt="">
+      <p class="tip" aria-hidden="true"><span class="ghost">Warmy magic is on the way.....</span><span><span class="tt">Warmy magic is on the way</span><span class="dots">.....</span><span class="cur"></span></span><svg class="spark" viewBox="0 0 34 40" aria-hidden="true"><path d="M22 2l1.6 5.4L29 9l-5.4 1.6L22 16l-1.6-5.4L15 9l5.4-1.6z" fill="currentColor"/><path d="M10 18l1 3 3 1-3 1-1 3-1-3-3-1 3-1z" fill="currentColor" opacity=".7"/><circle cx="18" cy="26" r="1.6" fill="currentColor"/><circle cx="7" cy="36" r="1.2" fill="currentColor" opacity=".6"/></svg></p>
+
     </div>
   </section></div>
 
@@ -431,12 +422,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <li class="rv" style="--d:.08s"><h3><i style="background:#94A3B8"></i>Mailbox providers</h3><div class="tags"><span>Gmail</span><span>Outlook</span><span>Yahoo</span><span>Google Workspace</span><span>Microsoft 365</span><span>35+ ESPs</span></div></li>
         <li class="rv" style="--d:.16s"><h3><i style="background:var(--ink)"></i>People and plans</h3><div class="tags"><span>Founders with one domain</span><span>Agencies, hundreds of mailboxes</span><span>iGaming CRM teams</span><span>AI SDRs</span><span>Custom plans on Stripe</span></div></li>
       </ul>
-      <div class="pillrow c1-12">
-        <p class="big" id="pill-big">Designed <span class="s">for</span></p>
-        <div class="pill" id="pill" aria-label="Deliverability, warm-up, placement tests, template checks, AI answers" role="img">
-          <div class="run" aria-hidden="true"><span>deliverability</span><span>warm-up</span><span>placement tests</span><span>template checks</span><span>AI answers</span><span>deliverability</span><span>warm-up</span><span>placement tests</span><span>template checks</span><span>AI answers</span></div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -453,20 +438,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <li><button type="button" aria-expanded="false" aria-controls="ac5" id="ab5">Voice and thinking states<span class="pm" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></button><div class="body" id="ac5" role="region" aria-labelledby="ab5"><div><p>Asking by voice on the phone, and a Thinking state on desktop, so the wait reads as work and not as a frozen screen.</p></div></div></li>
       </ul>
       <figure class="c6-12 rv" style="--d:.1s"><div class="stage">
-        <div class="laptop"><div class="scr"><div class="vp" id="lap">
+        <div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>app.warmy.io</span></div><div class="vp" id="lap">
           <img class="on" src="assets/work/warmy/tracker-desktop.webp" alt="Sender tracker on desktop: filters for source and campaign, five cards for opened, clicked, bounced, spam and unsubscribed with their change, an overview chart for a week, and a warning that campaign emails open at 9% of sent." width="1440" height="2306">
           <img src="assets/work/warmy/template-desktop.webp" alt="The template editor with the Template score panel: 100 out of 100, Excellent, with checks for subject line, body content, structure and format, compliance and deliverability signals." width="1440" height="1024" loading="lazy">
           <img src="assets/work/warmy/spintax-desktop.webp" alt="A template written in spintax, with a score of 79, Good, and a note: Spintax detected, showing results for 1 of 18 variations, use Preview to explore all versions." width="1440" height="1024" loading="lazy">
           <img src="assets/work/warmy/adeline-desktop.webp" alt="The home screen with the Adeline AI panel open: Supercharge your knowledge, three starting questions, Meet an Advisor and Chat with a Human, and a message field." width="1440" height="1024" loading="lazy">
           <img src="assets/work/warmy/adeline-thinking.webp" alt="Adeline AI on desktop, thinking about the question: Why are my emails going to spam even with warm-up enabled?" width="1440" height="1024" loading="lazy">
-        </div></div><div class="base" aria-hidden="true"></div></div>
-        <div class="dev"><div class="scr"><div class="vp" id="mob">
+        </div></div>
+        <div class="dev"><div class="vp" id="mob">
           <img class="on" src="assets/work/warmy/tracker-mobile.webp" alt="Sender tracker on a phone: Connect source, filters stacked, and the cards one under another." width="375" height="3759">
           <img src="assets/work/warmy/template-mobile.webp" alt="Template score on a phone: 100 out of 100, Excellent, other improvements and suggestions ranked High and Medium." width="375" height="832" loading="lazy">
           <img src="assets/work/warmy/template-mobile.webp" alt="" width="375" height="832" loading="lazy">
           <img src="assets/work/warmy/adeline-mobile.webp" alt="Adeline AI on a phone, with three starting questions and a message field." width="375" height="832" loading="lazy">
           <img src="assets/work/warmy/chat-mobile.webp" alt="Adeline AI on a phone, listening to a question asked by voice." width="375" height="832" loading="lazy">
-        </div></div></div>
+        </div></div>
       </div></figure>
 
       <!-- 5. feature cards -->
@@ -628,8 +613,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <p id="mos-how" class="vh">The mosaic moves. Press Enter, or click it, to stop or start it.</p>
     <div class="ticker" aria-hidden="true"><span>Warmy</span><span>Warmy</span><span>Warmy</span><span>Warmy</span><span>Warmy</span><span>Warmy</span></div>
     <div class="rows" role="img" aria-label="A moving mosaic of Warmy campaign visuals and screens: social posts for iGaming CRM teams with the tiger mascot in a Warmy T-shirt, a print ad, Scale your email sends, let Warmy get them seen, and product screens.">
-      <div class="track" style="--s:70s" data-tiles="post-1:q|template-desktop:l|poster:w|post-roi:q|adeline-mobile:mb|post-2:q|tracker-desktop:l"></div>
-      <div class="track rev" style="--s:90s" data-tiles="spintax-desktop:l|post-4:q|chat-mobile:mb|adeline-desktop:l|post-2:q|template-mobile:mb|poster:w"></div>
+      <div class="track" style="--s:70s" data-tiles="post-1:sq|template-desktop:l|poster:w|post-roi:sq|adeline-mobile:mb|post-2:sq|tracker-desktop:l"></div>
+      <div class="track rev" style="--s:90s" data-tiles="spintax-desktop:l|post-4:sq|chat-mobile:mb|adeline-desktop:l|post-2:sq|template-mobile:mb|poster:w"></div>
     </div>
   </section>
   <p class="cap" style="margin-top:16px;max-width:64ch">Social posts and a print ad for iGaming CRM teams, in the brand's dark orange, with product screens.</p></div>
@@ -666,7 +651,7 @@ document.querySelectorAll('.big').forEach(function(h){
 });
 // reveal on scroll, and the moving blocks play only while on screen
 (function(){
-  var els=document.querySelectorAll('.rv,.big,.fcard,.mos,.pill');
+  var els=document.querySelectorAll('.rv,.big,.fcard,.mos');
   if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in','play')});return}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){
     if(e.isIntersecting)e.target.classList.add('in');
@@ -683,9 +668,9 @@ document.querySelectorAll('.big').forEach(function(h){
   function paused(){return m.classList.contains('paused')||m.matches(':hover')||!inView}
   function tick(){
     timer=0;if(paused())return;
-    if(tc<full.length){tc++;tt.textContent=full.slice(0,tc);timer=setTimeout(tick,75);return}
+    if(tc<full.length){tc++;tt.textContent=full.slice(0,tc);timer=setTimeout(tick,38);return}
     dc=(dc+1)%6;dots.textContent='.'.repeat(dc);
-    timer=setTimeout(tick,dc===5?900:380);
+    timer=setTimeout(tick,dc===5?600:200);
   }
   function play(){if(!timer&&!paused())timer=setTimeout(tick,60)}
   tt.textContent='';dots.textContent='';
@@ -703,10 +688,8 @@ document.querySelectorAll('.big').forEach(function(h){
         b.textContent=(dec?x.toFixed(dec):Math.round(x).toLocaleString('en-US'))+suf;if(p<1)requestAnimationFrame(f)})(t0)},.6)});
 })();
 
-// the pill marquee stops on hover (CSS) and on a click, a tap or Enter
-(function(){var p=document.getElementById('pill');p.tabIndex=0;toggler(p)})();
 
-// 4. the accordion: one item open at a time; the laptop and the phone show its screens
+// 4. the accordion: one item open at a time; the browser and the phone show its screens
 (function(){
   var items=document.querySelectorAll('#acc li'),lap=document.querySelectorAll('#lap img'),mob=document.querySelectorAll('#mob img');
   items.forEach(function(li,i){li.querySelector('button').addEventListener('click',function(){
