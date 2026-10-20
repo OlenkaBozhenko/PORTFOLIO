@@ -164,12 +164,13 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 @media (prefers-reduced-motion:reduce){.js .big .w>span{transform:none;transition:none}}
 
 /* 3. complexity: counters and the six groups of what sits behind one inbox */
-.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--cg);border-top:1px solid var(--rule);padding-top:24px}
+/* equal gaps between the four figures (her request), each label in two lines */
+.stats{display:flex;justify-content:space-between;gap:var(--cg);border-top:1px solid var(--rule);padding-top:24px}
 .stats div{display:flex;flex-direction:column;gap:6px}
 .stats b{font-weight:400;font-size:clamp(36px,4.6vw,64px);letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
-.stats span{color:var(--muted);font-size:15px;max-width:22ch}
+.stats span{color:var(--muted);font-size:15px;white-space:nowrap}
 .note{font-size:13px;color:var(--muted);margin-top:16px}
-@media (max-width:720px){.stats{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:28px}}
+@media (max-width:720px){.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));row-gap:28px}}
 .layers{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--cg)}
 .layers li{background:var(--well);border-radius:20px;padding:22px 22px 24px;display:flex;flex-direction:column;gap:14px}
 .layers h3{font-size:20px;font-weight:500;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
@@ -413,10 +414,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <h3 class="big c1-12" id="cx-big">One email <span class="chips" aria-hidden="true"><span class="chip"><svg style="color:var(--accent-ink)"><use href="#i-bolt"/></svg></span><span class="chip r"><svg><use href="#i-chart"/></svg></span></span> passes <span class="s">a dozen checks</span> before it reaches <span class="nb">the inbox</span></h3>
       <div class="c1-12 rv">
         <div class="stats">
-          <div><b data-count="35000" data-suffix="+">35,000+</b><span>businesses and marketers</span></div>
-          <div><b data-count="650000" data-suffix="+">650,000+</b><span>domains with better deliverability</span></div>
-          <div><b data-count="35" data-suffix="+">35+</b><span>email service providers connected</span></div>
-          <div><b data-count="4.9" data-dec="1" data-suffix=" / 5">4.9 / 5</b><span>rating on G2</span></div>
+          <div><b data-count="35000" data-suffix="+">35,000+</b><span>businesses<br>and marketers</span></div>
+          <div><b data-count="650000" data-suffix="+">650,000+</b><span>domains with better<br>deliverability</span></div>
+          <div><b data-count="35" data-suffix="+">35+</b><span>email service<br>providers connected</span></div>
+          <div><b data-count="4.9" data-dec="1" data-suffix=" / 5">4.9 / 5</b><span>rating<br>on G2</span></div>
         </div>
         <p class="note">Numbers as Warmy reports them, warmy.io, October 2026.</p>
       </div>
@@ -687,7 +688,7 @@ document.querySelectorAll('.big').forEach(function(h){
 // counters count up once, when they come on screen
 (function(){
   var bs=document.querySelectorAll('[data-count]');if(RM)return;
-  bs.forEach(function(b){var to=+b.dataset.count,dec=+(b.dataset.dec||0),suf=b.dataset.suffix||'',done=false;
+  bs.forEach(function(b){b.style.minWidth=b.offsetWidth+'px';var to=+b.dataset.count,dec=+(b.dataset.dec||0),suf=b.dataset.suffix||'',done=false;
     onScreen(b,function(v){if(!v||done)return;done=true;var t0=performance.now();
       (function f(t){var p=Math.min(1,(t-t0)/1600),e=1-Math.pow(1-p,3),x=to*e;
         b.textContent=(dec?x.toFixed(dec):Math.round(x).toLocaleString('en-US'))+suf;if(p<1)requestAnimationFrame(f)})(t0)},.6)});
