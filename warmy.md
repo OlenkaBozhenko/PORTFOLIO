@@ -59,7 +59,7 @@ Order and names (her request, 2026-10-20): Sender tracker first, then the two AI
 Accessibility: the list is real buttons with aria-expanded; the screens change with the open item and carry alt text; keyboard and screen readers get the same content.
 
 ### 5. Feature cards (gridded panels with stacked UI pieces, Ramos)
-Two cards side by side, each a pale gridded panel with two overlapping UI pieces drawn in HTML in Warmy's style (Figtree, its colours), title and text centred under them. Figures are made up for the mockup.
+Two cards side by side, each a plain pale panel (no grid, her request 2026-10-20) with two overlapping UI pieces drawn in HTML in Warmy's style (Figtree, its colours); the pieces, the title and the text all start on one left edge (her request), not centred. Figures are made up for the mockup.
 - **Placement you can prove.** Inbox 91% (+12 this week); by provider: Gmail 94%, Outlook 86%, Yahoo 92%; Spam 6%, Promotions 3%. Text: A seed test sends the real campaign to test inboxes at each provider and reports where it landed, so "delivered" finally means something.
 - **Warm-up that knows when it is done.** Health 82 of 100, Day 18 of 21, a rising line; "Ready to send 1,200 a day". Text: Warm-up ramps volume step by step and shows a finish line, so senders know when the domain is ready and what keeps it safe after.
 
