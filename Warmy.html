@@ -330,14 +330,12 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .ticker span{flex:none;color:#fff;font-size:clamp(56px,11vw,176px);font-weight:500;line-height:.9;letter-spacing:-.04em;text-transform:uppercase;white-space:nowrap;padding-right:.5em}
 .ticker span:nth-child(even){color:var(--o)}
 .rows{display:flex;flex-direction:column;gap:clamp(10px,1.2vw,16px)}
-.track{display:flex;align-items:center;gap:clamp(10px,1.2vw,16px);width:max-content;animation:slide var(--s,70s) linear infinite}
+.track{display:flex;gap:clamp(10px,1.2vw,16px);width:max-content;animation:slide var(--s,70s) linear infinite}
 .track.rev{animation-direction:reverse}
 .mos.paused .ticker,.mos:not(.play) .ticker,.mos:hover .ticker,.mos.paused .track,.mos:not(.play) .track,.mos:hover .track{animation-play-state:paused}
 .tile{height:clamp(150px,19vw,280px);border-radius:6px;overflow:hidden;background:#fff;flex:none}
 .tile img{height:100%;width:100%;object-fit:cover;object-position:top}
 .tile.sq{aspect-ratio:1}.tile.x{aspect-ratio:3/2}.tile.bn{aspect-ratio:3000/2480}.tile.w{aspect-ratio:5/4}.tile.l{aspect-ratio:16/10;background:#fff}.tile.mb{aspect-ratio:375/812;background:#fff}
-/* product screens are full 1440 px pages: a taller tile keeps their text legible */
-.tile.l,.tile.mb{height:clamp(240px,32vw,480px)}
 @media (prefers-reduced-motion:reduce){.ticker,.track{animation:none}}
 
 /* reveal on scroll (only with JS) */
