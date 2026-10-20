@@ -52,3 +52,6 @@ The app name in running text is set in capitals, bold, in quotes: “SCHOOL” (
 - Navy #001059 on Yellow #FFD60A: 12.2 : 1 (the same pair both ways); Navy on white: 17.2 : 1. Yellow on white fails (1.4 : 1), so yellow is used only as a ground, never as text on white.
 - The journey map is a real table with row and column headers; its scroll box can be reached with the keyboard.
 - Motion (the phones rising in, the long screens scrolling) stops with `prefers-reduced-motion`.
+
+## End of the page
+**View next work:** Styupan Translation (`styupan.html`), in the order of the landing's work list (DRON and AnyBiz have no page yet, so they are skipped; the last page leads back to the first). Her request, 2026-10-20.

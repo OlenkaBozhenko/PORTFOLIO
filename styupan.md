@@ -46,3 +46,6 @@ Sources: Instagram [@nortranslations](https://www.instagram.com/nortranslations/
 ## Accessibility
 - Each image has a text alternative; the construction grid and stationery have one description each.
 - Yellow #FFF748 on purple #3C1A5B: 12.5 : 1. Purple on Paper: 12.9 : 1. Yellow on Paper fails (1.03 : 1), so the yellow seal is shown only on purple.
+
+## End of the page
+**View next work:** Book (`book.html`), in the order of the landing's work list (DRON and AnyBiz have no page yet, so they are skipped; the last page leads back to the first). Her request, 2026-10-20.

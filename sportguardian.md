@@ -50,7 +50,7 @@ Order (2026-10-13, her request, last change): header → the moving mosaic → A
    - the skateboards (1–9), caption "In the club" on the right (10–12) (swapped, her request);
    - the cap on the right edge (5–12, her request), the mark alone, centred on the front panel between the top seam and the brim.
    Photos: AI images generated with Figma AI (gpt-image-2.5, her Pro plan, 2026-10-13), not real people or places; the SG mark is printed on them from the vector master with [`tools/sport-guardian/print_photo.py`](tools/sport-guardian/print_photo.py) (it takes the light of the fabric or surface). The poster (2026-10-13, her request) carries a QR code on a white tile to the crowdfunding page, produkter.supporter.no/idrettsfadder (the product URL in her presentation frame), with "Scan to keep a child in sport near you." beside it (2026-10-13, her request: not only athletes, any child in any sport; was "Scan to back a young athlete near you.") (placeholder copy written for the mockup) and the address in green; it scans in every served size (checked with OpenCV). Made with segno in `print_photo.py`. The caption adds: "The QR code opens the campaign."
-6. **Back to all work.**
+6. **View next work:** School (`school.html`), in the order of the landing's work list (DRON and AnyBiz have no page yet, so they are skipped; the last page leads back to the first). Her request, 2026-10-20.
 
 ## Logo
 - Vector master: [`tools/sport-guardian/sg_svg.py`](tools/sport-guardian/sg_svg.py) → `sg-mark.svg` (white S, green G), `sg-mark-teal.svg` (teal S, green G, for white grounds), `sg-mark-on-green.svg` (teal S, white G, for green grounds). Built from the Candal glyph outlines (OFL), so no font is needed to show it.
