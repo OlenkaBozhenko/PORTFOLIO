@@ -13,7 +13,7 @@ Her brief (2026-10-20): show how complex the product is and her part in it as th
 | Years | Aug 2021 – present ([`cv.md`](cv.md), LinkedIn) |
 | Platform | Web SaaS, desktop and mobile web |
 | Product UI type | Figtree (her Figma variables: `text-base/Regular` 14/17 and the rest) |
-| Accent (her Figma fill, 2026-10-20) | a linear gradient #FFA676 → #FF736D. Used on the page for every orange accent: the coloured icon chips in the big headlines (white icons; the grey chips take #FF736D icons), the open accordion button, the "AI tool" tags, the 91% placement figure, the slots in the hypothesis template, the Variant B tag and the progress bars in the example. Dark text on it (#0E0E0E, at least 7:1), never white text |
+| Accent (her Figma fill, 2026-10-20) | a linear gradient #FFA676 → #FF736D. Used on the page for every orange accent: the coloured icon chips in the big headlines (white icons; the grey chips take #FF736D icons), the open accordion button, the 91% placement figure, the slots in the hypothesis template, the Variant B tag and the progress bars in the example. Dark text on it (#0E0E0E, at least 7:1), never white text |
 | Product colours | brand #FF7658; text #334155; muted #64748B; lines #E2E8F0; primary button #030712; the logo bars yellow, orange, red (#FFD15C, #FFA53A, #FF453A, sampled from her Figma frames) |
 | Product numbers (vendor-reported, warmy.io, read 2026-10-20) | 35,000+ businesses and marketers; 650,000+ domains with better deliverability; 35+ email service providers connected; G2 rating 4.9 of 5 |
 
@@ -53,10 +53,10 @@ Motion (WCAG 2.2.2): it plays only on screen, stops while the pointer is over it
 
 ### 4. Product (accordion and devices, Ramos)
 Title: **Turning signals into next steps.** Five items, the first open; opening one shows its screens in a browser frame and a phone screen beside the list (crossfade). The frames are the ones of the Sport Guardian page (her request, 2026-10-20: the laptop and phone bezels were too heavy): a light browser bar with three grey dots and app.warmy.io, 10 px corners and a soft shadow; the phone as a rounded screen with a soft shadow, no bezel.
-Order and names (her request, 2026-10-20): Sender tracker first, then the two AI tools, each with an orange "AI tool" tag beside its name, then the rest.
+Order and names (her request, 2026-10-20): Sender tracker first, then the two AI tools, then the rest (the "AI tool" tags were tried and removed, her request).
 1. **Sender tracker:** What you send outside Warmy, from any tool: opens, clicks, bounces, spam and unsubscribes in one chart, a warning when campaign mail falls under the at-risk line, and the biggest risk named by provider. (`tracker-desktop`, `tracker-mobile`)
-2. **Adeline AI** [AI tool]: The AI agent answers in plain words, with three starting questions, a call with an advisor or a human chat one tap away, and a reminder that the AI can be wrong. (`adeline-desktop`, `adeline-mobile`)
-3. **Template checker** [AI tool] (was "Template score"): AI reads the email before a real inbox does: a score out of 100, failed, warning and passed checks by section, and fixes it writes itself, ranked High and Medium. (`template-desktop`, `template-mobile`)
+2. **Adeline AI**: The AI agent answers in plain words, with three starting questions, a call with an advisor or a human chat one tap away, and a reminder that the AI can be wrong. (`adeline-desktop`, `adeline-mobile`)
+3. **Template checker** (was "Template score"): AI reads the email before a real inbox does: a score out of 100, failed, warning and passed checks by section, and fixes it writes itself, ranked High and Medium. (`template-desktop`, `template-mobile`)
 4. **Spintax check:** For templates that change in every send: Warmy scores one of 18 variations and asks to preview the rest, so nobody trusts a score that covers one version. (`spintax-desktop`, `template-mobile`)
 5. **Voice and thinking states:** Asking by voice on the phone, and a Thinking state on desktop, so the wait reads as work and not as a frozen screen. (`adeline-thinking`, `chat-mobile`)
 Accessibility: the list is real buttons with aria-expanded; the screens change with the open item and carry alt text; keyboard and screen readers get the same content.
