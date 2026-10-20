@@ -139,7 +139,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .note{font-size:13px;color:var(--muted);margin-top:16px}
 @media (max-width:720px){.stats{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:28px}}
 .layers{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--cg)}
-.layers li{background:var(--well);border-radius:20px;padding:22px 22px 24px;display:flex;flex-direction:column;gap:14px}
+.layers li{background:var(--well);border-radius:0;padding:22px 22px 24px;display:flex;flex-direction:column;gap:14px}
 .layers h3{font-size:20px;font-weight:500;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
 .layers h3 i{width:10px;height:10px;border-radius:50%;flex:none}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
@@ -150,8 +150,8 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 
 /* 4. the feature accordion next to a browser and a phone (Ramos; the frames of the Sport Guardian page) */
 .acc{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
-.acc li{background:#fff;border-radius:28px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 18px 40px -24px rgba(0,0,0,.22);border:1px solid #F0F0F0}
-.acc button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 18px 18px 28px;font-size:clamp(20px,1.9vw,26px);letter-spacing:-.02em;border-radius:28px}
+.acc li{background:#fff;border-radius:0;box-shadow:0 1px 2px rgba(0,0,0,.04),0 18px 40px -24px rgba(0,0,0,.22);border:1px solid #F0F0F0}
+.acc button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 18px 18px 28px;font-size:clamp(20px,1.9vw,26px);letter-spacing:-.02em;border-radius:0}
 .acc button:focus-visible{outline:2px solid var(--label);outline-offset:3px}
 .acc .pm{flex:none;width:52px;height:52px;border-radius:50%;background:var(--well);display:grid;place-items:center;transition:background .25s,transform .35s}
 .acc .pm svg{width:16px;height:16px}
@@ -162,7 +162,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .acc .body p{padding:0 28px 24px;color:var(--muted);font-size:16px;max-width:46ch}
 .acc li.open .body{grid-template-rows:1fr}
 @media (prefers-reduced-motion:reduce){.acc .body,.acc .pm{transition:none}}
-.stage{position:relative;background:var(--well);border-radius:32px;overflow:hidden;aspect-ratio:7/6;min-height:0}
+.stage{position:relative;background:var(--well);border-radius:0;overflow:hidden;aspect-ratio:7/6;min-height:0}
 .browser{position:absolute;right:-8%;top:8%;width:92%;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.06),0 24px 48px -20px rgba(60,40,20,.3)}
 .browser .bar{display:flex;align-items:center;gap:7px;height:34px;padding:0 14px;background:#F7F7F7;border-bottom:1px solid var(--rule)}
 .browser .bar i{width:10px;height:10px;border-radius:50%;background:#D9D9D9}
@@ -177,10 +177,9 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 
 /* 5. the feature cards: stacked UI pieces on a gridded panel, title and text centred under them (Ramos) */
 /* plain pale panel (her request: no grid); the UI pieces and the text share one left edge */
-.fcard{background:#FAFAFA;border-radius:32px;overflow:hidden;display:flex;flex-direction:column;align-items:stretch;text-align:left;padding:0 clamp(24px,3.4vw,48px) clamp(28px,3.4vw,48px)}
-.fcard .ui{position:relative;width:100%;height:clamp(260px,26vw,340px);margin:clamp(28px,3.4vw,48px) 0 clamp(24px,3vw,40px)}
-.fcard h3{font-size:clamp(24px,2.4vw,34px);letter-spacing:-.03em;line-height:1.1;margin-bottom:12px}
-.fcard p{color:var(--muted);max-width:44ch;font-size:16px}
+.fcard .fpanel{background:var(--well);padding:clamp(24px,3.4vw,48px)}
+.fcard .ui{position:relative;width:100%;height:clamp(260px,26vw,340px)}
+.fcard .cap{max-width:52ch}
 .wui{font-family:var(--ui);color:var(--w-ink);text-align:left}
 .wc{position:absolute;background:#fff;border-radius:18px;box-shadow:0 1px 2px rgba(0,0,0,.05),0 24px 48px -24px rgba(15,23,42,.28);padding:18px 20px}
 .wc .lb{font-size:13px;font-weight:500;color:var(--w-mut)}
@@ -211,7 +210,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 @media (max-width:560px){.part li,.part li:nth-child(4){grid-column:1/-1}}
 
 /* 7. the live Adeline prototype in a phone */
-.protopanel{background:var(--cream);border-radius:32px;display:flex;justify-content:center;padding:clamp(28px,4vw,64px);position:relative;overflow:hidden;cursor:pointer}
+.protopanel{background:var(--cream);border-radius:0;display:flex;justify-content:center;padding:clamp(28px,4vw,64px);position:relative;overflow:hidden;cursor:pointer}
 .protopanel::before{content:"";position:absolute;inset:-30%;background:radial-gradient(40% 40% at 80% 20%,rgba(255,118,88,.25),transparent 70%),radial-gradient(40% 40% at 15% 85%,rgba(255,209,92,.35),transparent 70%);pointer-events:none}
 .ph{position:relative;width:min(100%,320px);border:1.5px solid var(--ink);border-radius:46px;padding:9px;background:transparent}
 .ph .sc{position:relative;aspect-ratio:375/760;border-radius:37px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.05),0 24px 44px -24px rgba(60,40,20,.35);overflow:hidden;display:flex;flex-direction:column;font-family:var(--ui);color:var(--w-ink)}
@@ -258,7 +257,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .rules li{counter-increment:r;display:grid;grid-template-columns:2.4em 1fr;gap:12px;padding:16px 0;border-top:1px solid var(--rule);font-size:16px}
 .rules li::before{content:counter(r,decimal-leading-zero);color:var(--muted);font-variant-numeric:tabular-nums}
 .rules li b{font-weight:500}
-.tpl{background:var(--ink);color:#fff;border-radius:28px;padding:clamp(24px,3vw,40px);font-size:clamp(20px,2vw,27px);line-height:1.4;letter-spacing:-.02em}
+.tpl{background:var(--ink);color:#fff;border-radius:0;padding:clamp(24px,3vw,40px);font-size:clamp(20px,2vw,27px);line-height:1.4;letter-spacing:-.02em}
 .tpl .lb{display:block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#BDBDBD;margin-bottom:16px}
 .tpl mark{background:none;color:var(--ink);background:var(--y);border-radius:8px;padding:0 .25em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .ex{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--cg);margin-top:var(--cg)}
@@ -280,10 +279,10 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .src i{font-style:italic}
 
 /* 10. the customer journey map: personas, then the journey of the chosen one (made-up data) */
-.cjm-note{display:flex;gap:12px;align-items:flex-start;background:#FFF6DB;border-radius:16px;padding:14px 18px;font-size:15px;line-height:1.5;max-width:80ch}
+.cjm-note{display:flex;gap:12px;align-items:flex-start;background:#FFF6DB;border-radius:0;padding:14px 18px;font-size:15px;line-height:1.5;max-width:80ch}
 .cjm-note b{flex:none;width:22px;height:22px;border-radius:50%;background:var(--r);color:#fff;display:grid;place-items:center;font-size:13px;margin-top:1px}
 .personas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--cg)}
-.pcard{display:flex;flex-direction:column;gap:14px;padding:20px;border-radius:24px;background:var(--well);min-width:0}
+.pcard{display:flex;flex-direction:column;gap:14px;padding:20px;border-radius:0;background:var(--well);min-width:0}
 .tabs{display:flex;gap:6px;padding:6px;background:var(--well);border-radius:999px;overflow-x:auto;scrollbar-width:thin}
 .tab{all:unset;box-sizing:border-box;cursor:pointer;flex:1 0 auto;display:flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:8px 18px;border-radius:999px;font-size:16px;font-weight:500;white-space:nowrap;color:var(--muted);transition:background .2s,color .2s}
 .tab i{width:10px;height:10px;border-radius:50%;flex:none}
@@ -301,7 +300,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .pcard .churn dt{color:#B91C1C}
 @media (max-width:1000px){.personas{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.personas{grid-template-columns:1fr}}
-.jwrap{overflow-x:auto;border-radius:28px;background:var(--well);padding:clamp(14px,2vw,24px)}
+.jwrap{overflow-x:auto;border-radius:0;background:var(--well);padding:clamp(14px,2vw,24px)}
 .jmap{width:100%;min-width:900px;border-collapse:separate;border-spacing:10px;font-size:14px;line-height:1.45;margin:-10px}
 .jmap caption{text-align:left;padding:10px 10px 4px;font-size:15px;color:var(--muted)}
 .jmap caption b{color:var(--ink);font-weight:500}
@@ -461,7 +460,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
       <!-- 5. feature cards -->
       <figure class="c1-6 rv fcard" id="fc1">
-        <div class="ui wui" aria-hidden="true">
+        <div class="fpanel"><div class="ui wui" aria-hidden="true">
           <div class="wc" style="left:0;top:0;width:50%">
             <div class="lb">Inbox placement</div>
             <span class="big-y">91%</span>
@@ -477,11 +476,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
             </div>
             <div class="lb" style="margin-top:12px">Spam 6% · Promotions 3%</div>
           </div>
-        </div>
-        <figcaption style="max-width:none;color:inherit"><h3>Placement you can prove</h3><p>A seed test sends the real campaign to test inboxes at each provider and reports where it landed, so "delivered" finally means something.</p></figcaption>
+        </div></div>
+        <figcaption class="cap"><h3>Placement you can prove</h3><p>A seed test sends the real campaign to test inboxes at each provider and reports where it landed, so "delivered" finally means something.</p></figcaption>
       </figure>
       <figure class="c7-12 rv fcard" id="fc2" style="--d:.1s">
-        <div class="ui wui" aria-hidden="true">
+        <div class="fpanel"><div class="ui wui" aria-hidden="true">
           <div class="wc" style="left:0;top:10%;width:44%;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px">
             <div class="lb">Domain health</div>
             <svg class="ring" viewBox="0 0 100 100" style="--v:.82"><circle class="bgc" cx="50" cy="50" r="42"/><circle class="fgc" cx="50" cy="50" r="42"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="Figtree" font-weight="600" font-size="26" fill="#0F172A">82</text></svg>
@@ -492,8 +491,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
             <svg viewBox="0 0 220 80" style="width:100%;height:auto;margin-top:8px"><defs><linearGradient id="wg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#FFA53A" stop-opacity=".35"/><stop offset="1" stop-color="#FFA53A" stop-opacity="0"/></linearGradient></defs><path d="M0 72 L20 68 L40 66 L60 58 L80 56 L100 46 L120 44 L140 34 L160 30 L180 20 L200 16 L220 8 V80 H0Z" fill="url(#wg)"/><path d="M0 72 L20 68 L40 66 L60 58 L80 56 L100 46 L120 44 L140 34 L160 30 L180 20 L200 16 L220 8" fill="none" stroke="#FF9A3A" stroke-width="2.5" stroke-linejoin="round"/></svg>
             <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px;gap:8px"><span style="font-size:13px">Ready to send <b>1,200</b> a day</span><span class="btn-d">Details</span></div>
           </div>
-        </div>
-        <figcaption style="max-width:none;color:inherit"><h3>Warm-up that knows when it is done</h3><p>Warm-up ramps volume step by step and shows a finish line, so senders know when the domain is ready and what keeps it safe after.</p></figcaption>
+        </div></div>
+        <figcaption class="cap"><h3>Warm-up that knows when it is done</h3><p>Warm-up ramps volume step by step and shows a finish line, so senders know when the domain is ready and what keeps it safe after.</p></figcaption>
       </figure>
       <p class="c1-12 note" style="margin-top:calc(-1*clamp(40px,6vw,104px))">The figures in the two cards are made up for the mockup.</p>
     </div>

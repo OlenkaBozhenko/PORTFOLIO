@@ -18,6 +18,8 @@ Her brief (2026-10-20): show how complex the product is and her part in it as th
 
 Sources: her Figma file My-projects-new (`YlGWlsWWjKSCxhONMzGG2F`), section Warmy 207:93444: Sender tracker desktop and mobile (207:95979, 207:95975), Template score (207:96089, 207:96099), Spintax detected (207:96108), Adeline AI (207:97381, 207:97391, 207:97328), the voice input on mobile (207:97352), the Stripe custom plan checkout (207:96121), the loading screen (207:95960), the iGaming social posts (207:97396, 207:97825, 207:97697, 207:97932) and the print ad (207:93445); read 2026-10-20. The product modules from warmy.io (read 2026-10-20).
 
+**Corners (her rule, 2026-10-20, after the Sport Guardian page):** every panel and card on the page has sharp corners (the first screen, the complexity groups, the feature list rows, the device panel, the feature cards, the prototype panel, the hypothesis template, the personas, the journey map, the note); only the mockups, screens and UI pieces inside them keep their rounded corners. Captions sit under their panel, left-aligned, as on the Sport Guardian page (the two feature cards too).
+
 **Privacy in the screens.** Her success manager's name and photo in the sidebar are replaced by an invented person, "Mia Larsen", with initials; the design-file placeholders `{Workspace}` and `{Name}` read "Northwind Mail" and "Jamie Cole" (made up). Done by [`tools/warmy/export_assets.py`](tools/warmy/export_assets.py), which also carries the sidebar of the tall Sender tracker frame down to the bottom. The raw Figma exports in `tools/warmy/figma/` stay out of git (`.gitignore`), since they still show the real name and photo; export them again from the nodes above to rerun the script.
 
 ## Page copy
@@ -59,7 +61,7 @@ Order and names (her request, 2026-10-20): Sender tracker first, then the two AI
 Accessibility: the list is real buttons with aria-expanded; the screens change with the open item and carry alt text; keyboard and screen readers get the same content.
 
 ### 5. Feature cards (gridded panels with stacked UI pieces, Ramos)
-Two cards side by side, each a plain pale panel (no grid, her request 2026-10-20) with two overlapping UI pieces drawn in HTML in Warmy's style (Figtree, its colours); the pieces, the title and the text all start on one left edge (her request), not centred. Figures are made up for the mockup.
+Two cards side by side, each a plain pale panel (no grid, her request 2026-10-20) with two overlapping UI pieces drawn in HTML in Warmy's style (Figtree, its colours); the pieces start on the panel's left edge, and the title and text sit under the panel as a caption on the same left edge (her request), not centred. Figures are made up for the mockup.
 - **Placement you can prove.** Inbox 91% (+12 this week); by provider: Gmail 94%, Outlook 86%, Yahoo 92%; Spam 6%, Promotions 3%. Text: A seed test sends the real campaign to test inboxes at each provider and reports where it landed, so "delivered" finally means something.
 - **Warm-up that knows when it is done.** Health 82 of 100, Day 18 of 21, a rising line; "Ready to send 1,200 a day". Text: Warm-up ramps volume step by step and shows a finish line, so senders know when the domain is ready and what keeps it safe after.
 
