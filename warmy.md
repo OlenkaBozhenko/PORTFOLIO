@@ -27,7 +27,7 @@ Sources: her Figma file My-projects-new (`YlGWlsWWjKSCxhONMzGG2F`), section Warm
 No em dashes in visible text (her rule).
 - **Back link:** ← All work
 - **Eyebrow:** Email deliverability SaaS
-- **Headline:** Getting every email into the inbox, not into spam.
+- **Headline:** An email deliverability platform with an AI agent. (Says what the service is, not a slogan, her request 2026-10-20; was *Getting every email into the inbox, not into spam.*)
 - **Meta row:** Role · UI/UX designer (as on the landing and in the resume) · Years · 2021 – present · Platform · Web, mobile web · Product · Warmy.io
 
 ### 1. First screen: "Warmy magic is on the way"
