@@ -313,20 +313,26 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .pcard .churn dt{color:#B91C1C}
 @media (max-width:1000px){.personas{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.personas{grid-template-columns:1fr}}
-.jwrap{overflow-x:auto;border-radius:0;background:var(--well);padding:clamp(14px,2vw,24px)}
-.jmap{width:100%;min-width:900px;border-collapse:separate;border-spacing:10px;font-size:14px;line-height:1.45;margin:-10px}
-.jmap caption{text-align:left;padding:10px 10px 4px;font-size:15px;color:var(--muted)}
+/* the journey map without a panel, after the School page: stage pills joined by a dotted line, row labels in
+   capitals, soft tinted cells (her request, 2026-10-20) */
+.jwrap{overflow-x:auto;margin-inline:-10px}
+.jwrap:focus-visible{outline-offset:6px}
+.jmap{width:100%;min-width:900px;border-collapse:separate;border-spacing:10px 12px;font-size:14px;line-height:1.45;table-layout:fixed}
+.jmap caption{text-align:left;padding:0 10px 6px;font-size:15px;color:var(--muted)}
 .jmap caption b{color:var(--ink);font-weight:500}
+.jmap col.rh{width:170px}
 .jmap th{text-align:left;font-weight:500;vertical-align:top}
-.jmap thead th{font-size:15px;padding:6px 4px}
-.jmap thead th span{display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:999px;padding:6px 14px}
-.jmap thead th small{display:block;font-weight:400;color:var(--muted);font-size:12.5px;margin-top:6px;padding-left:4px}
-.jmap tbody th{width:150px;font-size:14px;padding-top:12px}
+.jmap thead th{padding:0}
+.jmap thead th>div{display:flex;align-items:center;gap:10px}
+.jmap thead th:not(:last-child)>div::after{content:"";flex:1;min-width:20px;height:8px;margin-right:-10px;background:radial-gradient(circle,var(--accent-ink) 2.5px,transparent 3px) 0 50%/16px 8px repeat-x}
+.jmap thead th span{display:inline-flex;align-items:center;border-radius:99px;padding:11px 22px;background:var(--accent);color:var(--ink);font-weight:600;font-size:13px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.jmap thead th small{display:block;font-weight:400;color:var(--muted);font-size:12.5px;margin-top:10px;padding-left:2px}
+.jmap tbody th{font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:14px 8px 0 0}
 .jmap tbody th i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;vertical-align:1px}
-.jmap td{background:#fff;border-radius:14px;padding:12px 14px;vertical-align:top}
-.jmap td.e{background:none}
+.jmap td{background:var(--well);border-radius:18px;padding:14px 16px;vertical-align:top;height:88px}
+.jmap td.e{background:none;height:auto}
 .jmap tr.pr td{color:#9F1239}
-.jmap tr.dr td{background:#FFF1F2}
+.jmap tr.dr td{background:#FFF1EC}
 .jmap tr.so td{color:#166534}
 .jmap tr.th td{font-style:italic;color:#44403C}
 .risk{display:inline-block;font:600 11.5px/1 var(--ui);border-radius:999px;padding:4px 8px;margin-bottom:6px}
@@ -801,7 +807,7 @@ document.querySelectorAll('.big').forEach(function(h){
     tabs.querySelectorAll('.tab').forEach(function(b,k){b.setAttribute('aria-selected',k===i);b.tabIndex=k===i?0:-1});
     if(focus)tabs.children[i].focus();
     panel.setAttribute('aria-labelledby','t'+i);
-    var h='<table class="jmap"><caption><b>'+esc(p.n)+'</b>: the journey, stage by stage</caption><thead><tr><td class="e"></td>'+ST.map(function(s){return '<th scope="col"><span>'+s[0]+'</span><small>'+s[1]+'</small></th>'}).join('')+'</tr></thead><tbody>';
+    var h='<table class="jmap"><caption><b>'+esc(p.n)+'</b>: the journey, stage by stage</caption><colgroup><col class="rh"><col><col><col><col></colgroup><thead><tr><td class="e"></td>'+ST.map(function(s){return '<th scope="col"><div><span>'+s[0]+'</span></div><small>'+s[1]+'</small></th>'}).join('')+'</tr></thead><tbody>';
     RW.forEach(function(r,ri){h+='<tr class="'+r[2]+'"><th scope="row"><i style="background:'+r[1]+'"></i>'+r[0]+'</th>'+p.j.map(function(st){var v=st[ri];
       if(ri===3){var q=v.split('|');return '<td><span class="risk '+q[0]+'">'+RISK[q[0]]+'</span><br>'+esc(q[1])+'</td>'}return '<td>'+esc(v)+'</td>'}).join('')+'</tr>'});
     panel.innerHTML=h+'</tbody></table>';

@@ -102,6 +102,7 @@ Sources: Steve Portigal, *Interviewing Users* (2nd ed., 2023); Rob Fitzpatrick, 
 
 ### 10. Customer Journey Map (made-up data)
 After her CJM artifact "Who We Build Warmy For" (claude.ai, 2026-10): personas, then a journey map per persona with the stages Attraction, Activation, Involvement, Retention and the rows Goal, Thoughts and feelings, Problems, Drop-off, Solution. All names, quotes, sizes and amounts here are made up and the text is rewritten; it shows the method, not Warmy's data. A note says so on the page.
+Layout (her request, 2026-10-20): no panel behind the journey map, after the School page: the four stages as pills in her orange gradient joined by a dotted line, row labels in capitals, soft grey cells with 18 px corners, the drop-off row tinted.
 Title: **Who we design for.** Text: Four personas from interviews and cancel reasons, and the journey each one takes. Pick a persona to see its map.
 
 **Personas** (name · what they want · goal · role · size · story · why they cancel · average paid, made up)
