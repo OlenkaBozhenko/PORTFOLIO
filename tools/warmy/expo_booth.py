@@ -1,51 +1,51 @@
-"""The Warmy banner on an expo booth (her request, 2026-10-20; reference: an expo booth mockup on Pinterest,
+"""The Warmy banner across the whole back wall of an expo booth (her requests, 2026-10-20: the banner on an expo
+booth, then the full width of the wall and no TV; reference: an expo booth mockup on Pinterest,
 inspiration/32-expo-booth-firewall.png). The empty booth is an AI image made with Figma AI (gpt-image-2.5,
-photos/expo-booth-blank.png, node 226:2 in her file); her banner (Figma 225:72619, figma/banner.png) is printed on
-its blank grey panel, keeping the light of the panel; the TV shows the Sender tracker and the lit totem carries
-the Warmy logotype icon. Not a real event.
-The panel is wider than the banner (1.74 : 1 against 1.21 : 1), so the banner sits at the right of the panel and
-its dark left edge runs on to the panel's left end.
+photos/expo-booth-wide-blank.png, node 227:2 in her file), with one blank grey panel across the wall.
+Her banner (Figma 225:72619) is rebuilt at the panel's width from its own layers, exported 1:1 from Figma into
+figma/: the logo, the headline and text, the QR code with "Talk to us" (its outline and its fill), and the tiger; the dark ground and the
+orange glow behind the tiger are redrawn from the banner (base #100D0C, a Gaussian glow fitted to its pixels).
+So nothing is stretched: the text stays at the left, the tiger and the QR code at the right, as in the banner.
+The print keeps the light of the grey panel; the chair in front of the panel stays in front. Not a real event.
 Run: python expo_booth.py -> ../../assets/work/warmy/expo-booth(-768).webp
 """
 import os
 import numpy as np
-from PIL import Image, ImageDraw, ImageFilter
+from PIL import Image, ImageFilter
 HERE = os.path.dirname(os.path.abspath(__file__)); OUT = os.path.join(HERE, '..', '..', 'assets', 'work', 'warmy')
-K = 2  # work at twice the size of the booth image, so the banner keeps its detail
-base = Image.open(os.path.join(HERE, 'photos', 'expo-booth-blank.png')).convert('RGB')
+F = lambda n: Image.open(os.path.join(HERE, 'figma', n+'.png')).convert('RGBA')
+K = 2
+base = Image.open(os.path.join(HERE, 'photos', 'expo-booth-wide-blank.png')).convert('RGB')
+src = np.asarray(base).astype(int)
 base = base.resize((base.width*K, base.height*K), Image.LANCZOS)
-X0, Y0, X1, Y1 = [v*K for v in (120, 230, 840, 643)]   # the blank panel, measured from the grey run
-PW, PH = X1-X0, Y1-Y0
+X0, Y0, X1, Y1 = 116, 247, 1243, 619                      # the grey panel, measured from the grey run
+PW, PH = (X1-X0)*K, (Y1-Y0)*K
 
-# the banner, fitted to the panel height, at its right end; its left column runs on to the left end of the panel
-ban = Image.open(os.path.join(HERE, 'figma', 'banner.png')).convert('RGB')
-bw = round(ban.width*PH/ban.height); ban = ban.resize((bw, PH), Image.LANCZOS)
-art = Image.new('RGB', (PW, PH))
-edge = ban.crop((0, 0, 2, PH)).resize((PW-bw+2, PH), Image.BILINEAR)
-art.paste(edge, (0, 0)); art.paste(ban, (PW-bw, 0))
+# the banner at the panel's proportions, in Figma units (height 2480)
+H = 2480; W = round(H*PW/PH)
+yy, xx = np.mgrid[0:H, 0:W]
+d = np.hypot(xx-(W), yy-1700)                             # the glow sits at the right edge, as in the banner
+BASE = np.array([16, 13, 12]); AT = np.array([130, 64, 21]); D0, S2 = 1171, 1353031
+glow = np.exp(-(d**2-D0**2)/S2)[..., None]
+ground = np.clip(BASE+(AT-BASE)*glow, 0, 255).astype('uint8')
+art = Image.fromarray(ground, 'RGB').convert('RGBA')
+tiger = F('banner-tiger'); art.alpha_composite(tiger, (W-tiger.width, H-tiger.height))
+qr = F('banner-qr'); art.alpha_composite(qr, (W-1232+98, 198))           # same place against the tiger as in the banner
+art.alpha_composite(F('banner-talk'), (W-1232+97, 271))                  # the filled "Talk to us" over its outline
+art.alpha_composite(F('banner-logo'), (148, 200))
+art.alpha_composite(F('banner-text'), (148, 642))
+art = art.convert('RGB').resize((PW, PH), Image.LANCZOS)
 
-# keep the light that falls on the grey panel: its brightness, relative to its mean, scales the print
-light = np.asarray(base.crop((X0, Y0, X1, Y1)).convert('L').filter(ImageFilter.GaussianBlur(6*K))).astype(float)
-light = np.clip(light/light.mean(), .82, 1.18)[..., None]
+# keep the light that falls on the panel, and print only where the panel is grey (the chair stays in front)
+crop = src[Y0:Y1, X0:X1]
+grey = (np.abs(crop-125) < 22).all(-1).astype('uint8')*255
+mask = Image.fromarray(grey).resize((PW, PH), Image.LANCZOS).filter(ImageFilter.MinFilter(3)).filter(ImageFilter.GaussianBlur(1))
+light = np.asarray(base.crop((X0*K, Y0*K, X1*K, Y1*K)).convert('L').filter(ImageFilter.GaussianBlur(6*K))).astype(float)
+light = np.clip(light/np.median(light), .85, 1.15)[..., None]
 art = Image.fromarray(np.clip(np.asarray(art).astype(float)*light, 0, 255).astype('uint8'))
-base.paste(art, (X0, Y0))
-
-# the TV: the Sender tracker, a little dimmed, under a soft diagonal glare
-TX0, TY0, TX1, TY1 = [v*K for v in (912, 315, 1230, 494)]
-scr = Image.open(os.path.join(OUT, 'tracker-desktop.webp')).convert('RGB')
-scr = scr.crop((0, 0, scr.width, round(scr.width*(TY1-TY0)/(TX1-TX0)))).resize((TX1-TX0, TY1-TY0), Image.LANCZOS)
-scr = Image.blend(scr, Image.new('RGB', scr.size, (20, 22, 26)), .12)
-gl = Image.new('L', scr.size, 0); ImageDraw.Draw(gl).polygon([(scr.width*.55, 0), (scr.width*.8, 0), (scr.width*.45, scr.height), (scr.width*.2, scr.height)], fill=26)
-scr = Image.composite(Image.new('RGB', scr.size, (255, 255, 255)), scr, gl.filter(ImageFilter.GaussianBlur(20*K)))
-base.paste(scr, (TX0, TY0))
-
-# the lit totem: the Warmy logotype icon (her Figma "Logotype / Icon", 48 x 48 geometry) near its top
-d = ImageDraw.Draw(base)
-cx, top, s = 1444*K, 196*K, 1.15*K
-for (x, y0, col) in [(3, 13, (255, 212, 96)), (17, 7, (253, 162, 47)), (31, 3, (245, 56, 56))]:
-    d.rounded_rectangle((cx+(x-24)*s, top+y0*s, cx+(x-24+14)*s, top+45*s), radius=7*s, fill=col)
+base.paste(art, (X0*K, Y0*K), mask)
 
 full = base.resize((1536, 1024), Image.LANCZOS)
 full.save(os.path.join(OUT, 'expo-booth.webp'), quality=86, method=6)
 full.resize((768, 512), Image.LANCZOS).save(os.path.join(OUT, 'expo-booth-768.webp'), quality=84, method=6)
-print('ok', full.size)
+print('ok', full.size, W)
