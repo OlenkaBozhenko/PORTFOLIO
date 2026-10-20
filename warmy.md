@@ -79,9 +79,11 @@ Five numbered items:
 ### 7. Dynamic prototype (live, in a phone)
 A phone playing the Adeline flow in HTML, as her prototypes do, in the thin outline of the Sport Guardian phone (1.5 px, no heavy bezel): the start screen with three questions; a tap on "Why are my emails landing in spam?"; the question as a bubble; Thinking…; the answer typing in: "Your spam rate at Outlook rose to 14% this week. Two things stand out: your DMARC policy is set to none, and the template Spring offer has three links. Fix DMARC first, then I will check the template." with two buttons, Open DMARC check and Analyze template. Then it starts again. Same motion rules as the first screen. Caption: **A prototype, not a picture.** Prototypes in Warmy carry the real states: the typing, the wait, the answer, the next step. Users react to how it behaves, and developers see the timing they need to build. (The figures in the answer are made up.)
 
+The prototype panel takes the dark warm ground of the campaign mosaic (a gradient #1A0E08 → #3A1A0A → #7A3410, her request 2026-10-20), with the phone outlined in white.
+
 ### 8. How I write an A/B hypothesis
 Intro: A test is only as good as the sentence written before it. I write it down before the design is final, and the team agrees on it before launch.
-**The template:** Because we saw [evidence], we believe that [one change] for [segment] will [move one metric] by [expected size]. We will know after [sample or time]. We ship it if [decision rule], unless [guardrail] gets worse.
+**The template** (on the same dark warm gradient, her request): Because we saw [evidence], we believe that [one change] for [segment] will [move one metric] by [expected size]. We will know after [sample or time]. We ship it if [decision rule], unless [guardrail] gets worse.
 **The rules:**
 1. Start from evidence: an interview quote, a drop in the funnel, a support ticket. Never from taste.
 2. Change one thing, so the result points to a cause.
