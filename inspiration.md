@@ -136,6 +136,10 @@ Her brief for `Warmy.html`: the product's complexity and her part in it (feature
 - Very large headlines with some words in grey and round icon chips set inline, overlapping in pairs; a line that ends in a yellow pill with words sliding inside it; a feature list of white rounded rows with round + buttons next to a laptop and a phone; feature cards on a pale gridded panel with stacked UI pieces, title and text centred under them.
 - To borrow: **the block titles**, **the pill marquee**, **the feature accordion with devices** and **the feature cards**, in Warmy's yellow, orange and red; the words rising into place, the counters and the sliding text as the motion.
 
+
+**Expo booth mockup ([Pinterest](https://ru.pinterest.com/pin/19703317112838545/), source of the design not given)** · `32-expo-booth-firewall.png` (sent 2026-10-20)
+- A trade show booth seen straight on in a dark hall: a long charcoal back wall with the brand graphic, a wall screen, a chair, a round pouf and a tall frosted totem, one colour of light washing the corner.
+- To borrow: **her Warmy banner on an expo booth**, in the campaign mosaic in place of the print ad.
 ---
 
 ## 3. Also saved in Notion, not yet annotated
