@@ -13,6 +13,7 @@ Her brief (2026-10-20): show how complex the product is and her part in it as th
 | Years | Aug 2021 – present ([`cv.md`](cv.md), LinkedIn) |
 | Platform | Web SaaS, desktop and mobile web |
 | Product UI type | Figtree (her Figma variables: `text-base/Regular` 14/17 and the rest) |
+| Accent (her Figma fill, 2026-10-20) | a linear gradient #FFA676 → #FF736D. Used on the page for every orange accent: the coloured icon chips in the big headlines (white icons; the grey chips take #FF736D icons), the open accordion button, the "AI tool" tags, the 91% placement figure, the slots in the hypothesis template, the Variant B tag and the progress bars in the example. Dark text on it (#0E0E0E, at least 7:1), never white text |
 | Product colours | brand #FF7658; text #334155; muted #64748B; lines #E2E8F0; primary button #030712; the logo bars yellow, orange, red (#FFD15C, #FFA53A, #FF453A, sampled from her Figma frames) |
 | Product numbers (vendor-reported, warmy.io, read 2026-10-20) | 35,000+ businesses and marketers; 650,000+ domains with better deliverability; 35+ email service providers connected; G2 rating 4.9 of 5 |
 

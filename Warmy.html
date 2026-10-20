@@ -24,7 +24,9 @@
   --gutter:clamp(16px,4vw,56px);
   --cg:clamp(12px,2vw,28px);
   /* project colours (warmy.md): the logo bars and the product brand */
-  --y:#FFD15C;--o:#FFA53A;--r:#FF453A;--brand:#FF7658;--cream:#FFF8EE;
+  --y:#FFD15C;--o:#FFA53A;--r:#FF453A;--brand:#FF7658;
+  /* her orange accent (Figma fill, 2026-10-20): a linear gradient #FFA676 to #FF736D */
+  --accent:linear-gradient(90deg,#FFA676,#FF736D);--accent-ink:#FF736D;--cream:#FFF8EE;
   --w-ink:#334155;--w-mut:#64748B;--w-line:#E2E8F0;--w-dark:#030712;--w-side:#F8FAFC;
   color-scheme:light;
 }
@@ -133,7 +135,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .chip{display:inline-grid;place-items:center;width:.86em;height:.86em;border-radius:50%;background:var(--well)}
 .chip+.chip{margin-left:-.18em}
 .chip svg{width:38%;height:38%}
-.chip.y{background:var(--y)}.chip.o{background:var(--o)}.chip.r{background:var(--brand)}
+.chip.y,.chip.o,.chip.r{background:var(--accent);color:#fff}
 /* each word rises inside its own mask; the mask runs a little past the letters, so the tight tracking never cuts them */
 .js .big .w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .12em .1em;margin:0 -.12em -.1em}
 .js .big .w>span{display:inline-block;transform:translateY(105%);transition:transform .9s cubic-bezier(.2,.8,.2,1) var(--d,0s)}
@@ -164,8 +166,8 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .acc button:focus-visible{outline:2px solid var(--label);outline-offset:3px}
 .acc .pm{flex:none;width:52px;height:52px;border-radius:50%;background:var(--well);display:grid;place-items:center;transition:background .25s,transform .35s}
 .acc .pm svg{width:16px;height:16px}
-.aitag{margin:0 auto 0 12px;align-self:center;font:600 12px/1 var(--ui);letter-spacing:.02em;color:#C2410C;background:#FFEDD5;border-radius:6px;padding:5px 8px;white-space:nowrap}
-.acc [aria-expanded="true"] .pm{background:var(--y);transform:rotate(45deg)}
+.aitag{margin:0 auto 0 12px;align-self:center;font:600 12px/1 var(--ui);letter-spacing:.02em;color:var(--ink);background:var(--accent);border-radius:6px;padding:5px 8px;white-space:nowrap}
+.acc [aria-expanded="true"] .pm{background:var(--accent);transform:rotate(45deg)}
 .acc .body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s ease}
 .acc .body>div{overflow:hidden}
 .acc .body p{padding:0 28px 24px;color:var(--muted);font-size:16px;max-width:46ch}
@@ -198,7 +200,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .prov .tr{height:6px;border-radius:3px;background:#F1F5F9;overflow:hidden}
 .prov .tr i{display:block;height:100%;border-radius:3px;background:#22C55E;width:0;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
 .in .prov .tr i{width:var(--v)}
-.big-y{background:var(--y);border-radius:16px;padding:10px 18px;font-size:54px;font-weight:600;letter-spacing:-.04em;line-height:1;color:#0F172A;display:inline-block;margin:8px 0 6px}
+.big-y{background:var(--accent);border-radius:16px;padding:10px 18px;font-size:54px;font-weight:600;letter-spacing:-.04em;line-height:1;color:#0F172A;display:inline-block;margin:8px 0 6px}
 .split{display:flex;height:8px;border-radius:4px;overflow:hidden;gap:3px;margin:12px 0 6px}
 .split i{display:block;border-radius:4px}
 .ring{width:96px;height:96px}
@@ -268,13 +270,13 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .rules li b{font-weight:500}
 .tpl{background:var(--ink);color:#fff;border-radius:0;padding:clamp(24px,3vw,40px);font-size:clamp(20px,2vw,27px);line-height:1.4;letter-spacing:-.02em}
 .tpl .lb{display:block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#BDBDBD;margin-bottom:16px}
-.tpl mark{background:none;color:var(--ink);background:var(--y);border-radius:8px;padding:0 .25em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.tpl mark{color:var(--ink);background:var(--accent);border-radius:8px;padding:0 .25em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .ex{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--cg);margin-top:var(--cg)}
 .ex .wc{position:relative;padding:20px}
 .ex .tagx{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:6px;padding:3px 8px;background:#F1F5F9;color:var(--w-ink);margin-bottom:12px}
-.ex .tagx.b{background:#FFEDD5;color:#9A3412}
+.ex .tagx.b{background:var(--accent);color:var(--ink)}
 .ex .bar{height:8px;border-radius:4px;background:#F1F5F9;margin:10px 0 6px;overflow:hidden}
-.ex .bar i{display:block;height:100%;width:86%;background:linear-gradient(90deg,var(--y),var(--o))}
+.ex .bar i{display:block;height:100%;width:86%;background:var(--accent)}
 .ex .fin{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:13px;color:#15803D;font-weight:600}
 .ex small{display:block;font-size:12px;color:var(--w-mut);margin-top:4px}
 .exnote{grid-column:1/-1;font-size:14px;color:var(--muted);line-height:1.5}
@@ -417,7 +419,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <section class="gal wrap" aria-labelledby="h-cx">
     <div class="sec-head"><h2 id="h-cx">Complexity</h2><span>What sits behind one inbox</span></div>
     <div class="g">
-      <h3 class="big c1-12" id="cx-big">One email <span class="chips" aria-hidden="true"><span class="chip"><svg style="color:var(--r)"><use href="#i-bolt"/></svg></span><span class="chip r"><svg style="color:#fff"><use href="#i-chart"/></svg></span></span> passes <span class="s">a dozen checks</span> before it reaches <span class="nb">the inbox</span></h3>
+      <h3 class="big c1-12" id="cx-big">One email <span class="chips" aria-hidden="true"><span class="chip"><svg style="color:var(--accent-ink)"><use href="#i-bolt"/></svg></span><span class="chip r"><svg><use href="#i-chart"/></svg></span></span> passes <span class="s">a dozen checks</span> before it reaches <span class="nb">the inbox</span></h3>
       <div class="c1-12 rv">
         <div class="stats">
           <div><b data-count="35000" data-suffix="+">35,000+</b><span>businesses and marketers</span></div>
@@ -511,7 +513,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <section class="gal wrap" aria-labelledby="h-part">
     <div class="sec-head"><h2 id="h-part">My part</h2><span>Part-time, since August 2021</span></div>
     <div class="g">
-      <h3 class="big c1-12" id="part-big">I designed <span class="chips" aria-hidden="true"><span class="chip y"><svg><use href="#i-pen"/></svg></span></span> the features, <span class="s">tested</span> <span class="chips" aria-hidden="true"><span class="chip"><svg style="color:var(--r)"><use href="#i-flask"/></svg></span><span class="chip o"><svg><use href="#i-chat"/></svg></span></span> the ideas and <span class="s">asked</span> the people who use them</h3>
+      <h3 class="big c1-12" id="part-big">I designed <span class="chips" aria-hidden="true"><span class="chip y"><svg><use href="#i-pen"/></svg></span></span> the features, <span class="s">tested</span> <span class="chips" aria-hidden="true"><span class="chip"><svg style="color:var(--accent-ink)"><use href="#i-flask"/></svg></span><span class="chip o"><svg><use href="#i-chat"/></svg></span></span> the ideas and <span class="s">asked</span> the people who use them</h3>
       <ol class="part c1-12">
         <li class="rv"><span class="n">01</span><h3>Features</h3><p>From the problem to the shipped screen: Sender tracker, the AI tools Adeline and Template checker with spintax, and the custom plan checkout, on desktop and mobile.</p></li>
         <li class="rv" style="--d:.08s"><span class="n">02</span><h3>User flows</h3><p>Every path mapped before a screen is drawn, with the empty, loading, error and limit states, so developers build the edges too.</p></li>
