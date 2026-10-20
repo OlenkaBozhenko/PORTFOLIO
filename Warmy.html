@@ -197,7 +197,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .acc li.open .body{grid-template-rows:1fr}
 @media (prefers-reduced-motion:reduce){.acc .body,.acc .pm{transition:none}}
 .stage{position:relative;background:var(--well);border-radius:0;overflow:hidden;aspect-ratio:7/6;min-height:0}
-.browser{position:absolute;right:-8%;top:8%;width:92%;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.06),0 24px 48px -20px rgba(60,40,20,.3)}
+.browser{position:absolute;right:-8%;top:8%;width:92%;border-radius:10px;overflow:hidden;isolation:isolate;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.06),0 24px 48px -20px rgba(60,40,20,.3)}
 .browser .bar{display:flex;align-items:center;gap:7px;height:34px;padding:0 14px;background:#F7F7F7;border-bottom:1px solid var(--rule)}
 .browser .bar i{width:10px;height:10px;border-radius:50%;background:#D9D9D9}
 .browser .bar span{margin-left:12px;font-size:12px;color:var(--muted);background:#fff;border-radius:6px;padding:3px 12px}
@@ -206,6 +206,10 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .dev .vp{position:relative;aspect-ratio:375/760;overflow:hidden;border-radius:clamp(14px,1.8vw,22px);background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.06),0 24px 40px -18px rgba(60,40,20,.4)}
 .vp img{position:absolute;inset:0;width:100%;height:auto;opacity:0;transition:opacity .5s ease}
 .vp img.on{opacity:1}
+/* the tracker's sidebar stays put while its page scrolls; it shows only with the tracker */
+.vp img.side{z-index:1;width:16.74%;height:100%;inset:0 auto auto 0}
+#lap img.side{opacity:0}
+#lap img.tall.on~img.side{opacity:1}
 /* the long Sender tracker screens scroll slowly while they are shown and on screen; the pointer over them stops them (WCAG 2.2.2) */
 .vp img.tall{animation:feed var(--t,18s) ease-in-out .8s infinite alternate;animation-play-state:paused}
 .stagefig.play .vp img.tall.on{animation-play-state:running}
@@ -448,6 +452,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <figure class="c6-12 rv stagefig" style="--d:.1s"><div class="stage">
         <div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>app.warmy.io</span></div><div class="vp" id="lap">
           <img class="on tall" style="--to:-61%;--t:16s" src="assets/work/warmy/tracker-desktop.webp" alt="Sender tracker on desktop: filters for source and campaign, five cards for opened, clicked, bounced, spam and unsubscribed with their change, an overview chart for a week, and a warning that campaign emails open at 9% of sent." width="1440" height="2306">
+          <img class="side" src="assets/work/warmy/tracker-desktop-side.webp" alt="" width="241" height="900">
           <img src="assets/work/warmy/adeline-desktop.webp" alt="The home screen with the Adeline AI panel open: Supercharge your knowledge, three starting questions, Meet an Advisor and Chat with a Human, and a message field." width="1440" height="1024" loading="lazy">
           <img src="assets/work/warmy/adeline-thinking.webp" alt="Adeline AI on desktop, thinking about the question: Why are my emails going to spam even with warm-up enabled?" width="1440" height="1024" loading="lazy">
           <img src="assets/work/warmy/template-desktop.webp" alt="The template editor with the Template score panel: 100 out of 100, Excellent, with checks for subject line, body content, structure and format, compliance and deliverability signals." width="1440" height="1024" loading="lazy">
@@ -708,7 +713,7 @@ document.querySelectorAll('.big').forEach(function(h){
 
 // 4. the accordion: one item open at a time; the browser and the phone show its screens
 (function(){
-  var items=document.querySelectorAll('#acc li'),lap=document.querySelectorAll('#lap img'),mob=document.querySelectorAll('#mob img');
+  var items=document.querySelectorAll('#acc li'),lap=document.querySelectorAll('#lap img:not(.side)'),mob=document.querySelectorAll('#mob img');
   items.forEach(function(li,i){li.querySelector('button').addEventListener('click',function(){
     items.forEach(function(o,k){var on=k===i;o.classList.toggle('open',on);o.querySelector('button').setAttribute('aria-expanded',on)});
     lap.forEach(function(im,k){im.classList.toggle('on',k===i)});mob.forEach(function(im,k){im.classList.toggle('on',k===i)})})});

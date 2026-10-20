@@ -68,3 +68,9 @@ for n in ('post-1', 'post-2', 'post-roi', 'post-4', 'poster'):
     im = Image.open(os.path.join(SRC, n+'.png')).convert('RGB')
     if im.width > 1080: im = im.resize((1080, round(im.height*1080/im.width)), Image.LANCZOS)
     save(im, n, 82)
+
+# the Sender tracker's sidebar as its own fixed strip (her request, 2026-10-20: the page scrolls, the sidebar stays),
+# cut to the browser frame's 16:10 view (1440 x 900): the menu from the top and the people block at the bottom
+im = Image.open(os.path.join(OUT, 'tracker-desktop.webp')).convert('RGB')
+side = Image.new('RGB', (241, 900)); side.paste(im.crop((0, 0, 241, 781)), (0, 0)); side.paste(im.crop((0, im.height-119, 241, im.height)), (0, 781))
+save(side, 'tracker-desktop-side')
