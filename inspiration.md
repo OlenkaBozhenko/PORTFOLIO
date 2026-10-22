@@ -159,6 +159,10 @@ Her brief for `AnyBiz.html` (content in `anybiz.md`): the Warmy pattern in AnyBi
 **[Cuberto, Genesis](https://cuberto.com/projects/genesis/)** · `37-genesis-panel-tall-tablet.png`, `38-genesis-title-rule-label.png` (sent 2026-10-22)
 - A small panel with a caption under it next to a tall pale panel with a tilted tablet; a big title, a full-width rule, a small capitals label left and the text right.
 - To borrow: **the Product grid** and **the Problem / Solution rows**. [Cuberto, Zelt](https://cuberto.com/projects/zelt/) (2.8) again for the accent on her role.
+
+**Laptop mockups (stock photos, sources not given)** · `39-laptop-over-shoulder.png`, `40-laptop-on-lap.png` (sent 2026-10-22)
+- A person at a laptop seen over the shoulder with a blank screen; a laptop on the lap on a soft sofa, the screen facing the camera.
+- To borrow: **the session replay on a laptop**, as an AI image in AnyBiz's violet night colours with the Personas screen on it.
 ---
 
 ## 3. Also saved in Notion, not yet annotated

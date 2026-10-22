@@ -296,16 +296,17 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 
 /* 7. behaviour: a session replay drawn over the Personas screen */
 .replay{display:flex;flex-direction:column;gap:12px;cursor:pointer}
-.rv-scr{position:relative;overflow:hidden;border-radius:12px;box-shadow:0 30px 60px -30px rgba(15,23,42,.45)}
-.rv-scr img{border-radius:0}
-.rv-scr::after{content:"";position:absolute;inset:0;background:rgba(2,6,23,.18);pointer-events:none}
-.cursor{position:absolute;left:50%;top:60%;width:22px;height:22px;z-index:3;transition-property:left,top;transition-timing-function:cubic-bezier(.45,.05,.3,1);filter:drop-shadow(0 2px 3px rgba(0,0,0,.5))}
+.photo{position:relative;overflow:hidden}
+.photo img{display:block;width:100%}
+/* a 1600 x 1000 layer, the size of the screen image, mapped onto the laptop screen with matrix3d */
+.lapscr{position:absolute;left:0;top:0;width:1600px;height:1000px;transform-origin:0 0;pointer-events:none}
+.cursor{position:absolute;left:50%;top:70%;width:80px;height:80px;z-index:3;transition-property:left,top;transition-timing-function:cubic-bezier(.45,.05,.3,1);filter:drop-shadow(0 4px 6px rgba(0,0,0,.5))}
 .cursor svg{display:block;width:100%;height:100%}
-.mk{position:absolute;z-index:2;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;pointer-events:none;animation:mkfade 4s ease forwards}
-.mk.hes{border:2px dashed var(--amber);animation:mkhes 4s ease forwards}
-.mk.rage{border:3px solid var(--rose);animation:mkrage .9s ease-out 3 forwards}
-.mk.dead{border:2px solid var(--sky);background:rgba(56,189,248,.15)}
-.mk .t{position:absolute;left:50%;top:100%;transform:translate(-50%,6px);white-space:nowrap;font:600 12px/1 var(--ui);color:#fff;background:#0F172A;border-radius:6px;padding:5px 8px}
+.mk{position:absolute;z-index:2;width:150px;height:150px;margin:-75px 0 0 -75px;border-radius:50%;pointer-events:none;animation:mkfade 4s ease forwards}
+.mk.hes{border:6px dashed var(--amber);animation:mkhes 4s ease forwards}
+.mk.rage{border:8px solid var(--rose);animation:mkrage .9s ease-out 3 forwards}
+.mk.dead{border:6px solid var(--sky);background:rgba(56,189,248,.15)}
+.mk .t{position:absolute;left:50%;top:100%;transform:translate(-50%,16px);white-space:nowrap;font:600 34px/1 var(--ui);color:#fff;background:#0F172A;border-radius:12px;padding:12px 18px}
 @keyframes mkhes{0%{opacity:0;transform:scale(.5)}15%{opacity:1;transform:scale(1)}85%{opacity:1}100%{opacity:0}}
 @keyframes mkrage{0%{opacity:1;transform:scale(.3)}100%{opacity:0;transform:scale(1.3)}}
 @keyframes mkfade{0%{opacity:0}10%,85%{opacity:1}100%{opacity:0}}
@@ -618,18 +619,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       </figure>
       <p class="subh c1-12 rv"><span>Behaviour</span><span>What people do, not what they say</span></p>
       <h3 class="big c1-12 tight">Recordings show <span class="s">what people do</span> when nobody is asking</h3>
-      <div class="cap c1-4 start rv"><p class="lead" style="color:var(--ink)">Interviews tell you what people think. Session recordings show what they actually do.</p><p style="font-size:16px;margin-top:16px">I watched real sessions to find the moments that need attention: where people hesitate, click something that does nothing, click again in frustration, or leave a flow half done. Each moment became a design fix, a question for the next interview, or a hypothesis to test.</p></div>
+      <div class="cap c1-4 start rv"><p class="lead" style="color:var(--ink)">Interviews tell you what people think. Session recordings show what they actually do.</p><p style="font-size:16px;margin-top:16px">I watched real sessions to find the moments that need attention: where people hesitate, click something that does nothing, click again in frustration, or leave a flow half done. Each moment became a design fix, a question for the next interview, or a hypothesis to test.</p>
+        <div class="legend" style="margin-top:28px"><span><i style="background:var(--amber)"></i>Hesitation</span><span><i style="background:var(--rose)"></i>Rage click</span><span><i style="background:var(--sky)"></i>Dead click</span><span><i style="background:var(--violet-l)"></i>Drop-off</span></div>
+        <p class="note" style="margin-top:10px">An illustration of the method, not a recorded session.</p>
+      </div>
       <figure class="c5-12 rv" style="--d:.1s">
         <div class="replay" id="replay" tabindex="0" aria-describedby="replay-how">
-          <div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>app.anybiz.io</span></div><div class="rv-scr" role="img" aria-label="A session replay drawn over the Personas screen: the cursor hesitates over Select your offer, clicks a status ring three times in frustration, clicks an item that does nothing, and leaves the page.">
-            <img src="assets/work/anybiz/personas-app.webp" alt="" width="1600" height="1000" loading="lazy">
-            <span class="cursor" id="cur" aria-hidden="true"><svg><use href="#i-ptr"/></svg></span>
-          </div></div>
+          <div class="photo" role="img" aria-label="A person at a laptop in a dusk room lit violet, the Personas screen of AnyBiz on the laptop; over it a session replay: the cursor hesitates over Select your offer, clicks a status ring three times in frustration, clicks an item that does nothing, and leaves the page.">
+            <img src="assets/work/anybiz/replay-laptop.webp" srcset="assets/work/anybiz/replay-laptop-768.webp 768w, assets/work/anybiz/replay-laptop.webp 1536w" sizes="(max-width:720px) 92vw, 62vw" alt="" width="1536" height="1024" loading="lazy">
+            <div class="lapscr" id="lapscr" data-quad="21.22,25.88 58.33,24.51 60.42,57.42 22.92,62.3" aria-hidden="true"><span class="cursor" id="cur"><svg><use href="#i-ptr"/></svg></span></div>
+          </div>
           <div class="player" aria-hidden="true"><svg><use href="#i-play"/></svg><span class="time" id="rtime">00:00 / 06:40</span><span class="track"><span class="fill" id="rfill"></span><i style="left:22%;background:var(--amber)"></i><i style="left:48%;background:var(--rose)"></i><i style="left:70%;background:var(--sky)"></i><i style="left:94%;background:var(--violet-l)"></i></span></div>
           <span id="replay-how" class="vh">The replay plays by itself. Press Enter, or click it, to stop or start it.</span>
         </div>
-        <div class="legend"><span><i style="background:var(--amber)"></i>Hesitation</span><span><i style="background:var(--rose)"></i>Rage click</span><span><i style="background:var(--sky)"></i>Dead click</span><span><i style="background:var(--violet-l)"></i>Drop-off</span></div>
-        <p class="note">An illustration of the method, not a recorded session.</p>
       </figure>
     </div>
   </section>
@@ -746,9 +748,27 @@ document.querySelectorAll('.big').forEach(function(h){
   toggler(box,function(q){if(!q)play()});
 })();
 
+// 7. the laptop screen: map the 1600 x 1000 layer onto the four corners of the screen in the photo (a homography as a CSS matrix3d)
+(function(){
+  var lay=document.getElementById('lapscr'),ph=lay.parentNode,q=lay.dataset.quad.split(' ').map(function(p){return p.split(',').map(Number)});
+  function solve(A,b){var n=b.length;for(var i=0;i<n;i++){var m=i;for(var r=i+1;r<n;r++)if(Math.abs(A[r][i])>Math.abs(A[m][i]))m=r;
+    var t=A[i];A[i]=A[m];A[m]=t;t=b[i];b[i]=b[m];b[m]=t;
+    for(r=i+1;r<n;r++){var f=A[r][i]/A[i][i];for(var c=i;c<n;c++)A[r][c]-=f*A[i][c];b[r]-=f*b[i]}}
+    var x=new Array(n);for(i=n-1;i>=0;i--){var s=b[i];for(c=i+1;c<n;c++)s-=A[i][c]*x[c];x[i]=s/A[i][i]}return x}
+  function fit(){
+    var w=ph.clientWidth,h=ph.clientHeight;if(!w)return;
+    var src=[[0,0],[1600,0],[1600,1000],[0,1000]],dst=q.map(function(p){return [p[0]/100*w,p[1]/100*h]}),A=[],b=[];
+    for(var i=0;i<4;i++){var x=src[i][0],y=src[i][1],u=dst[i][0],v=dst[i][1];
+      A.push([x,y,1,0,0,0,-u*x,-u*y]);b.push(u);A.push([0,0,0,x,y,1,-v*x,-v*y]);b.push(v)}
+    var k=solve(A,b);
+    lay.style.transform='matrix3d('+[k[0],k[3],0,k[6],k[1],k[4],0,k[7],0,0,1,0,k[2],k[5],0,1].join(',')+')';
+  }
+  fit();addEventListener('resize',fit);ph.querySelector('img').addEventListener('load',fit);
+})();
+
 // 7. the session replay: the cursor follows a path; hesitation, rage click, dead click and drop-off appear where they happen
 (function(){
-  var box=document.getElementById('replay'),scr=box.querySelector('.rv-scr'),cur=document.getElementById('cur'),fill=document.getElementById('rfill'),time=document.getElementById('rtime');
+  var box=document.getElementById('replay'),scr=document.getElementById('lapscr'),cur=document.getElementById('cur'),fill=document.getElementById('rfill'),time=document.getElementById('rtime');
   // x, y in % of the screen; move time; then wait; the mark it leaves; where the playhead is
   var path=[[50,70,0,600,'',0],[33,56.5,1400,2600,'hes:Hesitation',22],[86,56.5,1600,1800,'rage:Rage click',48],[71,21.6,1200,500,'',58],[72,32.5,700,1700,'dead:Dead click',70],[96,7,1300,1600,'drop',94]];
   if(RM)return;

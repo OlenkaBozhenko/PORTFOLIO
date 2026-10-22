@@ -57,6 +57,18 @@ def clear_corners(im):
     return out
 
 
+def square_top_corners(im, r=64):
+    """The Deliverability frame has rounded top corners in the night colour; in the browser mockup they show as
+    notches beside the top bar (her note), so they are filled with the bar's own colour."""
+    px = im.load()
+    bar = px[r * 2, r // 2]
+    for y in range(r):
+        for x in list(range(r)) + list(range(im.width - r, im.width)):
+            if sum(abs(c - n) for c, n in zip(px[x, y], (2, 6, 23))) < 40:
+                px[x, y] = bar
+    return im
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     for name, (src, w) in FRAMES.items():
@@ -82,6 +94,8 @@ def main():
     }
     for name, (im, box, w) in crops.items():
         im = im.crop(box)
+        if name == "deliverability-app":
+            im = square_top_corners(im)
         im = im.resize((w, round(im.height * w / im.width)), Image.LANCZOS)
         im.save(OUT / f"{name}.webp", quality=86, method=6)
         print(name, im.size)
