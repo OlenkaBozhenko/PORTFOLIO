@@ -71,6 +71,7 @@ Two cards side by side, each a plain pale panel (no grid, her request 2026-10-20
 - **Warm-up that knows when it is done.** Health 82 of 100, Day 18 of 21, a rising line; "Ready to send 1,200 a day". Text: Warm-up ramps volume step by step and shows a finish line, so senders know when the domain is ready and what keeps it safe after.
 
 ### 6. My part (her role)
+Section label: **My part**, with the note on the right: **What I brought to Warmy** (her request, 2026-10-22; was "Part-time, since August 2021").
 Headline (Ramos): I designed [pen chip] the features, tested [flask chip] the ideas and asked [chat chip] the people who use them
 Five numbered items:
 - 01 **Features.** From the problem to the shipped screen: Sender tracker, the AI tools Adeline and Template checker with spintax, and the custom plan checkout, on desktop and mobile.
