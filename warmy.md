@@ -62,7 +62,7 @@ Order and names (her request, 2026-10-20): Sender tracker first, then Adeline AI
 2. **Adeline AI**: The first AI agent in email deliverability: it helps improve domain reputation and get emails into the inbox. It answers in plain words, with three starting questions, and a call with an advisor or a human chat is one tap away. (`adeline-desktop`, `adeline-mobile`)
 3. **Voice and thinking states:** Asking by voice on the phone, and a Thinking state on desktop, so the wait reads as work and not as a frozen screen. (`adeline-thinking`, `chat-mobile`)
 4. **Template checker** (was "Template score"): AI reads the email before a real inbox does: a score out of 100, failed, warning and passed checks by section, and fixes it writes itself, ranked High and Medium. (`template-desktop`, `template-mobile`)
-5. **Spintax** (was "Spintax check", her request): For templates that change in every send: Warmy scores one of 18 variations and asks to preview the rest, so nobody trusts a score that covers one version. (`spintax-desktop`, `template-mobile`)
+5. **Spintax** (was "Spintax check", her request): Write one template, and every email goes out as a different message. Varied wording keeps a campaign out of spam filters. (`spintax-desktop`, `template-mobile`)
 Accessibility: the list is real buttons with aria-expanded; the screens change with the open item and carry alt text; keyboard and screen readers get the same content.
 
 ### 5. Feature cards (gridded panels with stacked UI pieces, Ramos)
