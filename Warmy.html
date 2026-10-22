@@ -554,14 +554,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="c1-6 rv">
         <p style="font-size:clamp(17px,1.5vw,19px);max-width:52ch;margin-bottom:24px">I write the hypothesis down before the design is final, and the team agrees on it before launch. These are the rules it has to pass.</p>
         <ol class="rules">
-          <li><span><b>Start from evidence:</b> an interview quote, a drop in the funnel, a support ticket. Never from taste.</span></li>
-          <li><span><b>Change one thing,</b> so the result points to a cause.</span></li>
-          <li><span><b>Pick one primary metric</b> that the change can move within the test, and name it in advance.</span></li>
-          <li><span><b>Say the direction and the size</b> you expect. "Better" cannot be wrong, so it teaches nothing.</span></li>
-          <li><span><b>Work out the sample size and run time</b> before launch, and do not stop early when the numbers look good.</span></li>
-          <li><span><b>Add guardrails:</b> the metrics that must not get worse, such as spam complaints, cancellations or support load.</span></li>
-          <li><span><b>Write the decision rule before launch:</b> what we ship, what we drop, what we test next.</span></li>
-          <li><span><b>Log every result,</b> the losing ones too. A failed test still answers a question.</span></li>
+          <li><span><b>Evidence:</b> the data behind the idea, such as a funnel drop, an interview quote or a support ticket. Never taste alone.</span></li>
+          <li><span><b>Hypothesis:</b> what we change, for whom, and what we expect to happen.</span></li>
+          <li><span><b>One change:</b> the variant differs from control in one thing, so the result points to a cause.</span></li>
+          <li><span><b>Audience / segment:</b> who sees the test, how many people, and for how long.</span></li>
+          <li><span><b>Metrics:</b> one primary metric that decides the result, and the guardrails that must not get worse.</span></li>
+          <li><span><b>Tracking plan:</b> the list of events to log on the flow (each screen view, click and step), with their properties and the metric each one feeds. Handed over with the design, so both variants are tracked the same way.</span></li>
+          <li><span><b>Sample size and run time:</b> worked out before launch from the smallest effect worth detecting, in full weeks. We do not stop early when the numbers look good.</span></li>
+          <li><span><b>Success criteria:</b> the result that counts as a win, agreed before launch.</span></li>
+          <li><span><b>Decision rule:</b> what we ship, what we drop and what we test next, for a win, a loss and a flat result.</span></li>
+          <li><span><b>Trust checks:</b> we start on a small share of traffic, check that users split evenly between groups, and confirm both variants log the same events.</span></li>
+          <li><span><b>Business impact:</b> what a win is worth to the product: revenue kept, more upgrades, less support load.</span></li>
+          <li><span><b>Learnings log:</b> every result is recorded, the losing ones too. A failed test still answers a question.</span></li>
         </ol>
       </div>
       <div class="c7-12 start rv" style="--d:.1s">

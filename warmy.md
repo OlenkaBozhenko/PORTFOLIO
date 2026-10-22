@@ -86,15 +86,19 @@ The prototype panel takes the dark warm ground of the campaign mosaic (a gradien
 ### 8. How I write an A/B hypothesis
 Intro: A test is only as good as the sentence written before it. I write it down before the design is final, and the team agrees on it before launch.
 **The template** (on the same dark warm gradient, her request): Because we saw [evidence], we believe that [one change] for [segment] will [move one metric] by [expected size]. We will know after [sample or time]. We ship it if [decision rule], unless [guardrail] gets worse.
-**The rules:**
-1. Start from evidence: an interview quote, a drop in the funnel, a support ticket. Never from taste.
-2. Change one thing, so the result points to a cause.
-3. Pick one primary metric that the change can move within the test, and name it in advance.
-4. Say the direction and the size you expect. "Better" cannot be wrong, so it teaches nothing.
-5. Work out the sample size and the run time before launch, and do not stop early when the numbers look good.
-6. Add guardrails: the metrics that must not get worse (spam complaints, cancellations, support load).
-7. Write the decision rule before launch: what we ship, what we drop, what we test next.
-8. Keep a log of every result, the losing ones too. A failed test still answers a question.
+**The rules** (her list, 2026-10-22, replaces the earlier eight rules), under the line "I write the hypothesis down before the design is final, and the team agrees on it before launch. These are the rules it has to pass.":
+1. Evidence: the data behind the idea, such as a funnel drop, an interview quote or a support ticket. Never taste alone.
+2. Hypothesis: what we change, for whom, and what we expect to happen.
+3. One change: the variant differs from control in one thing, so the result points to a cause.
+4. Audience / segment: who sees the test, how many people, and for how long.
+5. Metrics: one primary metric that decides the result, and the guardrails that must not get worse.
+6. Tracking plan: the list of events to log on the flow (each screen view, click and step), with their properties and the metric each one feeds. Handed over with the design, so both variants are tracked the same way.
+7. Sample size and run time: worked out before launch from the smallest effect worth detecting, in full weeks. We do not stop early when the numbers look good.
+8. Success criteria: the result that counts as a win, agreed before launch.
+9. Decision rule: what we ship, what we drop and what we test next, for a win, a loss and a flat result.
+10. Trust checks: we start on a small share of traffic, check that users split evenly between groups, and confirm both variants log the same events.
+11. Business impact: what a win is worth to the product: revenue kept, more upgrades, less support load.
+12. Learnings log: every result is recorded, the losing ones too. A failed test still answers a question.
 **Example (made up for the portfolio):** Because interviews and cancel reasons showed that senders cancel warm-up when they cannot tell whether it worked, we believe that showing a finish line on the warm-up screen ("Day 18 of 21, ready to send 1,200 a day") for new accounts will lower 60-day cancellations from 18% to 14%. We will know after 2 × 1,500 new accounts, about 6 weeks. We ship it if cancellations drop by at least 3 points, unless upgrades fall. Variant A: progress in percent. Variant B: the finish line with the daily volume. Shown as two small cards with an "Example" label; the example text itself is not on the page (her request, 2026-10-20), only here.
 Sources for the method: Ron Kohavi, Diane Tang, Ya Xu, *Trustworthy Online Controlled Experiments* (2020); Nielsen Norman Group on A/B testing.
 
