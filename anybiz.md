@@ -76,7 +76,7 @@ Five rows, the number left, the title, the text right:
 Under the headline, before the five items, the challenge and her role:
 On the white page, no background panel (her request, 2026-10-22): text left; at the right her Deliverability insights screen (Figma 247:79006, `deliverability.webp`; replaced the Insights screen 247:79472, her request) tilted in 3D, with rounded corners and a soft shadow. **Since 2026-10-22 (her request, after the Sport Guardian page):** the screen is cropped to its top (the header, the three score cards and the domain table, `deliverability-app.webp`) and sits flat in the dark browser frame on the grey panel, with a soft shadow; no tilt.
 - **Text:** The challenge was to let a company hand its outreach to an AI without losing control of its voice, and to keep a product with many channels, personas and integrations clear enough to set up and easy to trust.
-- **My role:** Product Designer
+- **My role:** removed from this block (her request, 2026-10-22; the meta row already says Product Designer); the Responsibilities move up under the text.
 - **Responsibilities (pills, pale grey):** AI agent UX · User interviews · Prototyping · Session recordings · Information architecture · Integrations · Data-heavy interfaces · Design system
 
 #### Research (sub-head: Research · Tested before it was built)
