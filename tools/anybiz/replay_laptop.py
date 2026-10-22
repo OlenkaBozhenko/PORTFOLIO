@@ -1,6 +1,6 @@
 """Put the Personas screen on the laptop of the session-replay photo.
 
-The photo is her Figma AI image (node 252:2, gpt-image-2.5): a person at a laptop whose screen is a flat
+The photo is her Figma AI image (node 253:2, gpt-image-2.5; it replaced 252:2, her request): a woman with curly hair at a laptop whose screen is a flat
 green. This finds the green screen, maps the Personas screen onto it in perspective, and prints the four
 corners (in % of the photo) that AnyBiz.html uses to lay the moving cursor over the same screen.
 

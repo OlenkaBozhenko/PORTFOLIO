@@ -293,6 +293,11 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .replay{display:flex;flex-direction:column;gap:12px;cursor:pointer}
 .photo{position:relative;overflow:hidden}
 .photo img{display:block;width:100%}
+/* the labels of the marks: flat, in the page's type, so they read (her request), placed where the mark is on the screen */
+.labels{position:absolute;inset:0;pointer-events:none;z-index:3}
+.mkl{position:absolute;transform:translate(-50%,14px);display:inline-flex;align-items:center;gap:7px;white-space:nowrap;font:500 14px/1 var(--sans);letter-spacing:-.005em;color:var(--ink);background:#fff;border-radius:999px;padding:8px 13px 8px 10px;box-shadow:0 8px 20px -8px rgba(2,6,23,.6);animation:mkhes 4s ease forwards}
+.mkl i{width:8px;height:8px;border-radius:50%;background:var(--c)}
+.replay.paused .mkl{animation-play-state:paused}
 /* a 1600 x 1000 layer, the size of the screen image, mapped onto the laptop screen with matrix3d */
 .lapscr{position:absolute;left:0;top:0;width:1600px;height:1000px;transform-origin:0 0;pointer-events:none}
 .cursor{position:absolute;left:50%;top:70%;width:80px;height:80px;z-index:3;transition-property:left,top;transition-timing-function:cubic-bezier(.45,.05,.3,1);filter:drop-shadow(0 4px 6px rgba(0,0,0,.5))}
@@ -301,11 +306,10 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .mk.hes{border:6px dashed var(--amber);animation:mkhes 4s ease forwards}
 .mk.rage{border:8px solid var(--rose);animation:mkrage .9s ease-out 3 forwards}
 .mk.dead{border:6px solid var(--sky);background:rgba(56,189,248,.15)}
-.mk .t{position:absolute;left:50%;top:100%;transform:translate(-50%,16px);white-space:nowrap;font:600 34px/1 var(--ui);color:#fff;background:#0F172A;border-radius:12px;padding:12px 18px}
 @keyframes mkhes{0%{opacity:0;transform:scale(.5)}15%{opacity:1;transform:scale(1)}85%{opacity:1}100%{opacity:0}}
 @keyframes mkrage{0%{opacity:1;transform:scale(.3)}100%{opacity:0;transform:scale(1.3)}}
 @keyframes mkfade{0%{opacity:0}10%,85%{opacity:1}100%{opacity:0}}
-.player{display:flex;align-items:center;gap:14px;background:var(--panel);color:var(--a-ink);border-radius:10px;padding:12px 16px;font:500 13px/1 var(--ui)}
+.player{position:absolute;left:clamp(10px,2vw,20px);right:clamp(10px,2vw,20px);bottom:clamp(10px,2vw,20px);z-index:4;display:flex;align-items:center;gap:14px;background:rgba(15,23,42,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(148,163,184,.18);color:var(--a-ink);border-radius:10px;padding:12px 16px;font:500 13px/1 var(--ui)}
 .player svg{width:16px;height:16px;flex:none}
 .track{position:relative;flex:1;height:6px;border-radius:3px;background:var(--line)}
 .track .fill{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:3px;background:var(--violet-l)}
@@ -618,11 +622,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       </div>
       <figure class="c5-12 rv" style="--d:.1s">
         <div class="replay" id="replay" tabindex="0" aria-describedby="replay-how">
-          <div class="photo" role="img" aria-label="A person at a laptop in a dusk room lit violet, the Personas screen of AnyBiz on the laptop; over it a session replay: the cursor hesitates over Select your offer, clicks a status ring three times in frustration, clicks an item that does nothing, and leaves the page.">
+          <div class="photo" role="img" aria-label="A woman with curly hair at a laptop in a dusk room lit violet, the Personas screen of AnyBiz on the laptop; over it a session replay: the cursor hesitates over Select your offer, clicks a status ring three times in frustration, clicks an item that does nothing, and leaves the page.">
             <img src="assets/work/anybiz/replay-laptop.webp" srcset="assets/work/anybiz/replay-laptop-768.webp 768w, assets/work/anybiz/replay-laptop.webp 1536w" sizes="(max-width:720px) 92vw, 62vw" alt="" width="1536" height="1024" loading="lazy">
-            <div class="lapscr" id="lapscr" data-quad="21.22,25.88 58.33,24.51 60.42,57.42 22.92,62.3" aria-hidden="true"><span class="cursor" id="cur"><svg><use href="#i-ptr"/></svg></span></div>
+            <div class="lapscr" id="lapscr" data-quad="8.79,24.71 56.97,23.44 59.83,64.94 11.65,72.85" aria-hidden="true"><span class="cursor" id="cur"><svg><use href="#i-ptr"/></svg></span></div>
+            <div class="labels" id="mlabels" aria-hidden="true"></div>
+            <div class="player" aria-hidden="true"><svg><use href="#i-play"/></svg><span class="time" id="rtime">00:00 / 06:40</span><span class="track"><span class="fill" id="rfill"></span><i style="left:22%;background:var(--amber)"></i><i style="left:48%;background:var(--rose)"></i><i style="left:70%;background:var(--sky)"></i><i style="left:94%;background:var(--violet-l)"></i></span></div>
           </div>
-          <div class="player" aria-hidden="true"><svg><use href="#i-play"/></svg><span class="time" id="rtime">00:00 / 06:40</span><span class="track"><span class="fill" id="rfill"></span><i style="left:22%;background:var(--amber)"></i><i style="left:48%;background:var(--rose)"></i><i style="left:70%;background:var(--sky)"></i><i style="left:94%;background:var(--violet-l)"></i></span></div>
           <span id="replay-how" class="vh">The replay plays by itself. Press Enter, or click it, to stop or start it.</span>
         </div>
       </figure>
@@ -754,6 +759,7 @@ document.querySelectorAll('.big').forEach(function(h){
     for(var i=0;i<4;i++){var x=src[i][0],y=src[i][1],u=dst[i][0],v=dst[i][1];
       A.push([x,y,1,0,0,0,-u*x,-u*y]);b.push(u);A.push([0,0,0,x,y,1,-v*x,-v*y]);b.push(v)}
     var k=solve(A,b);
+    lay._k=k;
     lay.style.transform='matrix3d('+[k[0],k[3],0,k[6],k[1],k[4],0,k[7],0,0,1,0,k[2],k[5],0,1].join(',')+')';
   }
   fit();addEventListener('resize',fit);ph.querySelector('img').addEventListener('load',fit);
@@ -770,7 +776,10 @@ document.querySelectorAll('.big').forEach(function(h){
   function fmt(s){s=Math.round(s);return ('0'+Math.floor(s/60)).slice(-2)+':'+('0'+s%60).slice(-2)}
   function mark(k,x,y){
     var p=k.split(':'),el=document.createElement('span');el.className='mk '+p[0];el.style.left=x+'%';el.style.top=y+'%';
-    if(p[1]){var t=document.createElement('span');t.className='t';t.textContent=p[1];el.appendChild(t)}
+    if(p[1]){var k2=scr._k,X=x*16,Y=y*10,d=k2[6]*X+k2[7]*Y+1,ph=scr.parentNode,lb=document.createElement('span');
+      lb.className='mkl';lb.style.left=((k2[0]*X+k2[1]*Y+k2[2])/d/ph.clientWidth*100)+'%';lb.style.top=((k2[3]*X+k2[4]*Y+k2[5])/d/ph.clientHeight*100+3)+'%';
+      lb.style.setProperty('--c',{hes:'var(--amber)',rage:'var(--rose)',dead:'var(--sky)'}[p[0]]);lb.innerHTML='<i></i>'+p[1];
+      document.getElementById('mlabels').appendChild(lb);setTimeout(function(){lb.remove()},4200)}
     scr.appendChild(el);setTimeout(function(){el.remove()},4200);
   }
   function run(){
