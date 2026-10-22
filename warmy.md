@@ -67,7 +67,7 @@ Accessibility: the list is real buttons with aria-expanded; the screens change w
 
 ### 5. Feature cards (gridded panels with stacked UI pieces, Ramos)
 Two cards side by side, each a plain pale panel (no grid, her request 2026-10-20) with two overlapping UI pieces drawn in HTML in Warmy's style (Figtree, its colours); the pieces start on the panel's left edge, and the title and text sit under the panel as a caption on the same left edge (her request), not centred. Figures are made up for the mockup.
-- **Placement you can prove.** Inbox 91% (+12 this week); by provider: Gmail 94%, Outlook 86%, Yahoo 92%; Spam 6%, Promotions 3%. Text: A seed test sends the real campaign to test inboxes at each provider and reports where it landed, so "delivered" finally means something.
+- **Placement you can prove.** Inbox 91% (+12 this week); by provider: Gmail 94%, Outlook 86%, Yahoo 92%; Spam 6%, Promotions 3%. Text: The seed list behaves like real people: it opens, reads and replies, so your emails land in the inbox. The mobile seed list opens them on real phones and raises your domain reputation many times faster.
 - **Warm-up that knows when it is done.** Health 82 of 100, Day 18 of 21, a rising line; "Ready to send 1,200 a day". Text: Warm-up ramps volume step by step and shows a finish line, so senders know when the domain is ready and what keeps it safe after.
 
 ### 6. My part (her role)
