@@ -8,7 +8,7 @@
 <!-- Display layer. Content source: anybiz.md -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap">
 
 <style>
 :root{
@@ -339,10 +339,10 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 
 /* 10. the closing mosaic on the night ground */
 .mos{position:relative;background:var(--ground);padding-block:clamp(40px,6vw,88px);overflow:hidden;cursor:pointer}
-.ticker{display:flex;align-items:center;gap:clamp(28px,4vw,64px);width:max-content;animation:slide 60s linear infinite;padding-right:clamp(28px,4vw,64px)}
-.ticker img{flex:none;height:clamp(44px,6.4vw,96px);width:auto}
-/* the words in capitals, violet, as tall as the logo's letters (her request) */
-.ticker span{flex:none;color:var(--violet-l);font-size:clamp(45px,6.6vw,99px);font-weight:500;line-height:1;letter-spacing:-.01em;text-transform:uppercase;white-space:nowrap}
+/* the words line up with the logo: their capitals as tall as its small letters (52.8% of the logo's height), one baseline (69.2 of 88), the same bold weight (her request) */
+.ticker{--h:clamp(44px,6.4vw,96px);display:flex;align-items:baseline;gap:clamp(28px,4vw,64px);width:max-content;animation:slide 60s linear infinite;padding-right:clamp(28px,4vw,64px)}
+.ticker img{flex:none;height:var(--h);width:auto;position:relative;top:calc(var(--h)*.214)}
+.ticker span{flex:none;color:var(--violet-l);font-size:calc(var(--h)*.727);font-weight:700;line-height:1;letter-spacing:-.01em;text-transform:uppercase;white-space:nowrap}
 @keyframes slide{to{transform:translateX(-50%)}}
 .mos.paused .ticker,.mos:not(.play) .ticker,.mos:hover .ticker{animation-play-state:paused}
 @media (prefers-reduced-motion:reduce){.ticker{animation:none}}
