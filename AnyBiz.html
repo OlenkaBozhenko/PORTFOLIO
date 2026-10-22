@@ -70,7 +70,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 
 /* 1. the first screen: the AI agent says hello (her frame 247:78026) */
 .first{padding-bottom:clamp(56px,8vw,112px)}
-.hello{position:relative;overflow:hidden;background:radial-gradient(55% 50% at 15% 95%,rgba(124,58,237,.2),transparent 70%),radial-gradient(40% 40% at 88% 10%,rgba(56,189,248,.09),transparent 70%),var(--night);aspect-ratio:21/9;display:grid;place-items:center;cursor:default;color:var(--a-ink);font-family:var(--ui)}
+.hello{position:relative;overflow:hidden;background:radial-gradient(55% 50% at 15% 95%,rgba(124,58,237,.2),transparent 70%),radial-gradient(40% 40% at 88% 10%,rgba(56,189,248,.09),transparent 70%),var(--night);aspect-ratio:21/9;display:grid;grid-template-columns:minmax(0,1fr);place-items:center;cursor:default;color:var(--a-ink);font-family:var(--ui)}
 @media (max-width:900px){.hello{aspect-ratio:auto}}
 .stars{position:absolute;inset:0;pointer-events:none}
 .star{position:absolute;width:var(--s,14px);height:var(--s,14px);color:var(--c,#7C6CF0);opacity:.55}
@@ -111,7 +111,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 @media (prefers-reduced-motion:reduce){.star,.orb g,.orb .core,.field .pc{animation:none !important}.mtrail{display:none}}
 
 /* 2. overview: the night block with my role, next to a tilted screen (her reference; Zelt) */
-.ov{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,64px);align-items:center;padding-bottom:clamp(72px,10vw,140px)}
+.ov{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,64px);align-items:center}
 .ov .txt{display:flex;flex-direction:column;gap:clamp(28px,4vw,48px)}
 .ov .intro{font-size:clamp(18px,1.7vw,22px);line-height:1.45;letter-spacing:-.01em}
 .ov dl{margin:0;display:flex;flex-direction:column;gap:6px}
@@ -156,15 +156,79 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .js .big.in .w>span{transform:none}
 @media (prefers-reduced-motion:reduce){.js .big .w>span{transform:none;transition:none}}
 
-/* 4. product: Genesis panels (a small panel and caption, a tall tilted screen) and a bento */
-.pan{background:var(--well);padding:clamp(20px,3.2vw,48px);overflow:hidden}
-.pan img{border-radius:clamp(8px,1.2vw,16px)}
-.pan.flush{padding:0}
-.pan.flush img{border-radius:0}
-.tall{grid-row:span 2;align-self:stretch;display:flex;flex-direction:column;gap:16px}
-.tall .pan{flex:1;background:var(--pale);display:grid;place-items:center;perspective:1400px;min-height:520px;padding-block:clamp(40px,6vw,96px)}
-.tall .pan img{width:82%;transform:rotateY(-18deg) rotateX(8deg) rotateZ(4deg);box-shadow:0 2px 4px rgba(15,23,42,.1),0 50px 80px -30px rgba(30,20,80,.55);border-radius:12px}
-@media (max-width:720px){.tall .pan{min-height:0}.tall .pan img{width:92%}}
+/* sub-heads inside a section: a thin rule, the name left, a note right */
+.subh{display:flex;justify-content:space-between;gap:24px;border-top:1px solid var(--rule);padding-top:16px;font-size:15px;color:var(--muted);margin-top:clamp(24px,4vw,64px)}
+.subh span:first-child{color:var(--ink)}
+.big.tight{margin-top:calc(-1*clamp(24px,4vw,72px))}
+
+/* 3. product: the feature list next to a browser and a phone (the pattern of the Warmy page) */
+.acc{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.acc li{background:#fff;border-radius:20px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 18px 40px -24px rgba(0,0,0,.22);border:1px solid #F0F0F0}
+.acc button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 18px 18px 28px;font-size:clamp(20px,1.9vw,26px);letter-spacing:-.02em;border-radius:20px}
+.acc button:focus-visible{outline:2px solid var(--label);outline-offset:3px}
+.acc .pm{flex:none;width:52px;height:52px;border-radius:50%;background:var(--well);display:grid;place-items:center;transition:background .25s,transform .35s,color .25s}
+.acc .pm svg{width:16px;height:16px}
+.acc [aria-expanded="true"] .pm{background:var(--violet-btn);color:#fff;transform:rotate(45deg)}
+.acc .body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s ease}
+.acc .body>div{overflow:hidden}
+.acc .body p{padding:0 28px 24px;color:var(--muted);font-size:16px;max-width:46ch}
+.acc li.open .body{grid-template-rows:1fr}
+@media (prefers-reduced-motion:reduce){.acc .body,.acc .pm{transition:none}}
+.stage{position:relative;background:var(--pale);overflow:hidden;aspect-ratio:7/6}
+.stage .browser{position:absolute;right:-8%;top:8%;width:92%;isolation:isolate}
+.vp{position:relative;overflow:hidden;background:var(--night)}
+.stage .browser .vp{aspect-ratio:1600/1000}
+.dev{position:absolute;bottom:-14%;left:6%;width:25%;transition:opacity .5s,transform .5s}
+.dev.off{opacity:0;transform:translateY(20px)}
+.dev .vp{aspect-ratio:600/1240;border-radius:clamp(14px,1.8vw,24px);box-shadow:0 1px 2px rgba(0,0,0,.08),0 24px 40px -18px rgba(30,20,80,.45)}
+.vp img{position:absolute;inset:0;width:100%;height:auto;opacity:0;transition:opacity .5s ease}
+.vp img.on{opacity:1}
+.vp img.tall{animation:feed var(--t,16s) ease-in-out .8s infinite alternate;animation-play-state:paused}
+.stagefig.play .vp img.tall.on{animation-play-state:running}
+.stagefig .stage:hover .vp img.tall{animation-play-state:paused}
+@keyframes feed{0%,8%{transform:translateY(0)}92%,100%{transform:translateY(var(--to))}}
+@media (prefers-reduced-motion:reduce){.vp img.tall{animation:none}.vp img,.dev{transition:none}}
+@media (min-width:721px){.stagefig{align-self:stretch}.stagefig .stage{aspect-ratio:auto;height:100%;min-height:440px}}
+@media (max-width:720px){.stage{aspect-ratio:1/1}.dev{width:30%;bottom:-10%}}
+
+/* cards: separate UI pieces in the product's dark style on a pale panel, text under the panel */
+.fcard .fpanel,.g .fpanel{background:var(--pale);padding:clamp(24px,3.4vw,48px)}
+.fcard .cap{max-width:52ch}
+.ui{position:relative;width:100%;height:clamp(260px,26vw,340px)}
+.aui{font-family:var(--ui);color:var(--a-ink)}
+.dk{position:absolute;background:var(--panel);border:1px solid var(--card);border-radius:14px;padding:16px 18px;box-shadow:0 30px 50px -30px rgba(30,20,80,.55);font-size:14px}
+.dk .row{display:flex;align-items:center;gap:12px}
+.dk .row>div{flex:1;min-width:0}
+.dk b{font-weight:500;color:#F8FAFC;display:block}
+.dk small{display:block;color:var(--a-mut);font-size:12.5px;margin-top:2px}
+.dk .lbl{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--sky);margin-bottom:12px}
+.li{flex:none;width:36px;height:36px;border-radius:6px;background:#0A66C2;color:#fff;display:grid;place-items:center;font-weight:600}
+.tog{flex:none;width:34px;height:20px;border-radius:10px;background:var(--line);position:relative}
+.tog i{position:absolute;top:3px;left:3px;width:14px;height:14px;border-radius:50%;background:#94A3B8;transition:left .3s}
+.tog.on{background:var(--violet)}.tog.on i{left:17px;background:#fff}
+.sched{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:10px;padding:7px 0}
+.sched.off{opacity:.45}
+.pill{font-size:12.5px;background:#1E1B4B;border:1px solid #312E81;border-radius:6px;padding:4px 8px;color:#E0E7FF;white-space:nowrap}
+.av2{flex:none;width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,#C4B5FD,#7C3AED);display:grid;place-items:center;font-weight:600;color:#fff;font-size:13px}
+.sig{display:flex;gap:3px;align-items:flex-end}.sig i{width:4px;height:16px;border-radius:2px;background:var(--teal)}.sig i.o{background:var(--line)}
+.tags2{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tags2 span{font-size:12px;background:var(--card);border-radius:5px;padding:3px 7px;color:#CBD5E1}
+.tags2 em{font-style:normal;color:var(--teal)}
+.acts2{display:flex;margin-bottom:14px}
+.acts2 span{font-size:12.5px;font-weight:600;padding:5px 12px;border-radius:999px;color:#fff}
+.acts2 .e{background:#334155}.acts2 .l{background:#0A66C2;margin-left:-6px}.acts2 .c{background:#4C1D95;margin-left:-6px}
+.kv{display:flex;gap:28px}.kv b{font-size:22px;font-weight:600;letter-spacing:-.02em;margin-top:2px}
+.icards .ic{width:66%}
+.ic p{color:var(--a-mut);font-size:13px;line-height:1.45;margin-top:10px}
+.lg{flex:none;width:30px;height:30px;border-radius:7px;display:grid;place-items:center;color:#fff;font-weight:600;font-size:13px}
+.ic .row b{flex:1}
+.ic .st{font-size:12px;border-radius:999px;padding:3px 9px 3px 20px;position:relative;background:var(--card);color:#CBD5E1}
+.ic .st::before{content:"";position:absolute;left:8px;top:50%;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:#94A3B8}
+.ic .st.r{color:#FDA4AF}.ic .st.r::before{background:var(--rose)}
+.ic .st.g{color:#99F6E4}.ic .st.g::before{background:var(--teal)}
+.cbtn{display:block;margin-top:12px;text-align:center;border:1px solid var(--line);border-radius:999px;padding:8px;font-size:13px}
+@media (max-width:560px){.ui{height:300px}.dk{font-size:13px;padding:12px 14px;width:92% !important}.dk[style*="right:0"]{right:0}.sched{grid-template-columns:auto 1fr auto}.sched .pill:last-child{display:none}.icards .ic{width:92% !important}.ic .st{padding-left:18px}}
+.g .fpanel{overflow:hidden}
 
 /* 5. research: three outcomes, big numbers */
 .out{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--cg)}
@@ -416,67 +480,117 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="pair rv"><h2>Solution</h2><p>AI agents that work across email, LinkedIn and phone under instructions the customer writes: who to reach, in which language and tone, with which call to action and signature. The customer sees an example before anything goes out, and every result comes back as insights.</p></div>
   </div>
 
-  <!-- 3. the challenge and my role, next to a tilted dashboard (her reference; Zelt), on the white page -->
-  <div class="wrap"><section class="ov rv" aria-labelledby="h-ov">
-    <h2 id="h-ov" class="vh">My role</h2>
-    <div class="txt">
-      <p class="intro">The challenge was to let a company hand its outreach to an AI without losing control of its voice, and to keep a product with many channels, personas and integrations clear enough to set up and easy to trust.</p>
-      <dl><dt>My role</dt><dd>Product Designer</dd></dl>
-      <div>
-        <p class="k">Responsibilities</p>
-        <ul class="pills"><li>AI agent UX</li><li>User interviews</li><li>Prototyping</li><li>Session recordings</li><li>Information architecture</li><li>Integrations</li><li>Data-heavy interfaces</li><li>Design system</li></ul>
-      </div>
-    </div>
-    <div class="shot"><img src="assets/work/anybiz/deliverability.webp" srcset="assets/work/anybiz/deliverability-800.webp 800w, assets/work/anybiz/deliverability.webp 1600w" sizes="(max-width:820px) 92vw, 55vw" alt="AnyBiz deliverability insights: an overall score of 25%, 10 active mailboxes and 6 active domains with 2 in repair, tables of domains and email accounts with their scores and status, and a bar chart of emails sent per account." width="1600" height="1672"></div>
-  </section></div>
-
-  <!-- 4. product -->
+  <!-- 3. product: the feature list next to a browser and a phone, then cards of separate UI pieces (the pattern of the Warmy page) -->
   <section class="gal wrap" id="product" aria-labelledby="h-pr">
     <div class="sec-head"><h2 id="h-pr">Product</h2><span>Hire AI agents</span></div>
     <div class="g">
       <h3 class="big c1-12">A salesperson that works 24/7, <span class="s">set up in one place</span></h3>
-      <figure class="c1-6 rv">
-        <div class="pan"><img src="assets/work/anybiz/persona-modal.webp" srcset="assets/work/anybiz/persona-modal-800.webp 800w, assets/work/anybiz/persona-modal.webp 1600w" sizes="(max-width:720px) 92vw, 46vw" alt="Persona details: John Anderson from the database, with role, industry, location, company size, revenue and technology, and a table of matching prospects with an Export prospects to CSV button." width="1600" height="995" loading="lazy"></div>
-        <figcaption class="cap"><h3>Personas, not lists</h3><p>A persona describes who the agent should reach: role, industry, location, company size and revenue. The prospects that match come from the database, a file, LinkedIn or the CRM, and stay visible before a campaign starts.</p></figcaption>
+      <ul class="acc c1-5 start rv" id="acc">
+        <li class="open"><button type="button" aria-expanded="true" aria-controls="ac1" id="ab1">Messaging instructions<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></button><div class="body" id="ac1" role="region" aria-labelledby="ab1"><div><p>The rules the agent writes by, channel by channel: persona, language, tone of voice, call to action, signature, guidelines and case studies. The agent shows an example before anything is sent.</p></div></div></li>
+        <li><button type="button" aria-expanded="false" aria-controls="ac2" id="ab2">Personas<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></button><div class="body" id="ac2" role="region" aria-labelledby="ab2"><div><p>Who the agent should reach, found in the database or imported from a file, LinkedIn, HubSpot, Zapier or Salesforce, each with its offering, channels, source and status.</p></div></div></li>
+        <li><button type="button" aria-expanded="false" aria-controls="ac3" id="ab3">Sequence builder<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></button><div class="body" id="ac3" role="region" aria-labelledby="ab3"><div><p>Email, LinkedIn and phone steps in one timeline, each with its own sending window and instructions. Language, tone and offering are set once, at the top.</p></div></div></li>
+        <li><button type="button" aria-expanded="false" aria-controls="ac4" id="ab4">Performance<span class="pm" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span></button><div class="body" id="ac4" role="region" aria-labelledby="ab4"><div><p>Engaged prospects, actions per channel, reply and opportunity rates for every persona, so the budget follows the audience that answers.</p></div></div></li>
+      </ul>
+      <figure class="c6-12 rv stagefig" style="--d:.1s"><div class="stage">
+        <div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>app.anybiz.io</span></div><div class="vp" id="lap">
+          <img class="on" src="assets/work/anybiz/messaging.webp" alt="Messaging instructions: the checklist of instructions on the left, and an example email introduction written by the agent, with Regenerate and Save and train the AI." width="1600" height="1000">
+          <img src="assets/work/anybiz/personas-app.webp" alt="Personas: a table with state, name, product and offering, channels, source, prospects, date and status, and the Import from menu open with File, LinkedIn, HubSpot, Zapier and Salesforce." width="1600" height="1000" loading="lazy">
+          <img class="tall" style="--to:-43%;--t:14s" src="assets/work/anybiz/sequence.webp" alt="The sequence builder: an action step, an email step, a LinkedIn view profile step and a phone call step with a script, each with days after and a sending window." width="1280" height="1406" loading="lazy">
+          <img src="assets/work/anybiz/performance-app.webp" alt="Personas in the performance view: engaged prospects, total actions by email, LinkedIn and phone, reply rate, opportunity rate and status for each persona." width="1600" height="1000" loading="lazy">
+        </div></div>
+        <div class="dev" id="dev"><div class="vp" id="mob">
+          <img class="on" src="assets/work/anybiz/phone-settings.webp" alt="On a phone, the settings menu: My AI Agent, Website visitors detector, LinkedIn channel, Brand awareness, AI landing pages, Integrations, Notifications and Blacklist, under a bar that reads Brand Awareness Agent is live." width="600" height="1303">
+          <img src="assets/work/anybiz/phone-menu.webp" alt="On a phone, the main menu: Dashboard, My products, Pipeline, Inbox, Insights, Configurations and Settings, with Book a call at the bottom." width="600" height="1180" loading="lazy">
+        </div></div>
+      </div></figure>
+
+      <!-- cards: separate UI pieces drawn in the product's style, on a pale panel -->
+      <figure class="c1-6 rv fcard">
+        <div class="fpanel"><div class="ui aui" aria-hidden="true">
+          <div class="dk" style="left:0;top:0;width:74%">
+            <div class="row"><span class="li">in</span><div><b>Enable LinkedIn auto-posts</b><small>Let the AI agent create and publish posts for you</small></div><span class="tog on"><i></i></span></div>
+          </div>
+          <div class="dk" style="right:0;top:34%;width:78%;z-index:1">
+            <div class="lbl">Schedule your posts</div>
+            <div class="sched"><span class="tog on"><i></i></span><span>Monday</span><span class="pill">2:15 PM</span><span class="pill">Text only</span></div>
+            <div class="sched off"><span class="tog"><i></i></span><span>Tuesday</span><span class="pill">10:00 AM</span><span class="pill">Text only</span></div>
+            <div class="sched"><span class="tog on"><i></i></span><span>Wednesday</span><span class="pill">2:15 PM</span><span class="pill">Text + image</span></div>
+          </div>
+        </div></div>
+        <figcaption class="cap"><h3>A brand awareness agent</h3><p>The agent writes and publishes LinkedIn posts for the brand on a schedule the customer controls, day by day and by format.</p></figcaption>
       </figure>
-      <figure class="c7-12 rv tall" style="--d:.1s">
-        <div class="pan"><img src="assets/work/anybiz/sequence.webp" srcset="assets/work/anybiz/sequence-640.webp 640w, assets/work/anybiz/sequence.webp 1280w" sizes="(max-width:720px) 84vw, 38vw" alt="The sequence builder: an action step, an email step, a LinkedIn view profile step and a phone call step with a script, each with days after and a sending window, and a language menu open at the top." width="1280" height="1406" loading="lazy"></div>
-        <figcaption class="cap"><h3>One sequence, every channel</h3><p>Email, LinkedIn and phone steps in one timeline, each with its own sending window and the instructions the agent follows. Language, tone and offering are set once, at the top.</p></figcaption>
+      <figure class="c7-12 rv fcard" style="--d:.1s">
+        <div class="fpanel"><div class="ui aui" aria-hidden="true">
+          <div class="dk" style="left:0;top:6%;width:62%">
+            <div class="lbl" style="text-align:center">Persona recommendation</div>
+            <div class="row"><span class="av2">JA</span><div><b>John Anderson</b></div><span class="sig"><i></i><i></i><i></i><i></i><i class="o"></i></span></div>
+            <div class="tags2"><span>From Database</span><span>United States</span><span>Matching prospects: <em>10K</em></span></div>
+          </div>
+          <div class="dk" style="right:0;top:44%;width:70%;z-index:1">
+            <div class="lbl">Total actions</div>
+            <div class="acts2"><span class="e">4.5K</span><span class="l">3.3K</span><span class="c">500</span></div>
+            <div class="kv"><div><small>Reply rate</small><b>1.2%</b></div><div><small>Opportunity rate</small><b style="color:var(--violet-l)">0.1%</b></div></div>
+          </div>
+        </div></div>
+        <figcaption class="cap"><h3>Personas, not lists</h3><p>The agent recommends who to reach and shows how many prospects match before a campaign starts; afterwards, every persona reports its own results.</p></figcaption>
       </figure>
-      <figure class="c1-6 rv">
-        <div class="pan flush"><img src="assets/work/anybiz/performance.webp" srcset="assets/work/anybiz/performance-800.webp 800w, assets/work/anybiz/performance.webp 1600w" sizes="(max-width:720px) 92vw, 46vw" alt="Personas in the performance view: engaged prospects, total actions by email, LinkedIn and phone, reply rate, opportunity rate and status for each persona." width="1600" height="995" loading="lazy"></div>
-        <figcaption class="cap"><h3>Results by persona</h3><p>Engaged prospects, actions per channel, reply and opportunity rates, so the customer sees which audience works and moves the budget there.</p></figcaption>
-      </figure>
-      <figure class="c1-7 rv">
-        <div class="pan"><img src="assets/work/anybiz/mobile.webp" srcset="assets/work/anybiz/mobile-800.webp 800w, assets/work/anybiz/mobile.webp 1600w" sizes="(max-width:720px) 92vw, 54vw" alt="Two phones with the AnyBiz menu: Dashboard, My products, Pipeline, Inbox, Insights, Configurations and Settings; and the settings: My AI Agent, Website visitors detector, LinkedIn channel, Brand awareness, AI landing pages, Integrations, Notifications and Blacklist. A bar on top reads Brand Awareness Agent is live." width="1600" height="995" loading="lazy"></div>
-        <figcaption class="cap"><h3>The whole product on a phone</h3><p>Every agent, channel and setting reachable from the mobile menu, with launches announced in a bar on top.</p></figcaption>
-      </figure>
-      <figure class="c8-12 rv end" style="--d:.1s">
-        <div class="pan flush"><img src="assets/work/anybiz/posts.webp" srcset="assets/work/anybiz/posts-800.webp 800w, assets/work/anybiz/posts.webp 1600w" sizes="(max-width:720px) 92vw, 38vw" alt="Manage automated posts: Enable LinkedIn auto-posts, and a schedule with a time and a post format, text only or text and image, for each day of the week." width="1600" height="1040" loading="lazy"></div>
-        <figcaption class="cap"><h3>A brand awareness agent</h3><p>The agent writes and publishes LinkedIn posts on a schedule the customer controls, day by day and by format.</p></figcaption>
+      <p class="c1-12 note" style="margin-top:calc(-1*clamp(40px,6vw,104px))">The figures in the two cards come from the design mockups.</p>
+
+      <!-- integrations, part of the product -->
+      <p class="subh c1-12 rv"><span>Integrations</span><span>Every tool in one place</span></p>
+      <h3 class="big c1-12" style="margin-top:calc(-1*clamp(24px,4vw,72px))">The tools our users already love, <span class="s nb">in one place</span></h3>
+      <div class="c1-12 rv">
+        <ul class="vh"><li>HubSpot</li><li>Salesforce</li><li>Zapier</li><li>Calendly</li><li>Make</li><li>Monday</li><li>SalesLoft</li><li>Asana</li><li>Slack</li><li>Intercom</li><li>LinkedIn</li><li>Gmail</li><li>Outlook</li><li>WhatsApp</li><li>Warmy</li></ul>
+        <div class="marq" id="marq" aria-hidden="true">
+          <div class="lane" style="--s:55s" data-pills="HubSpot:H:#FF5C35|Salesforce:S:#0B76C5|Zapier:Z:#FF4F00|Calendly:C:#006BFF|Make:M:#6D00CC|Monday:M:#E2445C|SalesLoft:S:#0E6B73|Asana:A:#D9534F"></div>
+          <div class="lane rev" style="--s:60s" data-pills="Slack:S:#4A154B|Intercom:I:#1F6FEB|LinkedIn:in:#0A66C2|Gmail:G:#D93025|Outlook:O:#0067B8|WhatsApp:W:#25D366:dk|Warmy:W:#FF8A6A:dk"></div>
+        </div>
+      </div>
+      <div class="cap c1-4 end rv"><h3>Why users stay</h3><p>Integrations are a big part of why many users love AnyBiz: their CRM, calendar, automation and messaging tools work from one place, and leads, meetings and replies stay in sync on their own.</p><p>I designed every integration as one pattern, so a new one never needs a new idea: a status (Connected, Incomplete, Inactive, Coming soon), one button to connect, the docs a click away, and early access for what is next.</p></div>
+      <figure class="c5-12 rv" style="--d:.1s">
+        <div class="fpanel"><div class="ui aui icards" aria-hidden="true">
+          <div class="dk ic" style="left:0;top:0"><div class="row"><span class="lg" style="background:#FF5C35">H</span><b>HubSpot</b><span class="st r">Incomplete</span></div><p>Integrate AnyBiz with HubSpot to seamlessly manage leads in your preferred CRM system</p></div>
+          <div class="dk ic" style="right:0;top:22%;z-index:1"><div class="row"><span class="lg" style="background:#FF4F00">Z</span><b>Zapier</b><span class="st g">Connected</span></div><p>Connect your favorite apps, automate workflows, and keep your data in sync</p></div>
+          <div class="dk ic" style="left:8%;top:56%;z-index:2"><div class="row"><span class="lg" style="background:#0B76C5">S</span><b>Salesforce</b><span class="st">Inactive</span></div><span class="cbtn">Connect</span></div>
+        </div></div>
+        <figcaption class="cap">Three of the integration cards, drawn from her design: one status, one action, the same pattern for every tool.</figcaption>
       </figure>
     </div>
   </section>
 
-  <!-- 5. research -->
-  <section class="gal wrap" aria-labelledby="h-re">
-    <div class="sec-head"><h2 id="h-re">Research</h2><span>Tested before it was built</span></div>
+  <!-- 4. my part: the role, what I did, then the research, the key insight and the session recordings -->
+  <section class="gal wrap" aria-labelledby="h-part">
+    <div class="sec-head"><h2 id="h-part">My part</h2><span>What I brought to AnyBiz</span></div>
     <div class="g">
-      <h3 class="big c1-12">Every feature met our users <span class="s">before it met the developers</span></h3>
+      <h3 class="big c1-12">I designed the AI agent, <span class="s">tested</span> every idea and <span class="s">watched</span> how people use it</h3>
+      <div class="ov c1-12 rv">
+        <div class="txt">
+          <p class="intro">The challenge was to let a company hand its outreach to an AI without losing control of its voice, and to keep a product with many channels, personas and integrations clear enough to set up and easy to trust.</p>
+          <dl><dt>My role</dt><dd>Product Designer</dd></dl>
+          <div>
+            <p class="k">Responsibilities</p>
+            <ul class="pills"><li>AI agent UX</li><li>User interviews</li><li>Prototyping</li><li>Session recordings</li><li>Information architecture</li><li>Integrations</li><li>Data-heavy interfaces</li><li>Design system</li></ul>
+          </div>
+        </div>
+        <div class="shot"><img src="assets/work/anybiz/deliverability.webp" srcset="assets/work/anybiz/deliverability-800.webp 800w, assets/work/anybiz/deliverability.webp 1600w" sizes="(max-width:820px) 92vw, 55vw" alt="AnyBiz deliverability insights: an overall score of 25%, 10 active mailboxes and 6 active domains with 2 in repair, tables of domains and email accounts with their scores and status, and a bar chart of emails sent per account." width="1600" height="1672"></div>
+      </div>
+      <ol class="part c1-12">
+        <li class="rv"><span class="n">01</span><h3>AI agent experience</h3><p>Messaging instructions, the brand awareness agent, persona building and the onboarding states, on desktop and mobile.</p></li>
+        <li class="rv"><span class="n">02</span><h3>User interviews</h3><p>Dynamic prototypes tested with users before development, to sharpen, drop or replace a feature.</p></li>
+        <li class="rv"><span class="n">03</span><h3>Session recordings</h3><p>Real sessions reviewed to find hesitation, dead ends and drop-offs, and turned into fixes.</p></li>
+        <li class="rv"><span class="n">04</span><h3>Integrations</h3><p>CRM, scheduling, automation and messaging tools designed as one consistent pattern.</p></li>
+        <li class="rv"><span class="n">05</span><h3>Data-heavy interfaces</h3><p>Personas, prospect tables, sequences and performance analytics that stay readable at scale, built on a shared design system.</p></li>
+      </ol>
+      <p class="subh c1-12 rv"><span>Research</span><span>Tested before it was built</span></p>
+      <h3 class="big c1-12 tight">Every feature met our users <span class="s">before it met the developers</span></h3>
       <p class="lead c1-6 rv">I built dynamic prototypes of the AI tools and ran user interviews on them before anything went into development. People worked through real tasks on the prototype, so we saw how they behaved, not what they promised. It made the product better and taught us who our users are. Three outcomes kept coming back.</p>
       <ol class="out c1-12">
         <li class="rv"><span class="n" aria-hidden="true">01</span><h3>Sharpened</h3><p>Most ideas survived, but not as drawn. Where people hesitated, misread a label or expected a different next step, the fix went into the design before a line of code was written.</p></li>
         <li class="rv" style="--d:.08s"><span class="n" aria-hidden="true">02</span><h3>Dropped</h3><p>Some features never reached the backlog. When interviews showed that our audience did not need them, we stopped them at the prototype and saved the team weeks of building.</p></li>
         <li class="rv" style="--d:.16s"><span class="n" aria-hidden="true">03</span><h3>Replaced</h3><p>Sometimes the interviews pointed to a different need. We set the planned feature aside and designed the one that really strengthened the product.</p></li>
       </ol>
-    </div>
-  </section>
-
-  <!-- 6. key insight: trust -->
-  <section class="gal wrap" aria-labelledby="h-tr">
-    <div class="sec-head"><h2 id="h-tr">Key insight</h2><span>Trust is designed</span></div>
-    <div class="g">
-      <h3 class="big c1-12">Users did not want to hand their company to AI. <span class="s">They wanted to instruct it.</span></h3>
+      <p class="subh c1-12 rv"><span>Key insight</span><span>Trust is designed</span></p>
+      <h3 class="big c1-12 tight">Users did not want to hand their company to AI. <span class="s">They wanted to instruct it.</span></h3>
       <p class="lead c1-6 rv">The interviews showed it again and again: people did not trust AI agents and were afraid to let one speak for their company. So we did not ask them to trust a black box. We gave them clear instructions to set for the agent, channel by channel: the persona, the language, the tone of voice, the call to action, the signature, message guidelines and case studies.</p>
       <p class="lead c7-12 rv end" style="--d:.1s">Before anything goes out, the agent writes an example; the customer can regenerate it, or save it and train the AI. With the rules in their hands, customers trust the agent with the outreach of their company.</p>
       <figure class="c1-12 rv">
@@ -522,62 +636,21 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         </div>
         <figcaption class="cap"><h3>An example before anything is sent</h3><p>The agent shows what it will write from the customer's own instructions. Nothing leaves until the customer is happy with it.</p></figcaption>
       </figure>
-    </div>
-  </section>
-
-  <!-- 7. behaviour: session recordings -->
-  <section class="gal wrap" aria-labelledby="h-be">
-    <div class="sec-head"><h2 id="h-be">Behaviour</h2><span>What people do, not what they say</span></div>
-    <div class="g">
-      <h3 class="big c1-12">Recordings show <span class="s">what people do</span> when nobody is asking</h3>
+      <p class="subh c1-12 rv"><span>Behaviour</span><span>What people do, not what they say</span></p>
+      <h3 class="big c1-12 tight">Recordings show <span class="s">what people do</span> when nobody is asking</h3>
       <div class="cap c1-4 start rv"><p class="lead" style="color:var(--ink)">Interviews tell you what people think. Session recordings show what they actually do.</p><p style="font-size:16px;margin-top:16px">I watched real sessions to find the moments that need attention: where people hesitate, click something that does nothing, click again in frustration, or leave a flow half done. Each moment became a design fix, a question for the next interview, or a hypothesis to test.</p></div>
       <figure class="c5-12 rv" style="--d:.1s">
         <div class="replay" id="replay" tabindex="0" aria-describedby="replay-how">
-          <div class="rv-scr" role="img" aria-label="A session replay drawn over the Personas screen: the cursor hesitates over Select your offer, clicks a status ring three times in frustration, clicks an item that does nothing, and leaves the page.">
-            <img src="assets/work/anybiz/personas.webp" srcset="assets/work/anybiz/personas-800.webp 800w, assets/work/anybiz/personas.webp 1600w" sizes="(max-width:720px) 92vw, 62vw" alt="" width="1600" height="1202" loading="lazy">
+          <div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>app.anybiz.io</span></div><div class="rv-scr" role="img" aria-label="A session replay drawn over the Personas screen: the cursor hesitates over Select your offer, clicks a status ring three times in frustration, clicks an item that does nothing, and leaves the page.">
+            <img src="assets/work/anybiz/personas-app.webp" alt="" width="1600" height="1000" loading="lazy">
             <span class="cursor" id="cur" aria-hidden="true"><svg><use href="#i-ptr"/></svg></span>
-          </div>
+          </div></div>
           <div class="player" aria-hidden="true"><svg><use href="#i-play"/></svg><span class="time" id="rtime">00:00 / 06:40</span><span class="track"><span class="fill" id="rfill"></span><i style="left:22%;background:var(--amber)"></i><i style="left:48%;background:var(--rose)"></i><i style="left:70%;background:var(--sky)"></i><i style="left:94%;background:var(--violet-l)"></i></span></div>
           <span id="replay-how" class="vh">The replay plays by itself. Press Enter, or click it, to stop or start it.</span>
         </div>
         <div class="legend"><span><i style="background:var(--amber)"></i>Hesitation</span><span><i style="background:var(--rose)"></i>Rage click</span><span><i style="background:var(--sky)"></i>Dead click</span><span><i style="background:var(--violet-l)"></i>Drop-off</span></div>
         <p class="note">An illustration of the method, not a recorded session.</p>
       </figure>
-    </div>
-  </section>
-
-  <!-- 8. integrations -->
-  <section class="gal wrap" aria-labelledby="h-in">
-    <div class="sec-head"><h2 id="h-in">Integrations</h2><span>Every tool in one place</span></div>
-    <div class="g">
-      <h3 class="big c1-12">The tools our users already love, <span class="s nb">in one place</span></h3>
-      <div class="c1-12 rv">
-        <ul class="vh"><li>HubSpot</li><li>Salesforce</li><li>Zapier</li><li>Calendly</li><li>Make</li><li>Monday</li><li>SalesLoft</li><li>Asana</li><li>Slack</li><li>Intercom</li><li>LinkedIn</li><li>Gmail</li><li>Outlook</li><li>WhatsApp</li><li>Warmy</li></ul>
-        <div class="marq" id="marq" aria-hidden="true">
-          <div class="lane" style="--s:55s" data-pills="HubSpot:H:#FF5C35|Salesforce:S:#0B76C5|Zapier:Z:#FF4F00|Calendly:C:#006BFF|Make:M:#6D00CC|Monday:M:#E2445C|SalesLoft:S:#0E6B73|Asana:A:#D9534F"></div>
-          <div class="lane rev" style="--s:60s" data-pills="Slack:S:#4A154B|Intercom:I:#1F6FEB|LinkedIn:in:#0A66C2|Gmail:G:#D93025|Outlook:O:#0067B8|WhatsApp:W:#25D366:dk|Warmy:W:#FF8A6A:dk"></div>
-        </div>
-      </div>
-      <div class="cap c1-4 end rv"><h3>Why users stay</h3><p>Integrations are a big part of why many users love AnyBiz: their CRM, calendar, automation and messaging tools work from one place, and leads, meetings and replies stay in sync on their own.</p><p>I designed every integration as one pattern, so a new one never needs a new idea: a status (Connected, Incomplete, Inactive, Coming soon), one button to connect, the docs a click away, and early access for what is next.</p></div>
-      <figure class="c5-12 rv" style="--d:.1s">
-        <div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>app.anybiz.io</span></div>
-          <img src="assets/work/anybiz/integrations.webp" srcset="assets/work/anybiz/integrations-800.webp 800w, assets/work/anybiz/integrations.webp 1600w" sizes="(max-width:720px) 92vw, 62vw" alt="Connect your integrations: cards for Calendly and HubSpot (Incomplete), Salesforce (Inactive), Zapier (Connected), and Make, Monday, SalesLoft, Asana and Slack (Coming soon, with Get early access)." width="1600" height="1444" loading="lazy"></div>
-      </figure>
-    </div>
-  </section>
-
-  <!-- 9. my part -->
-  <section class="gal wrap" aria-labelledby="h-part">
-    <div class="sec-head"><h2 id="h-part">My part</h2><span>What I brought to AnyBiz</span></div>
-    <div class="g">
-      <h3 class="big c1-12">I designed the AI agent, <span class="s">tested</span> every idea and <span class="s">watched</span> how people use it</h3>
-      <ol class="part c1-12">
-        <li class="rv"><span class="n">01</span><h3>AI agent experience</h3><p>Messaging instructions, the brand awareness agent, persona building and the onboarding states, on desktop and mobile.</p></li>
-        <li class="rv"><span class="n">02</span><h3>User interviews</h3><p>Dynamic prototypes tested with users before development, to sharpen, drop or replace a feature.</p></li>
-        <li class="rv"><span class="n">03</span><h3>Session recordings</h3><p>Real sessions reviewed to find hesitation, dead ends and drop-offs, and turned into fixes.</p></li>
-        <li class="rv"><span class="n">04</span><h3>Integrations</h3><p>CRM, scheduling, automation and messaging tools designed as one consistent pattern.</p></li>
-        <li class="rv"><span class="n">05</span><h3>Data-heavy interfaces</h3><p>Personas, prospect tables, sequences and performance analytics that stay readable at scale, built on a shared design system.</p></li>
-      </ol>
     </div>
   </section>
 
@@ -624,7 +697,7 @@ document.querySelectorAll('.big').forEach(function(h){
 });
 // reveal on scroll, and the moving blocks play only while on screen
 (function(){
-  var els=document.querySelectorAll('.rv,.big,.marq,.mos,.trust');
+  var els=document.querySelectorAll('.rv,.big,.marq,.mos,.trust,.stagefig');
   if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in','play')});return}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){
     if(e.isIntersecting)e.target.classList.add('in');
@@ -666,6 +739,15 @@ document.querySelectorAll('.big').forEach(function(h){
   toggler(m,function(p){if(!p)play()});
 })();
 
+// 3. the accordion: one item open at a time; the browser and the phone show its screens (the phone hides when an item has none)
+(function(){
+  var items=document.querySelectorAll('#acc li'),lap=document.querySelectorAll('#lap img'),mob=document.querySelectorAll('#mob img'),dev=document.getElementById('dev');
+  items.forEach(function(li,i){li.querySelector('button').addEventListener('click',function(){
+    items.forEach(function(o,k){var on=k===i;o.classList.toggle('open',on);o.querySelector('button').setAttribute('aria-expanded',on)});
+    lap.forEach(function(im,k){im.classList.toggle('on',k===i)});
+    dev.classList.toggle('off',i>=mob.length);mob.forEach(function(im,k){im.classList.toggle('on',k===i)})})});
+})();
+
 // 6. the instructions prototype: generating, the example email typing in, the save button; then again
 (function(){
   var box=document.getElementById('trust'),body=document.getElementById('mbody'),bar=document.getElementById('gbar');
@@ -688,7 +770,7 @@ document.querySelectorAll('.big').forEach(function(h){
 (function(){
   var box=document.getElementById('replay'),scr=box.querySelector('.rv-scr'),cur=document.getElementById('cur'),fill=document.getElementById('rfill'),time=document.getElementById('rtime');
   // x, y in % of the screen; move time; then wait; the mark it leaves; where the playhead is
-  var path=[[50,62,0,600,'',0],[33,47,1400,2600,'hes:Hesitation',22],[86,47,1600,1800,'rage:Rage click',48],[71,18,1200,500,'',58],[72,27,700,1700,'dead:Dead click',70],[96,6,1300,1600,'drop',94]];
+  var path=[[50,70,0,600,'',0],[33,56.5,1400,2600,'hes:Hesitation',22],[86,56.5,1600,1800,'rage:Rage click',48],[71,21.6,1200,500,'',58],[72,32.5,700,1700,'dead:Dead click',70],[96,7,1300,1600,'drop',94]];
   if(RM)return;
   var i=0,timer=0,inView=false;
   function paused(){return box.classList.contains('paused')||!inView}

@@ -43,50 +43,28 @@ The pattern of the Warmy page: the title left, the text right. (Was a Genesis ro
 - **Problem:** Outreach eats a sales team's week: finding the right people, writing to each of them, following up, calling, and keeping the CRM current. AI can do all of it, but the people who own a company's reputation are afraid to let it speak for them.
 - **Solution:** AI agents that work across email, LinkedIn and phone under instructions the customer writes: who to reach, in which language and tone, with which call to action and signature. The customer sees an example before anything goes out, and every result comes back as insights.
 
-### 3. The challenge and my role (her reference: My role and Responsibilities next to a tilted dashboard; Zelt)
-On the white page, no background panel (her request, 2026-10-22): text left; at the right her Deliverability insights screen (Figma 247:79006, `deliverability.webp`; replaced the Insights screen 247:79472, her request) tilted in 3D, with rounded corners and a soft shadow.
-- **Text:** The challenge was to let a company hand its outreach to an AI without losing control of its voice, and to keep a product with many channels, personas and integrations clear enough to set up and easy to trust.
-- **My role:** Product Designer
-- **Responsibilities (pills, pale grey):** AI agent UX · User interviews · Prototyping · Session recordings · Information architecture · Integrations · Data-heavy interfaces · Design system
+**Order of the page** (her request, 2026-10-22: the pattern of her portfolio, the header, then the product, then her role and what she did there): 1 first screen · 2 About / Problem / Solution · 3 Product (with Integrations) · 4 My part (the role, the five items, Research, Key insight, Behaviour) · 5 Campaign visuals. **Showing the product** (her request, the same day): every screen sits on a pale panel inside a mockup (a browser or a phone), or, in a card, as separate UI pieces drawn in HTML; no small unreadable screenshots. The Genesis panels and the bento of presentation shots were taken out.
 
-### 4. Product (Genesis layout and a bento)
+### 3. Product (the feature list next to a browser and a phone, as on the Warmy page)
 Section label **Product**, note **Hire AI agents** (the product's own tagline, from her poster 247:77773).
-Headline: A salesperson that works 24/7, *set up in one place* (grey words in italics here).
-- Left, a pale panel with the Persona details window (247:79425). Caption: **Personas, not lists.** A persona describes who the agent should reach: role, industry, location, company size and revenue. The prospects that match come from the database, a file, LinkedIn or the CRM, and stay visible before a campaign starts.
-- Right, a tall pale violet panel with the Sequence builder (247:78151) tilted in 3D. Caption: **One sequence, every channel.** Email, LinkedIn and phone steps in one timeline, each with its own sending window and the instructions the agent follows. Language, tone and offering are set once, at the top.
-- Left, a pale panel with Personas performance (247:79366). Caption: **Results by persona.** Engaged prospects, actions per channel, reply and opportunity rates, so the customer sees which audience works and moves the budget there.
-- Bento: wide panel with the mobile menu (247:79007). Caption: **The whole product on a phone.** Every agent, channel and setting reachable from the mobile menu, with launches announced in a bar on top. Narrow panel with Manage automated posts (247:78840). Caption: **A brand awareness agent.** The agent writes and publishes LinkedIn posts on a schedule the customer controls, day by day and by format.
+Headline: A salesperson that works 24/7, *set up in one place*
+On a pale violet panel (#F1EEFB) a browser frame (app.anybiz.io) and a phone; the list beside it opens one item at a time and the screens crossfade. The open button turns violet (#7C3AED, a white plus).
+1. **Messaging instructions** (247:78046, `messaging.webp`; the phone shows the settings menu cut from 247:79007, `phone-settings.webp`): The rules the agent writes by, channel by channel: persona, language, tone of voice, call to action, signature, guidelines and case studies. The agent shows an example before anything is sent.
+2. **Personas** (247:78364 cut to 16:10, `personas-app.webp`; the phone shows the main menu, `phone-menu.webp`): Who the agent should reach, found in the database or imported from a file, LinkedIn, HubSpot, Zapier or Salesforce, each with its offering, channels, source and status.
+3. **Sequence builder** (247:78151, `sequence.webp`, scrolling slowly in the browser; no phone): Email, LinkedIn and phone steps in one timeline, each with its own sending window and instructions. Language, tone and offering are set once, at the top.
+4. **Performance** (247:78078 cut to 16:10, `performance-app.webp`; no phone): Engaged prospects, actions per channel, reply and opportunity rates for every persona, so the budget follows the audience that answers.
+Two cards of separate UI pieces in the product's dark style on the pale panel, the caption under each (figures from her design mockups, said in a note):
+- **A brand awareness agent** (after 247:78840): the "Enable LinkedIn auto-posts" row with its toggle on; the schedule, Monday 2:15 PM Text only, Tuesday 10:00 AM off, Wednesday 2:15 PM Text + image. Caption: The agent writes and publishes LinkedIn posts for the brand on a schedule the customer controls, day by day and by format.
+- **Personas, not lists** (after 247:79472 and 247:79366): a persona recommendation, John Anderson, From Database, United States, Matching prospects 10K, with a signal meter; total actions 4.5K, 3.3K and 500 by channel, reply rate 1.2%, opportunity rate 0.1%. Caption: The agent recommends who to reach and shows how many prospects match before a campaign starts; afterwards, every persona reports its own results.
 
-### 5. Research (the main accent)
-Section label **Research**, note **Tested before it was built**.
-Headline: Every feature met our users *before it met the developers*
-Intro: I built dynamic prototypes of the AI tools and ran user interviews on them before anything went into development. People worked through real tasks on the prototype, so we saw how they behaved, not what they promised. It made the product better and taught us who our users are. Three outcomes kept coming back:
-- 01 **Sharpened.** Most ideas survived, but not as drawn. Where people hesitated, misread a label or expected a different next step, the fix went into the design before a line of code was written.
-- 02 **Dropped.** Some features never reached the backlog. When interviews showed that our audience did not need them, we stopped them at the prototype and saved the team weeks of building.
-- 03 **Replaced.** Sometimes the interviews pointed to a different need. We set the planned feature aside and designed the one that really strengthened the product.
-(No feature names here: she can add the real examples, open question below.)
-
-### 6. Key insight: trust (her reference: glass AI components next to a phone)
-Section label **Key insight**, note **Trust is designed**.
-Headline: Users did not want to hand their company to AI. *They wanted to instruct it.*
-Text: The interviews showed it again and again: people did not trust AI agents and were afraid to let one speak for their company. So we did not ask them to trust a black box. We gave them clear instructions to set for the agent, channel by channel: the persona, the language, the tone of voice, the call to action, the signature, message guidelines and case studies. Before anything goes out, the agent writes an example; the customer can regenerate it or save it and train the AI. With the rules in their hands, customers hand the outreach of their company to the agent.
-Dark panel. Left, glass UI pieces drawn in HTML in the product style: the instruction checklist (Persona, Language, Tone of voice, Call to action, Signature ticked; Message guidelines and Case studies with an amber note), the setting pills (English (United States), Professional, Offering), and the buttons Regenerate and Save and train the AI. Right, a live prototype of the instructions screen in HTML: "{AnyBiz} magic is on the way..." with a filling bar, then the example email types in (her Figma copy, 247:78046: Subject: Unlock the potential for growth! / Hi [Recipient's Name], / I'm Martin from Anybiz, and I believe we can help [Company Name] improve its cold email outreach. / Our platform helps teams like yours by: automating and personalizing email campaigns; improving deliverability and avoiding spam filters; providing insights to optimize conversions. / Would love to chat and learn more about your goals.), the Save button pulses, and it starts again. Same motion rules as the first screen.
-Caption: **An example before anything is sent.** The agent shows what it will write from the customer's own instructions. Nothing leaves until the customer is happy with it.
-
-### 7. Behaviour: session recordings
-Section label **Behaviour**, note **What people do, not what they say**.
-Headline: Recordings show *what people do* when nobody is asking
-Text left: Interviews tell you what people think. Session recordings show what they actually do. I watched real sessions to find the moments that need attention: where people hesitate, click something that does nothing, click again in frustration, or leave a flow half done. Each moment became a design fix, a question for the next interview, or a hypothesis to test.
-Visual right: a session replay drawn over the Personas screen (247:78364): a cursor moves along a path, a hesitation ring, a rage click ripple and a dead click appear where they happen; under it a player bar with a timeline and coloured markers, and a legend: Hesitation, Rage click, Dead click, Drop-off. Note under it: An illustration of the method, not a recorded session.
-
-### 8. Integrations
-Section label **Integrations**, note **Every tool in one place**.
+#### Integrations (inside Product, under a thin sub-head: Integrations · Every tool in one place)
 Headline: The tools our users already love, *in one place*
 Two rows of integration pills sliding in opposite directions (Ramos pill marquee): HubSpot, Salesforce, Zapier, Calendly, Make, Monday, SalesLoft, Asana, Slack, Intercom, LinkedIn, Gmail, Outlook, WhatsApp, Warmy. Each pill carries a small monogram in the tool's colour (no logos).
 Text left: Integrations are a big part of why many users love AnyBiz: their CRM, calendar, automation and messaging tools work from one place, and leads, meetings and replies stay in sync on their own. I designed every integration as one pattern, so a new one never needs a new idea: a status (Connected, Incomplete, Inactive, Coming soon), one button to connect, the docs a click away, and early access for what is next.
-Right, the Integrations screen (247:78229) in a browser frame.
+Right, three integration cards drawn as separate pieces on the pale panel (from her screen 247:78229): HubSpot, Incomplete; Zapier, Connected; Salesforce, Inactive, with Connect. Caption: Three of the integration cards, drawn from her design: one status, one action, the same pattern for every tool. (Was the whole Integrations screen in a browser frame.)
 
-### 9. My part
+
+### 4. My part (her role and what she did; Research, Key insight and Behaviour now sit inside it, each under a thin sub-head)
 Section label **My part**, note **What I brought to AnyBiz**.
 Headline (no chips): I designed the AI agent, *tested* every idea and *watched* how people use it
 Five rows, the number left, the title, the text right:
@@ -95,12 +73,39 @@ Five rows, the number left, the title, the text right:
 - 03 **Session recordings.** Real sessions reviewed to find hesitation, dead ends and drop-offs, and turned into fixes.
 - 04 **Integrations.** CRM, scheduling, automation and messaging tools designed as one consistent pattern.
 - 05 **Data-heavy interfaces.** Personas, prospect tables, sequences and performance analytics that stay readable at scale, built on a shared design system.
+Under the headline, before the five items, the challenge and her role:
+On the white page, no background panel (her request, 2026-10-22): text left; at the right her Deliverability insights screen (Figma 247:79006, `deliverability.webp`; replaced the Insights screen 247:79472, her request) tilted in 3D, with rounded corners and a soft shadow.
+- **Text:** The challenge was to let a company hand its outreach to an AI without losing control of its voice, and to keep a product with many channels, personas and integrations clear enough to set up and easy to trust.
+- **My role:** Product Designer
+- **Responsibilities (pills, pale grey):** AI agent UX · User interviews · Prototyping · Session recordings · Information architecture · Integrations · Data-heavy interfaces · Design system
 
-### 10. Campaign visuals
+#### Research (sub-head: Research · Tested before it was built)
+Section label **Research**, note **Tested before it was built**.
+Headline: Every feature met our users *before it met the developers*
+Intro: I built dynamic prototypes of the AI tools and ran user interviews on them before anything went into development. People worked through real tasks on the prototype, so we saw how they behaved, not what they promised. It made the product better and taught us who our users are. Three outcomes kept coming back:
+- 01 **Sharpened.** Most ideas survived, but not as drawn. Where people hesitated, misread a label or expected a different next step, the fix went into the design before a line of code was written.
+- 02 **Dropped.** Some features never reached the backlog. When interviews showed that our audience did not need them, we stopped them at the prototype and saved the team weeks of building.
+- 03 **Replaced.** Sometimes the interviews pointed to a different need. We set the planned feature aside and designed the one that really strengthened the product.
+(No feature names here: she can add the real examples, open question below.)
+
+#### Key insight (sub-head: Key insight · Trust is designed)
+Section label **Key insight**, note **Trust is designed**.
+Headline: Users did not want to hand their company to AI. *They wanted to instruct it.*
+Text: The interviews showed it again and again: people did not trust AI agents and were afraid to let one speak for their company. So we did not ask them to trust a black box. We gave them clear instructions to set for the agent, channel by channel: the persona, the language, the tone of voice, the call to action, the signature, message guidelines and case studies. Before anything goes out, the agent writes an example; the customer can regenerate it or save it and train the AI. With the rules in their hands, customers hand the outreach of their company to the agent.
+Dark panel. Left, glass UI pieces drawn in HTML in the product style: the instruction checklist (Persona, Language, Tone of voice, Call to action, Signature ticked; Message guidelines and Case studies with an amber note), the setting pills (English (United States), Professional, Offering), and the buttons Regenerate and Save and train the AI. Right, a live prototype of the instructions screen in HTML: "{AnyBiz} magic is on the way..." with a filling bar, then the example email types in (her Figma copy, 247:78046: Subject: Unlock the potential for growth! / Hi [Recipient's Name], / I'm Martin from Anybiz, and I believe we can help [Company Name] improve its cold email outreach. / Our platform helps teams like yours by: automating and personalizing email campaigns; improving deliverability and avoiding spam filters; providing insights to optimize conversions. / Would love to chat and learn more about your goals.), the Save button pulses, and it starts again. Same motion rules as the first screen.
+Caption: **An example before anything is sent.** The agent shows what it will write from the customer's own instructions. Nothing leaves until the customer is happy with it.
+
+#### Behaviour (sub-head: Behaviour · What people do, not what they say)
+Section label **Behaviour**, note **What people do, not what they say**.
+Headline: Recordings show *what people do* when nobody is asking
+Text left: Interviews tell you what people think. Session recordings show what they actually do. I watched real sessions to find the moments that need attention: where people hesitate, click something that does nothing, click again in frustration, or leave a flow half done. Each moment became a design fix, a question for the next interview, or a hypothesis to test.
+Visual right: a session replay drawn over the Personas screen (247:78364, cut to 16:10) inside a browser frame: a cursor moves along a path, a hesitation ring, a rage click ripple and a dead click appear where they happen; under it a player bar with a timeline and coloured markers, and a legend: Hesitation, Rage click, Dead click, Drop-off. Note under it: An illustration of the method, not a recorded session.
+
+### 5. Campaign visuals
 A moving mosaic on the night ground over "anybiz" repeated as a running line, as on the Warmy page: the expo back wall with the octopus mascot, "A Salesperson That Works 24/7" (247:77773), and the presentation shots of the product. Same motion rules.
 Caption: Marketing design around the product: an expo back wall with the octopus mascot and presentation shots of the AI agents.
 
-### 11. **View next work:** Sport Guardian (`SportGuardian.html`), in the order of the landing's work list. Warmy's next work is now AnyBiz.
+### 6. **View next work:** Sport Guardian (`SportGuardian.html`), in the order of the landing's work list. Warmy's next work is now AnyBiz.
 
 ## Open questions for her
 1. Research outcomes: name one real feature for each of Sharpened, Dropped and Replaced, if she can share them.

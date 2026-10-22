@@ -69,6 +69,20 @@ def main():
         half = im.resize((w // 2, h // 2), Image.LANCZOS)
         half.save(OUT / f"{name}-{w // 2}.webp", quality=84, method=6)
         print(name, w, h)
+    # crops for the browser and phone mockups of the Product section: the app frames cut to a 16:10 window,
+    # and the two phone screens cut out of the mobile presentation shot (after the email is replaced)
+    mobile = redact_mobile(clear_corners(Image.open(RAW / "mobile.png").convert("RGBA"))).convert("RGB")
+    crops = {
+        "personas-app": (Image.open(RAW / "personas.jpg").convert("RGB"), (0, 0, 2560, 1600), 1600),
+        "performance-app": (Image.open(RAW / "perf-app.jpg").convert("RGB"), (0, 0, 2560, 1600), 1600),
+        "phone-menu": (mobile, (762, 540, 1500, 1992), 600),
+        "phone-settings": (mobile, (1702, 292, 2448, 1912), 600),
+    }
+    for name, (im, box, w) in crops.items():
+        im = im.crop(box)
+        im = im.resize((w, round(im.height * w / im.width)), Image.LANCZOS)
+        im.save(OUT / f"{name}.webp", quality=86, method=6)
+        print(name, im.size)
 
 
 if __name__ == "__main__":
