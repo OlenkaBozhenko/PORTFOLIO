@@ -157,10 +157,10 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .js .big.in .w>span{transform:none}
 @media (prefers-reduced-motion:reduce){.js .big .w>span{transform:none;transition:none}}
 
-/* sub-heads inside a section: a thin rule, the name left, a note right */
-.subh{display:flex;justify-content:space-between;gap:24px;border-top:1px solid var(--rule);padding-top:16px;font-size:15px;color:var(--muted);margin-top:clamp(24px,4vw,64px)}
-.subh span:first-child{color:var(--ink)}
-.big.tight{margin-top:calc(-1*clamp(24px,4vw,72px))}
+/* the sub-sections inside Product and My part take the same head as every section: a big title, the note at the right, a black rule */
+.sec-head h3{font-size:clamp(32px,4.4vw,56px);line-height:1;font-weight:400;letter-spacing:-.035em}
+.g>.sec-head{margin-top:clamp(16px,3vw,48px)}
+.big.tight{margin-top:calc(clamp(32px,4vw,56px) - clamp(56px,8vw,128px))}
 
 /* 3. product: the feature list next to a browser and a phone (the pattern of the Warmy page) */
 .acc{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
@@ -563,8 +563,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <p class="c1-12 note" style="margin-top:calc(-1*clamp(40px,6vw,104px))">The figures in the two cards come from the design mockups.</p>
 
       <!-- integrations, part of the product -->
-      <p class="subh c1-12 rv"><span>Integrations</span><span>Every tool in one place</span></p>
-      <h3 class="big c1-12" style="margin-top:calc(-1*clamp(24px,4vw,72px))">The tools our users already love, <span class="s nb">in one place</span></h3>
+      <div class="sec-head c1-12"><h3>Integrations</h3><span>Every tool in one place</span></div>
+      <h3 class="big c1-12 tight">The tools our users already love, <span class="s nb">in one place</span></h3>
       <div class="cap c1-4 end rv"><h3>Why users stay</h3><p>Integrations are a big part of why many users love AnyBiz: their CRM, calendar, automation and messaging tools work from one place, and leads, meetings and replies stay in sync on their own.</p><p>I designed every integration as one pattern, so a new one never needs a new idea: a status (Connected, Incomplete, Inactive, Coming soon), one button to connect, the docs a click away, and early access for what is next.</p></div>
       <figure class="c5-12 rv" style="--d:.1s">
         <div class="fpanel ipanel"><div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>app.anybiz.io</span></div>
@@ -595,7 +595,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <li class="rv"><span class="n">04</span><h3>Integrations</h3><p>CRM, scheduling, automation and messaging tools designed as one consistent pattern.</p></li>
         <li class="rv"><span class="n">05</span><h3>Data-heavy interfaces</h3><p>Personas, prospect tables, sequences and performance analytics that stay readable at scale, built on a shared design system.</p></li>
       </ol>
-      <p class="subh c1-12 rv"><span>Research</span><span>Tested before it was built</span></p>
+      <div class="sec-head c1-12"><h3>Research</h3><span>Tested before it was built</span></div>
       <h3 class="big c1-12 tight">Every feature met our users <span class="s">before it met the developers</span></h3>
       <p class="lead c1-6 rv">I built dynamic prototypes of the AI tools and ran user interviews on them before anything went into development. People worked through real tasks on the prototype, so we saw how they behaved, not what they promised. It made the product better and taught us who our users are. Three outcomes kept coming back.</p>
       <ol class="out c1-12">
@@ -603,7 +603,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <li class="rv" style="--d:.08s"><span class="n">02</span><h3>Dropped</h3><p>Some features never reached the backlog. When interviews showed that our audience did not need them, we stopped them at the prototype and saved the team weeks of building.</p></li>
         <li class="rv" style="--d:.16s"><span class="n">03</span><h3>Replaced</h3><p>Sometimes the interviews pointed to a different need. We set the planned feature aside and designed the one that really strengthened the product.</p></li>
       </ol>
-      <p class="subh c1-12 rv"><span>Key insight</span><span>Trust is designed</span></p>
+      <div class="sec-head c1-12"><h3>Key insight</h3><span>Trust is designed</span></div>
       <h3 class="big c1-12 tight">Users did not want to hand their company to AI. <span class="s">They wanted to instruct it.</span></h3>
       <p class="lead c1-6 rv">The interviews showed it again and again: people did not trust AI agents and were afraid to let one speak for their company. So we did not ask them to trust a black box. We gave them clear instructions to set for the agent, channel by channel: the persona, the language, the tone of voice, the call to action, the signature, message guidelines and case studies.</p>
       <p class="lead c7-12 rv end" style="--d:.1s">Before anything goes out, the agent writes an example; the customer can regenerate it, or save it and train the AI. With the rules in their hands, customers trust the agent with the outreach of their company.</p>
@@ -635,7 +635,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         </div>
         <figcaption class="cap"><h3>An example before anything is sent</h3><p>The agent shows what it will write from the customer's own instructions. Nothing leaves until the customer is happy with it.</p></figcaption>
       </figure>
-      <p class="subh c1-12 rv"><span>Behaviour</span><span>What people do, not what they say</span></p>
+      <div class="sec-head c1-12"><h3>Behaviour</h3><span>What people do, not what they say</span></div>
       <h3 class="big c1-12 tight">Recordings show <span class="s">what people do</span> when nobody is asking</h3>
       <div class="cap c1-4 start rv"><p class="lead" style="color:var(--ink)">Interviews tell you what people think. Session recordings show what they actually do.</p><p style="font-size:16px;margin-top:16px">I watched real sessions to find the moments that need attention: where people hesitate, click something that does nothing, click again in frustration, or leave a flow half done. Each moment became a design fix, a question for the next interview, or a hypothesis to test.</p>
         <div class="legend" style="margin-top:28px"><span><i style="background:var(--amber)"></i>Hesitation</span><span><i style="background:var(--rose)"></i>Rage click</span><span><i style="background:var(--sky)"></i>Dead click</span><span><i style="background:var(--violet-l)"></i>Drop-off</span></div>
