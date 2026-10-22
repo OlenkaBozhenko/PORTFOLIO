@@ -337,20 +337,13 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 @media (max-width:720px){.part li{grid-template-columns:1fr;row-gap:8px}.part .n,.part h3,.part p{grid-column:1/-1}}
 
 /* 10. the closing mosaic on the night ground */
-.mos{position:relative;background:var(--ground);padding-block:clamp(40px,6vw,80px) clamp(72px,8vw,104px);overflow:hidden;cursor:pointer}
-.ticker{display:flex;width:max-content;animation:slide 40s linear infinite;margin-bottom:clamp(28px,4vw,56px)}
-.ticker span{flex:none;color:#fff;font-size:clamp(56px,11vw,176px);font-weight:500;line-height:.9;letter-spacing:-.04em;white-space:nowrap;padding-right:.5em}
-.ticker span:nth-child(even){color:var(--violet-l)}
-.rows{display:flex;flex-direction:column;gap:clamp(10px,1.2vw,16px)}
-.lane{display:flex;width:max-content;animation:slide var(--s,70s) linear infinite}
-.lane.rev{animation-direction:reverse}
+.mos{position:relative;background:var(--ground);padding-block:clamp(40px,6vw,88px);overflow:hidden;cursor:pointer}
+.ticker{display:flex;align-items:center;gap:clamp(28px,4vw,64px);width:max-content;animation:slide 60s linear infinite;padding-right:clamp(28px,4vw,64px)}
+.ticker img{flex:none;height:clamp(44px,6.4vw,96px);width:auto}
+.ticker span{flex:none;color:var(--violet-l);font-size:clamp(40px,6vw,92px);font-weight:400;line-height:1;letter-spacing:-.04em;white-space:nowrap}
+.ticker span:nth-of-type(even){color:#F8FAFC}
 @keyframes slide{to{transform:translateX(-50%)}}
-.mos .lane{gap:clamp(10px,1.2vw,16px)}
-@media (prefers-reduced-motion:reduce){.lane{animation:none}}
-.mos.paused .ticker,.mos:not(.play) .ticker,.mos:hover .ticker,.mos.paused .lane,.mos:not(.play) .lane,.mos:hover .lane{animation-play-state:paused}
-.tile{height:clamp(150px,19vw,280px);border-radius:6px;overflow:hidden;flex:none;background:var(--night)}
-.tile img{height:100%;width:100%;object-fit:cover;object-position:top}
-.tile.p{aspect-ratio:1050/1300}.tile.d{aspect-ratio:1600/995}.tile.i{aspect-ratio:1600/1215}.tile.s{aspect-ratio:1600/1040}.tile.q{aspect-ratio:1600/1444}
+.mos.paused .ticker,.mos:not(.play) .ticker,.mos:hover .ticker{animation-play-state:paused}
 @media (prefers-reduced-motion:reduce){.ticker{animation:none}}
 
 /* reveal on scroll (only with JS) */
@@ -655,17 +648,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     </div>
   </section>
 
-  <!-- 10. campaign visuals -->
+  <!-- 10. the brand line: her AnyBiz logo (Figma logos/default, 247:79364) and the words of her poster, running -->
   <div class="wrap gal"><section class="mos" id="mosaic" aria-labelledby="h-mos" tabindex="0" aria-describedby="mos-how">
-    <h2 id="h-mos" class="vh">Campaign visuals</h2>
-    <p id="mos-how" class="vh">The mosaic moves. Press Enter, or click it, to stop or start it.</p>
-    <div class="ticker" aria-hidden="true"><span>anybiz</span><span>anybiz</span><span>anybiz</span><span>anybiz</span><span>anybiz</span><span>anybiz</span></div>
-    <div class="rows" role="img" aria-label="A moving mosaic of AnyBiz visuals: an expo back wall with a purple octopus mascot at a laptop and the line A Salesperson That Works 24/7, and presentation shots of the product: insights, personas, the mobile menu, automated posts and integrations.">
-      <div class="lane" style="--s:70s" data-tiles="poster:p|insights:i|mobile:d|posts:s|persona-modal:d"></div>
-      <div class="lane rev" style="--s:90s" data-tiles="generating:d|integrations:q|poster:p|performance:d|setup:d"></div>
-    </div>
-  </section>
-  <p class="cap" style="margin-top:16px;max-width:90ch">Marketing design around the product: an expo back wall with the octopus mascot and presentation shots of the AI agents.</p></div>
+    <h2 id="h-mos" class="vh">AnyBiz: Hire AI agents. A salesperson that works 24/7. Finding leads, starting conversations, booking meetings.</h2>
+    <p id="mos-how" class="vh">The line moves. Press Enter, or click it, to stop or start it.</p>
+    <div class="ticker" aria-hidden="true"><img src="assets/work/anybiz/logo.svg" alt="" width="262" height="88"><span>Hire AI agents</span><img src="assets/work/anybiz/logo.svg" alt="" width="262" height="88"><span>A salesperson that works 24/7</span><img src="assets/work/anybiz/logo.svg" alt="" width="262" height="88"><span>Finding leads</span><img src="assets/work/anybiz/logo.svg" alt="" width="262" height="88"><span>Starting conversations</span><img src="assets/work/anybiz/logo.svg" alt="" width="262" height="88"><span>Booking meetings</span><img src="assets/work/anybiz/logo.svg" alt="" width="262" height="88"><span>Hire AI agents</span><img src="assets/work/anybiz/logo.svg" alt="" width="262" height="88"><span>A salesperson that works 24/7</span><img src="assets/work/anybiz/logo.svg" alt="" width="262" height="88"><span>Finding leads</span><img src="assets/work/anybiz/logo.svg" alt="" width="262" height="88"><span>Starting conversations</span><img src="assets/work/anybiz/logo.svg" alt="" width="262" height="88"><span>Booking meetings</span></div>
+  </section></div>
 
   <div class="wrap" style="padding-bottom:clamp(56px,8vw,112px)">
     <a class="next" href="SportGuardian.html"><span>View next work <span class="vh">: </span><span class="nx">Sport Guardian</span></span><span class="arrow" aria-hidden="true">→</span></a>
@@ -819,12 +807,8 @@ document.querySelectorAll('.big').forEach(function(h){
   toggler(box,function(q){if(!q)play()});
 })();
 
-// 10. the mosaic rows: each is drawn twice so the slide loops; the copy is hidden from screen readers
+// 10. the brand line: drawn twice so the slide loops; the line can be stopped
 (function(){
-  document.querySelectorAll('[data-tiles]').forEach(function(t){
-    var html=t.dataset.tiles.split('|').map(function(s){var p=s.split(':');return '<div class="tile '+p[1]+'"><img src="assets/work/anybiz/'+p[0]+(p[0]==='poster'?'-525':'-800')+'.webp" alt="" loading="lazy"></div>'}).join('');
-    t.innerHTML=html+html;
-  });
   toggler(document.getElementById('mosaic'));
 })();
 </script>

@@ -106,9 +106,8 @@ Visual right: a session replay drawn over the Personas screen (247:78364, cut to
 
 **Square corners in the mockups** (her note, 2026-10-22): the Deliverability frame had rounded top corners in the night colour that showed as notches beside the browser bar; the export script fills them with the bar's colour.
 
-### 5. Campaign visuals
-A moving mosaic on the night ground over "anybiz" repeated as a running line, as on the Warmy page: the expo back wall with the octopus mascot, "A Salesperson That Works 24/7" (247:77773), and the presentation shots of the product. Same motion rules.
-Caption: Marketing design around the product: an expo back wall with the octopus mascot and presentation shots of the AI agents.
+### 5. The brand line (was Campaign visuals)
+Her request, 2026-10-22: only a running line with the logo and words; the other screens removed. On the night ground, her AnyBiz logo (Figma "logos/default", 247:79364, 262 × 88: the white wordmark and the pink to violet arrow, `assets/work/anybiz/logo.svg`, the canvas stripped) runs between the words of her poster (247:77773): Hire AI agents · A salesperson that works 24/7 · Finding leads · Starting conversations · Booking meetings, in light violet and white by turns. Same motion rules (plays on screen, stops on hover, click or Enter; still with reduced motion). The mosaic of presentation shots and its caption were removed.
 
 ### 6. **View next work:** Sport Guardian (`SportGuardian.html`), in the order of the landing's work list. Warmy's next work is now AnyBiz.
 
