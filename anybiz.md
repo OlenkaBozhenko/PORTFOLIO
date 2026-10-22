@@ -26,7 +26,7 @@ Sources: her Figma file My-projects-new (`YlGWlsWWjKSCxhONMzGG2F`), section 247:
 ## Page copy
 No em dashes in visible text (her rule).
 - **Back link:** ← All work
-- **Eyebrow:** AI SaaS (the project category only)
+- **Eyebrow:** B2B, AI SaaS (the project category only; B2B added on her request, 2026-10-22)
 - **Headline:** An AI sales platform that finds leads and books meetings.
 - **Meta row:** Role · Product Designer · Years · 2021 – present · Platform · Web, mobile web · Product · AnyBiz.io
 
