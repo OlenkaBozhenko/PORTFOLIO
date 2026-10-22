@@ -21,7 +21,7 @@ Sources: her Behance case [IOS App_School](https://www.behance.net/gallery/15035
 
 ## Page copy
 The app name in running text is set in capitals, bold, in quotes: “SCHOOL” (2026-10-10, her request). Headings and the first block keep "School".
-- **Eyebrow:** iOS app
+- **Eyebrow:** EdTech (the project category only, her request 2026-10-22)
 - **Headline:** Remote learning that works like a social feed, for pupils and their teachers.
 - **Meta row:** Role — Research, UX, UI · Year — 2020 · Platform — iOS · Tools — Figma, Claude
 - **About:** "SCHOOL" is an iOS app concept for remote learning. Pupils and teachers share one space: lessons and homework come from the teacher, and challenges, small goals that run for a set time, can come from anyone in the class.

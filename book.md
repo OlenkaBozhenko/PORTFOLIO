@@ -20,7 +20,7 @@ Presentation follows [`inspiration.md`](inspiration.md) §2.7: the cover as a 3D
 Sources: the print files (`omslag_34_18.pdf`, `Slekstbok_Røtter i Blix_for utskrift_.pdf`), measured 2026-09-26, and Amund Gulsvik's reference letter, January 2024 (`cv.md`).
 
 ## Page copy
-- **Eyebrow:** Book
+- **Eyebrow:** Book design (the project category only, her request 2026-10-22)
 - **Headline:** The history of four Lofoten families, set as a 432-page hardcover.
 - **Meta row:** Role — Book design, layout, cover · Year — 2023 – 2024 · Author — Amund Gulsvik · Printer — LOS DIGITAL AS
 - **About:** *Røtter i Blix – Thomesen – Inderberg – Johansen Stamsund* follows the families behind Haldis Blix Gulsvik, who grew up in the fishing village of Stamsund in Lofoten; the families are traced back to the 1500s, and through these generations a part of the history of Norway unfolds as well. The author, Amund Gulsvik, gathered the family stories, archive photographs and maps, and wrote the book for the coming generations who look for their roots. *(Adapted from the back-cover text.)*
