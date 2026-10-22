@@ -326,13 +326,6 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .browser .bar span{margin-left:12px;font-size:12px;color:var(--a-mut);background:var(--card);border-radius:6px;padding:3px 12px}
 @media (max-width:720px){.browser .bar{height:22px;padding:0 8px;gap:4px}.browser .bar i{width:6px;height:6px}.browser .bar span{font-size:9px;padding:1px 6px;margin-left:6px}}
 
-/* 9. my part: rows, the number left, the title, the text right (Zelt) */
-.part{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:clamp(28px,3.4vw,48px)}
-.part li{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--cg);align-items:baseline}
-.part .n{grid-column:1/3;font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums}
-.part h3{grid-column:3/7;font-size:clamp(24px,2.6vw,36px);font-weight:400;letter-spacing:-.03em;line-height:1.1}
-.part p{grid-column:7/-1;color:var(--muted);font-size:17px;max-width:46ch}
-@media (max-width:720px){.part li{grid-template-columns:1fr;row-gap:8px}.part .n,.part h3,.part p{grid-column:1/-1}}
 
 /* 10. the closing mosaic on the night ground */
 .mos{position:relative;background:var(--ground);padding-block:clamp(40px,6vw,88px);overflow:hidden;cursor:pointer}
@@ -567,12 +560,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         </div>
         <div class="shot"><img src="assets/work/anybiz/olena-sxc.webp" srcset="assets/work/anybiz/olena-sxc-480.webp 480w, assets/work/anybiz/olena-sxc.webp 960w" sizes="(max-width:820px) 92vw, 55vw" alt="Olena at her desk in a headset, at the virtual STHLM Xperience Conference 2025 on the screen behind her, with a laptop open in front of her." width="960" height="847" loading="lazy"></div>
       </div>
-      <ol class="part c1-12">
-        <li class="rv"><span class="n">01</span><h3>AI agent experience</h3><p>Messaging instructions, the brand awareness agent, persona building and the onboarding states, on desktop and mobile.</p></li>
-        <li class="rv"><span class="n">02</span><h3>User interviews</h3><p>Dynamic prototypes tested with users before development, to sharpen, drop or replace a feature.</p></li>
-        <li class="rv"><span class="n">03</span><h3>Session recordings</h3><p>Real sessions reviewed to find hesitation, dead ends and drop-offs, and turned into fixes.</p></li>
-        <li class="rv"><span class="n">04</span><h3>Data-heavy interfaces</h3><p>Dashboards with performance analytics that stay readable at scale, built on a shared design system.</p></li>
-      </ol>
       <div class="sec-head c1-12"><h3>Research</h3><span>Tested before it was built</span></div>
       <h3 class="big c1-12 tight">Every feature met our users <span class="s">before it met the developers</span></h3>
       <p class="lead rv" style="grid-column:1/-1;max-width:none">I built dynamic prototypes of the AI tools and ran user interviews on them before anything went into development. People worked through real tasks on the prototype, so we saw how they behaved, not what they promised. It made the product better and taught us who our users are. Three outcomes kept coming back.</p>

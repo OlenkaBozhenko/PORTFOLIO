@@ -67,7 +67,7 @@ Right, the Integrations screen (247:78229) cropped so it reads (the banner "Conn
 ### 4. My part (her role and what she did; Research, Key insight and Behaviour now sit inside it, each under a thin sub-head)
 Section label **My part**, note **What I brought to AnyBiz**.
 Headline (no chips): I designed the AI agent, *tested* every idea and *watched* how people use it
-Five rows, the number left, the title, the text right:
+**The numbered list was removed (her request, 2026-10-22).** It read, the number left, the title, the text right:
 - 01 **AI agent experience.** Messaging instructions, the brand awareness agent, persona building and the onboarding states, on desktop and mobile.
 - 02 **User interviews.** Dynamic prototypes tested with users before development, to sharpen, drop or replace a feature.
 - 03 **Session recordings.** Real sessions reviewed to find hesitation, dead ends and drop-offs, and turned into fixes.
