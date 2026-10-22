@@ -70,16 +70,16 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 
 /* 1. the first screen: the AI agent says hello (her frame 247:78026) */
 .first{padding-bottom:clamp(56px,8vw,112px)}
-.hello{position:relative;overflow:hidden;background:radial-gradient(55% 50% at 15% 95%,rgba(124,58,237,.2),transparent 70%),radial-gradient(40% 40% at 88% 10%,rgba(56,189,248,.09),transparent 70%),var(--night);min-height:min(84vh,780px);display:grid;place-items:center;cursor:default;color:var(--a-ink);font-family:var(--ui)}
-@media (max-width:720px){.hello{min-height:auto}}
+.hello{position:relative;overflow:hidden;background:radial-gradient(55% 50% at 15% 95%,rgba(124,58,237,.2),transparent 70%),radial-gradient(40% 40% at 88% 10%,rgba(56,189,248,.09),transparent 70%),var(--night);aspect-ratio:21/9;display:grid;place-items:center;cursor:default;color:var(--a-ink);font-family:var(--ui)}
+@media (max-width:900px){.hello{aspect-ratio:auto}}
 .stars{position:absolute;inset:0;pointer-events:none}
 .star{position:absolute;width:var(--s,14px);height:var(--s,14px);color:var(--c,#7C6CF0);opacity:.55}
 .star svg{display:block;width:100%;height:100%}
 .play .star{animation:twinkle 3.2s ease-in-out var(--d,0s) infinite}
 @keyframes twinkle{50%{opacity:.25;transform:scale(.7)}}
-.greet{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:clamp(48px,8vw,120px) 24px;width:min(720px,100%)}
+.greet{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:clamp(40px,4vw,56px) 24px;width:min(720px,100%)}
 /* the orb: its three rings orbit, each at its own speed (her request: the logo is animated) */
-.orb{width:clamp(48px,4.4vw,64px);height:auto;margin-bottom:clamp(28px,3.6vw,48px);overflow:visible}
+.orb{width:clamp(44px,3.6vw,56px);height:auto;margin-bottom:clamp(20px,2.4vw,32px);overflow:visible}
 .orb g{transform-box:view-box;transform-origin:24px 24px;animation:orbit var(--t,8s) linear infinite var(--dir,normal)}
 .orb .r2{--t:11s;--dir:reverse}.orb .r3{--t:14s}
 @keyframes orbit{to{transform:rotate(360deg)}}
@@ -94,7 +94,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .done .say .cur{animation:none;opacity:0;transition:opacity .4s}
 .sub{margin-top:12px;font-size:clamp(14px,1.15vw,16px);line-height:1.5;color:var(--a-mut);max-width:36ch;transition:opacity .6s,transform .6s}
 /* the prompt field in the project's violet (her reference: the DRON prompt bar), thin line, no shadow */
-.field{display:flex;align-items:center;gap:12px;width:100%;max-width:600px;margin-top:clamp(36px,4.4vw,56px);padding:8px 8px 8px 22px;border:1px solid rgba(167,139,250,.32);border-radius:999px;background:rgba(15,23,42,.55);text-align:left;font-size:15px;transition:opacity .6s,transform .6s,border-color .4s}
+.field{display:flex;align-items:center;gap:12px;width:100%;max-width:600px;margin-top:clamp(28px,3vw,40px);padding:8px 8px 8px 22px;border:1px solid rgba(167,139,250,.32);border-radius:999px;background:rgba(15,23,42,.55);text-align:left;font-size:15px;transition:opacity .6s,transform .6s,border-color .4s}
 .field .q{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#F1F5F9}
 .field .ph{color:#94A3B8}
 .field .pc{display:inline-block;width:1.5px;height:1.05em;background:var(--violet-l);vertical-align:-.18em;margin-left:1px;opacity:0}
