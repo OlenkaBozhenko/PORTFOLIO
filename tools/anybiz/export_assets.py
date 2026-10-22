@@ -28,6 +28,7 @@ FRAMES = {
     "persona-modal": ("persona-modal.jpg", 1600),
     "posts": ("posts.png", 1600),
     "poster": ("poster.png", 1050),
+    "deliverability": ("deliverability.png", 1600),
 }
 
 
