@@ -86,9 +86,10 @@ A phone playing the Adeline flow in HTML, as her prototypes do, in the thin outl
 The prototype panel takes the dark warm ground of the campaign mosaic (a gradient #1A0E08 → #3A1A0A → #7A3410, her request 2026-10-20), with the phone outlined in white.
 
 ### 8. How I write an A/B hypothesis
-Intro: A test is only as good as the sentence written before it. I write it down before the design is final, and the team agrees on it before launch.
+Headline: A test is only as good as the sentence written before it.
+Intro (her request, 2026-10-22: why she runs A/B tests): I run A/B tests to learn which design really helps senders and the business, not which one the team likes more. Each test starts from a written hypothesis, and these are the rules it has to pass.
 **The template** (on the same dark warm gradient, her request): Because we saw [evidence], we believe that [one change] for [segment] will [move one metric] by [expected size]. We will know after [sample or time]. We ship it if [decision rule], unless [guardrail] gets worse.
-**The rules** (her list, 2026-10-22, replaces the earlier eight rules), under the line "I write the hypothesis down before the design is final, and the team agrees on it before launch. These are the rules it has to pass.":
+**The rules** (her list, 2026-10-22, replaces the earlier eight rules):
 1. Evidence: the data behind the idea, such as a funnel drop, an interview quote or a support ticket. Never taste alone.
 2. Hypothesis: what we change, for whom, and what we expect to happen.
 3. One change: the variant differs from control in one thing, so the result points to a cause.
