@@ -237,7 +237,6 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 /* 6. trust: glass UI pieces next to a live prototype on the night ground (her reference) */
 /* on the grey panel (her request): the live screen at the right; the checklist and the settings at the left, only just touching it, so nothing piles up */
 .trust{position:relative;background:var(--well);padding:clamp(32px,5vw,72px) clamp(20px,5vw,72px);font-family:var(--ui);color:var(--a-ink);overflow:hidden;cursor:pointer}
-.trust .ins{width:56%;margin-left:auto;box-shadow:0 2px 6px rgba(15,23,42,.08),0 40px 70px -36px rgba(15,23,42,.5)}
 .trust .stack{position:absolute;inset:0;pointer-events:none}
 .trust .g1{position:absolute;left:clamp(20px,5vw,72px);top:12%;width:min(36%,340px);z-index:2;box-shadow:0 2px 6px rgba(15,23,42,.08),0 30px 60px -32px rgba(15,23,42,.55)}
 .trust .g2{position:absolute;left:calc(clamp(20px,5vw,72px) + 4%);top:63%;width:min(34%,320px);z-index:3;box-shadow:0 2px 6px rgba(15,23,42,.08),0 30px 60px -32px rgba(15,23,42,.55)}
@@ -262,37 +261,33 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .b1,.b2{font:500 15px/1 var(--ui);border-radius:8px;padding:12px 16px;white-space:nowrap}
 .b1{background:var(--line);color:#F1F5F9;border:1px solid #475569}
 .b2{background:var(--violet-btn);color:#fff}
-/* the live instructions screen */
-.ins{display:flex;flex-direction:column;background:var(--night);border:1px solid var(--card);border-radius:14px;overflow:hidden;min-height:clamp(420px,42vw,560px);box-shadow:0 40px 80px -40px rgba(0,0,0,.7)}
-.ins .top{display:flex;align-items:center;gap:12px;padding:16px 20px;font-size:15px;color:#F8FAFC;border-bottom:1px solid rgba(51,65,85,.6)}
-.ins .top svg{width:20px;height:20px;color:var(--violet-l)}
-.ins .mid{position:relative;flex:1;padding:18px 20px;overflow:hidden}
-.gen-st{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;font-size:14px;transition:opacity .4s}
-.gen-st b{font-weight:600;color:#F8FAFC}
-.gen-st span{color:var(--violet-l)}
-.gen-st .bar{width:120px;height:6px;border-radius:4px;border:1px solid var(--violet-l);margin-top:10px;overflow:hidden}
-.gen-st .bar i{display:block;height:100%;width:0;background:var(--violet-l)}
-.mail{display:flex;flex-direction:column;gap:12px;opacity:0;transition:opacity .4s}
-.bub{align-self:flex-start;background:var(--card);border-radius:10px;padding:10px 14px;font-size:14px}
-.card{background:var(--panel);border-radius:10px;padding:16px 18px 18px;font-size:14px;line-height:1.55}
-.card .who{display:flex;gap:12px;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:12px}
-.card .av{width:40px;height:40px;border-radius:6px;background:linear-gradient(135deg,#C4B5FD,#7C3AED);display:grid;place-items:center;font-weight:600;color:#fff;flex:none}
-.card .who b{display:block;font-weight:500;font-size:15px;color:#F8FAFC}
-.card .tg{display:flex;gap:6px;margin-top:4px}
-.card .tg span{font-size:12px;background:var(--card);border-radius:4px;padding:2px 6px;color:#CBD5E1}
-.card .subj{font-weight:600;color:#CBD5E1;margin-bottom:8px}
-.card .body{white-space:pre-line;color:#F1F5F9;min-height:9em}
-.ins .bot{display:flex;align-items:center;gap:10px;padding:12px 16px;background:rgba(30,41,59,.6);font-size:13px;color:var(--a-mut)}
-.ins .bot .sp{flex:1}
-.ins .bot .b1,.ins .bot .b2{font-size:14px;padding:10px 14px}
-.s-mail .gen-st{opacity:0}
-.s-mail .mail{opacity:1}
-.s-end .ins .bot .b2{animation:pulse 1.4s ease-in-out infinite}
-@keyframes pulse{50%{box-shadow:0 0 0 6px rgba(124,58,237,.3)}}
-.trust.paused .ins .bot .b2{animation-play-state:paused}
+/* the example email as a chat assistant writes it, straight on the grey panel, no app around it (her request, after a ChatGPT answer) */
+.trust .ins{width:56%;margin-left:auto;align-self:center;color:#0D0D0D;font-family:var(--ui)}
+.think{display:flex;align-items:center;gap:10px;font-size:15px;transition:opacity .3s}
+.think i{width:10px;height:10px;border-radius:50%;background:#0D0D0D;animation:breathe 1.2s ease-in-out infinite}
+.think span{background:linear-gradient(90deg,#8F8F8F 0%,#8F8F8F 40%,#0D0D0D 50%,#8F8F8F 60%,#8F8F8F 100%);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 1.8s linear infinite}
+@keyframes shimmer{from{background-position:100% 0}to{background-position:0 0}}
+.think .bar{display:none}
+.mailc{position:relative;opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s;margin-top:-1.6em}
+.mcard{position:relative;z-index:1;background:#fff;border:1px solid #E5E5E5;border-radius:22px;padding:14px 20px 20px;font-size:15px;line-height:1.6}
+.mcard .hd{display:flex;align-items:center;gap:14px;font-weight:600;color:#5D5D5D;font-size:14.5px}
+.mcard .hd .sp{flex:1}
+.mcard .hd svg{width:18px;height:18px;color:#0D0D0D}
+.mcard .hd .cn{font-weight:400;color:#0D0D0D;background:#F3F3F3;border-radius:999px;padding:6px 12px;font-size:14px}
+.mcard .ln{color:#8F8F8F;padding:10px 0;border-bottom:1px solid #EDEDED}
+.mcard .ln.sub{color:#0D0D0D}
+.mcard .body{white-space:pre-line;padding-top:14px;min-height:12.8em}
+.sugg{display:flex;flex-wrap:wrap;gap:6px 22px;margin:-14px 12px 0;padding:26px 16px 12px;background:#EAEAEA;border-radius:0 0 18px 18px;font-size:15px;opacity:0;transition:opacity .5s}
+.sugg span::before{content:"\21B3";margin-right:8px}
+.tools{display:flex;gap:16px;margin:16px 0 0 2px;color:#5D5D5D;opacity:0;transition:opacity .5s}
+.tools svg{width:18px;height:18px}
+.s-mail .think{opacity:0}
+.s-mail .mailc{opacity:1;transform:none}
+.s-end .sugg,.s-end .tools{opacity:1}
+.trust.paused .think i,.trust.paused .think span{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){.think i,.think span{animation:none}.think span{color:#5D5D5D}}
 @media (max-width:900px){.trust{display:flex;flex-direction:column;gap:16px}.trust .ins{width:100%;order:2}.trust .stack{position:static;display:flex;flex-direction:column;gap:16px;order:1}.trust .g1,.trust .g2{position:static;width:auto}}
-@media (max-width:560px){.ins .bot{flex-wrap:wrap}.ins .bot>span:first-child,.ins .bot .sp{display:none}.ins .bot .b1,.ins .bot .b2{flex:1;text-align:center}}
-@media (prefers-reduced-motion:reduce){.s-end .ins .bot .b2{animation:none}.js .trust .chk .ok{opacity:1;transform:none;transition:none}}
+@media (prefers-reduced-motion:reduce){.js .trust .chk .ok{opacity:1;transform:none;transition:none}}
 
 /* 7. behaviour: a session replay drawn over the Personas screen */
 .replay{display:flex;flex-direction:column;gap:12px;cursor:pointer}
@@ -598,20 +593,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
               <div class="sel"><span>English (United States)<svg><use href="#i-down"/></svg></span><span>Professional<svg><use href="#i-down"/></svg></span><span>Offering<svg><use href="#i-down"/></svg></span></div>
             </div>
           </div>
-          <div class="ins" role="img" aria-label="A live prototype of the instructions screen: AnyBiz magic is on the way, generating an example; then an example email from the customer's instructions, Subject: Unlock the potential for growth, introducing the product and asking for a chat; with Regenerate and Save and train the AI.">
-            <div class="top" aria-hidden="true"><svg><use href="#i-spark"/></svg>Instructions #1</div>
-            <div class="mid" aria-hidden="true">
-              <div class="gen-st"><b>{AnyBiz} magic is on the way...</b><span>Generating an example</span><div class="bar"><i id="gbar"></i></div></div>
-              <div class="mail">
-                <div class="bub">Here is an example of your {email introduction}</div>
-                <div class="card">
-                  <div class="who"><span class="av">VM</span><div><b>Victoria Martinez</b><div class="tg"><span>Marketing manager</span><span>Warmy</span></div></div></div>
-                  <div class="subj">Subject: Unlock the potential for growth!</div>
-                  <div class="body" id="mbody"></div>
-                </div>
+          <div class="ins" role="img" aria-label="A live prototype: the agent thinks, then writes an example email the way a chat assistant answers, from the customer's own instructions: Subject: Unlock the potential for growth, introducing the product and asking for a chat; under it two suggestions, make the outreach more compelling and personalize the value proposition.">
+            <div class="think" aria-hidden="true"><i></i><span>Writing an example from your instructions</span><b class="bar"><i id="gbar"></i></b></div>
+            <div class="mailc" aria-hidden="true">
+              <div class="mcard">
+                <div class="hd"><span>Unlock the potential for growth!</span><span class="sp"></span><svg viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><svg viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="cn">Connect email</span></div>
+                <div class="ln">Recipients</div>
+                <div class="ln sub">Unlock the potential for growth!</div>
+                <div class="body" id="mbody"></div>
               </div>
+              <div class="sugg"><span>Make the outreach more compelling</span><span>Personalize the value proposition</span></div>
+              <div class="tools"><svg viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><svg viewBox="0 0 24 24"><path d="M7 11v9H4v-9zM7 11l4-7c1.5 0 2.5 1 2 3l-1 3h6a2 2 0 0 1 2 2.3l-1.2 6A2 2 0 0 1 16.8 20H7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24"><path d="M17 13V4h3v9zM17 13l-4 7c-1.5 0-2.5-1-2-3l1-3H6a2 2 0 0 1-2-2.3l1.2-6A2 2 0 0 1 7.2 4H17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24"><path d="M12 15V3M7 8l5-5 5 5M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v5h-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="19" cy="12" r="1.6" fill="currentColor"/></svg></div>
             </div>
-            <div class="bot" aria-hidden="true"><span>Click to view another example →</span><span class="sp"></span><span class="b1">Regenerate</span><span class="b2">Save and train the AI</span></div>
           </div>
           <span id="trust-how" class="vh">The prototype plays by itself. Press Enter, or click it, to stop or start it.</span>
         </div>
@@ -733,7 +726,7 @@ document.querySelectorAll('.big').forEach(function(h){
 // 6. the instructions prototype: generating, the example email typing in, the save button; then again
 (function(){
   var box=document.getElementById('trust'),body=document.getElementById('mbody'),bar=document.getElementById('gbar');
-  var text="Hi [Recipient's Name],\n\nI'm Martin from Anybiz, and I believe we can help [Company Name] improve its cold email outreach.\n\nOur platform helps teams like yours by:\n• Automating and personalizing email campaigns\n• Improving deliverability and avoiding spam filters\n• Providing insights to optimize conversions\n\nWould love to chat and learn more about your goals.";
+  var text="Hi [Recipient's Name],\n\nI'm Martin from Anybiz, and I believe we can help [Company Name] improve its cold email outreach.\n\nOur platform helps teams like yours by:\n• Automating and personalizing email campaigns\n• Improving deliverability and avoiding spam filters\n• Providing insights to optimize conversions\n\nWould love to chat and learn more about your goals.\n\nLet me know if you're interested!";
   if(RM){box.classList.add('s-mail');body.textContent=text;bar.style.width='100%';return}
   var phase=0,p=0,ch=0,timer=0,inView=false;
   function paused(){return box.classList.contains('paused')||!inView}
