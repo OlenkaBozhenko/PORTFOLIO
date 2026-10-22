@@ -322,16 +322,6 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .replay.paused .mk{animation-play-state:paused}
 @media (prefers-reduced-motion:reduce){.cursor{transition:none}.mk{animation:none}}
 
-/* 8. integrations: pills sliding in two rows (Ramos), the screen in a browser frame */
-.marq{display:flex;flex-direction:column;gap:12px;overflow:hidden;cursor:pointer;-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.lane{display:flex;gap:12px;width:max-content;animation:slide var(--s,50s) linear infinite}
-.lane.rev{animation-direction:reverse}
-.marq:not(.play) .lane,.marq.paused .lane,.marq:hover .lane{animation-play-state:paused}
-@keyframes slide{to{transform:translateX(-50%)}}
-.ip{display:inline-flex;align-items:center;gap:12px;border:1px solid var(--rule);border-radius:999px;padding:10px 22px 10px 10px;font-size:clamp(17px,1.6vw,22px);letter-spacing:-.01em;white-space:nowrap;background:#fff}
-.ip i{width:clamp(30px,2.6vw,38px);height:clamp(30px,2.6vw,38px);border-radius:50%;display:grid;place-items:center;font:600 13px/1 var(--ui);font-style:normal;color:#fff;background:var(--c)}
-.ip i.dk{color:#0E0E0E}
-@media (prefers-reduced-motion:reduce){.lane{animation:none}}
 /* the browser frame is dark, like the product (her request) */
 .browser{border-radius:10px;overflow:hidden;background:var(--night);box-shadow:0 1px 2px rgba(0,0,0,.08),0 24px 48px -20px rgba(15,23,42,.45)}
 .browser .bar{display:flex;align-items:center;gap:7px;height:34px;padding:0 14px;background:var(--panel);border-bottom:1px solid var(--card)}
@@ -353,7 +343,11 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .ticker span{flex:none;color:#fff;font-size:clamp(56px,11vw,176px);font-weight:500;line-height:.9;letter-spacing:-.04em;white-space:nowrap;padding-right:.5em}
 .ticker span:nth-child(even){color:var(--violet-l)}
 .rows{display:flex;flex-direction:column;gap:clamp(10px,1.2vw,16px)}
-.mos .lane{gap:clamp(10px,1.2vw,16px);animation-duration:var(--s,70s)}
+.lane{display:flex;width:max-content;animation:slide var(--s,70s) linear infinite}
+.lane.rev{animation-direction:reverse}
+@keyframes slide{to{transform:translateX(-50%)}}
+.mos .lane{gap:clamp(10px,1.2vw,16px)}
+@media (prefers-reduced-motion:reduce){.lane{animation:none}}
 .mos.paused .ticker,.mos:not(.play) .ticker,.mos:hover .ticker,.mos.paused .lane,.mos:not(.play) .lane,.mos:hover .lane{animation-play-state:paused}
 .tile{height:clamp(150px,19vw,280px);border-radius:6px;overflow:hidden;flex:none;background:var(--night)}
 .tile img{height:100%;width:100%;object-fit:cover;object-position:top}
@@ -540,13 +534,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <!-- integrations, part of the product -->
       <p class="subh c1-12 rv"><span>Integrations</span><span>Every tool in one place</span></p>
       <h3 class="big c1-12" style="margin-top:calc(-1*clamp(24px,4vw,72px))">The tools our users already love, <span class="s nb">in one place</span></h3>
-      <div class="c1-12 rv">
-        <ul class="vh"><li>HubSpot</li><li>Salesforce</li><li>Zapier</li><li>Calendly</li><li>Make</li><li>Monday</li><li>SalesLoft</li><li>Asana</li><li>Slack</li><li>Intercom</li><li>LinkedIn</li><li>Gmail</li><li>Outlook</li><li>WhatsApp</li><li>Warmy</li></ul>
-        <div class="marq" id="marq" aria-hidden="true">
-          <div class="lane" style="--s:55s" data-pills="HubSpot:H:#FF5C35|Salesforce:S:#0B76C5|Zapier:Z:#FF4F00|Calendly:C:#006BFF|Make:M:#6D00CC|Monday:M:#E2445C|SalesLoft:S:#0E6B73|Asana:A:#D9534F"></div>
-          <div class="lane rev" style="--s:60s" data-pills="Slack:S:#4A154B|Intercom:I:#1F6FEB|LinkedIn:in:#0A66C2|Gmail:G:#D93025|Outlook:O:#0067B8|WhatsApp:W:#25D366:dk|Warmy:W:#FF8A6A:dk"></div>
-        </div>
-      </div>
       <div class="cap c1-4 end rv"><h3>Why users stay</h3><p>Integrations are a big part of why many users love AnyBiz: their CRM, calendar, automation and messaging tools work from one place, and leads, meetings and replies stay in sync on their own.</p><p>I designed every integration as one pattern, so a new one never needs a new idea: a status (Connected, Incomplete, Inactive, Coming soon), one button to connect, the docs a click away, and early access for what is next.</p></div>
       <figure class="c5-12 rv" style="--d:.1s">
         <div class="fpanel ipanel"><div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>app.anybiz.io</span></div>
@@ -690,7 +677,7 @@ document.querySelectorAll('.big').forEach(function(h){
 });
 // reveal on scroll, and the moving blocks play only while on screen
 (function(){
-  var els=document.querySelectorAll('.rv,.big,.marq,.mos,.trust,.stagefig');
+  var els=document.querySelectorAll('.rv,.big,.mos,.trust,.stagefig');
   if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in','play')});return}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){
     if(e.isIntersecting)e.target.classList.add('in');
@@ -788,17 +775,12 @@ document.querySelectorAll('.big').forEach(function(h){
   toggler(box,function(q){if(!q)play()});
 })();
 
-// 8 and 10. the sliding rows: each is drawn twice so the slide loops; the copy is hidden from screen readers
+// 10. the mosaic rows: each is drawn twice so the slide loops; the copy is hidden from screen readers
 (function(){
-  document.querySelectorAll('[data-pills]').forEach(function(t){
-    var html=t.dataset.pills.split('|').map(function(s){var p=s.split(':');return '<span class="ip"><i class="'+(p[3]||'')+'" style="--c:'+p[2]+'">'+p[1]+'</i>'+p[0]+'</span>'}).join('');
-    t.innerHTML=html+html;
-  });
   document.querySelectorAll('[data-tiles]').forEach(function(t){
     var html=t.dataset.tiles.split('|').map(function(s){var p=s.split(':');return '<div class="tile '+p[1]+'"><img src="assets/work/anybiz/'+p[0]+(p[0]==='poster'?'-525':'-800')+'.webp" alt="" loading="lazy"></div>'}).join('');
     t.innerHTML=html+html;
   });
-  toggler(document.getElementById('marq'));
   toggler(document.getElementById('mosaic'));
 })();
 </script>
