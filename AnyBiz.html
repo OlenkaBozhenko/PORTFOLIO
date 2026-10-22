@@ -229,7 +229,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 /* 5. research: three outcomes, big numbers */
 .out{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--cg)}
 .out li{display:flex;flex-direction:column;gap:14px}
-.out .n{font-size:clamp(56px,7vw,112px);line-height:.9;letter-spacing:-.05em;font-variant-numeric:tabular-nums;background:var(--accent);-webkit-background-clip:text;background-clip:text;color:transparent}
+.out .n{font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums}
 .out h3{font-size:clamp(22px,2.2vw,28px);font-weight:500;letter-spacing:-.02em;line-height:1.15}
 .out p{color:var(--muted);font-size:16px;max-width:36ch}
 @media (max-width:720px){.out{grid-template-columns:1fr;row-gap:40px}}
@@ -255,7 +255,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .think span{background:linear-gradient(90deg,#8F8F8F 0%,#8F8F8F 40%,#0D0D0D 50%,#8F8F8F 60%,#8F8F8F 100%);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 1.8s linear infinite}
 @keyframes shimmer{from{background-position:100% 0}to{background-position:0 0}}
 .think .bar{display:none}
-.mailc{position:relative;opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s;margin-top:-1.6em}
+.mailc{position:relative}
 .mcard{position:relative;z-index:1;background:#fff;border:1px solid #E5E5E5;border-radius:22px;padding:14px 20px 20px;font-size:15px;line-height:1.6}
 .mcard .hd{display:flex;align-items:center;gap:14px;font-weight:600;color:#5D5D5D;font-size:14.5px}
 .mcard .hd .sp{flex:1}
@@ -263,14 +263,15 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .mcard .hd .cn{font-weight:400;color:#0D0D0D;background:#F3F3F3;border-radius:999px;padding:6px 12px;font-size:14px}
 .mcard .ln{color:#8F8F8F;padding:10px 0;border-bottom:1px solid #EDEDED}
 .mcard .ln.sub{color:#0D0D0D}
-.mcard .body{white-space:pre-line;padding-top:14px;min-height:12.8em}
+.mcard .body{display:grid;white-space:pre-line;padding-top:14px}
+.mcard .body>span{grid-area:1/1}
+.mcard .body .ghost{visibility:hidden}
 .sugg{display:flex;flex-wrap:wrap;gap:6px 22px;margin:-14px 12px 0;padding:26px 16px 12px;background:#EAEAEA;border-radius:0 0 18px 18px;font-size:15px;opacity:0;transition:opacity .5s}
 .sugg span::before{content:"\21B3";margin-right:8px}
 .tools{display:flex;gap:16px;margin:16px 0 0 2px;color:#5D5D5D;opacity:0;transition:opacity .5s}
 .tools svg{width:18px;height:18px}
-.s-mail .think{opacity:0}
-.s-mail .mailc{opacity:1;transform:none}
-.s-end .sugg,.s-end .tools{opacity:1}
+.trust .think{display:none}
+.sugg,.tools{opacity:1 !important}
 .trust.paused .think i,.trust.paused .think span{animation-play-state:paused}
 @media (prefers-reduced-motion:reduce){.think i,.think span{animation:none}.think span{color:#5D5D5D}}
 @media (max-width:900px){.trust{grid-template-columns:minmax(0,1fr)}.msgs li{margin-left:calc(var(--x,0)/2)}}
@@ -587,9 +588,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <h3 class="big c1-12 tight">Every feature met our users <span class="s">before it met the developers</span></h3>
       <p class="lead c1-6 rv">I built dynamic prototypes of the AI tools and ran user interviews on them before anything went into development. People worked through real tasks on the prototype, so we saw how they behaved, not what they promised. It made the product better and taught us who our users are. Three outcomes kept coming back.</p>
       <ol class="out c1-12">
-        <li class="rv"><span class="n" aria-hidden="true">01</span><h3>Sharpened</h3><p>Most ideas survived, but not as drawn. Where people hesitated, misread a label or expected a different next step, the fix went into the design before a line of code was written.</p></li>
-        <li class="rv" style="--d:.08s"><span class="n" aria-hidden="true">02</span><h3>Dropped</h3><p>Some features never reached the backlog. When interviews showed that our audience did not need them, we stopped them at the prototype and saved the team weeks of building.</p></li>
-        <li class="rv" style="--d:.16s"><span class="n" aria-hidden="true">03</span><h3>Replaced</h3><p>Sometimes the interviews pointed to a different need. We set the planned feature aside and designed the one that really strengthened the product.</p></li>
+        <li class="rv"><span class="n">01</span><h3>Sharpened</h3><p>Most ideas survived, but not as drawn. Where people hesitated, misread a label or expected a different next step, the fix went into the design before a line of code was written.</p></li>
+        <li class="rv" style="--d:.08s"><span class="n">02</span><h3>Dropped</h3><p>Some features never reached the backlog. When interviews showed that our audience did not need them, we stopped them at the prototype and saved the team weeks of building.</p></li>
+        <li class="rv" style="--d:.16s"><span class="n">03</span><h3>Replaced</h3><p>Sometimes the interviews pointed to a different need. We set the planned feature aside and designed the one that really strengthened the product.</p></li>
       </ol>
       <p class="subh c1-12 rv"><span>Key insight</span><span>Trust is designed</span></p>
       <h3 class="big c1-12 tight">Users did not want to hand their company to AI. <span class="s">They wanted to instruct it.</span></h3>
@@ -603,8 +604,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
               <li style="--x:12px"><i><svg><use href="#f-wand"/></svg></i><span>Tone of voice <small>(Required)</small></span><span class="st ok" style="transition-delay:0.24s"><svg><use href="#f-ok"/></svg></span></li>
               <li style="--x:60px"><i><svg><use href="#f-click"/></svg></i><span>Call to action <small>(Required)</small></span><span class="st ok" style="transition-delay:0.36s"><svg><use href="#f-ok"/></svg></span></li>
               <li style="--x:24px"><i><svg><use href="#f-sign"/></svg></i><span>Signature <small>(Required)</small></span><span class="st ok" style="transition-delay:0.48s"><svg><use href="#f-ok"/></svg></span></li>
-              <li style="--x:52px"><i><svg><use href="#f-book"/></svg></i><span>Message guidelines</span><span class="st info"><svg><use href="#f-info"/></svg></span></li>
-              <li style="--x:6px"><i><svg><use href="#f-list"/></svg></i><span>Case studies</span><span class="st info"><svg><use href="#f-info"/></svg></span></li>
+              <li style="--x:52px"><i><svg><use href="#f-book"/></svg></i><span>Message guidelines</span><span class="st ok" style="transition-delay:.72s"><svg><use href="#f-ok"/></svg></span></li>
+              <li style="--x:6px"><i><svg><use href="#f-list"/></svg></i><span>Case studies</span><span class="st ok" style="transition-delay:.84s"><svg><use href="#f-ok"/></svg></span></li>
           </ul>
           <div class="ins" role="img" aria-label="A live prototype: the agent thinks, then writes an example email the way a chat assistant answers, from the customer's own instructions: Subject: Unlock the potential for growth, introducing the product and asking for a chat; under it a suggestion, make the outreach more compelling.">
             <div class="think" aria-hidden="true"><i></i><span>Writing an example from your instructions</span><b class="bar"><i id="gbar"></i></b></div>
@@ -613,7 +614,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
                 <div class="hd"><span>Unlock the potential for growth!</span><span class="sp"></span><span class="cn">Connect email</span></div>
                 <div class="ln">Recipients</div>
                 <div class="ln sub">Unlock the potential for growth!</div>
-                <div class="body" id="mbody"></div>
+                <div class="body"><span class="ghost" id="mghost"></span><span id="mbody"></span></div>
               </div>
               <div class="sugg"><span>Make the outreach more compelling</span></div>
               <div class="tools"><svg viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><svg viewBox="0 0 24 24"><path d="M7 11v9H4v-9zM7 11l4-7c1.5 0 2.5 1 2 3l-1 3h6a2 2 0 0 1 2 2.3l-1.2 6A2 2 0 0 1 16.8 20H7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24"><path d="M17 13V4h3v9zM17 13l-4 7c-1.5 0-2.5-1-2-3l1-3H6a2 2 0 0 1-2-2.3l1.2-6A2 2 0 0 1 7.2 4H17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24"><path d="M12 15V3M7 8l5-5 5 5M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v5h-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="19" cy="12" r="1.6" fill="currentColor"/></svg></div>
@@ -741,12 +742,13 @@ document.querySelectorAll('.big').forEach(function(h){
 (function(){
   var box=document.getElementById('trust'),body=document.getElementById('mbody'),bar=document.getElementById('gbar');
   var text="Hi [Recipient's Name],\n\nI'm Martin from Anybiz, and I believe we can help [Company Name] improve its cold email outreach.\n\nOur platform helps teams like yours by:\n• Automating and personalizing email campaigns\n• Improving deliverability and avoiding spam filters\n• Providing insights to optimize conversions\n\nWould love to chat and learn more about your goals.\n\nLet me know if you're interested!";
+  document.getElementById('mghost').textContent=text;
   if(RM){box.classList.add('s-mail');body.textContent=text;bar.style.width='100%';return}
   var phase=0,p=0,ch=0,timer=0,inView=false;
   function paused(){return box.classList.contains('paused')||!inView}
   function run(){
     timer=0;if(paused())return;
-    if(phase===0){p+=2;bar.style.width=Math.min(p,100)+'%';if(p<100){timer=setTimeout(run,40);return}phase=1;timer=setTimeout(run,300);return}
+    if(phase===0){p+=25;bar.style.width=Math.min(p,100)+'%';if(p<100){timer=setTimeout(run,40);return}phase=1;timer=setTimeout(run,300);return}
     if(phase===1){box.classList.add('s-mail');ch+=3;body.textContent=text.slice(0,ch);if(ch<text.length){timer=setTimeout(run,24);return}phase=2;box.classList.add('s-end');timer=setTimeout(run,4500);return}
     box.classList.remove('s-mail','s-end');body.textContent='';bar.style.width='0';p=0;ch=0;phase=0;timer=setTimeout(run,600);
   }
