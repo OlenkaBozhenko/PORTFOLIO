@@ -341,8 +341,8 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .mos{position:relative;background:var(--ground);padding-block:clamp(40px,6vw,88px);overflow:hidden;cursor:pointer}
 .ticker{display:flex;align-items:center;gap:clamp(28px,4vw,64px);width:max-content;animation:slide 60s linear infinite;padding-right:clamp(28px,4vw,64px)}
 .ticker img{flex:none;height:clamp(44px,6.4vw,96px);width:auto}
-.ticker span{flex:none;color:var(--violet-l);font-size:clamp(40px,6vw,92px);font-weight:400;line-height:1;letter-spacing:-.04em;white-space:nowrap}
-.ticker span:nth-of-type(even){color:#F8FAFC}
+/* the words in capitals, violet, as tall as the logo's letters (her request) */
+.ticker span{flex:none;color:var(--violet-l);font-size:clamp(45px,6.6vw,99px);font-weight:500;line-height:1;letter-spacing:-.01em;text-transform:uppercase;white-space:nowrap}
 @keyframes slide{to{transform:translateX(-50%)}}
 .mos.paused .ticker,.mos:not(.play) .ticker,.mos:hover .ticker{animation-play-state:paused}
 @media (prefers-reduced-motion:reduce){.ticker{animation:none}}
