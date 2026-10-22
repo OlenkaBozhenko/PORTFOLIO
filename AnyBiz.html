@@ -221,9 +221,9 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .kv{display:flex;gap:28px}.kv b{font-size:22px;font-weight:600;letter-spacing:-.02em;margin-top:2px}
 @media (max-width:560px){.ui{height:300px}.dk{font-size:13px;padding:12px 14px;width:92% !important}.dk[style*="right:0"]{right:0}.sched{grid-template-columns:auto 1fr auto}.sched .pill:last-child{display:none}}
 .g .fpanel{overflow:hidden}
-/* the Integrations screen, cropped so it reads, in the dark browser on the grey panel; it runs off the right edge */
-.g .fpanel.ipanel{padding:clamp(24px,4vw,56px) 0 clamp(24px,4vw,56px) clamp(24px,4vw,56px)}
-.ipanel .browser{border-radius:10px 0 0 10px}
+/* the Integrations screen, its full width, in the dark browser on the grey panel */
+.g .fpanel.ipanel{padding:clamp(20px,3vw,40px)}
+.ipanel .browser{box-shadow:0 2px 6px rgba(15,23,42,.08),0 40px 70px -36px rgba(15,23,42,.5)}
 .ipanel img{display:block;width:100%}
 
 /* 5. research: three outcomes, big numbers */
@@ -550,7 +550,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="cap c1-4 end rv"><h3>Why users stay</h3><p>Integrations are a big part of why many users love AnyBiz: their CRM, calendar, automation and messaging tools work from one place, and leads, meetings and replies stay in sync on their own.</p><p>I designed every integration as one pattern, so a new one never needs a new idea: a status (Connected, Incomplete, Inactive, Coming soon), one button to connect, the docs a click away, and early access for what is next.</p></div>
       <figure class="c5-12 rv" style="--d:.1s">
         <div class="fpanel ipanel"><div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>app.anybiz.io</span></div>
-          <img src="assets/work/anybiz/integrations-app.webp" alt="Connect your integrations: Quickly connect your apps and keep your data in sync automatically. Cards for Calendly and HubSpot, both Incomplete, each with a short description and buttons to connect, read the docs and open the settings." width="1680" height="1172" loading="lazy"></div></div>
+          <img src="assets/work/anybiz/integrations-app.webp" alt="Connect your integrations: Quickly connect your apps and keep your data in sync automatically. Cards for Calendly and HubSpot (Incomplete) and Salesforce (Inactive, with Connect), and the top of the next row: Zapier (Connected), Make and Monday (Coming soon)." width="1920" height="1179" loading="lazy"></div></div>
       </figure>
     </div>
   </section>
