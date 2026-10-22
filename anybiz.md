@@ -61,7 +61,7 @@ Two cards of separate UI pieces in the product's dark style on the pale panel, t
 Headline: The tools our users already love, *in one place*
 Two rows of integration pills sliding in opposite directions (Ramos pill marquee): HubSpot, Salesforce, Zapier, Calendly, Make, Monday, SalesLoft, Asana, Slack, Intercom, LinkedIn, Gmail, Outlook, WhatsApp, Warmy. Each pill carries a small monogram in the tool's colour (no logos).
 Text left: Integrations are a big part of why many users love AnyBiz: their CRM, calendar, automation and messaging tools work from one place, and leads, meetings and replies stay in sync on their own. I designed every integration as one pattern, so a new one never needs a new idea: a status (Connected, Incomplete, Inactive, Coming soon), one button to connect, the docs a click away, and early access for what is next.
-Right, three integration cards drawn as separate pieces on the pale panel (from her screen 247:78229): HubSpot, Incomplete; Zapier, Connected; Salesforce, Inactive, with Connect. Caption: Three of the integration cards, drawn from her design: one status, one action, the same pattern for every tool. (Was the whole Integrations screen in a browser frame.)
+Right, the Integrations screen (247:78229) cropped so it reads (the banner "Connect your integrations" and the Calendly and HubSpot cards, `integrations-app.webp`), in the dark browser frame on the grey panel, running off its right edge (her request, 2026-10-22; replaced the three integration cards drawn in HTML).
 
 
 ### 4. My part (her role and what she did; Research, Key insight and Behaviour now sit inside it, each under a thin sub-head)

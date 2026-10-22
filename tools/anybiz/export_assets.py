@@ -75,6 +75,7 @@ def main():
     crops = {
         "personas-app": (Image.open(RAW / "personas.jpg").convert("RGB"), (0, 0, 2560, 1600), 1600),
         "performance-app": (Image.open(RAW / "perf-app.jpg").convert("RGB"), (0, 0, 2560, 1600), 1600),
+        "integrations-app": (Image.open(RAW / "integrations.jpg").convert("RGB"), (0, 128, 1680, 1300), 1680),
         "phone-menu": (mobile, (762, 540, 1500, 1992), 600),
         "phone-settings": (mobile, (1702, 292, 2448, 1912), 600),
     }

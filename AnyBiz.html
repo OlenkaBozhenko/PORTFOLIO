@@ -217,17 +217,12 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .acts2 span{font-size:12.5px;font-weight:600;padding:5px 12px;border-radius:999px;color:#fff}
 .acts2 .e{background:#334155}.acts2 .l{background:#0A66C2;margin-left:-6px}.acts2 .c{background:#4C1D95;margin-left:-6px}
 .kv{display:flex;gap:28px}.kv b{font-size:22px;font-weight:600;letter-spacing:-.02em;margin-top:2px}
-.icards .ic{width:66%}
-.ic p{color:var(--a-mut);font-size:13px;line-height:1.45;margin-top:10px}
-.lg{flex:none;width:30px;height:30px;border-radius:7px;display:grid;place-items:center;color:#fff;font-weight:600;font-size:13px}
-.ic .row b{flex:1}
-.ic .st{font-size:12px;border-radius:999px;padding:3px 9px 3px 20px;position:relative;background:var(--card);color:#CBD5E1}
-.ic .st::before{content:"";position:absolute;left:8px;top:50%;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:#94A3B8}
-.ic .st.r{color:#FDA4AF}.ic .st.r::before{background:var(--rose)}
-.ic .st.g{color:#99F6E4}.ic .st.g::before{background:var(--teal)}
-.cbtn{display:block;margin-top:12px;text-align:center;border:1px solid var(--line);border-radius:999px;padding:8px;font-size:13px}
-@media (max-width:560px){.ui{height:300px}.dk{font-size:13px;padding:12px 14px;width:92% !important}.dk[style*="right:0"]{right:0}.sched{grid-template-columns:auto 1fr auto}.sched .pill:last-child{display:none}.icards .ic{width:92% !important}.ic .st{padding-left:18px}}
+@media (max-width:560px){.ui{height:300px}.dk{font-size:13px;padding:12px 14px;width:92% !important}.dk[style*="right:0"]{right:0}.sched{grid-template-columns:auto 1fr auto}.sched .pill:last-child{display:none}}
 .g .fpanel{overflow:hidden}
+/* the Integrations screen, cropped so it reads, in the dark browser on the grey panel; it runs off the right edge */
+.g .fpanel.ipanel{padding:clamp(24px,4vw,56px) 0 clamp(24px,4vw,56px) clamp(24px,4vw,56px)}
+.ipanel .browser{border-radius:10px 0 0 10px}
+.ipanel img{display:block;width:100%}
 
 /* 5. research: three outcomes, big numbers */
 .out{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--cg)}
@@ -552,12 +547,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       </div>
       <div class="cap c1-4 end rv"><h3>Why users stay</h3><p>Integrations are a big part of why many users love AnyBiz: their CRM, calendar, automation and messaging tools work from one place, and leads, meetings and replies stay in sync on their own.</p><p>I designed every integration as one pattern, so a new one never needs a new idea: a status (Connected, Incomplete, Inactive, Coming soon), one button to connect, the docs a click away, and early access for what is next.</p></div>
       <figure class="c5-12 rv" style="--d:.1s">
-        <div class="fpanel"><div class="ui aui icards" aria-hidden="true">
-          <div class="dk ic" style="left:0;top:0"><div class="row"><span class="lg" style="background:#FF5C35">H</span><b>HubSpot</b><span class="st r">Incomplete</span></div><p>Integrate AnyBiz with HubSpot to seamlessly manage leads in your preferred CRM system</p></div>
-          <div class="dk ic" style="right:0;top:22%;z-index:1"><div class="row"><span class="lg" style="background:#FF4F00">Z</span><b>Zapier</b><span class="st g">Connected</span></div><p>Connect your favorite apps, automate workflows, and keep your data in sync</p></div>
-          <div class="dk ic" style="left:8%;top:56%;z-index:2"><div class="row"><span class="lg" style="background:#0B76C5">S</span><b>Salesforce</b><span class="st">Inactive</span></div><span class="cbtn">Connect</span></div>
-        </div></div>
-        <figcaption class="cap">Three of the integration cards, drawn from her design: one status, one action, the same pattern for every tool.</figcaption>
+        <div class="fpanel ipanel"><div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>app.anybiz.io</span></div>
+          <img src="assets/work/anybiz/integrations-app.webp" alt="Connect your integrations: Quickly connect your apps and keep your data in sync automatically. Cards for Calendly and HubSpot, both Incomplete, each with a short description and buttons to connect, read the docs and open the settings." width="1680" height="1172" loading="lazy"></div></div>
       </figure>
     </div>
   </section>
