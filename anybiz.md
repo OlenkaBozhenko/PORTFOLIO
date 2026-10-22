@@ -1,0 +1,104 @@
+# AnyBiz — project page content
+
+**Source of truth for** [`AnyBiz.html`](AnyBiz.html), the page that opens from row 3 of the landing's work list (first build 2026-10-22).
+Her brief (2026-10-22): a page for AnyBiz in exactly the style of the Warmy page, but in AnyBiz's own look. Start like every project page (header); the first screen is a greeting from the AI agent after her Figma frame 247:78026 ("Create messaging instructions"); the product shown in mockups as on Warmy. The main accent: she built an AI tool and ran many user interviews, which let the team test features before they were built, improve the product, understand the users, and sometimes drop a feature the audience did not need or build a different one that really strengthened the product. The key finding of the interviews: users did not trust AI agents and were afraid to delegate everything to them, so the product gives them clear instructions to set for the agent, and then they can trust it with their company. She studied behaviour through session recordings, which showed the moments that need attention. An accent on integrations: many integrations make the product a favourite for users who like having all their tools in one place. Professional senior-designer language. Some blocks may take other layouts so the page is not one to one with Warmy (her references: a dark overview with My role and Responsibilities pills next to a tilted dashboard; a bento of phone mockups; glass AI components next to a phone; Genesis by Cuberto, a small panel and caption next to a tall tilted tablet, and a title, a rule and a small label left with text right; Zelt by Cuberto for the accent on her role). **No round icon chips in the headlines** (her request, 2026-10-22: unlike Warmy). Fonts and sizes as on her other project pages.
+
+---
+
+## Facts
+| | |
+|---|---|
+| What it is | AnyBiz.io, a B2B platform that hires out AI sales agents: they find prospects, write to them by email and LinkedIn, call them, post for the brand and book meetings, and report the results as insights |
+| Her role | Product Designer (landing and resume); the AI agent experience, user interviews with dynamic prototypes, session recording analysis, integrations, data-heavy screens (her brief, 2026-10-22) |
+| Years | 2021 – present (landing). The timeline is open question 3 in `CLAUDE.md`: one continuous role or two periods |
+| Platform | Web SaaS, desktop and mobile web |
+| Product UI type | Inter (read from her Figma screens) |
+| Product colours (sampled from her Figma exports, 2026-10-22) | ground #020617; panels #0F172A, cards #1E293B, lines #334155; text #E2E8F0, muted #94A3B8; violet #8B5CF6 (buttons), light violet #A78BFA; teal #5EEAD4 / #2DD4BF; sky #38BDF8; rose #FB7185; the logo arrow a pink to violet gradient |
+| Accent on the page | the logo gradient #EC4899 → #8B5CF6, decorative only. Small white text sits on #7C3AED (5.7:1), never on #8B5CF6 (4.2:1, fails AA for small text) |
+| Product facts (vendor-reported, anybiz.io/product, read 2026-10-22) | AI cold calling, AI email and AI LinkedIn channels, personalised AI landing pages, website visitor detection, Warmy warm-up included; CRM integrations HubSpot, Monday, Intercom, Asana; notifications in WhatsApp, SMS and Slack. The site gives two different database sizes (300M and 450M prospects), so no database figure is on the page |
+
+Sources: her Figma file My-projects-new (`YlGWlsWWjKSCxhONMzGG2F`), section 247:77772, read 2026-10-22: Messaging, empty state (247:78026 inside 247:78008), Messaging instructions with the email example (247:78046), account set-up (247:78797), "magic is on the way" (247:79444), Integrations (247:78229), AnyBiz insights (247:79472), mobile menu (247:79007), Sequence builder (247:78151), Personas (247:78364), Personas performance (247:79366), Persona details (247:79425), Manage automated posts (247:78840), the expo back wall with the octopus (247:77773). The product site anybiz.io/product (read 2026-10-22).
+
+**Privacy in the screens.** Her work email in the mobile menu (247:79007) is replaced by an invented one, "jamie@northwind.io", by [`tools/anybiz/export_assets.py`](tools/anybiz/export_assets.py). The raw Figma exports in `tools/anybiz/figma/` stay out of git (`.gitignore`); export them again from the nodes above (2x) to rerun the script. The persona photo in the email example is not used: the live prototype draws initials.
+
+**Corners and captions:** as on the Warmy page: panels have sharp corners; only the screens and UI pieces inside keep their rounded corners. Captions sit under their panel, left-aligned.
+
+## Page copy
+No em dashes in visible text (her rule).
+- **Back link:** ← All work
+- **Eyebrow:** AI SaaS (the project category only)
+- **Headline:** An AI sales platform that finds leads and books meetings.
+- **Meta row:** Role · Product Designer · Years · 2021 – present · Platform · Web, mobile web · Product · AnyBiz.io
+
+### 1. First screen: the AI agent says hello
+After her frame 247:78026: the deep night ground of the product (#020617) with violet and sky glows and twinkling four-point stars (the stars of her frames). In the middle the AnyBiz orb (three rings in violet, rose, sky and teal, exported from the frame as `assets/work/anybiz/orb.svg`) turns slowly while "Create messaging instructions" types in letter by letter with a violet caret (34 ms a letter, as on Warmy); then "Provide instructions to ensure your AI Agent communicates exactly as you wish" fades in, and the four channel cards rise one by one: Email introduction, Email follow-up, LinkedIn message (Connect +), Phone calls (Get access +). The first card lights up as if chosen, and everything stands still. Plays once. Tiny stars in the brand colours follow the mouse pointer (not on touch, not with reduced motion).
+Motion (WCAG 2.2.2): plays only on screen; a click, a tap or Enter / Space stops or starts it; with reduced motion it stands still, complete.
+
+### 2. Overview (her reference: a dark block with My role and Responsibilities next to a tilted dashboard; Zelt)
+On the product's night ground, text left, the AnyBiz insights screen (247:79472) tilted in 3D at the right, running off the edge.
+- **Text:** AnyBiz is a B2B platform that hires out AI sales agents. They find prospects, write to them by email and LinkedIn, call them, keep the brand visible with posts, and book meetings into the calendar. / The challenge was to let a company hand its outreach to an AI without losing control of its voice, and to keep a product with many channels, personas and integrations clear enough to set up and easy to trust.
+- **My role:** Product Designer
+- **Responsibilities (pills):** AI agent UX · User interviews · Prototyping · Session recordings · Information architecture · Integrations · Data-heavy interfaces · Design system
+
+### 3. Problem / Solution (Genesis: a rule, a small label left, text right)
+- **Problem:** Outreach eats a sales team's week: finding the right people, writing to each of them, following up, calling, and keeping the CRM current. AI can do all of it, but the people who own a company's reputation are afraid to let it speak for them.
+- **Solution:** AI agents that work across email, LinkedIn and phone under instructions the customer writes: who to reach, in which language and tone, with which call to action and signature. The customer sees an example before anything goes out, and every result comes back as insights.
+
+### 4. Product (Genesis layout and a bento)
+Section label **Product**, note **Hire AI agents** (the product's own tagline, from her poster 247:77773).
+Headline: A salesperson that works 24/7, *set up in one place* (grey words in italics here).
+- Left, a pale panel with the Persona details window (247:79425). Caption: **Personas, not lists.** A persona describes who the agent should reach: role, industry, location, company size and revenue. The prospects that match come from the database, a file, LinkedIn or the CRM, and stay visible before a campaign starts.
+- Right, a tall pale violet panel with the Sequence builder (247:78151) tilted in 3D. Caption: **One sequence, every channel.** Email, LinkedIn and phone steps in one timeline, each with its own sending window and the instructions the agent follows. Language, tone and offering are set once, at the top.
+- Left, a pale panel with Personas performance (247:79366). Caption: **Results by persona.** Engaged prospects, actions per channel, reply and opportunity rates, so the customer sees which audience works and moves the budget there.
+- Bento: wide panel with the mobile menu (247:79007). Caption: **The whole product on a phone.** Every agent, channel and setting reachable from the mobile menu, with launches announced in a bar on top. Narrow panel with Manage automated posts (247:78840). Caption: **A brand awareness agent.** The agent writes and publishes LinkedIn posts on a schedule the customer controls, day by day and by format.
+
+### 5. Research (the main accent)
+Section label **Research**, note **Tested before it was built**.
+Headline: Every feature met our users *before it met the developers*
+Intro: I built dynamic prototypes of the AI tools and ran user interviews on them before anything went into development. People worked through real tasks on the prototype, so we saw how they behaved, not what they promised. It made the product better and taught us who our users are. Three outcomes kept coming back:
+- 01 **Sharpened.** Most ideas survived, but not as drawn. Where people hesitated, misread a label or expected a different next step, the fix went into the design before a line of code was written.
+- 02 **Dropped.** Some features never reached the backlog. When interviews showed that our audience did not need them, we stopped them at the prototype and saved the team weeks of building.
+- 03 **Replaced.** Sometimes the interviews pointed to a different need. We set the planned feature aside and designed the one that really strengthened the product.
+(No feature names here: she can add the real examples, open question below.)
+
+### 6. Key insight: trust (her reference: glass AI components next to a phone)
+Section label **Key insight**, note **Trust is designed**.
+Headline: Users did not want to hand their company to AI. *They wanted to instruct it.*
+Text: The interviews showed it again and again: people did not trust AI agents and were afraid to let one speak for their company. So we did not ask them to trust a black box. We gave them clear instructions to set for the agent, channel by channel: the persona, the language, the tone of voice, the call to action, the signature, message guidelines and case studies. Before anything goes out, the agent writes an example; the customer can regenerate it or save it and train the AI. With the rules in their hands, customers hand the outreach of their company to the agent.
+Dark panel. Left, glass UI pieces drawn in HTML in the product style: the instruction checklist (Persona, Language, Tone of voice, Call to action, Signature ticked; Message guidelines and Case studies with an amber note), the setting pills (English (United States), Professional, Offering), and the buttons Regenerate and Save and train the AI. Right, a live prototype of the instructions screen in HTML: "{AnyBiz} magic is on the way..." with a filling bar, then the example email types in (her Figma copy, 247:78046: Subject: Unlock the potential for growth! / Hi [Recipient's Name], / I'm Martin from Anybiz, and I believe we can help [Company Name] improve its cold email outreach. / Our platform helps teams like yours by: automating and personalizing email campaigns; improving deliverability and avoiding spam filters; providing insights to optimize conversions. / Would love to chat and learn more about your goals.), the Save button pulses, and it starts again. Same motion rules as the first screen.
+Caption: **An example before anything is sent.** The agent shows what it will write from the customer's own instructions. Nothing leaves until the customer is happy with it.
+
+### 7. Behaviour: session recordings
+Section label **Behaviour**, note **What people do, not what they say**.
+Headline: Recordings show *what people do* when nobody is asking
+Text left: Interviews tell you what people think. Session recordings show what they actually do. I watched real sessions to find the moments that need attention: where people hesitate, click something that does nothing, click again in frustration, or leave a flow half done. Each moment became a design fix, a question for the next interview, or a hypothesis to test.
+Visual right: a session replay drawn over the Personas screen (247:78364): a cursor moves along a path, a hesitation ring, a rage click ripple and a dead click appear where they happen; under it a player bar with a timeline and coloured markers, and a legend: Hesitation, Rage click, Dead click, Drop-off. Note under it: An illustration of the method, not a recorded session.
+
+### 8. Integrations
+Section label **Integrations**, note **Every tool in one place**.
+Headline: The tools our users already love, *in one place*
+Two rows of integration pills sliding in opposite directions (Ramos pill marquee): HubSpot, Salesforce, Zapier, Calendly, Make, Monday, SalesLoft, Asana, Slack, Intercom, LinkedIn, Gmail, Outlook, WhatsApp, Warmy. Each pill carries a small monogram in the tool's colour (no logos).
+Text left: Integrations are a big part of why many users love AnyBiz: their CRM, calendar, automation and messaging tools work from one place, and leads, meetings and replies stay in sync on their own. I designed every integration as one pattern, so a new one never needs a new idea: a status (Connected, Incomplete, Inactive, Coming soon), one button to connect, the docs a click away, and early access for what is next.
+Right, the Integrations screen (247:78229) in a browser frame.
+
+### 9. My part
+Section label **My part**, note **What I brought to AnyBiz**.
+Headline (no chips): I designed the AI agent, *tested* every idea and *watched* how people use it
+Five rows, the number left, the title, the text right:
+- 01 **AI agent experience.** Messaging instructions, the brand awareness agent, persona building and the onboarding states, on desktop and mobile.
+- 02 **User interviews.** Dynamic prototypes tested with users before development, to sharpen, drop or replace a feature.
+- 03 **Session recordings.** Real sessions reviewed to find hesitation, dead ends and drop-offs, and turned into fixes.
+- 04 **Integrations.** CRM, scheduling, automation and messaging tools designed as one consistent pattern.
+- 05 **Data-heavy interfaces.** Personas, prospect tables, sequences and performance analytics that stay readable at scale, built on a shared design system.
+
+### 10. Campaign visuals
+A moving mosaic on the night ground over "anybiz" repeated as a running line, as on the Warmy page: the expo back wall with the octopus mascot, "A Salesperson That Works 24/7" (247:77773), and the presentation shots of the product. Same motion rules.
+Caption: Marketing design around the product: an expo back wall with the octopus mascot and presentation shots of the AI agents.
+
+### 11. **View next work:** Sport Guardian (`SportGuardian.html`), in the order of the landing's work list. Warmy's next work is now AnyBiz.
+
+## Open questions for her
+1. Research outcomes: name one real feature for each of Sharpened, Dropped and Replaced, if she can share them.
+2. Her role and responsibilities on the page: confirm the eight pills and the five items in My part.
+3. Session recordings: which tool (Hotjar, Clarity, other)? Not named on the page until she says.
+4. The AnyBiz timeline (CLAUDE.md, question 3) also sets the Years in the meta row.
