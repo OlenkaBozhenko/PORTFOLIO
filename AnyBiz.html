@@ -30,7 +30,6 @@
   --accent:linear-gradient(90deg,#EC4899,#8B5CF6);
   /* the night ground with the violet and sky glows of her frames */
   --ground:radial-gradient(60% 55% at 15% 90%,rgba(124,58,237,.34),transparent 70%),radial-gradient(45% 45% at 88% 12%,rgba(56,189,248,.16),transparent 70%),var(--night);
-  --pale:#F1EEFB; /* the pale violet panel behind the tall screen */
   color-scheme:light;
 }
 *{box-sizing:border-box}
@@ -174,7 +173,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .acc .body p{padding:0 28px 24px;color:var(--muted);font-size:16px;max-width:46ch}
 .acc li.open .body{grid-template-rows:1fr}
 @media (prefers-reduced-motion:reduce){.acc .body,.acc .pm{transition:none}}
-.stage{position:relative;background:var(--pale);overflow:hidden;aspect-ratio:7/6}
+.stage{position:relative;background:var(--well);overflow:hidden;aspect-ratio:7/6}
 .stage .browser{position:absolute;right:-8%;top:8%;width:92%;isolation:isolate}
 .vp{position:relative;overflow:hidden;background:var(--night)}
 .stage .browser .vp{aspect-ratio:1600/1000}
@@ -192,7 +191,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 @media (max-width:720px){.stage{aspect-ratio:1/1}.dev{width:30%;bottom:-10%}}
 
 /* cards: separate UI pieces in the product's dark style on a pale panel, text under the panel */
-.fcard .fpanel,.g .fpanel{background:var(--pale);padding:clamp(24px,3.4vw,48px)}
+.fcard .fpanel,.g .fpanel{background:var(--well);padding:clamp(24px,3.4vw,48px)}
 .fcard .cap{max-width:52ch}
 .ui{position:relative;width:100%;height:clamp(260px,26vw,340px)}
 .aui{font-family:var(--ui);color:var(--a-ink)}
@@ -239,9 +238,13 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 @media (max-width:720px){.out{grid-template-columns:1fr;row-gap:40px}}
 
 /* 6. trust: glass UI pieces next to a live prototype on the night ground (her reference) */
-.trust{position:relative;background:var(--ground);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(16px,2vw,24px);padding:clamp(20px,4vw,56px);font-family:var(--ui);color:var(--a-ink);overflow:hidden;cursor:pointer}
-.glass{background:linear-gradient(180deg,rgba(30,41,59,.72),rgba(15,23,42,.62));border:1px solid rgba(148,163,184,.18);border-radius:18px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:20px 22px;box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
-.stack{display:flex;flex-direction:column;gap:clamp(16px,2vw,24px)}
+/* the pieces float over each other (her request: separate blocks, like the cards of the Warmy page): the live screen at the right, the checklist over its left edge, the settings below it */
+.trust{position:relative;background:var(--ground);padding:clamp(32px,5vw,72px) clamp(20px,5vw,72px);font-family:var(--ui);color:var(--a-ink);overflow:hidden;cursor:pointer}
+.trust .ins{width:62%;margin-left:auto}
+.trust .stack{position:absolute;inset:0;pointer-events:none}
+.trust .g1{position:absolute;left:calc(clamp(20px,5vw,72px) + 7%);top:10%;width:min(34%,340px);z-index:2;box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+.trust .g2{position:absolute;left:calc(clamp(20px,5vw,72px) + 17%);top:55%;width:min(32%,320px);z-index:3;box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+.glass{background:linear-gradient(180deg,rgba(30,41,59,.92),rgba(15,23,42,.9));border:1px solid rgba(148,163,184,.18);border-radius:18px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:20px 22px;box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
 .glass .lb{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--a-mut);margin-bottom:14px}
 .glass .lb svg{width:16px;height:16px;color:var(--violet-l)}
 .chk{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;font-size:14px}
@@ -290,7 +293,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .s-end .ins .bot .b2{animation:pulse 1.4s ease-in-out infinite}
 @keyframes pulse{50%{box-shadow:0 0 0 6px rgba(124,58,237,.3)}}
 .trust.paused .ins .bot .b2{animation-play-state:paused}
-@media (max-width:900px){.trust{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:900px){.trust{display:flex;flex-direction:column;gap:16px}.trust .ins{width:100%;order:2}.trust .stack{position:static;display:flex;flex-direction:column;gap:16px;order:1}.trust .g1,.trust .g2{position:static;width:auto}}
 @media (max-width:560px){.ins .bot{flex-wrap:wrap}.ins .bot>span:first-child,.ins .bot .sp{display:none}.ins .bot .b1,.ins .bot .b2{flex:1;text-align:center}}
 @media (prefers-reduced-motion:reduce){.s-end .ins .bot .b2{animation:none}.js .trust .chk .ok{opacity:1;transform:none;transition:none}}
 
@@ -332,10 +335,11 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .ip i{width:clamp(30px,2.6vw,38px);height:clamp(30px,2.6vw,38px);border-radius:50%;display:grid;place-items:center;font:600 13px/1 var(--ui);font-style:normal;color:#fff;background:var(--c)}
 .ip i.dk{color:#0E0E0E}
 @media (prefers-reduced-motion:reduce){.lane{animation:none}}
-.browser{border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.06),0 24px 48px -20px rgba(15,23,42,.35)}
-.browser .bar{display:flex;align-items:center;gap:7px;height:34px;padding:0 14px;background:#F7F7F7;border-bottom:1px solid var(--rule)}
-.browser .bar i{width:10px;height:10px;border-radius:50%;background:#D9D9D9}
-.browser .bar span{margin-left:12px;font-size:12px;color:var(--muted);background:#fff;border-radius:6px;padding:3px 12px}
+/* the browser frame is dark, like the product (her request) */
+.browser{border-radius:10px;overflow:hidden;background:var(--night);box-shadow:0 1px 2px rgba(0,0,0,.08),0 24px 48px -20px rgba(15,23,42,.45)}
+.browser .bar{display:flex;align-items:center;gap:7px;height:34px;padding:0 14px;background:var(--panel);border-bottom:1px solid var(--card)}
+.browser .bar i{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.browser .bar span{margin-left:12px;font-size:12px;color:var(--a-mut);background:var(--card);border-radius:6px;padding:3px 12px}
 @media (max-width:720px){.browser .bar{height:22px;padding:0 8px;gap:4px}.browser .bar i{width:6px;height:6px}.browser .bar span{font-size:9px;padding:1px 6px;margin-left:6px}}
 
 /* 9. my part: rows, the number left, the title, the text right (Zelt) */
@@ -596,7 +600,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <figure class="c1-12 rv">
         <div class="trust" id="trust" tabindex="0" aria-describedby="trust-how">
           <div class="stack" aria-hidden="true">
-            <div class="glass">
+            <div class="glass g1">
               <div class="lb"><svg><use href="#i-spark"/></svg>Instructions #1</div>
               <ul class="chk">
                 <li><i><svg><use href="#i-user"/></svg></i>Persona<span class="st ok"><svg><use href="#i-check"/></svg></span></li>
@@ -608,13 +612,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
                 <li><i><svg><use href="#i-list"/></svg></i>Case studies<span class="st warn">i</span></li>
               </ul>
             </div>
-            <div class="glass">
+            <div class="glass g2">
               <div class="lb">Set once for the agent</div>
               <div class="sel"><span>English (United States)<svg><use href="#i-down"/></svg></span><span>Professional<svg><use href="#i-down"/></svg></span><span>Offering<svg><use href="#i-down"/></svg></span></div>
-            </div>
-            <div class="glass">
-              <div class="lb">Before anything is sent</div>
-              <div class="btns"><span class="b1">Regenerate</span><span class="b2">Save and train the AI</span></div>
             </div>
           </div>
           <div class="ins" role="img" aria-label="A live prototype of the instructions screen: AnyBiz magic is on the way, generating an example; then an example email from the customer's instructions, Subject: Unlock the potential for growth, introducing the product and asking for a chat; with Regenerate and Save and train the AI.">
