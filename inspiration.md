@@ -140,6 +140,25 @@ Her brief for `Warmy.html`: the product's complexity and her part in it (feature
 **Expo booth mockup ([Pinterest](https://ru.pinterest.com/pin/19703317112838545/), source of the design not given)** · `32-expo-booth-firewall.png` (sent 2026-10-20)
 - A trade show booth seen straight on in a dark hall: a long charcoal back wall with the brand graphic, a wall screen, a chair, a round pouf and a tall frosted totem, one colour of light washing the corner.
 - To borrow: **her Warmy banner on an expo booth**, in the campaign mosaic in place of the print ad.
+
+### 2.11 AnyBiz case page (added 2026-10-22)
+Her brief for `AnyBiz.html` (content in `anybiz.md`): the Warmy pattern in AnyBiz's own look, a first screen after her AI agent frame (247:78026), the accent on the AI tool she built, user interviews before development, the trust finding, session recordings and integrations. No round icon chips in the headlines. Sources of the shots below were not given unless linked.
+
+**Dark overview with My role and Responsibilities** · `34-monty-role-responsibilities.png` (sent 2026-10-22)
+- A black block: the product and its challenge in two short paragraphs, then My role and Responsibilities as grey pills, next to a dashboard tilted in 3D running off the right edge.
+- To borrow: **the AnyBiz overview**, on the product's night ground with her Insights screen.
+
+**Phone bento (Rentio)** · `35-rentio-phone-bento.png` (sent 2026-10-22)
+- One large tile with phones on a soft ground beside two stacked tiles, tight gaps.
+- To borrow: **the bento of the Product section**: the mobile menu large, the posts agent beside it.
+
+**Glass AI components next to a phone** · `36-glass-ai-components.png` (sent 2026-10-22)
+- Frosted dark panels stacking an assistant's pieces (prompt field, button, feature pills) beside a phone with the chat, on a warm dark ground.
+- To borrow: **the Key insight block**: the instruction checklist, settings and buttons as glass pieces next to a live instructions prototype.
+
+**[Cuberto, Genesis](https://cuberto.com/projects/genesis/)** · `37-genesis-panel-tall-tablet.png`, `38-genesis-title-rule-label.png` (sent 2026-10-22)
+- A small panel with a caption under it next to a tall pale panel with a tilted tablet; a big title, a full-width rule, a small capitals label left and the text right.
+- To borrow: **the Product grid** and **the Problem / Solution rows**. [Cuberto, Zelt](https://cuberto.com/projects/zelt/) (2.8) again for the accent on her role.
 ---
 
 ## 3. Also saved in Notion, not yet annotated
