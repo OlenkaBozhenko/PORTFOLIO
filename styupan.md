@@ -21,7 +21,7 @@ Layout follows [`book.md`](book.md): the header (back link, eyebrow, headline, m
 Sources: Instagram [@nortranslations](https://www.instagram.com/nortranslations/) bio (services, languages, Oslo, website) and the LinkedIn company page [stiupan-translations](https://www.linkedin.com/company/stiupan-translations/) (tagline, size, Oslo), both read 2026-09-29; her Figma file MY-PROJECTS (logo, colours, typeface); Maiia Stiupan's reference letter (`cv.md`).
 
 ## Page copy
-- **Eyebrow:** Brand mark
+- **Eyebrow:** Branding (the project category only, her request 2026-10-22)
 - **Headline:** A mark for an Oslo translation studio.
 - **Meta row:** Role — Logo, brand identity · Year — 2023 · Client — Stiupan Translations ENK, Oslo · Typeface — Crimson Text
 - **About:** Stiupan Translations is a multilingual translation studio in Oslo. The small team translates, proofreads, localises and writes copy in Norwegian, English, Ukrainian, Russian, German and Polish, under the line "Lost words found here".
