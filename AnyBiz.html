@@ -318,7 +318,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .track .fill{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:3px;background:var(--violet-l)}
 .track i{position:absolute;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;border:2px solid var(--panel)}
 .time{font-variant-numeric:tabular-nums;color:var(--a-mut);white-space:nowrap}
-.legend{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14px;color:var(--muted)}
+.legend{display:flex;flex-direction:column;align-items:flex-start;gap:10px;font-size:15px;color:var(--muted)}
 .legend span{display:inline-flex;align-items:center;gap:8px}
 .legend i{width:10px;height:10px;border-radius:50%}
 .note{font-size:13px;color:var(--muted)}
@@ -618,7 +618,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <h3 class="big c1-12 tight">Recordings show <span class="s">what people do</span> when nobody is asking</h3>
       <div class="cap c1-4 start rv"><p class="lead" style="color:var(--ink)">Interviews tell you what people think. Session recordings show what they actually do.</p><p style="font-size:16px;margin-top:16px">I watched real sessions to find the moments that need attention: where people hesitate, click something that does nothing, click again in frustration, or leave a flow half done. Each moment became a design fix, a question for the next interview, or a hypothesis to test.</p>
         <div class="legend" style="margin-top:28px"><span><i style="background:var(--amber)"></i>Hesitation</span><span><i style="background:var(--rose)"></i>Rage click</span><span><i style="background:var(--sky)"></i>Dead click</span><span><i style="background:var(--violet-l)"></i>Drop-off</span></div>
-        <p class="note" style="margin-top:10px">An illustration of the method, not a recorded session.</p>
       </div>
       <figure class="c5-12 rv" style="--d:.1s">
         <div class="replay" id="replay" tabindex="0" aria-describedby="replay-how">
