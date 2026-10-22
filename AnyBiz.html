@@ -249,6 +249,14 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .msgs .info{color:#D97706}
 .js .trust .msgs .ok{opacity:0;transform:scale(.4);transition:opacity .3s,transform .3s}
 .js .trust.in .msgs .ok{opacity:1;transform:none}
+/* when the email is written, the bubbles sway a little, one left, the next right (her request) */
+.s-end .msgs li{animation:sway 2.4s ease-in-out infinite}
+.s-end .msgs li:nth-child(even){animation-name:sway2}
+.s-end .msgs li:nth-child(3n){animation-duration:2.9s}
+@keyframes sway{0%,100%{transform:none}50%{transform:translateX(8px)}}
+@keyframes sway2{0%,100%{transform:none}50%{transform:translateX(-8px)}}
+.trust.paused .msgs li{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){.s-end .msgs li{animation:none}}
 .trust .ins{min-width:0;color:#0D0D0D;font-family:var(--ui)}
 .think{display:flex;align-items:center;gap:10px;font-size:15px;transition:opacity .3s}
 .think i{width:10px;height:10px;border-radius:50%;background:#0D0D0D;animation:breathe 1.2s ease-in-out infinite}
