@@ -60,7 +60,7 @@ On a pale violet panel (#F1EEFB) a browser frame (app.anybiz.io) and a phone; th
 #### Integrations (inside Product, under a thin sub-head: Integrations · Every tool in one place)
 Headline: The tools our users already love, *in one place*
 The two rows of sliding integration pills were removed (her request, 2026-10-22).
-Text left: Integrations are a big part of why many users love AnyBiz: their CRM, calendar, automation and messaging tools work from one place, and leads, meetings and replies stay in sync on their own. I designed every integration as one pattern, so a new one never needs a new idea: a status (Connected, Incomplete, Inactive, Coming soon), one button to connect, the docs a click away, and early access for what is next.
+Text left: Integrations are a big part of why many users love AnyBiz: their CRM, calendar, automation and messaging tools work from one place, and leads, meetings and replies stay in sync on their own. (The second paragraph, "I designed every integration as one pattern...", was removed on her request, 2026-10-22.)
 Right, the Integrations screen (247:78229) cropped so it reads (the banner "Connect your integrations" and the Calendly and HubSpot cards, `integrations-app.webp`), in the dark browser frame on the grey panel, running off its right edge (her request, 2026-10-22; replaced the three integration cards drawn in HTML). Then (her request, the same day: a little smaller, so it fits) the whole width of the screen, the banner with the logo tiles, the first row and the top of the second, inside the panel with a margin all round.
 
 
