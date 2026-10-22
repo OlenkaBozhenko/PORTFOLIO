@@ -78,7 +78,7 @@ Five numbered items:
 - 02 **User flows.** Every path mapped before a screen is drawn, with the empty, loading, error and limit states, so developers build the edges too.
 - 03 **Dynamic prototypes.** Clickable prototypes with real states (typing, thinking, voice, scores filling in) to test with users and to show developers how a screen moves.
 - 04 **A/B test hypotheses.** Written before anything ships, with one change, one metric and a decision rule.
-- 05 **User interviews.** Planned, run and synthesised into personas and a customer journey map.
+- 05 **User interviews.** Planned and run to find the key moments that improve the experience, and to catch problems before a feature is built.
 
 ### 7. Dynamic prototype (live, in a phone)
 A phone playing the Adeline flow in HTML, as her prototypes do, in the thin outline of the Sport Guardian phone (1.5 px, no heavy bezel): the start screen with three questions; a tap on "Why are my emails landing in spam?"; the question as a bubble; Thinking…; the answer typing in: "Your spam rate at Outlook rose to 14% this week. Two things stand out: your DMARC policy is set to none, and the template Spring offer has three links. Fix DMARC first, then I will check the template." with two buttons, Open DMARC check and Analyze template. Then it starts again. Same motion rules as the first screen. Caption: **A prototype, not a picture.** Prototypes in Warmy carry the real states: the typing, the wait, the answer, the next step. Users react to how it behaves, and developers see the timing they need to build. (The figures in the answer are made up.)
