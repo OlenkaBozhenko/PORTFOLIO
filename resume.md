@@ -11,6 +11,8 @@ Bullets marked *draft* are written from what she has said about the work; they c
 ## Header
 Olena Bozhenko · Bozhenko.ui.ux@gmail.com · +47 925 66 987 · linkedin.com/in/olena-bozhenko-b36071180 · behance.net/bozhenkoUI59ac
 
+*To do (her call, 2026-10-23):* once the portfolio site is published, the portfolio link goes into the header; she adds it herself.
+
 ## Statement
 Senior product designer for B2B and B2C products and crowdfunding platforms.
 
