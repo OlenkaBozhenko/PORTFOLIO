@@ -268,7 +268,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="wrap">
     <p class="eyebrow hero-meta">Senior Product Designer</p>
     <div class="h1box">
-      <h1 id="hero-title">I design B2B products from the idea to <span class="slot" id="slot"><span class="slot-text serif"></span><span class="vh slot-sr">production</span><span class="slot-hint" aria-hidden="true">drop a phrase here</span></span>.</h1>
+      <h1 id="hero-title">I design B2B and B2C products from the idea to <span class="slot" id="slot"><span class="slot-text serif"></span><span class="vh slot-sr">production</span><span class="slot-hint" aria-hidden="true">drop a phrase here</span></span>.</h1>
     </div>
     <p class="hero-sub">Working with different products every day: research, user interviews, prototypes and design systems.</p>
 
@@ -422,7 +422,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <figure class="photo"><img src="assets/about/olena-bozhenko.jpg" alt="Olena Bozhenko, black-and-white portrait" width="720" height="935" loading="lazy"></figure>
       <div>
         <div class="bio">
-          <p>I'm a senior product designer in Oslo. Since 2021 I've designed B2B and B2C products, among them SaaS for sales outreach and email deliverability at AnyBiz and Warmy: design systems, prototypes, user interviews, research and analytics, more and more of it with AI tools.</p>
+          <p>I'm a senior product designer in Oslo. Since 2021 I've designed B2B and B2C products: SaaS for sales outreach and email deliverability at AnyBiz and Warmy, and a crowdfunding platform for Sport Guardian. My work covers design systems, prototypes, user interviews, research and analytics, more and more of it with AI tools.</p>
           <p>Before design I spent seven years in law. It taught me to read the fine print, write things down precisely and stand behind a decision.</p>
         </div>
         <ul class="qual">
@@ -577,7 +577,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     var txt=slot.querySelector('.slot-text');txt.textContent=t;
     txt.style.animation='none';txt.getBoundingClientRect();txt.style.animation='';
     slot.querySelector('.slot-sr').textContent='';
-    said.textContent='Headline: I design B2B products from the idea to '+t+'.';
+    said.textContent='Headline: I design B2B and B2C products from the idea to '+t+'.';
     if(document.activeElement===el){var n=el.parentNode.querySelector('.phrase:not(.used)');if(n)n.focus();}
   };
   hero.querySelectorAll('.phrase').forEach(function(el,i){

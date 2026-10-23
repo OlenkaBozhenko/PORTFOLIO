@@ -17,7 +17,7 @@ This file is the source for the site's About page, the journey timeline and the 
 ## About — draft for the site
 *Draft written from the sources above for her to edit; not approved yet.*
 
-> I'm a senior product designer based in Oslo, working remotely with a Ukrainian product team. Since 2021 I've designed B2B and B2C products, among them SaaS for sales outreach and email deliverability at AnyBiz and Warmy — design systems, prototypes, user interviews, research and analytics, and more and more of it with AI tools.
+> I'm a senior product designer based in Oslo, working remotely with a Ukrainian product team. Since 2021 I've designed B2B and B2C products: SaaS for sales outreach and email deliverability at AnyBiz and Warmy, and a crowdfunding platform for Sport Guardian. My work covers design systems, prototypes, user interviews, research and analytics, and more and more of it with AI tools.
 >
 > Before design I spent seven years in law, at the Vinnytsia city department of justice. It taught me to read the fine print, to write things down precisely, and to be accountable for a decision — habits I still bring to product work.
 >
