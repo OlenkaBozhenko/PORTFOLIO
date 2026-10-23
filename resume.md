@@ -22,7 +22,7 @@ I design B2B and B2C products and crowdfunding platforms end to end: research an
 
 ## Skills
 - **Product design:** UI/UX design, design systems, prototyping, user research, user interviews, analytics, AI tools
-- **Tools:** Figma, Adobe Suite, Claude Code, Lovable (AI tool), HTML/CSS basics
+- **Tools:** Claude Code, Lovable (AI tool), Figma, Adobe Suite, HTML/CSS basics
 
 ## Languages
 Ukrainian and Russian (native) · English (B2) · Norwegian (B1)
