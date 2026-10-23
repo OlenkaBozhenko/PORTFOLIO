@@ -214,7 +214,7 @@ figure.q figcaption b{display:block;color:var(--ink);font-weight:500}
   .quotes::-webkit-scrollbar{display:none}
   .quotes:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
   figure.q{flex:0 0 100%;scroll-snap-align:start}
-  .dots{display:flex;gap:0;margin:16px 0 0 -10px}
+  .dots{display:flex;justify-content:center;gap:0;margin-top:16px}
   .dots button{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;background:none;border:0;padding:0;cursor:pointer}
   .dots button::before{content:"";width:8px;height:8px;border-radius:99px;background:var(--muted);transition:width .2s ease,background-color .2s ease}
   .dots button[aria-current="true"]::before{width:24px;background:var(--ink)}
@@ -229,6 +229,8 @@ figure.q figcaption b{display:block;color:var(--ink);font-weight:500}
 .learn time{color:var(--muted);font-variant-numeric:tabular-nums;font-size:15px}
 .learn .who{color:var(--muted);font-size:15px}
 @media (max-width:640px){.learn li{grid-template-columns:1fr;gap:4px}}
+/* on a phone: no side note by Learning, the two sub-headings in medium weight (her request, 2026-10-24) */
+@media (max-width:720px){#learn-title+.count{display:none}.learn-h{font-weight:500}}
 
 /* contact */
 .contact h2{font-size:clamp(44px,8vw,120px);line-height:.95;letter-spacing:-.05em}
