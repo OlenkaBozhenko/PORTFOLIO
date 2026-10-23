@@ -228,7 +228,8 @@ figure.q figcaption b{display:block;color:var(--ink);font-weight:500}
 .learn li{display:grid;grid-template-columns:120px minmax(0,1fr) minmax(0,220px);gap:24px;padding-block:18px;border-bottom:1px solid var(--rule);align-items:baseline}
 .learn time{color:var(--muted);font-variant-numeric:tabular-nums;font-size:15px}
 .learn .who{color:var(--muted);font-size:15px}
-@media (max-width:640px){.learn li{grid-template-columns:1fr;gap:4px}}
+/* on a phone each line is a small table: name and place on the left, the date on the right, level with the name (her request, 2026-10-24) */
+@media (max-width:640px){.learn li{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"name date" "who .";gap:2px 16px}.learn li>span:not(.who){grid-area:name}.learn time{grid-area:date;text-align:right;white-space:nowrap}.learn .who{grid-area:who}}
 /* on a phone: no side note by Learning, the two sub-headings in medium weight (her request, 2026-10-24) */
 @media (max-width:720px){#learn-title+.count{display:none}.learn-h{font-weight:500}}
 
