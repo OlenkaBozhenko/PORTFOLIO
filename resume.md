@@ -12,10 +12,10 @@ Bullets marked *draft* are written from what she has said about the work; they c
 Olena Bozhenko · Bozhenko.ui.ux@gmail.com · +47 925 66 987 · linkedin.com/in/olena-bozhenko-b36071180 · behance.net/bozhenkoUI59ac
 
 ## Statement
-Senior product designer for B2B SaaS, from the first user interview to the design system.
+Senior product designer for B2B and B2C products, from the first user interview to the design system.
 
 ## Summary
-I design B2B SaaS products end to end: research and user interviews, prototypes, design systems and analytics, with AI tools built into the work. Before design I spent seven years in law, which taught me precision and accountability for every decision.
+I design B2B and B2C products end to end: research and user interviews, prototypes, design systems and analytics, with AI tools built into the work. Before design I spent seven years in law, which taught me precision and accountability for every decision.
 
 ## Skills
 - **Product design:** design systems, prototyping, user research, user interviews, analytics, AI tools
