@@ -32,7 +32,7 @@
 
 **Open questions for her:**
 1. Sport Guardian (Idretsfader): page built 2026-10-13 ([`sportguardian.md`](sportguardian.md)); confirm her role (UX, UI) (year 2024 and client Scale Group AS, her answers 2026-10-13/14). School: confirm the year (2020 is an estimate from the screens) and the case copy in [`school.md`](school.md).
-2. Scale Development AS: what she did there, for the resume.
+2. ~~Scale Development AS: what she did there~~ answered 2026-10-24: admin panel, online store, UX research (in `resume.md`).
 3. AnyBiz timeline on the site: one continuous role (Aug 2021 – present) or two periods.
 4. Typeface: Inter Tight is a stand-in for Aeonik / Neue Haas Grotesk.
 5. Tor Martin Olsen's testimonial is a DRAFT on the landing — needs his approval before the site goes public; referee contacts in `cv.md` and the phone in the resume PDF need a decision before the repo is public.

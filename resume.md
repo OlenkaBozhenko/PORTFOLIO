@@ -56,7 +56,7 @@ Email warm-up and deliverability tool that builds the sender's domain reputation
 - Certified Email deliverability expert (Warmy Inbox Academy, 2025).
 
 **Scale Development AS / Senior Product Designer / 2023 – 2024** — Oslo, hybrid, part-time
-- *to add: what she did there*
+- Designed the admin panel and the online store, and ran UX research. (her words, 2026-10-24)
 
 **AnyBiz LTD / Warmy / Product Designer / 2021 – 2022** — Ukrainian and Israeli company
 Web and admin-panel design for the outreach platform.
