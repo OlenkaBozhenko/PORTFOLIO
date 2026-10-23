@@ -12,15 +12,14 @@ Bullets marked *draft* are written from what she has said about the work; they c
 Olena Bozhenko · Bozhenko.ui.ux@gmail.com · +47 925 66 987 · linkedin.com/in/olena-bozhenko-b36071180 · behance.net/bozhenkoUI59ac
 
 ## Statement
-Senior product designer for B2B and B2C products, from the first user interview to the design system.
+Senior product designer for B2B and B2C products and crowdfunding platforms.
 
 ## Summary
-I design B2B and B2C products end to end: research and user interviews, prototypes, design systems and analytics, with AI tools built into the work. Before design I spent seven years in law, which taught me precision and accountability for every decision.
+I design B2B and B2C products and crowdfunding platforms end to end: research and user interviews, prototypes, design systems and analytics, with AI tools built into the work. A background in law shaped how I work: precise, accountable for every decision and ready to defend it with evidence.
 
 ## Skills
 - **Product design:** design systems, prototyping, user research, user interviews, analytics, AI tools
-- **Accessibility:** WCAG 2.2, Apple HIG
-- **Tools:** Figma, Claude Code, Illustrator, Photoshop, InDesign, After Effects (basic), HTML/CSS basics
+- **Tools:** Figma, Adobe Suite, Claude Code, Lovable (AI tool), HTML/CSS basics
 
 ## Languages
 Ukrainian and Russian (native) · English (B2) · Norwegian (B1)
@@ -32,36 +31,39 @@ Ukrainian and Russian (native) · English (B2) · Norwegian (B1)
 
 ## Learning
 - Anthropic — Claude; Agent skills; Subagents, 2026
+- MD Academy — Design Engineering Pro Max, 2026
 - Warmy — Email deliverability expert, 2025
 - Conferences — AI in Web Design Conf, UI UX Online Summit, 2023
 - Awwwards Academy, 2020
 
 ## Experience
 
-**AnyBiz LTD / Product Designer / 2024 – Present** — remote, Ukrainian team
+**AnyBiz LTD / Product Designer / 2024 – Present** — remote; Ukrainian, Israeli and American company
 AI platform for B2B sales prospecting and outreach across email, LinkedIn and phone.
 - *draft* Design product features end to end, from user interviews and research to prototypes and handoff.
 - *draft* Build and maintain the design system the product is designed in.
 - *draft* Use product analytics to decide what to change and to check the result.
 - *draft* Prototype with AI tools to test flows before they reach engineering.
 
-**Warmy / UI/UX Designer / 2021 – Present**
-Email warm-up and deliverability tool that keeps campaigns out of spam.
-- *draft* Design the web app for mailbox health, warm-up progress and deliverability.
+**Warmy / Product Designer / 2021 – Present** — Ukrainian, Israeli and American company
+Email warm-up and deliverability tool that builds the sender's domain reputation.
+- Design the web app for mailbox health, warm-up progress and deliverability.
+- Design the deliverability AI agent.
+- Run UX research for the product.
 - Certified Email deliverability expert (Warmy Inbox Academy, 2025).
 
 **Scale Development AS / Senior Product Designer / 2023 – 2024** — Oslo, hybrid, part-time
 - *to add: what she did there*
 
-**AnyBiz LTD / UI/UX Designer / 2021 – 2022** — Ukraine / Israel
+**AnyBiz LTD / Warmy / Product Designer / 2021 – 2022** — Ukrainian and Israeli company
 Web and admin-panel design for the outreach platform.
 
 **Freelance / Brand and book design / 2023 – 2024** — Oslo
-- Logo for Stiupan Translations ENK, then UI/UX and book design for the same client.
+- Branding for Stiupan Translations ENK, then graphic design for the same client, book design included.
 - Layout of a 432-page family history book with 300+ images, printed by LOS DIGITAL AS in 2024.
 
 **DRON (personal project) / Product Designer / 2026**
-- Drone-as-a-service platform taken from research to a 134-page clickable prototype and a token-based design system, with a WCAG and HIG check on every decision. Built with Claude Code.
+- Drone-as-a-service platform taken from research to a 134-page clickable prototype and a token-based design system, with a WCAG check on every decision. Built with Claude Code.
 
 **Earlier**
 - Fakkeltog, Oslo / Project Manager / 2023
