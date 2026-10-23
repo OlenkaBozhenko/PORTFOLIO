@@ -2,16 +2,17 @@
 
 **Source of truth for the resume PDF** `assets/Olena-Bozhenko-Resume.pdf`, rendered from `resume.html`.
 Facts come from [`cv.md`](cv.md). Layout follows Josh Mateo's resume (inspiration D7): name and contacts in one row, one statement line, then Summary / Skills / Education on the left and Experience on the right.
-**Colour: black and white only** (designer, 2026-09-25) — ink `#000000` on `#FFFFFF`, secondary text `#555555` (7.46:1).
+**Colour: black and white only** (designer, 2026-09-25) — ink `#000000` on `#FFFFFF`, secondary text `#555555` (7.46:1). Exception (her call, 2026-10-24): the two header links, LinkedIn and the portfolio site, are blue `#0645AD` (7.9:1 on white) and underlined, so they read as links.
 
 Bullets marked *draft* are written from what she has said about the work; they carry no numbers because none were given. Replace them with her own wording and results.
 
 ---
 
 ## Header
-Olena Bozhenko · Bozhenko.ui.ux@gmail.com · +47 925 66 987 · linkedin.com/in/olena-bozhenko-b36071180 · behance.net/bozhenkoUI59ac
+Olena Bozhenko · Bozhenko.ui.ux@gmail.com · +47 925 66 987 · +38 097 620 7111 · [LinkedIn](https://www.linkedin.com/in/olena-bozhenko-b36071180/) · My portfolio site
 
-*To do (her call, 2026-10-23):* once the portfolio site is published, the portfolio link goes into the header; she adds it herself.
+LinkedIn and "My portfolio site" show as link text only, the URL sits behind the words (her call, 2026-10-24). Behance removed from the header.
+*To do:* once the portfolio site is published, its URL goes behind "My portfolio site"; she adds it herself.
 
 ## Statement
 Senior product designer for B2B and B2C products and crowdfunding platforms.
@@ -40,7 +41,7 @@ Ukrainian and Russian (native) · English (B2) · Norwegian (B1)
 
 ## Experience
 
-**AnyBiz LTD / Product Designer / 2024 – Present** — remote; Ukrainian, Israeli and American company
+**AnyBiz LTD / Product Designer / 2024 – Present** — Ukrainian, Israeli and American company
 AI platform for B2B sales prospecting and outreach across email, LinkedIn and phone.
 - *draft* Design product features end to end, from user interviews and research to prototypes and handoff.
 - *draft* Build and maintain the design system the product is designed in.
@@ -49,7 +50,7 @@ AI platform for B2B sales prospecting and outreach across email, LinkedIn and ph
 
 **Warmy / Product Designer / 2021 – Present** — Ukrainian, Israeli and American company
 Email warm-up and deliverability tool that builds the sender's domain reputation.
-- Design the web app for mailbox health, warm-up progress and deliverability.
+- Design the web app.
 - Design the deliverability AI agent.
 - Run UX research for the product.
 - Certified Email deliverability expert (Warmy Inbox Academy, 2025).
@@ -61,8 +62,8 @@ Email warm-up and deliverability tool that builds the sender's domain reputation
 Web and admin-panel design for the outreach platform.
 
 **Freelance / Brand and book design / 2023 – 2024** — Oslo
-- Branding for Stiupan Translations ENK, then graphic design for the same client, book design included.
-- Layout of a 432-page family history book with 300+ images, printed by LOS DIGITAL AS in 2024.
+- Branding for Stiupan Translations ENK.
+- Graphic design for a different client: layout of a 432-page family history book with 300+ images, printed by LOS DIGITAL AS in 2024.
 
 **DRON (personal project) / Product Designer / 2026**
 - Drone-as-a-service platform taken from research to a 134-page clickable prototype and a token-based design system, with a WCAG check on every decision. Built with Claude Code.

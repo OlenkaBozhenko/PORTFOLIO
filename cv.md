@@ -33,6 +33,7 @@ This file is the source for the site's About page, the journey timeline and the 
 ## Contact
 - Email: Bozhenko.ui.ux@gmail.com
 - Phone: +47 925 66 987
+- Phone (Ukraine): +38 097 620 7111 (her message 2026-10-24)
 - LinkedIn: linkedin.com/in/olena-bozhenko-b36071180
 - Behance: https://www.behance.net/bozhenkoUI59ac
 
