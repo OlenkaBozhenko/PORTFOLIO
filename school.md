@@ -65,5 +65,5 @@ Desktop is unchanged.
 - *View next work*: the project name on its own line under it, the arrow level with the name.
 - The pull-up photo is not shown.
 - Phone tiles grow with the phone instead of cutting it.
-- Customer journey map: *Teacher* and *Pupil* are one segmented switch (one map at a time), the stages close under it and close to each other; the stages scroll sideways as a slider, without the dotted line between them; the row labels (Goal, Thoughts and feelings, Problems, Solution) are hidden on screen but stay for screen readers. The tabs are buttons with `role="tab"`, 44 px high, arrow keys switch them.
+- Customer journey map: one bar holds the *Teacher | Pupil* switch (full width) and the four stages (*Attraction, Activation, Involvement, Retention*) as tabs, one active at a time; under it, the cards of the chosen stage, full width, one under another. The bar stays under the header while the map scrolls and lets go once the map ends. The row labels are hidden on screen but stay for screen readers. Tabs are buttons with `role="tab"`, at least 40 px high; arrow keys move between them.
 - The first screen runs edge to edge, with no side margins.

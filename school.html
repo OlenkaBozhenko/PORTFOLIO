@@ -213,7 +213,7 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 footer{border-top:1px solid var(--rule);padding-block:28px;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
-.cjm-tabs{display:none}
+.cjm-bar{display:none}
 /* phones only (her requests, 2026-10-24): the meta keeps the year and the platform; no side note by the section headings */
 @media (max-width:720px){
   .meta>div:not(:nth-child(2)):not(:nth-child(3)){display:none}
@@ -226,21 +226,27 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .next .nx{display:block;margin:4px 0 0}
   /* the pull-up photo is left out */
   .photo.tall:has(img[src*="pullups"]){display:none}
-  /* journey map: Teacher and Pupil as tabs, the stages as a sideways slider, no row labels */
-  /* Teacher | Pupil as one segmented switch; the stages sit close under it and close to each other */
-  .cjm-tabs{display:flex;width:max-content;gap:0;padding:4px;margin:28px 0 0;border-radius:999px;background:rgba(0,16,89,.07)}
-  .cjm-tabs button{font:600 13px/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;min-height:40px;padding:0 22px;border-radius:999px;border:0;background:none;color:var(--navy);cursor:pointer}
+  /* journey map (her request, 2026-10-24): one bar under the header holds the Teacher | Pupil switch, full width, and the four stages as tabs;
+     under it, the cards of the chosen stage, full width. The bar stays under the header while the map scrolls and lets go after it */
+  .cjm-bar{display:block;position:sticky;top:64px;z-index:5;background:var(--bg);padding:12px 0 10px;margin-top:16px}
+  .cjm-tabs{display:flex;padding:4px;border-radius:999px;background:rgba(0,16,89,.07)}
+  .cjm-tabs button,.cjm-stages button{font:600 13px/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;min-height:40px;border-radius:999px;cursor:pointer}
+  .cjm-tabs button{flex:1;border:0;background:none;color:var(--navy)}
   .cjm-tabs button[aria-selected="true"]{background:var(--navy);color:#fff}
   .cjm-tabs button.p[aria-selected="true"]{background:var(--yellow);color:var(--navy)}
+  .cjm-stages{display:flex;gap:8px;margin:10px calc(var(--gutter) * -1) 0;padding-inline:var(--gutter);overflow-x:auto;scrollbar-width:none}
+  .cjm-stages::-webkit-scrollbar{display:none}
+  .cjm-stages button{flex:none;padding:0 18px;border:1.5px solid var(--navy);background:var(--bg);color:var(--navy)}
+  .cjm-stages button[aria-selected="true"]{background:var(--navy);color:#fff}
+  .cjm-bar.p .cjm-stages button{border-color:var(--yellow)}
+  .cjm-bar.p .cjm-stages button[aria-selected="true"]{background:var(--yellow);color:var(--navy)}
   .cjm.off{display:none}
-  .cjm+.cjm{margin-top:0}
-  .cjm{scroll-snap-type:x mandatory;scroll-padding-inline:8px;scrollbar-width:none}
-  .cjm::-webkit-scrollbar{display:none}
-  .cjm table{min-width:0;width:880px;border-spacing:8px 12px}
-  .cjm col.rh{width:0}
-  .cjm thead td,.cjm tbody th{padding:0;white-space:nowrap;clip-path:inset(50%)}
-  .cjm thead th{scroll-snap-align:start}
-  .cjm thead th>div::after{display:none}
+  .cjm,.cjm+.cjm{margin:0;overflow:visible}
+  .cjm table,.cjm tbody,.cjm tr{display:block;width:auto;min-width:0}
+  .cjm thead,.cjm colgroup{display:none}
+  .cjm tbody th{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;padding:0}
+  .cjm tbody td{display:none;height:auto;min-height:88px;margin-top:12px}
+  .cjm[data-s="0"] tbody td:nth-of-type(1),.cjm[data-s="1"] tbody td:nth-of-type(2),.cjm[data-s="2"] tbody td:nth-of-type(3),.cjm[data-s="3"] tbody td:nth-of-type(4){display:block}
 }
 
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
@@ -555,23 +561,31 @@ html.menu-open{overflow:hidden}
 })();
 </script>
 <script>
-// journey map on a phone: Teacher and Pupil become tabs over one map at a time (her request, 2026-10-24); on a wider screen both maps stay and the tabs are hidden
+// journey map on a phone (her request, 2026-10-24): a Teacher | Pupil switch and the four stages as tabs, in one bar; one map and one stage at a time.
+// On a wider screen the bar is hidden and both maps show in full.
 (function(){
   var maps=[].slice.call(document.querySelectorAll('.cjm'));
   if(maps.length<2)return;
-  var bar=document.createElement('div');bar.className='cjm-tabs';bar.setAttribute('role','tablist');bar.setAttribute('aria-label','Journey map');
-  var tabs=maps.map(function(m,i){
-    if(!m.id)m.id='cjm-'+i;
-    var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.className=m.classList.contains('p')?'p':'t';
-    b.textContent=m.querySelector('caption').textContent.replace(' journey map','');b.setAttribute('aria-controls',m.id);
-    bar.appendChild(b);return b;
-  });
-  function pick(i){tabs.forEach(function(b,k){b.setAttribute('aria-selected',k===i?'true':'false');b.tabIndex=k===i?0:-1;maps[k].classList.toggle('off',k!==i)})}
-  tabs.forEach(function(b,i){
-    b.addEventListener('click',function(){pick(i)});
-    b.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(d){var n=(i+d+tabs.length)%tabs.length;pick(n);tabs[n].focus()}});
-  });
-  maps[0].parentNode.insertBefore(bar,maps[0]);pick(0);
+  var bar=document.createElement('div');bar.className='cjm-bar';
+  var sw=document.createElement('div');sw.className='cjm-tabs';sw.setAttribute('role','tablist');sw.setAttribute('aria-label','Journey map');
+  var st=document.createElement('div');st.className='cjm-stages';st.setAttribute('role','tablist');st.setAttribute('aria-label','Stage');
+  bar.appendChild(sw);bar.appendChild(st);
+  var who=0,stage=0,calm=matchMedia('(prefers-reduced-motion:reduce)');
+  function tab(box,text,cls){var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');if(cls)b.className=cls;b.textContent=text;box.appendChild(b);return b}
+  var tabs=maps.map(function(m,i){if(!m.id)m.id='cjm-'+i;var b=tab(sw,m.querySelector('caption').textContent.replace(' journey map',''),m.classList.contains('p')?'p':'t');b.setAttribute('aria-controls',m.id);return b});
+  var stabs=[].map.call(maps[0].querySelectorAll('thead th .cpill'),function(p){return tab(st,p.textContent.trim())});
+  function draw(){
+    tabs.forEach(function(b,k){b.setAttribute('aria-selected',k===who?'true':'false');b.tabIndex=k===who?0:-1;maps[k].classList.toggle('off',k!==who);maps[k].setAttribute('data-s',stage)});
+    stabs.forEach(function(b,k){b.setAttribute('aria-selected',k===stage?'true':'false');b.tabIndex=k===stage?0:-1;b.setAttribute('aria-controls',maps[who].id)});
+    bar.classList.toggle('p',maps[who].classList.contains('p'));
+  }
+  function wire(list,set){list.forEach(function(b,i){
+    b.addEventListener('click',function(){set(i)});
+    b.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(d){var n=(i+d+list.length)%list.length;set(n);list[n].focus()}});
+  })}
+  wire(tabs,function(i){who=i;draw()});
+  wire(stabs,function(i){stage=i;draw();st.scrollTo({left:stabs[i].offsetLeft-st.offsetLeft-16,behavior:calm.matches?'auto':'smooth'})});
+  maps[0].parentNode.insertBefore(bar,maps[0]);draw();
 })();
 </script>
 </body>
