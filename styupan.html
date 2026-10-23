@@ -196,6 +196,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (max-width:720px){
   .meta>div:not(:nth-child(2)){display:none}
   .sec-head>span{display:none}
+  /* the first screen runs edge to edge */
+  figure.intro{margin-inline:calc(var(--gutter) * -1)}
   /* next work: the project name on its own line, the arrow level with it */
   .next{align-items:flex-end}
   .next .nx{display:block;margin:4px 0 0}

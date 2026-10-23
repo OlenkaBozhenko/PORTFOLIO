@@ -219,21 +219,24 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .meta>div:not(:nth-child(2)):not(:nth-child(3)){display:none}
   .meta{justify-content:flex-start;gap:16px 48px}
   .sec-head>span{display:none}
+  /* the first screen runs edge to edge */
+  figure.hero{margin-inline:calc(var(--gutter) * -1)}
   /* next work: the project name on its own line, the arrow level with it */
   .next{align-items:flex-end}
   .next .nx{display:block;margin:4px 0 0}
   /* the pull-up photo is left out */
   .photo.tall:has(img[src*="pullups"]){display:none}
   /* journey map: Teacher and Pupil as tabs, the stages as a sideways slider, no row labels */
-  .cjm-tabs{display:flex;gap:8px;margin:28px 0 4px}
-  .cjm-tabs button{font:600 14px/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;min-height:44px;padding:0 22px;border-radius:999px;border:1.5px solid var(--navy);background:#fff;color:var(--navy);cursor:pointer}
+  /* Teacher | Pupil as one segmented switch; the stages sit close under it and close to each other */
+  .cjm-tabs{display:flex;width:max-content;gap:0;padding:4px;margin:28px 0 0;border-radius:999px;background:rgba(0,16,89,.07)}
+  .cjm-tabs button{font:600 13px/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;min-height:40px;padding:0 22px;border-radius:999px;border:0;background:none;color:var(--navy);cursor:pointer}
   .cjm-tabs button[aria-selected="true"]{background:var(--navy);color:#fff}
-  .cjm-tabs button.p[aria-selected="true"]{background:var(--yellow);border-color:var(--yellow);color:var(--navy)}
+  .cjm-tabs button.p[aria-selected="true"]{background:var(--yellow);color:var(--navy)}
   .cjm.off{display:none}
   .cjm+.cjm{margin-top:0}
   .cjm{scroll-snap-type:x mandatory;scroll-padding-inline:8px;scrollbar-width:none}
   .cjm::-webkit-scrollbar{display:none}
-  .cjm table{min-width:0;width:1120px}
+  .cjm table{min-width:0;width:880px;border-spacing:8px 12px}
   .cjm col.rh{width:0}
   .cjm thead td,.cjm tbody th{padding:0;white-space:nowrap;clip-path:inset(50%)}
   .cjm thead th{scroll-snap-align:start}

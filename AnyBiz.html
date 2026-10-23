@@ -376,10 +376,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .legend{display:grid;grid-template-columns:repeat(2,max-content);gap:10px 28px;font-size:14px}
   .legend span{gap:6px;white-space:nowrap}
   .legend i{width:8px;height:8px}
-  /* screen previews: the browser and the phone sit wholly inside the grey panel */
-  .stage{aspect-ratio:1/1}
-  .stage .browser{left:5%;right:auto;top:7%;width:90%}
-  .stage .dev{left:8%;bottom:6%;width:28%}
+  /* screen previews: the browser alone, full width, no grey panel and no phone (her request, 2026-10-24) */
+  .stage{aspect-ratio:auto;background:none}
+  .stage .browser{position:relative;left:auto;right:auto;top:auto;width:100%}
+  .stage .dev{display:none}
+  /* feature panels without the grey ground: the cards alone, full width */
+  .g .fpanel,.g .fpanel.ipanel,.fcard .fpanel,.fpanel{background:none;padding:0}
+  /* the first screen runs edge to edge */
+  #hello{margin-inline:calc(var(--gutter) * -1)}
 }
 
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */

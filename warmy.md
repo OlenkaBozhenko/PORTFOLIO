@@ -164,4 +164,6 @@ Desktop is unchanged.
 - First screen: *Warmy magic is on the way…* at 16 px on one line; the prompt field holds two lines from the start, so typing never moves anything.
 - Feature cards (*Placement you can prove*, *Warm-up that knows when it is done*): the two UI cards go full width, one under the other, the second a little over the first.
 - The Adeline AI phone is drawn at its 320 px design size and scaled to 80 %, with room on both sides, so the questions, the input and the fine print are not cut.
-- Screen previews (browser + phone): both sit wholly inside the grey panel.
+- Screen previews: the browser alone, full width; no grey panel and no phone.
+- Card mockups without the grey panel: the cards alone, full width.
+- The first screen runs edge to edge, with no side margins.

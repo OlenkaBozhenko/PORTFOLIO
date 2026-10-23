@@ -129,4 +129,6 @@ Desktop is unchanged.
 - The ticker at the end (*Hire AI agents*…) is not shown.
 - Instructions prototype: only the email preview; no instruction bubbles, no grey panel, no *Connect email* chip.
 - The session-recording legend (Hesitation, Rage click, Dead click, Drop-off) in two rows of two.
-- Screen previews (browser + phone): both sit wholly inside the grey panel.
+- Screen previews: the browser alone, full width; no grey panel and no phone.
+- Card mockups without the grey panel: the cards alone, full width.
+- The first screen runs edge to edge, with no side margins.

@@ -70,3 +70,4 @@ Desktop is unchanged.
 - Spreads: the caption sits under the grey card, without the page numbers.
 - No side note *8 of 216* next to *Spreads*.
 - *View next work*: the project name on its own line under it, the arrow level with the name.
+- The first screen runs edge to edge, with no side margins.

@@ -79,3 +79,5 @@ Desktop is unchanged.
 - The meta under the title keeps only the year and the platform.
 - No side note next to the section headings (the heading alone).
 - *View next work*: the project name on its own line under it, the arrow level with the name.
+- The first screen runs edge to edge, with no side margins.
+- Product screens and cards (campaign page, card and Vipps phones, Our donors, donation settings, admin dashboard) without the grey or teal ground, full width; the paying-phone flow keeps its teal.

@@ -378,10 +378,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   /* the Adeline phone is drawn at its own 320 px and scaled down, so nothing inside is cut */
   .protopanel{padding:28px 0}
   .protopanel .ph{width:320px;zoom:.8}
-  /* screen previews: the browser and the phone sit wholly inside the grey panel */
-  .stage{aspect-ratio:1/1}
-  .stage .browser{left:5%;right:auto;top:7%;width:90%}
-  .stage .dev{left:8%;bottom:6%;width:28%}
+  /* screen previews: the browser alone, full width, no grey panel and no phone (her request, 2026-10-24) */
+  .stage{aspect-ratio:auto;background:none}
+  .stage .browser{position:relative;left:auto;right:auto;top:auto;width:100%}
+  .stage .dev{display:none}
+  /* feature panels without the grey ground: the cards alone, full width */
+  .g .fpanel,.fcard .fpanel,.fpanel{background:none;padding:0}
+  /* the first screen runs edge to edge */
+  #magic{margin-inline:calc(var(--gutter) * -1)}
 }
 
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
