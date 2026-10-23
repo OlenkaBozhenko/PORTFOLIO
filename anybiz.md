@@ -133,3 +133,4 @@ Desktop is unchanged.
 - Card mockups without the grey panel: the cards alone, full width.
 - Where the ground is gone, the screens and cards keep a small shadow all round, so the top edge shows too.
 - The first screen runs edge to edge, with no side margins.
+- Spacing by proximity: a headline 32 px from its content, a caption 20 px from its picture, two paragraphs of one text 16 px apart, blocks of a section 56 px apart, sections 104 px apart (the four sub-sections too).

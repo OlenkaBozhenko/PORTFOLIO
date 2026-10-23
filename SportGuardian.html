@@ -239,6 +239,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .panel:not(:has(.pf)){background:none;padding:0}
   .panel.r45{aspect-ratio:auto}
   .el,.el.c,.el.d{max-width:none}
+  /* spacing by proximity (her request, 2026-10-24): the two payment phones and the Card or Vipps note read as one group;
+     On the street sits close to the posters it introduces, In the club close to the decks it describes */
+  .g>figure.pfw{margin-top:-32px}
+  .g>.pay-cap{margin-top:-40px}
+  .g>p.cap.c1-4+figure{margin-top:-36px}
+  .g>p.cap.c10-12{margin-top:-40px}
   /* without the ground, a small shadow all round (the top edge shows too) keeps the screens and cards off the page; nothing clips it */
   .panel:not(:has(.pf)){overflow:visible}
   .panel:not(:has(.pf)) .browser,.el,.cards.pay>img{box-shadow:0 0 0 1px rgba(15,23,42,.05),0 2px 6px rgba(15,23,42,.07),0 12px 28px -8px rgba(15,23,42,.22)}

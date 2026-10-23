@@ -376,6 +376,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .fcard .wc:first-child{padding-bottom:36px}
   .fcard .wc+.wc{margin-top:-18px}
   .fcard .cap{padding-top:28px}
+  /* spacing by proximity (her request, 2026-10-24): a headline sits close to its content (32 px), a caption close to its picture (20 px),
+     blocks of one section 56 px apart, sections 104 px apart */
+  .g>.big+*{margin-top:-24px}
+  .g>.cap+figure{margin-top:-36px}
+  .g>.src{margin-top:-40px}
   /* the Adeline phone is drawn at its own 320 px and scaled down, so nothing inside is cut */
   .protopanel{padding:28px 0}
   .protopanel .ph{width:320px;zoom:.8}

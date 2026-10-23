@@ -82,3 +82,4 @@ Desktop is unchanged.
 - The first screen runs edge to edge, with no side margins.
 - Product screens and cards (campaign page, card and Vipps phones, Our donors, donation settings, admin dashboard) without the grey or teal ground, full width; the paying-phone flow keeps its teal.
 - Where the ground is gone, the screens and cards keep a small shadow all round, so the top edge shows too.
+- Spacing by proximity: the two payment phones 24 px apart and *Card or Vipps* 16 px under them; *On the street* 20 px above the posters; *In the club* 16 px under the decks.

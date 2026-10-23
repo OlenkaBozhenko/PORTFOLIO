@@ -361,6 +361,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   /* the brand-awareness and persona cards, the ticker at the end and the Connect email chip are left out */
   .fcard:has(.sched),.fcard:has(.av2),.gal:has(#mosaic){display:none}
   .mcard .hd .cn{display:none}
+  /* spacing by proximity (her request, 2026-10-24): a headline sits close to its content (32 px), a caption close to its picture (20 px),
+     blocks of one section 56 px apart, sections 104 px apart */
+  .g>.big+*{margin-top:-24px}
+  .g>.cap+figure{margin-top:-36px}
+  .g>.big.tight{margin-top:48px}
+  .g>.lead+.lead{margin-top:-40px}
   /* first screen: smaller chips, centred; four do not fit one line at 375 px, so they wrap two by two */
   .chips{gap:6px}
   .chips span{font-size:11px;padding:5px 10px}
@@ -382,7 +388,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .stage .dev{display:none}
   /* without the ground, a small shadow all round (the top edge shows too) keeps the screens and cards off the page; nothing clips it */
   .stage,.fpanel,.fcard .ui{overflow:visible}
-  .stage .browser,.ipanel .browser{box-shadow:0 0 0 1px rgba(15,23,42,.05),0 2px 6px rgba(15,23,42,.07),0 12px 28px -8px rgba(15,23,42,.22)}
+  .stage .browser,.ipanel .browser{box-shadow:0 0 0 1px rgba(15,23,42,.08),0 4px 10px rgba(15,23,42,.14),0 16px 32px -8px rgba(15,23,42,.32)}
   /* feature panels without the grey ground: the cards alone, full width */
   .g .fpanel,.g .fpanel.ipanel,.fcard .fpanel,.fpanel{background:none;padding:0}
   /* the first screen runs edge to edge */

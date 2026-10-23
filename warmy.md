@@ -169,3 +169,4 @@ Desktop is unchanged.
 - Where the ground is gone, the screens and cards keep a small shadow all round, so the top edge shows too.
 - The first screen runs edge to edge, with no side margins.
 - Feature cards: 28 px between the cards and their caption.
+- Spacing by proximity: a headline 32 px from its content, a caption 20 px from its picture, the source note 16 px under the template, blocks of a section 56 px apart, sections 104 px apart.
