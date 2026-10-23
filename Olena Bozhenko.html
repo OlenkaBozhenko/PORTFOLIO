@@ -191,6 +191,10 @@ section{padding-block:clamp(72px,10vw,140px)}
 .book-well{background:#E9E9E6;text-decoration:none}
 .book-well img{width:100%;height:100%;object-fit:contain}
 .well img.fill{width:100%;height:100%;object-fit:cover}
+/* AnyBiz thumbnail: the logo and its line on the product's night ground with the violet and sky glows (her request, 2026-10-24) */
+.well.ab{flex-direction:column;gap:clamp(14px,2vw,24px);text-decoration:none;background:radial-gradient(60% 55% at 15% 90%,rgba(124,58,237,.34),transparent 70%),radial-gradient(45% 45% at 88% 12%,rgba(56,189,248,.16),transparent 70%),#020617}
+.ab-logo{width:42%;height:auto}
+.ab-line{font-weight:600;font-size:clamp(15px,1.6vw,22px);letter-spacing:.08em;text-transform:uppercase;color:#A78BFA}
 
 /* about */
 .about{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,4vw,64px);padding-top:48px}
@@ -410,23 +414,7 @@ html.menu-open{overflow:hidden}
           <p>A B2B platform that finds prospects and reaches them by email, LinkedIn and phone, with AI sales agents, drip campaigns and CRM integration.</p>
           <a class="view" href="AnyBiz.html">View AnyBiz project <span class="arrow" aria-hidden="true">→</span></a>
         </div>
-        <div class="well grid" role="img" aria-label="AnyBiz interface fragments: an outreach sequence of email, LinkedIn and call steps, and the channels a campaign uses.">
-          <div class="ui" style="left:8%;top:12%;width:46%">
-            <span class="t">Campaign</span><span class="h">Q4 outreach · Nordic SaaS</span>
-            <ol class="steps">
-              <li><span class="dot on">1</span>Email · intro</li>
-              <li class="wait">wait 2 days</li>
-              <li><span class="dot">2</span>LinkedIn · connect</li>
-              <li class="wait">wait 3 days</li>
-              <li><span class="dot">3</span>Call · AI agent</li>
-            </ol>
-          </div>
-          <div class="ui" style="right:7%;bottom:14%;width:40%">
-            <span class="t">Channels</span>
-            <div class="chips"><span>Email</span><span>LinkedIn</span><span>Phone</span><span>CRM sync</span></div>
-            <span class="t">Follow-ups</span><div class="bar"><i style="width:62%"></i></div>
-          </div>
-        </div>
+        <a class="well ab" href="AnyBiz.html" tabindex="-1" aria-hidden="true"><img class="ab-logo" src="assets/work/anybiz/logo.svg" alt="" width="262" height="88"><span class="ab-line">AI sales outreach</span></a>
       </li>
 
       <li class="row">
