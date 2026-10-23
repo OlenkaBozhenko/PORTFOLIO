@@ -234,12 +234,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .cjm-tabs button{flex:1;border:0;background:none;color:var(--navy)}
   .cjm-tabs button[aria-selected="true"]{background:var(--navy);color:#fff}
   .cjm-tabs button.p[aria-selected="true"]{background:var(--yellow);color:var(--navy)}
-  /* the stage is a native dropdown: a full-width pill with a chevron, the phone's own picker opens on tap (her request, 2026-10-24) */
-  .cjm-stage{display:block;position:relative;margin-top:10px}
-  .cjm-stage select{appearance:none;-webkit-appearance:none;width:100%;min-height:44px;padding:0 48px 0 20px;border:1.5px solid var(--navy);border-radius:999px;background:var(--navy);color:#fff;font:600 13px/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;cursor:pointer}
-  .cjm-stage::after{content:"";position:absolute;right:22px;top:50%;width:8px;height:8px;margin-top:-6px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg);pointer-events:none}
-  .cjm-bar.p .cjm-stage select{background:var(--yellow);border-color:var(--yellow);color:var(--navy)}
-  .cjm-bar.p .cjm-stage::after{border-color:var(--navy)}
+  /* the stage is a dropdown: a full-width pill with a chevron; the open list is white with rounded corners and a shadow, grey under the finger (her request, 2026-10-24) */
+  .cjm-stage{position:relative;margin-top:10px}
+  .cjm-stage>button{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:44px;padding:0 22px 0 20px;border:0;border-radius:999px;background:var(--navy);color:#fff;font:600 13px/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;cursor:pointer}
+  .cjm-stage>button::after{content:"";width:8px;height:8px;margin-top:-4px;border:solid currentColor;border-width:0 2px 2px 0;transform:rotate(45deg);transition:transform .2s}
+  .cjm-stage>button[aria-expanded="true"]::after{transform:rotate(225deg);margin-top:4px}
+  .cjm-bar.p .cjm-stage>button{background:var(--yellow);color:var(--navy)}
+  .cjm-stage ul{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:6;margin:0;padding:6px;list-style:none;background:var(--bg);border-radius:16px;box-shadow:0 1px 2px rgba(15,23,42,.08),0 14px 32px -10px rgba(15,23,42,.3)}
+  .cjm-stage ul:focus{outline:none}
+  .cjm-stage li{display:flex;align-items:center;min-height:44px;padding:0 14px;border-radius:10px;font:600 13px/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--navy);cursor:pointer}
+  .cjm-stage li:hover,.cjm-stage li.act{background:rgba(0,16,89,.07)}
+  .cjm-stage ul:focus-visible li.act{outline:2px solid var(--navy);outline-offset:-2px}
+  .cjm-stage li[aria-selected="true"]::after{content:"";margin-left:auto;width:10px;height:5px;margin-top:-3px;border:solid currentColor;border-width:0 0 2px 2px;transform:rotate(-45deg)}
+  @media (prefers-reduced-motion:reduce){.cjm-stage>button::after{transition:none}}
   .cjm.off{display:none}
   .cjm,.cjm+.cjm{margin:0;overflow:visible}
   .cjm table,.cjm tbody,.cjm tr{display:block;width:auto;min-width:0}
@@ -568,16 +575,18 @@ html.menu-open{overflow:hidden}
   if(maps.length<2)return;
   var bar=document.createElement('div');bar.className='cjm-bar';
   var sw=document.createElement('div');sw.className='cjm-tabs';sw.setAttribute('role','tablist');sw.setAttribute('aria-label','Journey map');
-  var st=document.createElement('label');st.className='cjm-stage';st.innerHTML='<span class="vh">Stage</span><select></select>';
-  var sel=st.querySelector('select');
+  var st=document.createElement('div');st.className='cjm-stage';
+  st.innerHTML='<button type="button" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="cjm-sl cjm-sv"><span class="vh" id="cjm-sl">Stage:</span><span id="cjm-sv"></span></button><ul role="listbox" id="cjm-sx" tabindex="-1" aria-labelledby="cjm-sl" hidden></ul>';
+  var sb=st.querySelector('button'),sx=st.querySelector('ul'),sv=st.querySelector('#cjm-sv'),act=0;
   bar.appendChild(sw);bar.appendChild(st);
   var who=0,stage=0;
   function tab(box,text,cls){var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');if(cls)b.className=cls;b.textContent=text;box.appendChild(b);return b}
   var tabs=maps.map(function(m,i){if(!m.id)m.id='cjm-'+i;var b=tab(sw,m.querySelector('caption').textContent.replace(' journey map',''),m.classList.contains('p')?'p':'t');b.setAttribute('aria-controls',m.id);return b});
-  [].forEach.call(maps[0].querySelectorAll('thead th .cpill'),function(p,i){var o=document.createElement('option');o.value=i;o.textContent=p.textContent.trim();sel.appendChild(o)});
+  var opts=[].map.call(maps[0].querySelectorAll('thead th .cpill'),function(p,i){var o=document.createElement('li');o.setAttribute('role','option');o.id='cjm-so'+i;o.textContent=p.textContent.trim();sx.appendChild(o);return o});
+  sb.setAttribute('aria-controls','cjm-sx');
   function draw(){
     tabs.forEach(function(b,k){b.setAttribute('aria-selected',k===who?'true':'false');b.tabIndex=k===who?0:-1;maps[k].classList.toggle('off',k!==who);maps[k].setAttribute('data-s',stage)});
-    sel.value=stage;sel.setAttribute('aria-controls',maps[who].id);
+    opts.forEach(function(o,k){o.setAttribute('aria-selected',k===stage?'true':'false')});sv.textContent=opts[stage].textContent;
     bar.classList.toggle('p',maps[who].classList.contains('p'));
   }
   function wire(list,set){list.forEach(function(b,i){
@@ -585,7 +594,25 @@ html.menu-open{overflow:hidden}
     b.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(d){var n=(i+d+list.length)%list.length;set(n);list[n].focus()}});
   })}
   wire(tabs,function(i){who=i;draw()});
-  sel.addEventListener('change',function(){stage=+sel.value;draw()});
+  // the dropdown: a button and a listbox; arrows move, Enter or Space picks, Escape or a tap outside closes
+  function mark(i){act=i;opts.forEach(function(o,k){o.classList.toggle('act',k===i)});sx.setAttribute('aria-activedescendant',opts[i].id)}
+  function open(){sx.hidden=false;sb.setAttribute('aria-expanded','true');mark(stage);sx.focus()}
+  function shut(back){sx.hidden=true;sb.setAttribute('aria-expanded','false');if(back)sb.focus()}
+  function pick(i){stage=i;draw();shut(true)}
+  sb.addEventListener('click',function(){sx.hidden?open():shut(false)});
+  sb.addEventListener('keydown',function(e){if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();open()}});
+  opts.forEach(function(o,i){o.addEventListener('click',function(){pick(i)});o.addEventListener('mousemove',function(){mark(i)})});
+  sx.addEventListener('keydown',function(e){
+    var n=opts.length;
+    if(e.key==='ArrowDown'){e.preventDefault();mark((act+1)%n)}
+    else if(e.key==='ArrowUp'){e.preventDefault();mark((act-1+n)%n)}
+    else if(e.key==='Home'){e.preventDefault();mark(0)}
+    else if(e.key==='End'){e.preventDefault();mark(n-1)}
+    else if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(act)}
+    else if(e.key==='Escape'){e.preventDefault();shut(true)}
+    else if(e.key==='Tab'){shut(false)}
+  });
+  document.addEventListener('click',function(e){if(!st.contains(e.target)&&!sx.hidden)shut(false)});
   maps[0].parentNode.insertBefore(bar,maps[0]);draw();
 })();
 </script>
