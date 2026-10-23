@@ -93,7 +93,7 @@ Two groups, each newest first (her request, 2026-10-23: courses and conferences 
 
 ## Footer (every page)
 
-"© 2026 Olena Bozhenko" on the left, "Oslo, Norway" on the right ("works remotely" removed 2026-10-09, her request).
+"© 2026 Olena Bozhenko" on the left, "Product Designer" on the right (was "Oslo, Norway" until 2026-10-24, her request, desktop and mobile; "works remotely" removed 2026-10-09).
 
 ## Punctuation on the site
 
