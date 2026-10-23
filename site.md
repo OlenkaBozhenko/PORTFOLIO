@@ -23,7 +23,7 @@ Built from [`inspiration.md`](inspiration.md) (decisions D1–D9) and [`cv.md`](
    - *Standards (the phrase blocks are functional, unlike the other blocks):* **WCAG 2.5.7 Dragging Movements** — passes: a single tap/click places a phrase. **2.1.1 Keyboard** — passes: each phrase is a `<button>` in a group named "Finish the headline". **4.1.2** — each button is named "Finish the headline with: {phrase}". **2.5.8 Target Size** — the smallest phrase button is 44 px high (minimum 24). **2.4.6 Headings** — the `h1` is never read as an unfinished sentence. **1.4.3** — phrases are ink `#0E0E0E` on white, 19.3:1. **1.4.11** — the empty slot's dashed border is ink, 19.3:1 (minimum 3:1). **2.3.3** (AAA, not required) — the fly-out and the drop animation are off under `prefers-reduced-motion`. The fly-out lasts about 1 s (0.9 s each, 70 ms apart), under the 5 s of 2.2.2. The phrases sit above the headline's box (revised 2026-09-26, her layout places one on the slot's corner); the other blocks sit under the headline and the subtitle.
    - *Standards:* the other blocks are decoration (`aria-hidden`), so dragging them carries no information and no function — WCAG 2.5.7 Dragging Movements and 2.1.1 Keyboard apply to functionality, and none is lost for a keyboard or single-pointer user. The label blue `#2B3BD6` on white is 7.78:1, the icons use the same colour.
 3. **Work** (D2–D5; karoliskosas.com titles + rmd-studio.com rows) — section heading **Case Studies** (was *Selected work* until 2026-09-26, designer), with the side note *B2B SaaS and personal work* (replaced *8 projects* on 2026-09-26: no count, so projects can be added or removed freely). Seven rows. Left: "Name — descriptor", one-paragraph description, meta (Role · Year · Platform), a **View {project} project** link on a full-width rule. Right: a large image on a pale background, no device mockup. SaaS projects show UI fragments on a gridded panel (ramos-app).
-4. **About** (D6, joshmateo.com) — photo, short bio, personal qualities, link to the full About page.
+4. **About** (D6, joshmateo.com) — photo, short bio, personal qualities. The "Full About page" link removed 2026-10-23 (her call).
 5. **Testimonials** (D6) — quote, name, role.
 6. **Learning** — courses, certificates, conferences.
 7. **Contact** — email (selectable text + Copy), LinkedIn, Resume (PDF). Behance removed from the landing 2026-10-23 (her call).
@@ -58,7 +58,8 @@ Research note, for her to decide: hiring managers spend about 10 s on the homepa
 ## About (teaser)
 - Photo: black-and-white portrait from her Figma file (My projects, node 159:59103), 2026-09-25 — `assets/about/olena-bozhenko.jpg` (720 × 935, served) and `olena-bozhenko-master.jpg` (986 × 1280). Shown uncropped at its own 986:1280 ratio.
 - Bio: the About draft in `cv.md`, shortened to two paragraphs.
-- Qualities: loves learning · goes to design and AI conferences · precise and accountable (seven years in law) · works in Ukrainian, English and Norwegian.
+- Qualities: loves learning · goes to design and AI conferences · works with Ukrainian, Israeli, Norwegian and American companies (2026-10-23, her wording; "precise and accountable" and the languages line removed).
+- Bio opens "I'm a senior product designer." with no city (2026-10-23, her call).
 
 ## Testimonials
 Maiia Stiupan (Owner, Stiupan Translations ENK) and Amund Gulsvik (Professor emeritus, University of Bergen) — quotes from `cv.md`. Tor Martin Olsen (Scale Group AS) — **draft quote, not his words yet; needs his approval and job title before launch** (`cv.md`). **Contacts are not shown on the landing; consent to publish names is still to be confirmed.**
