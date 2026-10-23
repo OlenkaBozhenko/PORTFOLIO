@@ -63,7 +63,7 @@ Web and admin-panel design for the outreach platform.
 
 **Freelance / Brand and book design / 2023 – 2024** — Oslo
 - Branding for Stiupan Translations ENK.
-- Graphic design for a different client: layout of a 432-page family history book with 300+ images, printed by LOS DIGITAL AS in 2024.
+- Graphic design: layout of a 432-page family history book with 300+ images, printed by LOS DIGITAL AS in 2024.
 
 **DRON (personal project) / Product Designer / 2026**
 - Drone-as-a-service platform taken from research to a 134-page clickable prototype and a token-based design system, with a WCAG check on every decision. Built with Claude Code.
