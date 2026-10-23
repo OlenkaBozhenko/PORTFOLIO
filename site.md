@@ -62,6 +62,7 @@ Research note, for her to decide: hiring managers spend about 10 s on the homepa
 - Bio opens "I'm a senior product designer." with no city (2026-10-23, her call).
 
 ## Testimonials
+Heading: "What owners say" (2026-10-23, her call; was "What clients say").
 Maiia Stiupan (Owner, Stiupan Translations ENK) and Amund Gulsvik (Professor emeritus, University of Bergen) — quotes from `cv.md`. Tor Martin Olsen (Scale Group AS) — **draft quote, not his words yet; needs his approval and job title before launch** (`cv.md`). **Contacts are not shown on the landing; consent to publish names is still to be confirmed.**
 
 ## Learning
