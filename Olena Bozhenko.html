@@ -243,6 +243,13 @@ figure.q figcaption b{display:block;color:var(--ink);font-weight:500}
 .btn.ghost{background:var(--bg);color:var(--ink)}
 .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
 .status{font-size:14px;color:var(--muted);min-height:1.5em;margin-top:12px}
+/* on a phone the three contact buttons run full width, one under the other; the Copied line sits under them (her request, 2026-10-24) */
+@media (max-width:720px){
+  .contact .wrap{display:flex;flex-direction:column}
+  .mail .btn,.links .btn{width:100%;justify-content:center}
+  .links{flex-direction:column;margin-top:12px}
+  .status{order:1;margin-top:8px}
+}
 footer{border-top:1px solid var(--rule);padding-block:28px;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 /* custom cursor (site.md, Structure 8) */

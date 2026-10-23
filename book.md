@@ -68,3 +68,4 @@ Desktop is unchanged.
 
 - The meta under the title keeps only the year (this case has no platform).
 - Spreads: the caption sits under the grey card, without the page numbers.
+- No side note *8 of 216* next to *Spreads*.

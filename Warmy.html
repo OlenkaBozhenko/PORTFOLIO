@@ -358,9 +358,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .sec-head>span{display:none}
   /* first screen: smaller type and prompt */
   .loader{gap:14px}
-  .tip{font-size:22px}
+  .tip{font-size:16px;max-width:none;white-space:nowrap}
   .prompt{width:90%;padding:12px 14px 10px;border-radius:18px}
-  .prompt .pq{font-size:14px}
+  /* the field keeps two lines from the start, so typing never moves anything */
+  .prompt .pq{font-size:14px;line-height:1.45;height:2.9em;align-items:flex-start}
   .prompt .prow{gap:12px;margin-top:8px;font-size:12px}
   .prompt .prow svg{width:15px;height:15px}
   .prompt .go{width:32px;height:32px}

@@ -160,7 +160,7 @@ Desktop is unchanged.
 
 - The meta under the title keeps only the year and the platform.
 - No side note next to the section headings (the heading alone).
-- First screen: smaller type, smaller prompt.
+- First screen: *Warmy magic is on the way…* at 16 px on one line; the prompt field holds two lines from the start, so typing never moves anything.
 - Feature cards (*Placement you can prove*, *Warm-up that knows when it is done*): the two UI cards go full width, one under the other, the second a little over the first.
 - The Adeline AI phone is drawn at its 320 px design size and scaled to 90 %, so the questions, the input and the fine print are not cut.
 - Screen previews (browser + phone): both sit wholly inside the grey panel.
