@@ -214,6 +214,8 @@ figure.q figcaption b{display:block;color:var(--ink);font-weight:500}
 
 /* learning */
 .learn{list-style:none;margin:0;padding:0}
+/* courses and conferences apart (her request, 2026-10-23) */
+.learn-h{font-size:clamp(20px,2vw,26px);font-weight:400;letter-spacing:-.02em;line-height:1.2;margin:clamp(28px,4vw,48px) 0 4px}
 .learn li{display:grid;grid-template-columns:120px minmax(0,1fr) minmax(0,220px);gap:24px;padding-block:18px;border-bottom:1px solid var(--rule);align-items:baseline}
 .learn time{color:var(--muted);font-variant-numeric:tabular-nums;font-size:15px}
 .learn .who{color:var(--muted);font-size:15px}
@@ -461,20 +463,24 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <section aria-labelledby="learn-title" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head"><h2 id="learn-title">Learning</h2><span class="count">Courses · certificates · conferences</span></div>
-    <ul class="learn">
+    <h3 class="learn-h" id="learn-courses">Courses and certificates</h3>
+    <ul class="learn" aria-labelledby="learn-courses">
       <li><time datetime="2026-09">Sep 2026</time><span>Design Engineering Pro Max</span><span class="who">MD Academy</span></li>
       <li><time datetime="2026-06">Jun 2026</time><span>Subagents · Agent skills</span><span class="who">Anthropic</span></li>
-      <li><time datetime="2026-05">May 2026</time><span>DOU Day 2026</span><span class="who">Conference · Kyiv</span></li>
       <li><time datetime="2026-03">Mar 2026</time><span>Claude</span><span class="who">Anthropic</span></li>
       <li><time datetime="2025-11">Nov 2025</time><span>Email deliverability expert</span><span class="who">Warmy</span></li>
-      <li><time datetime="2025">2025</time><span>STHLM Xperience Conference</span><span class="who">Conference · Stockholm</span></li>
-      <li><time datetime="2025-05">May 2025</time><span>DOU Day 2025</span><span class="who">Conference · Kyiv</span></li>
-      <li><time datetime="2024-08">Aug 2024</time><span>UX Nordic 2024</span><span class="who">Conference · Aarhus</span></li>
-      <li><time datetime="2023-08">Aug 2023</time><span>UX Nordic 2023</span><span class="who">Conference · Aarhus</span></li>
-      <li><time datetime="2023-06">Jun 2023</time><span>AI in Web Design Conf 23</span><span class="who">Conference · Geekle</span></li>
-      <li><time datetime="2023-02">Feb 2023</time><span>UI UX Online Summit 23</span><span class="who">Conference · Geekle</span></li>
       <li><time datetime="2022">2022</time><span>Foundations of User Experience Design</span><span class="who">Google</span></li>
       <li><time datetime="2020">2020</time><span>Contemporary trends and award-winning experiences</span><span class="who">Awwwards Academy</span></li>
+    </ul>
+    <h3 class="learn-h" id="learn-conf">Conferences</h3>
+    <ul class="learn" aria-labelledby="learn-conf">
+      <li><time datetime="2026-05">May 2026</time><span>DOU Day 2026</span><span class="who">Kyiv</span></li>
+      <li><time datetime="2025">2025</time><span>STHLM Xperience Conference</span><span class="who">Stockholm</span></li>
+      <li><time datetime="2025-05">May 2025</time><span>DOU Day 2025</span><span class="who">Kyiv</span></li>
+      <li><time datetime="2024-08">Aug 2024</time><span>UX Nordic 2024</span><span class="who">Aarhus</span></li>
+      <li><time datetime="2023-08">Aug 2023</time><span>UX Nordic 2023</span><span class="who">Aarhus</span></li>
+      <li><time datetime="2023-06">Jun 2023</time><span>AI in Web Design Conf 23</span><span class="who">Geekle</span></li>
+      <li><time datetime="2023-02">Feb 2023</time><span>UI UX Online Summit 23</span><span class="who">Geekle</span></li>
     </ul>
   </div>
 </section>

@@ -64,7 +64,9 @@ Research note, for her to decide: hiring managers spend about 10 s on the homepa
 Maiia Stiupan (Owner, Stiupan Translations ENK) and Amund Gulsvik (Professor emeritus, University of Bergen) — quotes from `cv.md`. Tor Martin Olsen (Scale Group AS) — **draft quote, not his words yet; needs his approval and job title before launch** (`cv.md`). **Contacts are not shown on the landing; consent to publish names is still to be confirmed.**
 
 ## Learning
-MD Academy — Design Engineering Pro Max (May – Sep 2026) · Anthropic — Subagents, Agent skills (Jun 2026), Claude (Mar 2026) · DOU Day 2026 (May 2026, Kyiv) · Warmy — Email deliverability expert (Nov 2025) · STHLM Xperience Conference (2025, Stockholm) · DOU Day 2025 (May 2025, Kyiv) · UX Nordic 2024 (Aug 2024, Aarhus) · UX Nordic 2023 (Aug 2023, Aarhus) · AI in Web Design Conf 23 (Jun 2023) · UI UX Online Summit 23 (Feb 2023) · Google — Foundations of UX Design · Awwwards Academy (2020).
+Two groups, each newest first (her request, 2026-10-23: courses and conferences apart), under small headings in the section.
+- **Courses and certificates:** MD Academy — Design Engineering Pro Max (May – Sep 2026) · Anthropic — Subagents, Agent skills (Jun 2026), Claude (Mar 2026) · Warmy — Email deliverability expert (Nov 2025) · Google — Foundations of UX Design (2022) · Awwwards Academy — Contemporary trends and award-winning experiences (2020).
+- **Conferences** (the place in the right column, "Conference ·" dropped as the heading says it): DOU Day 2026 (May 2026, Kyiv) · STHLM Xperience Conference (2025, Stockholm) · DOU Day 2025 (May 2025, Kyiv) · UX Nordic 2024 (Aug 2024, Aarhus) · UX Nordic 2023 (Aug 2023, Aarhus) · AI in Web Design Conf 23 (Jun 2023, Geekle) · UI UX Online Summit 23 (Feb 2023, Geekle).
 
 ## Type and colour
 - **Typeface: Inter Tight** (Google Fonts, open licence) as a **stand-in** for Aeonik / Neue Haas Grotesk (D8) until she chooses; swapping it is one line.
