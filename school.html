@@ -230,16 +230,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
      under it, the cards of the chosen stage, full width. The bar stays under the header while the map scrolls and lets go after it */
   .cjm-bar{display:block;position:sticky;top:64px;z-index:5;background:var(--bg);padding:12px 0 10px;margin-top:16px}
   .cjm-tabs{display:flex;padding:4px;border-radius:999px;background:rgba(0,16,89,.07)}
-  .cjm-tabs button,.cjm-stages button{font:600 13px/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;min-height:40px;border-radius:999px;cursor:pointer}
+  .cjm-tabs button{font:600 13px/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;min-height:40px;border-radius:999px;cursor:pointer}
   .cjm-tabs button{flex:1;border:0;background:none;color:var(--navy)}
   .cjm-tabs button[aria-selected="true"]{background:var(--navy);color:#fff}
   .cjm-tabs button.p[aria-selected="true"]{background:var(--yellow);color:var(--navy)}
-  .cjm-stages{display:flex;gap:8px;margin:10px calc(var(--gutter) * -1) 0;padding-inline:var(--gutter);overflow-x:auto;scrollbar-width:none}
-  .cjm-stages::-webkit-scrollbar{display:none}
-  .cjm-stages button{flex:none;padding:0 18px;border:1.5px solid var(--navy);background:var(--bg);color:var(--navy)}
-  .cjm-stages button[aria-selected="true"]{background:var(--navy);color:#fff}
-  .cjm-bar.p .cjm-stages button{border-color:var(--yellow)}
-  .cjm-bar.p .cjm-stages button[aria-selected="true"]{background:var(--yellow);color:var(--navy)}
+  /* the stage is a native dropdown: a full-width pill with a chevron, the phone's own picker opens on tap (her request, 2026-10-24) */
+  .cjm-stage{display:block;position:relative;margin-top:10px}
+  .cjm-stage select{appearance:none;-webkit-appearance:none;width:100%;min-height:44px;padding:0 48px 0 20px;border:1.5px solid var(--navy);border-radius:999px;background:var(--navy);color:#fff;font:600 13px/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;cursor:pointer}
+  .cjm-stage::after{content:"";position:absolute;right:22px;top:50%;width:8px;height:8px;margin-top:-6px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg);pointer-events:none}
+  .cjm-bar.p .cjm-stage select{background:var(--yellow);border-color:var(--yellow);color:var(--navy)}
+  .cjm-bar.p .cjm-stage::after{border-color:var(--navy)}
   .cjm.off{display:none}
   .cjm,.cjm+.cjm{margin:0;overflow:visible}
   .cjm table,.cjm tbody,.cjm tr{display:block;width:auto;min-width:0}
@@ -561,22 +561,23 @@ html.menu-open{overflow:hidden}
 })();
 </script>
 <script>
-// journey map on a phone (her request, 2026-10-24): a Teacher | Pupil switch and the four stages as tabs, in one bar; one map and one stage at a time.
+// journey map on a phone (her request, 2026-10-24): a Teacher | Pupil switch and a stage dropdown, in one bar; one map and one stage at a time.
 // On a wider screen the bar is hidden and both maps show in full.
 (function(){
   var maps=[].slice.call(document.querySelectorAll('.cjm'));
   if(maps.length<2)return;
   var bar=document.createElement('div');bar.className='cjm-bar';
   var sw=document.createElement('div');sw.className='cjm-tabs';sw.setAttribute('role','tablist');sw.setAttribute('aria-label','Journey map');
-  var st=document.createElement('div');st.className='cjm-stages';st.setAttribute('role','tablist');st.setAttribute('aria-label','Stage');
+  var st=document.createElement('label');st.className='cjm-stage';st.innerHTML='<span class="vh">Stage</span><select></select>';
+  var sel=st.querySelector('select');
   bar.appendChild(sw);bar.appendChild(st);
-  var who=0,stage=0,calm=matchMedia('(prefers-reduced-motion:reduce)');
+  var who=0,stage=0;
   function tab(box,text,cls){var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');if(cls)b.className=cls;b.textContent=text;box.appendChild(b);return b}
   var tabs=maps.map(function(m,i){if(!m.id)m.id='cjm-'+i;var b=tab(sw,m.querySelector('caption').textContent.replace(' journey map',''),m.classList.contains('p')?'p':'t');b.setAttribute('aria-controls',m.id);return b});
-  var stabs=[].map.call(maps[0].querySelectorAll('thead th .cpill'),function(p){return tab(st,p.textContent.trim())});
+  [].forEach.call(maps[0].querySelectorAll('thead th .cpill'),function(p,i){var o=document.createElement('option');o.value=i;o.textContent=p.textContent.trim();sel.appendChild(o)});
   function draw(){
     tabs.forEach(function(b,k){b.setAttribute('aria-selected',k===who?'true':'false');b.tabIndex=k===who?0:-1;maps[k].classList.toggle('off',k!==who);maps[k].setAttribute('data-s',stage)});
-    stabs.forEach(function(b,k){b.setAttribute('aria-selected',k===stage?'true':'false');b.tabIndex=k===stage?0:-1;b.setAttribute('aria-controls',maps[who].id)});
+    sel.value=stage;sel.setAttribute('aria-controls',maps[who].id);
     bar.classList.toggle('p',maps[who].classList.contains('p'));
   }
   function wire(list,set){list.forEach(function(b,i){
@@ -584,7 +585,7 @@ html.menu-open{overflow:hidden}
     b.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(d){var n=(i+d+list.length)%list.length;set(n);list[n].focus()}});
   })}
   wire(tabs,function(i){who=i;draw()});
-  wire(stabs,function(i){stage=i;draw();st.scrollTo({left:stabs[i].offsetLeft-st.offsetLeft-16,behavior:calm.matches?'auto':'smooth'})});
+  sel.addEventListener('change',function(){stage=+sel.value;draw()});
   maps[0].parentNode.insertBefore(bar,maps[0]);draw();
 })();
 </script>
