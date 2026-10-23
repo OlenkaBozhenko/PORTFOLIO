@@ -64,10 +64,16 @@ Freelance and side projects named in the reference letters:
 
 | Date | What | Issuer | Source |
 |---|---|---|---|
+| May – Sep 2026 | Design Engineering Pro Max — course | MD Academy | LinkedIn screenshot, her message 2026-10-23 |
 | Jun 2026 | Certificate of completion: Subagents | Anthropic | LinkedIn |
 | Jun 2026 | Certificate of completion: Agent skills | Anthropic | LinkedIn |
+| May 2026 (15 – 17 May) | **DOU Day 2026** — conference, Kyiv | DOU | her message 2026-10-23; dates from [dou.ua](https://dou.ua/lenta/news/dou-day-2026-program/), read 2026-10-23 |
 | Mar 2026 | Certificate of completion: Claude | Anthropic | LinkedIn |
 | Nov 2025 | Email deliverability expert (Warmy Inbox Academy) | Warmy | LinkedIn |
+| 2025 | **STHLM Xperience Conference (SXC 2025)** — UX conference, Stockholm | SXC | her message 2026-10-23 ([sxc.se/2025](https://www.sxc.se/2025)); month not found: past editions ran in November with World Usability Day, so the month is left out |
+| May 2025 (16 – 17 May) | **DOU Day 2025** — conference, Kyiv | DOU | her message 2026-10-23; dates from [dou.ua](https://dou.ua/lenta/articles/dou-day-2025-guide/), read 2026-10-23 |
+| Aug 2024 (28 – 30 Aug) | **UX Nordic 2024** — conference, Aarhus | UX Nordic | her message 2026-10-23 ([uxnordic.com](https://www.uxnordic.com/)); dates from third-party conference lists (tella.com), not the official site, read 2026-10-23 |
+| Aug 2023 (24 – 25 Aug) | **UX Nordic 2023** — conference, Aarhus | UX Nordic | her message 2026-10-23; dates from one third-party list (uxwritinghub.com), read 2026-10-23 |
 | Jun 2023 | **AI in Web Design Conf 23** — conference | Geekle.us | LinkedIn |
 | Feb 2023 | **UI UX Online Summit 23** — conference | Geekle.us | LinkedIn |
 | 2022 – | Foundations of User Experience (UX) Design | Google | 2024 CV |
