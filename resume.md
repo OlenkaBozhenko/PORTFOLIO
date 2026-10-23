@@ -21,7 +21,7 @@ Senior product designer for B2B and B2C products and crowdfunding platforms.
 I design B2B and B2C products and crowdfunding platforms end to end: research and user interviews, prototypes, design systems and analytics, with AI tools built into the work. A background in law shaped how I work: precise, accountable for every decision and ready to defend it with evidence.
 
 ## Skills
-- **Product design:** design systems, prototyping, user research, user interviews, analytics, AI tools
+- **Product design:** UI/UX design, design systems, prototyping, user research, user interviews, analytics, AI tools
 - **Tools:** Figma, Adobe Suite, Claude Code, Lovable (AI tool), HTML/CSS basics
 
 ## Languages
