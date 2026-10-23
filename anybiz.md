@@ -131,5 +131,5 @@ Desktop is unchanged.
 - The session-recording legend (Hesitation, Rage click, Dead click, Drop-off) in two rows of two.
 - Screen previews: the browser alone, full width; no grey panel and no phone.
 - Card mockups without the grey panel: the cards alone, full width.
-- Where the ground is gone, the screens and cards keep a small shadow.
+- Where the ground is gone, the screens and cards keep a small shadow all round, so the top edge shows too.
 - The first screen runs edge to edge, with no side margins.

@@ -166,5 +166,6 @@ Desktop is unchanged.
 - The Adeline AI phone is drawn at its 320 px design size and scaled to 80 %, with room on both sides, so the questions, the input and the fine print are not cut.
 - Screen previews: the browser alone, full width; no grey panel and no phone.
 - Card mockups without the grey panel: the cards alone, full width.
-- Where the ground is gone, the screens and cards keep a small shadow.
+- Where the ground is gone, the screens and cards keep a small shadow all round, so the top edge shows too.
 - The first screen runs edge to edge, with no side margins.
+- Feature cards: 28 px between the cards and their caption.
