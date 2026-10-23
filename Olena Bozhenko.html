@@ -229,6 +229,8 @@ figure.q figcaption b{display:block;color:var(--ink);font-weight:500}
 .learn time{color:var(--muted);font-variant-numeric:tabular-nums;font-size:15px}
 .learn .who{color:var(--muted);font-size:15px}
 /* on a phone each line is a small table: name and place on the left, the date on the right, level with the name (her request, 2026-10-24) */
+/* conferences on a phone: the year only, no month (her request, 2026-10-24) */
+@media (max-width:640px){.learn[aria-labelledby="learn-conf"] .mon{display:none}}
 @media (max-width:640px){.learn li{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"name date" "who .";gap:2px 16px}.learn li>span:not(.who){grid-area:name}.learn time{grid-area:date;text-align:right;white-space:nowrap}.learn .who{grid-area:who}}
 /* on a phone: no side note by Learning, the two sub-headings in medium weight (her request, 2026-10-24) */
 @media (max-width:720px){#learn-title+.count{display:none}.learn-h{font-weight:500}}
@@ -522,13 +524,13 @@ html.menu-open{overflow:hidden}
     </ul>
     <h3 class="learn-h" id="learn-conf">Conferences</h3>
     <ul class="learn" aria-labelledby="learn-conf">
-      <li><time datetime="2026-05">May 2026</time><span>DOU Day 2026</span><span class="who">Kyiv</span></li>
+      <li><time datetime="2026-05"><span class="mon">May </span>2026</time><span>DOU Day 2026</span><span class="who">Kyiv</span></li>
       <li><time datetime="2025">2025</time><span>STHLM Xperience Conference</span><span class="who">Stockholm</span></li>
-      <li><time datetime="2025-05">May 2025</time><span>DOU Day 2025</span><span class="who">Kyiv</span></li>
-      <li><time datetime="2024-08">Aug 2024</time><span>UX Nordic 2024</span><span class="who">Aarhus</span></li>
-      <li><time datetime="2023-08">Aug 2023</time><span>UX Nordic 2023</span><span class="who">Aarhus</span></li>
-      <li><time datetime="2023-06">Jun 2023</time><span>AI in Web Design Conf 23</span><span class="who">Geekle</span></li>
-      <li><time datetime="2023-02">Feb 2023</time><span>UI UX Online Summit 23</span><span class="who">Geekle</span></li>
+      <li><time datetime="2025-05"><span class="mon">May </span>2025</time><span>DOU Day 2025</span><span class="who">Kyiv</span></li>
+      <li><time datetime="2024-08"><span class="mon">Aug </span>2024</time><span>UX Nordic 2024</span><span class="who">Aarhus</span></li>
+      <li><time datetime="2023-08"><span class="mon">Aug </span>2023</time><span>UX Nordic 2023</span><span class="who">Aarhus</span></li>
+      <li><time datetime="2023-06"><span class="mon">Jun </span>2023</time><span>AI in Web Design Conf 23</span><span class="who">Geekle</span></li>
+      <li><time datetime="2023-02"><span class="mon">Feb </span>2023</time><span>UI UX Online Summit 23</span><span class="who">Geekle</span></li>
     </ul>
   </div>
 </section>
