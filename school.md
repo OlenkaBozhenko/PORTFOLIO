@@ -62,6 +62,7 @@ Desktop is unchanged.
 
 - The meta under the title keeps only the year and the platform.
 - No side note next to the section headings (the heading alone).
+- *View next work*: the project name on its own line under it, the arrow level with the name.
 - The pull-up photo is not shown.
 - Phone tiles grow with the phone instead of cutting it.
-- Customer journey map: *Teacher* and *Pupil* are tabs (one map at a time); the stages scroll sideways as a slider; the row labels (Goal, Thoughts and feelings, Problems, Solution) are hidden on screen but stay for screen readers. The tabs are buttons with `role="tab"`, 44 px high, arrow keys switch them.
+- Customer journey map: *Teacher* and *Pupil* are tabs (one map at a time); the stages scroll sideways as a slider, without the dotted line between them; the row labels (Goal, Thoughts and feelings, Problems, Solution) are hidden on screen but stay for screen readers. The tabs are buttons with `role="tab"`, 44 px high, arrow keys switch them.

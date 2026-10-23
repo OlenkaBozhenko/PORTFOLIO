@@ -219,6 +219,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .meta>div:not(:nth-child(2)):not(:nth-child(3)){display:none}
   .meta{justify-content:flex-start;gap:16px 48px}
   .sec-head>span{display:none}
+  /* next work: the project name on its own line, the arrow level with it */
+  .next{align-items:flex-end}
+  .next .nx{display:block;margin:4px 0 0}
   /* the pull-up photo is left out */
   .photo.tall:has(img[src*="pullups"]){display:none}
   /* journey map: Teacher and Pupil as tabs, the stages as a sideways slider, no row labels */
@@ -234,6 +237,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .cjm col.rh{width:0}
   .cjm thead td,.cjm tbody th{padding:0;white-space:nowrap;clip-path:inset(50%)}
   .cjm thead th{scroll-snap-align:start}
+  .cjm thead th>div::after{display:none}
 }
 
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */

@@ -353,7 +353,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (max-width:720px){
   .meta>div:not(:nth-child(2)):not(:nth-child(3)){display:none}
   .meta{justify-content:flex-start;gap:16px 48px}
-  .sec-head>span{display:none}
+  /* the section labels are not shown; the big headline under each one leads the section, the label stays for screen readers (her request, 2026-10-24) */
+  .sec-head{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;padding:0;border:0}
+  /* next work: the project name on its own line, the arrow level with it */
+  .next{align-items:flex-end}
+  .next .nx{display:block;margin:4px 0 0}
+  /* the brand-awareness and persona cards, the ticker at the end and the Connect email chip are left out */
+  .fcard:has(.sched),.fcard:has(.av2),.gal:has(#mosaic){display:none}
+  .mcard .hd .cn{display:none}
   /* first screen: smaller chips, centred; four do not fit one line at 375 px, so they wrap two by two */
   .chips{gap:6px}
   .chips span{font-size:11px;padding:5px 10px}
@@ -366,7 +373,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .trust{background:none;padding:0}
   .trust .msgs{display:none}
   /* the click legend in one row */
-  .legend{flex-direction:row;flex-wrap:nowrap;justify-content:space-between;gap:12px;font-size:13px}
+  .legend{display:grid;grid-template-columns:repeat(2,max-content);gap:10px 28px;font-size:14px}
   .legend span{gap:6px;white-space:nowrap}
   .legend i{width:8px;height:8px}
   /* screen previews: the browser and the phone sit wholly inside the grey panel */

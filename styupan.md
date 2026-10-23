@@ -56,3 +56,4 @@ Desktop is unchanged.
 
 - The meta under the title keeps only the year (this case has no platform).
 - No side note next to the section headings (the heading alone).
+- *View next work*: the project name on its own line under it, the arrow level with the name.

@@ -355,7 +355,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (max-width:720px){
   .meta>div:not(:nth-child(2)):not(:nth-child(3)){display:none}
   .meta{justify-content:flex-start;gap:16px 48px}
-  .sec-head>span{display:none}
+  /* the section labels are not shown; the big headline under each one leads the section, the label stays for screen readers (her request, 2026-10-24) */
+  .sec-head{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;padding:0;border:0}
+  /* next work: the project name on its own line, the arrow level with it */
+  .next{align-items:flex-end}
+  .next .nx{display:block;margin:4px 0 0}
   /* first screen: smaller type and prompt */
   .loader{gap:14px}
   .tip{font-size:16px;max-width:none;white-space:nowrap}
@@ -373,7 +377,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .fcard .wc+.wc{margin-top:-18px}
   /* the Adeline phone is drawn at its own 320 px and scaled down, so nothing inside is cut */
   .protopanel{padding:28px 0}
-  .protopanel .ph{width:320px;zoom:.9}
+  .protopanel .ph{width:320px;zoom:.8}
   /* screen previews: the browser and the phone sit wholly inside the grey panel */
   .stage{aspect-ratio:1/1}
   .stage .browser{left:5%;right:auto;top:7%;width:90%}

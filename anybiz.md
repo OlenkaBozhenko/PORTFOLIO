@@ -122,9 +122,11 @@ Her request, 2026-10-22: only a running line with the logo and words; the other 
 Desktop is unchanged.
 
 - The meta under the title keeps only the year and the platform.
-- No side note next to the section headings (the heading alone).
-- First screen: smaller chips (11 px), centred; four chips do not fit one line at 375 px, so they wrap two by two.
-- Feature cards (*A brand awareness agent*, *Personas, not lists*): full width, one under the other, the second a little over the first with a thin edge.
-- Instructions prototype: only the email preview; no instruction bubbles, no grey panel.
-- The session-recording legend (Hesitation, Rage click, Dead click, Drop-off) on one line.
+- No section labels (Complexity, Product, My part…) and no rule under them; the big headline leads each section. The label stays for screen readers.
+- *View next work*: the project name on its own line under it, the arrow level with the name.
+- First screen: smaller chips (11 px), centred; four chips do not fit one line at 375 px, so they wrap two by two (variant A, her choice).
+- The two feature cards *A brand awareness agent* and *Personas, not lists* are not shown.
+- The ticker at the end (*Hire AI agents*…) is not shown.
+- Instructions prototype: only the email preview; no instruction bubbles, no grey panel, no *Connect email* chip.
+- The session-recording legend (Hesitation, Rage click, Dead click, Drop-off) in two rows of two.
 - Screen previews (browser + phone): both sit wholly inside the grey panel.
