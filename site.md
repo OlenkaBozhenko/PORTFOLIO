@@ -8,6 +8,12 @@ Built from [`inspiration.md`](inspiration.md) (decisions D1–D9) and [`cv.md`](
 ## Structure
 1. **Nav** — name on the left; Work · About · Contact · Resume on the right. Resume opens `assets/Olena-Bozhenko-Resume.pdf` in a new tab (joshmateo.com pattern; source `resume.md` → `resume.html`).
    - *Revised 2026-09-26 (designer):* the nav links use the same type as the name *Olena Bozhenko* — Inter Tight 17 px, weight 500, letter-spacing −0.01em (were 15 px, weight 400).
+   - *Revised 2026-10-24 (designer), every page:* **on phones (≤ 720 px) the links fold into a burger menu.** The button (two lines, a cross when open, 44 × 44 px, `aria-expanded`) opens a panel that fills the screen under the header: Work · About · Contact · Resume in large type at the top, and the contacts at the bottom, each a link:
+     - Bozhenko.ui.ux@gmail.com (`mailto:`)
+     - +47 925 66 987 (`tel:`)
+     - +38 097 620 7111 (`tel:`)
+     - LinkedIn
+     The page under it does not scroll while the menu is open. The cross, a link, a tap outside or Escape closes it. Without JavaScript the links stay in a row. Both phone numbers are now public on the site (her choice, 2026-10-24).
 2. **Hero** (D9, page-grid.com) — one large headline; around it, outlined interface blocks with small blue labels that drift slowly. The blocks name what she does: *Design system · Prototype · User interview · Analytics · AI tools · WCAG 2.2*. A visible **Pause motion** button (WCAG 2.2.2); motion is off under `prefers-reduced-motion`.
    - *Revised 2026-09-25 (designer):* the **Pause motion** button becomes a **music** control — **Play** / **Pause** (accessible name "Play music" / "Pause music"). Music never starts on its own; it loops `assets/music.mp3` from the first Play. The button is hidden when the file is missing and, as before, on phones (≤ 900 px).
    - *Standards — a recorded departure, the designer's call:* WCAG 1.4.2 Audio Control passes — sound starts only on Play and stops on Pause. **WCAG 2.2.2 Pause, Stop, Hide now fails:** the blocks drift for longer than 5 s and nothing on the page pauses them; only `prefers-reduced-motion` stops them, which does not satisfy 2.2.2. Options offered were two buttons, or one button for music and motion; she chose music only.
