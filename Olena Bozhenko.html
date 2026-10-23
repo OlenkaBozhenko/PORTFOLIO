@@ -229,8 +229,8 @@ figure.q figcaption b{display:block;color:var(--ink);font-weight:500}
 .learn time{color:var(--muted);font-variant-numeric:tabular-nums;font-size:15px}
 .learn .who{color:var(--muted);font-size:15px}
 /* on a phone each line is a small table: name and place on the left, the date on the right, level with the name (her request, 2026-10-24) */
-/* conferences on a phone: the year only, no month (her request, 2026-10-24) */
-@media (max-width:640px){.learn[aria-labelledby="learn-conf"] .mon{display:none}}
+/* courses and conferences on a phone: the year only, no month (her request, 2026-10-24) */
+@media (max-width:640px){.learn .mon{display:none}}
 @media (max-width:640px){.learn li{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"name date" "who .";gap:2px 16px}.learn li>span:not(.who){grid-area:name}.learn time{grid-area:date;text-align:right;white-space:nowrap}.learn .who{grid-area:who}}
 /* on a phone: no side note by Learning, the two sub-headings in medium weight (her request, 2026-10-24) */
 @media (max-width:720px){#learn-title+.count{display:none}.learn-h{font-weight:500}}
@@ -522,10 +522,10 @@ html.menu-open{overflow:hidden}
     <div class="sec-head"><h2 id="learn-title">Learning</h2><span class="count">Courses · certificates · conferences</span></div>
     <h3 class="learn-h" id="learn-courses">Courses and certificates</h3>
     <ul class="learn" aria-labelledby="learn-courses">
-      <li><time datetime="2026-09">Sep 2026</time><span>Design Engineering Pro Max</span><span class="who">MD Academy</span></li>
-      <li><time datetime="2026-06">Jun 2026</time><span>Subagents · Agent skills</span><span class="who">Anthropic</span></li>
-      <li><time datetime="2026-03">Mar 2026</time><span>Claude</span><span class="who">Anthropic</span></li>
-      <li><time datetime="2025-11">Nov 2025</time><span>Email deliverability expert</span><span class="who">Warmy</span></li>
+      <li><time datetime="2026-09"><span class="mon">Sep </span>2026</time><span>Design Engineering Pro Max</span><span class="who">MD Academy</span></li>
+      <li><time datetime="2026-06"><span class="mon">Jun </span>2026</time><span>Subagents · Agent skills</span><span class="who">Anthropic</span></li>
+      <li><time datetime="2026-03"><span class="mon">Mar </span>2026</time><span>Claude</span><span class="who">Anthropic</span></li>
+      <li><time datetime="2025-11"><span class="mon">Nov </span>2025</time><span>Email deliverability expert</span><span class="who">Warmy</span></li>
       <li><time datetime="2022">2022</time><span>Foundations of User Experience Design</span><span class="who">Google</span></li>
       <li><time datetime="2020">2020</time><span>Contemporary trends and award-winning experiences</span><span class="who">Awwwards Academy</span></li>
     </ul>
