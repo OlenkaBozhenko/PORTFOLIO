@@ -153,3 +153,14 @@ A moving row of her social posts (the tiger mascot in a Warmy T-shirt), her bann
 Caption: Marketing design around the product: creatives for PPC campaigns and social media, banners and booths for conferences and expos.
 
 ### 12. **View next work:** AnyBiz (`AnyBiz.html`, since 2026-10-22; was Sport Guardian), in the order of the landing's work list (DRON has no page yet, so it is skipped; the last page, Book, ends with Back to all work). Her request, 2026-10-20.
+
+## On phones (≤ 720 px), her calls 2026-10-24
+
+Desktop is unchanged.
+
+- The meta under the title keeps only the year and the platform.
+- No side note next to the section headings (the heading alone).
+- First screen: smaller type, smaller prompt.
+- Feature cards (*Placement you can prove*, *Warm-up that knows when it is done*): the two UI cards go full width, one under the other, the second a little over the first.
+- The Adeline AI phone is drawn at its 320 px design size and scaled to 90 %, so the questions, the input and the fine print are not cut.
+- Screen previews (browser + phone): both sit wholly inside the grey panel.

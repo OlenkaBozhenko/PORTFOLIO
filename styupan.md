@@ -49,3 +49,10 @@ Sources: Instagram [@nortranslations](https://www.instagram.com/nortranslations/
 
 ## End of the page
 **View next work:** Book (`book.html`), in the order of the landing's work list (DRON and AnyBiz have no page yet, so they are skipped; the last page, Book, ends with Back to all work). Her request, 2026-10-20.
+
+## On phones (≤ 720 px), her calls 2026-10-24
+
+Desktop is unchanged.
+
+- The meta under the title keeps only the year (this case has no platform).
+- No side note next to the section headings (the heading alone).

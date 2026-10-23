@@ -349,6 +349,32 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 footer{border-top:1px solid var(--rule);padding-block:28px;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
+/* phones only (her requests, 2026-10-24): the meta keeps the year and the platform; no side note by the section headings */
+@media (max-width:720px){
+  .meta>div:not(:nth-child(2)):not(:nth-child(3)){display:none}
+  .meta{justify-content:flex-start;gap:16px 48px}
+  .sec-head>span{display:none}
+  /* first screen: smaller chips, centred; four do not fit one line at 375 px, so they wrap two by two */
+  .chips{gap:6px}
+  .chips span{font-size:11px;padding:5px 10px}
+  /* feature cards: full width, one under the other, the second a little over the first */
+  .fcard .ui{height:auto;display:flex;flex-direction:column}
+  .fcard .dk{position:relative;left:auto !important;right:auto !important;top:auto !important;width:100% !important}
+  .fcard .dk:first-child{padding-bottom:36px}
+  .fcard .dk+.dk{margin-top:-18px;outline:1px solid #3B4A66}
+  /* instructions prototype: the email only, no instruction bubbles, no grey panel */
+  .trust{background:none;padding:0}
+  .trust .msgs{display:none}
+  /* the click legend in one row */
+  .legend{flex-direction:row;flex-wrap:nowrap;justify-content:space-between;gap:12px;font-size:13px}
+  .legend span{gap:6px;white-space:nowrap}
+  .legend i{width:8px;height:8px}
+  /* screen previews: the browser and the phone sit wholly inside the grey panel */
+  .stage{aspect-ratio:1/1}
+  .stage .browser{left:5%;right:auto;top:7%;width:90%}
+  .stage .dev{left:8%;bottom:6%;width:28%}
+}
+
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
 .menu-btn{display:none}
 @media (max-width:720px){

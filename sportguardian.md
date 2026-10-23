@@ -71,3 +71,10 @@ Campaign builder (2026-10-14, her request, after her reference 26, choice cards)
 Then (2026-10-14, her request): each mark under the bar has two lines, the note on top and the name under it; the line runs down to the name.
 Then (2026-10-14, her request): marks at both ends of the bar as well, "0 NOK · 15 Sep / Start" on the left and "500 000 · gear and travel too / Goal" on the right, reading to the left of its line.
 Then (2026-10-14, her request): the admin nav shows the Sport Guardian SG mark (teal S, green G) in the round badge in place of the swim club logo; the club logo stays only where the campaign is named.
+
+## On phones (≤ 720 px), her calls 2026-10-24
+
+Desktop is unchanged.
+
+- The meta under the title keeps only the year and the platform.
+- No side note next to the section headings (the heading alone).

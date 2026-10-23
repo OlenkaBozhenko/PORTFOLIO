@@ -116,3 +116,15 @@ Her request, 2026-10-22: only a running line with the logo and words; the other 
 2. Her role and responsibilities on the page: confirm the eight pills and the five items in My part.
 3. Session recordings: which tool (Hotjar, Clarity, other)? Not named on the page until she says.
 4. The AnyBiz timeline (CLAUDE.md, question 3) also sets the Years in the meta row.
+
+## On phones (≤ 720 px), her calls 2026-10-24
+
+Desktop is unchanged.
+
+- The meta under the title keeps only the year and the platform.
+- No side note next to the section headings (the heading alone).
+- First screen: smaller chips (11 px), centred; four chips do not fit one line at 375 px, so they wrap two by two.
+- Feature cards (*A brand awareness agent*, *Personas, not lists*): full width, one under the other, the second a little over the first with a thin edge.
+- Instructions prototype: only the email preview; no instruction bubbles, no grey panel.
+- The session-recording legend (Hesitation, Rage click, Dead click, Drop-off) on one line.
+- Screen previews (browser + phone): both sit wholly inside the grey panel.

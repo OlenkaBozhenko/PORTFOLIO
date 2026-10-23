@@ -55,3 +55,13 @@ The app name in running text is set in capitals, bold, in quotes: “SCHOOL” (
 
 ## End of the page
 **View next work:** Styupan Translation (`styupan.html`), in the order of the landing's work list (DRON and AnyBiz have no page yet, so they are skipped; the last page, Book, ends with Back to all work). Her request, 2026-10-20.
+
+## On phones (≤ 720 px), her calls 2026-10-24
+
+Desktop is unchanged.
+
+- The meta under the title keeps only the year and the platform.
+- No side note next to the section headings (the heading alone).
+- The pull-up photo is not shown.
+- Phone tiles grow with the phone instead of cutting it.
+- Customer journey map: *Teacher* and *Pupil* are tabs (one map at a time); the stages scroll sideways as a slider; the row labels (Goal, Thoughts and feelings, Problems, Solution) are hidden on screen but stay for screen readers. The tabs are buttons with `role="tab"`, 44 px high, arrow keys switch them.

@@ -213,6 +213,29 @@ h1{font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.045em;max-
 footer{border-top:1px solid var(--rule);padding-block:28px;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
+.cjm-tabs{display:none}
+/* phones only (her requests, 2026-10-24): the meta keeps the year and the platform; no side note by the section headings */
+@media (max-width:720px){
+  .meta>div:not(:nth-child(2)):not(:nth-child(3)){display:none}
+  .meta{justify-content:flex-start;gap:16px 48px}
+  .sec-head>span{display:none}
+  /* the pull-up photo is left out */
+  .photo.tall:has(img[src*="pullups"]){display:none}
+  /* journey map: Teacher and Pupil as tabs, the stages as a sideways slider, no row labels */
+  .cjm-tabs{display:flex;gap:8px;margin:28px 0 4px}
+  .cjm-tabs button{font:600 14px/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;min-height:44px;padding:0 22px;border-radius:999px;border:1.5px solid var(--navy);background:#fff;color:var(--navy);cursor:pointer}
+  .cjm-tabs button[aria-selected="true"]{background:var(--navy);color:#fff}
+  .cjm-tabs button.p[aria-selected="true"]{background:var(--yellow);border-color:var(--yellow);color:var(--navy)}
+  .cjm.off{display:none}
+  .cjm+.cjm{margin-top:0}
+  .cjm{scroll-snap-type:x mandatory;scroll-padding-inline:8px;scrollbar-width:none}
+  .cjm::-webkit-scrollbar{display:none}
+  .cjm table{min-width:0;width:1120px}
+  .cjm col.rh{width:0}
+  .cjm thead td,.cjm tbody th{padding:0;white-space:nowrap;clip-path:inset(50%)}
+  .cjm thead th{scroll-snap-align:start}
+}
+
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
 .menu-btn{display:none}
 @media (max-width:720px){
@@ -522,6 +545,26 @@ html.menu-open{overflow:hidden}
     else if(Math.abs(scrollY-lastY)>2){follow=true;start()}
     lastY=scrollY;
   },{passive:true});
+})();
+</script>
+<script>
+// journey map on a phone: Teacher and Pupil become tabs over one map at a time (her request, 2026-10-24); on a wider screen both maps stay and the tabs are hidden
+(function(){
+  var maps=[].slice.call(document.querySelectorAll('.cjm'));
+  if(maps.length<2)return;
+  var bar=document.createElement('div');bar.className='cjm-tabs';bar.setAttribute('role','tablist');bar.setAttribute('aria-label','Journey map');
+  var tabs=maps.map(function(m,i){
+    if(!m.id)m.id='cjm-'+i;
+    var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.className=m.classList.contains('p')?'p':'t';
+    b.textContent=m.querySelector('caption').textContent.replace(' journey map','');b.setAttribute('aria-controls',m.id);
+    bar.appendChild(b);return b;
+  });
+  function pick(i){tabs.forEach(function(b,k){b.setAttribute('aria-selected',k===i?'true':'false');b.tabIndex=k===i?0:-1;maps[k].classList.toggle('off',k!==i)})}
+  tabs.forEach(function(b,i){
+    b.addEventListener('click',function(){pick(i)});
+    b.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(d){var n=(i+d+tabs.length)%tabs.length;pick(n);tabs[n].focus()}});
+  });
+  maps[0].parentNode.insertBefore(bar,maps[0]);pick(0);
 })();
 </script>
 </body>

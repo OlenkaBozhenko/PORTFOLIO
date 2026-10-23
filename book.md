@@ -61,3 +61,10 @@ The spreads show family photographs and names of private people. **Before the si
 
 ## End of the page
 **Back to all work** (the last page of the list; every other page ends with View next work). Her request, 2026-10-20.
+
+## On phones (≤ 720 px), her calls 2026-10-24
+
+Desktop is unchanged.
+
+- The meta under the title keeps only the year (this case has no platform).
+- Spreads: the caption sits under the grey card, without the page numbers.
