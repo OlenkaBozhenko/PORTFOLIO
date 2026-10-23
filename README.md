@@ -12,7 +12,7 @@ Paste the address into a browser on the computer that holds the `PORTFOLIO` fold
 - **About** — portrait, short bio and personal qualities.
 - **Testimonials** — clients and collaborators.
 - **Learning** — certificates and conferences.
-- **Contact** — email, LinkedIn, Behance and the **[resume PDF](assets/Olena-Bozhenko-Resume.pdf)**.
+- **Contact** — email, LinkedIn and the **[resume PDF](assets/Olena-Bozhenko-Resume.pdf)**.
 - A circle cursor on mouse and trackpad; mobile-first layout; WCAG 2.2 AA checks recorded in `site.md`.
 
 ## Files
