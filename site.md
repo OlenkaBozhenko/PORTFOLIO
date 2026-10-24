@@ -93,6 +93,10 @@ Two groups, each newest first (her request, 2026-10-23: courses and conferences 
 - 2.4.7 / 2.4.11: visible focus ring, never hidden by sticky nav.
 - 1.4.10: one column at 320 px, no horizontal scroll.
 
+## Favicon (every page)
+
+The OB monogram (her choice, 2026-10-24; source `assets/brand/ob-monogram.svg`) on a white rounded square, sized to read at 16 px and to stay visible on dark browser tabs: `favicon.svg`, `favicon.ico` (16, 32, 48) and `apple-touch-icon.png` (180) at the site root, linked from every page.
+
 ## Footer (every page)
 
 "© 2026 Olena Bozhenko" on the left, "Product Designer" on the right (was "Oslo, Norway" until 2026-10-24, her request, desktop and mobile; "works remotely" removed 2026-10-09).

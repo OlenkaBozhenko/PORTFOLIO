@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-6.5 -7 114 114" width="64" height="64">
+<!-- favicon: the OB monogram on a white rounded square, large enough to read at 16 px and visible on dark tabs (2026-10-24) -->
+<rect x="-6.5" y="-7" width="114" height="114" rx="22" fill="#fff"/>
+<g stroke="#000" stroke-width=".8" stroke-linejoin="round"><path d="M34 50V20a30 30 0 0 0-30 30Z"/><path d="M34 50h30a30 30 0 0 0-30-30Z"/><path d="M34 50H4a30 30 0 0 0 30 30Z"/><rect x="34" y="50" width="30" height="30"/><circle cx="34" cy="50" r="10" fill="#fff" stroke="#fff"/><rect x="72" y="20" width="10" height="60"/><path d="M82 20h0a15 15 0 0 1 15 15H82Z"/><path d="M82 35h15a15 15 0 0 1-15 15Z"/><path d="M82 50a15 15 0 0 1 15 15H82Z"/><path d="M82 65h15a15 15 0 0 1-15 15Z"/></g>
+</svg>
