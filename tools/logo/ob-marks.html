@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OB monogram, options</title>
+<!-- OB monogram options (her request, 2026-10-24): her initials built from geometric pieces,
+     black on white, after her reference of an L drawn twelve ways from squares, quarter circles and dots -->
+<style>
+body{margin:0;padding:32px 16px;background:#fff;color:#0E0E0E;font:15px/1.5 "Inter Tight",system-ui,sans-serif}
+h1{font-size:22px;font-weight:500;margin:0 0 24px}
+.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;max-width:1100px}
+figure{margin:0;border:1px solid #E6E6E6;padding:24px 20px 14px}
+figure svg.big{display:block;width:100%;height:auto;aspect-ratio:1}
+.s{display:flex;align-items:center;gap:14px;margin-top:14px;border-top:1px solid #E6E6E6;padding-top:12px}
+.s svg{display:block}
+figcaption{font-size:14px;color:#6B6B6B;margin-top:10px}
+figcaption b{color:#0E0E0E;font-weight:500}
+</style>
+</head>
+<body>
+<h1>OB monogram: eight options</h1>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+  <!-- touching pieces carry a hairline stroke in their own colour, so no white seam shows between them -->
+  <!-- 1. Ring and bowls: a round O, a B of one stem and two half discs -->
+  <g id="m1" stroke="#000" stroke-width=".8" stroke-linejoin="round"><path fill-rule="evenodd" d="M2 50a30 30 0 1 0 60 0a30 30 0 1 0-60 0ZM18 50a14 14 0 1 0 28 0a14 14 0 1 0-28 0Z"/><rect x="68" y="20" width="12" height="60"/><path d="M80 20a15 15 0 0 1 0 30Z"/><path d="M80 50a15 15 0 0 1 0 30Z"/></g>
+  <!-- 2. Ligature: the O's right side is the B's stem -->
+  <g id="m2" stroke="#000" stroke-width=".8" stroke-linejoin="round"><path fill-rule="evenodd" d="M50 15a35 35 0 0 0 0 70ZM50 37a13 13 0 0 0 0 26Z"/><rect x="50" y="15" width="12" height="70"/><path d="M62 15a17.5 17.5 0 0 1 0 35Z"/><path d="M62 50a17.5 17.5 0 0 1 0 35Z"/></g>
+  <!-- 3. Stadium and blocks: a pill O, a B of two blocks with rounded right corners -->
+  <g id="m3" stroke="#000" stroke-width=".8" stroke-linejoin="round"><path fill-rule="evenodd" d="M4 40a20 20 0 0 1 40 0v20a20 20 0 0 1-40 0ZM18 40a6 6 0 0 1 12 0v20a6 6 0 0 1-12 0Z"/><path fill-rule="evenodd" d="M54 20h22a14 14 0 0 1 14 14v13H54ZM66 30h8a4 4 0 0 1 4 4v3H66Z"/><path fill-rule="evenodd" d="M54 53h26a16 16 0 0 1 16 16v11H54ZM66 63h12a6 6 0 0 1 6 6v1H66Z"/></g>
+  <!-- 4. Quarters: the O and the B both drawn from quarter discs -->
+  <g id="m4" stroke="#000" stroke-width=".8" stroke-linejoin="round"><path d="M34 50V20a30 30 0 0 0-30 30Z"/><path d="M34 50h30a30 30 0 0 0-30-30Z"/><path d="M34 50H4a30 30 0 0 0 30 30Z"/><rect x="34" y="50" width="30" height="30"/><circle cx="34" cy="50" r="10" fill="#fff" stroke="#fff"/><rect x="72" y="20" width="10" height="60"/><path d="M82 20h0a15 15 0 0 1 15 15H82Z"/><path d="M82 35h15a15 15 0 0 1-15 15Z"/><path d="M82 50a15 15 0 0 1 15 15H82Z"/><path d="M82 65h15a15 15 0 0 1-15 15Z"/></g>
+  <!-- 5. Dot and B: a solid dot for the O, a B of a stem, a triangle and a half disc -->
+  <g id="m5" stroke="#000" stroke-width=".8" stroke-linejoin="round"><circle cx="22" cy="62" r="18"/><rect x="50" y="20" width="12" height="60"/><path d="M62 20l26 15-26 15Z"/><path d="M62 50a15 15 0 0 1 0 30Z"/></g>
+  <!-- 6. Square O: a square ring, a B of blocks and one half disc -->
+  <g id="m6" stroke="#000" stroke-width=".8" stroke-linejoin="round"><path fill-rule="evenodd" d="M6 20h44v60H6ZM18 32h20v36H18Z"/><rect x="58" y="20" width="12" height="60"/><rect x="70" y="20" width="14" height="26"/><path d="M70 50h8a15 15 0 0 1 0 30h-8Z"/></g>
+  <!-- 7. Stencil: the O and the B cut by one horizontal slit -->
+  <g id="m7" stroke="#000" stroke-width=".8" stroke-linejoin="round"><path d="M34 47H4a30 30 0 0 1 60 0Z"/><path d="M34 53h30a30 30 0 0 1-60 0Z"/><circle cx="34" cy="50" r="11" fill="#fff" stroke="#fff"/><rect x="72" y="20" width="12" height="27"/><rect x="72" y="53" width="12" height="27"/><path d="M84 20a13.5 13.5 0 0 1 0 27Z"/><path d="M84 53a13.5 13.5 0 0 1 0 27Z"/></g>
+  <!-- 8. Negative: a black square, the letters cut out in white -->
+  <g id="m8" stroke="none" stroke-width=".8" stroke-linejoin="round"><rect x="10" y="10" width="80" height="80" rx="0"/><circle cx="33" cy="50" r="16" fill="#fff" stroke="#fff"/><circle cx="33" cy="50" r="7"/><rect x="56" y="30" width="7" height="40" fill="#fff" stroke="#fff"/><path d="M63 30a10 10 0 0 1 0 20Z" fill="#fff" stroke="#fff"/><path d="M63 50a10 10 0 0 1 0 20Z" fill="#fff" stroke="#fff"/></g>
+</defs>
+</svg>
+<div class="g">
+<figure><svg class="big" viewBox="0 0 100 100" aria-label="Option 1"><use href="#m1"/></svg><div class="s"><svg width="48" height="48" viewBox="0 0 100 100"><use href="#m1"/></svg><svg width="24" height="24" viewBox="0 0 100 100"><use href="#m1"/></svg><svg width="16" height="16" viewBox="0 0 100 100"><use href="#m1"/></svg></div><figcaption><b>1. Ring and bowls</b> · a round O, a B of a stem and two half discs</figcaption></figure>
+<figure><svg class="big" viewBox="0 0 100 100" aria-label="Option 2"><use href="#m2"/></svg><div class="s"><svg width="48" height="48" viewBox="0 0 100 100"><use href="#m2"/></svg><svg width="24" height="24" viewBox="0 0 100 100"><use href="#m2"/></svg><svg width="16" height="16" viewBox="0 0 100 100"><use href="#m2"/></svg></div><figcaption><b>2. Ligature</b> · the O's edge is the B's stem</figcaption></figure>
+<figure><svg class="big" viewBox="0 0 100 100" aria-label="Option 3"><use href="#m3"/></svg><div class="s"><svg width="48" height="48" viewBox="0 0 100 100"><use href="#m3"/></svg><svg width="24" height="24" viewBox="0 0 100 100"><use href="#m3"/></svg><svg width="16" height="16" viewBox="0 0 100 100"><use href="#m3"/></svg></div><figcaption><b>3. Pill and blocks</b> · a stadium O, a B of two rounded blocks</figcaption></figure>
+<figure><svg class="big" viewBox="0 0 100 100" aria-label="Option 4"><use href="#m4"/></svg><div class="s"><svg width="48" height="48" viewBox="0 0 100 100"><use href="#m4"/></svg><svg width="24" height="24" viewBox="0 0 100 100"><use href="#m4"/></svg><svg width="16" height="16" viewBox="0 0 100 100"><use href="#m4"/></svg></div><figcaption><b>4. Quarters</b> · both letters from quarter discs</figcaption></figure>
+<figure><svg class="big" viewBox="0 0 100 100" aria-label="Option 5"><use href="#m5"/></svg><div class="s"><svg width="48" height="48" viewBox="0 0 100 100"><use href="#m5"/></svg><svg width="24" height="24" viewBox="0 0 100 100"><use href="#m5"/></svg><svg width="16" height="16" viewBox="0 0 100 100"><use href="#m5"/></svg></div><figcaption><b>5. Dot and B</b> · a dot, a stem, a triangle, a half disc</figcaption></figure>
+<figure><svg class="big" viewBox="0 0 100 100" aria-label="Option 6"><use href="#m6"/></svg><div class="s"><svg width="48" height="48" viewBox="0 0 100 100"><use href="#m6"/></svg><svg width="24" height="24" viewBox="0 0 100 100"><use href="#m6"/></svg><svg width="16" height="16" viewBox="0 0 100 100"><use href="#m6"/></svg></div><figcaption><b>6. Square O</b> · a square ring, blocks and one half disc</figcaption></figure>
+<figure><svg class="big" viewBox="0 0 100 100" aria-label="Option 7"><use href="#m7"/></svg><div class="s"><svg width="48" height="48" viewBox="0 0 100 100"><use href="#m7"/></svg><svg width="24" height="24" viewBox="0 0 100 100"><use href="#m7"/></svg><svg width="16" height="16" viewBox="0 0 100 100"><use href="#m7"/></svg></div><figcaption><b>7. Stencil</b> · one slit runs through both letters</figcaption></figure>
+<figure><svg class="big" viewBox="0 0 100 100" aria-label="Option 8"><use href="#m8"/></svg><div class="s"><svg width="48" height="48" viewBox="0 0 100 100"><use href="#m8"/></svg><svg width="24" height="24" viewBox="0 0 100 100"><use href="#m8"/></svg><svg width="16" height="16" viewBox="0 0 100 100"><use href="#m8"/></svg></div><figcaption><b>8. Negative</b> · a black square, the letters cut out in white</figcaption></figure>
+</div>
+</body>
+</html>
