@@ -102,16 +102,17 @@ Both letters are attached to the 2024 CV PDF, written in Norwegian. English tran
 **Publishing a name and contact on the site needs each person's consent** — to confirm with them before launch.
 
 ### Maiia Stiupan — Owner, Stiupan Translations ENK, Oslo
-- Contact (from the letter): styupan.cr@gmail.com · +47 469 41 909
+- Contact: on request (taken out of this file 2026-10-24, before the public release, her call)
 - Key lines (translated): "An exceptionally talented designer with a sharp eye for detail." · "She played a decisive role in creating the company's logo." · "Versatile and skilled across different media — logo, UI/UX and book design." · "She consistently meets deadlines and keeps communication open throughout the design process, so our expectations are not only met but exceeded." · "I recommend Olena Bozhenko without reservation."
 
 ### Amund Gulsvik, MD, PhD — Professor emeritus, University of Bergen
-- Contact (from the letter): amund@gulsvik.no
+- Contact: on request (taken out of this file 2026-10-24, before the public release, her call)
 - Letter dated January 2024, about the book *Røtter i Blix – Thomesen – Inderberg – Johansen Stamsund*.
 - Key lines (translated): "She has done the work on the book to our great satisfaction and with great accuracy." · "She has a good understanding of the Norwegian language, writes correct Norwegian, and has the necessary skills in design and layout." · "Olena is intelligent and honest, with a friendly personality and a helpful manner that made our collaboration easy and good." · "I strongly recommend Olena Bozhenko for similar work with a future employer."
 - The letter also contains personal details (date of birth, home address, residence status). **These are not carried into this file or onto the site.**
 
 ### Tor Martin Olsen — Scale Group AS, Oslo
+- *2026-10-24, her call:* the quote on the landing stays as published at the public release.
 - Source: LinkedIn [linkedin.com/in/tormartinolsen](https://www.linkedin.com/in/tormartinolsen/) — profile lists Scale Group AS; his job title is not confirmed yet.
 - Worked together at Scale Development AS (May 2023 – Jul 2024).
 - **No letter exists. This quote is a draft written from her summary (2026-09-25), not his words.** It goes on the live site only after Tor reads it, edits it if he wants, and approves it with his name and title.

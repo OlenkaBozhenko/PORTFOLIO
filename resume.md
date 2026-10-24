@@ -9,10 +9,10 @@ Bullets marked *draft* are written from what she has said about the work; they c
 ---
 
 ## Header
-Olena Bozhenko · Bozhenko.ui.ux@gmail.com · +47 925 66 987 · +38 097 620 7111 · [LinkedIn](https://www.linkedin.com/in/olena-bozhenko-b36071180/) · My portfolio site
+Olena Bozhenko · Bozhenko.ui.ux@gmail.com · +47 925 66 987 · +38 097 620 7111 · [LinkedIn](https://www.linkedin.com/in/olena-bozhenko-b36071180/) · [My portfolio site](https://olenkabozhenko.github.io/PORTFOLIO/)
 
 Layout: the contacts sit on their own line under the name, spread evenly across the full width (her call, 2026-10-24). LinkedIn and "My portfolio site" show as link text only, the URL sits behind the words (her call, 2026-10-24). Behance removed from the header.
-*To do:* once the portfolio site is published, its URL goes behind "My portfolio site"; she adds it herself.
+The portfolio URL behind "My portfolio site" is https://olenkabozhenko.github.io/PORTFOLIO/ (GitHub Pages, published 2026-10-24 on her word).
 
 ## Statement
 Senior product designer for B2B and B2C products and crowdfunding platforms.

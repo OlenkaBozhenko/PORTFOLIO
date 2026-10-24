@@ -26,8 +26,8 @@
 
 **Rules she has set:**
 - The site is white on every page (inspiration D1). The resume is black and white only.
-- Commit every change locally; **push to GitHub only when she says so, each time.** The repo is private: https://github.com/OlenkaBozhenko/PORTFOLIO
-- **No Claude Artifacts for the site** — it is a plain HTML page. Public hosting (GitHub Pages needs a public repo on her plan; Vercel works with a private one) waits for her choice.
+- Commit every change locally; **push to GitHub only when she says so, each time.** The repo is **public**: https://github.com/OlenkaBozhenko/PORTFOLIO — every push goes live.
+- **No Claude Artifacts for the site** — it is a plain HTML page. **Published 2026-10-24 on GitHub Pages:** https://olenkabozhenko.github.io/PORTFOLIO/ (from `master`, root; `index.html` opens the landing). The resume PDF links to it.
 - Every reference she sends is also added, with its screenshot, to the Notion page [For Portfolio](https://app.notion.com/p/For-Portfolio-39e64a1387ca80e98e48d4e879cc2649).
 
 **Open questions for her:**
@@ -35,5 +35,5 @@
 2. ~~Scale Development AS: what she did there~~ answered 2026-10-24: admin panel, online store, UX research (in `resume.md`).
 3. AnyBiz timeline on the site: one continuous role (Aug 2021 – present) or two periods.
 4. Typeface: Inter Tight is a stand-in for Aeonik / Neue Haas Grotesk.
-5. Tor Martin Olsen's testimonial is a DRAFT on the landing — needs his approval before the site goes public; referee contacts in `cv.md` and the phone in the resume PDF need a decision before the repo is public.
+5. ~~Tor's draft testimonial, referee contacts, phone~~ decided 2026-10-24: Tor's quote stays as published (her call); referee contacts removed from `cv.md`; both phones public on the site and in the resume.
 6. `assets/music.mp3` is missing, so the Play / Pause music button stays hidden.

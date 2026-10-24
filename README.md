@@ -1,33 +1,45 @@
 # PORTFOLIO — Olena Bozhenko, Senior Product Designer
 
-Personal portfolio website of **Olena Bozhenko**, a senior product designer based in Oslo, working remotely with a Ukrainian product team on B2B SaaS. The site is built for her Senior Product Designer job search in Ukraine, Norway, Europe and the USA.
+Personal portfolio of **Olena Bozhenko**, a senior product designer based in Oslo who designs B2B and B2C products and crowdfunding platforms end to end: research and user interviews, prototypes, design systems and analytics, with AI tools built into the work.
 
-**Landing page (on this computer) →** `file:///C:/Users/Olena/PORTFOLIO/Olena%20Bozhenko.html#top`
+**Live site →** https://olenkabozhenko.github.io/PORTFOLIO/
+**Resume (PDF) →** [assets/Olena-Bozhenko-Resume.pdf](assets/Olena-Bozhenko-Resume.pdf)
 
-Paste the address into a browser on the computer that holds the `PORTFOLIO` folder. It opens the local file, so it works only there; GitHub does not make `file:///` links clickable. When the portfolio is ready, this link is replaced by the public website address.
+## Case studies
+| Case | What it is | Page |
+|---|---|---|
+| Warmy | Email deliverability platform with an AI agent (B2B SaaS, 2021 – present) | [Warmy.html](https://olenkabozhenko.github.io/PORTFOLIO/Warmy.html) |
+| AnyBiz | AI sales platform that finds leads and books meetings (B2B, AI SaaS, 2021 – present) | [AnyBiz.html](https://olenkabozhenko.github.io/PORTFOLIO/AnyBiz.html) |
+| Sport Guardian | Crowdfunding that keeps every child in sport (B2B, B2C, 2024) | [SportGuardian.html](https://olenkabozhenko.github.io/PORTFOLIO/SportGuardian.html) |
+| School | Remote learning that works like a social feed (iOS concept, 2020) | [school.html](https://olenkabozhenko.github.io/PORTFOLIO/school.html) |
+| Styupan Translation | A mark for an Oslo translation studio (branding, 2023) | [styupan.html](https://olenkabozhenko.github.io/PORTFOLIO/styupan.html) |
+| Book | A 432-page family history hardcover (book design, 2023 – 2024) | [book.html](https://olenkabozhenko.github.io/PORTFOLIO/book.html) |
+
+DRON (drone services) is parked for now and comes back later; its landing row is kept in [`tools/dron/parked/`](tools/dron/parked/).
 
 ## What is on the landing page
-- **Hero** — a large headline surrounded by outlined interface and code blocks (Figma component icons, `</>` code icons) that drift and can be dragged within the first screen; a Play / Pause music control.
-- **Case Studies** — Warmy, AnyBiz, Sport Guardian, School, Styupan Translation and Book (DRON parked 2026-10-24): name, description, role, year, platform and a large preview.
-- **About** — portrait, short bio and personal qualities.
-- **Testimonials** — clients and collaborators.
-- **Learning** — certificates and conferences.
-- **Contact** — email, LinkedIn and the **[resume PDF](assets/Olena-Bozhenko-Resume.pdf)**.
-- A circle cursor on mouse and trackpad; mobile-first layout; WCAG 2.2 AA checks recorded in `site.md`.
+- **Hero** — a large headline the visitor can finish by dropping a phrase into it, surrounded by drifting interface and code blocks (desktop); on phones, the headline alone.
+- **Case Studies** — six projects, each with a description and a large preview.
+- **About**, **Testimonials**, **Learning** (courses, certificates, conferences) and **Contact** (email, LinkedIn, resume).
+- Built mobile first: a burger menu with contacts, swipeable testimonials, layouts reworked for phones on every case page.
+
+## How it is built
+- Plain HTML and CSS with a little vanilla JavaScript; no framework and no build step. Hosted on GitHub Pages from the `master` branch; [`index.html`](index.html) opens the landing page.
+- Every page is checked against **WCAG 2.2 AA** (contrast, keyboard, target size, reduced motion); the checks and the reasoning are recorded in the `.md` files.
 
 ## Files
 | File | Role |
 |---|---|
 | [`Olena Bozhenko.html`](Olena%20Bozhenko.html) | The landing page |
-| [`site.md`](site.md) | Source of truth for the landing: structure, copy, standards |
-| [`cv.md`](cv.md) | CV facts, learning, testimonial candidates |
+| [`Warmy.html`](Warmy.html), [`AnyBiz.html`](AnyBiz.html), [`SportGuardian.html`](SportGuardian.html), [`school.html`](school.html), [`styupan.html`](styupan.html), [`book.html`](book.html) | Case study pages |
+| [`site.md`](site.md) and the case `.md` files ([`warmy.md`](warmy.md), [`anybiz.md`](anybiz.md), [`sportguardian.md`](sportguardian.md), [`school.md`](school.md), [`styupan.md`](styupan.md), [`book.md`](book.md)) | Source of truth for each page: structure, copy, standards |
+| [`cv.md`](cv.md) | CV facts, learning, testimonials |
 | [`resume.md`](resume.md) → [`resume.html`](resume.html) → [`assets/Olena-Bozhenko-Resume.pdf`](assets/Olena-Bozhenko-Resume.pdf) | Black-and-white one-page resume |
 | [`inspiration.md`](inspiration.md) / [`inspiration.html`](inspiration.html) | Visual references and the designer's decisions |
 | [`research/market-research.md`](research/market-research.md) | Senior Product Designer job market: Ukraine, Norway, Europe, USA |
-| [`index.html`](index.html) | Site root for GitHub Pages; opens the landing page |
 | [`CLAUDE.md`](CLAUDE.md) | Project brief and working rules |
 
 ## Working rules
 - `.md` files are the source of truth; HTML is the display layer and is updated after the `.md`.
 - All file contents are in English.
-- Every design decision is checked against WCAG 2.2 AA.
+- Every design decision is checked against WCAG 2.2 AA and Apple HIG.
