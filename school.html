@@ -254,8 +254,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .cjm,.cjm+.cjm{margin:0;overflow:visible}
   .cjm table,.cjm tbody,.cjm tr{display:block;width:auto;min-width:0}
   .cjm thead,.cjm colgroup{display:none}
-  .cjm tbody th{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;padding:0}
-  .cjm tbody td{display:none;height:auto;min-height:88px;margin-top:12px}
+  /* each card has its row label above it: Goal, Thoughts and feelings, Problems, Solution (her request, 2026-10-24) */
+  .cjm tbody th{display:block;padding:20px 0 8px;font-size:13px}
+  .cjm tbody tr:first-child th{padding-top:12px}
+  .cjm tbody td{display:none;height:auto;min-height:88px}
   .cjm[data-s="0"] tbody td:nth-of-type(1),.cjm[data-s="1"] tbody td:nth-of-type(2),.cjm[data-s="2"] tbody td:nth-of-type(3),.cjm[data-s="3"] tbody td:nth-of-type(4){display:block}
 }
 
