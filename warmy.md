@@ -161,7 +161,7 @@ Desktop is unchanged.
 - The meta under the title keeps only the year and the platform.
 - No section labels (Complexity, Product, My part…) and no rule under them; the big headline leads each section. The label stays for screen readers.
 - *View next work*: the project name on its own line under it, the arrow level with the name.
-- First screen: *Warmy magic is on the way…* at 16 px on one line; the prompt field holds two lines from the start, so typing never moves anything.
+- First screen: *Warmy magic is on the way…* at 16 px on one line; the prompt field holds two lines from the start, so typing never moves anything, and runs the full width with 20 px on each side.
 - Feature cards (*Placement you can prove*, *Warm-up that knows when it is done*): the two UI cards go full width, one under the other, the second a little over the first.
 - The Adeline AI phone is drawn at its 320 px design size and scaled to 80 %, with room on both sides, so the questions, the input and the fine print are not cut.
 - Screen previews: the browser alone, full width; no grey panel and no phone.

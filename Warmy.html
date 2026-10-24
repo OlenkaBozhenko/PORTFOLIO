@@ -366,7 +366,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   /* first screen: smaller type and prompt */
   .loader{gap:14px}
   .tip{font-size:16px;max-width:none;white-space:nowrap}
-  .prompt{width:90%;padding:12px 14px 10px;border-radius:18px}
+  /* the loader spans the screen, so the prompt runs almost edge to edge (her request, 2026-10-24) */
+  .magic .loader{width:100%;box-sizing:border-box;padding:24px 20px}
+  .prompt{width:100%;padding:12px 14px 10px;border-radius:18px}
   /* the field keeps two lines from the start, so typing never moves anything */
   .prompt .pq{font-size:14px;line-height:1.45;height:2.9em;align-items:flex-start}
   .prompt .prow{gap:12px;margin-top:8px;font-size:12px}
