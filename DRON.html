@@ -500,6 +500,22 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (prefers-reduced-motion:reduce){.chap .drn,.tvdrn{animation:none}}
 .mcard .row .big{white-space:nowrap;font-size:clamp(48px,5.4vw,84px)}
 
+/* revision 3, her notes 2026-10-28: each chapter picture is a high-tech photo with the drone in the scene and thin lime lines, the full width of the text;
+   the chapter text sits on a glass card on the photo's calm side (like Market reality); mockups get a deeper shadow */
+.chap{display:block;position:relative;margin:clamp(28px,3.4vw,44px) 0 clamp(36px,4.4vw,64px)}
+.chap .pic,.chap.R .pic{grid-column:auto;aspect-ratio:16/8;border-radius:22px}
+.chap .tcard,.chap.R .tcard{position:absolute;bottom:clamp(16px,3vw,36px);max-width:400px;margin:0;border-radius:22px;padding:22px 24px;background:rgba(40,44,38,.42);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);border:1px solid rgba(255,255,255,.14);box-shadow:none;color:#fff}
+.chap .tcard{left:clamp(16px,3vw,36px);right:auto}
+.chap.R .tcard{right:clamp(16px,3vw,36px);left:auto}
+.chap .tcard p{font-size:clamp(15px,1.3vw,17px);line-height:1.5;color:#E6E3DC}
+.hero1 .hwin{box-shadow:0 0 0 1px rgba(255,255,255,.07),0 40px 80px -10px rgba(0,0,0,.85),0 18px 36px -12px rgba(0,0,0,.7)}
+.wfd .win,.pframe{box-shadow:0 0 0 1px rgba(255,255,255,.06),0 34px 64px -18px rgba(0,0,0,.85)}
+.pframe{border-radius:46px}
+@media (max-width:900px){
+  .chap .pic,.chap.R .pic{aspect-ratio:4/3}
+  .chap .tcard,.chap.R .tcard{position:relative;left:auto;right:auto;bottom:auto;max-width:none;margin:-64px 12px 0;background:rgba(30,32,28,.72)}
+}
+
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
 .menu-btn{display:none}
 @media (max-width:720px){
@@ -592,7 +608,7 @@ html.menu-open{overflow:hidden}
   <!-- 01 Research -->
   <section class="wrap ch" id="research" aria-labelledby="h-research">
     <div class="sec-head"><h2 id="h-research">Research</h2><span>Read the field before drawing</span></div>
-    <div class="chap L rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-research.webp" srcset="assets/work/dron/ch-research-768.webp 768w, assets/work/dron/ch-research.webp 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"><img class="drn" src="assets/work/dron/layer-drone-flight-camera-dark.webp" alt="" loading="lazy"></div><div class="tcard"><p>Fifteen competitors in three groups, eight of them compared on five axes, five products scored on how they earn trust. The finding that turned the product: people fear the drone more than the operator, and nobody shows who will fly it.</p></div></div>
+    <div class="chap L rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-research.webp?v=2" srcset="assets/work/dron/ch-research-768.webp?v=2 768w, assets/work/dron/ch-research.webp?v=2 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"></div><div class="tcard"><p>Fifteen competitors in three groups, eight of them compared on five axes, five products scored on how they earn trust. The finding that turned the product: people fear the drone more than the operator, and nobody shows who will fly it.</p></div></div>
     <div class="panel plain rv">
       <div class="rs">
         <div>
@@ -624,7 +640,7 @@ html.menu-open{overflow:hidden}
   <!-- 02 Target Audience -->
   <section class="wrap ch" id="audience" aria-labelledby="h-aud">
     <div class="sec-head"><h2 id="h-aud">Target Audience</h2><span>Two people, two sides</span></div>
-    <div class="chap R rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-audience.webp" srcset="assets/work/dron/ch-audience-768.webp 768w, assets/work/dron/ch-audience.webp 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"><img class="drn" src="assets/work/dron/layer-drone-02-dark.webp" alt="" loading="lazy"></div><div class="tcard"><p>A client who wants the result without learning drones, and a pilot who wants to fly, not to hunt for clients. Both are built on desk research; where data was missing, it is marked, not invented.</p></div></div>
+    <div class="chap R rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-audience.webp?v=2" srcset="assets/work/dron/ch-audience-768.webp?v=2 768w, assets/work/dron/ch-audience.webp?v=2 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"></div><div class="tcard"><p>A client who wants the result without learning drones, and a pilot who wants to fly, not to hunt for clients. Both are built on desk research; where data was missing, it is marked, not invented.</p></div></div>
     <div class="panel plain aud rv">
       <div class="ps">
         <div class="who pcard"><img src="assets/work/dron/persona-kateryna.webp" alt="Portrait of Kateryna, a woman in her early thirties with dark hair." width="480" height="480" loading="lazy">
@@ -647,7 +663,7 @@ html.menu-open{overflow:hidden}
   <!-- 03 JTBD -->
   <section class="wrap ch" id="jtbd" aria-labelledby="h-jtbd">
     <div class="sec-head"><h2 id="h-jtbd">Jobs to Be Done</h2><span>What they hire DRON for</span></div>
-    <div class="chap L rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-jtbd.webp" srcset="assets/work/dron/ch-jtbd-768.webp 768w, assets/work/dron/ch-jtbd.webp 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"><img class="drn" src="assets/work/dron/layer-drone-flight-delivery.webp" alt="" loading="lazy"></div><div class="tcard"><p>A job to be done is the progress a person wants to make in a situation, not a feature. Each job is written in one shape, so it can be tested against the screens:</p></div></div>
+    <div class="chap L rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-jtbd.webp?v=2" srcset="assets/work/dron/ch-jtbd-768.webp?v=2 768w, assets/work/dron/ch-jtbd.webp?v=2 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"></div><div class="tcard"><p>A job to be done is the progress a person wants to make in a situation, not a feature. Each job is written in one shape, so it can be tested against the screens:</p></div></div>
     <p class="formula" aria-label="When situation, I want motivation, so that result"><span class="k">When</span><span><em>[situation]</em></span><span class="k">I want</span><span><em>[motivation]</em></span><span class="k">so that</span><span><em>[result]</em></span></p>
     <div class="jobs">
       <article class="job rv"><p class="who2"><img src="assets/work/dron/persona-kateryna.webp" alt="" width="44" height="44" loading="lazy">Client · main job</p><p><b>When</b> <span>I need a result that only a drone can deliver,</span> <b>I want</b> <span>to hand the job to a certified professional without managing anything myself,</span> <b>so that</b> <span>I get the outcome without ever thinking about the drone or the operator.</span></p></article>
@@ -661,7 +677,7 @@ html.menu-open{overflow:hidden}
   <!-- 04 User Flows -->
   <section class="wrap ch" id="flows" aria-labelledby="h-flows">
     <div class="sec-head"><h2 id="h-flows">User Flows</h2><span>Two of fourteen</span></div>
-    <div class="chap R rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-flows.webp" srcset="assets/work/dron/ch-flows-768.webp 768w, assets/work/dron/ch-flows.webp 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"><img class="drn" src="assets/work/dron/layer-drone-01-dark.webp" alt="" loading="lazy"></div><div class="tcard"><p>Every job became a flow, and every flow a row of pages linked one to the next. Here are the two main ones, on the phone, as they run in the live demo. Scroll sideways.</p></div></div>
+    <div class="chap R rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-flows.webp?v=2" srcset="assets/work/dron/ch-flows-768.webp?v=2 768w, assets/work/dron/ch-flows.webp?v=2 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"></div><div class="tcard"><p>Every job became a flow, and every flow a row of pages linked one to the next. Here are the two main ones, on the phone, as they run in the live demo. Scroll sideways.</p></div></div>
     <div class="panel plain flowpanel rv">
       <div class="flow"><h3>Client: order a delivery</h3><p>From the question to the delivery photo.</p>
         <div class="strip" tabindex="0" role="region" aria-label="Client flow, seven screens; scroll sideways"><div class="line">
@@ -702,7 +718,7 @@ html.menu-open{overflow:hidden}
   <!-- 05 Tone of Voice -->
   <section class="wrap ch" id="voice" aria-labelledby="h-voice">
     <div class="sec-head"><h2 id="h-voice">Tone of Voice</h2><span>One voice on 134 screens</span></div>
-    <div class="chap L rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-voice.webp" srcset="assets/work/dron/ch-voice-768.webp 768w, assets/work/dron/ch-voice.webp 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"><img class="drn" src="assets/work/dron/layer-drone-flight-front-dark.webp" alt="" loading="lazy"></div><div class="tcard"><p>A product written by many hands, and here by many AI sessions, drifts in tone unless the rules are written down. So one voice file decides every string, and the client hears one calm, accountable voice on every screen. Trust beats wit, every line.</p></div></div>
+    <div class="chap L rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-voice.webp?v=2" srcset="assets/work/dron/ch-voice-768.webp?v=2 768w, assets/work/dron/ch-voice.webp?v=2 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"></div><div class="tcard"><p>A product written by many hands, and here by many AI sessions, drifts in tone unless the rules are written down. So one voice file decides every string, and the client hears one calm, accountable voice on every screen. Trust beats wit, every line.</p></div></div>
     <div class="tv">
       <div class="tvart rv" role="img" aria-label="Three lines rewritten in the DRON voice: Oops, something went wrong becomes Payment declined, nothing was taken; Look up, your delivery is inbound from the sky becomes Delivered, your parcel arrived at 10:07; Our trusted expert pilots becomes Verified by DRON, licence, insured, 214 jobs.">
         <img class="tvmap" src="assets/work/dron/handoff-ground.webp" alt=""><img class="tvdrn" src="assets/work/dron/layer-drone-flight-camera-dark.webp" alt=""><div class="pairs">
@@ -727,7 +743,7 @@ html.menu-open{overflow:hidden}
   <!-- 06 Wireframes -->
   <section class="wrap ch" id="wireframes" aria-labelledby="h-wf">
     <div class="sec-head"><h2 id="h-wf">Wireframes</h2><span>Live, click through</span></div>
-    <div class="chap R rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-wireframes.webp" srcset="assets/work/dron/ch-wireframes-768.webp 768w, assets/work/dron/ch-wireframes.webp 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"><img class="drn" src="assets/work/dron/layer-drone-08-dark.webp" alt="" loading="lazy"></div><div class="tcard"><p>134 phone pages and 135 desktop pages, one page for every state: loading, empty, error, success. Below is the live demo itself. Pick a side and click through it, on the desktop and on the phone.</p></div></div>
+    <div class="chap R rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-wireframes.webp?v=2" srcset="assets/work/dron/ch-wireframes-768.webp?v=2 768w, assets/work/dron/ch-wireframes.webp?v=2 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"></div><div class="tcard"><p>134 phone pages and 135 desktop pages, one page for every state: loading, empty, error, success. Below is the live demo itself. Pick a side and click through it, on the desktop and on the phone.</p></div></div>
     <div class="wf2 rv">
       <figure class="dk wfd" style="margin:0"><div class="win" style="width:100%"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Desktop</span></div><div class="vpw"><iframe title="DRON live demo, desktop: choose client or operator" data-src="https://olenkabozhenko.github.io/DRON/demo/desktop/role-select.html?theme=dark" loading="lazy"></iframe></div></div><figcaption>Desktop. Pick a side and click through.</figcaption></figure>
       <figure class="dk wfm" style="margin:0"><div class="pframe"><div class="vpw"><iframe title="DRON live demo, phone: choose client or operator" data-src="https://olenkabozhenko.github.io/DRON/demo/role-select.html?theme=dark" loading="lazy"></iframe></div></div><figcaption>Phone</figcaption></figure>
@@ -739,7 +755,7 @@ html.menu-open{overflow:hidden}
   <!-- 07 CJM -->
   <section class="wrap ch" id="cjm" aria-labelledby="h-cjm">
     <div class="sec-head"><h2 id="h-cjm">Customer Journey Map</h2><span>Where people drop off</span></div>
-    <div class="chap L rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-cjm.webp" srcset="assets/work/dron/ch-cjm-768.webp 768w, assets/work/dron/ch-cjm.webp 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"><img class="drn" src="assets/work/dron/layer-drone-07.webp" alt="" loading="lazy"></div><div class="tcard"><p>A customer journey map follows one person through every stage with the product, what they feel there, and where they leave. Kateryna's journey has four stages; the line is her mood, the red points are where she leaves.</p></div></div>
+    <div class="chap L rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-cjm.webp?v=2" srcset="assets/work/dron/ch-cjm-768.webp?v=2 768w, assets/work/dron/ch-cjm.webp?v=2 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"></div><div class="tcard"><p>A customer journey map follows one person through every stage with the product, what they feel there, and where they leave. Kateryna's journey has four stages; the line is her mood, the red points are where she leaves.</p></div></div>
     <div class="panel cjm rv">
       <div class="cjmsc" tabindex="0" role="region" aria-label="Journey line; scroll sideways on a phone"><svg viewBox="0 0 1000 300" role="img" aria-label="Client journey: mood rises with curiosity at Attraction, falls to its lowest at Activation where she chooses an operator and meets a registration form, rises with the tracking, falls when an issue has no way out at Involvement, and ends high with pride at Retention.">
         <g class="grid"><line x1="250" y1="20" x2="250" y2="280"/><line x1="500" y1="20" x2="500" y2="280"/><line x1="750" y1="20" x2="750" y2="280"/><line x1="0" y1="150" x2="1000" y2="150"/></g>
@@ -765,7 +781,7 @@ html.menu-open{overflow:hidden}
   <!-- 08 Design System -->
   <section class="wrap ch" id="system" aria-labelledby="h-ds">
     <div class="sec-head"><h2 id="h-ds">Design System</h2><span>One stylesheet the product links</span></div>
-    <div class="chap R rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-system.webp" srcset="assets/work/dron/ch-system-768.webp 768w, assets/work/dron/ch-system.webp 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"><img class="drn" src="assets/work/dron/layer-drone-11-dark.webp" alt="" loading="lazy"></div><div class="tcard"><p>A design system is the set of rules and parts a product is built from: tokens for colour, type, space and motion, components made of them, and patterns made of components. DRON's is one stylesheet the product links, documented like Apple's guidelines, in light and dark, with every colour pair measured against WCAG AA.</p></div></div>
+    <div class="chap R rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-system.webp?v=2" srcset="assets/work/dron/ch-system-768.webp?v=2 768w, assets/work/dron/ch-system.webp?v=2 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"></div><div class="tcard"><p>A design system is the set of rules and parts a product is built from: tokens for colour, type, space and motion, components made of them, and patterns made of components. DRON's is one stylesheet the product links, documented like Apple's guidelines, in light and dark, with every colour pair measured against WCAG AA.</p></div></div>
     <div class="ds-num"><div><b>372</b>tokens</div><div><b>53</b>components</div><div><b>13</b>patterns</div><div><b>2</b>themes</div></div>
     <div class="bento">
       <div class="tile t-cream w2 rv"><div class="ty big2"><span class="aa">Aa</span><ul><li style="font-size:22px;font-weight:700;--d:0s">Display 22</li><li style="font-size:17px;font-weight:600;--d:.4s">Title 17</li><li style="font-size:15px;--d:.8s">Lead 15</li><li style="font-size:13px;--d:1.2s">Body 13</li><li style="font-size:11px;--d:1.6s">Micro 11</li></ul></div><div><h3>Type</h3><p>SF Pro, ten steps, none below 11 pt; the system font, nothing to download.</p></div></div>
@@ -785,7 +801,7 @@ html.menu-open{overflow:hidden}
   <!-- 09 Handoff -->
   <section class="wrap ch" id="handoff" aria-labelledby="h-ho">
     <div class="sec-head"><h2 id="h-ho">Handoff</h2><span>Released as v1.0.0</span></div>
-    <div class="chap L rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-handoff.webp" srcset="assets/work/dron/ch-handoff-768.webp 768w, assets/work/dron/ch-handoff.webp 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"><img class="drn" src="assets/work/dron/layer-drone-04.webp" alt="" loading="lazy"></div><div class="tcard"><p>What a developer needs to build DRON from the repository, in one folder. What ships is the tokens; the screens and the CSS are the reference.</p></div></div>
+    <div class="chap L rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-handoff.webp?v=2" srcset="assets/work/dron/ch-handoff-768.webp?v=2 768w, assets/work/dron/ch-handoff.webp?v=2 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"></div><div class="tcard"><p>What a developer needs to build DRON from the repository, in one folder. What ships is the tokens; the screens and the CSS are the reference.</p></div></div>
     <div class="panel ho rv"><svg class="orbit" viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="500" cy="290" rx="480" ry="240"/><path class="ln" d="M40 110 C 180 150, 250 210, 330 240"/><path class="ln" d="M960 440 C 840 420, 770 380, 690 340"/><circle cx="40" cy="110" r="7"/><circle cx="960" cy="440" r="7"/></svg>
       <div class="side">
         <div class="hc"><p class="t">Tokens, light and dark</p><p class="v">372<small>ship as tokens.css</small></p></div>

@@ -84,3 +84,8 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Design System: the wide card shows type, the narrow one colours.
 - Handoff: the side cards hang at different angles on a dashed orbit with lime lines (her references ORBIT and Telemetry).
 - Links removed (her call): Open the demo, Open the design system, Open the handoff.
+
+## Revision 3, her notes 2026-10-28
+- Chapter pictures redone as high-tech photos in the spirit of the inspection and cargo photos: the drone is in the scene, with thin lime holographic lines for the chapter (radar, two profiles, a path to a check, a route with a decision, a waveform, projected wireframes, a journey line over a valley, an exploded drone on a grid, a case opening into code). The drone layer on top is gone.
+- Each picture runs the full width of the text; the chapter text sits on a glass card on the calm side of the photo, like the Market reality card. The thin-line schematics stay inside the photos.
+- Deeper shadow under the mockups: the desktop on the first screen and the live frames.
