@@ -111,3 +111,6 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Removed: the source note under Target Audience; the dashed base line in the trust chart; the "The green is the payload" photo band; the 3 taps / 5 taps line under the flows; the lines between the voice rules.
 - Flows: more room around the decisions (wider links and decision blocks); phone mockups with a gentler corner (frame 30, screen 24) so the screens' top corners are not cut; the live phone frame the same.
 - Wireframes: the desktop card full width with its text under it ("On the desktop"); then the phone card with its text at the side on the bottom edge ("Phone first"), as in her Warmy "A prototype, not a picture"; every card with the same 22 px radius.
+
+## Revision 7, her notes 2026-10-28
+- Customer Journey Map without the dark ground, as a grid in the site's style after her reference (a customer journey template): rows Phases (dark headers), Actions (chips), Experience (two filled curves: before the fixes in rust, with DRON as designed in green, with callouts and mood faces), Pain points, What changed (green checks). A note says the "with DRON" line is the design's intent, not a measurement.
