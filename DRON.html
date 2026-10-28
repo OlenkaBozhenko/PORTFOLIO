@@ -1170,13 +1170,16 @@ html.menu-open{overflow:hidden}
 (function(){
   var cur=document.querySelector('.dragc'),fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
   document.querySelectorAll('.strip').forEach(function(s){
-    // a slider pager: one small bar per view of the row, the active one green; a bar takes the row to its view
-    var pg=s.nextElementSibling,bs=[],n=0;
+    // a slider pager: one small bar per step the row can be dragged, a step being the next phone at the left edge; the active one green
+    var pg=s.nextElementSibling,scr=s.querySelectorAll('.scr'),bs=[],stops=[],sig='';
     function max(){return s.scrollWidth-s.clientWidth}
-    function build(){var c=Math.max(1,Math.ceil(s.scrollWidth/s.clientWidth-.05));if(c===n)return;n=c;pg.innerHTML='';bs=[];pg.hidden=n<2;
-      for(var k=0;k<n;k++)(function(k){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','View '+(k+1)+' of '+n);
-        b.addEventListener('click',function(){s.scrollTo({left:n>1?max()*k/(n-1):0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})});pg.appendChild(b);bs.push(b)})(k)}
-    function upd(){build();var k=n>1&&max()>0?Math.round(s.scrollLeft/max()*(n-1)):0;bs.forEach(function(b,i){b.classList.toggle('on',i===k);b.setAttribute('aria-current',i===k?'true':'false')})}
+    function build(){var x0=s.firstElementChild.offsetLeft,mx=max(),st=[0];
+      scr.forEach(function(f){var x=f.offsetLeft-x0;if(x>4&&x<mx-4)st.push(x)});if(mx>4)st.push(mx);
+      var g=st.join(',');if(g===sig)return;sig=g;stops=st;pg.innerHTML='';bs=[];pg.hidden=st.length<2;
+      st.forEach(function(x,k){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Step '+(k+1)+' of '+st.length);
+        b.addEventListener('click',function(){s.scrollTo({left:stops[k],behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})});pg.appendChild(b);bs.push(b)})}
+    function upd(){build();var k=0,d=1e9;stops.forEach(function(x,i){var v=Math.abs(s.scrollLeft-x);if(v<d){d=v;k=i}});
+      bs.forEach(function(b,i){b.classList.toggle('on',i===k);b.setAttribute('aria-current',i===k?'true':'false')})}
     s.addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
     if(!fine||!cur)return;
     var down=false,x0=0,l0=0;
