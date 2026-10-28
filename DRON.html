@@ -849,6 +849,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .tl text{fill:#ABA79F;font:12px var(--sans);text-anchor:middle}
 .tl .cu{fill:none;stroke:#888;stroke-width:1.6}
 .tl circle{fill:var(--green);offset-path:path('M20 118 C 199.2 118, 109.6 18, 468 18 L580 18');animation:mo 2.4s cubic-bezier(.4,0,.2,1) infinite alternate}
+/* revision 21, spacing by proximity (her note 2026-10-28):
+   heading → its picture 32; picture → the chapter's content 88; between groups inside a chapter 112; between chapters 176 */
+.sec-head{padding-bottom:20px}
+.chap{margin:clamp(24px,2.4vw,32px) 0 clamp(56px,6vw,88px)}
+.tv,.cjm2,.ho2{margin-top:0}
+.ds-num{margin:0 0 clamp(64px,7vw,112px)}
+.ps2+.ps2,.jrow+.jrow,.flow+.flow{margin-top:clamp(72px,8vw,112px)}
+.wrow{margin-top:clamp(72px,8vw,112px)}
+.ch{padding-bottom:clamp(112px,12vw,176px)}
+.wf3 .wrow{margin-top:clamp(40px,5.6vw,80px)}
 
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
 .menu-btn{display:none}

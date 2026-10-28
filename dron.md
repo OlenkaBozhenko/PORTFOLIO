@@ -150,3 +150,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Design System, Motion card: the right half lists the three jobs of motion and reduced motion, with figures from DESIGN tokens (.32 s sheets, 7 s flight on tracking, press 1 px in .12 s).
 - Motion card: the list removed; the chart runs the full card width on a timeline 0 to .4 s, with .12 / .2 / .32 s marked and the dot easing along the curve.
 - The "Precise, accountable." motor photo band removed (her call 2026-10-28: she likes it, may add it back); parked in tools/dron/parked/motor-band.html with the images kept.
+- Spacing by proximity across the page: a heading sits 32 px over its picture, the picture 88 px over the chapter content, groups inside a chapter 112 px apart, chapters 176 px apart (at 1440 px).
