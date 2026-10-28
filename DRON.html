@@ -516,6 +516,96 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .chap .tcard,.chap.R .tcard{position:relative;left:auto;right:auto;bottom:auto;max-width:none;margin:-64px 12px 0;background:rgba(30,32,28,.72)}
 }
 
+/* revision 4, her notes 2026-10-28 */
+/* one typeface, as on the rest of her site: Inter Tight everywhere; monospace only for real code (file names, commands) */
+.msg small,.rules li span,.sw small,.mo .ds,.ty .aa,.ty ul,.bt,.hc .v{font-family:var(--sans)}
+.rules li span{font-size:14px}
+/* audience: the person without a ground, aligned to the bottom; a larger metric card beside (her references: Card or Vipps, On the street, A prototype) */
+.ps2{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,4vw,64px);align-items:end}
+.ps2.rev{grid-template-columns:minmax(0,8fr) minmax(0,4fr)}
+.ps2+.ps2{margin-top:clamp(56px,8vw,112px)}
+.who2b{display:flex;flex-direction:column;gap:18px}
+.who2b img{width:min(100%,260px);aspect-ratio:1;object-fit:cover;border-radius:22px}
+.who2b q{display:block;font-size:clamp(20px,1.9vw,26px);line-height:1.3;letter-spacing:-.02em;color:var(--muted);quotes:none}
+.who2b q b{color:var(--ink);font-weight:400}
+.who2b .nm{font-size:17px}
+.who2b .nm span{display:block;font-size:14px;color:var(--muted);margin-top:2px}
+.mcard.big3{min-height:clamp(380px,36vw,520px);display:flex;flex-direction:column;justify-content:space-between;padding:clamp(28px,3.4vw,48px);color:var(--txt)}
+.mcard.big3 .row .big{font-size:clamp(64px,8vw,128px)}
+/* JTBD: the fixed words plain, the parts that change on chips */
+.job{background:linear-gradient(135deg,#141414,#1d2416 70%,#2b3a17)}
+.job .lbl{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.job p.tpl{color:var(--txt);line-height:1.55}
+.job mark{background:linear-gradient(135deg,#B7DA7C,#9BCF4A);color:var(--charcoal);border-radius:8px;padding:.04em .3em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+/* tone of voice: the high-tech picture */
+.tvmap{opacity:1}
+.tvart::before{display:none}
+.tvart{justify-content:flex-end}
+.tvart .pairs{margin-top:0}
+/* buttons as the product draws them (light theme) */
+.bt{font-weight:600}
+.bt.p{background:#9BCF4A;color:#1A1A1A}
+.bt.s{background:#D6D2C9;color:#1A1A1A}
+.bt.t{background:none;color:#5A5751;padding:0 4px}
+.bt.d{background:#D2E6AF;color:#9F9D9C}
+/* the numbers: larger, spread across the full width, counting up */
+.ds-num{display:flex;justify-content:space-between;gap:24px;margin:clamp(8px,1vw,16px) 0 clamp(32px,4vw,56px)}
+.ds-num div{font-size:15px}
+.ds-num b{font-size:clamp(64px,9vw,136px);font-variant-numeric:tabular-nums;letter-spacing:-.05em}
+.ds-num div:last-child{text-align:right}
+/* design-system parts floating on the chapter photo */
+.fl{position:absolute;inset:0;pointer-events:none}
+.fll{position:absolute;inset:0;width:100%;height:100%}
+.fll path{fill:none;stroke:var(--green);stroke-width:1.4;vector-effect:non-scaling-stroke;opacity:.8}
+.fe{position:absolute;background:rgba(26,26,26,.82);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:12px 14px;color:var(--txt);display:flex;flex-direction:column;gap:8px;font-size:13px;box-shadow:0 20px 40px -16px rgba(0,0,0,.7);animation:bob 7s ease-in-out infinite}
+.fe small{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--green)}
+.fe b{font-weight:500}
+.fe .dots{display:flex;gap:6px}.fe .dots i{width:22px;height:22px;border-radius:50%}
+.fe .aa2{font-size:44px;line-height:.9;font-weight:600;letter-spacing:-.03em}
+.fe .fld{display:flex;flex-direction:column;background:#2A2A2A;border-radius:10px;padding:8px 10px;font-size:11px;color:var(--mut)}
+.fe .fld em{font-style:normal;color:var(--txt);font-size:13px}
+.fe .tg{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;background:#9BCF4A;color:#1A1A1A;border-radius:999px;padding:5px 10px;font-weight:600}
+.fe .tg i{width:8px;height:8px;border-radius:50%;background:#1A1A1A}
+.e1{right:30%;top:7%;rotate:-6deg}
+.e2{right:5%;top:10%;rotate:5deg;animation-delay:-2s;max-width:190px}
+.e3{right:24%;top:36%;rotate:3deg;animation-delay:-4s;width:200px}
+.e4{right:6%;top:42%;rotate:-4deg;animation-delay:-1s;padding:8px;background:rgba(26,26,26,.6)}
+@keyframes bob{50%{translate:0 -10px}}
+/* handoff: no ground; cards of different sizes float around the list */
+.ho2{position:relative;min-height:780px;margin-top:clamp(24px,3vw,40px)}
+.orbit2{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.orbit2 ellipse{fill:none;stroke:rgba(14,14,14,.16);stroke-width:1.2;stroke-dasharray:10 12;vector-effect:non-scaling-stroke}
+.orbit2 .ln{fill:none;stroke:var(--green);stroke-width:1.6;vector-effect:non-scaling-stroke}
+.orbit2 circle{fill:#fff;stroke:var(--green);stroke-width:2;vector-effect:non-scaling-stroke}
+.ho2 .center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(40%,460px);z-index:1;background:#1F1F1F;color:var(--txt);box-shadow:0 40px 80px -30px rgba(0,0,0,.45)}
+.ho2 .hc{position:absolute;background:#1F1F1F;color:var(--txt);border:0;box-shadow:0 30px 60px -24px rgba(0,0,0,.45);animation:bob 8s ease-in-out infinite;z-index:2}
+.ho2 .f1{left:2%;top:4%;width:22%;rotate:-6deg;padding:22px 24px}
+.ho2 .f1 .v{font-size:40px}
+.ho2 .f2{left:12%;top:41%;width:14%;rotate:5deg;animation-delay:-3s}
+.ho2 .f3{left:0;bottom:4%;width:21%;rotate:-3deg;animation-delay:-5s}
+.ho2 .f4{right:1%;top:2%;width:24%;rotate:5deg;animation-delay:-2s;padding:22px 24px}
+.ho2 .f5{right:12%;top:44%;width:16%;rotate:-5deg;animation-delay:-6s}
+.ho2 .f6{right:2%;bottom:3%;width:21%;rotate:3deg;animation-delay:-4s}
+@media (max-width:1000px){
+  .ho2{min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .ho2 .center,.ho2 .hc{position:relative;left:auto;right:auto;top:auto;bottom:auto;transform:none;width:auto;rotate:none;animation:none}
+  .ho2 .center{grid-column:1/-1}
+  .orbit2{display:none}
+}
+@media (max-width:900px){
+  .ps2,.ps2.rev{grid-template-columns:1fr}
+  .ps2.rev .who2b{order:-1}
+  .fl .e1,.fl .e3{display:none}
+}
+@media (max-width:720px){
+  .fl{display:none}
+  .ds-num{flex-wrap:wrap}.ds-num div{flex:1 1 40%}.ds-num div:last-child{text-align:left}
+  .ho2{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){.fe,.ho2 .hc{animation:none}}
+/* the live frames ask the demo for its dark theme: an iframe follows the colour scheme of the frame element */
+.wf2 iframe{color-scheme:dark}
+
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
 .menu-btn{display:none}
 @media (max-width:720px){
@@ -595,7 +685,7 @@ html.menu-open{overflow:hidden}
   <div class="wrap" style="margin-bottom:clamp(56px,8vw,112px)"><figure class="hero1 rv" style="margin:0">
     <img class="hdrone" src="assets/work/dron/photo-hero-1.webp" srcset="assets/work/dron/photo-hero-1-768.webp 768w, assets/work/dron/photo-hero-1.webp 1280w" sizes="(max-width:900px) 92vw, 46vw" alt="A white and graphite quadcopter hovering, lime lights on its arms." width="1280" height="960">
     <div class="win hwin"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>dron · overview</span></div><img src="assets/work/dron/desktop-home-dark.webp" srcset="assets/work/dron/desktop-home-dark-1080.webp 1080w, assets/work/dron/desktop-home-dark.webp 2160w" sizes="(max-width:900px) 92vw, 60vw" alt="The DRON desktop home in the dark theme: a dark map of Kyiv, a glowing drone over the question What do you need done today, three services with prices, live stats on the left and a live order on the right." width="2160" height="1350"></div>
-    <span class="tag"><span class="dot" aria-hidden="true"></span>Live demo v1.0.0</span>
+    <span class="tag"><span class="dot" aria-hidden="true"></span>Clickable prototype, phone and desktop</span>
   </figure></div>
 
   <div class="wrap story">
@@ -642,19 +732,19 @@ html.menu-open{overflow:hidden}
     <div class="sec-head"><h2 id="h-aud">Target Audience</h2><span>Two people, two sides</span></div>
     <div class="chap R rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-audience.webp?v=2" srcset="assets/work/dron/ch-audience-768.webp?v=2 768w, assets/work/dron/ch-audience.webp?v=2 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"></div><div class="tcard"><p>A client who wants the result without learning drones, and a pilot who wants to fly, not to hunt for clients. Both are built on desk research; where data was missing, it is marked, not invented.</p></div></div>
     <div class="panel plain aud rv">
-      <div class="ps">
-        <div class="who pcard"><img src="assets/work/dron/persona-kateryna.webp" alt="Portrait of Kateryna, a woman in her early thirties with dark hair." width="480" height="480" loading="lazy">
-          <div><q>I want the result. <b>I don't want to figure out drones.</b> What matters is that it's reliable.</q><p class="nm">Kateryna, 31<i aria-hidden="true"></i><span>Client · marketing manager, Kyiv</span></p></div></div>
-        <div class="mcard"><div class="row"><p class="big">60–70%</p><p>leave at a manual registration form</p></div>
+      <div class="ps2">
+        <div class="who2b"><img src="assets/work/dron/persona-kateryna.webp" alt="Portrait of Kateryna, a woman in her early thirties with dark hair." width="480" height="480" loading="lazy">
+          <q>I want the result. <b>I don't want to figure out drones.</b> What matters is that it's reliable.</q><p class="nm">Kateryna, 31<span>Client · marketing manager, Kyiv</span></p></div>
+        <div class="mcard big3"><div class="row"><p class="big">60–70%</p><p>leave at a manual registration form</p></div>
           <div class="funnel"><div><span>Leave at a manual form</span><i style="--w:.65"></i><span>60–70%</span></div><div class="hi"><span>DRON: Diia or BankID</span><i style="--w:.06;--d:.2s"></i><span>no form</span></div></div>
           <ul><li>Done fast, no drone to learn</li><li>Licence and insurance before paying</li><li>The full price up front</li><li>Live tracking and a delivery photo</li></ul></div>
       </div>
-      <div class="ps">
-        <div class="mcard"><div class="row"><p class="big">10 s</p><p>to accept or pass a job, from one glance</p></div>
+      <div class="ps2 rev">
+        <div class="mcard big3"><div class="row"><p class="big">10 s</p><p>to accept or pass a job, from one glance</p></div>
           <div class="count"><svg viewBox="0 0 110 110" aria-hidden="true"><circle class="bg" cx="55" cy="55" r="45"/><circle class="fg" cx="55" cy="55" r="45"/><text x="55" y="55">10</text></svg><p>The offer shows the place, the service, the time and the pay. If he passes, it goes to the next operator.</p></div>
           <ul><li>A steady flow of jobs</li><li>Paid without chasing it</li><li class="p">Feast or famine today</li><li class="p">No insurance of his own in wartime</li></ul></div>
-        <div class="who pcard"><img src="assets/work/dron/persona-andrii.webp" alt="Portrait of Andrii, a man in his mid twenties in a black technical jacket." width="480" height="480" loading="lazy">
-          <div><q>I want to fly and earn. <b>Paperwork and finding clients are not for me.</b></q><p class="nm">Andrii, 26<i aria-hidden="true"></i><i aria-hidden="true" style="margin-left:4px"></i><span>Operator · licensed drone pilot</span></p></div></div>
+        <div class="who2b"><img src="assets/work/dron/persona-andrii.webp" alt="Portrait of Andrii, a man in his mid twenties in a black technical jacket." width="480" height="480" loading="lazy">
+          <q>I want to fly and earn. <b>Paperwork and finding clients are not for me.</b></q><p class="nm">Andrii, 26<span>Operator · licensed drone pilot</span></p></div>
       </div>
       <p class="src">Personas from desk research, no interviews yet (research.html, User Personas). Quotes are translated from Ukrainian. Portraits are AI-generated stand-ins.</p>
     </div>
@@ -666,8 +756,8 @@ html.menu-open{overflow:hidden}
     <div class="chap L rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-jtbd.webp?v=2" srcset="assets/work/dron/ch-jtbd-768.webp?v=2 768w, assets/work/dron/ch-jtbd.webp?v=2 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"></div><div class="tcard"><p>A job to be done is the progress a person wants to make in a situation, not a feature. Each job is written in one shape, so it can be tested against the screens:</p></div></div>
     <p class="formula" aria-label="When situation, I want motivation, so that result"><span class="k">When</span><span><em>[situation]</em></span><span class="k">I want</span><span><em>[motivation]</em></span><span class="k">so that</span><span><em>[result]</em></span></p>
     <div class="jobs">
-      <article class="job rv"><p class="who2"><img src="assets/work/dron/persona-kateryna.webp" alt="" width="44" height="44" loading="lazy">Client · main job</p><p><b>When</b> <span>I need a result that only a drone can deliver,</span> <b>I want</b> <span>to hand the job to a certified professional without managing anything myself,</span> <b>so that</b> <span>I get the outcome without ever thinking about the drone or the operator.</span></p></article>
-      <article class="job rv" style="--d:.12s"><p class="who2"><img src="assets/work/dron/persona-andrii.webp" alt="" width="44" height="44" loading="lazy">Operator · main job</p><p><b>When</b> <span>I have the licence, the equipment and the time to do drone work,</span> <b>I want</b> <span>pre-qualified jobs to reach me without hunting for them,</span> <b>so that</b> <span>I can spend my time flying, not selling.</span></p></article>
+      <article class="job rv"><p class="lbl">The client</p><p class="tpl">When <mark>I need a result that only a drone can deliver</mark>, I want <mark>to hand the job to a certified professional without managing anything myself</mark>, so that <mark>I get the outcome without ever thinking about the drone or the operator</mark>.</p></article>
+      <article class="job rv" style="--d:.12s"><p class="lbl">The operator</p><p class="tpl">When <mark>I have the licence, the equipment and the time to do drone work</mark>, I want <mark>pre-qualified jobs to reach me without hunting for them</mark>, so that <mark>I can spend my time flying, not selling</mark>.</p></article>
     </div>
     <p class="note">Three jobs shaped the first version: confirm the person coming is real and qualified; no void between paying and the arrival; get paid without managing it.</p>
   </section>
@@ -721,7 +811,7 @@ html.menu-open{overflow:hidden}
     <div class="chap L rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-voice.webp?v=2" srcset="assets/work/dron/ch-voice-768.webp?v=2 768w, assets/work/dron/ch-voice.webp?v=2 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"></div><div class="tcard"><p>A product written by many hands, and here by many AI sessions, drifts in tone unless the rules are written down. So one voice file decides every string, and the client hears one calm, accountable voice on every screen. Trust beats wit, every line.</p></div></div>
     <div class="tv">
       <div class="tvart rv" role="img" aria-label="Three lines rewritten in the DRON voice: Oops, something went wrong becomes Payment declined, nothing was taken; Look up, your delivery is inbound from the sky becomes Delivered, your parcel arrived at 10:07; Our trusted expert pilots becomes Verified by DRON, licence, insured, 214 jobs.">
-        <img class="tvmap" src="assets/work/dron/handoff-ground.webp" alt=""><img class="tvdrn" src="assets/work/dron/layer-drone-flight-camera-dark.webp" alt=""><div class="pairs">
+        <img class="tvmap" src="assets/work/dron/voice-art.webp" alt=""><div class="pairs">
           <div><p class="msg bad"><small>Not this</small>Oops! Something went wrong 😅 Don't worry, we're on it!</p><p class="msg good"><small>DRON</small>Payment declined. Nothing was taken from your account. Try again or use another method.</p></div>
           <div><p class="msg bad"><small>Not this</small>Look up, your delivery is inbound from the sky! 🚁</p><p class="msg good"><small>DRON</small>Delivered. Your parcel arrived at 10:07.</p></div>
           <div><p class="msg bad"><small>Not this</small>Our trusted, professional, hand-vetted expert pilots.</p><p class="msg good"><small>DRON</small>Verified by DRON · CAA licence · Insured · 214 jobs</p></div>
@@ -745,7 +835,7 @@ html.menu-open{overflow:hidden}
     <div class="sec-head"><h2 id="h-wf">Wireframes</h2><span>Live, click through</span></div>
     <div class="chap R rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-wireframes.webp?v=2" srcset="assets/work/dron/ch-wireframes-768.webp?v=2 768w, assets/work/dron/ch-wireframes.webp?v=2 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"></div><div class="tcard"><p>134 phone pages and 135 desktop pages, one page for every state: loading, empty, error, success. Below is the live demo itself. Pick a side and click through it, on the desktop and on the phone.</p></div></div>
     <div class="wf2 rv">
-      <figure class="dk wfd" style="margin:0"><div class="win" style="width:100%"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Desktop</span></div><div class="vpw"><iframe title="DRON live demo, desktop: choose client or operator" data-src="https://olenkabozhenko.github.io/DRON/demo/desktop/role-select.html?theme=dark" loading="lazy"></iframe></div></div><figcaption>Desktop. Pick a side and click through.</figcaption></figure>
+      <figure class="dk wfd" style="margin:0"><div class="win" style="width:100%"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Desktop</span></div><div class="vpw"><iframe title="DRON live demo, desktop: choose client or operator" data-src="https://olenkabozhenko.github.io/DRON/demo/desktop/role-select.html" loading="lazy"></iframe></div></div><figcaption>Desktop. Pick a side and click through.</figcaption></figure>
       <figure class="dk wfm" style="margin:0"><div class="pframe"><div class="vpw"><iframe title="DRON live demo, phone: choose client or operator" data-src="https://olenkabozhenko.github.io/DRON/demo/role-select.html?theme=dark" loading="lazy"></iframe></div></div><figcaption>Phone</figcaption></figure>
     </div>
   </section>
@@ -781,15 +871,15 @@ html.menu-open{overflow:hidden}
   <!-- 08 Design System -->
   <section class="wrap ch" id="system" aria-labelledby="h-ds">
     <div class="sec-head"><h2 id="h-ds">Design System</h2><span>One stylesheet the product links</span></div>
-    <div class="chap R rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-system.webp?v=2" srcset="assets/work/dron/ch-system-768.webp?v=2 768w, assets/work/dron/ch-system.webp?v=2 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"></div><div class="tcard"><p>A design system is the set of rules and parts a product is built from: tokens for colour, type, space and motion, components made of them, and patterns made of components. DRON's is one stylesheet the product links, documented like Apple's guidelines, in light and dark, with every colour pair measured against WCAG AA.</p></div></div>
-    <div class="ds-num"><div><b>372</b>tokens</div><div><b>53</b>components</div><div><b>13</b>patterns</div><div><b>2</b>themes</div></div>
+    <div class="chap R rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-system.webp?v=2" srcset="assets/work/dron/ch-system-768.webp?v=2 768w, assets/work/dron/ch-system.webp?v=2 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"><div class="fl" aria-hidden="true"><svg class="fll" viewBox="0 0 100 60" preserveAspectRatio="none"><path d="M44 10 C 60 14, 66 22, 74 18"/><path d="M50 34 C 62 30, 70 36, 82 40"/></svg><div class="fe e1"><small>Atom · colour</small><span class="dots"><i style="background:#9BCF4A"></i><i style="background:#1A1A1A;box-shadow:inset 0 0 0 1px #444"></i><i style="background:#F7F5F2"></i></span><b>Signal Green #9BCF4A</b></div><div class="fe e2"><small>Atom · type</small><b class="aa2">Aa</b><span>Inter Tight on this page · SF Pro in the product</span></div><div class="fe e3"><small>Molecule · field</small><span class="fld">From<em>Pickup address</em></span><span class="tg"><i></i>Delivery</span></div><div class="fe e4"><span class="bt p">Find a drone</span></div></div></div><div class="tcard"><p>A design system is the set of rules and parts a product is built from: tokens for colour, type, space and motion, components made of them, and patterns made of components. DRON's is one stylesheet the product links, documented like Apple's guidelines, in light and dark, with every colour pair measured against WCAG AA.</p></div></div>
+    <div class="ds-num"><div><b data-to="372">372</b>tokens</div><div><b data-to="53">53</b>components</div><div><b data-to="13">13</b>patterns</div><div><b data-to="2">2</b>themes</div></div>
     <div class="bento">
       <div class="tile t-cream w2 rv"><div class="ty big2"><span class="aa">Aa</span><ul><li style="font-size:22px;font-weight:700;--d:0s">Display 22</li><li style="font-size:17px;font-weight:600;--d:.4s">Title 17</li><li style="font-size:15px;--d:.8s">Lead 15</li><li style="font-size:13px;--d:1.2s">Body 13</li><li style="font-size:11px;--d:1.6s">Micro 11</li></ul></div><div><h3>Type</h3><p>SF Pro, ten steps, none below 11 pt; the system font, nothing to download.</p></div></div>
       <div class="tile t-dark rv" style="--d:.08s"><div class="sw dk2"><div style="--d:0s"><i style="background:#9BCF4A"></i><span>Signal Green<small>#9BCF4A · fill only</small></span></div><div style="--d:.25s"><i style="background:#1A1A1A"></i><span>Charcoal<small>#1A1A1A · ink, on green</small></span></div><div style="--d:.5s"><i style="background:#F7F5F2;box-shadow:inset 0 0 0 1px #D9D5CE"></i><span>Cream<small>#F7F5F2 · page</small></span></div></div><div><h3>Colour</h3><p>One accent, a fill and never text; charcoal on green is 9.46:1.</p></div></div>
-      <div class="tile t-green h2 rv" style="--d:.16s"><div class="btns"><span class="bt p">Find a drone</span><span class="bt s">Contact support</span><span class="bt d">Pay ₴180</span><svg class="cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 8-6 1.6L10.5 19z" fill="#1A1A1A" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/></svg></div><div><h3>Button</h3><p>Primary, secondary, tertiary, text and pay; 44 px tall; one green control per screen.</p></div></div>
+      <div class="tile t-cream h2 rv" style="--d:.16s"><div class="btns"><span class="bt p">Find a drone</span><span class="bt s">Contact support</span><span class="bt t">Cancel</span><span class="bt d">Pay ₴180</span><svg class="cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 8-6 1.6L10.5 19z" fill="#1A1A1A" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/></svg></div><div><h3>Button</h3><p>Primary, secondary, tertiary and pay, 44 px tall; one green control per screen, primary on top.</p></div></div>
       <div class="tile t-char rv"><div class="cmp"><span class="swt" aria-hidden="true"></span><div class="chips"><span style="--d:0s">Delivery</span><span style="--d:2s">Photo</span><span style="--d:4s">Inspection</span></div><div class="rail"><i style="--d:0s"></i><b></b><i style="--d:1.5s"></i><b></b><i style="--d:3s"></i><b></b><i style="--d:4.5s"></i></div></div><div><h3>Components</h3><p>Switch, chip, progress rail and 50 more.</p></div></div>
-      <div class="tile t-green rv" style="--d:.08s"><div class="pat"><div class="ph"><i style="--d:0s"></i><i class="c" style="--d:.2s"></i><i class="c" style="--d:.4s"></i><i class="g"></i></div><div class="ph"><i style="--d:.3s"></i><i class="c" style="--d:.5s"></i><i style="--d:.7s"></i><i class="g"></i></div><div class="ph"><i style="--d:.6s"></i><i style="--d:.8s"></i><i class="c" style="--d:1s"></i><i class="g"></i></div></div><div><h3>Patterns</h3><p>13 screen shapes, each used on three screens or more.</p></div></div>
       <div class="tile t-cream rv" style="--d:.08s"><div><div class="rad"><i style="--r:10px;--d:0s"></i><i style="--r:12px;--d:.3s"></i><i style="--r:16px;--d:.6s"></i><i style="--r:22px;--d:.9s"></i></div><div class="sp"><i style="width:4px"></i><i style="width:8px"></i><i style="width:12px"></i><i style="width:16px"></i><i style="width:28px"></i><i style="width:32px"></i></div></div><div><h3>Space and radius</h3><p>Base 4; six radii from 10 to 999.</p></div></div>
+      <div class="tile t-green rv" style="--d:.08s"><div class="pat"><div class="ph"><i style="--d:0s"></i><i class="c" style="--d:.2s"></i><i class="c" style="--d:.4s"></i><i class="g"></i></div><div class="ph"><i style="--d:.3s"></i><i class="c" style="--d:.5s"></i><i style="--d:.7s"></i><i class="g"></i></div><div class="ph"><i style="--d:.6s"></i><i style="--d:.8s"></i><i class="c" style="--d:1s"></i><i class="g"></i></div></div><div><h3>Patterns</h3><p>13 screen shapes, each used on three screens or more.</p></div></div>
       <div class="tile t-dark w2 mo rv"><svg viewBox="0 0 300 120" aria-hidden="true"><path d="M10 110 C 70 110, 80 10, 290 10"/><circle r="8"/></svg><div><div class="ds"><span>.12 s press</span><span>.2 s change</span><span>.32 s sheet</span></div><h3 style="margin-top:14px">Motion</h3><p>Three jobs: connect, show status, answer. No job, no animation.</p></div></div>
       <div class="tile t-cream w2 rv" style="--d:.16s"><div class="ld"><div class="l">Light<s></s><s style="width:60%"></s><i></i></div><div class="n">Dark<s></s><s style="width:60%"></s><i></i></div></div><div><h3>Light and dark</h3><p>The theme follows the device.</p></div></div>
     </div>
@@ -802,13 +892,7 @@ html.menu-open{overflow:hidden}
   <section class="wrap ch" id="handoff" aria-labelledby="h-ho">
     <div class="sec-head"><h2 id="h-ho">Handoff</h2><span>Released as v1.0.0</span></div>
     <div class="chap L rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-handoff.webp?v=2" srcset="assets/work/dron/ch-handoff-768.webp?v=2 768w, assets/work/dron/ch-handoff.webp?v=2 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"></div><div class="tcard"><p>What a developer needs to build DRON from the repository, in one folder. What ships is the tokens; the screens and the CSS are the reference.</p></div></div>
-    <div class="panel ho rv"><svg class="orbit" viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="500" cy="290" rx="480" ry="240"/><path class="ln" d="M40 110 C 180 150, 250 210, 330 240"/><path class="ln" d="M960 440 C 840 420, 770 380, 690 340"/><circle cx="40" cy="110" r="7"/><circle cx="960" cy="440" r="7"/></svg>
-      <div class="side">
-        <div class="hc"><p class="t">Tokens, light and dark</p><p class="v">372<small>ship as tokens.css</small></p></div>
-        <div class="hc"><p class="t">Components</p><p class="v">53<small>13 patterns</small></p></div>
-        <div class="hc"><p class="t">Pages, one per state</p><p class="v">269<small>134 phone, 135 desktop</small></p></div>
-        <div class="hc"><p class="t">Commits, June to October 2026</p><div class="hb" aria-label="Commits per month: June 106, July 447, August 958, September 192, October 269"><i style="--h:11%;--d:0s"></i><i style="--h:47%;--d:.3s"></i><i class="g" style="--h:100%;--d:.6s"></i><i style="--h:20%;--d:.9s"></i><i style="--h:28%;--d:1.2s"></i></div><p class="stl"><span>Jun</span><span>Aug</span><span>Oct</span></p></div>
-      </div>
+    <div class="ho2 rv"><svg class="orbit2" viewBox="0 0 1000 760" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="500" cy="380" rx="490" ry="330"/><path class="ln" d="M120 150 C 220 190, 280 260, 330 300"/><path class="ln" d="M880 610 C 800 580, 740 520, 680 470"/><path class="ln" d="M150 600 C 230 560, 270 520, 320 480"/><circle cx="120" cy="150" r="6"/><circle cx="880" cy="610" r="6"/><circle cx="150" cy="600" r="6"/></svg>
       <div class="center">
         <h3>Handoff</h3><p class="sub">From a fresh clone, nothing to install.</p>
         <ul>
@@ -821,12 +905,13 @@ html.menu-open{overflow:hidden}
         </ul>
         
       </div>
-      <div class="side">
-        <div class="hc"><p class="t"><span class="dot" style="display:inline-block;width:6px;height:6px;margin-right:6px;vertical-align:middle" aria-hidden="true"></span>Released</p><p class="v" style="font-size:18px">v1.0.0 · 27 Oct 2026</p>
-          <div class="steps" aria-hidden="true"><i><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5"/></svg></i><b></b><i><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5"/></svg></i><b></b><i><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5"/></svg></i><b></b><i><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5"/></svg></i></div><p class="stl"><span>Research</span><span>Screens</span><span>System</span><span>Handoff</span></p></div>
-        <div class="hc"><p class="t">Run it</p><p class="code"><span>$</span> python serve.py</p></div>
-        <div class="hc"><p class="t">What ships</p><p class="code">design-system/<span>tokens.css</span></p><p class="t" style="margin-top:10px">The rest is reference: components, screens, assets</p></div>
-      </div>
+      <div class="hc f1"><p class="t">Tokens, light and dark</p><p class="v">372<small>ship as tokens.css</small></p></div>
+      <div class="hc f2"><p class="t">Components</p><p class="v">53<small>13 patterns</small></p></div>
+      <div class="hc f3"><p class="t">Commits, June to October 2026</p><div class="hb" aria-label="Commits per month: June 106, July 447, August 958, September 192, October 269"><i style="--h:11%;--d:0s"></i><i style="--h:47%;--d:.3s"></i><i class="g" style="--h:100%;--d:.6s"></i><i style="--h:20%;--d:.9s"></i><i style="--h:28%;--d:1.2s"></i></div><p class="stl"><span>Jun</span><span>Aug</span><span>Oct</span></p></div>
+      <div class="hc f4"><p class="t"><span class="dot" style="display:inline-block;width:6px;height:6px;margin-right:6px;vertical-align:middle" aria-hidden="true"></span>Released</p><p class="v">v1.0.0 · 27 Oct 2026</p>
+        <div class="steps" aria-hidden="true"><i><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5"/></svg></i><b></b><i><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5"/></svg></i><b></b><i><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5"/></svg></i><b></b><i><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-5"/></svg></i></div><p class="stl"><span>Research</span><span>Screens</span><span>System</span><span>Handoff</span></p></div>
+      <div class="hc f5"><p class="t">Run it</p><p class="code"><span>$</span> python serve.py</p></div>
+      <div class="hc f6"><p class="t">What ships</p><p class="code">design-system/<span>tokens.css</span></p><p class="t" style="margin-top:10px">The rest is reference: components, screens, assets</p></div>
     </div>
   </section>
 
@@ -846,13 +931,23 @@ html.menu-open{overflow:hidden}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.12});
   els.forEach(function(e){io.observe(e)});
 })();
-// wireframes: the live demo starts at the role choice, so both sides can be clicked; the frames are drawn at device size and scaled to fit
+// design system numbers count up once, when they come on screen (like the Warmy figures)
+(function(){
+  var row=document.querySelector('.ds-num');if(!row||!('IntersectionObserver' in window))return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var els=row.querySelectorAll('[data-to]');els.forEach(function(b){b.textContent='0'});
+  var io=new IntersectionObserver(function(es){if(!es[0].isIntersecting)return;io.disconnect();
+    var t0=performance.now(),d=1600;
+    (function step(t){var k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,3);els.forEach(function(b){b.textContent=Math.round(e*+b.dataset.to)});if(k<1)requestAnimationFrame(step)})(t0);
+  },{threshold:.4});io.observe(row);
+})();
+// wireframes: the live demo starts at the role choice, in the dark theme (on the live site the demo shares this origin and reads the stored 'wf-theme', unless the visitor chose one), so both sides can be clicked; the frames are drawn at device size and scaled to fit
 (function(){
   var wf=document.querySelector('.wf2');if(!wf)return;
   var frames=wf.querySelectorAll('iframe');
   function fit(){frames.forEach(function(f){var w=f.parentNode.clientWidth,base=f.closest('.pframe')?375:1440;f.style.transform='scale('+(w/base)+')'})}
   new ResizeObserver(fit).observe(wf);fit();
-  var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){frames.forEach(function(f){f.src=f.dataset.src});io.disconnect()}},{rootMargin:'400px'});io.observe(wf);
+  var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){try{if(!localStorage.getItem('wf-theme'))localStorage.setItem('wf-theme','dark')}catch(e){}frames.forEach(function(f){f.src=f.dataset.src});io.disconnect()}},{rootMargin:'400px'});io.observe(wf);
 })();
 </script>
 </body>

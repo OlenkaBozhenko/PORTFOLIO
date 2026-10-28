@@ -462,3 +462,93 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .chap .pic,.chap.R .pic{aspect-ratio:4/3}
   .chap .tcard,.chap.R .tcard{position:relative;left:auto;right:auto;bottom:auto;max-width:none;margin:-64px 12px 0;background:rgba(30,32,28,.72)}
 }
+
+/* revision 4, her notes 2026-10-28 */
+/* one typeface, as on the rest of her site: Inter Tight everywhere; monospace only for real code (file names, commands) */
+.msg small,.rules li span,.sw small,.mo .ds,.ty .aa,.ty ul,.bt,.hc .v{font-family:var(--sans)}
+.rules li span{font-size:14px}
+/* audience: the person without a ground, aligned to the bottom; a larger metric card beside (her references: Card or Vipps, On the street, A prototype) */
+.ps2{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,4vw,64px);align-items:end}
+.ps2.rev{grid-template-columns:minmax(0,8fr) minmax(0,4fr)}
+.ps2+.ps2{margin-top:clamp(56px,8vw,112px)}
+.who2b{display:flex;flex-direction:column;gap:18px}
+.who2b img{width:min(100%,260px);aspect-ratio:1;object-fit:cover;border-radius:22px}
+.who2b q{display:block;font-size:clamp(20px,1.9vw,26px);line-height:1.3;letter-spacing:-.02em;color:var(--muted);quotes:none}
+.who2b q b{color:var(--ink);font-weight:400}
+.who2b .nm{font-size:17px}
+.who2b .nm span{display:block;font-size:14px;color:var(--muted);margin-top:2px}
+.mcard.big3{min-height:clamp(380px,36vw,520px);display:flex;flex-direction:column;justify-content:space-between;padding:clamp(28px,3.4vw,48px);color:var(--txt)}
+.mcard.big3 .row .big{font-size:clamp(64px,8vw,128px)}
+/* JTBD: the fixed words plain, the parts that change on chips */
+.job{background:linear-gradient(135deg,#141414,#1d2416 70%,#2b3a17)}
+.job .lbl{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.job p.tpl{color:var(--txt);line-height:1.55}
+.job mark{background:linear-gradient(135deg,#B7DA7C,#9BCF4A);color:var(--charcoal);border-radius:8px;padding:.04em .3em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+/* tone of voice: the high-tech picture */
+.tvmap{opacity:1}
+.tvart::before{display:none}
+.tvart{justify-content:flex-end}
+.tvart .pairs{margin-top:0}
+/* buttons as the product draws them (light theme) */
+.bt{font-weight:600}
+.bt.p{background:#9BCF4A;color:#1A1A1A}
+.bt.s{background:#D6D2C9;color:#1A1A1A}
+.bt.t{background:none;color:#5A5751;padding:0 4px}
+.bt.d{background:#D2E6AF;color:#9F9D9C}
+/* the numbers: larger, spread across the full width, counting up */
+.ds-num{display:flex;justify-content:space-between;gap:24px;margin:clamp(8px,1vw,16px) 0 clamp(32px,4vw,56px)}
+.ds-num div{font-size:15px}
+.ds-num b{font-size:clamp(64px,9vw,136px);font-variant-numeric:tabular-nums;letter-spacing:-.05em}
+.ds-num div:last-child{text-align:right}
+/* design-system parts floating on the chapter photo */
+.fl{position:absolute;inset:0;pointer-events:none}
+.fll{position:absolute;inset:0;width:100%;height:100%}
+.fll path{fill:none;stroke:var(--green);stroke-width:1.4;vector-effect:non-scaling-stroke;opacity:.8}
+.fe{position:absolute;background:rgba(26,26,26,.82);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:12px 14px;color:var(--txt);display:flex;flex-direction:column;gap:8px;font-size:13px;box-shadow:0 20px 40px -16px rgba(0,0,0,.7);animation:bob 7s ease-in-out infinite}
+.fe small{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--green)}
+.fe b{font-weight:500}
+.fe .dots{display:flex;gap:6px}.fe .dots i{width:22px;height:22px;border-radius:50%}
+.fe .aa2{font-size:44px;line-height:.9;font-weight:600;letter-spacing:-.03em}
+.fe .fld{display:flex;flex-direction:column;background:#2A2A2A;border-radius:10px;padding:8px 10px;font-size:11px;color:var(--mut)}
+.fe .fld em{font-style:normal;color:var(--txt);font-size:13px}
+.fe .tg{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;background:#9BCF4A;color:#1A1A1A;border-radius:999px;padding:5px 10px;font-weight:600}
+.fe .tg i{width:8px;height:8px;border-radius:50%;background:#1A1A1A}
+.e1{right:30%;top:7%;rotate:-6deg}
+.e2{right:5%;top:10%;rotate:5deg;animation-delay:-2s;max-width:190px}
+.e3{right:24%;top:36%;rotate:3deg;animation-delay:-4s;width:200px}
+.e4{right:6%;top:42%;rotate:-4deg;animation-delay:-1s;padding:8px;background:rgba(26,26,26,.6)}
+@keyframes bob{50%{translate:0 -10px}}
+/* handoff: no ground; cards of different sizes float around the list */
+.ho2{position:relative;min-height:780px;margin-top:clamp(24px,3vw,40px)}
+.orbit2{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.orbit2 ellipse{fill:none;stroke:rgba(14,14,14,.16);stroke-width:1.2;stroke-dasharray:10 12;vector-effect:non-scaling-stroke}
+.orbit2 .ln{fill:none;stroke:var(--green);stroke-width:1.6;vector-effect:non-scaling-stroke}
+.orbit2 circle{fill:#fff;stroke:var(--green);stroke-width:2;vector-effect:non-scaling-stroke}
+.ho2 .center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(40%,460px);z-index:1;background:#1F1F1F;color:var(--txt);box-shadow:0 40px 80px -30px rgba(0,0,0,.45)}
+.ho2 .hc{position:absolute;background:#1F1F1F;color:var(--txt);border:0;box-shadow:0 30px 60px -24px rgba(0,0,0,.45);animation:bob 8s ease-in-out infinite;z-index:2}
+.ho2 .f1{left:2%;top:4%;width:22%;rotate:-6deg;padding:22px 24px}
+.ho2 .f1 .v{font-size:40px}
+.ho2 .f2{left:12%;top:41%;width:14%;rotate:5deg;animation-delay:-3s}
+.ho2 .f3{left:0;bottom:4%;width:21%;rotate:-3deg;animation-delay:-5s}
+.ho2 .f4{right:1%;top:2%;width:24%;rotate:5deg;animation-delay:-2s;padding:22px 24px}
+.ho2 .f5{right:12%;top:44%;width:16%;rotate:-5deg;animation-delay:-6s}
+.ho2 .f6{right:2%;bottom:3%;width:21%;rotate:3deg;animation-delay:-4s}
+@media (max-width:1000px){
+  .ho2{min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .ho2 .center,.ho2 .hc{position:relative;left:auto;right:auto;top:auto;bottom:auto;transform:none;width:auto;rotate:none;animation:none}
+  .ho2 .center{grid-column:1/-1}
+  .orbit2{display:none}
+}
+@media (max-width:900px){
+  .ps2,.ps2.rev{grid-template-columns:1fr}
+  .ps2.rev .who2b{order:-1}
+  .fl .e1,.fl .e3{display:none}
+}
+@media (max-width:720px){
+  .fl{display:none}
+  .ds-num{flex-wrap:wrap}.ds-num div{flex:1 1 40%}.ds-num div:last-child{text-align:left}
+  .ho2{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){.fe,.ho2 .hc{animation:none}}
+/* the live frames ask the demo for its dark theme: an iframe follows the colour scheme of the frame element */
+.wf2 iframe{color-scheme:dark}

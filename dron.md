@@ -89,3 +89,13 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Chapter pictures redone as high-tech photos in the spirit of the inspection and cargo photos: the drone is in the scene, with thin lime holographic lines for the chapter (radar, two profiles, a path to a check, a route with a decision, a waveform, projected wireframes, a journey line over a valley, an exploded drone on a grid, a case opening into code). The drone layer on top is gone.
 - Each picture runs the full width of the text; the chapter text sits on a glass card on the calm side of the photo, like the Market reality card. The thin-line schematics stay inside the photos.
 - Deeper shadow under the mockups: the desktop on the first screen and the live frames.
+
+## Revision 4, her notes 2026-10-28
+- Target Audience: the person (portrait, quote, name) without a ground, aligned to the bottom; the metric card beside it larger; the rows mirror each other (her references: Card or Vipps, On the street, A prototype, not a picture).
+- JTBD: the jobs in the shape of her Warmy "The template" card: the fixed words plain, the parts that change on lime chips.
+- First screen tag: "Clickable prototype, phone and desktop".
+- Tone of Voice: one AI-generated high-tech picture behind the lines (`voice-art.webp`).
+- One typeface as on the rest of her site: Inter Tight everywhere; monospace only for code (file names, commands).
+- Wireframes: the desktop frame now opens dark too. The desktop demo ignores `?theme=dark`, so the page stores the demo's own theme choice (`wf-theme` = dark) before loading the frames, only when the visitor has none; this works on the live site, where the demo shares the origin, not from a local file.
+- Design System: buttons drawn as the product draws them (primary Signal Green, secondary warm grey, tertiary text, disabled); the numbers larger, spread across the full width, counting up once like the Warmy figures; design-system parts (colour and type atoms, a field molecule, a button) float on the chapter photo.
+- Handoff: no ground; cards of different sizes and angles float around the list on a dashed orbit.
