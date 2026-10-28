@@ -114,3 +114,7 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 
 ## Revision 7, her notes 2026-10-28
 - Customer Journey Map without the dark ground, as a grid in the site's style after her reference (a customer journey template): rows Phases (dark headers), Actions (chips), Experience (two filled curves: before the fixes in rust, with DRON as designed in green, with callouts and mood faces), Pain points, What changed (green checks). A note says the "with DRON" line is the design's intent, not a measurement.
+
+## Revision 8, her notes 2026-10-28
+- Every phone mockup (the flows and the live phone frame) has a status bar (9:41, battery) above the screen and a small inset below, in the app's #1A1A1A, so the rounded corners never cut the content (the notification badge was cut).
+- The desktop live frame: checked on github.io that the stored `wf-theme` = dark opens the desktop demo dark; from a local file the browser keeps the stores apart, so locally it stays light.

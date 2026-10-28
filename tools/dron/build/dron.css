@@ -710,3 +710,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (prefers-reduced-motion:reduce){.cv .lb,.cv .la{transition:none;stroke-dashoffset:0}}
 .cvw{position:relative;margin-top:6px}.cv{margin-top:0}
 .cd{margin-top:0}
+/* revision 8: the phone screens sit under a status bar and above a bottom inset, so the rounded corners never cut the content */
+.phn .scrn{background:#1A1A1A;border-radius:24px;overflow:hidden;padding-bottom:9%}
+.phn .scrn img{border-radius:0}
+.sb{display:flex;justify-content:space-between;align-items:center;height:auto;aspect-ratio:375/40;padding:0 9%;background:#1A1A1A;color:#F7F5F2;font-style:normal}
+.sb b{font-weight:600;font-size:11px;letter-spacing:.01em}
+.sb s{display:block;width:20px;height:9px;border:1.3px solid #F7F5F2;border-radius:3px;position:relative;text-decoration:none}
+.sb s::before{content:"";position:absolute;inset:1.5px;right:5px;background:#F7F5F2;border-radius:1px}
+.sb s::after{content:"";position:absolute;right:-3.5px;top:2.5px;width:2px;height:3px;background:#F7F5F2;border-radius:0 1px 1px 0}
+.pframe .vpw{background:#1A1A1A;aspect-ratio:375/872}
+.pframe .vpw .sb{position:absolute;left:0;right:0;top:0;z-index:1}
+.pframe .vpw .sb b{font-size:13px}
+.pframe iframe{top:calc(100% * 40 / 872)}
+@media (max-width:720px){.sb b{font-size:9px}.sb s{width:16px;height:8px}}
