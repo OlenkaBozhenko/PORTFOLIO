@@ -837,6 +837,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 /* revision 17: the desktop card full width; the window inside keeps its size, centred, with a small shadow so its edge shows */
 .wf3 .wfd{width:100%;display:flex;justify-content:center}
 .wf3 .wfd .win{width:min(100%,calc((100vh - 380px) * 1.6)) !important;flex:none;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 10px 30px rgba(0,0,0,.55)}
+/* revision 18: more room above and below the numbers; the labels larger with a small gap under the figure */
+.ds-num{margin:clamp(56px,6vw,88px) 0 clamp(56px,6vw,88px)}
+.ds-num div{font-size:clamp(17px,1.4vw,20px)}
+.ds-num b{margin-bottom:10px}
 
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
 .menu-btn{display:none}

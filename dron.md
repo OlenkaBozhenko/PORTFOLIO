@@ -146,3 +146,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Wireframes: "On the desktop" text above its card; the desktop card sized so text and card fit one screen height (920 x 637 at 1440 x 900); the "Phone first" text aligned to the top of the phone card.
 - Flows pager: one bar per drag step (the next phone at the left edge, then the end): 5 per flow at 1440 px.
 - Desktop live card full width; the window inside keeps its size (832 px at 1440 x 900), centred, with a small shadow and a hairline so its edge shows.
+- Design System numbers: more space above (after the photo) and below (before the cards); labels 17-20 px with a 10 px gap under the figure.
