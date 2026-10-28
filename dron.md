@@ -148,3 +148,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Desktop live card full width; the window inside keeps its size (832 px at 1440 x 900), centred, with a small shadow and a hairline so its edge shows.
 - Design System numbers: more space above (after the photo) and below (before the cards); labels 17-20 px with a 10 px gap under the figure.
 - Design System, Motion card: the right half lists the three jobs of motion and reduced motion, with figures from DESIGN tokens (.32 s sheets, 7 s flight on tracking, press 1 px in .12 s).
+- Motion card: the list removed; the chart runs the full card width on a timeline 0 to .4 s, with .12 / .2 / .32 s marked and the dot easing along the curve.
