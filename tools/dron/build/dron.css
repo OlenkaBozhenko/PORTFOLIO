@@ -644,3 +644,27 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .mcard.dash .kv li::before{display:none}
 .mcard.dash .chk li::before{content:"";width:18px;height:18px;margin:0;vertical-align:0;border-radius:50%;background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.2l2.3 2.3 4.7-5' fill='none' stroke='%231A1A1A' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center/11px no-repeat}
 .mcard.dash .chk li.x::before{background:#4A2A22 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M3.5 3.5l5 5M8.5 3.5l-5 5' fill='none' stroke='%23D78876' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E") center/10px no-repeat}
+/* revision 6, her notes 2026-10-28 */
+.cols{border-bottom:0}
+.dec{width:150px}
+.dec::before,.dec::after{width:34px}
+.lk{width:64px}
+/* phone mockups: a gentler corner, so the screens' top corners (back arrow, logo) are not cut */
+.phn{border-radius:30px;padding:6px}
+.phn img{border-radius:24px}
+.rules ol,.rules li{border:0}
+.rules li{padding:10px 0}
+/* wireframes: desktop full width with its text under it; then the phone card with the text at its side, on the bottom edge (her Warmy reference) */
+.wf3{display:flex;flex-direction:column;gap:clamp(20px,2.4vw,32px)}
+.wf3 figure{border-radius:22px;overflow:hidden}
+.wf3 .wfd{padding:clamp(20px,3vw,44px)}
+.wf3 .wfd .win{border-radius:12px}
+.wcap h3{font-size:clamp(22px,2.2vw,28px);letter-spacing:-.02em;font-weight:400}
+.wcap p{margin-top:10px;max-width:56ch;font-size:clamp(16px,1.3vw,18px);color:var(--muted);line-height:1.5}
+.wrow{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,64px);align-items:end;margin-top:clamp(40px,6vw,88px)}
+.wrow .wfm{background:radial-gradient(120% 90% at 80% 100%,#2b3a17,#141414 60%);padding:clamp(32px,4vw,64px) 0;display:flex;justify-content:center}
+.pframe{border-radius:34px;padding:7px}
+.pframe .vpw{border-radius:27px}
+.wrow .pframe{width:min(80%,320px)}
+@media (max-width:900px){.wrow{grid-template-columns:1fr}.wrow .wcap{order:2}}
+@media (max-width:720px){.wf3 .wfd{display:block}.wf3 .wfd+.wcap{display:none}.wf3 > .wfd{display:none}}

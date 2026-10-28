@@ -86,7 +86,6 @@
         <div class="who2b"><img src="assets/work/dron/persona-andrii.webp" alt="Portrait of Andrii, a man in his mid twenties in a black technical jacket." width="480" height="480" loading="lazy">
           <q>I want to fly and earn. <b>Paperwork and finding clients are not for me.</b></q><p class="nm">Andrii, 26<span>Operator · licensed drone pilot</span></p></div>
       </div>
-      <p class="src">Figures from the journey map and the jobs (ux-research); the offer is demo data. Personas from desk research, no interviews yet (research.html, User Personas). Quotes are translated from Ukrainian. Portraits are AI-generated stand-ins.</p>
     </div>
   </section>
 
@@ -100,7 +99,6 @@
     <p class="note">Three jobs shaped the first version: confirm the person coming is real and qualified; no void between paying and the arrival; get paid without managing it.</p>
   </section>
 
-  <figure class="wrap" style="margin:0 auto"><div class="band rv"><img src="assets/work/dron/photo-cargo-city.webp" srcset="assets/work/dron/photo-cargo-city-768.webp 768w, assets/work/dron/photo-cargo-city.webp 1536w" sizes="92vw" alt="A cargo drone with a lime parcel flies over a European city at dusk." width="1536" height="864" loading="lazy"><figcaption>The green is the payload.<span>Package delivery, from ₴180</span></figcaption></div></figure>
 
   <!-- 04 User Flows -->
   <section class="wrap ch" id="flows" aria-labelledby="h-flows">
@@ -139,7 +137,7 @@
           <div class="lk" style="--d:.6s"></div>
           <figure class="scr" style="margin:0;--d:.65s"><div class="phn"><img src="assets/work/dron/m-withdraw-sent.webp" alt="Withdraw: ₴1,500 sent to your card, the rest stays on the balance, Done." width="750" height="1624" draggable="false" loading="lazy"></div><span><b>7 · Withdraw</b>To the card</span></figure>
         </div></div><div class="sbar" aria-hidden="true"><i></i></div></div>
-      <span class="dragc" aria-hidden="true">Drag</span><div class="tap"><span><b>3 taps</b> was the target to order</span><span><b>5 taps</b> is what the build measures, with Apple Pay</span><span>Kept on the record, not hidden</span></div>
+      <span class="dragc" aria-hidden="true">Drag</span>
     </div>
   </section>
 
@@ -172,9 +170,11 @@
   <section class="wrap ch" id="wireframes" aria-labelledby="h-wf">
     <div class="sec-head"><h2 id="h-wf">Wireframes</h2><span>Live, click through</span></div>
     <div class="chap R rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-wireframes.webp?v=2" srcset="assets/work/dron/ch-wireframes-768.webp?v=2 768w, assets/work/dron/ch-wireframes.webp?v=2 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"></div><div class="tcard"><p>134 phone pages and 135 desktop pages, one page for every state: loading, empty, error, success. Below is the live demo itself. Pick a side and click through it, on the desktop and on the phone.</p></div></div>
-    <div class="wf2 rv">
-      <figure class="dk wfd" style="margin:0"><div class="win" style="width:100%"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Desktop</span></div><div class="vpw"><iframe title="DRON live demo, desktop: choose client or operator" data-src="https://olenkabozhenko.github.io/DRON/demo/desktop/role-select.html" loading="lazy"></iframe></div></div></figure>
-      <figure class="dk wfm" style="margin:0"><div class="pframe"><div class="vpw"><iframe title="DRON live demo, phone: choose client or operator" data-src="https://olenkabozhenko.github.io/DRON/demo/role-select.html?theme=dark" loading="lazy"></iframe></div></div></figure>
+    <div class="wf3">
+      <figure class="dk wfd rv" style="margin:0"><div class="win" style="width:100%"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Desktop</span></div><div class="vpw"><iframe title="DRON live demo, desktop: choose client or operator" data-src="https://olenkabozhenko.github.io/DRON/demo/desktop/role-select.html" loading="lazy"></iframe></div></div></figure>
+      <div class="wcap rv"><h3>On the desktop</h3><p>The same flows on a wider screen: the map stays in view, the steps open in a panel beside it, and the live order is always on the right. Pick a side and click through.</p></div>
+      <div class="wrow rv"><div class="wcap"><h3>Phone first</h3><p>The phone pages are the source of truth for how DRON behaves: 134 pages, one for every state. This is the live demo; scroll it and tap through it.</p></div>
+      <figure class="dk wfm" style="margin:0"><div class="pframe"><div class="vpw"><iframe title="DRON live demo, phone: choose client or operator" data-src="https://olenkabozhenko.github.io/DRON/demo/role-select.html?theme=dark" loading="lazy"></iframe></div></div></figure></div>
     </div>
   </section>
 
@@ -311,7 +311,7 @@
 })();
 // wireframes: the live demo starts at the role choice, in the dark theme (on the live site the demo shares this origin and reads the stored 'wf-theme', unless the visitor chose one), so both sides can be clicked; the frames are drawn at device size and scaled to fit
 (function(){
-  var wf=document.querySelector('.wf2');if(!wf)return;
+  var wf=document.querySelector('.wf3');if(!wf)return;
   var frames=wf.querySelectorAll('iframe');
   function fit(){frames.forEach(function(f){var w=f.parentNode.clientWidth,base=f.closest('.pframe')?375:1440;f.style.transform='scale('+(w/base)+')'})}
   new ResizeObserver(fit).observe(wf);fit();

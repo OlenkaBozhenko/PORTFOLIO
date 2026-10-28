@@ -106,3 +106,8 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Target Audience: the metric cards rebuilt as small dark dashboards: a gauge for the 60–70% drop-off, "1 tap" sign-in with bars, a checklist; for the operator the 10 s ring, what one glance shows (demo data), and today's pains.
 - JTBD: per person, a text about who they are and their related jobs as chips (AnyBiz challenge layout) beside the job card; the rows mirror.
 - Wireframes: no captions; rounded cards; the desktop card as tall as its frame, so it is shorter than the phone.
+
+## Revision 6, her notes 2026-10-28
+- Removed: the source note under Target Audience; the dashed base line in the trust chart; the "The green is the payload" photo band; the 3 taps / 5 taps line under the flows; the lines between the voice rules.
+- Flows: more room around the decisions (wider links and decision blocks); phone mockups with a gentler corner (frame 30, screen 24) so the screens' top corners are not cut; the live phone frame the same.
+- Wireframes: the desktop card full width with its text under it ("On the desktop"); then the phone card with its text at the side on the bottom edge ("Phone first"), as in her Warmy "A prototype, not a picture"; every card with the same 22 px radius.
