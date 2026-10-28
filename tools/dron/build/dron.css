@@ -781,3 +781,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 /* revision 16: desktop text above its card; the card sized to fit one screen height; the phone text aligned to the top of its card */
 .wf3 .wfd{width:min(100%,calc((100vh - 380px) * 1.6 + 88px));max-width:100%}
 .wrow{align-items:start}
+/* revision 17: the desktop card full width; the window inside keeps its size, centred, with a small shadow so its edge shows */
+.wf3 .wfd{width:100%;display:flex;justify-content:center}
+.wf3 .wfd .win{width:min(100%,calc((100vh - 380px) * 1.6)) !important;flex:none;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 10px 30px rgba(0,0,0,.55)}

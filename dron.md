@@ -145,3 +145,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Flows: the scroll bar replaced by a slider pager, small bars in the centre, the active one green, the others grey; one bar per view of the row (2 on a wide screen, 7 on a phone); a bar takes the row to its view.
 - Wireframes: "On the desktop" text above its card; the desktop card sized so text and card fit one screen height (920 x 637 at 1440 x 900); the "Phone first" text aligned to the top of the phone card.
 - Flows pager: one bar per drag step (the next phone at the left edge, then the end): 5 per flow at 1440 px.
+- Desktop live card full width; the window inside keeps its size (832 px at 1440 x 900), centred, with a small shadow and a hairline so its edge shows.
