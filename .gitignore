@@ -1,3 +1,7 @@
 .playwright-mcp/
 tools/warmy/figma/
 tools/anybiz/figma/
+
+# DRON raw sources (large PNGs; originals live in the Figma file "DRON portfolio photos")
+tools/dron/photos/
+tools/dron/shots/
