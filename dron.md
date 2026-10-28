@@ -138,3 +138,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 
 ## Revision 14, her note 2026-10-28
 - Journey map recoloured in the page UI: the chart on a charcoal card, "before" in grey, "with DRON" in Signal Green; pain points on light grey cards; what changed on charcoal cards with green checks. No rust.
+- Note under the journey map removed (her call); that the "with DRON" line is intent, not measurement, stays recorded here.
