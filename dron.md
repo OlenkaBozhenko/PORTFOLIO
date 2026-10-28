@@ -132,3 +132,6 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 
 ## Revision 12, her note 2026-10-28
 - Flows: a 16 px gap between each phone and the arrows or decisions next to it, in both flows.
+
+## Revision 13, her note 2026-10-28
+- The product on this page is dark only: both live demos open with `?theme=dark`. The DRON repo now honours that parameter on the desktop (ui/kit.js) and the phone (wireframes/_wf-shell.js) and keeps it for every next page (DRON commit, needs a push of DRON to go live).
