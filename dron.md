@@ -123,3 +123,6 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - The live phone renders at 1:1 (no scaling on a wide screen), so it is sharp; it follows the stored dark theme like the desktop frame (the `?theme=dark` parameter made the demo skip the stored choice).
 - Removed the "Fields, roofs, facades" photo band.
 - Journey map: no lines at all; rows and columns held together by space (proximity). Project colours, bright: numbered charcoal phase cards, cream action chips, the chart on a cream card with Signal Green and rust curves and pill callouts, pain points on rust-wash cards, what changed on green-wash cards.
+
+## Revision 10, her note 2026-10-28
+- Handoff: the green lines and the orbit removed; grey dashed lines join every side card to the list and to its neighbours.
