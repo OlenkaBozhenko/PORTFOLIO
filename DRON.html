@@ -776,6 +776,35 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .pframe .vpw .sb b{font-size:13px}
 .pframe iframe{top:calc(100% * 40 / 872)}
 @media (max-width:720px){.sb b{font-size:9px}.sb s{width:16px;height:8px}}
+/* revision 9: the live phone at 1:1 so it is sharp */
+.wrow .pframe{width:min(100%,392px)}
+/* the journey map without lines: rows and columns held together by space (proximity), in the project's bright colours */
+.cjm2{border-top:0;column-gap:10px;row-gap:12px;margin-top:clamp(28px,3.4vw,44px)}
+.cjm2>*,.cjm2>*:not(.cl){border:0}
+.cjm2 .cl{padding:14px 0 0;font-size:15px;color:var(--ink);font-weight:500}
+.cjm2 .ph2{margin:0;border:0 !important;border-radius:16px;background:#1A1A1A !important;color:#F7F5F2 !important;text-align:left;padding:16px 18px;font-size:17px;display:flex;flex-direction:column;gap:4px}
+.cjm2 .ph2 small{font-size:12px;color:#9BCF4A;letter-spacing:.06em}
+.cjm2 .ac{padding:4px 0 8px}
+.cjm2 .ac span{background:#F2F0EC;color:#1A1A1A}
+.cjm2 .ex{margin:18px 0 10px;background:#F7F5F2;border-radius:22px;padding:6px 8px 12px}
+.ex .lg{padding:12px 12px 0;color:#1A1A1A}
+.ex .lg .b::before{background:#C4462A}.ex .lg .a::before{background:#9BCF4A}
+.cv .ab{fill:rgba(196,70,42,.16)}
+.cv .aa{fill:rgba(155,207,74,.42)}
+.cv .lb{stroke:#C4462A;stroke-width:3}
+.cv .la{stroke:#9BCF4A;stroke-width:3.5}
+.cd i{border-width:3px;width:14px;height:14px}
+.cd.b i{border-color:#C4462A}.cd.a i{border-color:#9BCF4A}.cd.n i{border-color:#1A1A1A}
+.cd em{font-weight:500;border-radius:999px;padding:6px 12px}
+.cd.b em{background:#C4462A;color:#fff}
+.cd.a em{background:#9BCF4A;color:#1A1A1A}
+.cd.n em{background:#1A1A1A;color:#fff}
+.cd em::after{display:none}
+.cd em.up{bottom:18px}.cd em.dn{top:18px}
+.cjm2 .pp{background:#F2D8CF;color:#7A2410;border-radius:16px;padding:14px 16px}
+.cjm2 .op{background:#E7F0D2;border-radius:16px;padding:14px 16px;color:#1A1A1A}
+.cjm2 .cl .faces{margin-top:58px;height:250px}
+.faces svg{stroke:#1A1A1A}
 
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
 .menu-btn{display:none}
@@ -1016,20 +1045,19 @@ html.menu-open{overflow:hidden}
       <figure class="dk wfd rv" style="margin:0"><div class="win" style="width:100%"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Desktop</span></div><div class="vpw"><iframe title="DRON live demo, desktop: choose client or operator" data-src="https://olenkabozhenko.github.io/DRON/demo/desktop/role-select.html" loading="lazy"></iframe></div></div></figure>
       <div class="wcap rv"><h3>On the desktop</h3><p>The same flows on a wider screen: the map stays in view, the steps open in a panel beside it, and the live order is always on the right. Pick a side and click through.</p></div>
       <div class="wrow rv"><div class="wcap"><h3>Phone first</h3><p>The phone pages are the source of truth for how DRON behaves: 134 pages, one for every state. This is the live demo; scroll it and tap through it.</p></div>
-      <figure class="dk wfm" style="margin:0"><div class="pframe"><div class="vpw"><i class="sb" aria-hidden="true"><b>9:41</b><s></s></i><iframe title="DRON live demo, phone: choose client or operator" data-src="https://olenkabozhenko.github.io/DRON/demo/role-select.html?theme=dark" loading="lazy"></iframe></div></div></figure></div>
+      <figure class="dk wfm" style="margin:0"><div class="pframe"><div class="vpw"><i class="sb" aria-hidden="true"><b>9:41</b><s></s></i><iframe title="DRON live demo, phone: choose client or operator" data-src="https://olenkabozhenko.github.io/DRON/demo/role-select.html" loading="lazy"></iframe></div></div></figure></div>
     </div>
   </section>
 
-  <figure class="wrap" style="margin:0 auto"><div class="band rv"><img src="assets/work/dron/photo-inspection-bridge.webp" srcset="assets/work/dron/photo-inspection-bridge-768.webp 768w, assets/work/dron/photo-inspection-bridge.webp 1536w" sizes="92vw" alt="An inspection drone with a thermal camera scans the steel of a bridge at night with a thin green laser line." width="1536" height="864" loading="lazy"><figcaption>Fields, roofs, facades.<span>Inspection, the report the same day</span></figcaption></div></figure>
 
   <!-- 07 CJM -->
   <section class="wrap ch" id="cjm" aria-labelledby="h-cjm">
     <div class="sec-head"><h2 id="h-cjm">Customer Journey Map</h2><span>Where people drop off</span></div>
     <div class="chap L rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-cjm.webp?v=2" srcset="assets/work/dron/ch-cjm-768.webp?v=2 768w, assets/work/dron/ch-cjm.webp?v=2 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"></div><div class="tcard"><p>A customer journey map follows one person through every stage with the product, what they feel there, and where they leave. Kateryna's journey has four stages; the line is her mood, the red points are where she leaves.</p></div></div>
     <div class="cjm2 rv" role="group" aria-label="Customer journey map of Kateryna, the client, in four stages">
-      <div class="cl">Phases</div><div class="ph2">Attraction</div><div class="ph2">Activation</div><div class="ph2">Involvement</div><div class="ph2">Retention</div>
+      <div class="cl">Phases</div><div class="ph2"><small>01</small>Attraction</div><div class="ph2"><small>02</small>Activation</div><div class="ph2"><small>03</small>Involvement</div><div class="ph2"><small>04</small>Retention</div>
       <div class="cl">Actions</div><div class="ac"><span>A social video</span><span>A friend</span><span>A search</span></div><div class="ac"><span>Sign in</span><span>Pick a service</span><span>See the price</span><span>Pay</span></div><div class="ac"><span>Track live</span><span>Get the result</span><span>Report an issue</span></div><div class="ac"><span>Book again</span><span>Share</span></div>
-      <div class="cl">Experience<span class="faces"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01"/><path d="M8.5 14.5c1 1.5 2.2 2 3.5 2s2.5-.5 3.5-2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01"/><path d="M9 15h6"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01"/><path d="M8.5 16.5c1-1.5 2.2-2 3.5-2s2.5.5 3.5 2"/></svg></span></div><div class="ex"><p class="lg"><span class="b">Before the fixes</span><span class="a">With DRON, as designed</span></p><div class="cvw"><svg class="cv" viewBox="0 0 1000 300" preserveAspectRatio="none" role="img" aria-label="Before the fixes, her mood falls deep at sign-in and choosing an operator, and again when an issue has no way out. With DRON as designed, it stays level: one-tap sign-in, live tracking, and Book again lift it to the end."><g class="gl"><line x1="250" y1="0" x2="250" y2="300"/><line x1="500" y1="0" x2="500" y2="300"/><line x1="750" y1="0" x2="750" y2="300"/><line x1="0" y1="150" x2="1000" y2="150"/></g><path class="ab" d="M0 150 C20.8 140.0, 75.0 73.3, 125 90 C175.0 106.7, 255.8 225.8, 300 250 C344.2 274.2, 346.7 256.7, 390 235 C433.3 213.3, 508.3 119.2, 560 120 C611.7 120.8, 650.0 225.8, 700 240 C750.0 254.2, 810.0 211.7, 860 205 C910.0 198.3, 976.7 200.8, 1000 200 L1000 300 L0 300 Z"/><path class="aa" d="M0 150 C20.8 140.0, 73.3 91.7, 125 90 C176.7 88.3, 237.5 143.3, 310 140 C382.5 136.7, 495.0 72.5, 560 70 C625.0 67.5, 650.0 126.7, 700 125 C750.0 123.3, 810.0 74.2, 860 60 C910.0 45.8, 976.7 43.3, 1000 40 L1000 300 L0 300 Z"/><path class="lb" d="M0 150 C20.8 140.0, 75.0 73.3, 125 90 C175.0 106.7, 255.8 225.8, 300 250 C344.2 274.2, 346.7 256.7, 390 235 C433.3 213.3, 508.3 119.2, 560 120 C611.7 120.8, 650.0 225.8, 700 240 C750.0 254.2, 810.0 211.7, 860 205 C910.0 198.3, 976.7 200.8, 1000 200"/><path class="la" d="M0 150 C20.8 140.0, 73.3 91.7, 125 90 C176.7 88.3, 237.5 143.3, 310 140 C382.5 136.7, 495.0 72.5, 560 70 C625.0 67.5, 650.0 126.7, 700 125 C750.0 123.3, 810.0 74.2, 860 60 C910.0 45.8, 976.7 43.3, 1000 40"/></svg><span class="cd n" style="left:12.50%;top:30.00%"><i></i><em class="up">Curious</em></span><span class="cd b" style="left:30.00%;top:83.33%"><i></i><em class="dn">A manual form loses 60–70%</em></span><span class="cd b" style="left:70.00%;top:80.00%"><i></i><em class="dn">No way to fix an issue</em></span><span class="cd a" style="left:31.00%;top:46.67%"><i></i><em class="up">Diia or BankID, one tap</em></span><span class="cd a" style="left:56.00%;top:23.33%"><i></i><em class="up">Live tracking with the ETA</em></span><span class="cd a" style="left:86.00%;top:20.00%"><i></i><em class="up">Book again in one action</em></span></div></div>
+      <div class="cl">Experience<span class="faces"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01"/><path d="M8.5 14.5c1 1.5 2.2 2 3.5 2s2.5-.5 3.5-2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01"/><path d="M9 15h6"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01"/><path d="M8.5 16.5c1-1.5 2.2-2 3.5-2s2.5.5 3.5 2"/></svg></span></div><div class="ex"><p class="lg"><span class="b">Before the fixes</span><span class="a">With DRON, as designed</span></p><div class="cvw"><svg class="cv" viewBox="0 0 1000 300" preserveAspectRatio="none" role="img" aria-label="Before the fixes, her mood falls deep at sign-in and choosing an operator, and again when an issue has no way out. With DRON as designed, it stays level: one-tap sign-in, live tracking, and Book again lift it to the end."><path class="ab" d="M0 150 C20.8 140.0, 75.0 73.3, 125 90 C175.0 106.7, 255.8 225.8, 300 250 C344.2 274.2, 346.7 256.7, 390 235 C433.3 213.3, 508.3 119.2, 560 120 C611.7 120.8, 650.0 225.8, 700 240 C750.0 254.2, 810.0 211.7, 860 205 C910.0 198.3, 976.7 200.8, 1000 200 L1000 300 L0 300 Z"/><path class="aa" d="M0 150 C20.8 140.0, 73.3 91.7, 125 90 C176.7 88.3, 237.5 143.3, 310 140 C382.5 136.7, 495.0 72.5, 560 70 C625.0 67.5, 650.0 126.7, 700 125 C750.0 123.3, 810.0 74.2, 860 60 C910.0 45.8, 976.7 43.3, 1000 40 L1000 300 L0 300 Z"/><path class="lb" d="M0 150 C20.8 140.0, 75.0 73.3, 125 90 C175.0 106.7, 255.8 225.8, 300 250 C344.2 274.2, 346.7 256.7, 390 235 C433.3 213.3, 508.3 119.2, 560 120 C611.7 120.8, 650.0 225.8, 700 240 C750.0 254.2, 810.0 211.7, 860 205 C910.0 198.3, 976.7 200.8, 1000 200"/><path class="la" d="M0 150 C20.8 140.0, 73.3 91.7, 125 90 C176.7 88.3, 237.5 143.3, 310 140 C382.5 136.7, 495.0 72.5, 560 70 C625.0 67.5, 650.0 126.7, 700 125 C750.0 123.3, 810.0 74.2, 860 60 C910.0 45.8, 976.7 43.3, 1000 40"/></svg><span class="cd n" style="left:12.50%;top:30.00%"><i></i><em class="up">Curious</em></span><span class="cd b" style="left:30.00%;top:83.33%"><i></i><em class="dn">A manual form loses 60–70%</em></span><span class="cd b" style="left:70.00%;top:80.00%"><i></i><em class="dn">No way to fix an issue</em></span><span class="cd a" style="left:31.00%;top:46.67%"><i></i><em class="up">Diia or BankID, one tap</em></span><span class="cd a" style="left:56.00%;top:23.33%"><i></i><em class="up">Live tracking with the ETA</em></span><span class="cd a" style="left:86.00%;top:20.00%"><i></i><em class="up">Book again in one action</em></span></div></div>
       <div class="cl">Pain points</div><div class="pp">The value has 8 seconds; an ad that promises more than the page loses her.</div><div class="pp">A manual form loses 60–70%; choosing an operator is the highest single drop-off; hidden fees.</div><div class="pp">No way to resolve an issue means she never comes back.</div><div class="pp">No Book again sends her back to classifieds; the deal moves off the platform.</div>
       <div class="cl">What changed</div><ul class="op"><li>One line: the outcome, not the drone</li></ul><ul class="op"><li>Diia or BankID, one tap</li><li>No operator to choose</li><li>The price locked</li></ul><ul class="op"><li>Report an issue</li><li>A resolution flow</li></ul><ul class="op"><li>Book again in one action</li><li>One-tap share</li></ul>
     </div>
@@ -1143,7 +1171,7 @@ html.menu-open{overflow:hidden}
 (function(){
   var wf=document.querySelector('.wf3');if(!wf)return;
   var frames=wf.querySelectorAll('iframe');
-  function fit(){frames.forEach(function(f){var w=f.parentNode.clientWidth,base=f.closest('.pframe')?375:1440;f.style.transform='scale('+(w/base)+')'})}
+  function fit(){frames.forEach(function(f){var w=f.parentNode.clientWidth,base=f.closest('.pframe')?375:1440;var k=w/base;f.style.transform=k>0.999?'none':'scale('+k+')'})}
   new ResizeObserver(fit).observe(wf);fit();
   var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){try{if(!localStorage.getItem('wf-theme'))localStorage.setItem('wf-theme','dark')}catch(e){}frames.forEach(function(f){f.src=f.dataset.src});io.disconnect()}},{rootMargin:'400px'});io.observe(wf);
 })();

@@ -118,3 +118,8 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 ## Revision 8, her notes 2026-10-28
 - Every phone mockup (the flows and the live phone frame) has a status bar (9:41, battery) above the screen and a small inset below, in the app's #1A1A1A, so the rounded corners never cut the content (the notification badge was cut).
 - The desktop live frame: checked on github.io that the stored `wf-theme` = dark opens the desktop demo dark; from a local file the browser keeps the stores apart, so locally it stays light.
+
+## Revision 9, her notes 2026-10-28
+- The live phone renders at 1:1 (no scaling on a wide screen), so it is sharp; it follows the stored dark theme like the desktop frame (the `?theme=dark` parameter made the demo skip the stored choice).
+- Removed the "Fields, roofs, facades" photo band.
+- Journey map: no lines at all; rows and columns held together by space (proximity). Project colours, bright: numbered charcoal phase cards, cream action chips, the chart on a cream card with Signal Green and rust curves and pill callouts, pain points on rust-wash cards, what changed on green-wash cards.

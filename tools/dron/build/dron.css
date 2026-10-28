@@ -723,3 +723,32 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .pframe .vpw .sb b{font-size:13px}
 .pframe iframe{top:calc(100% * 40 / 872)}
 @media (max-width:720px){.sb b{font-size:9px}.sb s{width:16px;height:8px}}
+/* revision 9: the live phone at 1:1 so it is sharp */
+.wrow .pframe{width:min(100%,392px)}
+/* the journey map without lines: rows and columns held together by space (proximity), in the project's bright colours */
+.cjm2{border-top:0;column-gap:10px;row-gap:12px;margin-top:clamp(28px,3.4vw,44px)}
+.cjm2>*,.cjm2>*:not(.cl){border:0}
+.cjm2 .cl{padding:14px 0 0;font-size:15px;color:var(--ink);font-weight:500}
+.cjm2 .ph2{margin:0;border:0 !important;border-radius:16px;background:#1A1A1A !important;color:#F7F5F2 !important;text-align:left;padding:16px 18px;font-size:17px;display:flex;flex-direction:column;gap:4px}
+.cjm2 .ph2 small{font-size:12px;color:#9BCF4A;letter-spacing:.06em}
+.cjm2 .ac{padding:4px 0 8px}
+.cjm2 .ac span{background:#F2F0EC;color:#1A1A1A}
+.cjm2 .ex{margin:18px 0 10px;background:#F7F5F2;border-radius:22px;padding:6px 8px 12px}
+.ex .lg{padding:12px 12px 0;color:#1A1A1A}
+.ex .lg .b::before{background:#C4462A}.ex .lg .a::before{background:#9BCF4A}
+.cv .ab{fill:rgba(196,70,42,.16)}
+.cv .aa{fill:rgba(155,207,74,.42)}
+.cv .lb{stroke:#C4462A;stroke-width:3}
+.cv .la{stroke:#9BCF4A;stroke-width:3.5}
+.cd i{border-width:3px;width:14px;height:14px}
+.cd.b i{border-color:#C4462A}.cd.a i{border-color:#9BCF4A}.cd.n i{border-color:#1A1A1A}
+.cd em{font-weight:500;border-radius:999px;padding:6px 12px}
+.cd.b em{background:#C4462A;color:#fff}
+.cd.a em{background:#9BCF4A;color:#1A1A1A}
+.cd.n em{background:#1A1A1A;color:#fff}
+.cd em::after{display:none}
+.cd em.up{bottom:18px}.cd em.dn{top:18px}
+.cjm2 .pp{background:#F2D8CF;color:#7A2410;border-radius:16px;padding:14px 16px}
+.cjm2 .op{background:#E7F0D2;border-radius:16px;padding:14px 16px;color:#1A1A1A}
+.cjm2 .cl .faces{margin-top:58px;height:250px}
+.faces svg{stroke:#1A1A1A}
