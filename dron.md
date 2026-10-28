@@ -126,3 +126,6 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 
 ## Revision 10, her note 2026-10-28
 - Handoff: the green lines and the orbit removed; grey dashed lines join every side card to the list and to its neighbours.
+
+## Revision 11, her note 2026-10-28
+- Research: the sources line under the charts removed from the page; the sources stay recorded in this file (01 Research).
