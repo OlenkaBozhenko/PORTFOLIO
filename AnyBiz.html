@@ -184,6 +184,9 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .dev .vp{aspect-ratio:600/1240;border-radius:clamp(14px,1.8vw,24px);box-shadow:0 1px 2px rgba(0,0,0,.08),0 24px 40px -18px rgba(30,20,80,.45)}
 .vp img{position:absolute;inset:0;width:100%;height:auto;opacity:0;transition:opacity .5s ease}
 .vp img.on{opacity:1}
+/* the sequence builder's top bar stays put while the steps scroll under it */
+.vp img.pin{z-index:1;pointer-events:none}
+.vp img.tall.on+img.pin{opacity:1}
 .vp img.tall{animation:feed var(--t,16s) ease-in-out .8s infinite alternate;animation-play-state:paused}
 .stagefig.play .vp img.tall.on{animation-play-state:running}
 .stagefig .stage:hover .vp img.tall{animation-play-state:paused}
@@ -591,6 +594,7 @@ html.menu-open{overflow:hidden}
           <img class="on" src="assets/work/anybiz/messaging.webp" alt="Messaging instructions: the checklist of instructions on the left, and an example email introduction written by the agent, with Regenerate and Save and train the AI." width="1600" height="1000">
           <img src="assets/work/anybiz/personas-app.webp" alt="Personas: a table with state, name, product and offering, channels, source, prospects, date and status, and the Import from menu open with File, LinkedIn, HubSpot, Zapier and Salesforce." width="1600" height="1000" loading="lazy">
           <img class="tall" style="--to:-43%;--t:14s" src="assets/work/anybiz/sequence.webp" alt="The sequence builder: an action step, an email step, a LinkedIn view profile step and a phone call step with a script, each with days after and a sending window." width="1280" height="1406" loading="lazy">
+          <img class="pin" src="assets/work/anybiz/sequence-head.webp" alt="" width="1280" height="185" loading="lazy">
           <img src="assets/work/anybiz/performance-app.webp" alt="Personas in the performance view: engaged prospects, total actions by email, LinkedIn and phone, reply rate, opportunity rate and status for each persona." width="1600" height="1000" loading="lazy">
         </div></div>
         <div class="dev" id="dev"><div class="vp" id="mob">
@@ -798,7 +802,7 @@ document.querySelectorAll('.big').forEach(function(h){
 
 // 3. the accordion: one item open at a time; the browser and the phone show its screens (the phone hides when an item has none)
 (function(){
-  var items=document.querySelectorAll('#acc li'),lap=document.querySelectorAll('#lap img'),mob=document.querySelectorAll('#mob img'),dev=document.getElementById('dev');
+  var items=document.querySelectorAll('#acc li'),lap=document.querySelectorAll('#lap img:not(.pin)'),mob=document.querySelectorAll('#mob img'),dev=document.getElementById('dev');
   items.forEach(function(li,i){li.querySelector('button').addEventListener('click',function(){
     items.forEach(function(o,k){var on=k===i;o.classList.toggle('open',on);o.querySelector('button').setAttribute('aria-expanded',on)});
     lap.forEach(function(im,k){im.classList.toggle('on',k===i)});
