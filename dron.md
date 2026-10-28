@@ -129,3 +129,6 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 
 ## Revision 11, her note 2026-10-28
 - Research: the sources line under the charts removed from the page; the sources stay recorded in this file (01 Research).
+
+## Revision 12, her note 2026-10-28
+- Flows: a 16 px gap between each phone and the arrows or decisions next to it, in both flows.
