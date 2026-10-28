@@ -788,3 +788,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .ds-num{margin:clamp(56px,6vw,88px) 0 clamp(56px,6vw,88px)}
 .ds-num div{font-size:clamp(17px,1.4vw,20px)}
 .ds-num b{margin-bottom:10px}
+/* revision 19: the motion card fills its width: what each job of motion does, on the right */
+.tile.mo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:1fr auto;column-gap:28px}
+.tile.mo>svg{grid-column:1;grid-row:1}
+.tile.mo>div{grid-column:1;grid-row:2}
+.tile.mo .mj{grid-column:2;grid-row:1/3;list-style:none;margin:0;padding:0;display:flex;flex-direction:column;justify-content:space-between;gap:12px}
+.mj li{font-size:14px;line-height:1.45;color:var(--mut);border-left:2px solid #333;padding-left:14px}
+.mj li b{display:block;color:var(--txt);font-weight:500;font-size:15px;margin-bottom:2px}
+.mj li:first-child{border-color:var(--green)}
+@media (max-width:720px){.tile.mo{grid-template-columns:1fr}.tile.mo .mj{grid-column:1;grid-row:3;margin-top:18px}}
