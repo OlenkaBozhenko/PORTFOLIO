@@ -72,3 +72,15 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 
 ## Next
 - Next work: Warmy.
+
+## Revision, her notes 2026-10-28 (second round)
+- First screen: one picture, the drone photo and the dark desktop together on the dark map of Kyiv.
+- Tools: Claude Code only (Figma removed from the meta).
+- Landing row: a short product description like the other rows: "A drone-as-a-service app: order a delivery, an aerial shoot or an inspection, and a certified operator does the job, with the price locked and the drone tracked live."
+- Chapter numbers and every "Made with" block removed. Each chapter opens with a picture: a dark schematic in thin lime lines made for that chapter (AI-generated in the Figma file, `assets/work/dron/ch-*.webp`), a DRON drone render as a layer above it (`layer-*.webp`, from the DRON repo), and the chapter's text on a dark card; picture left and right in turn.
+- Research: no dark ground; the four-figure facts row removed. Target Audience: no ground; persona and metric cards in a checkerboard. User Flows: no ground; every screen in the dark theme, the light map tiles darkened (listings-map, job-brief, tracking).
+- Tone of Voice: more space under the heading; the moving card has the map behind and a drone above.
+- Wireframes: no big ground; two dark cards, desktop and phone, both live and dark, starting at the role choice so both sides can be clicked; no switch, no link.
+- Design System: the wide card shows type, the narrow one colours.
+- Handoff: the side cards hang at different angles on a dashed orbit with lime lines (her references ORBIT and Telemetry).
+- Links removed (her call): Open the demo, Open the design system, Open the handoff.

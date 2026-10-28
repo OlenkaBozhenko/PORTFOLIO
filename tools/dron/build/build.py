@@ -11,7 +11,7 @@ head = head.replace('  /* project colours (sportguardian.md): teal #418B91, gree
 assert 'teal' not in head
 menu = '\n'.join(sg[258:281])
 css = open('tools/dron/build/dron.css', encoding='utf-8').read()
-css = css.replace('url(../../../assets/work/dron/handoff-ground.webp)', 'url(assets/work/dron/handoff-ground.webp)')
+css = css.replace('url(../../../assets/', 'url(assets/')
 css = css.replace('@keyframes chip{0%{background:#3E3E3E;color:var(--txt)}33%,100%{background:#3E3E3E;color:var(--txt)}0.01%,33%{background:var(--green);color:var(--charcoal)}}', '@keyframes chip{0%,33%{background:var(--green);color:var(--charcoal)}33.01%,100%{background:#3E3E3E;color:var(--txt)}}')
 tail = '\n'.join(sg[281:283])
 body = '\n'.join(sg[283:285]) + '\n' + '\n'.join(sg[289:324])

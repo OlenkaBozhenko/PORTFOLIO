@@ -7,14 +7,15 @@
       <div><dt>Role</dt><dd>Research, UX, UI, design system</dd></div>
       <div><dt>Year</dt><dd>2026</dd></div>
       <div><dt>Platform</dt><dd>Mobile web, desktop</dd></div>
-      <div><dt>Tools</dt><dd>Claude Code, Figma</dd></div>
+      <div><dt>Tools</dt><dd>Claude Code</dd></div>
     </dl>
   </div>
 
-  <div class="wrap hero">
-    <figure class="dk shot rv" style="margin:0"><img src="assets/work/dron/photo-hero-1.webp" srcset="assets/work/dron/photo-hero-1-768.webp 768w, assets/work/dron/photo-hero-1.webp 1280w" sizes="(max-width:900px) 92vw, 40vw" alt="A white and graphite quadcopter hovering on a dark background, its camera facing forward and lime lights on the arms." width="1280" height="960"><span class="tag"><span class="dot" aria-hidden="true"></span>Live demo v1.0.0</span></figure>
-    <figure class="dk desk rv" style="margin:0;--d:.12s"><div class="win"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>dron · overview</span></div><img src="assets/work/dron/desktop-home-dark.webp" srcset="assets/work/dron/desktop-home-dark-1080.webp 1080w, assets/work/dron/desktop-home-dark.webp 2160w" sizes="(max-width:900px) 110vw, 66vw" alt="The DRON desktop home in the dark theme: a dark map of Kyiv, a glowing drone over the question What do you need done today, three services with prices, live stats on the left and a live order on the right." width="2160" height="1350"></div></figure>
-  </div>
+  <div class="wrap" style="margin-bottom:clamp(56px,8vw,112px)"><figure class="hero1 rv" style="margin:0">
+    <img class="hdrone" src="assets/work/dron/photo-hero-1.webp" srcset="assets/work/dron/photo-hero-1-768.webp 768w, assets/work/dron/photo-hero-1.webp 1280w" sizes="(max-width:900px) 92vw, 46vw" alt="A white and graphite quadcopter hovering, lime lights on its arms." width="1280" height="960">
+    <div class="win hwin"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>dron · overview</span></div><img src="assets/work/dron/desktop-home-dark.webp" srcset="assets/work/dron/desktop-home-dark-1080.webp 1080w, assets/work/dron/desktop-home-dark.webp 2160w" sizes="(max-width:900px) 92vw, 60vw" alt="The DRON desktop home in the dark theme: a dark map of Kyiv, a glowing drone over the question What do you need done today, three services with prices, live stats on the left and a live order on the right." width="2160" height="1350"></div>
+    <span class="tag"><span class="dot" aria-hidden="true"></span>Live demo v1.0.0</span>
+  </figure></div>
 
   <div class="wrap story">
     <div class="pair"><h2>About</h2><p>DRON is a drone-as-a-service product: a person orders a delivery, an aerial shoot or an inspection, and a certified operator from DRON's own fleet does the work. There are two sides, the client and the operator, on mobile web first and on desktop.</p></div>
@@ -25,9 +26,9 @@
 
   <!-- 01 Research -->
   <section class="wrap ch" id="research" aria-labelledby="h-research">
-    <div class="sec-head"><h2 id="h-research"><span class="n">01</span>Research</h2><span>Read the field before drawing</span></div>
-    <div class="lead"><p class="ai"><b>Made with</b>Claude Code fetched and read the sources, wrote the comparison, and flagged a quote of its own that had no source; it was withdrawn.</p><p>Fifteen competitors in three groups, eight of them compared on five axes, five products scored on how they earn trust. The finding that turned the product: people fear the drone more than the operator, and nobody shows who will fly it.</p></div>
-    <div class="panel rv">
+    <div class="sec-head"><h2 id="h-research">Research</h2><span>Read the field before drawing</span></div>
+    <div class="chap L rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-research.webp" srcset="assets/work/dron/ch-research-768.webp 768w, assets/work/dron/ch-research.webp 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"><img class="drn" src="assets/work/dron/layer-drone-flight-camera-dark.webp" alt="" loading="lazy"></div><div class="tcard"><p>Fifteen competitors in three groups, eight of them compared on five axes, five products scored on how they earn trust. The finding that turned the product: people fear the drone more than the operator, and nobody shows who will fly it.</p></div></div>
+    <div class="panel plain rv">
       <div class="rs">
         <div>
           <p class="big">0<small>of 8</small></p>
@@ -51,34 +52,28 @@
           <div class="glass"><p class="t">Market reality</p><p>The drone is the fear, not the operator. Before trying it, <b>more than half</b> of US respondents did not trust drone delivery; after it, most changed their mind.</p><p class="big">87%</p><p>positive after a real delivery</p></div>
         </div>
       </div>
-      <div class="facts">
-        <div><b>15</b><span>competitors in three groups: hard, soft, aspirational</span></div>
-        <div><b>8 × 5</b><span>products compared on audience, mechanism, trust, money</span></div>
-        <div><b>₴500–1,500</b><span>a drone shoot on Kabanchik today, price on request elsewhere</span></div>
-        <div><b>+25%</b><span>bookings at Airbnb from trust signals on the card</span></div>
-      </div>
       <p class="src">Sources: drone trust research 2024–2025 (SciTechDaily, Springer Future Business Journal); Raw Studio on Airbnb; kabanchik.ua, June 2026; benchmark of her own, July 2026. <a href="https://olenkabozhenko.github.io/DRON/research.html">The whole research</a></p>
     </div>
   </section>
 
   <!-- 02 Target Audience -->
   <section class="wrap ch" id="audience" aria-labelledby="h-aud">
-    <div class="sec-head"><h2 id="h-aud"><span class="n">02</span>Target Audience</h2><span>Two people, two sides</span></div>
-    <div class="lead"><p class="ai"><b>Made with</b>Claude Code built four personas from the desk research and marked every guess as a hypothesis; the two primary ones lead the design.</p><p>A client who wants the result without learning drones, and a pilot who wants to fly, not to hunt for clients. Both are built on desk research; where data was missing, it is marked, not invented.</p></div>
-    <div class="panel rv">
+    <div class="sec-head"><h2 id="h-aud">Target Audience</h2><span>Two people, two sides</span></div>
+    <div class="chap R rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-audience.webp" srcset="assets/work/dron/ch-audience-768.webp 768w, assets/work/dron/ch-audience.webp 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"><img class="drn" src="assets/work/dron/layer-drone-02-dark.webp" alt="" loading="lazy"></div><div class="tcard"><p>A client who wants the result without learning drones, and a pilot who wants to fly, not to hunt for clients. Both are built on desk research; where data was missing, it is marked, not invented.</p></div></div>
+    <div class="panel plain aud rv">
       <div class="ps">
-        <div class="who"><img src="assets/work/dron/persona-kateryna.webp" alt="Portrait of Kateryna, a woman in her early thirties with dark hair." width="480" height="480" loading="lazy">
+        <div class="who pcard"><img src="assets/work/dron/persona-kateryna.webp" alt="Portrait of Kateryna, a woman in her early thirties with dark hair." width="480" height="480" loading="lazy">
           <div><q>I want the result. <b>I don't want to figure out drones.</b> What matters is that it's reliable.</q><p class="nm">Kateryna, 31<i aria-hidden="true"></i><span>Client · marketing manager, Kyiv</span></p></div></div>
         <div class="mcard"><div class="row"><p class="big">60–70%</p><p>leave at a manual registration form</p></div>
           <div class="funnel"><div><span>Leave at a manual form</span><i style="--w:.65"></i><span>60–70%</span></div><div class="hi"><span>DRON: Diia or BankID</span><i style="--w:.06;--d:.2s"></i><span>no form</span></div></div>
           <ul><li>Done fast, no drone to learn</li><li>Licence and insurance before paying</li><li>The full price up front</li><li>Live tracking and a delivery photo</li></ul></div>
       </div>
       <div class="ps">
-        <div class="who"><img src="assets/work/dron/persona-andrii.webp" alt="Portrait of Andrii, a man in his mid twenties in a black technical jacket." width="480" height="480" loading="lazy">
-          <div><q>I want to fly and earn. <b>Paperwork and finding clients are not for me.</b></q><p class="nm">Andrii, 26<i aria-hidden="true"></i><i aria-hidden="true" style="margin-left:4px"></i><span>Operator · licensed drone pilot</span></p></div></div>
         <div class="mcard"><div class="row"><p class="big">10 s</p><p>to accept or pass a job, from one glance</p></div>
           <div class="count"><svg viewBox="0 0 110 110" aria-hidden="true"><circle class="bg" cx="55" cy="55" r="45"/><circle class="fg" cx="55" cy="55" r="45"/><text x="55" y="55">10</text></svg><p>The offer shows the place, the service, the time and the pay. If he passes, it goes to the next operator.</p></div>
           <ul><li>A steady flow of jobs</li><li>Paid without chasing it</li><li class="p">Feast or famine today</li><li class="p">No insurance of his own in wartime</li></ul></div>
+        <div class="who pcard"><img src="assets/work/dron/persona-andrii.webp" alt="Portrait of Andrii, a man in his mid twenties in a black technical jacket." width="480" height="480" loading="lazy">
+          <div><q>I want to fly and earn. <b>Paperwork and finding clients are not for me.</b></q><p class="nm">Andrii, 26<i aria-hidden="true"></i><i aria-hidden="true" style="margin-left:4px"></i><span>Operator · licensed drone pilot</span></p></div></div>
       </div>
       <p class="src">Personas from desk research, no interviews yet (research.html, User Personas). Quotes are translated from Ukrainian. Portraits are AI-generated stand-ins.</p>
     </div>
@@ -86,8 +81,8 @@
 
   <!-- 03 JTBD -->
   <section class="wrap ch" id="jtbd" aria-labelledby="h-jtbd">
-    <div class="sec-head"><h2 id="h-jtbd"><span class="n">03</span>Jobs to Be Done</h2><span>What they hire DRON for</span></div>
-    <div class="lead"><p class="ai"><b>Made with</b>Claude Code wrote 16 jobs and 3 hypotheses from the personas and checked each against competitors; no feature names allowed.</p><p>A job to be done is the progress a person wants to make in a situation, not a feature. Each job is written in one shape, so it can be tested against the screens:</p></div>
+    <div class="sec-head"><h2 id="h-jtbd">Jobs to Be Done</h2><span>What they hire DRON for</span></div>
+    <div class="chap L rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-jtbd.webp" srcset="assets/work/dron/ch-jtbd-768.webp 768w, assets/work/dron/ch-jtbd.webp 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"><img class="drn" src="assets/work/dron/layer-drone-flight-delivery.webp" alt="" loading="lazy"></div><div class="tcard"><p>A job to be done is the progress a person wants to make in a situation, not a feature. Each job is written in one shape, so it can be tested against the screens:</p></div></div>
     <p class="formula" aria-label="When situation, I want motivation, so that result"><span class="k">When</span><span><em>[situation]</em></span><span class="k">I want</span><span><em>[motivation]</em></span><span class="k">so that</span><span><em>[result]</em></span></p>
     <div class="jobs">
       <article class="job rv"><p class="who2"><img src="assets/work/dron/persona-kateryna.webp" alt="" width="44" height="44" loading="lazy">Client · main job</p><p><b>When</b> <span>I need a result that only a drone can deliver,</span> <b>I want</b> <span>to hand the job to a certified professional without managing anything myself,</span> <b>so that</b> <span>I get the outcome without ever thinking about the drone or the operator.</span></p></article>
@@ -100,9 +95,9 @@
 
   <!-- 04 User Flows -->
   <section class="wrap ch" id="flows" aria-labelledby="h-flows">
-    <div class="sec-head"><h2 id="h-flows"><span class="n">04</span>User Flows</h2><span>Two of fourteen</span></div>
-    <div class="lead"><p class="ai"><b>Made with</b>Claude Code drew all 14 flows as diagrams from the jobs, with every decision, state and dead end, then built a page for each step.</p><p>Every job became a flow, and every flow a row of pages linked one to the next. Here are the two main ones, on the phone, as they run in the live demo. Scroll sideways.</p></div>
-    <div class="panel flowpanel rv">
+    <div class="sec-head"><h2 id="h-flows">User Flows</h2><span>Two of fourteen</span></div>
+    <div class="chap R rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-flows.webp" srcset="assets/work/dron/ch-flows-768.webp 768w, assets/work/dron/ch-flows.webp 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"><img class="drn" src="assets/work/dron/layer-drone-01-dark.webp" alt="" loading="lazy"></div><div class="tcard"><p>Every job became a flow, and every flow a row of pages linked one to the next. Here are the two main ones, on the phone, as they run in the live demo. Scroll sideways.</p></div></div>
+    <div class="panel plain flowpanel rv">
       <div class="flow"><h3>Client: order a delivery</h3><p>From the question to the delivery photo.</p>
         <div class="strip" tabindex="0" role="region" aria-label="Client flow, seven screens; scroll sideways"><div class="line">
           <figure class="scr" style="margin:0"><img src="assets/work/dron/m-listings.webp" alt="Home: Delivery chosen, pickup and drop-off, today, now, Find." width="375" height="812" loading="lazy"><span><b>1 · Find</b>Service, where, when</span></figure>
@@ -141,18 +136,17 @@
 
   <!-- 05 Tone of Voice -->
   <section class="wrap ch" id="voice" aria-labelledby="h-voice">
-    <div class="sec-head"><h2 id="h-voice"><span class="n">05</span>Tone of Voice</h2><span>One voice on 134 screens</span></div>
+    <div class="sec-head"><h2 id="h-voice">Tone of Voice</h2><span>One voice on 134 screens</span></div>
+    <div class="chap L rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-voice.webp" srcset="assets/work/dron/ch-voice-768.webp 768w, assets/work/dron/ch-voice.webp 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"><img class="drn" src="assets/work/dron/layer-drone-flight-front-dark.webp" alt="" loading="lazy"></div><div class="tcard"><p>A product written by many hands, and here by many AI sessions, drifts in tone unless the rules are written down. So one voice file decides every string, and the client hears one calm, accountable voice on every screen. Trust beats wit, every line.</p></div></div>
     <div class="tv">
       <div class="tvart rv" role="img" aria-label="Three lines rewritten in the DRON voice: Oops, something went wrong becomes Payment declined, nothing was taken; Look up, your delivery is inbound from the sky becomes Delivered, your parcel arrived at 10:07; Our trusted expert pilots becomes Verified by DRON, licence, insured, 214 jobs.">
-        <div class="pairs">
+        <img class="tvmap" src="assets/work/dron/handoff-ground.webp" alt=""><img class="tvdrn" src="assets/work/dron/layer-drone-flight-camera-dark.webp" alt=""><div class="pairs">
           <div><p class="msg bad"><small>Not this</small>Oops! Something went wrong 😅 Don't worry, we're on it!</p><p class="msg good"><small>DRON</small>Payment declined. Nothing was taken from your account. Try again or use another method.</p></div>
           <div><p class="msg bad"><small>Not this</small>Look up, your delivery is inbound from the sky! 🚁</p><p class="msg good"><small>DRON</small>Delivered. Your parcel arrived at 10:07.</p></div>
           <div><p class="msg bad"><small>Not this</small>Our trusted, professional, hand-vetted expert pilots.</p><p class="msg good"><small>DRON</small>Verified by DRON · CAA licence · Insured · 214 jobs</p></div>
         </div>
       </div>
       <div class="rules">
-        <p class="ai"><b>Made with</b>Claude Code wrote the voice file from the research, then swept every string on every page against it.</p>
-        <p>A product written by many hands, and here by many AI sessions, drifts in tone unless the rules are written down. So one voice file decides every string, and the client hears one calm, accountable voice on every screen. Trust beats wit, every line.</p>
         <ol>
           <li>Name the outcome, not the drone<span>Delivered. Your parcel arrived at 10:07.</span></li>
           <li>Show the proof, not the adjective<span>Verified by DRON · CAA licence · Insured</span></li>
@@ -167,15 +161,11 @@
 
   <!-- 06 Wireframes -->
   <section class="wrap ch" id="wireframes" aria-labelledby="h-wf">
-    <div class="sec-head"><h2 id="h-wf"><span class="n">06</span>Wireframes</h2><span>Live, click through</span></div>
-    <div class="lead"><p class="ai"><b>Made with</b>Claude Code built every page in HTML, grey first, then painted; five agents painted the operator side in one pass; Playwright checked each page.</p><p>134 phone pages and 135 desktop pages, one page for every state: loading, empty, error, success. Below is the live demo itself. Pick a side and click through it, on the desktop and on the phone.</p></div>
-    <div class="panel rv">
-      <div class="wfbar"><div class="seg" role="group" aria-label="Whose side"><button type="button" aria-pressed="true" data-role="client">Client</button><button type="button" aria-pressed="false" data-role="operator">Operator</button></div><a href="https://olenkabozhenko.github.io/DRON/demo/" target="_blank" rel="noopener">Open the demo in a new tab ↗</a></div>
-      <div class="wf" id="wf">
-        <div class="dframe"><div class="win" style="width:100%"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Desktop</span></div><div class="vpw"><iframe title="DRON live demo, desktop" data-src="https://olenkabozhenko.github.io/DRON/demo/desktop/{p}.html?theme=dark" loading="lazy" tabindex="0"></iframe></div></div></div>
-        <div class="pframe"><div class="vpw"><iframe title="DRON live demo, phone" data-src="https://olenkabozhenko.github.io/DRON/demo/{p}.html?theme=dark" loading="lazy"></iframe></div></div>
-      </div>
-      <div class="wfcap"><span>The frames run the real demo. Data on the screens is made up for the demo.</span><span id="wfnow">Client home</span></div>
+    <div class="sec-head"><h2 id="h-wf">Wireframes</h2><span>Live, click through</span></div>
+    <div class="chap R rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-wireframes.webp" srcset="assets/work/dron/ch-wireframes-768.webp 768w, assets/work/dron/ch-wireframes.webp 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"><img class="drn" src="assets/work/dron/layer-drone-08-dark.webp" alt="" loading="lazy"></div><div class="tcard"><p>134 phone pages and 135 desktop pages, one page for every state: loading, empty, error, success. Below is the live demo itself. Pick a side and click through it, on the desktop and on the phone.</p></div></div>
+    <div class="wf2 rv">
+      <figure class="dk wfd" style="margin:0"><div class="win" style="width:100%"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Desktop</span></div><div class="vpw"><iframe title="DRON live demo, desktop: choose client or operator" data-src="https://olenkabozhenko.github.io/DRON/demo/desktop/role-select.html?theme=dark" loading="lazy"></iframe></div></div><figcaption>Desktop. Pick a side and click through.</figcaption></figure>
+      <figure class="dk wfm" style="margin:0"><div class="pframe"><div class="vpw"><iframe title="DRON live demo, phone: choose client or operator" data-src="https://olenkabozhenko.github.io/DRON/demo/role-select.html?theme=dark" loading="lazy"></iframe></div></div><figcaption>Phone</figcaption></figure>
     </div>
   </section>
 
@@ -183,8 +173,8 @@
 
   <!-- 07 CJM -->
   <section class="wrap ch" id="cjm" aria-labelledby="h-cjm">
-    <div class="sec-head"><h2 id="h-cjm"><span class="n">07</span>Customer Journey Map</h2><span>Where people drop off</span></div>
-    <div class="lead"><p class="ai"><b>Made with</b>Claude Code mapped both journeys through Whalen's six minds and ranked the five worst drop-offs.</p><p>A customer journey map follows one person through every stage with the product, what they feel there, and where they leave. Kateryna's journey has four stages; the line is her mood, the red points are where she leaves.</p></div>
+    <div class="sec-head"><h2 id="h-cjm">Customer Journey Map</h2><span>Where people drop off</span></div>
+    <div class="chap L rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-cjm.webp" srcset="assets/work/dron/ch-cjm-768.webp 768w, assets/work/dron/ch-cjm.webp 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"><img class="drn" src="assets/work/dron/layer-drone-07.webp" alt="" loading="lazy"></div><div class="tcard"><p>A customer journey map follows one person through every stage with the product, what they feel there, and where they leave. Kateryna's journey has four stages; the line is her mood, the red points are where she leaves.</p></div></div>
     <div class="panel cjm rv">
       <div class="cjmsc" tabindex="0" role="region" aria-label="Journey line; scroll sideways on a phone"><svg viewBox="0 0 1000 300" role="img" aria-label="Client journey: mood rises with curiosity at Attraction, falls to its lowest at Activation where she chooses an operator and meets a registration form, rises with the tracking, falls when an issue has no way out at Involvement, and ends high with pride at Retention.">
         <g class="grid"><line x1="250" y1="20" x2="250" y2="280"/><line x1="500" y1="20" x2="500" y2="280"/><line x1="750" y1="20" x2="750" y2="280"/><line x1="0" y1="150" x2="1000" y2="150"/></g>
@@ -209,12 +199,12 @@
 
   <!-- 08 Design System -->
   <section class="wrap ch" id="system" aria-labelledby="h-ds">
-    <div class="sec-head"><h2 id="h-ds"><span class="n">08</span>Design System</h2><span>One stylesheet the product links</span></div>
-    <div class="lead"><p class="ai"><b>Made with</b>Claude Code built the tokens, components and docs; the concept came from Refero searches; the Impeccable skill audited it; Figma was driven through a local bridge.</p><p>A design system is the set of rules and parts a product is built from: tokens for colour, type, space and motion, components made of them, and patterns made of components. DRON's is one stylesheet the product links, documented like Apple's guidelines, in light and dark, with every colour pair measured against WCAG AA.</p></div>
+    <div class="sec-head"><h2 id="h-ds">Design System</h2><span>One stylesheet the product links</span></div>
+    <div class="chap R rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-system.webp" srcset="assets/work/dron/ch-system-768.webp 768w, assets/work/dron/ch-system.webp 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"><img class="drn" src="assets/work/dron/layer-drone-11-dark.webp" alt="" loading="lazy"></div><div class="tcard"><p>A design system is the set of rules and parts a product is built from: tokens for colour, type, space and motion, components made of them, and patterns made of components. DRON's is one stylesheet the product links, documented like Apple's guidelines, in light and dark, with every colour pair measured against WCAG AA.</p></div></div>
     <div class="ds-num"><div><b>372</b>tokens</div><div><b>53</b>components</div><div><b>13</b>patterns</div><div><b>2</b>themes</div></div>
     <div class="bento">
-      <div class="tile t-cream w2 rv"><div class="sw"><div style="--d:0s"><i style="background:#9BCF4A"></i><span>Signal Green<small>#9BCF4A · fill only</small></span></div><div style="--d:.25s"><i style="background:#1A1A1A"></i><span>Charcoal<small>#1A1A1A · ink, on green</small></span></div><div style="--d:.5s"><i style="background:#F7F5F2;box-shadow:inset 0 0 0 1px #D9D5CE"></i><span>Cream<small>#F7F5F2 · page</small></span></div></div><div><h3>Colour</h3><p>One accent, used as a fill and never as text; charcoal on green is 9.46:1.</p></div></div>
-      <div class="tile t-dark rv" style="--d:.08s"><div class="ty"><span class="aa">Aa</span><ul><li style="font-size:22px;font-weight:700;--d:0s">Display 22</li><li style="font-size:17px;font-weight:600;--d:.4s">Title 17</li><li style="font-size:15px;--d:.8s">Lead 15</li><li style="font-size:13px;--d:1.2s">Body 13</li><li style="font-size:11px;--d:1.6s">Micro 11</li></ul></div><div><h3>Type</h3><p>SF Pro, ten steps, none below 11 pt.</p></div></div>
+      <div class="tile t-cream w2 rv"><div class="ty big2"><span class="aa">Aa</span><ul><li style="font-size:22px;font-weight:700;--d:0s">Display 22</li><li style="font-size:17px;font-weight:600;--d:.4s">Title 17</li><li style="font-size:15px;--d:.8s">Lead 15</li><li style="font-size:13px;--d:1.2s">Body 13</li><li style="font-size:11px;--d:1.6s">Micro 11</li></ul></div><div><h3>Type</h3><p>SF Pro, ten steps, none below 11 pt; the system font, nothing to download.</p></div></div>
+      <div class="tile t-dark rv" style="--d:.08s"><div class="sw dk2"><div style="--d:0s"><i style="background:#9BCF4A"></i><span>Signal Green<small>#9BCF4A · fill only</small></span></div><div style="--d:.25s"><i style="background:#1A1A1A"></i><span>Charcoal<small>#1A1A1A · ink, on green</small></span></div><div style="--d:.5s"><i style="background:#F7F5F2;box-shadow:inset 0 0 0 1px #D9D5CE"></i><span>Cream<small>#F7F5F2 · page</small></span></div></div><div><h3>Colour</h3><p>One accent, a fill and never text; charcoal on green is 9.46:1.</p></div></div>
       <div class="tile t-green h2 rv" style="--d:.16s"><div class="btns"><span class="bt p">Find a drone</span><span class="bt s">Contact support</span><span class="bt d">Pay ₴180</span><svg class="cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 8-6 1.6L10.5 19z" fill="#1A1A1A" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/></svg></div><div><h3>Button</h3><p>Primary, secondary, tertiary, text and pay; 44 px tall; one green control per screen.</p></div></div>
       <div class="tile t-char rv"><div class="cmp"><span class="swt" aria-hidden="true"></span><div class="chips"><span style="--d:0s">Delivery</span><span style="--d:2s">Photo</span><span style="--d:4s">Inspection</span></div><div class="rail"><i style="--d:0s"></i><b></b><i style="--d:1.5s"></i><b></b><i style="--d:3s"></i><b></b><i style="--d:4.5s"></i></div></div><div><h3>Components</h3><p>Switch, chip, progress rail and 50 more.</p></div></div>
       <div class="tile t-green rv" style="--d:.08s"><div class="pat"><div class="ph"><i style="--d:0s"></i><i class="c" style="--d:.2s"></i><i class="c" style="--d:.4s"></i><i class="g"></i></div><div class="ph"><i style="--d:.3s"></i><i class="c" style="--d:.5s"></i><i style="--d:.7s"></i><i class="g"></i></div><div class="ph"><i style="--d:.6s"></i><i style="--d:.8s"></i><i class="c" style="--d:1s"></i><i class="g"></i></div></div><div><h3>Patterns</h3><p>13 screen shapes, each used on three screens or more.</p></div></div>
@@ -222,16 +212,16 @@
       <div class="tile t-dark w2 mo rv"><svg viewBox="0 0 300 120" aria-hidden="true"><path d="M10 110 C 70 110, 80 10, 290 10"/><circle r="8"/></svg><div><div class="ds"><span>.12 s press</span><span>.2 s change</span><span>.32 s sheet</span></div><h3 style="margin-top:14px">Motion</h3><p>Three jobs: connect, show status, answer. No job, no animation.</p></div></div>
       <div class="tile t-cream w2 rv" style="--d:.16s"><div class="ld"><div class="l">Light<s></s><s style="width:60%"></s><i></i></div><div class="n">Dark<s></s><s style="width:60%"></s><i></i></div></div><div><h3>Light and dark</h3><p>The theme follows the device.</p></div></div>
     </div>
-    <a class="dslink" href="https://olenkabozhenko.github.io/DRON/design-system/docs/overview.html" target="_blank" rel="noopener">Open the design system ↗</a>
+    
   </section>
 
   <figure class="wrap" style="margin:0 auto"><div class="band rv"><img src="assets/work/dron/photo-motor-macro.webp" srcset="assets/work/dron/photo-motor-macro-768.webp 768w, assets/work/dron/photo-motor-macro.webp 1536w" sizes="92vw" alt="Close-up of a drone motor and carbon propeller with a thin lime light ring, on black." width="1536" height="864" loading="lazy"><figcaption>Precise, accountable.<span>Every part named and measured</span></figcaption></div></figure>
 
   <!-- 09 Handoff -->
   <section class="wrap ch" id="handoff" aria-labelledby="h-ho">
-    <div class="sec-head"><h2 id="h-ho"><span class="n">09</span>Handoff</h2><span>Released as v1.0.0</span></div>
-    <div class="lead"><p class="ai"><b>Made with</b>Claude Code generated the screen maps, the counts and the docs from the files themselves, so the handoff cannot drift from the product.</p><p>What a developer needs to build DRON from the repository, in one folder. What ships is the tokens; the screens and the CSS are the reference.</p></div>
-    <div class="panel ho rv">
+    <div class="sec-head"><h2 id="h-ho">Handoff</h2><span>Released as v1.0.0</span></div>
+    <div class="chap L rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-handoff.webp" srcset="assets/work/dron/ch-handoff-768.webp 768w, assets/work/dron/ch-handoff.webp 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"><img class="drn" src="assets/work/dron/layer-drone-04.webp" alt="" loading="lazy"></div><div class="tcard"><p>What a developer needs to build DRON from the repository, in one folder. What ships is the tokens; the screens and the CSS are the reference.</p></div></div>
+    <div class="panel ho rv"><svg class="orbit" viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="500" cy="290" rx="480" ry="240"/><path class="ln" d="M40 110 C 180 150, 250 210, 330 240"/><path class="ln" d="M960 440 C 840 420, 770 380, 690 340"/><circle cx="40" cy="110" r="7"/><circle cx="960" cy="440" r="7"/></svg>
       <div class="side">
         <div class="hc"><p class="t">Tokens, light and dark</p><p class="v">372<small>ship as tokens.css</small></p></div>
         <div class="hc"><p class="t">Components</p><p class="v">53<small>13 patterns</small></p></div>
@@ -248,7 +238,7 @@
           <li><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/></svg><span><b>voice.md, microcopy.md</b>The rules and every string, with keys</span></li>
           <li><svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="4"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg><span><b>design-system/</b>Tokens, components, patterns, motion</span></li>
         </ul>
-        <a class="go" href="https://github.com/OlenkaBozhenko/DRON/blob/master/handoff/README.md" target="_blank" rel="noopener">Open the handoff ↗</a>
+        
       </div>
       <div class="side">
         <div class="hc"><p class="t"><span class="dot" style="display:inline-block;width:6px;height:6px;margin-right:6px;vertical-align:middle" aria-hidden="true"></span>Released</p><p class="v" style="font-size:18px">v1.0.0 · 27 Oct 2026</p>
@@ -275,16 +265,13 @@
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.12});
   els.forEach(function(e){io.observe(e)});
 })();
-// wireframes: the live demo for the client or the operator; the desktop frame is drawn at 1440 x 900 and scaled to fit
+// wireframes: the live demo starts at the role choice, so both sides can be clicked; the frames are drawn at device size and scaled to fit
 (function(){
-  var wf=document.getElementById('wf');if(!wf)return;
-  var frames=wf.querySelectorAll('iframe'),btns=document.querySelectorAll('.seg button'),now=document.getElementById('wfnow');
-  function load(role){var p=role==='operator'?'operator-listings':'listings';frames.forEach(function(f){f.src=f.dataset.src.replace('{p}',p)});now.textContent=role==='operator'?'Operator home':'Client home'}
-  btns.forEach(function(b){b.addEventListener('click',function(){btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});load(b.dataset.role)})});
+  var wf=document.querySelector('.wf2');if(!wf)return;
+  var frames=wf.querySelectorAll('iframe');
   function fit(){frames.forEach(function(f){var w=f.parentNode.clientWidth,base=f.closest('.pframe')?375:1440;f.style.transform='scale('+(w/base)+')'})}
   new ResizeObserver(fit).observe(wf);fit();
-  var started=false;
-  new IntersectionObserver(function(es){if(es[0].isIntersecting&&!started){started=true;load('client')}},{rootMargin:'400px'}).observe(wf);
+  var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){frames.forEach(function(f){f.src=f.dataset.src});io.disconnect()}},{rootMargin:'400px'});io.observe(wf);
 })();
 </script>
 </body>

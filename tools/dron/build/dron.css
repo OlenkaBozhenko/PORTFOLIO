@@ -365,3 +365,84 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .bars i,.cols i,.funnel i{transition:none}
   .cjm .curve{transition:none;stroke-dashoffset:0}
 }
+
+/* revision 2026-10-28 (her notes): one hero picture on the dark map; each chapter opens with a picture, a drone above it and the text on a card,
+   left and right in turn; no dark ground behind research, audience and flows; live frames as two cards; handoff cards hang at angles */
+.hero1{position:relative;border-radius:22px;overflow:hidden;background:#111 url(../../../assets/work/dron/handoff-ground.webp) center/cover;aspect-ratio:16/8.4;margin-bottom:clamp(56px,8vw,112px);color:var(--txt)}
+.hero1::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(17,17,17,.2),rgba(17,17,17,.55) 60%,rgba(17,17,17,.75))}
+.hero1 .hdrone{position:absolute;left:-4%;top:50%;width:50%;transform:translateY(-50%);-webkit-mask-image:radial-gradient(closest-side,#000 62%,transparent 100%);mask-image:radial-gradient(closest-side,#000 62%,transparent 100%);z-index:1}
+.hero1 .hwin{position:absolute;right:4%;top:50%;width:58%;transform:translateY(-50%);z-index:2}
+.hero1 .tag{position:absolute;left:20px;bottom:20px;z-index:3;display:flex;align-items:center;gap:8px;font-size:13px;background:rgba(20,20,20,.55);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:8px 14px}
+.chap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));align-items:center;margin:clamp(28px,3.4vw,44px) 0 clamp(36px,4.4vw,64px)}
+.chap .pic{grid-row:1;grid-column:1/10;position:relative;border-radius:22px;overflow:hidden;background:#141414;aspect-ratio:16/9}
+.chap .pic .bg{width:100%;height:100%;object-fit:cover}
+.chap .drn{position:absolute;width:38%;left:7%;top:28%;filter:drop-shadow(0 30px 40px rgba(0,0,0,.6));animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-12px)}}
+.chap .tcard{grid-row:1;grid-column:8/13;z-index:2;background:#1F1F1F;color:var(--txt);border-radius:22px;padding:clamp(22px,2.6vw,34px);box-shadow:0 30px 60px -24px rgba(0,0,0,.5)}
+.chap .tcard p{font-size:clamp(17px,1.5vw,20px);line-height:1.45}
+.chap.R .pic{grid-column:4/13}
+.chap.R .drn{left:auto;right:7%}
+.chap.R .tcard{grid-column:1/6}
+.panel.plain{background:none;color:var(--ink);padding:0;border-radius:0;overflow:visible}
+.plain .rs h3{color:var(--muted)}.plain .rs h3 b{color:var(--ink)}
+.plain .big small{color:var(--muted)}
+.plain .src{color:var(--muted)}.plain .src a{color:var(--ink)}
+.chart{color:var(--txt)}
+.aud .ps{grid-template-columns:1fr 1fr;align-items:stretch;gap:var(--cg)}
+.aud .ps+.ps{border:0;padding-top:0;margin-top:var(--cg)}
+.pcard{background:var(--night);color:var(--txt);border-radius:22px;padding:clamp(22px,3vw,36px)}
+.flowpanel .flow h3{color:var(--ink)}.flowpanel .flow>p{color:var(--muted)}
+.flowpanel .scr span{color:var(--muted)}.flowpanel .scr span b{color:var(--ink)}
+.flowpanel .scr img{box-shadow:0 0 0 1px rgba(0,0,0,.06),0 18px 30px -16px rgba(0,0,0,.45)}
+.flowpanel .dec p{color:var(--ink)}
+.flowpanel .dec .no{border-color:#B9B5AE;color:var(--muted)}.flowpanel .dec .no::before{border-color:#B9B5AE}
+.flowpanel .tap{color:var(--muted)}.flowpanel .tap b{color:var(--ink)}
+.flowpanel .strip{scrollbar-color:#ccc transparent}
+.tv{margin-top:clamp(28px,3.4vw,44px)}
+.tvart{background:#141414}
+.tvmap{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.tvart::before{z-index:1}
+.tvdrn{position:absolute;width:46%;right:-2%;top:6%;z-index:1;filter:drop-shadow(0 20px 30px rgba(0,0,0,.6));animation:float 6s ease-in-out infinite}
+.tvart .pairs{z-index:2;margin-top:28%}
+.wf2{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:var(--cg);align-items:stretch}
+.wf2 figure{padding:clamp(18px,2.6vw,32px);display:flex;flex-direction:column;justify-content:center;gap:16px}
+.wf2 figcaption{font-size:14px;color:var(--mut)}
+.wfm .pframe{width:min(100%,300px);margin-inline:auto}
+.wfd .vpw{position:relative;aspect-ratio:1440/900;overflow:hidden}
+.wfd iframe{position:absolute;left:0;top:0;width:1440px;height:900px;border:0;transform-origin:0 0}
+.sw.dk2 div{background:rgba(255,255,255,.07)}
+.ty.big2 .aa{font-size:150px}
+.ty.big2 ul li:first-child{font-size:28px !important}
+.ho{overflow:hidden}
+.orbit{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.orbit ellipse{fill:none;stroke:rgba(255,255,255,.22);stroke-width:1.2;stroke-dasharray:10 12;vector-effect:non-scaling-stroke}
+.orbit .ln{fill:none;stroke:var(--green);stroke-width:1.6;vector-effect:non-scaling-stroke}
+.orbit circle{fill:none;stroke:var(--green);stroke-width:2;vector-effect:non-scaling-stroke}
+.ho .side,.ho .center{position:relative;z-index:1}
+.ho .side .hc{transition:transform .4s ease}
+.ho .side:first-of-type .hc:nth-child(1){transform:rotate(-5deg) translateX(-6px)}
+.ho .side:first-of-type .hc:nth-child(2){transform:rotate(3deg) translateX(14px)}
+.ho .side:first-of-type .hc:nth-child(3){transform:rotate(-2deg) translateX(-10px)}
+.ho .side:first-of-type .hc:nth-child(4){transform:rotate(4deg) translateX(8px)}
+.ho .side:last-of-type .hc:nth-child(1){transform:rotate(4deg) translateX(10px)}
+.ho .side:last-of-type .hc:nth-child(2){transform:rotate(-4deg) translateX(-12px)}
+.ho .side:last-of-type .hc:nth-child(3){transform:rotate(2.5deg) translateX(6px)}
+.ho .side .hc:hover{transform:none}
+.ho .side{gap:22px;padding-block:20px}
+@media (max-width:900px){
+  .wf2{grid-template-columns:1fr}
+  .chap .pic,.chap.R .pic{grid-column:1/-1}
+  .chap .tcard,.chap.R .tcard{grid-column:1/-1;grid-row:2;margin:-48px 16px 0}
+  .hero1{aspect-ratio:auto;display:flex;flex-direction:column;padding:16px}
+  .hero1 .hdrone,.hero1 .hwin{position:relative;left:auto;right:auto;top:auto;transform:none;width:100%}
+  .hero1 .hdrone{margin-bottom:-12%}
+  .aud .ps{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .wf2 .wfd{display:none}
+  .ty.big2 .aa{font-size:96px}
+  .ho .side .hc{transform:none !important}
+  .tvart .pairs{margin-top:42%}
+}
+@media (prefers-reduced-motion:reduce){.chap .drn,.tvdrn{animation:none}}
+.mcard .row .big{white-space:nowrap;font-size:clamp(48px,5.4vw,84px)}
