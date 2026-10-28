@@ -149,3 +149,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Design System numbers: more space above (after the photo) and below (before the cards); labels 17-20 px with a 10 px gap under the figure.
 - Design System, Motion card: the right half lists the three jobs of motion and reduced motion, with figures from DESIGN tokens (.32 s sheets, 7 s flight on tracking, press 1 px in .12 s).
 - Motion card: the list removed; the chart runs the full card width on a timeline 0 to .4 s, with .12 / .2 / .32 s marked and the dot easing along the curve.
+- The "Precise, accountable." motor photo band removed (her call 2026-10-28: she likes it, may add it back); parked in tools/dron/parked/motor-band.html with the images kept.
