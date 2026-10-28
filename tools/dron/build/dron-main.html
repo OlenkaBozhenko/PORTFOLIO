@@ -117,7 +117,7 @@
           <figure class="scr" style="margin:0;--d:.55s"><div class="phn"><div class="scrn"><i class="sb" aria-hidden="true"><b>9:41</b><s></s></i><img src="assets/work/dron/m-tracking.webp" alt="On the way: the drone on the map, the progress rail and the ETA." width="750" height="1624" draggable="false" loading="lazy"></div></div><span><b>6 · Tracking</b>Live, with the ETA</span></figure>
           <div class="dec" style="--d:.6s"><div class="d"><b>?</b></div><p>As expected?</p><div class="no">No: report an issue</div></div>
           <figure class="scr" style="margin:0;--d:.65s"><div class="phn"><div class="scrn"><i class="sb" aria-hidden="true"><b>9:41</b><s></s></i><img src="assets/work/dron/m-delivery.webp" alt="Delivered: the delivery photo at the door, where, when and who, Rate this order." width="750" height="1624" draggable="false" loading="lazy"></div></div><span><b>7 · Delivered</b>The delivery photo</span></figure>
-        </div></div><div class="sbar" aria-hidden="true"><i></i></div></div>
+        </div></div><div class="pager" role="group" aria-label="Screens in this flow"></div></div>
       <div class="flow"><h3>Operator: take a job, get paid</h3><p>From the offer to the money on the card.</p>
         <div class="strip" tabindex="0" role="region" aria-label="Operator flow, seven screens; scroll sideways"><div class="line">
           <figure class="scr" style="margin:0"><div class="phn"><div class="scrn"><i class="sb" aria-hidden="true"><b>9:41</b><s></s></i><img src="assets/work/dron/m-operator-listings.webp" alt="Jobs: Available, incoming offers with pay, distance and a countdown, Accept or Decline." width="750" height="1624" draggable="false" loading="lazy"></div></div><span><b>1 · Jobs</b>Available, offers in</span></figure>
@@ -133,7 +133,7 @@
           <figure class="scr" style="margin:0;--d:.55s"><div class="phn"><div class="scrn"><i class="sb" aria-hidden="true"><b>9:41</b><s></s></i><img src="assets/work/dron/m-wallet.webp" alt="Earnings: balance available to withdraw and each job with its pay, Withdraw." width="750" height="1624" draggable="false" loading="lazy"></div></div><span><b>6 · Earnings</b>Paid on its own</span></figure>
           <div class="lk" style="--d:.6s"></div>
           <figure class="scr" style="margin:0;--d:.65s"><div class="phn"><div class="scrn"><i class="sb" aria-hidden="true"><b>9:41</b><s></s></i><img src="assets/work/dron/m-withdraw-sent.webp" alt="Withdraw: ₴1,500 sent to your card, the rest stays on the balance, Done." width="750" height="1624" draggable="false" loading="lazy"></div></div><span><b>7 · Withdraw</b>To the card</span></figure>
-        </div></div><div class="sbar" aria-hidden="true"><i></i></div></div>
+        </div></div><div class="pager" role="group" aria-label="Screens in this flow"></div></div>
       <span class="dragc" aria-hidden="true">Drag</span>
     </div>
   </section>
@@ -266,12 +266,17 @@
   }
   new IntersectionObserver(function(es){var v=es[0].isIntersecting;if(v&&!run){run=true;vp.classList.add('run');t=setTimeout(step,700)}else if(!v&&run){run=false;clearTimeout(t)}},{threshold:.3}).observe(vp);
 })();
-// flows: a small green bar shows where the row is; on a mouse, a Drag circle follows the pointer and the row can be dragged
+// flows: a pager under each row shows which screen is first in view; on a mouse, a Drag circle follows the pointer and the row can be dragged
 (function(){
   var cur=document.querySelector('.dragc'),fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
   document.querySelectorAll('.strip').forEach(function(s){
-    var bar=s.nextElementSibling,th=bar&&bar.firstElementChild;
-    function upd(){if(!th)return;var max=s.scrollWidth-s.clientWidth,w=bar.clientWidth-th.offsetWidth;th.style.transform='translateX('+(max>0?s.scrollLeft/max*w:0)+'px)'}
+    // a slider pager: one small bar per view of the row, the active one green; a bar takes the row to its view
+    var pg=s.nextElementSibling,bs=[],n=0;
+    function max(){return s.scrollWidth-s.clientWidth}
+    function build(){var c=Math.max(1,Math.ceil(s.scrollWidth/s.clientWidth-.05));if(c===n)return;n=c;pg.innerHTML='';bs=[];pg.hidden=n<2;
+      for(var k=0;k<n;k++)(function(k){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','View '+(k+1)+' of '+n);
+        b.addEventListener('click',function(){s.scrollTo({left:n>1?max()*k/(n-1):0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})});pg.appendChild(b);bs.push(b)})(k)}
+    function upd(){build();var k=n>1&&max()>0?Math.round(s.scrollLeft/max()*(n-1)):0;bs.forEach(function(b,i){b.classList.toggle('on',i===k);b.setAttribute('aria-current',i===k?'true':'false')})}
     s.addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
     if(!fine||!cur)return;
     var down=false,x0=0,l0=0;

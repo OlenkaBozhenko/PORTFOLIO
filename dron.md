@@ -142,3 +142,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - The embedded demos stay dark: in the DRON repo, a demo opened with ?theme=dark hides its theme switch (desktop sun/moon button, phone Dark theme row) on that page and every next page in the tab (sessionStorage). Needs a push of DRON.
 - Opened from a file on her computer, the live frames load her local DRON copy (../DRON/demo/...), so the latest demo shows before DRON is pushed; online they load the published demo.
 - JTBD: the formula chips row and the "Three jobs shaped" note removed; the formula now ends the text card; the client keeps four job chips (two rows).
+- Flows: the scroll bar replaced by a slider pager, small bars in the centre, the active one green, the others grey; one bar per view of the row (2 on a wide screen, 7 on a phone); a bar takes the row to its view.

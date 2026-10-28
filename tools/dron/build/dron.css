@@ -772,3 +772,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .cjm2 .pp{background:#F0F0EE;color:#1A1A1A;position:relative;padding-left:34px}
 .cjm2 .pp::before{content:"";position:absolute;left:14px;top:19px;width:8px;height:8px;border-radius:50%;background:#8A8780}
 .cjm2 .op{background:#1A1A1A;color:#F7F5F2}
+/* revision 15: the flows' scroll bar becomes a slider pager: small bars in the centre, the active one green */
+.pager{display:flex;justify-content:center;gap:6px;margin-top:20px}
+.pager button{width:24px;height:6px;padding:0;border:0;border-radius:3px;background:#D9D5CE;cursor:pointer;position:relative;transition:width .25s ease,background .25s ease}
+.pager button::after{content:"";position:absolute;inset:-12px -2px}
+.pager button.on{width:40px;background:var(--green)}
+.pager button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
