@@ -778,3 +778,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .pager button::after{content:"";position:absolute;inset:-12px -2px}
 .pager button.on{width:40px;background:var(--green)}
 .pager button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+/* revision 16: desktop text above its card; the card sized to fit one screen height; the phone text aligned to the top of its card */
+.wf3 .wfd{width:min(100%,calc((100vh - 380px) * 1.6 + 88px));max-width:100%}
+.wrow{align-items:start}

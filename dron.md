@@ -143,3 +143,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Opened from a file on her computer, the live frames load her local DRON copy (../DRON/demo/...), so the latest demo shows before DRON is pushed; online they load the published demo.
 - JTBD: the formula chips row and the "Three jobs shaped" note removed; the formula now ends the text card; the client keeps four job chips (two rows).
 - Flows: the scroll bar replaced by a slider pager, small bars in the centre, the active one green, the others grey; one bar per view of the row (2 on a wide screen, 7 on a phone); a bar takes the row to its view.
+- Wireframes: "On the desktop" text above its card; the desktop card sized so text and card fit one screen height (920 x 637 at 1440 x 900); the "Phone first" text aligned to the top of the phone card.
