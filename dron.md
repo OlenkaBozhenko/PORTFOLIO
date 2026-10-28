@@ -140,3 +140,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Journey map recoloured in the page UI: the chart on a charcoal card, "before" in grey, "with DRON" in Signal Green; pain points on light grey cards; what changed on charcoal cards with green checks. No rust.
 - Note under the journey map removed (her call); that the "with DRON" line is intent, not measurement, stays recorded here.
 - The embedded demos stay dark: in the DRON repo, a demo opened with ?theme=dark hides its theme switch (desktop sun/moon button, phone Dark theme row) on that page and every next page in the tab (sessionStorage). Needs a push of DRON.
+- Opened from a file on her computer, the live frames load her local DRON copy (../DRON/demo/...), so the latest demo shows before DRON is pushed; online they load the published demo.
