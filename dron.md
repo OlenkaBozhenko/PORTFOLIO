@@ -153,3 +153,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Spacing by proximity across the page: a heading sits 32 px over its picture, the picture 88 px over the chapter content, groups inside a chapter 112 px apart, chapters 176 px apart (at 1440 px).
 - The live phone card sized to the screen height (806 px at 1440 x 900), so it is seen whole in one screen; the phone scales down slightly.
 - Design System photo: the two green lines between the floating parts removed.
+- Live cards: a lime glow from the top and a faint lime grid on the dark ground; the desktop window and the phone frame get a soft glowing lime outline.
