@@ -938,6 +938,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .wrow .wfm{padding-inline:clamp(56px,5vw,80px);justify-self:end}
 .wrow .vfp{width:min(392px,calc((100vh - 230px) * 375 / 872 + 14px))}
 @media (max-width:900px){.wrow{grid-template-columns:1fr}.wrow .wfm{justify-self:stretch}.wrow .vfp{width:min(80%,392px)}}
+/* revision 29: on the phone card the viewfinder runs along the card's perimeter */
+.wrow .wfm{position:relative}
+.wrow .vfp{position:static}
+.wrow .vfp>.vf{inset:18px}
+.wrow .vfp>.vf .hx{left:0;right:0}.wrow .vfp>.vf .vy{top:0;bottom:0}
+.wrow .vfp>.vf .l1,.wrow .vfp>.vf .l2{top:12px}.wrow .vfp>.vf .l3,.wrow .vfp>.vf .l4{bottom:12px;top:auto}
+.wrow .vfp>.vf .l1,.wrow .vfp>.vf .l3{left:44px}.wrow .vfp>.vf .l2,.wrow .vfp>.vf .l4{right:44px}
 
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
 .menu-btn{display:none}
