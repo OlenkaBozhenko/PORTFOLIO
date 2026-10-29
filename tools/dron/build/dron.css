@@ -1072,3 +1072,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .lolli li.hi .stk i::after{background:var(--green);box-shadow:0 0 8px rgba(155,207,74,.6)}
 .in .stk i,.no-io .stk i{transform:none}
 @media (prefers-reduced-motion:reduce){.stk i{transition:none;transform:none}}
+/* schools: plain statistics, no country singled out: every lollipop lime, every label the same (her note) */
+.lolli .stk i{background:var(--green)}
+.lolli .stk i::after{background:var(--green);box-shadow:0 0 6px rgba(155,207,74,.45)}
+.lolli li span:first-child{color:var(--mut)}
