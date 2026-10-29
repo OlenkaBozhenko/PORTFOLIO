@@ -1029,3 +1029,32 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .opc .rings circle{stroke-width:10}
 .opc .rings .r4{stroke:#A5A198}
 .opc .rleg .r4 i{background:#A5A198}
+
+/* revision 41: the two lower operator tiles use the chart each figure needs: schools as a unit chart (one dot per school, the count is tangible), why people fly as one donut (parts of one whole, the work share in the centre) */
+.mcard.dash.mkt ul.units{display:flex;flex-direction:column;gap:12px;margin:10px 0 0}
+.units li{display:grid;grid-template-columns:64px 1fr 30px;align-items:center;gap:10px;font-size:13px;color:var(--mut)}
+.units li b{font-weight:500;color:var(--txt);text-align:right}
+.units li.hi span:first-child{color:var(--txt)}
+.dots{display:flex;flex-wrap:wrap;gap:3px}
+.dots i{width:6px;height:6px;border-radius:50%;background:#55534F;opacity:0;transform:scale(.4);transition:opacity .3s ease,transform .3s ease}
+.units li.hi .dots i{background:var(--green);box-shadow:0 0 4px rgba(155,207,74,.45)}
+.in .dots i,.no-io .dots i{opacity:1;transform:none}
+.dots i:nth-child(n+6){transition-delay:.1s}.dots i:nth-child(n+12){transition-delay:.2s}.dots i:nth-child(n+18){transition-delay:.3s}.dots i:nth-child(n+24){transition-delay:.4s}.dots i:nth-child(n+30){transition-delay:.5s}
+.pie{display:flex;align-items:center;gap:clamp(14px,2vw,24px);margin:auto 0}
+.pw{position:relative;width:clamp(120px,11vw,150px);flex:none}
+.donut{display:block;width:100%;overflow:visible;transform:rotate(-90deg)}
+.donut circle{fill:none;stroke-width:16}
+.donut .bg{stroke:#353535}
+.donut .s0,.donut .s1,.donut .s2{stroke-dasharray:0 100;stroke-dashoffset:var(--o);transition:stroke-dasharray 1.2s cubic-bezier(.22,.61,.36,1)}
+.in .donut .s0,.in .donut .s1,.in .donut .s2,.no-io .donut .s0,.no-io .donut .s1,.no-io .donut .s2{stroke-dasharray:var(--v) 100}
+.donut .s0{stroke:var(--green);filter:drop-shadow(0 0 5px rgba(155,207,74,.5))}
+.donut .s1{stroke:#A5A198;transition-delay:.15s}
+.donut .s2{stroke:#5A5852;transition-delay:.3s}
+.pw p{position:absolute;inset:0;margin:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.pw b{font-size:clamp(22px,2vw,28px);font-weight:400;letter-spacing:-.03em;color:var(--txt)}
+.pw span{font-size:11px;color:var(--mut)}
+.rleg.pl .p0 i{background:var(--green)}.rleg.pl .p1 i{background:#A5A198}.rleg.pl .p2 i{background:#5A5852}
+.rleg.pl .p0 span{color:var(--txt)}
+@media (prefers-reduced-motion:reduce){.dots i{transition:none;opacity:1;transform:none}.donut .s0,.donut .s1,.donut .s2{transition:none;stroke-dasharray:var(--v) 100}}
+.dots{display:grid;grid-template-columns:repeat(17,6px);gap:4px 3px}
+@media (max-width:720px){.mh{flex-direction:column-reverse;align-items:flex-start}.dots{grid-template-columns:repeat(17,5px);gap:3px 2px}.dots i{width:5px;height:5px}}

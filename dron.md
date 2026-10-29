@@ -185,3 +185,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
   - Not found: a civil drone register in Ukraine (draft law No. 13600 proposes one), school counts for Germany, France, Italy, Poland, the Netherlands, and the share of pilots who are freelance.
   - The earlier operator card (10 s to accept a job, one-glance offer, today without DRON) is replaced.
 - Target Audience: the sources line under the two cards is taken off the page (her call, 2026-10-29); the sources stay listed here in dron.md.
+- Operator card, the two lower tiles redrawn for reading (her note): drone pilot schools as a unit chart, one dot per school (Ukraine 33 in lime, UK 23); why UK drone users fly as one donut, parts of one whole (for work 14%, for fun 79%, other 7%, the remainder of the same survey), with 14% for work in the centre.
