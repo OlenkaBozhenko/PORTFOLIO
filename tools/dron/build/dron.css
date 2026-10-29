@@ -909,3 +909,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 /* revision 33: the story is About and How it was made (Problem and Solution removed, her call); How it was made has two paragraphs */
 .pair .pp2{display:flex;flex-direction:column;gap:1em}
+
+/* revision 34: the pointer on the first screen is lime, like the Click circle on the live demos */
+.hptr{background:rgba(155,207,74,.4);border-color:var(--green);box-shadow:0 0 10px rgba(155,207,74,.55),0 2px 8px rgba(0,0,0,.5)}
