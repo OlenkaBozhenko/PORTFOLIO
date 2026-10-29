@@ -980,6 +980,63 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 /* the card lines are balanced, so the last line is as full as the others and no gap is left on the line above (her note) */
 .tcard p{text-wrap:balance}
 
+/* revision 37: the client card shows the market as modern dashboard charts: cities, age, education, worries, and three facts for the interface */
+.mkt .mgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mt{background:#2A2A2A;border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:8px;min-width:0;position:relative;overflow:hidden}
+.mt.wide{grid-column:1/-1}
+.mt .t{font-size:13px;color:var(--mut)}
+.mt .m{font-size:13px;color:var(--mut);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.mt .kpi{font-size:clamp(44px,5vw,72px);font-weight:300;letter-spacing:-.045em;line-height:1;margin:2px 0}
+.mt .kpi.s{font-size:clamp(30px,2.6vw,38px);display:flex;align-items:baseline;gap:8px}
+.mt .kpi small{font-size:13px;letter-spacing:0;color:var(--mut);font-weight:400}
+.mh{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.chip2{flex:none;font-size:12px;border-radius:999px;padding:5px 10px;border:1px solid rgba(155,207,74,.5);color:#B7DA7C;background:rgba(155,207,74,.08)}
+.mbar{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.mbar li{display:grid;grid-template-columns:84px 1fr 38px;align-items:center;gap:10px;font-size:13px;color:var(--mut)}
+.mbar.w li{grid-template-columns:96px 1fr 38px}
+.mbar li i{height:8px;border-radius:8px;background:linear-gradient(90deg,rgba(155,207,74,.25) var(--w),#3A3A3A var(--w));background-size:100% 100%;transform-origin:left;transform:scaleX(.08);transition:transform 1.1s cubic-bezier(.22,.61,.36,1)}
+.mbar li.hi{color:var(--txt)}
+.mbar li.hi i{background:linear-gradient(90deg,var(--green) var(--w),#3A3A3A var(--w))}
+.mbar li b{font-weight:500;color:var(--txt);text-align:right}
+.in .mbar li i,.no-io .mbar li i{transform:none}
+.vb{list-style:none;margin:auto 0 0;padding:10px 0 0;display:flex;gap:6px;align-items:flex-end;height:150px}
+.vb li{flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:6px;font-size:11px;color:var(--mut)}
+.vb li i{width:100%;height:var(--h);border-radius:6px 6px 3px 3px;background:#3A3A3A;transform-origin:bottom;transform:scaleY(.1);transition:transform 1s cubic-bezier(.22,.61,.36,1)}
+.vb li b{font-weight:500;font-size:11px;color:var(--mut)}
+.vb li.hi i{background:linear-gradient(180deg,var(--green),rgba(155,207,74,.35));box-shadow:0 0 18px rgba(155,207,74,.35)}
+.vb li.hi b,.vb li.hi span{color:var(--txt)}
+.in .vb li i,.no-io .vb li i{transform:none}
+.ringw{position:relative;width:clamp(120px,11vw,150px);margin:6px auto 4px}
+.ring2{display:block;width:100%;transform:rotate(-90deg)}
+.ring2 circle{fill:none;stroke-width:9;stroke-linecap:round}
+.ring2 .bg{stroke:#3A3A3A}
+.ring2 .fg{stroke:var(--green);stroke-dasharray:0 100;transition:stroke-dasharray 1.4s cubic-bezier(.22,.61,.36,1) .1s;filter:drop-shadow(0 0 6px rgba(155,207,74,.5))}
+.ring2 .eu{stroke:#8A867F;stroke-dasharray:0 100;transition:stroke-dasharray 1.4s cubic-bezier(.22,.61,.36,1) .3s}
+.in .ring2 .fg,.no-io .ring2 .fg{stroke-dasharray:51.4 100}
+.in .ring2 .eu,.no-io .ring2 .eu{stroke-dasharray:34.3 100}
+.ringw p{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0}
+.ringw b{font-size:clamp(22px,2vw,28px);font-weight:400;letter-spacing:-.03em}
+.ringw span{font-size:11px;color:var(--mut)}
+.mdot{display:inline-block;width:8px;height:8px;border-radius:50%}
+.mdot.u{background:var(--green)}.mdot.e{background:#8A867F;margin-left:6px}
+.stats{list-style:none;margin:12px 0 0;padding:14px 0 0;border-top:1px solid #3A3A3A;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.stats li{display:flex;flex-direction:column;gap:4px;min-width:0}
+.stats b{font-size:clamp(20px,1.8vw,26px);font-weight:400;letter-spacing:-.02em;color:var(--txt)}
+.stats span{font-size:12px;line-height:1.35;color:var(--mut)}
+@media (max-width:720px){.mkt .mgrid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.mbar li i,.vb li i{transition:none;transform:none}.ring2 .fg,.ring2 .eu{transition:none}.ring2 .fg{stroke-dasharray:51.4 100}.ring2 .eu{stroke-dasharray:34.3 100}}
+.mcard.dash.mkt ul,.mcard.dash.mkt ol{grid-template-columns:none;color:var(--mut)}
+.mcard.dash.mkt ul.mbar{display:flex;flex-direction:column;gap:9px;margin:8px 0 0}
+.mcard.dash.mkt ul.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0 0}
+.mcard.mkt li::before{display:none !important;content:none}
+@media (max-width:720px){.mcard.dash.mkt ul.stats{grid-template-columns:1fr}}
+.mcard.dash.mkt ul.mbar{align-items:stretch}
+.mcard.mkt .mbar li i{display:block;transform:scaleX(.08);animation:none}
+.in .mcard.mkt .mbar li i,.no-io .mcard.mkt .mbar li i,.mcard.mkt.in .mbar li i{transform:none}
+.mkt .mgrid{flex:none}
+.mkt .mt>*{flex-shrink:0}
+.mkt .mt{overflow:visible}
+
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
 .menu-btn{display:none}
 @media (max-width:720px){
@@ -1106,14 +1163,19 @@ html.menu-open{overflow:hidden}
       <div class="ps2">
         <div class="who2b"><img src="assets/work/dron/persona-kateryna.webp" alt="Portrait of Kateryna, a woman in her early thirties with dark hair." width="480" height="480" loading="lazy">
           <q>I want the result. <b>I don't want to figure out drones.</b> What matters is that it's reliable.</q><p class="nm">Kateryna, 31<span>Client · marketing manager, Kyiv</span></p></div>
-        <div class="mcard big3 dash">
-          <div class="dh"><span>Signing in</span><span class="chip">Client</span></div>
-          <div class="dgrid">
-            <div class="dt wide"><div><p class="t">Leave at a manual registration form</p><p class="kpi">60–70%</p><p class="m">the first drop-off in her journey</p></div>
-              <svg class="gauge" viewBox="0 0 120 70" aria-hidden="true"><path class="bg" d="M10 62 A50 50 0 0 1 110 62"/><path class="fg" d="M10 62 A50 50 0 0 1 110 62"/></svg></div>
-            <div class="dt"><p class="t">Sign-in on DRON</p><p class="kpi s">1 tap</p><p class="m">Diia or BankID, no form</p>
-              <div class="ticks" aria-hidden="true"><i style="--h:30%;--d:0.00s"></i><i style="--h:45%;--d:0.04s"></i><i style="--h:38%;--d:0.08s"></i><i style="--h:60%;--d:0.12s"></i><i style="--h:52%;--d:0.16s"></i><i style="--h:70%;--d:0.20s"></i><i style="--h:64%;--d:0.24s"></i><i style="--h:80%;--d:0.28s"></i><i style="--h:72%;--d:0.32s"></i><i style="--h:90%;--d:0.36s"></i><i style="--h:84%;--d:0.40s"></i><i style="--h:100%;--d:0.44s"></i><i style="--h:92%;--d:0.48s"></i><i style="--h:86%;--d:0.52s"></i></div></div>
-            <div class="dt"><p class="t">She checks before paying</p><ul class="chk"><li>Licence</li><li>Insurance</li><li>The full price</li><li>Live tracking</li></ul></div>
+        <div class="mcard big3 dash mkt">
+          <div class="dh"><span>Who orders, in numbers</span><span class="chip">Client</span></div>
+          <div class="mgrid">
+            <div class="mt wide"><div class="mh"><div><p class="t">Would order drone delivery at about twice the shipping price</p><p class="kpi">64%</p><p class="m">across six European cities</p></div><span class="chip2">↑ Milan 72%</span></div>
+              <ul class="mbar" aria-label="By city"><li class="hi"><span>Milan</span><i style="--w:90.0%"></i><b>72%</b></li><li><span>Barcelona</span><i style="--w:85.0%"></i><b>68%</b></li><li><span>Budapest</span><i style="--w:83.8%"></i><b>67%</b></li><li><span>Paris</span><i style="--w:76.2%"></i><b>61%</b></li><li><span>Øresund</span><i style="--w:73.8%"></i><b>59%</b></li><li><span>Hamburg</span><i style="--w:71.2%"></i><b>57%</b></li></ul></div>
+            <div class="mt"><p class="t">Buy online, by age</p><p class="kpi s">90%<small>aged 25–34</small></p>
+              <ol class="vb" aria-label="Share who bought online in the last year, by age"><li style="--h:84%"><b>84%</b><i></i><span>16–24</span></li><li class="hi" style="--h:90%"><b>90%</b><i></i><span>25–34</span></li><li style="--h:87%"><b>87%</b><i></i><span>35–44</span></li><li style="--h:80%"><b>80%</b><i></i><span>45–54</span></li><li style="--h:69%"><b>69%</b><i></i><span>55–64</span></li><li style="--h:55%"><b>55%</b><i></i><span>65–74</span></li></ol></div>
+            <div class="mt"><p class="t">Higher education, ages 25–64</p>
+              <div class="ringw"><svg class="ring2" viewBox="0 0 120 120" aria-hidden="true"><circle class="bg" cx="60" cy="60" r="52"/><circle class="fg" cx="60" cy="60" r="52" pathLength="100"/><circle class="bg" cx="60" cy="60" r="40"/><circle class="eu" cx="60" cy="60" r="40" pathLength="100"/></svg><p><b>51.4%</b><span>Ukraine</span></p></div>
+              <p class="m"><i class="mdot u"></i>Ukraine 51.4% <i class="mdot e"></i>EU 34.3%</p></div>
+            <div class="mt wide"><p class="t">What worries people about delivery drones, top three</p>
+              <ul class="mbar w" aria-label="Concerns"><li class="hi"><span>Safety</span><i style="--w:88.0%"></i><b>44%</b></li><li><span>Security</span><i style="--w:78.0%"></i><b>39%</b></li><li><span>Privacy</span><i style="--w:60.0%"></i><b>30%</b></li><li><span>Noise</span><i style="--w:56.0%"></i><b>28%</b></li><li><span>Affordability</span><i style="--w:42.0%"></i><b>21%</b></li></ul>
+              <ul class="stats"><li><b>21M+</b><span>use Diia, the state app behind one-tap sign-in</span></li><li><b>94.6%</b><span>of card payments in Ukraine are cashless</span></li><li><b>₴500–1,500</b><span>an aerial shoot on Kabanchik today</span></li></ul></div>
           </div></div>
       </div>
       <div class="ps2 rev">
@@ -1129,6 +1191,7 @@ html.menu-open{overflow:hidden}
           <q>I want to fly and earn. <b>Paperwork and finding clients are not for me.</b></q><p class="nm">Andrii, 26<span>Operator · licensed drone pilot</span></p></div>
       </div>
     </div>
+    <p class="note">Sources: EASA, Study on the societal acceptance of Urban Air Mobility in Europe, 2021 (3,690 people in six cities; delivery within 2 hours at about twice the standard fee; concerns are each person's top three). Eurostat, E-commerce statistics for individuals, 2025 (EU internet users). OECD Economic Surveys: Ukraine 2025 (data 2021) and Eurostat, Educational attainment statistics, 2025 (EU, ages 25–74). Cabinet of Ministers of Ukraine, 30 October 2024 (Diia). National Bank of Ukraine via Mind.ua, 2024 (card payments). Kabanchik listings, DRON research, June 2026 (price).</p>
   </section>
 
   <!-- 03 JTBD -->
