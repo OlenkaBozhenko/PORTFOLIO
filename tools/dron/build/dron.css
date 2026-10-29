@@ -900,3 +900,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .wf3 .vfd>.vf .hx{left:0;right:0}.wf3 .vfd>.vf .vy{top:0;bottom:0}
 .wf3 .vfd>.vf .l1,.wf3 .vfd>.vf .l2{top:12px}.wf3 .vfd>.vf .l3,.wf3 .vfd>.vf .l4{bottom:12px;top:auto}
 .wf3 .vfd>.vf .l1,.wf3 .vfd>.vf .l3{left:44px}.wf3 .vfd>.vf .l2,.wf3 .vfd>.vf .l4{right:44px}
+
+/* revision 31: over the live demos, a green Click circle with a mouse pointer follows the cursor (like Drag on the flows), beside the cursor so the target stays visible */
+.clickc{position:fixed;left:0;top:0;z-index:30;width:72px;height:72px;margin:14px 0 0 14px;border-radius:50%;background:var(--green);color:var(--charcoal);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:13px;font-weight:600;pointer-events:none;box-shadow:0 0 0 6px rgba(155,207,74,.18),0 6px 22px rgba(0,0,0,.35);transform:scale(0);transform-origin:0 0;transition:transform .25s cubic-bezier(.22,.61,.36,1)}
+.clickc svg{width:20px;height:20px}
+.clickc.on{transform:scale(1)}
+.clickc.down{transform:scale(.85)}
+@media (prefers-reduced-motion:reduce){.clickc{transition:none}}

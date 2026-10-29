@@ -954,6 +954,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .wf3 .vfd>.vf .l1,.wf3 .vfd>.vf .l2{top:12px}.wf3 .vfd>.vf .l3,.wf3 .vfd>.vf .l4{bottom:12px;top:auto}
 .wf3 .vfd>.vf .l1,.wf3 .vfd>.vf .l3{left:44px}.wf3 .vfd>.vf .l2,.wf3 .vfd>.vf .l4{right:44px}
 
+/* revision 31: over the live demos, a green Click circle with a mouse pointer follows the cursor (like Drag on the flows), beside the cursor so the target stays visible */
+.clickc{position:fixed;left:0;top:0;z-index:30;width:72px;height:72px;margin:14px 0 0 14px;border-radius:50%;background:var(--green);color:var(--charcoal);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:13px;font-weight:600;pointer-events:none;box-shadow:0 0 0 6px rgba(155,207,74,.18),0 6px 22px rgba(0,0,0,.35);transform:scale(0);transform-origin:0 0;transition:transform .25s cubic-bezier(.22,.61,.36,1)}
+.clickc svg{width:20px;height:20px}
+.clickc.on{transform:scale(1)}
+.clickc.down{transform:scale(.85)}
+@media (prefers-reduced-motion:reduce){.clickc{transition:none}}
+
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
 .menu-btn{display:none}
 @media (max-width:720px){
@@ -1187,6 +1194,7 @@ html.menu-open{overflow:hidden}
     <div class="sec-head"><h2 id="h-wf">Wireframes</h2><span>Live, click through</span></div>
     <div class="chap R rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-wireframes.webp?v=2" srcset="assets/work/dron/ch-wireframes-768.webp?v=2 768w, assets/work/dron/ch-wireframes.webp?v=2 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"></div><div class="tcard"><p>134 phone pages and 135 desktop pages, one page for every state: loading, empty, error, success. Below is the live demo itself. Pick a side and click through it, on the desktop and on the phone.</p></div></div>
     <div class="wf3">
+      <span class="clickc" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3l14 7.5-6.2 1.6L10 18z" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>Click</span>
       <div class="wcap rv"><h3>On the desktop</h3><p>The same flows on a wider screen: the map stays in view, the steps open in a panel beside it, and the live order is always on the right. Pick a side and click through.</p></div>
       <figure class="dk wfd rv" style="margin:0"><div class="vfw vfd"><div class="vf" aria-hidden="true"><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i><b class="hx"></b><b class="vy"></b><span class="l1"><em></em>REC</span><span class="l2">ALT 120 m</span><span class="l3">4K · 60</span><span class="l4">N 50.45°</span></div><div class="win" style="width:100%"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Desktop</span></div><div class="vpw"><iframe title="DRON live demo, desktop: choose client or operator" data-src="https://olenkabozhenko.github.io/DRON/demo/desktop/role-select.html?theme=dark" loading="lazy"></iframe></div></div></div></figure>
       <div class="wrow rv"><div class="wcap"><h3>Phone first</h3><p>The phone pages are the source of truth for how DRON behaves: 134 pages, one for every state. This is the live demo; scroll it and tap through it.</p></div>
@@ -1325,6 +1333,22 @@ html.menu-open{overflow:hidden}
   function fit(){frames.forEach(function(f){var w=f.parentNode.clientWidth,base=f.closest('.pframe')?375:1440;var k=w/base;f.style.transform=k>0.999?'none':'scale('+k+')'})}
   new ResizeObserver(fit).observe(wf);fit();
   var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){try{if(!localStorage.getItem('wf-theme'))localStorage.setItem('wf-theme','dark')}catch(e){}frames.forEach(function(f){var u=f.dataset.src;if(location.protocol==='file:')u=u.replace('https://olenkabozhenko.github.io/DRON/','../DRON/');f.src=u});io.disconnect()}},{rootMargin:'400px'});io.observe(wf);
+  // on a mouse, a Click circle follows the cursor over the demo; inside the frame the page can only follow it when the demo shares its origin (online), otherwise it shows where the cursor came in and fades
+  var cc=wf.querySelector('.clickc');
+  if(!cc||!matchMedia('(hover:hover) and (pointer:fine)').matches)return;
+  var hide=null;
+  function at(x,y){cc.style.left=x+'px';cc.style.top=y+'px'}
+  frames.forEach(function(f){
+    f.addEventListener('mouseenter',function(e){at(e.clientX,e.clientY);cc.classList.add('on');clearTimeout(hide);var d=null;try{d=f.contentDocument}catch(x){}if(!d)hide=setTimeout(function(){cc.classList.remove('on')},1600)});
+    f.addEventListener('mouseleave',function(){clearTimeout(hide);cc.classList.remove('on','down')});
+    f.addEventListener('load',function(){
+      var d=null;try{d=f.contentDocument}catch(x){}if(!d)return;
+      function map(e){var r=f.getBoundingClientRect(),k=r.width/f.offsetWidth;at(r.left+e.clientX*k,r.top+e.clientY*k)}
+      d.addEventListener('mousemove',function(e){map(e);cc.classList.add('on')},{passive:true});
+      d.addEventListener('mousedown',function(){cc.classList.add('down')});
+      d.addEventListener('mouseup',function(){cc.classList.remove('down')});
+    });
+  });
 })();
 </script>
 </body>
