@@ -159,3 +159,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Type card: the scale named as Apple HIG names its text styles (Title 2 22, Headline 17, Subheadline 15, Footnote 13, Caption 2 11), on the left; the big Aa on the right.
 - Handoff card subtitle: "Everything a developer needs to build DRON without asking me: what each screen is made of, how it behaves, and what ships." (was "From a fresh clone, nothing to install.")
 - Type card relabelled the HIG way (her reference: the HIG text-style callouts): each row is the HIG style name with its size and weight (Title 2 22 Bold, Headline 17 Semibold, Body 15 Regular, Footnote 13 Regular, Caption 2 11 Semibold), a leader line with a dot, and a sample word from the product; rows on one 12 px rhythm.
+- Type card back to the scale as before (each HIG name set in its own style), without leader lines or samples (her call).
