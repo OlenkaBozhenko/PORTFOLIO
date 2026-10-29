@@ -85,3 +85,4 @@ Desktop is unchanged.
 - Spacing by proximity: the two payment phones 24 px apart and *Card or Vipps* 16 px under them; *On the street* 20 px above the posters; *In the club* 16 px under the decks.
 
 - Section dock (2026-10-29, her call, desktop only, like the DRON page): a pill at the bottom with an icon per section (About, Problem, Solution, Product, Brand); deep-teal pill #2F6A6F, the current section in the brand green #15EDA3; the current section shows its name and follows the scroll, the others open their name on hover or focus. Hidden below 900 px.
+- Dock: the opening texts (About, Problem, Solution; on Styupan and Book: About, Objective, Idea) are one item, About, with a light bulb icon (her call).

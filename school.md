@@ -70,3 +70,4 @@ Desktop is unchanged.
 - First screen: the big navy circle moves up into the top-right corner, so it no longer covers the subtitle.
 
 - Section dock (2026-10-29, her call, desktop only, like the DRON page): a pill at the bottom with an icon per section (About, Problem, Solution, In use, Context, Customer journey map); navy pill #001059, the current section in yellow #FFD60A; the current section shows its name and follows the scroll, the others open their name on hover or focus. Hidden below 900 px.
+- Dock: the opening texts (About, Problem, Solution; on Styupan and Book: About, Objective, Idea) are one item, About, with a light bulb icon (her call).
