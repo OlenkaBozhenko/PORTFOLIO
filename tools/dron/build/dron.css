@@ -842,3 +842,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .vf .l2{right:46px;top:12px}.vf .l3{left:46px;bottom:12px}.vf .l4{right:46px;bottom:12px}
 @media (prefers-reduced-motion:reduce){.vf .l1 em{animation:none}}
 @media (max-width:720px){.vf span{display:none}}
+/* revision 25: the viewfinder hugs the mockup only (first screen and the live cards), the card grounds stay as they are */
+.vfw{position:relative}
+.vfw>.vf{inset:-22px;z-index:0}
+.vfw>.win,.vfw>.pframe{position:relative;z-index:1}
+.vf .hx{left:-36px;right:-36px}.vf .vy{top:-36px;bottom:-36px}
+.vf span{font-size:10px}
+.vf .l1,.vf .l3{left:0}.vf .l2,.vf .l4{right:0}
+.vf .l1,.vf .l2{top:-20px}.vf .l3,.vf .l4{bottom:-20px;top:auto}
+.wf3 .wfd .vfd{width:min(100%,calc((100vh - 380px) * 1.6))}
+.wf3 .wfd .vfd>.win{width:100% !important}
+.wf3 .wfd{padding:clamp(48px,5vw,64px)}
+.wrow .wfm{padding:clamp(48px,4vw,56px) 0}
+.wrow .vfp{width:min(80%,392px,calc((100vh - 230px) * 375 / 872 + 14px))}
+.wrow .vfp>.pframe{width:100% !important}
+.hero1 .hwrap{position:absolute;right:4%;top:50%;width:58%;transform:translateY(-50%);z-index:2}
+.hero1 .hwrap>.hwin{position:relative;right:auto;top:auto;width:100%;transform:none}
+@media (max-width:900px){.hero1 .hwrap{position:relative;right:auto;top:auto;transform:none;width:100%;margin:24px 0 8px}}
