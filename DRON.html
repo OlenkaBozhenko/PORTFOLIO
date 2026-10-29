@@ -875,6 +875,26 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .wf3 .wfd .win{box-shadow:0 0 0 1px rgba(155,207,74,.55),0 0 22px rgba(155,207,74,.28),0 18px 40px rgba(0,0,0,.6) !important}
 .wrow .pframe{border-color:rgba(155,207,74,.6);box-shadow:0 0 22px rgba(155,207,74,.28),inset 0 0 12px rgba(155,207,74,.08)}
 .wf3 .wfd::after,.wrow .wfm::after{display:none}
+/* revision 24: no grid; the mockups sit in a drone camera viewfinder: corner brackets, a crosshair with ticks, small HUD labels */
+.wf3 .wfd::before,.wrow .wfm::before{background:radial-gradient(60% 70% at 50% 0%,rgba(155,207,74,.18),transparent 70%);-webkit-mask-image:none;mask-image:none}
+.wf3 .wfd>.win,.wrow .wfm>.pframe{position:relative;z-index:1}
+.vf{position:absolute;inset:clamp(12px,1.6vw,22px);z-index:0;pointer-events:none;color:rgba(155,207,74,.75)}
+.vf i{position:absolute;width:34px;height:34px;border:0 solid currentColor}
+.vf .c1{left:0;top:0;border-top-width:2px;border-left-width:2px;border-top-left-radius:6px}
+.vf .c2{right:0;top:0;border-top-width:2px;border-right-width:2px;border-top-right-radius:6px}
+.vf .c3{left:0;bottom:0;border-bottom-width:2px;border-left-width:2px;border-bottom-left-radius:6px}
+.vf .c4{right:0;bottom:0;border-bottom-width:2px;border-right-width:2px;border-bottom-right-radius:6px}
+.vf .hx{position:absolute;left:0;right:0;top:50%;height:9px;transform:translateY(-50%);
+  background:linear-gradient(currentColor,currentColor) center/100% 1px no-repeat,repeating-linear-gradient(90deg,currentColor 0 1px,transparent 1px 28px) center/100% 9px no-repeat;opacity:.35}
+.vf .vy{position:absolute;top:0;bottom:0;left:50%;width:9px;transform:translateX(-50%);
+  background:linear-gradient(currentColor,currentColor) center/1px 100% no-repeat,repeating-linear-gradient(0deg,currentColor 0 1px,transparent 1px 28px) center/9px 100% no-repeat;opacity:.35}
+.vf span{position:absolute;font:500 11px/1 ui-monospace,Menlo,monospace;letter-spacing:.08em;color:rgba(155,207,74,.85)}
+.vf .l1{left:46px;top:12px;display:flex;align-items:center;gap:6px}
+.vf .l1 em{width:7px;height:7px;border-radius:50%;background:#C4462A;animation:recb 1.4s steps(1) infinite}
+@keyframes recb{50%{opacity:0}}
+.vf .l2{right:46px;top:12px}.vf .l3{left:46px;bottom:12px}.vf .l4{right:46px;bottom:12px}
+@media (prefers-reduced-motion:reduce){.vf .l1 em{animation:none}}
+@media (max-width:720px){.vf span{display:none}}
 
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
 .menu-btn{display:none}
@@ -1110,9 +1130,9 @@ html.menu-open{overflow:hidden}
     <div class="chap R rv"><div class="pic"><img class="bg" src="assets/work/dron/ch-wireframes.webp?v=2" srcset="assets/work/dron/ch-wireframes-768.webp?v=2 768w, assets/work/dron/ch-wireframes.webp?v=2 1536w" sizes="(max-width:900px) 92vw, 62vw" alt="" width="1536" height="864" loading="lazy"></div><div class="tcard"><p>134 phone pages and 135 desktop pages, one page for every state: loading, empty, error, success. Below is the live demo itself. Pick a side and click through it, on the desktop and on the phone.</p></div></div>
     <div class="wf3">
       <div class="wcap rv"><h3>On the desktop</h3><p>The same flows on a wider screen: the map stays in view, the steps open in a panel beside it, and the live order is always on the right. Pick a side and click through.</p></div>
-      <figure class="dk wfd rv" style="margin:0"><div class="win" style="width:100%"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Desktop</span></div><div class="vpw"><iframe title="DRON live demo, desktop: choose client or operator" data-src="https://olenkabozhenko.github.io/DRON/demo/desktop/role-select.html?theme=dark" loading="lazy"></iframe></div></div></figure>
+      <figure class="dk wfd rv" style="margin:0"><div class="vf" aria-hidden="true"><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i><b class="hx"></b><b class="vy"></b><span class="l1"><em></em>REC</span><span class="l2">ALT 120 m</span><span class="l3">4K · 60</span><span class="l4">N 50.45°</span></div><div class="win" style="width:100%"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Desktop</span></div><div class="vpw"><iframe title="DRON live demo, desktop: choose client or operator" data-src="https://olenkabozhenko.github.io/DRON/demo/desktop/role-select.html?theme=dark" loading="lazy"></iframe></div></div></figure>
       <div class="wrow rv"><div class="wcap"><h3>Phone first</h3><p>The phone pages are the source of truth for how DRON behaves: 134 pages, one for every state. This is the live demo; scroll it and tap through it.</p></div>
-      <figure class="dk wfm" style="margin:0"><div class="pframe"><div class="vpw"><i class="sb" aria-hidden="true"><b>9:41</b><s></s></i><iframe title="DRON live demo, phone: choose client or operator" data-src="https://olenkabozhenko.github.io/DRON/demo/role-select.html?theme=dark" loading="lazy"></iframe></div></div></figure></div>
+      <figure class="dk wfm" style="margin:0"><div class="vf" aria-hidden="true"><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i><b class="hx"></b><b class="vy"></b><span class="l1"><em></em>REC</span><span class="l2">ALT 120 m</span><span class="l3">4K · 60</span><span class="l4">N 50.45°</span></div><div class="pframe"><div class="vpw"><i class="sb" aria-hidden="true"><b>9:41</b><s></s></i><iframe title="DRON live demo, phone: choose client or operator" data-src="https://olenkabozhenko.github.io/DRON/demo/role-select.html?theme=dark" loading="lazy"></iframe></div></div></figure></div>
     </div>
   </section>
 

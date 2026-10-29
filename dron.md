@@ -154,3 +154,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - The live phone card sized to the screen height (806 px at 1440 x 900), so it is seen whole in one screen; the phone scales down slightly.
 - Design System photo: the two green lines between the floating parts removed.
 - Live cards: a lime glow from the top and a faint lime grid on the dark ground; the desktop window and the phone frame get a soft glowing lime outline.
+- Live cards: the square grid removed; the mockups sit in a drone camera viewfinder: lime corner brackets, a crosshair with ticks through the centre, small HUD labels (REC with a blinking dot, ALT 120 m, 4K 60, N 50.45 deg; decorative, hidden from screen readers, labels hidden on phones).
