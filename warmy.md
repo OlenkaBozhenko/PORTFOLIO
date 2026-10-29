@@ -173,3 +173,4 @@ Desktop is unchanged.
 
 - Section dock (2026-10-29, her call, desktop only, like the DRON page): a pill at the bottom with an icon per section (About, Problem, Solution, Complexity, Product, My part, A/B hypotheses, User interviews, Campaign visuals); black pill, the current section in the Warmy coral #FF7658; the current section shows its name and follows the scroll, the others open their name on hover or focus. Hidden below 900 px.
 - Dock: the opening texts (About, Problem, Solution; on Styupan and Book: About, Objective, Idea) are one item, About, with a light bulb icon (her call).
+- Dock: no Campaign visuals item (her call).
