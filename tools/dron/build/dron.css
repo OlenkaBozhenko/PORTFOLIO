@@ -1058,3 +1058,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (prefers-reduced-motion:reduce){.dots i{transition:none;opacity:1;transform:none}.donut .s0,.donut .s1,.donut .s2{transition:none;stroke-dasharray:var(--v) 100}}
 .dots{display:grid;grid-template-columns:repeat(17,6px);gap:4px 3px}
 @media (max-width:720px){.mh{flex-direction:column-reverse;align-items:flex-start}.dots{grid-template-columns:repeat(17,5px);gap:3px 2px}.dots i{width:5px;height:5px}}
+
+/* revision 42: schools for five countries as a lollipop chart (a thin stem and a dot), Ukraine in lime; the unit chart could not hold Spain's 117 */
+.mcard.dash.mkt ul.lolli{display:flex;flex-direction:column;gap:11px;margin:10px 0 0}
+.lolli li{display:grid;grid-template-columns:64px 1fr 30px;align-items:center;gap:10px;font-size:13px;color:var(--mut)}
+.lolli li b{font-weight:500;color:var(--txt);text-align:right}
+.lolli li.hi span:first-child{color:var(--txt)}
+.stk{position:relative;height:10px}
+.stk::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:#3A3A3A}
+.stk i{position:absolute;left:0;top:50%;height:2px;margin-top:-1px;width:var(--w);background:#77736C;transform-origin:left;transform:scaleX(0);transition:transform 1s cubic-bezier(.22,.61,.36,1)}
+.stk i::after{content:"";position:absolute;right:-5px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:#A5A198}
+.lolli li.hi .stk i{background:var(--green)}
+.lolli li.hi .stk i::after{background:var(--green);box-shadow:0 0 8px rgba(155,207,74,.6)}
+.in .stk i,.no-io .stk i{transform:none}
+@media (prefers-reduced-motion:reduce){.stk i{transition:none;transform:none}}
