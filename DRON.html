@@ -933,6 +933,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .ty.big2 .aa{font-size:clamp(130px,15vw,230px)}
 .ty.big2 ul li:first-child{font-size:34px !important}
 .ty.big2 ul{gap:6px}
+/* revision 28: the phone card only as wide as the phone and its viewfinder */
+.wrow{grid-template-columns:minmax(0,1fr) auto}
+.wrow .wfm{padding-inline:clamp(56px,5vw,80px);justify-self:end}
+.wrow .vfp{width:min(392px,calc((100vh - 230px) * 375 / 872 + 14px))}
+@media (max-width:900px){.wrow{grid-template-columns:1fr}.wrow .wfm{justify-self:stretch}.wrow .vfp{width:min(80%,392px)}}
 
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
 .menu-btn{display:none}
