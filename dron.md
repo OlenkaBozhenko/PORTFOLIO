@@ -204,3 +204,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Design captions in two lines (her wording, 2026-10-29): desktop "A new take on the familiar admin panel and dashboard. Try the live demo."; phone "Adaptive on every phone, so the end user is always at ease. Try the live demo."
 - A section dock at the bottom of the page (her reference 2026-10-29: a bottom toolbar with tabs). A dark glass pill with an icon per chapter (Research, Audience, JTBD, Flows, Voice, Design, CJM, System, Handoff); the current chapter is lime with its name and changes as she scrolls; the others open their name on hover or keyboard focus. It slides in once the story starts. On a phone it shows icons only (the current one lime), so all nine fit.
 - Dock: desktop only, no dock on the phone (her call). Icons: Research is a bar chart (a magnifier read as search), Handoff a zipped file.
+- Dock labels: "Tone of Voice" and "Design System" in full (her call).

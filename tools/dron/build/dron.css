@@ -1101,3 +1101,4 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media print{.dock{display:none}}
 /* the dock is for the desktop only; Research is a bar chart (it read as search), Handoff a zipped file (her call) */
 @media (max-width:900px){.dock{display:none}}
+.dock a:hover span,.dock a:focus-visible span,.dock a.on span{max-width:140px}
