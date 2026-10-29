@@ -170,8 +170,9 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Target Audience, the client card (her brief 2026-10-29: show what shapes the design, as modern charts; references: dark dashboard cards with a big number, an area chart, a ring gauge, a stat row). The card "Who orders, in numbers" now holds:
   - Would order drone delivery at about twice the shipping price: 64% across six cities; Milan 72%, Barcelona 68%, Budapest 67%, Paris 61%, Øresund 59%, Hamburg 57%. EASA, Study on the societal acceptance of Urban Air Mobility in Europe, 2021, Fig. 31 (online survey, 3,690 people aged 16–75, delivery within 2 hours at about double the standard fee).
   - Bought goods or services online in the last 12 months, by age: 16–24 84%, 25–34 90%, 35–44 87%, 45–54 80%, 55–64 69%, 65–74 55%. Eurostat, E-commerce statistics for individuals, 2025 (EU internet users 16–74).
-  - Higher education: Ukraine 51.4% (ages 25–64, data year 2021; OECD Economic Surveys: Ukraine 2025, Basic statistics, read from a search snippet, the page itself was blocked, to re-check), EU 34.3% (ages 25–74; Eurostat, Educational attainment statistics, 2025).
+  - (Removed 2026-10-29, her call: the higher education ring, Ukraine 51.4% vs EU 34.3%.) The worries took its place as concentric rings, one ring per concern.
   - Top-three concerns about delivery drones: safety 44%, security 39%, privacy 30%, noise 28%, affordability 21%. EASA 2021, Fig. 38.
   - (Removed 2026-10-29, her call: the row of three facts, Diia 21M+ users, 94.6% cashless card payments, Kabanchik ₴500–1,500.) The persona photo sits at the top of the card.
   - Not found: a Ukrainian survey on drone services, and an amount in money people would pay. Ukraine is not in the EASA study. StatCounter shows desktop ahead of mobile in Ukrainian web traffic (Sept 2026), so it is not used as a mobile-first argument.
   - The operator card is unchanged.
+  - The worries tile is titled "Top worries about delivery drones" (each person named their top three).

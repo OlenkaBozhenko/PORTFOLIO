@@ -1039,6 +1039,27 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 /* the client persona aligns to the top edge of the market card (her note) */
 .ps2:has(.mkt){align-items:start}
 
+/* revision 38: the worries as concentric rings beside the age chart, the education ring removed (her call) */
+.rad2{display:flex;align-items:center;gap:clamp(14px,2vw,24px);margin:auto 0}
+.rings{width:clamp(120px,11vw,150px);flex:none;transform:rotate(-90deg)}
+.rings circle{fill:none;stroke-width:7;stroke-linecap:round}
+.rings .bg{stroke:#353535}
+.rings .fg{stroke-dasharray:0 100;transition:stroke-dasharray 1.3s cubic-bezier(.22,.61,.36,1)}
+.in .rings .fg,.no-io .rings .fg{stroke-dasharray:var(--v) 100}
+.rings .r0,.rleg .r0 i{stroke:var(--green);background:var(--green)}
+.rings .r0{filter:drop-shadow(0 0 5px rgba(155,207,74,.5))}
+.rings .r1,.rleg .r1 i{stroke:#7FA83F;background:#7FA83F}
+.rings .r2,.rleg .r2 i{stroke:#617F33;background:#617F33}
+.rings .r3,.rleg .r3 i{stroke:#4B6129;background:#4B6129}
+.rings .r4,.rleg .r4 i{stroke:#8A867F;background:#8A867F}
+.rings .r1{transition-delay:.08s}.rings .r2{transition-delay:.16s}.rings .r3{transition-delay:.24s}.rings .r4{transition-delay:.32s}
+.mcard.dash.mkt ul.rleg{display:flex;flex-direction:column;gap:8px;margin:0;flex:1;min-width:0}
+.rleg li{display:grid;grid-template-columns:8px 1fr auto;align-items:center;gap:8px;font-size:13px;color:var(--mut)}
+.rleg li i{width:8px;height:8px;border-radius:50%}
+.rleg li b{font-weight:500;color:var(--txt)}
+.rleg li.r0 span{color:var(--txt)}
+@media (prefers-reduced-motion:reduce){.rings .fg{transition:none;stroke-dasharray:var(--v) 100}}
+
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
 .menu-btn{display:none}
 @media (max-width:720px){
@@ -1172,11 +1193,7 @@ html.menu-open{overflow:hidden}
               <ul class="mbar" aria-label="By city"><li class="hi"><span>Milan</span><i style="--w:90.0%"></i><b>72%</b></li><li><span>Barcelona</span><i style="--w:85.0%"></i><b>68%</b></li><li><span>Budapest</span><i style="--w:83.8%"></i><b>67%</b></li><li><span>Paris</span><i style="--w:76.2%"></i><b>61%</b></li><li><span>Øresund</span><i style="--w:73.8%"></i><b>59%</b></li><li><span>Hamburg</span><i style="--w:71.2%"></i><b>57%</b></li></ul></div>
             <div class="mt"><p class="t">Buy online, by age</p><p class="kpi s">90%<small>aged 25–34</small></p>
               <ol class="vb" aria-label="Share who bought online in the last year, by age"><li style="--h:84%"><b>84%</b><i></i><span>16–24</span></li><li class="hi" style="--h:90%"><b>90%</b><i></i><span>25–34</span></li><li style="--h:87%"><b>87%</b><i></i><span>35–44</span></li><li style="--h:80%"><b>80%</b><i></i><span>45–54</span></li><li style="--h:69%"><b>69%</b><i></i><span>55–64</span></li><li style="--h:55%"><b>55%</b><i></i><span>65–74</span></li></ol></div>
-            <div class="mt"><p class="t">Higher education, ages 25–64</p>
-              <div class="ringw"><svg class="ring2" viewBox="0 0 120 120" aria-hidden="true"><circle class="bg" cx="60" cy="60" r="52"/><circle class="fg" cx="60" cy="60" r="52" pathLength="100"/><circle class="bg" cx="60" cy="60" r="40"/><circle class="eu" cx="60" cy="60" r="40" pathLength="100"/></svg><p><b>51.4%</b><span>Ukraine</span></p></div>
-              <p class="m"><i class="mdot u"></i>Ukraine 51.4% <i class="mdot e"></i>EU 34.3%</p></div>
-            <div class="mt wide"><p class="t">What worries people about delivery drones, top three</p>
-              <ul class="mbar w" aria-label="Concerns"><li class="hi"><span>Safety</span><i style="--w:88.0%"></i><b>44%</b></li><li><span>Security</span><i style="--w:78.0%"></i><b>39%</b></li><li><span>Privacy</span><i style="--w:60.0%"></i><b>30%</b></li><li><span>Noise</span><i style="--w:56.0%"></i><b>28%</b></li><li><span>Affordability</span><i style="--w:42.0%"></i><b>21%</b></li></ul></div>
+            <div class="mt"><p class="t">Top worries about delivery drones</p><div class="rad2"><svg class="rings" viewBox="0 0 140 140" role="img" aria-label="Safety 44%, security 39%, privacy 30%, noise 28%, affordability 21%"><circle class="bg" cx="70" cy="70" r="62"/><circle class="fg r0" cx="70" cy="70" r="62" pathLength="100" style="--v:44"/><circle class="bg" cx="70" cy="70" r="52"/><circle class="fg r1" cx="70" cy="70" r="52" pathLength="100" style="--v:39"/><circle class="bg" cx="70" cy="70" r="42"/><circle class="fg r2" cx="70" cy="70" r="42" pathLength="100" style="--v:30"/><circle class="bg" cx="70" cy="70" r="32"/><circle class="fg r3" cx="70" cy="70" r="32" pathLength="100" style="--v:28"/><circle class="bg" cx="70" cy="70" r="22"/><circle class="fg r4" cx="70" cy="70" r="22" pathLength="100" style="--v:21"/></svg><ul class="rleg"><li class="r0"><i></i><span>Safety</span><b>44%</b></li><li class="r1"><i></i><span>Security</span><b>39%</b></li><li class="r2"><i></i><span>Privacy</span><b>30%</b></li><li class="r3"><i></i><span>Noise</span><b>28%</b></li><li class="r4"><i></i><span>Affordability</span><b>21%</b></li></ul></div></div>
           </div></div>
       </div>
       <div class="ps2 rev">
@@ -1192,7 +1209,7 @@ html.menu-open{overflow:hidden}
           <q>I want to fly and earn. <b>Paperwork and finding clients are not for me.</b></q><p class="nm">Andrii, 26<span>Operator · licensed drone pilot</span></p></div>
       </div>
     </div>
-    <p class="note">Sources: EASA, Study on the societal acceptance of Urban Air Mobility in Europe, 2021 (3,690 people in six cities; delivery within 2 hours at about twice the standard fee; concerns are each person's top three). Eurostat, E-commerce statistics for individuals, 2025 (EU internet users). OECD Economic Surveys: Ukraine 2025 (data 2021) and Eurostat, Educational attainment statistics, 2025 (EU, ages 25–74).</p>
+    <p class="note">Sources: EASA, Study on the societal acceptance of Urban Air Mobility in Europe, 2021 (3,690 people in six cities; delivery within 2 hours at about twice the standard fee; concerns are each person's top three). Eurostat, E-commerce statistics for individuals, 2025 (EU internet users).</p>
   </section>
 
   <!-- 03 JTBD -->

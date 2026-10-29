@@ -985,3 +985,24 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .mkt .mt{overflow:visible}
 /* the client persona aligns to the top edge of the market card (her note) */
 .ps2:has(.mkt){align-items:start}
+
+/* revision 38: the worries as concentric rings beside the age chart, the education ring removed (her call) */
+.rad2{display:flex;align-items:center;gap:clamp(14px,2vw,24px);margin:auto 0}
+.rings{width:clamp(120px,11vw,150px);flex:none;transform:rotate(-90deg)}
+.rings circle{fill:none;stroke-width:7;stroke-linecap:round}
+.rings .bg{stroke:#353535}
+.rings .fg{stroke-dasharray:0 100;transition:stroke-dasharray 1.3s cubic-bezier(.22,.61,.36,1)}
+.in .rings .fg,.no-io .rings .fg{stroke-dasharray:var(--v) 100}
+.rings .r0,.rleg .r0 i{stroke:var(--green);background:var(--green)}
+.rings .r0{filter:drop-shadow(0 0 5px rgba(155,207,74,.5))}
+.rings .r1,.rleg .r1 i{stroke:#7FA83F;background:#7FA83F}
+.rings .r2,.rleg .r2 i{stroke:#617F33;background:#617F33}
+.rings .r3,.rleg .r3 i{stroke:#4B6129;background:#4B6129}
+.rings .r4,.rleg .r4 i{stroke:#8A867F;background:#8A867F}
+.rings .r1{transition-delay:.08s}.rings .r2{transition-delay:.16s}.rings .r3{transition-delay:.24s}.rings .r4{transition-delay:.32s}
+.mcard.dash.mkt ul.rleg{display:flex;flex-direction:column;gap:8px;margin:0;flex:1;min-width:0}
+.rleg li{display:grid;grid-template-columns:8px 1fr auto;align-items:center;gap:8px;font-size:13px;color:var(--mut)}
+.rleg li i{width:8px;height:8px;border-radius:50%}
+.rleg li b{font-weight:500;color:var(--txt)}
+.rleg li.r0 span{color:var(--txt)}
+@media (prefers-reduced-motion:reduce){.rings .fg{transition:none;stroke-dasharray:var(--v) 100}}
