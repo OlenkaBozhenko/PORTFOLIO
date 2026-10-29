@@ -163,4 +163,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - The live phone card only as wide as the phone and its viewfinder (446 px at 1440), on the right; the text takes the rest.
 - Phone card: the viewfinder runs along the card perimeter (brackets in the card corners, labels inside them, crosshair across the card).
 - Desktop card: the viewfinder along the card perimeter too.
-- Live demos (desktop and phone): on a mouse, a green Click circle with a pointer icon follows the cursor beside it, like the Drag circle on the flows, to show the demo can be clicked. Online (same origin) it follows the cursor inside the frame; opened from a file it shows where the cursor came in and fades after 1.6 s.
+- Live demos (desktop and phone): a lime arrow cursor glides onto the first button ("I need a service done") and clicks it, on a loop, to show the demo can be clicked (her call, instead of a Click circle). It hides while the pointer is over the demo, stops after the first click inside, and is not shown on touch screens or with reduced motion.
