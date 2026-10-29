@@ -1036,6 +1036,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .mkt .mgrid{flex:none}
 .mkt .mt>*{flex-shrink:0}
 .mkt .mt{overflow:visible}
+/* the client persona aligns to the top edge of the market card (her note) */
+.ps2:has(.mkt){align-items:start}
 
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
 .menu-btn{display:none}
@@ -1174,8 +1176,7 @@ html.menu-open{overflow:hidden}
               <div class="ringw"><svg class="ring2" viewBox="0 0 120 120" aria-hidden="true"><circle class="bg" cx="60" cy="60" r="52"/><circle class="fg" cx="60" cy="60" r="52" pathLength="100"/><circle class="bg" cx="60" cy="60" r="40"/><circle class="eu" cx="60" cy="60" r="40" pathLength="100"/></svg><p><b>51.4%</b><span>Ukraine</span></p></div>
               <p class="m"><i class="mdot u"></i>Ukraine 51.4% <i class="mdot e"></i>EU 34.3%</p></div>
             <div class="mt wide"><p class="t">What worries people about delivery drones, top three</p>
-              <ul class="mbar w" aria-label="Concerns"><li class="hi"><span>Safety</span><i style="--w:88.0%"></i><b>44%</b></li><li><span>Security</span><i style="--w:78.0%"></i><b>39%</b></li><li><span>Privacy</span><i style="--w:60.0%"></i><b>30%</b></li><li><span>Noise</span><i style="--w:56.0%"></i><b>28%</b></li><li><span>Affordability</span><i style="--w:42.0%"></i><b>21%</b></li></ul>
-              <ul class="stats"><li><b>21M+</b><span>use Diia, the state app behind one-tap sign-in</span></li><li><b>94.6%</b><span>of card payments in Ukraine are cashless</span></li><li><b>₴500–1,500</b><span>an aerial shoot on Kabanchik today</span></li></ul></div>
+              <ul class="mbar w" aria-label="Concerns"><li class="hi"><span>Safety</span><i style="--w:88.0%"></i><b>44%</b></li><li><span>Security</span><i style="--w:78.0%"></i><b>39%</b></li><li><span>Privacy</span><i style="--w:60.0%"></i><b>30%</b></li><li><span>Noise</span><i style="--w:56.0%"></i><b>28%</b></li><li><span>Affordability</span><i style="--w:42.0%"></i><b>21%</b></li></ul></div>
           </div></div>
       </div>
       <div class="ps2 rev">
@@ -1191,7 +1192,7 @@ html.menu-open{overflow:hidden}
           <q>I want to fly and earn. <b>Paperwork and finding clients are not for me.</b></q><p class="nm">Andrii, 26<span>Operator · licensed drone pilot</span></p></div>
       </div>
     </div>
-    <p class="note">Sources: EASA, Study on the societal acceptance of Urban Air Mobility in Europe, 2021 (3,690 people in six cities; delivery within 2 hours at about twice the standard fee; concerns are each person's top three). Eurostat, E-commerce statistics for individuals, 2025 (EU internet users). OECD Economic Surveys: Ukraine 2025 (data 2021) and Eurostat, Educational attainment statistics, 2025 (EU, ages 25–74). Cabinet of Ministers of Ukraine, 30 October 2024 (Diia). National Bank of Ukraine via Mind.ua, 2024 (card payments). Kabanchik listings, DRON research, June 2026 (price).</p>
+    <p class="note">Sources: EASA, Study on the societal acceptance of Urban Air Mobility in Europe, 2021 (3,690 people in six cities; delivery within 2 hours at about twice the standard fee; concerns are each person's top three). Eurostat, E-commerce statistics for individuals, 2025 (EU internet users). OECD Economic Surveys: Ukraine 2025 (data 2021) and Eurostat, Educational attainment statistics, 2025 (EU, ages 25–74).</p>
   </section>
 
   <!-- 03 JTBD -->

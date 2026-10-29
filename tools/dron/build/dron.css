@@ -983,3 +983,5 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .mkt .mgrid{flex:none}
 .mkt .mt>*{flex-shrink:0}
 .mkt .mt{overflow:visible}
+/* the client persona aligns to the top edge of the market card (her note) */
+.ps2:has(.mkt){align-items:start}

@@ -172,6 +172,6 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
   - Bought goods or services online in the last 12 months, by age: 16–24 84%, 25–34 90%, 35–44 87%, 45–54 80%, 55–64 69%, 65–74 55%. Eurostat, E-commerce statistics for individuals, 2025 (EU internet users 16–74).
   - Higher education: Ukraine 51.4% (ages 25–64, data year 2021; OECD Economic Surveys: Ukraine 2025, Basic statistics, read from a search snippet, the page itself was blocked, to re-check), EU 34.3% (ages 25–74; Eurostat, Educational attainment statistics, 2025).
   - Top-three concerns about delivery drones: safety 44%, security 39%, privacy 30%, noise 28%, affordability 21%. EASA 2021, Fig. 38.
-  - Diia, more than 21 million users (Cabinet of Ministers of Ukraine, 30 October 2024); 94.6% of card payments in Ukraine cashless by count (NBU data via Mind.ua, 2024); an aerial shoot on Kabanchik ₴500–1,500 (DRON research, June 2026).
+  - (Removed 2026-10-29, her call: the row of three facts, Diia 21M+ users, 94.6% cashless card payments, Kabanchik ₴500–1,500.) The persona photo sits at the top of the card.
   - Not found: a Ukrainian survey on drone services, and an amount in money people would pay. Ukraine is not in the EASA study. StatCounter shows desktop ahead of mobile in Ukrainian web traffic (Sept 2026), so it is not used as a mobile-first argument.
   - The operator card is unchanged.
