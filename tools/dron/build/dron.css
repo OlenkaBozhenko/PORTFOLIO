@@ -859,3 +859,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .hero1 .hwrap{position:absolute;right:4%;top:50%;width:58%;transform:translateY(-50%);z-index:2}
 .hero1 .hwrap>.hwin{position:relative;right:auto;top:auto;width:100%;transform:none}
 @media (max-width:900px){.hero1 .hwrap{position:relative;right:auto;top:auto;transform:none;width:100%;margin:24px 0 8px}}
+/* revision 26: the type card: the scale on the left with HIG names, the big Aa on the right */
+.ty.big2{justify-content:space-between;align-items:flex-end}
+.ty.big2 .aa{margin-left:auto}
+.ty.big2 ul li:first-child{font-size:24px !important}

@@ -156,3 +156,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Live cards: a lime glow from the top and a faint lime grid on the dark ground; the desktop window and the phone frame get a soft glowing lime outline.
 - Live cards: the square grid removed; the mockups sit in a drone camera viewfinder: lime corner brackets, a crosshair with ticks through the centre, small HUD labels (REC with a blinking dot, ALT 120 m, 4K 60, N 50.45 deg; decorative, hidden from screen readers, labels hidden on phones).
 - The viewfinder now hugs each mockup only (brackets 22 px outside its edge, crosshair stubs, HUD labels above and below), on the first-screen desktop and on both live cards; the card grounds and glow stay.
+- Type card: the scale named as Apple HIG names its text styles (Title 2 22, Headline 17, Subheadline 15, Footnote 13, Caption 2 11), on the left; the big Aa on the right.
