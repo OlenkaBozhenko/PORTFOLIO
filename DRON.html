@@ -1059,6 +1059,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .rleg li b{font-weight:500;color:var(--txt)}
 .rleg li.r0 span{color:var(--txt)}
 @media (prefers-reduced-motion:reduce){.rings .fg{transition:none;stroke-dasharray:var(--v) 100}}
+/* both big numbers carry their caption beside them, on the number's baseline (her note) */
+.mt .kpi{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.mt .kpi small{font-size:14px;letter-spacing:0;color:var(--mut);font-weight:400}
 
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
 .menu-btn{display:none}
@@ -1189,7 +1192,7 @@ html.menu-open{overflow:hidden}
         <div class="mcard big3 dash mkt">
           <div class="dh"><span>Who orders, in numbers</span><span class="chip">Client</span></div>
           <div class="mgrid">
-            <div class="mt wide"><div class="mh"><div><p class="t">Would order drone delivery at about twice the shipping price</p><p class="kpi">64%</p><p class="m">across six European cities</p></div><span class="chip2">↑ Milan 72%</span></div>
+            <div class="mt wide"><div class="mh"><div><p class="t">Would order drone delivery at about twice the shipping price</p><p class="kpi">64%<small>across six European cities</small></p></div><span class="chip2">↑ Milan 72%</span></div>
               <ul class="mbar" aria-label="By city"><li class="hi"><span>Milan</span><i style="--w:90.0%"></i><b>72%</b></li><li><span>Barcelona</span><i style="--w:85.0%"></i><b>68%</b></li><li><span>Budapest</span><i style="--w:83.8%"></i><b>67%</b></li><li><span>Paris</span><i style="--w:76.2%"></i><b>61%</b></li><li><span>Øresund</span><i style="--w:73.8%"></i><b>59%</b></li><li><span>Hamburg</span><i style="--w:71.2%"></i><b>57%</b></li></ul></div>
             <div class="mt"><p class="t">Buy online, by age</p><p class="kpi s">90%<small>aged 25–34</small></p>
               <ol class="vb" aria-label="Share who bought online in the last year, by age"><li style="--h:84%"><b>84%</b><i></i><span>16–24</span></li><li class="hi" style="--h:90%"><b>90%</b><i></i><span>25–34</span></li><li style="--h:87%"><b>87%</b><i></i><span>35–44</span></li><li style="--h:80%"><b>80%</b><i></i><span>45–54</span></li><li style="--h:69%"><b>69%</b><i></i><span>55–64</span></li><li style="--h:55%"><b>55%</b><i></i><span>65–74</span></li></ol></div>

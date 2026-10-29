@@ -176,3 +176,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
   - Not found: a Ukrainian survey on drone services, and an amount in money people would pay. Ukraine is not in the EASA study. StatCounter shows desktop ahead of mobile in Ukrainian web traffic (Sept 2026), so it is not used as a mobile-first argument.
   - The operator card is unchanged.
   - The worries tile is titled "Top worries about delivery drones" (each person named their top three).
+  - Both big numbers (64% and 90%) carry their caption beside them on the baseline, one pattern for the card (her note).

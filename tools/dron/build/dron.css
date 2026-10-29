@@ -1006,3 +1006,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .rleg li b{font-weight:500;color:var(--txt)}
 .rleg li.r0 span{color:var(--txt)}
 @media (prefers-reduced-motion:reduce){.rings .fg{transition:none;stroke-dasharray:var(--v) 100}}
+/* both big numbers carry their caption beside them, on the number's baseline (her note) */
+.mt .kpi{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.mt .kpi small{font-size:14px;letter-spacing:0;color:var(--mut);font-weight:400}
