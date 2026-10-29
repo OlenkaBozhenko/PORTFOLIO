@@ -1102,3 +1102,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 /* the dock is for the desktop only; Research is a bar chart (it read as search), Handoff a zipped file (her call) */
 @media (max-width:900px){.dock{display:none}}
 .dock a:hover span,.dock a:focus-visible span,.dock a.on span{max-width:140px}
+
+/* revision 45: on a phone the CJM chapter and the desktop live demo are left out (her call); the desktop frame is not even loaded there */
+@media (max-width:720px){#cjm,.dk-only{display:none !important}}

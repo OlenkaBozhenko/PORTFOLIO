@@ -2,7 +2,10 @@
 Run from the repo root: python tools/dron/build/build.py"""
 import re
 
-sg = open('SportGuardian.html', encoding='utf-8').read().split('\n')
+sg = open('SportGuardian.html', encoding='utf-8').read()
+# Sport Guardian has its own section dock; its CSS block is cut out first, so the line numbers below still point at the shared head, nav and menu
+sg = re.sub(r'\n/\* section dock, desktop only.*?@media print\{\.dock\{display:none\}\}\n', '', sg, count=1, flags=re.S)
+sg = sg.split('\n')
 head = '\n'.join(sg[0:55])
 head = head.replace('<title>Sport Guardian | Olena Bozhenko</title>', '<title>DRON | Olena Bozhenko</title>')
 head = re.sub(r'<meta name="description" content="[^"]*">', '<meta name="description" content="DRON, a drone-as-a-service product designed from research to handoff with AI tools: research, audience, jobs to be done, flows, tone of voice, wireframes, journey map, design system and handoff, by Olena Bozhenko.">', head)
