@@ -1076,3 +1076,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .lolli .stk i{background:var(--green)}
 .lolli .stk i::after{background:var(--green);box-shadow:0 0 6px rgba(155,207,74,.45)}
 .lolli li span:first-child{color:var(--mut)}
+
+/* revision 43: the Design captions run in shorter lines; JTBD chips sit right under the text, three each */
+.wcap p{max-width:40ch}
+.jtxt .chips2{margin-top:10px}

@@ -198,3 +198,6 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
   - "A wireframe is a plain layout of a screen: what goes where and how it works, before colour and style. It lets the team test the structure and every state cheaply, before the visual design"
   - "Handoff is the moment the design passes to the developers: the screens, the rules and the specs they need to build it. A clean handoff means the product is built as designed, without guesswork"
 - The Wireframes chapter is renamed Design (her call; the photo stays). Its glass card: "Design is where the structure gets its look and feel: colour, type, imagery and motion, on every screen and in every state. It turns a working layout into a product people trust at first glance. Below is the live demo, dark theme". The section id stays #wireframes, so old links still work.
+- JTBD: no "Her jobs" / "His jobs" labels; three chips each. Client: Confirm who comes, Know the price first, Proof the job was done. Operator: Decide in seconds, A checklist on site, Paid without chasing (her call).
+- Design captions ("On the desktop", "Phone first") run in shorter lines, about 40 characters (her note).
+- CJM: the actions keep one row per phase (removed: See the price, Pay, Report an issue), and the legend "Before the fixes / With DRON, as designed" is taken off the chart (her call).
