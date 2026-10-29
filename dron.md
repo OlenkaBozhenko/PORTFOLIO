@@ -201,4 +201,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - JTBD: no "Her jobs" / "His jobs" labels; three chips each. Client: Confirm who comes, Know the price first, Proof the job was done. Operator: Decide in seconds, A checklist on site, Paid without chasing (her call).
 - Design captions ("On the desktop", "Phone first") run in shorter lines, about 40 characters (her note).
 - CJM: the actions keep one row per phase (removed: See the price, Pay, Report an issue), and the legend "Before the fixes / With DRON, as designed" is taken off the chart (her call).
-- Design, "On the desktop" caption cut to two lines (her note): "The map stays in view, the steps open beside it. Pick a side and click through."
+- Design captions in two lines (her wording, 2026-10-29): desktop "A new take on the familiar admin panel and dashboard. Try the live demo."; phone "Adaptive on every phone, so the end user is always at ease. Try the live demo."
