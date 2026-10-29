@@ -865,3 +865,5 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .ty.big2 ul li:first-child{font-size:24px !important}
 .ty.big2 .aa{position:absolute;right:clamp(16px,2vw,28px);bottom:clamp(10px,1.4vw,20px);font-size:clamp(150px,18vw,280px);line-height:.78;margin:0}
 @media (max-width:720px){.ty.big2 .aa{position:static;font-size:120px}}
+.ty.big2 .aa{top:22px;bottom:auto;line-height:.74}
+.ty.big2 .aa{top:34px}
