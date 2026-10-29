@@ -918,3 +918,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .clickc{color:#fff}
 /* the circles' text is black, readable on the white page and on the dark demos (her call) */
 .dragc,.clickc{color:#111}
+/* the text follows the background: white over the dark screens (the live demos and the phone screens in the flows), black over the white page */
+.dragc{transition:transform .25s cubic-bezier(.22,.61,.36,1),color .15s ease}
+.dragc.lt,.clickc{color:#fff}

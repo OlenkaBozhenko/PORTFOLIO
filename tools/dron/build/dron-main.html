@@ -285,7 +285,7 @@
     s.addEventListener('pointerleave',function(){cur.classList.remove('on');down=false;s.classList.remove('drag')});
     s.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')return;down=true;x0=e.clientX;l0=s.scrollLeft;s.classList.add('drag');cur.classList.add('down')});
     addEventListener('pointerup',function(){down=false;s.classList.remove('drag');cur.classList.remove('down')});
-    s.addEventListener('pointermove',function(e){cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';if(down)s.scrollLeft=l0-(e.clientX-x0)});
+    s.addEventListener('pointermove',function(e){cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';var el=document.elementFromPoint(e.clientX,e.clientY);cur.classList.toggle('lt',!!(el&&el.closest('.phn img')));if(down)s.scrollLeft=l0-(e.clientX-x0)});
   });
 })();
 // design system numbers count up once, when they come on screen (like the Warmy figures)
