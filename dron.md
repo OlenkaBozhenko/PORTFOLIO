@@ -157,3 +157,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Live cards: the square grid removed; the mockups sit in a drone camera viewfinder: lime corner brackets, a crosshair with ticks through the centre, small HUD labels (REC with a blinking dot, ALT 120 m, 4K 60, N 50.45 deg; decorative, hidden from screen readers, labels hidden on phones).
 - The viewfinder now hugs each mockup only (brackets 22 px outside its edge, crosshair stubs, HUD labels above and below), on the first-screen desktop and on both live cards; the card grounds and glow stay.
 - Type card: the scale named as Apple HIG names its text styles (Title 2 22, Headline 17, Subheadline 15, Footnote 13, Caption 2 11), on the left; the big Aa on the right.
+- Handoff card subtitle: "Everything a developer needs to build DRON without asking me: what each screen is made of, how it behaves, and what ships." (was "From a fresh clone, nothing to install.")
