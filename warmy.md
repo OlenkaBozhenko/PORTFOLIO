@@ -175,3 +175,4 @@ Desktop is unchanged.
 - Dock: the opening texts (About, Problem, Solution; on Styupan and Book: About, Objective, Idea) are one item, About, with a light bulb icon (her call).
 - Dock: no Campaign visuals item (her call).
 - Dock: see-through glass like on the DRON page (the pill colour at 78% with a 14 px blur behind it).
+- Dock: the pill is the same dark glass as on the DRON page on every case (rgba(22,22,22,.86), 14 px blur, grey icons); only the current-section colour stays the project's (her call).

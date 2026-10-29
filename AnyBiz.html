@@ -437,11 +437,11 @@ html.menu-open{overflow:hidden}
 /* section dock, desktop only: an icon per section on a pill in the project's colours; the current section shows its name, the others on hover or focus; it follows the scroll */
 .dock{position:fixed;left:50%;bottom:clamp(14px,2.4vh,24px);z-index:60;transform:translate(-50%,calc(100% + 32px));opacity:0;transition:transform .45s cubic-bezier(.22,.61,.36,1),opacity .3s ease;pointer-events:none}
 .dock.show{transform:translate(-50%,0);opacity:1;pointer-events:auto}
-.dock ul{list-style:none;margin:0;padding:6px;display:flex;gap:2px;background:rgba(2,6,23,.78);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.1);border-radius:999px;box-shadow:0 12px 32px -10px rgba(0,0,0,.45)}
-.dock a{display:flex;align-items:center;height:44px;min-width:44px;padding:0 12px;border-radius:999px;color:#94A3B8;text-decoration:none;font-size:14px;font-weight:500;line-height:1;white-space:nowrap;transition:background .2s ease,color .2s ease}
+.dock ul{list-style:none;margin:0;padding:6px;display:flex;gap:2px;background:rgba(22,22,22,.86);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.08);border-radius:999px;box-shadow:0 12px 32px -10px rgba(0,0,0,.45)}
+.dock a{display:flex;align-items:center;height:44px;min-width:44px;padding:0 12px;border-radius:999px;color:#ABA79F;text-decoration:none;font-size:14px;font-weight:500;line-height:1;white-space:nowrap;transition:background .2s ease,color .2s ease}
 .dock a svg{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .dock a span{max-width:0;overflow:hidden;opacity:0;margin-left:0;transition:max-width .3s cubic-bezier(.22,.61,.36,1),opacity .2s ease,margin .3s ease}
-.dock a:hover,.dock a:focus-visible{color:#fff;background:rgba(148,163,184,.14)}
+.dock a:hover,.dock a:focus-visible{color:#F7F5F2;background:rgba(255,255,255,.08)}
 .dock a:hover span,.dock a:focus-visible span,.dock a.on span{max-width:180px;opacity:1;margin-left:8px}
 .dock a.on{background:#A78BFA;color:#0F0A1F}
 .dock a:focus-visible{outline:2px solid #A78BFA;outline-offset:2px}
