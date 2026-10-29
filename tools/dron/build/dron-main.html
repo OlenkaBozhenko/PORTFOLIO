@@ -241,6 +241,8 @@
     <a class="next" href="Warmy.html"><span>View next work <span class="vh">: </span><span class="nx">Warmy</span></span><span class="arrow" aria-hidden="true">→</span></a>
   </div>
 </main>
+<nav class="dock" aria-label="Sections of this page"><ul><li><a href="#research" data-s="research"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg><span>Research</span></a></li><li><a href="#audience" data-s="audience"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5"/><circle cx="17" cy="9.5" r="2.4"/><path d="M15.5 14.2c2.4-.3 4.4 1.2 5 4.3"/></svg><span>Audience</span></a></li><li><a href="#jtbd" data-s="jtbd"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".8" fill="currentColor"/></svg><span>JTBD</span></a></li><li><a href="#flows" data-s="flows"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="12" r="2"/><circle cx="18.5" cy="6" r="2"/><circle cx="18.5" cy="18" r="2"/><path d="M7.5 12h4l5-5.2M11.5 12l5 5.2"/></svg><span>Flows</span></a></li><li><a href="#voice" data-s="voice"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 6.5A2 2 0 0 1 6.5 4.5h11a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H11l-4.5 3.5v-3.5h0a2 2 0 0 1-2-2z"/></svg><span>Voice</span></a></li><li><a href="#wireframes" data-s="wireframes"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="M3.5 9h17M9 9v10.5"/></svg><span>Design</span></a></li><li><a href="#cjm" data-s="cjm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 17c3-6 5-6 7.5-2s5 4 9.5-6"/><circle cx="3.5" cy="17" r="1.2" fill="currentColor"/><circle cx="20.5" cy="9" r="1.2" fill="currentColor"/></svg><span>CJM</span></a></li><li><a href="#system" data-s="system"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="3.25"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><path d="M16.75 13.5l3.25 6.5h-6.5z"/></svg><span>System</span></a></li><li><a href="#handoff" data-s="handoff"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l8 4.2v8.6l-8 4.2-8-4.2V7.7z"/><path d="M4 7.7l8 4.3 8-4.3M12 12v8.5"/></svg><span>Handoff</span></a></li></ul></nav>
+
 
 <footer>
   <div class="wrap"><span>© 2026 Olena Bozhenko</span><span>Product Designer</span></div>
@@ -290,6 +292,14 @@
     addEventListener('pointerup',function(){down=false;s.classList.remove('drag');cur.classList.remove('down')});
     s.addEventListener('pointermove',function(e){cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';var el=document.elementFromPoint(e.clientX,e.clientY);cur.classList.toggle('lt',!!(el&&el.closest('.phn img')));if(down)s.scrollLeft=l0-(e.clientX-x0)});
   });
+})();
+// a section dock at the bottom: an icon per chapter; the current one is lime with its name, the others show their name on hover; it appears once the story starts
+(function(){
+  var dock=document.querySelector('.dock');if(!dock)return;
+  var links=[].slice.call(dock.querySelectorAll('a')),secs=links.map(function(a){return document.getElementById(a.dataset.s)});
+  function set(id){links.forEach(function(a){var on=a.dataset.s===id;a.classList.toggle('on',on);if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})}
+  function upd(){var y=innerHeight*.45,cur=null;secs.forEach(function(s){if(s&&s.getBoundingClientRect().top<=y)cur=s.id});dock.classList.toggle('show',!!cur||secs[0].getBoundingClientRect().top<innerHeight*.9);set(cur||'')}
+  addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
 })();
 // design system numbers count up once, when they come on screen (like the Warmy figures)
 (function(){
