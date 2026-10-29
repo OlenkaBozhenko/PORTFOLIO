@@ -913,3 +913,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .pframe .hint{left:40%;top:30%}
 @media (prefers-reduced-motion:reduce){.hint,.hint i{animation:none}}
 @media (hover:none){.hint{display:none}}
+
+/* revision 32: the Click circle, the same as Drag on the flows, follows the cursor over the live demos (beside the cursor, so the button stays visible); the viewfinder says Live prototype instead of REC */
+.clickc{position:fixed;left:0;top:0;z-index:30;width:84px;height:84px;margin:12px 0 0 12px;border-radius:50%;background:var(--green);color:var(--charcoal);display:grid;place-items:center;font-size:14px;font-weight:600;pointer-events:none;transform:scale(0);transform-origin:0 0;transition:transform .25s cubic-bezier(.22,.61,.36,1)}
+.clickc.on{transform:scale(1)}
+.clickc.down{transform:scale(.85)}
