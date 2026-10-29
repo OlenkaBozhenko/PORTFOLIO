@@ -960,6 +960,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .clickc.gone{display:none}
 @media (prefers-reduced-motion:reduce){.clickc{transition:opacity .2s}}
 
+/* revision 33: the story is About and How it was made (Problem and Solution removed, her call); How it was made has two paragraphs */
+.pair .pp2{display:flex;flex-direction:column;gap:1em}
+
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
 .menu-btn{display:none}
 @media (max-width:720px){
@@ -1043,10 +1046,8 @@ html.menu-open{overflow:hidden}
   </figure></div>
 
   <div class="wrap story">
-    <div class="pair"><h2>About</h2><p>DRON is a drone-as-a-service product: a person orders a delivery, an aerial shoot or an inspection, and a certified operator from DRON's own fleet does the work. There are two sides, the client and the operator, on mobile web first and on desktop.</p></div>
-    <div class="pair"><h2>Problem</h2><p>People who order a drone job have never flown a drone and never will, and the drone itself is what worries them: privacy, safety, noise. Today the work is found on classifieds, where the price hides behind a quote and nobody shows the operator's licence or insurance.</p></div>
-    <div class="pair"><h2>Solution</h2><p>The operator is assigned automatically, and trust is shown, not claimed: verified, licensed and insured on the card before payment, a locked price, live tracking, and a delivery photo or an inspection report at the end. The operator gets jobs that fit one glance, a checklist on site, and is paid 2 hours after the result reaches the client.</p></div>
-    <div class="pair"><h2>How it was made</h2><p>Every stage, from research to handoff, was done with AI tools. Claude Code wrote, built and checked the research, the screens, the design system and the handoff: 754 of 1,972 commits carry its name, and five agents painted the operator side in parallel. Figma was driven from Claude Code through a local bridge, the Impeccable skill audited the design, and Playwright checked every page in a browser.</p></div>
+    <div class="pair"><h2>About</h2><p>DRON is a drone-as-a-service product built for two users: the client and the operator. The client orders a delivery, an aerial shoot or an inspection and gets a locked price and live tracking, while DRON provides a certified operator who receives their earnings once the order is completed.</p></div>
+    <div class="pair"><h2>How it was made</h2><div class="pp2"><p>The entire project, from research to handoff, was delivered using AI tools, with Claude Code as the main tool. Large tasks were broken down and distributed across separate agents running in parallel.</p><p>Multiple AI tools and services were connected into a single workflow through custom MCP integrations. The design was audited with the Impeccable skill, and custom skills were developed for the project’s specific needs. Competitor research was carried out with Playwright.</p></div></div>
   </div>
 
   <!-- 01 Research -->

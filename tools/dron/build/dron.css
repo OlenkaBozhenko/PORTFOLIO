@@ -906,3 +906,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .clickc.on{opacity:1;transform:scale(1)}
 .clickc.gone{display:none}
 @media (prefers-reduced-motion:reduce){.clickc{transition:opacity .2s}}
+
+/* revision 33: the story is About and How it was made (Problem and Solution removed, her call); How it was made has two paragraphs */
+.pair .pp2{display:flex;flex-direction:column;gap:1em}
