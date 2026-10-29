@@ -878,3 +878,5 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .tl2 li>*{animation:none}
 @media (prefers-reduced-motion:reduce){.tl2 .ts{animation:none}}
 .ty.big2 .aa{font-size:clamp(130px,15vw,230px)}
+.ty.big2 ul li:first-child{font-size:34px !important}
+.ty.big2 ul{gap:6px}
