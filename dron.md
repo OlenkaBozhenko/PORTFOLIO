@@ -37,7 +37,7 @@ Live: product https://olenkabozhenko.github.io/DRON/ · whole process https://ol
 
 ## 03 JTBD
 - What it is: a job to be done is the progress a person wants to make in a situation, not a feature. Format: **When** [situation], **I want** [motivation], **so that** [result]. (`research/jtbd.md`)
-- MJ-1 Client: When I need a result that only a drone can deliver, I want to hand the job to a certified professional without managing anything myself, so that I get the outcome without ever thinking about the drone or the operator.
+- MJ-1 Client (on the page, her call 2026-10-29: a concrete job, not the outcome): When I need aerial video for a marketing campaign, I want to book a certified drone operator in a few taps, at a price I see up front, so that I get the footage on time without learning anything about drones. (The research wording: When I need a result that only a drone can deliver, I want to hand the job to a certified professional without managing anything myself, so that I get the outcome without ever thinking about the drone or the operator.)
 - MJ-2 Operator: When I have the licence, equipment and capacity to do drone work, I want a steady stream of pre-qualified jobs to reach me without hunting for them, so that I can spend my time flying, not selling.
 - Note: 16 jobs and 3 hypothesis jobs; the three that shaped the MVP: confirm the person is real, no void between payment and arrival, get paid without managing it.
 
