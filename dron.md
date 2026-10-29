@@ -162,3 +162,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Type card back to the scale as before (each HIG name set in its own style), without leader lines or samples (her call).
 - The live phone card only as wide as the phone and its viewfinder (446 px at 1440), on the right; the text takes the rest.
 - Phone card: the viewfinder runs along the card perimeter (brackets in the card corners, labels inside them, crosshair across the card).
+- Desktop card: the viewfinder along the card perimeter too.
