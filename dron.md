@@ -184,3 +184,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
   - Fly for work: 14% of UK drone users; 79% fly for fun (CAA Drone Awareness Tracker, April 2023, to re-check).
   - Not found: a civil drone register in Ukraine (draft law No. 13600 proposes one), school counts for Germany, France, Italy, Poland, the Netherlands, and the share of pilots who are freelance.
   - The earlier operator card (10 s to accept a job, one-glance offer, today without DRON) is replaced.
+- Target Audience: the sources line under the two cards is taken off the page (her call, 2026-10-29); the sources stay listed here in dron.md.
