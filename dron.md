@@ -177,3 +177,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
   - The operator card is unchanged.
   - The worries tile is titled "Top worries about delivery drones" (each person named their top three).
   - Both big numbers (64% and 90%) carry their caption beside them on the baseline, one pattern for the card (her note).
+  - Tile titles say what each figure measures: "People likely to use drone delivery even at twice the usual shipping fee, by city"; "People who bought something online in the last 12 months, by age" (her note).
