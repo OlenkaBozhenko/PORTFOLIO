@@ -924,3 +924,5 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 /* revision 36: the glass chapter cards end without a full stop and never leave one or two words alone on the last line */
 .tcard p{text-wrap:pretty}
+/* the card lines are balanced, so the last line is as full as the others and no gap is left on the line above (her note) */
+.tcard p{text-wrap:balance}
