@@ -47,6 +47,8 @@ Built from [`inspiration.md`](inspiration.md) (decisions D1–D9) and [`cv.md`](
 
 *2026-10-24 (her call): DRON was parked. **2026-10-28 (her call): DRON is back** as the first row (01), with its own page [`DRON.html`](DRON.html) (content in [`dron.md`](dron.md)); the landing shows seven rows again. The parked copy stays in `tools/dron/parked/` as history.*
 
+*2026-10-29 (her call): the Work descriptions on the landing end without a full stop, desktop and mobile.*
+
 | # | Title | Description | Role | Year | Platform | Image |
 |---|---|---|---|---|---|---|
 | 1 | DRON: drone services | Drone as a service: order a delivery, an aerial shoot or an inspection, and a certified operator does the job, with the price locked and the drone tracked live. *(short product description like the other rows, her call 2026-10-28)* | Research, UX, UI, design system | 2026 | Mobile web, desktop | Thumbnail *(her call 2026-10-28, desktop and mobile)*: the DRON wordmark from her Figma (`YlGWlsWWjKSCxhONMzGG2F`, node 261:79919, `assets/work/dron/dron-mark.svg`) in charcoal `#1A1A1A` on Signal Green `#9BCF4A`, with the flying drone of the desktop home (sway 3.6 s, propellers .14 s, from DRON `design-system/components/assistant.css`) in place of the O; still under reduced motion. **Opens its own page** [`DRON.html`](DRON.html). |
