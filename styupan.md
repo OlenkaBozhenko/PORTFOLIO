@@ -58,3 +58,5 @@ Desktop is unchanged.
 - No side note next to the section headings (the heading alone).
 - *View next work*: the project name on its own line under it, the arrow level with the name.
 - The first screen runs edge to edge, with no side margins.
+
+- Section dock (2026-10-29, her call, desktop only, like the DRON page): a pill at the bottom with an icon per section (About, Objective, Idea, Construction, Colour and type, On light and dark, In use, Signage); purple pill #3C1A5B, the current section in yellow #FFF748; the current section shows its name and follows the scroll, the others open their name on hover or focus. Hidden below 900 px.

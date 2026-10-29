@@ -135,3 +135,5 @@ Desktop is unchanged.
 - The first screen runs edge to edge, with no side margins.
 - Spacing by proximity: a headline 32 px from its content, a caption 20 px from its picture, two paragraphs of one text 16 px apart, blocks of a section 56 px apart, sections 104 px apart (the four sub-sections too).
 - Big headlines may break inside phrases kept together on desktop (*love, in one place*), so no line is left half empty.
+
+- Section dock (2026-10-29, her call, desktop only, like the DRON page): a pill at the bottom with an icon per section (About, Problem, Solution, Product, My part, Visuals); night-navy pill #020617, the current section in sky blue #38BDF8; the current section shows its name and follows the scroll, the others open their name on hover or focus. Hidden below 900 px.

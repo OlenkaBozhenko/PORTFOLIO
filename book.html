@@ -191,6 +191,22 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 }
 html.menu-open{overflow:hidden}
 .menu-contact{display:none}
+
+/* section dock, desktop only: an icon per section on a pill in the project's colours; the current section shows its name, the others on hover or focus; it follows the scroll */
+.dock{position:fixed;left:50%;bottom:clamp(14px,2.4vh,24px);z-index:60;transform:translate(-50%,calc(100% + 32px));opacity:0;transition:transform .45s cubic-bezier(.22,.61,.36,1),opacity .3s ease;pointer-events:none}
+.dock.show{transform:translate(-50%,0);opacity:1;pointer-events:auto}
+.dock ul{list-style:none;margin:0;padding:6px;display:flex;gap:2px;background:#0E0E0E;border:1px solid rgba(255,255,255,.1);border-radius:999px;box-shadow:0 12px 32px -10px rgba(0,0,0,.45)}
+.dock a{display:flex;align-items:center;height:44px;min-width:44px;padding:0 12px;border-radius:999px;color:#9A9A9A;text-decoration:none;font-size:14px;font-weight:500;line-height:1;white-space:nowrap;transition:background .2s ease,color .2s ease}
+.dock a svg{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.dock a span{max-width:0;overflow:hidden;opacity:0;margin-left:0;transition:max-width .3s cubic-bezier(.22,.61,.36,1),opacity .2s ease,margin .3s ease}
+.dock a:hover,.dock a:focus-visible{color:#fff;background:rgba(255,255,255,.1)}
+.dock a:hover span,.dock a:focus-visible span,.dock a.on span{max-width:180px;opacity:1;margin-left:8px}
+.dock a.on{background:#F3F3F1;color:#0E0E0E}
+.dock a:focus-visible{outline:2px solid #F3F3F1;outline-offset:2px}
+.dock-t{scroll-margin-top:96px}
+@media (max-width:900px){.dock{display:none}}
+@media (prefers-reduced-motion:reduce){.dock,.dock a,.dock a span{transition:none}}
+@media print{.dock{display:none}}
 </style>
 </head>
 <body>
@@ -261,11 +277,11 @@ html.menu-open{overflow:hidden}
 
   <div class="wrap story">
     <div class="pair">
-      <h2>About</h2>
+      <h2 id="about" class="dock-t">About</h2>
       <p><em>Røtter i Blix – Thomesen – Inderberg – Johansen Stamsund</em> follows the families behind Haldis Blix Gulsvik, who grew up in the fishing village of Stamsund in Lofoten; the families are traced back to the 1500s, and through these generations a part of the history of Norway unfolds as well. The author, Amund Gulsvik, gathered the family stories, archive photographs and maps, and wrote the book for the coming generations who look for their roots.</p>
     </div>
     <div class="pair">
-      <h2>Objective</h2>
+      <h2 id="objective" class="dock-t">Objective</h2>
       <p>Turn a long family history, more than 300 archive photographs and maps, into a book that reads calmly from the title page to the list of sources, and prepare it for print.</p>
     </div>
     <div class="pair">
@@ -278,7 +294,7 @@ html.menu-open{overflow:hidden}
   </div>
 
   <section class="wrap spreads" id="spreads" aria-labelledby="spreads-title">
-    <div class="sec-head"><h2 id="spreads-title">Spreads</h2><span>8 of 216</span></div>
+    <div class="sec-head"><h2 id="spreads-title" class="dock-t">Spreads</h2><span>8 of 216</span></div>
 
     <figure class="spread"><div class="page-pair" style="--pl:.005"><i class="leaf l"></i><i class="leaf r"></i><img src="assets/work/book/spread-002-003-1800.webp" srcset="assets/work/book/spread-002-003-1800.webp 1800w, assets/work/book/spread-002-003-3600.webp 3600w" sizes="(min-width: 1320px) 1100px, 92vw" alt="Pages 2 and 3: the title page and colophon, opposite two portraits." width="1800" height="1273" loading="lazy"></div><figcaption><b>Pages 2–3</b>Title page and colophon</figcaption></figure>
     <figure class="spread"><div class="page-pair" style="--pl:.023"><i class="leaf l"></i><i class="leaf r"></i><img src="assets/work/book/spread-010-011-1800.webp" srcset="assets/work/book/spread-010-011-1800.webp 1800w, assets/work/book/spread-010-011-3600.webp 3600w" sizes="(min-width: 1320px) 1100px, 92vw" alt="Pages 10 and 11: family photographs on the left, the foreword on the right." width="1800" height="1273" loading="lazy"></div><figcaption><b>Pages 10–11</b>Family photographs and the foreword</figcaption></figure>
@@ -292,9 +308,20 @@ html.menu-open{overflow:hidden}
     <a class="next" href="Olena%20Bozhenko.html#work"><span>Back to all work</span><span class="arrow" aria-hidden="true">→</span></a>
   </section>
 </main>
+<nav class="dock" aria-label="Sections of this page"><ul><li><a href="#about"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7.8v.4"/></svg><span>About</span></a></li><li><a href="#objective"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".8" fill="currentColor"/></svg><span>Objective</span></a></li><li><a href="#spreads-title"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6.5c-2-1.5-4.8-2-8.5-1.8v13c3.7-.2 6.5.3 8.5 1.8 2-1.5 4.8-2 8.5-1.8v-13c-3.7-.2-6.5.3-8.5 1.8z"/><path d="M12 6.5v13"/></svg><span>Spreads</span></a></li></ul></nav>
+
 
 <footer>
   <div class="wrap"><span>© 2026 Olena Bozhenko</span><span>Product Designer</span></div>
 </footer>
+<script>
+// section dock: the section whose heading has passed the middle of the screen is the current one; the dock appears once the story starts
+(function(){
+  var dock=document.querySelector('.dock');if(!dock)return;
+  var links=[].slice.call(dock.querySelectorAll('a')),tg=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
+  function upd(){var y=innerHeight*.5,cur=null;tg.forEach(function(t){if(t&&t.getBoundingClientRect().top<=y)cur=t.id});dock.classList.toggle('show',!!tg[0]&&tg[0].getBoundingClientRect().top<innerHeight*.95);links.forEach(function(a){var on=a.getAttribute('href')==='#'+cur;a.classList.toggle('on',on);if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})}
+  addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+})();
+</script>
 </body>
 </html>

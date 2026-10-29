@@ -279,6 +279,22 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 }
 html.menu-open{overflow:hidden}
 .menu-contact{display:none}
+
+/* section dock, desktop only: an icon per section on a pill in the project's colours; the current section shows its name, the others on hover or focus; it follows the scroll */
+.dock{position:fixed;left:50%;bottom:clamp(14px,2.4vh,24px);z-index:60;transform:translate(-50%,calc(100% + 32px));opacity:0;transition:transform .45s cubic-bezier(.22,.61,.36,1),opacity .3s ease;pointer-events:none}
+.dock.show{transform:translate(-50%,0);opacity:1;pointer-events:auto}
+.dock ul{list-style:none;margin:0;padding:6px;display:flex;gap:2px;background:#2F6A6F;border:1px solid rgba(255,255,255,.1);border-radius:999px;box-shadow:0 12px 32px -10px rgba(0,0,0,.45)}
+.dock a{display:flex;align-items:center;height:44px;min-width:44px;padding:0 12px;border-radius:999px;color:#BFD9DA;text-decoration:none;font-size:14px;font-weight:500;line-height:1;white-space:nowrap;transition:background .2s ease,color .2s ease}
+.dock a svg{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.dock a span{max-width:0;overflow:hidden;opacity:0;margin-left:0;transition:max-width .3s cubic-bezier(.22,.61,.36,1),opacity .2s ease,margin .3s ease}
+.dock a:hover,.dock a:focus-visible{color:#fff;background:rgba(255,255,255,.12)}
+.dock a:hover span,.dock a:focus-visible span,.dock a.on span{max-width:180px;opacity:1;margin-left:8px}
+.dock a.on{background:#15EDA3;color:#0E0E0E}
+.dock a:focus-visible{outline:2px solid #15EDA3;outline-offset:2px}
+.dock-t{scroll-margin-top:96px}
+@media (max-width:900px){.dock{display:none}}
+@media (prefers-reduced-motion:reduce){.dock,.dock a,.dock a span{transition:none}}
+@media print{.dock{display:none}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -347,13 +363,13 @@ html.menu-open{overflow:hidden}
   </section></div>
 
 <div class="wrap story">
-    <div class="pair"><h2>About</h2><p>Sport Guardian (Idrettsfadder in Norwegian) is a crowdfunding solution from Supporter.no. A club starts a campaign, and private people and companies become its sports guardians: they give once or every month, and the money covers fees, gear and travel for children whose families cannot pay.</p></div>
-    <div class="pair"><h2>Problem</h2><p>Sport costs money, and the cost is what makes children quit first. 185,000 Norwegians cancelled a sports club membership last year, and the drop was largest among children and young people. Clubs had no simple way to ask their community for help.</p></div>
-    <div class="pair"><h2>Solution</h2><p>A campaign page that shows the countdown, the amount raised and the people behind it, and a donation that takes four choices: private person or company, once or recurring, the amount, then card or Vipps. Behind it, a builder that lets a club publish a campaign without help, and an admin panel with donors, refunds and statistics.</p></div>
+    <div class="pair"><h2 id="about" class="dock-t">About</h2><p>Sport Guardian (Idrettsfadder in Norwegian) is a crowdfunding solution from Supporter.no. A club starts a campaign, and private people and companies become its sports guardians: they give once or every month, and the money covers fees, gear and travel for children whose families cannot pay.</p></div>
+    <div class="pair"><h2 id="problem" class="dock-t">Problem</h2><p>Sport costs money, and the cost is what makes children quit first. 185,000 Norwegians cancelled a sports club membership last year, and the drop was largest among children and young people. Clubs had no simple way to ask their community for help.</p></div>
+    <div class="pair"><h2 id="solution" class="dock-t">Solution</h2><p>A campaign page that shows the countdown, the amount raised and the people behind it, and a donation that takes four choices: private person or company, once or recurring, the amount, then card or Vipps. Behind it, a builder that lets a club publish a campaign without help, and an admin panel with donors, refunds and statistics.</p></div>
   </div>
 
 <section class="gal wrap" id="work-grid" aria-labelledby="h-gal">
-    <div class="sec-head"><h2 id="h-gal">Product</h2><span>From the donor to the club's admin</span></div>
+    <div class="sec-head"><h2 id="h-gal" class="dock-t">Product</h2><span>From the donor to the club's admin</span></div>
     <div class="g">
 
 <figure class="c1-12 rv scroll"><div class="panel"><div class="browser" tabindex="0" aria-describedby="page-how"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>produkter.supporter.no/idrettsfadder</span></div><div class="vp fx" style="--to:-69.1%;--t:24s;--hd:8.333%"><img class="hd" src="assets/work/sport-guardian/screen-campaign-head.webp" alt="" width="1440" height="120" loading="lazy"><img src="assets/work/sport-guardian/screen-campaign-body.webp" alt="The campaign page on desktop, under a fixed header: a swimming pool banner with the countdown, 60 000 NOK from 200 donors, the donation form, the story, the donor list and sharing." width="1440" height="2521" loading="lazy"></div></div></div><span id="page-how" class="vh">The page scrolls. Press Enter, or click it, to stop or start it.</span></figure>
@@ -394,7 +410,7 @@ html.menu-open{overflow:hidden}
   </section>
 
   <section class="gal wrap" aria-labelledby="h-brand">
-    <div class="sec-head"><h2 id="h-brand">Brand</h2><span>Mockups, not a real campaign</span></div>
+    <div class="sec-head"><h2 id="h-brand" class="dock-t">Brand</h2><span>Mockups, not a real campaign</span></div>
     <div class="g">
 
 <figure class="c1-12 rv"><div class="ph wide"><img src="assets/work/sport-guardian/hoodie-1536.webp" srcset="assets/work/sport-guardian/hoodie-768.webp 768w, assets/work/sport-guardian/hoodie-1536.webp 1536w" sizes="(max-width:720px) 100vw, 1220px" alt="The back of a teal hoodie with the white and green SG mark printed large on it, against a dark concrete wall." width="1536" height="1024" loading="lazy"></div><figcaption style="max-width:64ch">A slanted S and G in Candal, cut into strips with a checkered trail: speed for the sport, and the G that carries the S for the guardian.</figcaption></figure>
@@ -422,6 +438,8 @@ html.menu-open{overflow:hidden}
     <a class="next" href="school.html"><span>View next work <span class="vh">: </span><span class="nx">School</span></span><span class="arrow" aria-hidden="true">→</span></a>
   </div>
 </main>
+<nav class="dock" aria-label="Sections of this page"><ul><li><a href="#about"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7.8v.4"/></svg><span>About</span></a></li><li><a href="#problem"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l8.5 15h-17z"/><path d="M12 10v4M12 16.8v.4"/></svg><span>Problem</span></a></li><li><a href="#solution"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17.5h6M10 20.5h4"/><path d="M12 3.5a5.5 5.5 0 0 0-3.2 10c.5.4.7 1 .7 1.6v.4h5v-.4c0-.6.2-1.2.7-1.6A5.5 5.5 0 0 0 12 3.5z"/></svg><span>Solution</span></a></li><li><a href="#h-gal"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="M3.5 9h17M9 9v10.5"/></svg><span>Product</span></a></li><li><a href="#h-brand"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.2 5.3 5.8.5-4.4 3.8 1.3 5.6L12 15.8l-4.9 2.9 1.3-5.6L4 9.3l5.8-.5z"/></svg><span>Brand</span></a></li></ul></nav>
+
 
 <footer>
   <div class="wrap"><span>© 2026 Olena Bozhenko</span><span>Product Designer</span></div>
@@ -505,6 +523,15 @@ document.querySelectorAll('.scroll .browser[tabindex]').forEach(function(b){var 
   function t(){m.classList.toggle('paused')}
   m.addEventListener('click',t);
   m.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t()}});
+})();
+</script>
+<script>
+// section dock: the section whose heading has passed the middle of the screen is the current one; the dock appears once the story starts
+(function(){
+  var dock=document.querySelector('.dock');if(!dock)return;
+  var links=[].slice.call(dock.querySelectorAll('a')),tg=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
+  function upd(){var y=innerHeight*.5,cur=null;tg.forEach(function(t){if(t&&t.getBoundingClientRect().top<=y)cur=t.id});dock.classList.toggle('show',!!tg[0]&&tg[0].getBoundingClientRect().top<innerHeight*.95);links.forEach(function(a){var on=a.getAttribute('href')==='#'+cur;a.classList.toggle('on',on);if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})}
+  addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
 })();
 </script>
 </body>

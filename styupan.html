@@ -229,6 +229,22 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 }
 html.menu-open{overflow:hidden}
 .menu-contact{display:none}
+
+/* section dock, desktop only: an icon per section on a pill in the project's colours; the current section shows its name, the others on hover or focus; it follows the scroll */
+.dock{position:fixed;left:50%;bottom:clamp(14px,2.4vh,24px);z-index:60;transform:translate(-50%,calc(100% + 32px));opacity:0;transition:transform .45s cubic-bezier(.22,.61,.36,1),opacity .3s ease;pointer-events:none}
+.dock.show{transform:translate(-50%,0);opacity:1;pointer-events:auto}
+.dock ul{list-style:none;margin:0;padding:6px;display:flex;gap:2px;background:#3C1A5B;border:1px solid rgba(255,255,255,.1);border-radius:999px;box-shadow:0 12px 32px -10px rgba(0,0,0,.45)}
+.dock a{display:flex;align-items:center;height:44px;min-width:44px;padding:0 12px;border-radius:999px;color:#C9B8DA;text-decoration:none;font-size:14px;font-weight:500;line-height:1;white-space:nowrap;transition:background .2s ease,color .2s ease}
+.dock a svg{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.dock a span{max-width:0;overflow:hidden;opacity:0;margin-left:0;transition:max-width .3s cubic-bezier(.22,.61,.36,1),opacity .2s ease,margin .3s ease}
+.dock a:hover,.dock a:focus-visible{color:#fff;background:rgba(255,255,255,.12)}
+.dock a:hover span,.dock a:focus-visible span,.dock a.on span{max-width:180px;opacity:1;margin-left:8px}
+.dock a.on{background:#FFF748;color:#26103A}
+.dock a:focus-visible{outline:2px solid #FFF748;outline-offset:2px}
+.dock-t{scroll-margin-top:96px}
+@media (max-width:900px){.dock{display:none}}
+@media (prefers-reduced-motion:reduce){.dock,.dock a,.dock a span{transition:none}}
+@media print{.dock{display:none}}
 </style>
 </head>
 <body>
@@ -290,15 +306,15 @@ html.menu-open{overflow:hidden}
 
   <div class="wrap story">
     <div class="pair">
-      <h2>About</h2>
+      <h2 id="about" class="dock-t">About</h2>
       <p>Stiupan Translations is a multilingual translation studio in Oslo. The small team translates, proofreads, localises and writes copy in Norwegian, English, Ukrainian, Russian, German and Polish, under the line “Lost words found here”.</p>
     </div>
     <div class="pair">
-      <h2>Objective</h2>
+      <h2 id="objective" class="dock-t">Objective</h2>
       <p>A mark that says “language and text” at a glance, reads at favicon size and in print, and works in one colour as well as two.</p>
     </div>
     <div class="pair">
-      <h2>Idea</h2>
+      <h2 id="idea" class="dock-t">Idea</h2>
       <p>The initials S and T sit on the two pages of an open book. The left page is solid and the S is cut out of it; the right page is open and carries the T. Because the S is always the colour of the ground, the mark swaps cleanly between light and dark.</p>
     </div>
     <div class="pair">
@@ -311,14 +327,14 @@ html.menu-open{overflow:hidden}
   </div>
 
   <section class="wrap brand-sec" id="construction" aria-labelledby="construction-title">
-    <div class="sec-head"><h2 id="construction-title">Construction</h2><span>Grid from the logo geometry</span></div>
+    <div class="sec-head"><h2 id="construction-title" class="dock-t">Construction</h2><span>Grid from the logo geometry</span></div>
     <figure class="panel">
       <div class="construct" role="img" aria-label="The Stiupan Translations mark in yellow on purple, laid over a construction grid: dashed guides for the outer box, the spine, the open right page, the S and T, the cap line and baselines, and four large circles: two draw the curved tops of the pages, two below the book draw the curved bottoms."><svg viewBox="-155.5 -116.5 480 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><g transform="translate(-150 -150) scale(2.9)" opacity=".07" style="--m:#F5F5F5;--g:transparent"><use href="#st" width="169" height="127"/></g><line x1="0" y1="-116.5" x2="0" y2="243.5" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="15.4" y1="-116.5" x2="15.4" y2="243.5" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="26" y1="-116.5" x2="26" y2="243.5" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="61" y1="-116.5" x2="61" y2="243.5" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="84.5" y1="-116.5" x2="84.5" y2="243.5" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="101" y1="-116.5" x2="101" y2="243.5" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="144" y1="-116.5" x2="144" y2="243.5" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="153.6" y1="-116.5" x2="153.6" y2="243.5" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="169" y1="-116.5" x2="169" y2="243.5" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="-155.5" y1="0" x2="324.5" y2="0" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="-155.5" y1="15" x2="324.5" y2="15" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="-155.5" y1="37" x2="324.5" y2="37" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="-155.5" y1="85" x2="324.5" y2="85" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="-155.5" y1="90.2" x2="324.5" y2="90.2" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="-155.5" y1="112" x2="324.5" y2="112" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="-155.5" y1="127" x2="324.5" y2="127" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><circle cx="42.25" cy="85.3" r="85.3" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><circle cx="126.75" cy="85.3" r="85.3" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><circle cx="42.25" cy="201.1" r="85.3" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><circle cx="126.75" cy="201.1" r="85.3" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><circle cx="43.5" cy="48" r="12.5" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><circle cx="43.5" cy="75.5" r="15" stroke="rgba(245,245,245,.42)" stroke-width=".5" stroke-dasharray="3.2 2.4" fill="none"/><line x1="-155.5" y1="-116.5" x2="324.5" y2="243.5" stroke="rgba(245,245,245,.16)" stroke-width=".45" fill="none"/><line x1="324.5" y1="-116.5" x2="-155.5" y2="243.5" stroke="rgba(245,245,245,.16)" stroke-width=".45" fill="none"/><text x="87" y="233.5" font-family="Inter Tight,Helvetica,Arial,sans-serif" font-size="6" fill="rgba(245,245,245,.6)">84.5</text><text x="-147.5" y="34.5" font-family="Inter Tight,Helvetica,Arial,sans-serif" font-size="6" fill="rgba(245,245,245,.6)">37</text><text x="-147.5" y="88" font-family="Inter Tight,Helvetica,Arial,sans-serif" font-size="6" fill="rgba(245,245,245,.6)">90.2</text><text x="176" y="30" font-family="Inter Tight,Helvetica,Arial,sans-serif" font-size="6" fill="rgba(245,245,245,.6)">R 85.3</text><g style="--m:#FFF748;--g:#3C1A5B"><use href="#st" width="169" height="127"/></g></svg></div>
     </figure>
   </section>
 
   <section class="wrap brand-sec" aria-labelledby="colour-title">
-    <div class="sec-head"><h2 id="colour-title">Colour and type</h2><span>Three colours, one serif</span></div>
+    <div class="sec-head"><h2 id="colour-title" class="dock-t">Colour and type</h2><span>Three colours, one serif</span></div>
     <div class="swatches">
       <div class="sw p"><b>Purple</b><dl><dt>HEX</dt><dd>#3C1A5B</dd><dt>RGB</dt><dd>60, 26, 91</dd><dt>CMYK ≈</dt><dd>34, 71, 0, 64<span class="sr"> (estimate)</span></dd></dl></div>
       <div class="sw y"><b>Yellow</b><dl><dt>HEX</dt><dd>#FFF748</dd><dt>RGB</dt><dd>255, 247, 72</dd><dt>CMYK ≈</dt><dd>0, 3, 72, 0<span class="sr"> (estimate)</span></dd></dl></div>
@@ -333,7 +349,7 @@ html.menu-open{overflow:hidden}
   </section>
 
   <section class="wrap brand-sec" aria-labelledby="grounds-title">
-    <div class="sec-head"><h2 id="grounds-title">On light and dark</h2><span>Purple on light, yellow on dark</span></div>
+    <div class="sec-head"><h2 id="grounds-title" class="dock-t">On light and dark</h2><span>Purple on light, yellow on dark</span></div>
     <div class="duo" role="img" aria-label="The logo with the name Stiupan Translations and the word OVERSETTELSESBURÅ: purple on light grey, and yellow on purple.">
       <div class="tile l" aria-hidden="true"><div class="lockup"><svg viewBox="0 0 169 127" width="169" height="127" aria-hidden="true" focusable="false"><use href="#st"/></svg><div><span class="nm">Stiupan Translations</span><span class="sub">OVERSETTELSESBURÅ</span></div></div></div>
       <div class="tile d" aria-hidden="true"><div class="lockup"><svg viewBox="0 0 169 127" width="169" height="127" aria-hidden="true" focusable="false"><use href="#st"/></svg><div><span class="nm">Stiupan Translations</span><span class="sub">OVERSETTELSESBURÅ</span></div></div></div>
@@ -345,7 +361,7 @@ html.menu-open{overflow:hidden}
   </section>
 
   <section class="wrap brand-sec" aria-labelledby="use-title">
-    <div class="sec-head"><h2 id="use-title">In use</h2><span>Folder, stationery and badge</span></div>
+    <div class="sec-head"><h2 id="use-title" class="dock-t">In use</h2><span>Folder, stationery and badge</span></div>
     <figure class="photo-fig">
       <img src="assets/work/styupan/folder-1200.webp?v=7" srcset="assets/work/styupan/folder-1200.webp?v=7 1200w, assets/work/styupan/folder-1536.webp?v=7 1536w" sizes="(min-width:1320px) 1200px, 92vw" alt="A woman in a light linen jacket outside a glass office building carries a purple Stiupan Translations envelope folder hugged to her chest, with a yellow button-and-string closure, the mark on the flap, the name Stiupan set large up its right edge and pale letters scattered in the bottom corner." width="1200" height="800" loading="lazy">
     </figure>
@@ -412,7 +428,7 @@ html.menu-open{overflow:hidden}
   </section>
 
   <section class="wrap brand-sec" aria-labelledby="sign-title">
-    <div class="sec-head"><h2 id="sign-title">Signage</h2><span>Office sign and metro billboard</span></div>
+    <div class="sec-head"><h2 id="sign-title" class="dock-t">Signage</h2><span>Office sign and metro billboard</span></div>
     <figure class="photo-fig">
       <img src="assets/work/styupan/sign-1200.webp?v=1" srcset="assets/work/styupan/sign-1200.webp?v=1 1200w, assets/work/styupan/sign-1536.webp?v=1 1536w" sizes="(min-width:1320px) 1200px, 92vw" alt="A tall purple sign column among ornamental grasses in front of a glass office entrance. At the top the yellow mark, Stiupan Translations and OVERSETTELSESBURÅ; below, the services, the six languages and nortranslations.no; darker purple letters are scattered over its lower part, partly hidden by the grass." width="1200" height="800" loading="lazy">
     </figure>
@@ -440,9 +456,20 @@ html.menu-open{overflow:hidden}
     <a class="next" href="book.html"><span>View next work <span class="vh">: </span><span class="nx">Book</span></span><span class="arrow" aria-hidden="true">→</span></a>
   </section>
 </main>
+<nav class="dock" aria-label="Sections of this page"><ul><li><a href="#about"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7.8v.4"/></svg><span>About</span></a></li><li><a href="#objective"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".8" fill="currentColor"/></svg><span>Objective</span></a></li><li><a href="#idea"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17.5h6M10 20.5h4"/><path d="M12 3.5a5.5 5.5 0 0 0-3.2 10c.5.4.7 1 .7 1.6v.4h5v-.4c0-.6.2-1.2.7-1.6A5.5 5.5 0 0 0 12 3.5z"/></svg><span>Idea</span></a></li><li><a href="#construction-title"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="1.5"/><path d="M4 9.3h16M4 14.7h16M9.3 4v16M14.7 4v16"/></svg><span>Construction</span></a></li><li><a href="#colour-title"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c3.5 4.2 5.5 7.4 5.5 10a5.5 5.5 0 0 1-11 0c0-2.6 2-5.8 5.5-10z"/></svg><span>Colour and type</span></a></li><li><a href="#grounds-title"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v17a8.5 8.5 0 0 0 0-17z" fill="currentColor"/></svg><span>On light and dark</span></a></li><li><a href="#use-title"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2.2"/><path d="M11 18h2"/></svg><span>In use</span></a></li><li><a href="#sign-title"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21v-9M12 6V3"/><path d="M5 6h12l2.5 3L17 12H5z"/></svg><span>Signage</span></a></li></ul></nav>
+
 
 <footer>
   <div class="wrap"><span>© 2026 Olena Bozhenko</span><span>Product Designer</span></div>
 </footer>
+<script>
+// section dock: the section whose heading has passed the middle of the screen is the current one; the dock appears once the story starts
+(function(){
+  var dock=document.querySelector('.dock');if(!dock)return;
+  var links=[].slice.call(dock.querySelectorAll('a')),tg=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
+  function upd(){var y=innerHeight*.5,cur=null;tg.forEach(function(t){if(t&&t.getBoundingClientRect().top<=y)cur=t.id});dock.classList.toggle('show',!!tg[0]&&tg[0].getBoundingClientRect().top<innerHeight*.95);links.forEach(function(a){var on=a.getAttribute('href')==='#'+cur;a.classList.toggle('on',on);if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})}
+  addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+})();
+</script>
 </body>
 </html>

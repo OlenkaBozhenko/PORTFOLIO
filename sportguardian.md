@@ -83,3 +83,5 @@ Desktop is unchanged.
 - Product screens and cards (campaign page, card and Vipps phones, Our donors, donation settings, admin dashboard) without the grey or teal ground, full width; the paying-phone flow keeps its teal.
 - Where the ground is gone, the screens and cards keep a small shadow all round, so the top edge shows too.
 - Spacing by proximity: the two payment phones 24 px apart and *Card or Vipps* 16 px under them; *On the street* 20 px above the posters; *In the club* 16 px under the decks.
+
+- Section dock (2026-10-29, her call, desktop only, like the DRON page): a pill at the bottom with an icon per section (About, Problem, Solution, Product, Brand); deep-teal pill #2F6A6F, the current section in the brand green #15EDA3; the current section shows its name and follows the scroll, the others open their name on hover or focus. Hidden below 900 px.

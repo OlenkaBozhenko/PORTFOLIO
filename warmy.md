@@ -170,3 +170,5 @@ Desktop is unchanged.
 - The first screen runs edge to edge, with no side margins.
 - Feature cards: 28 px between the cards and their caption.
 - Spacing by proximity: a headline 32 px from its content, a caption 20 px from its picture, the source note 16 px under the template, blocks of a section 56 px apart, sections 104 px apart.
+
+- Section dock (2026-10-29, her call, desktop only, like the DRON page): a pill at the bottom with an icon per section (About, Problem, Solution, Complexity, Product, My part, A/B hypotheses, User interviews, Campaign visuals); black pill, the current section in the Warmy coral #FF7658; the current section shows its name and follows the scroll, the others open their name on hover or focus. Hidden below 900 px.

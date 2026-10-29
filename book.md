@@ -72,3 +72,5 @@ Desktop is unchanged.
 - *View next work*: the project name on its own line under it, the arrow level with the name.
 - The first screen runs edge to edge, with no side margins.
 - Spreads 40 px apart, so each caption reads with its own spread.
+
+- Section dock (2026-10-29, her call, desktop only, like the DRON page): a pill at the bottom with an icon per section (About, Objective, Spreads); black pill, the current section in paper white #F3F3F1; the current section shows its name and follows the scroll, the others open their name on hover or focus. Hidden below 900 px.

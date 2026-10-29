@@ -433,6 +433,22 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 }
 html.menu-open{overflow:hidden}
 .menu-contact{display:none}
+
+/* section dock, desktop only: an icon per section on a pill in the project's colours; the current section shows its name, the others on hover or focus; it follows the scroll */
+.dock{position:fixed;left:50%;bottom:clamp(14px,2.4vh,24px);z-index:60;transform:translate(-50%,calc(100% + 32px));opacity:0;transition:transform .45s cubic-bezier(.22,.61,.36,1),opacity .3s ease;pointer-events:none}
+.dock.show{transform:translate(-50%,0);opacity:1;pointer-events:auto}
+.dock ul{list-style:none;margin:0;padding:6px;display:flex;gap:2px;background:#020617;border:1px solid rgba(255,255,255,.1);border-radius:999px;box-shadow:0 12px 32px -10px rgba(0,0,0,.45)}
+.dock a{display:flex;align-items:center;height:44px;min-width:44px;padding:0 12px;border-radius:999px;color:#94A3B8;text-decoration:none;font-size:14px;font-weight:500;line-height:1;white-space:nowrap;transition:background .2s ease,color .2s ease}
+.dock a svg{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.dock a span{max-width:0;overflow:hidden;opacity:0;margin-left:0;transition:max-width .3s cubic-bezier(.22,.61,.36,1),opacity .2s ease,margin .3s ease}
+.dock a:hover,.dock a:focus-visible{color:#fff;background:rgba(148,163,184,.14)}
+.dock a:hover span,.dock a:focus-visible span,.dock a.on span{max-width:180px;opacity:1;margin-left:8px}
+.dock a.on{background:#38BDF8;color:#020617}
+.dock a:focus-visible{outline:2px solid #38BDF8;outline-offset:2px}
+.dock-t{scroll-margin-top:96px}
+@media (max-width:900px){.dock{display:none}}
+@media (prefers-reduced-motion:reduce){.dock,.dock a,.dock a span{transition:none}}
+@media print{.dock{display:none}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -579,14 +595,14 @@ html.menu-open{overflow:hidden}
 
   <!-- 2. About / Problem / Solution (as on every project page) -->
   <div class="wrap story">
-    <div class="pair rv"><h2>About</h2><p>AnyBiz is a B2B platform that hires out AI sales agents. They find prospects, write to them by email and LinkedIn, call them, keep the brand visible with posts, and book meetings into the calendar.</p></div>
-    <div class="pair rv"><h2>Problem</h2><p>Outreach eats a sales team's week: finding the right people, writing to each of them, following up, calling, and keeping the CRM current. AI can do all of it, but the people who own a company's reputation are afraid to let it speak for them.</p></div>
-    <div class="pair rv"><h2>Solution</h2><p>AI agents that work across email, LinkedIn and phone under instructions the customer writes: who to reach, in which language and tone, with which call to action and signature. The customer sees an example before anything goes out, and every result comes back as insights.</p></div>
+    <div class="pair rv"><h2 id="about" class="dock-t">About</h2><p>AnyBiz is a B2B platform that hires out AI sales agents. They find prospects, write to them by email and LinkedIn, call them, keep the brand visible with posts, and book meetings into the calendar.</p></div>
+    <div class="pair rv"><h2 id="problem" class="dock-t">Problem</h2><p>Outreach eats a sales team's week: finding the right people, writing to each of them, following up, calling, and keeping the CRM current. AI can do all of it, but the people who own a company's reputation are afraid to let it speak for them.</p></div>
+    <div class="pair rv"><h2 id="solution" class="dock-t">Solution</h2><p>AI agents that work across email, LinkedIn and phone under instructions the customer writes: who to reach, in which language and tone, with which call to action and signature. The customer sees an example before anything goes out, and every result comes back as insights.</p></div>
   </div>
 
   <!-- 3. product: the feature list next to a browser and a phone, then cards of separate UI pieces (the pattern of the Warmy page) -->
   <section class="gal wrap" id="product" aria-labelledby="h-pr">
-    <div class="sec-head"><h2 id="h-pr">Product</h2><span>Hire AI agents</span></div>
+    <div class="sec-head"><h2 id="h-pr" class="dock-t">Product</h2><span>Hire AI agents</span></div>
     <div class="g">
       <h3 class="big c1-12">A salesperson that works 24/7, <span class="s">set up in one place</span></h3>
       <ul class="acc c1-5 start rv" id="acc">
@@ -654,7 +670,7 @@ html.menu-open{overflow:hidden}
 
   <!-- 4. my part: the role, what I did, then the research, the key insight and the session recordings -->
   <section class="gal wrap" aria-labelledby="h-part">
-    <div class="sec-head"><h2 id="h-part">My part</h2><span>What I brought to AnyBiz</span></div>
+    <div class="sec-head"><h2 id="h-part" class="dock-t">My part</h2><span>What I brought to AnyBiz</span></div>
     <div class="g">
       <h3 class="big c1-12">I designed the AI agent, <span class="s">tested</span> every idea and <span class="s">watched</span> how people use it</h3>
       <div class="ov c1-12 rv">
@@ -728,7 +744,7 @@ html.menu-open{overflow:hidden}
 
   <!-- 10. the brand line: her AnyBiz logo (Figma logos/default, 247:79364) and the words of her poster, running -->
   <div class="wrap gal"><section class="mos" id="mosaic" aria-labelledby="h-mos" tabindex="0" aria-describedby="mos-how">
-    <h2 id="h-mos" class="vh">AnyBiz: Hire AI agents. A salesperson that works 24/7. Finding leads, starting conversations, booking meetings.</h2>
+    <h2 id="h-mos" class="vh dock-t">AnyBiz: Hire AI agents. A salesperson that works 24/7. Finding leads, starting conversations, booking meetings.</h2>
     <p id="mos-how" class="vh">The line moves. Press Enter, or click it, to stop or start it.</p>
     <div class="ticker" aria-hidden="true"><img src="assets/work/anybiz/logo.svg" alt="" width="262" height="88"><span>Hire AI agents</span><img src="assets/work/anybiz/logo.svg" alt="" width="262" height="88"><span>A salesperson that works 24/7</span><img src="assets/work/anybiz/logo.svg" alt="" width="262" height="88"><span>Finding leads</span><img src="assets/work/anybiz/logo.svg" alt="" width="262" height="88"><span>Starting conversations</span><img src="assets/work/anybiz/logo.svg" alt="" width="262" height="88"><span>Booking meetings</span><img src="assets/work/anybiz/logo.svg" alt="" width="262" height="88"><span>Hire AI agents</span><img src="assets/work/anybiz/logo.svg" alt="" width="262" height="88"><span>A salesperson that works 24/7</span><img src="assets/work/anybiz/logo.svg" alt="" width="262" height="88"><span>Finding leads</span><img src="assets/work/anybiz/logo.svg" alt="" width="262" height="88"><span>Starting conversations</span><img src="assets/work/anybiz/logo.svg" alt="" width="262" height="88"><span>Booking meetings</span></div>
   </section></div>
@@ -737,6 +753,8 @@ html.menu-open{overflow:hidden}
     <a class="next" href="SportGuardian.html"><span>View next work <span class="vh">: </span><span class="nx">Sport Guardian</span></span><span class="arrow" aria-hidden="true">→</span></a>
   </div>
 </main>
+<nav class="dock" aria-label="Sections of this page"><ul><li><a href="#about"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7.8v.4"/></svg><span>About</span></a></li><li><a href="#problem"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l8.5 15h-17z"/><path d="M12 10v4M12 16.8v.4"/></svg><span>Problem</span></a></li><li><a href="#solution"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17.5h6M10 20.5h4"/><path d="M12 3.5a5.5 5.5 0 0 0-3.2 10c.5.4.7 1 .7 1.6v.4h5v-.4c0-.6.2-1.2.7-1.6A5.5 5.5 0 0 0 12 3.5z"/></svg><span>Solution</span></a></li><li><a href="#h-pr"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="M3.5 9h17M9 9v10.5"/></svg><span>Product</span></a></li><li><a href="#h-part"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.8-3.8 3.6-6 7-6s6.2 2.2 7 6"/></svg><span>My part</span></a></li><li><a href="#h-mos"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><circle cx="9" cy="9.5" r="1.6"/><path d="M4 17.5l5-4.5 3.5 3 3-2.5 4.5 4"/></svg><span>Visuals</span></a></li></ul></nav>
+
 
 <footer>
   <div class="wrap"><span>© 2026 Olena Bozhenko</span><span>Product Designer</span></div>
@@ -889,6 +907,15 @@ document.querySelectorAll('.big').forEach(function(h){
 // 10. the brand line: drawn twice so the slide loops; the line can be stopped
 (function(){
   toggler(document.getElementById('mosaic'));
+})();
+</script>
+<script>
+// section dock: the section whose heading has passed the middle of the screen is the current one; the dock appears once the story starts
+(function(){
+  var dock=document.querySelector('.dock');if(!dock)return;
+  var links=[].slice.call(dock.querySelectorAll('a')),tg=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
+  function upd(){var y=innerHeight*.5,cur=null;tg.forEach(function(t){if(t&&t.getBoundingClientRect().top<=y)cur=t.id});dock.classList.toggle('show',!!tg[0]&&tg[0].getBoundingClientRect().top<innerHeight*.95);links.forEach(function(a){var on=a.getAttribute('href')==='#'+cur;a.classList.toggle('on',on);if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})}
+  addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
 })();
 </script>
 </body>
