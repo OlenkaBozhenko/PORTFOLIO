@@ -170,9 +170,9 @@
     <div class="wf3">
       <span class="clickc" aria-hidden="true">Click</span>
       <div class="wcap rv"><h3>On the desktop</h3><p>The same flows on a wider screen: the map stays in view, the steps open in a panel beside it, and the live order is always on the right. Pick a side and click through.</p></div>
-      <figure class="dk wfd rv" style="margin:0"><div class="vfw vfd"><div class="vf" aria-hidden="true"><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i><b class="hx"></b><b class="vy"></b><span class="l1"><em></em>Live prototype</span><span class="l2">ALT 120 m</span><span class="l3">4K · 60</span><span class="l4">N 50.45°</span></div><div class="win" style="width:100%"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Desktop</span></div><div class="vpw"><span class="hint" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3l14 7.5-6.2 1.6L10 18z" fill="#9BCF4A" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round"/></svg><i></i></span><iframe title="DRON live demo, desktop: choose client or operator" data-src="https://olenkabozhenko.github.io/DRON/demo/desktop/role-select.html?theme=dark" loading="lazy"></iframe></div></div></div></figure>
+      <figure class="dk wfd rv" style="margin:0"><div class="vfw vfd"><div class="vf" aria-hidden="true"><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i><b class="hx"></b><b class="vy"></b><span class="l1"><em></em>Live prototype</span><span class="l2">ALT 120 m</span><span class="l3">4K · 60</span><span class="l4">N 50.45°</span></div><div class="win" style="width:100%"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Desktop</span></div><div class="vpw"><iframe title="DRON live demo, desktop: choose client or operator" data-src="https://olenkabozhenko.github.io/DRON/demo/desktop/role-select.html?theme=dark" loading="lazy"></iframe></div></div></div></figure>
       <div class="wrow rv"><div class="wcap"><h3>Phone first</h3><p>The phone pages are the source of truth for how DRON behaves: 134 pages, one for every state. This is the live demo; scroll it and tap through it.</p></div>
-      <figure class="dk wfm" style="margin:0"><div class="vfw vfp"><div class="vf" aria-hidden="true"><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i><b class="hx"></b><b class="vy"></b><span class="l1"><em></em>Live prototype</span><span class="l2">ALT 120 m</span><span class="l3">4K · 60</span><span class="l4">N 50.45°</span></div><div class="pframe"><div class="vpw"><i class="sb" aria-hidden="true"><b>9:41</b><s></s></i><span class="hint" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3l14 7.5-6.2 1.6L10 18z" fill="#9BCF4A" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round"/></svg><i></i></span><iframe title="DRON live demo, phone: choose client or operator" data-src="https://olenkabozhenko.github.io/DRON/demo/role-select.html?theme=dark" loading="lazy"></iframe></div></div></div></figure></div>
+      <figure class="dk wfm" style="margin:0"><div class="vfw vfp"><div class="vf" aria-hidden="true"><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i><b class="hx"></b><b class="vy"></b><span class="l1"><em></em>Live prototype</span><span class="l2">ALT 120 m</span><span class="l3">4K · 60</span><span class="l4">N 50.45°</span></div><div class="pframe"><div class="vpw"><i class="sb" aria-hidden="true"><b>9:41</b><s></s></i><iframe title="DRON live demo, phone: choose client or operator" data-src="https://olenkabozhenko.github.io/DRON/demo/role-select.html?theme=dark" loading="lazy"></iframe></div></div></div></figure></div>
     </div>
   </section>
 
@@ -307,21 +307,22 @@
   function fit(){frames.forEach(function(f){var w=f.parentNode.clientWidth,base=f.closest('.pframe')?375:1440;var k=w/base;f.style.transform=k>0.999?'none':'scale('+k+')'})}
   new ResizeObserver(fit).observe(wf);fit();
   var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){try{if(!localStorage.getItem('wf-theme'))localStorage.setItem('wf-theme','dark')}catch(e){}frames.forEach(function(f){var u=f.dataset.src;if(location.protocol==='file:')u=u.replace('https://olenkabozhenko.github.io/DRON/','../DRON/');f.src=u});io.disconnect()}},{rootMargin:'400px'});io.observe(wf);
-  // on a mouse, a Click circle (like Drag on the flows) follows the cursor over the demo, beside it so the button stays visible; the page can follow the cursor inside the frame only when the demo shares its origin (online), otherwise the circle shows where the cursor came in and fades
-  var cc=wf.querySelector('.clickc'),hide=null;
+  // on a mouse, a see-through lime Click circle grows under the cursor over a demo and follows it; once the visitor clicks into a demo (the page loses focus to the frame) it is gone for good. The page can follow the cursor inside the frame only when the demo shares its origin (online); opened from a file, the circle shows where the cursor came in and fades
+  var cc=wf.querySelector('.clickc'),hide=null,poll=null,done=false;
   function at(x,y){cc.style.left=x+'px';cc.style.top=y+'px'}
-  if(cc&&matchMedia('(hover:hover) and (pointer:fine)').matches)frames.forEach(function(f){
-    f.addEventListener('mouseenter',function(e){at(e.clientX,e.clientY);cc.classList.add('on');clearTimeout(hide);var d=null;try{d=f.contentDocument}catch(x){}if(!d)hide=setTimeout(function(){cc.classList.remove('on')},1600)});
-    f.addEventListener('mouseleave',function(){clearTimeout(hide);cc.classList.remove('on','down')});
-    f.addEventListener('load',function(){
-      var d=null;try{d=f.contentDocument}catch(x){}if(!d)return;
-      d.addEventListener('mousemove',function(e){var r=f.getBoundingClientRect(),k=r.width/f.offsetWidth;at(r.left+e.clientX*k,r.top+e.clientY*k);cc.classList.add('on')},{passive:true});
-      d.addEventListener('mousedown',function(){cc.classList.add('down')});
-      d.addEventListener('mouseup',function(){cc.classList.remove('down')});
+  function bye(){done=true;clearTimeout(hide);clearInterval(poll);cc.classList.remove('on');cc.classList.add('gone')}
+  if(cc&&matchMedia('(hover:hover) and (pointer:fine)').matches){
+    frames.forEach(function(f){
+      f.addEventListener('mouseenter',function(e){if(done)return;clearInterval(poll);poll=setInterval(function(){if(document.activeElement===f)bye()},200);at(e.clientX,e.clientY);cc.classList.add('on');clearTimeout(hide);var d=null;try{d=f.contentDocument}catch(x){}if(!d)hide=setTimeout(function(){cc.classList.remove('on')},1600)});
+      f.addEventListener('mouseleave',function(){clearTimeout(hide);clearInterval(poll);cc.classList.remove('on')});
+      f.addEventListener('load',function(){
+        var d=null;try{d=f.contentDocument}catch(x){}if(!d)return;
+        d.addEventListener('mousemove',function(e){if(done)return;var r=f.getBoundingClientRect(),k=r.width/f.offsetWidth;at(r.left+e.clientX*k,r.top+e.clientY*k);cc.classList.add('on')},{passive:true});
+        d.addEventListener('mousedown',bye);
+      });
     });
-  });
-  // the lime arrow hint stops once the visitor clicks into a demo (the page loses focus to the frame)
-  addEventListener('blur',function(){setTimeout(function(){var a=document.activeElement;if(a&&a.tagName==='IFRAME'){var h=a.parentNode.querySelector('.hint');if(h)h.classList.add('used')}})});
+    addEventListener('blur',function(){setTimeout(function(){var a=document.activeElement;if(a&&a.tagName==='IFRAME'&&wf.contains(a))bye()})});
+  }
 })();
 </script>
 </body>

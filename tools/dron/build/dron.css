@@ -901,20 +901,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .wf3 .vfd>.vf .l1,.wf3 .vfd>.vf .l2{top:12px}.wf3 .vfd>.vf .l3,.wf3 .vfd>.vf .l4{bottom:12px;top:auto}
 .wf3 .vfd>.vf .l1,.wf3 .vfd>.vf .l3{left:44px}.wf3 .vfd>.vf .l2,.wf3 .vfd>.vf .l4{right:44px}
 
-/* revision 31: over each live demo, a lime arrow cursor glides onto the first button and clicks it, on a loop, to show the demo can be clicked; it hides while the pointer is over the demo and stops after the first click inside */
-.hint{position:absolute;z-index:2;width:30px;height:30px;margin:-3px 0 0 -4px;pointer-events:none;animation:hintm 3.8s cubic-bezier(.55,0,.2,1) infinite;transition:opacity .2s}
-.hint svg{display:block;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 0 6px rgba(155,207,74,.55)) drop-shadow(0 2px 4px rgba(0,0,0,.6))}
-.hint i{position:absolute;left:4px;top:3px;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;border:2px solid var(--green);opacity:0;animation:hintr 3.8s ease-out infinite}
-@keyframes hintm{0%{transform:translate(90px,70px);opacity:0}10%{opacity:1}40%{transform:none}48%{transform:scale(.82)}54%{transform:none}86%{transform:none;opacity:1}100%{transform:none;opacity:0}}
-@keyframes hintr{0%,47%{opacity:0;transform:scale(.6)}50%{opacity:1}75%,100%{opacity:0;transform:scale(2.4)}}
-.vpw:hover .hint,.hint.used{opacity:0 !important;animation-play-state:paused}
-.hint.used{display:none}
-.wfd .hint{left:47%;top:47.5%}
-.pframe .hint{left:40%;top:30%}
-@media (prefers-reduced-motion:reduce){.hint,.hint i{animation:none}}
-@media (hover:none){.hint{display:none}}
-
 /* revision 32: the Click circle, the same as Drag on the flows, follows the cursor over the live demos (beside the cursor, so the button stays visible); the viewfinder says Live prototype instead of REC */
-.clickc{position:fixed;left:0;top:0;z-index:30;width:84px;height:84px;margin:12px 0 0 12px;border-radius:50%;background:var(--green);color:var(--charcoal);display:grid;place-items:center;font-size:14px;font-weight:600;pointer-events:none;transform:scale(0);transform-origin:0 0;transition:transform .25s cubic-bezier(.22,.61,.36,1)}
-.clickc.on{transform:scale(1)}
-.clickc.down{transform:scale(.85)}
+.clickc{position:fixed;left:0;top:0;z-index:30;width:96px;height:96px;margin:-48px 0 0 -48px;border-radius:50%;background:rgba(155,207,74,.32);border:1.5px solid rgba(155,207,74,.85);color:#EAF6D5;display:grid;place-items:center;font-size:14px;font-weight:600;letter-spacing:.01em;pointer-events:none;opacity:0;transform:scale(.25);transition:transform .35s cubic-bezier(.22,.61,.36,1),opacity .25s ease}
+.clickc.on{opacity:1;transform:scale(1)}
+.clickc.gone{display:none}
+@media (prefers-reduced-motion:reduce){.clickc{transition:opacity .2s}}
