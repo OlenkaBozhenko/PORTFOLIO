@@ -921,3 +921,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 /* the text follows the background: white over the dark screens (the live demos and the phone screens in the flows), black over the white page */
 .dragc{transition:transform .25s cubic-bezier(.22,.61,.36,1),color .15s ease}
 .dragc.lt,.clickc{color:#fff}
+
+/* revision 36: the glass chapter cards end without a full stop and never leave one or two words alone on the last line */
+.tcard p{text-wrap:pretty}
