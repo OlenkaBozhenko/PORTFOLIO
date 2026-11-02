@@ -1142,3 +1142,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (max-width:720px){.wrow .vfp>.vf .l1{left:50%;transform:translateX(-50%);white-space:nowrap}.wrow .vfp>.vf .vy{top:28px}}
 /* phone: the persona photos run the full width of the column (her note) */
 @media (max-width:720px){.who2b img{width:100%}}
+/* phone: the market cards lose their dark backdrop; each chart tile stands on its own, full width, on the white page (her note) */
+@media (max-width:720px){
+  .mcard.mkt{background:none;padding:0;border-radius:0}
+  .mcard.mkt .dh{color:var(--ink);padding:0 2px}
+  .mkt .mgrid{gap:12px}
+  .mkt .mt{background:#1F1F1F;border-radius:22px;padding:22px}
+}
