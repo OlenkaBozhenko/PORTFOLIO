@@ -1177,3 +1177,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 }
 /* phone: each flow screen's caption is centred under its phone (her note) */
 @media (max-width:720px){.strip .scr span{text-align:center}}
+/* the step number sits inside the flow caption; on a phone the number is left out, only the name shows (her note) */
+.scr span b .sn{font-style:normal}
+@media (max-width:720px){.scr span b .sn{display:none}}
