@@ -310,11 +310,11 @@ html.menu-open{overflow:hidden}
   .hero{padding-block:20px 0}
   .hero .wrap{min-height:0;justify-content:flex-start}
   .hero .hero-meta,.hero .h1box,.hero .hero-sub{position:absolute !important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0}
-  .hero-big{position:relative;display:flex;flex-direction:column;align-items:center;gap:.6em;width:100%;font-weight:600;text-transform:uppercase;letter-spacing:-.045em;line-height:.8;font-size:min(calc((min(100vw,1320px) - 2 * var(--gutter)) / 4.5),calc((100vh - 240px) / 2.25));color:var(--ink);user-select:none}
+  .hero-big{display:flex;flex-direction:column;align-items:center;gap:.14em;width:100%;font-weight:600;text-transform:uppercase;letter-spacing:-.045em;line-height:.8;font-size:min(calc((min(100vw,1320px) - 2 * var(--gutter)) / 4.5),calc((100vh - 240px) / 3.1));color:var(--ink);user-select:none}
   .hero-big .hb-w{display:block;white-space:nowrap}
-  /* the monogram, large, sits over the middle of both words and breaks them, on a white ground (her note) */
-  .hero-big .hb-logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);height:104%;aspect-ratio:1.18;display:flex;align-items:center;justify-content:center;background:var(--bg)}
-  .hero-big .hb-logo svg{width:86%;height:auto;display:block}
+  /* the monogram, large, between the two words; the words stay whole (her notes) */
+  .hero-big .hb-logo{display:block}
+  .hero-big .hb-logo svg{height:1.25em;width:auto;display:block}
   .hero-tape{display:block;margin:clamp(28px,3vw,48px) calc(var(--gutter) * -1) 0;margin-inline:calc(50% - 50vw);background:var(--ink);color:#fff;overflow:hidden;white-space:nowrap;font-size:clamp(18px,1.6vw,22px);letter-spacing:-.01em;padding:16px 0}
   .hero-tape .tt{display:inline-flex;gap:0;animation:tape 40s linear infinite}
   .hero-tape .tt span{padding-right:48px}
