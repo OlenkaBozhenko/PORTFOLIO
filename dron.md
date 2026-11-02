@@ -210,3 +210,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Phone first screen: the demo window has the same soft shadow as the cards on the other case pages (0 1px 2px at 6%, 0 24px 48px -24px slate at 28%).
 - Phone first screen: the demo is bigger (the viewfinder 8 px around it), and the window and the viewfinder corners share a 14 px radius (her note).
 - Phone: each chapter photo and its glass card form one dark card; the photo on top fades into the dark and the text card sits inside it (her references: the Market reality and Tone of Voice cards). No new images needed.
+- Phone: the flow phones are bigger (240 px, up to 66% of the screen width) and the rows swipe sideways with a gentle snap to each phone (her note).

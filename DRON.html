@@ -1183,6 +1183,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .chap .tcard,.chap.R .tcard{margin:-88px 14px 0;background:rgba(40,42,38,.55);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:none}
 }
 
+/* revision 48: on a phone the flow phones are bigger and the row swipes sideways with a gentle snap to each phone (her note) */
+@media (max-width:720px){
+  .scr{width:min(240px,66vw)}.lk{margin-top:calc(min(240px,66vw) + 8px)}.dec{margin-top:calc(min(240px,66vw) - 34px)}
+  .strip{overflow-x:auto;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scroll-padding-left:4px}
+  .strip .scr{scroll-snap-align:start}
+}
+
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
 .menu-btn{display:none}
 @media (max-width:720px){
