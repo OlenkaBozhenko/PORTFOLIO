@@ -346,7 +346,7 @@
   var x=-200,y=-200,tx=-200,ty=-200,a=0,run=false,last=0,chk=0;
   // what is under the drone: over a picture, a video, a live frame or a dark ground it fades out; over the white page it shows
   function lum(c){var v=c.match(/[\d.]+/g);if(!v||(v.length>3&&+v[3]<.5))return -1;return (.2126*v[0]+.7152*v[1]+.0722*v[2])/255}
-  function dark(px,py){var el=document.elementFromPoint(px,py);
+  function dark(px,py){var el=document.elementFromPoint(px,py);if(el&&el.closest('.ho2'))return true; // the whole Handoff block hides it too (her note)
     for(;el&&el!==document.documentElement;el=el.parentElement){
       if(/^(IMG|VIDEO|IFRAME|CANVAS|PICTURE)$/.test(el.tagName))return true;
       var cs=getComputedStyle(el);if(cs.backgroundImage!=='none'&&/url\(/.test(cs.backgroundImage))return true;
