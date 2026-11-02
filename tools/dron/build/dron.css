@@ -1166,3 +1166,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (max-width:720px){.wrow .vfp>.pframe{background:#111}}
 /* phone: the title keeps three whole phrases, one per line, so AI never sits alone (her notes) */
 @media (max-width:720px){.nw-m{white-space:nowrap}h1 .br2{display:none}h1:has(.nw-m){font-size:min(34px,calc((100vw - 48px) / 10.2))}}
+/* phone: in Handoff only the release card stays beside the list (tokens, components, commits, run it and what ships are left out); the list has no dark backdrop, each file is its own dark card (her call) */
+@media (max-width:720px){
+  .ho2 .f1,.ho2 .f2,.ho2 .f3,.ho2 .f5,.ho2 .f6{display:none}
+  .ho2 .center{background:none;border:0;box-shadow:none;padding:0;color:var(--ink)}
+  .ho2 .center h3{color:var(--ink)}
+  .ho2 .center .sub{color:var(--muted);font-size:15px}
+  .ho2 .center ul{gap:12px}
+  .ho2 .center li{background:#1F1F1F;border-radius:22px;padding:18px}
+}
