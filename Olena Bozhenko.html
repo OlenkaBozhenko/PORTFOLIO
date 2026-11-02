@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- Instrument Serif italic: only the headline phrases (site.md, Hero) -->
 <!-- Inter Tight: stand-in for Aeonik / Neue Haas Grotesk (inspiration D8) until the typeface is chosen -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500&family=Instrument+Serif:ital@1&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Instrument+Serif:ital@1&display=swap">
 <style>
 :root{
   --bg:#FFFFFF;      /* D1: white, always */
@@ -303,22 +303,26 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 }
 html.menu-open{overflow:hidden}
 .menu-contact{display:none}
-/* first screen, desktop (her call 2026-11-02): the headline and the sub on the left, the OB monogram of the favicon large on the right; the floating blocks and phrases are gone; the end of the headline in grey in the headline's own type, as on the case pages */
-.hero-logo{display:none}
-/* the end of the headline in the headline's own type, desktop and phone (her calls 2026-11-02) */
-.slot-text.serif{font-family:inherit;font-style:normal;letter-spacing:inherit}
-/* no full stop after the headline, desktop too (her call 2026-11-02) */
-.h1-dot{display:none}
-/* grey: products, and people open every day */
-.hero .hg{color:#8F8F8F}
+/* first screen, desktop (her calls 2026-11-02): a poster: PRODUCT and DESIGNER in big capitals across the page, the OB monogram of the favicon between them, and the headline with the sub running as a black tape along the bottom; the floating blocks and phrases are gone; the headline and the sub stay in the page for screen readers */
+.hero-logo,.hero-big,.hero-tape{display:none}
 @media (min-width:901px){
   .hero-phrases,.hero-blocks,.blk,.pause{display:none !important}
-  .hero .wrap{align-items:flex-start;text-align:left;padding-right:clamp(300px,36%,600px)}
-  .h1box{max-width:none}
-  .hero h1{font-size:clamp(48px,5.4vw,96px)}
-  .hero-sub{max-width:44ch}
-  .hero-logo{display:block;position:absolute;right:var(--gutter,24px);top:50%;transform:translateY(-50%);width:clamp(260px,30%,520px);height:auto;overflow:visible}
+  .hero{padding-block:20px 0}
+  .hero .wrap{min-height:0;justify-content:flex-start}
+  .hero .hero-meta,.hero .h1box,.hero .hero-sub{position:absolute !important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0}
+  .hero-big{display:flex;flex-direction:column;align-items:center;width:100%;font-weight:600;text-transform:uppercase;letter-spacing:-.045em;line-height:.8;font-size:min(calc((min(100vw,1320px) - 2 * var(--gutter)) / 4.5),calc((100vh - 240px) / 2.72));color:var(--ink);user-select:none}
+  .hero-big .hb-w{display:block;white-space:nowrap}
+  .hero-big .hb-logo{display:flex;align-items:center;justify-content:center;gap:clamp(16px,2vw,32px);width:100%;margin:.12em 0 .1em}
+  .hero-big .hb-logo svg{height:.86em;width:auto;display:block}
+  .hero-big .hb-logo i{flex:1;height:2px;background:var(--ink)}
+  .hero-tape{display:block;margin:clamp(28px,3vw,48px) calc(var(--gutter) * -1) 0;margin-inline:calc(50% - 50vw);background:var(--ink);color:#fff;overflow:hidden;white-space:nowrap;font-size:clamp(18px,1.6vw,22px);letter-spacing:-.01em;padding:16px 0}
+  .hero-tape .tt{display:inline-flex;gap:0;animation:tape 40s linear infinite}
+  .hero-tape .tt span{padding-right:48px}
+  .hero-tape .tt b{font-weight:400;color:#9A9A9A}
+  .hero-tape .tt em{font-style:normal;color:#A6D157}
+  @keyframes tape{to{transform:translateX(-50%)}}
 }
+@media (min-width:901px) and (prefers-reduced-motion:reduce){.hero-tape .tt{animation:none}}
 </style>
 </head>
 <body>
@@ -367,7 +371,8 @@ html.menu-open{overflow:hidden}
       <h1 id="hero-title">I design B2B and B2C <span class="hg">products</span> from the idea to <span class="slot" id="slot"><span class="slot-text serif"></span><span class="vh slot-sr">production</span><span class="slot-hint" aria-hidden="true">drop a phrase here</span></span><span class="h1-dot">.</span></h1>
     </div>
     <p class="hero-sub">Working with research, design, user interviews, prototypes and design systems.</p>
-    <svg class="hero-logo" viewBox="2 18 97 64" aria-hidden="true"><g fill="var(--ink)" stroke="var(--ink)" stroke-width=".8" stroke-linejoin="round"><path d="M34 50V20a30 30 0 0 0-30 30Z"/><path d="M34 50h30a30 30 0 0 0-30-30Z"/><path d="M34 50H4a30 30 0 0 0 30 30Z"/><rect x="34" y="50" width="30" height="30"/><circle cx="34" cy="50" r="10" fill="var(--bg)" stroke="var(--bg)"/><rect x="72" y="20" width="10" height="60"/><path d="M82 20h0a15 15 0 0 1 15 15H82Z"/><path d="M82 35h15a15 15 0 0 1-15 15Z"/><path d="M82 50a15 15 0 0 1 15 15H82Z"/><path d="M82 65h15a15 15 0 0 1-15 15Z"/></g></svg>
+    <div class="hero-big" aria-hidden="true"><span class="hb-w">Product</span><span class="hb-logo"><i></i><svg viewBox="2 18 97 64"><g fill="var(--ink)" stroke="var(--ink)" stroke-width=".8" stroke-linejoin="round"><path d="M34 50V20a30 30 0 0 0-30 30Z"/><path d="M34 50h30a30 30 0 0 0-30-30Z"/><path d="M34 50H4a30 30 0 0 0 30 30Z"/><rect x="34" y="50" width="30" height="30"/><circle cx="34" cy="50" r="10" fill="var(--bg)" stroke="var(--bg)"/><rect x="72" y="20" width="10" height="60"/><path d="M82 20h0a15 15 0 0 1 15 15H82Z"/><path d="M82 35h15a15 15 0 0 1-15 15Z"/><path d="M82 50a15 15 0 0 1 15 15H82Z"/><path d="M82 65h15a15 15 0 0 1-15 15Z"/></g></svg><i></i></span><span class="hb-w">Designer</span></div>
+    <div class="hero-tape" aria-hidden="true"><div class="tt"><span>I design B2B and B2C <b>products</b> from the idea to a product <b>people open every day</b></span><span>Working with research, design, user interviews, prototypes and design systems</span><span>I design B2B and B2C <b>products</b> from the idea to a product <b>people open every day</b></span><span>Working with research, design, user interviews, prototypes and design systems</span><span>I design B2B and B2C <b>products</b> from the idea to a product <b>people open every day</b></span><span>Working with research, design, user interviews, prototypes and design systems</span><span>I design B2B and B2C <b>products</b> from the idea to a product <b>people open every day</b></span><span>Working with research, design, user interviews, prototypes and design systems</span><span>I design B2B and B2C <b>products</b> from the idea to a product <b>people open every day</b></span><span>Working with research, design, user interviews, prototypes and design systems</span><span>I design B2B and B2C <b>products</b> from the idea to a product <b>people open every day</b></span><span>Working with research, design, user interviews, prototypes and design systems</span></div></div>
 
     <div class="hero-blocks" aria-hidden="true">
       <div class="blk b-ds"><span class="label"><svg class="ico" width="11" height="11" viewBox="0 0 12 12"><path d="M6 .8 7.7 2.5 6 4.2 4.3 2.5zM2.5 4.3 4.2 6 2.5 7.7.8 6zM9.5 4.3 11.2 6 9.5 7.7 7.8 6zM6 7.8 7.7 9.5 6 11.2 4.3 9.5z"/></svg>Design system</span><div class="box">
