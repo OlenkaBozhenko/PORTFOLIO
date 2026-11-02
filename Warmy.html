@@ -445,8 +445,11 @@ html.menu-open{overflow:hidden}
 .accm{display:none}
 @media (max-width:720px){
   .g figure.stagefig{display:none}
-  .accm{display:block;margin:0 18px 18px;border-radius:14px;overflow:hidden;border:1px solid #EDEDED;aspect-ratio:1440/1024}
-  .accm img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+  .accm{display:block;margin:0 0 0 18px;border-radius:12px 0 19px 0;overflow:hidden;border:solid #EDEDED;border-width:1px 0 0 1px;aspect-ratio:4/3}
+  /* a closer crop: the sidebar is left out and the screen runs off the right and bottom edges of the card (her note) */
+  .accm img{display:block;width:150%;max-width:none;margin-left:-25%}
+  #ac2 .accm img,#ac3 .accm img{margin-left:-50%}
+  #ac4 .accm{aspect-ratio:700/1024}#ac4 .accm img{width:200%;margin-left:-107%}
   .acc .body p{padding-bottom:18px}
 }
 </style>
