@@ -349,7 +349,9 @@
   // it flies only from the About section down to the Handoff block: not over the first screen above About, not over Handoff or anything below it (her notes)
   var aboutH=[].filter.call(document.querySelectorAll('.pair h2'),function(h){return h.textContent==='About'})[0],ho=document.querySelector('.ho2');
   function out(py){var top=aboutH?aboutH.closest('.pair').getBoundingClientRect().top:-1e9,end=ho?ho.getBoundingClientRect().top:1e9;return py<top||py>=end}
-  function dark(px,py){if(out(py))return true;var el=document.elementFromPoint(px,py);
+  var fl=document.getElementById('flows'); // nor over User Flows, where it gets in the way of dragging the screens (her note)
+  function inFlows(py){if(!fl)return false;var r=fl.getBoundingClientRect();return py>=r.top&&py<r.bottom}
+  function dark(px,py){if(out(py)||inFlows(py))return true;var el=document.elementFromPoint(px,py);
     for(;el&&el!==document.documentElement;el=el.parentElement){
       if(/^(IMG|VIDEO|IFRAME|CANVAS|PICTURE)$/.test(el.tagName))return true;
       var cs=getComputedStyle(el);if(cs.backgroundImage!=='none'&&/url\(/.test(cs.backgroundImage))return true;
