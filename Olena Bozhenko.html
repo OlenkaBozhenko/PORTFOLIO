@@ -316,14 +316,18 @@ html.menu-open{overflow:hidden}
   .hero .hero-meta,.hero .h1box,.hero .hero-sub{position:absolute !important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0}
   /* a poster with the monogram (her calls 2026-11-02): PRODUCT DESIGNER in big capitals at the left with the sub, small, under it; the OB monogram large at the right; the headline runs in the tape at the bottom */
   .hero .wrap{align-items:stretch}
-  .hero-big{display:flex;align-items:center;justify-content:space-between;gap:clamp(32px,4vw,72px);align-self:center;flex:1;width:min(100vw - 2 * var(--gutter) - 16px,1560px);min-height:0;color:var(--ink);user-select:none}
+  .hero-big{display:flex;align-items:flex-start;justify-content:space-between;gap:clamp(32px,4vw,72px);align-self:center;flex:1;padding-top:calc(var(--fs) * .95);width:min(100vw - 2 * var(--gutter) - 16px,1560px);min-height:0;color:var(--ink);user-select:none}
   /* her note: the monogram moves to the right; the sub, small, goes under the title */
   /* the letters as big as the row allows: the title (about 4.5 letter heights wide) and the monogram (as tall as the two lines, about 2.5 letter heights wide) fill the width side by side (her note: bigger letters, the logo not smaller) */
-  .hero-big{--fs:min(calc((min(100vw - 2 * var(--gutter) - 16px,1560px) - clamp(32px,4vw,72px)) / 7.05),calc((100vh - 260px) / 1.7))}
+  .hero-big{--fs:min(calc((min(100vw - 2 * var(--gutter) - 16px,1560px) - clamp(32px,4vw,72px)) / 7.05),calc((100vh - 175px) / 4.5))}
   /* the monogram is exactly as tall as the two lines of capitals, top of PRODUCT to the foot of DESIGNER (her note) */
-  .hero-big .hb-logo{flex:none;order:2;height:calc(var(--fs) * 1.665);display:block}
+  .hero-big .hb-r{flex:none;order:2;position:relative;display:block;align-self:flex-start}
+  .hero-big .hb-logo{position:relative;z-index:1;height:calc(var(--fs) * 1.665);display:block}
+  /* her photo, black and white, stands behind the right part of the monogram, from well above it to well below (her sketch) */
+  .hero-big .hb-photo{position:absolute;right:0;width:76%;top:calc(var(--fs) * -.9);height:calc(var(--fs) * 3.55);object-fit:cover;object-position:50% 20%;display:block;border-radius:4px}
   .hero-big .hb-logo svg{height:100%;width:auto;display:block}
-  .hero-big .hb-t{flex:none;text-align:left}
+  .hero-big .hb-t{flex:none;text-align:left;align-self:flex-start}
+  .hero-big .hb-sub{display:block;margin-top:clamp(28px,3vw,48px);max-width:30ch;font-size:clamp(18px,1.5vw,22px);line-height:1.45;color:var(--muted);font-weight:400;letter-spacing:-.005em}
   .hero-big .hb-w{display:block;font-weight:800;text-transform:uppercase;letter-spacing:-.045em;line-height:.84;font-size:var(--fs)}
   .hero-big .hb-sub{display:block;margin-top:clamp(20px,2vw,32px);max-width:30ch;font-size:clamp(18px,1.6vw,22px);line-height:1.4;letter-spacing:-.01em;color:var(--muted)}
   .hero-tape{display:block;margin:0 calc(var(--gutter) * -1) 0;margin-inline:calc(50% - 50vw);background:var(--ink);color:#fff;overflow:hidden;white-space:nowrap;font-size:clamp(18px,1.6vw,22px);letter-spacing:-.01em;padding:16px 0}
@@ -382,7 +386,7 @@ html.menu-open{overflow:hidden}
       <h1 id="hero-title">I design B2B and B2C <span class="hg">products</span> from the idea to <span class="slot" id="slot"><span class="slot-text serif"></span><span class="vh slot-sr">production</span><span class="slot-hint" aria-hidden="true">drop a phrase here</span></span><span class="h1-dot">.</span></h1>
     </div>
     <p class="hero-sub">Working with research, design, user interviews, prototypes and design systems.</p>
-    <div class="hero-big" aria-hidden="true"><span class="hb-logo"><svg viewBox="2 18 97 64"><g fill="var(--ink)" stroke="var(--ink)" stroke-width=".8" stroke-linejoin="round"><path d="M34 50V20a30 30 0 0 0-30 30Z"/><path d="M34 50h30a30 30 0 0 0-30-30Z"/><path d="M34 50H4a30 30 0 0 0 30 30Z"/><rect x="34" y="50" width="30" height="30"/><circle cx="34" cy="50" r="10" fill="var(--bg)" stroke="var(--bg)"/><rect x="72" y="20" width="10" height="60"/><path d="M82 20h0a15 15 0 0 1 15 15H82Z"/><path d="M82 35h15a15 15 0 0 1-15 15Z"/><path d="M82 50a15 15 0 0 1 15 15H82Z"/><path d="M82 65h15a15 15 0 0 1-15 15Z"/></g></svg></span><span class="hb-t"><span class="hb-w">Product<br>designer</span></span></div>
+    <div class="hero-big" aria-hidden="true"><span class="hb-r"><img class="hb-photo" src="assets/about/olena-night.webp" alt="" width="584" height="1280"><span class="hb-logo"><svg viewBox="2 18 97 64"><g fill="var(--ink)" stroke="var(--ink)" stroke-width=".8" stroke-linejoin="round"><path d="M34 50V20a30 30 0 0 0-30 30Z"/><path d="M34 50h30a30 30 0 0 0-30-30Z"/><path d="M34 50H4a30 30 0 0 0 30 30Z"/><rect x="34" y="50" width="30" height="30"/><circle cx="34" cy="50" r="10" fill="var(--bg)" stroke="var(--bg)"/><rect x="72" y="20" width="10" height="60"/><path d="M82 20h0a15 15 0 0 1 15 15H82Z"/><path d="M82 35h15a15 15 0 0 1-15 15Z"/><path d="M82 50a15 15 0 0 1 15 15H82Z"/><path d="M82 65h15a15 15 0 0 1-15 15Z"/></g></svg></span></span><span class="hb-t"><span class="hb-w">Product<br>designer</span><span class="hb-sub">Working with research, design, user interviews, prototypes and design systems.</span></span></div>
     <div class="hero-tape" aria-hidden="true"><div class="tt"><span>I design B2B and B2C <b>products</b> from the idea to a product <b>people open every day</b></span><span>I design B2B and B2C <b>products</b> from the idea to a product <b>people open every day</b></span><span>I design B2B and B2C <b>products</b> from the idea to a product <b>people open every day</b></span><span>I design B2B and B2C <b>products</b> from the idea to a product <b>people open every day</b></span><span>I design B2B and B2C <b>products</b> from the idea to a product <b>people open every day</b></span><span>I design B2B and B2C <b>products</b> from the idea to a product <b>people open every day</b></span></div></div>
 
     <div class="hero-blocks" aria-hidden="true">
