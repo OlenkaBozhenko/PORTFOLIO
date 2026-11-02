@@ -120,7 +120,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .ov dd{margin:0;font-size:clamp(19px,1.8vw,23px)}
 .pills{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
 .pills li{font-size:15px;background:var(--well);border-radius:999px;padding:8px 14px}
-@media (max-width:720px){.pills{gap:6px}.pills li{font-size:14px;line-height:1;padding:8px 12px}} /* phone: small chips, like the Warmy audience tags (her note 2026-11-02) */
+@media (max-width:720px){.pills{gap:6px}.pills li{font-size:14px;line-height:1;padding:8px 12px}.pills li:nth-child(5){order:1}} /* phone: small chips, like the Warmy audience tags (her note 2026-11-02) */
 /* her photo at a conference (Figma 259:79908), graded a little toward the AnyBiz palette */
 .ov .shot img{display:block;width:100%}
 @media (max-width:820px){.ov{grid-template-columns:1fr}}
