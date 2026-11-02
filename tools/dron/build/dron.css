@@ -1175,3 +1175,5 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .ho2 .center ul{gap:12px}
   .ho2 .center li{background:#1F1F1F;border-radius:22px;padding:18px}
 }
+/* phone: each flow screen's caption is centred under its phone (her note) */
+@media (max-width:720px){.strip .scr span{text-align:center}}
