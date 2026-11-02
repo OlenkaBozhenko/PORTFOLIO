@@ -130,7 +130,7 @@ Desktop is unchanged.
 - Instructions prototype: only the email preview; no instruction bubbles, no grey panel, no *Connect email* chip.
 - The session-recording legend (Hesitation, Rage click, Dead click, Drop-off) in two rows of two.
 - Screen previews: the browser alone, full width; no grey panel and no phone.
-- *A salesperson that works 24/7, set up in one place* (2026-11-02, her call, like the Warmy feature list): the features are a plain list, not cards (no ground, no rules); each still opens and closes, showing its headline, its text and, under it, its own browser screen, the same screen as on the desktop (Sequence builder keeps its slow scroll under the fixed top bar); the shared stage beside the list is left out on phones.
+- *A salesperson that works 24/7, set up in one place* (2026-11-02, her call, like the Warmy feature list): the features are a plain list, not cards (no ground, no rules); each still opens and closes, showing its headline, its text and, under it, its own browser screen, the same screen as on the desktop (Sequence builder keeps its slow scroll under the fixed top bar), its shadow fading out softly with no grey box behind it; the shared stage beside the list is left out on phones.
 - Card mockups without the grey panel: the cards alone, full width.
 - Where the ground is gone, the screens and cards keep a small shadow all round, so the top edge shows too.
 - The first screen runs edge to edge, with no side margins.

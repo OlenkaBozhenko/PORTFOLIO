@@ -457,8 +457,10 @@ html.menu-open{overflow:hidden}
   .acc li{background:none;box-shadow:none;border:0;border-radius:0}
   .acc button{padding:16px 0;border-radius:0}
   .acc .body p{padding:0 0 16px}
-  .accm{display:block;margin:0 0 24px}
-  .accm .browser{box-shadow:0 0 0 1px rgba(15,23,42,.08),0 4px 10px rgba(15,23,42,.14),0 16px 32px -8px rgba(15,23,42,.32)}
+  /* the opening part clips its content; it reaches into the page margins and the screen keeps room under it, so its shadow fades out softly instead of ending in a grey box (her note) */
+  .acc .body>div{margin:0 -16px;padding:0 16px}
+  .accm{display:block;padding-bottom:30px;margin:0}
+  .accm .browser{box-shadow:0 0 0 1px rgba(15,23,42,.08),0 3px 8px rgba(15,23,42,.12),0 10px 22px -8px rgba(15,23,42,.3)}
   .accm .vp{aspect-ratio:1600/1000}
   .accm .vp img.tall.on,.accm .vp img.tall.on~img.drop{animation-play-state:running}
 }
