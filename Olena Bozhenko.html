@@ -326,6 +326,18 @@ html.menu-open{overflow:hidden}
   .hero-big .hb-logo{position:relative;z-index:1;flex:none;margin-top:auto;height:calc(var(--fs) * 1.0);display:block}
   .hero-big .hb-logo svg{height:100%;width:auto;display:block}
   }
+/* first screen on a phone (her call 2026-11-02, concept D): the OB monogram at the top left, her photo at the top right, SENIOR PRODUCT DESIGNER in big capitals on three lines running onto the photo, the sub right under it on two lines; the headline and the sub stay in the page for screen readers */
+@media (max-width:900px){
+  .hero .hero-meta,.hero .h1box,.hero .hero-sub{position:absolute !important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0}
+  .hero{padding-block:12px 0}
+  .hero-big{--fs:calc((100vw - 2 * var(--gutter)) / 4.8);display:flex;flex-direction:column;align-items:flex-start;position:relative;color:var(--ink);user-select:none}
+  .hero-big .hb-t{display:flex;flex-direction:column;position:relative;z-index:1}
+  .hero-big .hb-w{display:block;font-weight:800;text-transform:uppercase;letter-spacing:-.045em;line-height:.84;font-size:var(--fs);white-space:nowrap}
+  .hero-big .hb-sub{display:block;margin-top:14px;font-size:15.5px;line-height:1.45;color:var(--muted);text-wrap:balance}
+  .hero-big .hb-logo{display:block;order:-1;height:calc(var(--fs) * .8);margin-bottom:calc(var(--fs) * 1.2)}
+  .hero-big .hb-logo svg{height:100%;width:auto;display:block}
+  .hero-big .hb-photo{display:block;max-width:none;object-fit:cover;object-position:50% 0;border-radius:4px;position:absolute;right:0;top:0;width:62%;height:calc(var(--fs) * 3.9)}
+}
 </style>
 </head>
 <body>
