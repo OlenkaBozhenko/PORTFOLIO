@@ -441,13 +441,12 @@ html.menu-open{overflow:hidden}
 @media (max-width:900px){.dock{display:none}}
 @media (prefers-reduced-motion:reduce){.dock,.dock a,.dock a span{transition:none}}
 @media print{.dock{display:none}}
-/* phone: the features are a plain list, not cards: no ground, a thin rule between them; each opens to its text and, under it, its own screen, whole; the shared browser and phone stage is left out (her calls); the desktop is unchanged */
+/* phone: the features are a plain list, not cards: no ground and no rules; each opens to its text and, under it, its own screen, whole; the shared browser and phone stage is left out (her calls); the desktop is unchanged */
 .accm{display:none}
 @media (max-width:720px){
   .g figure.stagefig{display:none}
   .acc{gap:0}
-  .acc li{background:none;box-shadow:none;border:0;border-bottom:1px solid #E6E6E6;border-radius:0}
-  .acc li:first-child{border-top:1px solid #E6E6E6}
+  .acc li{background:none;box-shadow:none;border:0;border-radius:0}
   .acc button{padding:16px 0;border-radius:0}
   .acc .body p{padding:0 0 16px}
   .accm{display:block;margin:0 0 24px;border-radius:12px;overflow:hidden;border:1px solid #EDEDED;aspect-ratio:1440/1024;box-shadow:0 1px 2px rgba(0,0,0,.04),0 12px 28px -18px rgba(0,0,0,.25)}
