@@ -1657,7 +1657,10 @@ html.menu-open{overflow:hidden}
   var x=-200,y=-200,tx=-200,ty=-200,a=0,run=false,last=0,chk=0;
   // what is under the drone: over a picture, a video, a live frame or a dark ground it fades out; over the white page it shows
   function lum(c){var v=c.match(/[\d.]+/g);if(!v||(v.length>3&&+v[3]<.5))return -1;return (.2126*v[0]+.7152*v[1]+.0722*v[2])/255}
-  function dark(px,py){var el=document.elementFromPoint(px,py);if(el&&el.closest('.ho2'))return true; // the whole Handoff block hides it too (her note)
+  // it flies only from the About section down to the Handoff block: not over the first screen above About, not over Handoff or anything below it (her notes)
+  var aboutH=[].filter.call(document.querySelectorAll('.pair h2'),function(h){return h.textContent==='About'})[0],ho=document.querySelector('.ho2');
+  function out(py){var top=aboutH?aboutH.closest('.pair').getBoundingClientRect().top:-1e9,end=ho?ho.getBoundingClientRect().top:1e9;return py<top||py>=end}
+  function dark(px,py){if(out(py))return true;var el=document.elementFromPoint(px,py);
     for(;el&&el!==document.documentElement;el=el.parentElement){
       if(/^(IMG|VIDEO|IFRAME|CANVAS|PICTURE)$/.test(el.tagName))return true;
       var cs=getComputedStyle(el);if(cs.backgroundImage!=='none'&&/url\(/.test(cs.backgroundImage))return true;
