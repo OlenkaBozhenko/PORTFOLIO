@@ -220,4 +220,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Phone: the first-screen crosshair line runs only 12 px past the viewfinder, top and bottom (her note).
 - Phone: the live phone prototype is sized to the screen height, so the whole phone fits on one screen with room around it; then made a little wider (her notes).
 - Phone: the viewfinder crosshair no longer runs over the phone mockup; the phone frame is solid (her note).
-- Phone: in the title, "designed with AI." stays on one line, so AI never wraps alone (her note).
+- Phone: the title sits on three lines, "Drone services," / "from research to handoff," / "designed with AI.", so AI never wraps alone; on the narrowest phones the title scales down a little to keep the three lines (her notes).
