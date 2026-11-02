@@ -218,3 +218,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Phone: the "Who orders / Who flies, in numbers" titles are 24 px, the Client / Operator badges are hidden, and the JTBD chips are small (13 px, 6 x 12 px padding) like the Warmy chips (her notes). Desktop unchanged.
 - Phone: the "Live prototype" label sits higher, on the line of the top brackets (her note).
 - Phone: the first-screen crosshair line runs only 12 px past the viewfinder, top and bottom (her note).
+- Phone: the live phone prototype is sized to the screen height, so the whole phone fits on one screen with room around it (her note).
