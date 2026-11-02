@@ -1175,6 +1175,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .hero1 .vf .c1{border-top-left-radius:14px}.hero1 .vf .c2{border-top-right-radius:14px}.hero1 .vf .c3{border-bottom-left-radius:14px}.hero1 .vf .c4{border-bottom-right-radius:14px}
 }
 
+/* revision 47: on a phone each chapter photo and its glass card are one dark card: the photo on top fades into the dark, and the text card sits inside it, never hanging below (her references: the Market reality and Tone of Voice cards) */
+@media (max-width:720px){
+  .chap{background:#111;border-radius:22px;overflow:hidden;padding-bottom:14px}
+  .chap .pic,.chap.R .pic{aspect-ratio:4/3;border-radius:0;background:none}
+  .chap .pic .bg{-webkit-mask-image:linear-gradient(#000 62%,transparent);mask-image:linear-gradient(#000 62%,transparent)}
+  .chap .tcard,.chap.R .tcard{margin:-88px 14px 0;background:rgba(40,42,38,.55);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:none}
+}
+
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
 .menu-btn{display:none}
 @media (max-width:720px){
