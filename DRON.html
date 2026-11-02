@@ -1191,6 +1191,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 }
 /* phone: the live phone demo fills its card, inside the viewfinder (her note) */
 @media (max-width:720px){.wrow .wfm{padding:44px 30px}.wrow .vfp{width:100%}}
+/* phone: the Live prototype label sits in the middle of the viewfinder's top edge, over the crosshair (her note) */
+@media (max-width:720px){.wrow .vfp>.vf .l1{left:50%;transform:translateX(-50%);white-space:nowrap}.wrow .vfp>.vf .vy{top:28px}}
 
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
 .menu-btn{display:none}

@@ -212,3 +212,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Phone: each chapter photo and its glass card form one dark card; the photo on top fades into the dark and the text card sits inside it (her references: the Market reality and Tone of Voice cards). No new images needed.
 - Phone: the flow phones are bigger (240 px, up to 66% of the screen width) and the rows swipe sideways with a gentle snap to each phone (her note).
 - Phone: the live phone demo is bigger, filling its card inside the viewfinder (30 px side padding).
+- Phone: the "Live prototype" label is centred on the top edge of the phone demo viewfinder (her note).
