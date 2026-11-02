@@ -1233,10 +1233,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 /* the step number sits inside the flow caption; on a phone the number is left out, only the name shows (her note) */
 .scr span b .sn{font-style:normal}
 @media (max-width:720px){.scr span b .sn{display:none}}
-/* desktop: the DRON drone (the one from the wordmark on the landing) flies after the mouse; dark as in the wordmark, with a thin lime edge so it reads on white and on the dark panels; it never takes a click (her call 2026-11-02) */
+/* desktop: the DRON drone (the one from the wordmark on the landing) flies after the mouse; dark as in the wordmark, no lime glow (her note); it never takes a click (her call 2026-11-02) */
 .mfly{position:fixed;left:0;top:0;z-index:70;width:84px;margin:-16px 0 0 -42px;pointer-events:none;opacity:0;transition:opacity .3s ease;will-change:transform}
 .mfly.on{opacity:1}
-.mfly svg{display:block;width:100%;height:auto;overflow:visible;fill:#1A1A1A;filter:drop-shadow(0 0 1px #A6D157) drop-shadow(0 0 1px #A6D157) drop-shadow(0 8px 10px rgba(0,0,0,.22))}
+.mfly svg{display:block;width:100%;height:auto;overflow:visible;fill:#1A1A1A;filter:drop-shadow(0 8px 10px rgba(0,0,0,.22))}
 .mfly .mfb{transform-box:fill-box;transform-origin:50% 60%;animation:mf-bob 2.4s ease-in-out infinite}
 .mfly .mfp{transform-box:fill-box;transform-origin:center;animation:mf-prop .12s linear infinite}
 @keyframes mf-prop{50%{transform:scaleX(.18)}}
