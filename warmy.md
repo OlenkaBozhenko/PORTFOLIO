@@ -170,6 +170,7 @@ Desktop is unchanged.
 - The first screen runs edge to edge, with no side margins.
 - Feature cards: 28 px between the cards and their caption.
 - Spacing by proximity: a headline 32 px from its content, a caption 20 px from its picture, the source note 16 px under the template, blocks of a section 56 px apart, sections 104 px apart.
+- *Turning signals into next steps* (2026-11-02, her call): each feature card (Sender tracker, Adeline AI, Template checker, Spintax) holds its own desktop screen under its text, shown when the card is open; the shared browser and phone stage beside the list is left out on phones.
 
 - Section dock (2026-10-29, her call, desktop only, like the DRON page): a pill at the bottom with an icon per section (About, Problem, Solution, Complexity, Product, My part, A/B hypotheses, User interviews, Campaign visuals); black pill, the current section in the Warmy coral #FF7658; the current section shows its name and follows the scroll, the others open their name on hover or focus. Hidden below 900 px.
 - Dock: the opening texts (About, Problem, Solution; on Styupan and Book: About, Objective, Idea) are one item, About, with a light bulb icon (her call).

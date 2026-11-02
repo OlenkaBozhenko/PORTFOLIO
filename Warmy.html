@@ -441,6 +441,14 @@ html.menu-open{overflow:hidden}
 @media (max-width:900px){.dock{display:none}}
 @media (prefers-reduced-motion:reduce){.dock,.dock a,.dock a span{transition:none}}
 @media print{.dock{display:none}}
+/* phone: each feature card holds its own screen, and the shared browser and phone stage is left out (her call); the desktop is unchanged */
+.accm{display:none}
+@media (max-width:720px){
+  .g figure.stagefig{display:none}
+  .accm{display:block;margin:0 18px 18px;border-radius:14px;overflow:hidden;border:1px solid #EDEDED;aspect-ratio:1440/1024}
+  .accm img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+  .acc .body p{padding-bottom:18px}
+}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -556,10 +564,10 @@ html.menu-open{overflow:hidden}
     <div class="g">
       <h3 class="big c1-12" id="pr-big">Turning signals <span class="s">into</span> next steps</h3>
       <ul class="acc c1-5 start rv" id="acc">
-        <li class="open"><button type="button" aria-expanded="true" aria-controls="ac1" id="ab1">Sender tracker<span class="pm" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></button><div class="body" id="ac1" role="region" aria-labelledby="ab1"><div><p>What you send outside Warmy, from any tool: opens, clicks, bounces, spam and unsubscribes in one chart, a warning when campaign mail falls under the at-risk line, and the biggest risk named by provider.</p></div></div></li>
-        <li><button type="button" aria-expanded="false" aria-controls="ac4" id="ab4">Adeline AI<span class="pm" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></button><div class="body" id="ac4" role="region" aria-labelledby="ab4"><div><p>The first AI agent in email deliverability: it helps improve domain reputation and get emails into the inbox. It answers in plain words, with three starting questions, and a call with an advisor or a human chat is one tap away.</p></div></div></li>
-        <li><button type="button" aria-expanded="false" aria-controls="ac2" id="ab2">Template checker<span class="pm" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></button><div class="body" id="ac2" role="region" aria-labelledby="ab2"><div><p>AI reads the email before a real inbox does: a score out of 100, failed, warning and passed checks by section, and fixes it writes itself, ranked High and Medium.</p></div></div></li>
-        <li><button type="button" aria-expanded="false" aria-controls="ac3" id="ab3">Spintax<span class="pm" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></button><div class="body" id="ac3" role="region" aria-labelledby="ab3"><div><p>Write one template, and every email goes out as a different message. Varied wording keeps a campaign out of spam filters.</p></div></div></li>
+        <li class="open"><button type="button" aria-expanded="true" aria-controls="ac1" id="ab1">Sender tracker<span class="pm" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></button><div class="body" id="ac1" role="region" aria-labelledby="ab1"><div><p>What you send outside Warmy, from any tool: opens, clicks, bounces, spam and unsubscribes in one chart, a warning when campaign mail falls under the at-risk line, and the biggest risk named by provider.</p><span class="accm"><img src="assets/work/warmy/tracker-desktop.webp" alt="Sender tracker: filters, five cards for opened, clicked, bounced, spam and unsubscribed, and an overview." width="1440" height="1024" loading="lazy"></span></div></div></li>
+        <li><button type="button" aria-expanded="false" aria-controls="ac4" id="ab4">Adeline AI<span class="pm" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></button><div class="body" id="ac4" role="region" aria-labelledby="ab4"><div><p>The first AI agent in email deliverability: it helps improve domain reputation and get emails into the inbox. It answers in plain words, with three starting questions, and a call with an advisor or a human chat is one tap away.</p><span class="accm"><img src="assets/work/warmy/adeline-desktop.webp" alt="The Adeline AI panel: three starting questions, Meet an Advisor, Chat with a Human and a message field." width="1440" height="1024" loading="lazy"></span></div></div></li>
+        <li><button type="button" aria-expanded="false" aria-controls="ac2" id="ab2">Template checker<span class="pm" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></button><div class="body" id="ac2" role="region" aria-labelledby="ab2"><div><p>AI reads the email before a real inbox does: a score out of 100, failed, warning and passed checks by section, and fixes it writes itself, ranked High and Medium.</p><span class="accm"><img src="assets/work/warmy/template-desktop.webp" alt="The template editor with the Template score panel: 100 out of 100, Excellent." width="1440" height="1024" loading="lazy"></span></div></div></li>
+        <li><button type="button" aria-expanded="false" aria-controls="ac3" id="ab3">Spintax<span class="pm" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></button><div class="body" id="ac3" role="region" aria-labelledby="ab3"><div><p>Write one template, and every email goes out as a different message. Varied wording keeps a campaign out of spam filters.</p><span class="accm"><img src="assets/work/warmy/spintax-desktop.webp" alt="A template written in spintax, with a score of 79, Good, and a note that spintax was detected." width="1440" height="1024" loading="lazy"></span></div></div></li>
       </ul>
       <figure class="c6-12 rv stagefig" style="--d:.1s"><div class="stage">
         <div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>app.warmy.io</span></div><div class="vp" id="lap">
