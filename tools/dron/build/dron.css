@@ -1190,3 +1190,5 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @keyframes mf-bob{50%{transform:translateY(-3px)}}
 @media (max-width:900px),(hover:none),(pointer:coarse),(prefers-reduced-motion:reduce){.mfly{display:none}}
 @media print{.mfly{display:none}}
+/* over a picture, a live frame or a dark ground the mouse drone fades out, and comes back over the white page (her note) */
+.mfly.on.lt{opacity:0}

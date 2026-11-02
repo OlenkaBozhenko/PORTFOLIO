@@ -339,11 +339,19 @@
 })();
 </script>
 <script>
-// desktop: the DRON drone flies after the mouse, a little behind it, leaning into the move; propellers spin; it lands out of sight when the mouse leaves the page; not on touch screens or with reduced motion (her call)
+// desktop: the DRON drone flies after the mouse (gone over pictures and dark grounds), a little behind it, leaning into the move; propellers spin; it lands out of sight when the mouse leaves the page; not on touch screens or with reduced motion (her call)
 (function(){
   var d=document.querySelector('.mfly');if(!d)return;
   var mq=matchMedia('(hover:hover) and (pointer:fine) and (min-width:901px)'),rm=matchMedia('(prefers-reduced-motion: reduce)');
-  var x=-200,y=-200,tx=-200,ty=-200,a=0,run=false,last=0;
+  var x=-200,y=-200,tx=-200,ty=-200,a=0,run=false,last=0,chk=0;
+  // what is under the drone: over a picture, a video, a live frame or a dark ground it fades out; over the white page it shows
+  function lum(c){var v=c.match(/[\d.]+/g);if(!v||(v.length>3&&+v[3]<.5))return -1;return (.2126*v[0]+.7152*v[1]+.0722*v[2])/255}
+  function dark(px,py){var el=document.elementFromPoint(px,py);
+    for(;el&&el!==document.documentElement;el=el.parentElement){
+      if(/^(IMG|VIDEO|IFRAME|CANVAS|PICTURE)$/.test(el.tagName))return true;
+      var cs=getComputedStyle(el);if(cs.backgroundImage!=='none'&&/url\(/.test(cs.backgroundImage))return true;
+      var l=lum(cs.backgroundColor);if(l>=0)return l<.45}
+    return false}
   addEventListener('pointermove',function(e){if(e.pointerType!=='mouse')return;tx=e.clientX+26;ty=e.clientY+30;
     if(!run&&mq.matches&&!rm.matches){if(x<-100){x=tx;y=ty}run=true;d.classList.add('on');requestAnimationFrame(tick)}},{passive:true});
   document.documentElement.addEventListener('pointerleave',function(){d.classList.remove('on')});
@@ -352,6 +360,7 @@
     var k=1-Math.pow(1-.12,dt),vx=(tx-x)*k;x+=vx;y+=(ty-y)*k;
     a+=(Math.max(-18,Math.min(18,vx*1.2))-a)*k;
     d.style.transform='translate('+x.toFixed(1)+'px,'+y.toFixed(1)+'px) rotate('+a.toFixed(1)+'deg)';
+    if(t-chk>120){chk=t;d.classList.toggle('lt',dark(x,y))}
     if(!mq.matches||rm.matches){d.classList.remove('on');run=false;last=0;return}
     requestAnimationFrame(tick)}
 })();
