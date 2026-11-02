@@ -466,13 +466,13 @@ html.menu-open{overflow:hidden}
   .tsl{display:block;overflow:hidden;aspect-ratio:375/var(--h);background:#fff}
   .tsl img{display:block;width:100%;height:auto;margin-top:calc(var(--y) / 375 * -100%)}
   .thd{position:relative;z-index:2;box-shadow:0 1px 0 #E2E8F0}
-  .tvp{display:block;height:min(520px,calc(100svh - 250px));overflow-y:auto;scrollbar-width:none;overscroll-behavior:contain}
+  .tvp{display:block;height:calc(100svh - 200px);overflow-y:auto;scrollbar-width:none;overscroll-behavior:contain}
   .tvp::-webkit-scrollbar{display:none}
   .tst{position:sticky;top:0;z-index:1;box-shadow:0 6px 12px -10px rgba(15,23,42,.25)}
   /* a clearer frame edge (her note) */
   .accm{border-color:#D6D6D6 !important}
   /* every frame fits on one screen (her note): the phone screens shrink with the screen height, the tracker window is shorter */
-  #ac2 .accm,#ac4 .accm{width:min(100%,calc((100svh - 170px) * 375 / 862))}
+  #ac2 .accm,#ac4 .accm{width:min(100%,calc((100svh - 110px) * 375 / 862));max-height:none}
   /* each screen sits in a small browser frame in the Warmy colours: a warm bar, coral dots, the app address (her note: the big radius was cutting the screen corners) */
   .abar{position:relative;z-index:1;display:flex;align-items:center;gap:6px;height:30px;padding:0 12px;background:#FFF4EF;border-bottom:1px solid #FBE3D9}
   .abar i{width:8px;height:8px;border-radius:50%;background:#FF7658}
