@@ -453,25 +453,30 @@ html.menu-open{overflow:hidden}
   .accm{display:block;margin:0 auto 24px;width:min(100%,375px);border-radius:12px;overflow:hidden;border:1px solid #EDEDED;max-height:680px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 12px 28px -18px rgba(0,0,0,.25)}
   .accm img{display:block;width:100%;height:auto}
   #ac3 .accm{max-height:none}
-  /* Spintax: the template itself, set as live text so it reads, with every spintax brace in the Warmy coral (her note: show the template with spintax) */
+  /* Spintax: the template itself, set as live text so it reads, with every spintax brace in the colours of the Spintax detected note: dark text on a lavender-to-mint ground (her notes) */
   .sped{display:block;background:#fff;color:#334155;font-size:13px;line-height:1.5}
   .sptb{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center;padding:10px 14px;border-bottom:1px solid #E2E8F0;color:#475569;font-size:12px}
-  .sptb b{font-weight:500}.sptb .spx{margin-left:auto;color:#FF7658}
+  .sptb b{font-weight:500}.sptb .spx{margin-left:auto;font-weight:600;background:linear-gradient(90deg,#38BDF8,#8B5CF6);-webkit-background-clip:text;background-clip:text;color:transparent}
   .spbd{display:flex;flex-direction:column;gap:8px;padding:14px}
-  .spbd em{font-style:normal;color:#C2410C;background:#FFF1EB;border-radius:4px;padding:0 2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-  /* Sender tracker: the tall screen scrolls slowly inside its frame, top to bottom and back (her note: show the scroll) */
-  #ac1 .accm{height:600px;max-height:none}
-  #ac1 .accm img{animation:accscroll 22s ease-in-out infinite alternate}
-  @keyframes accscroll{0%,8%{transform:translateY(0)}92%,100%{transform:translateY(calc(-100% + 570px))}}
+  .spbd em{font-style:normal;color:#1E293B;background:linear-gradient(90deg,#F3F0FF,#ECFBF8);border-radius:4px;padding:0 2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+  /* Sender tracker: the screen scrolls slowly inside its frame, top to bottom and back, as in the app: the header stays fixed and the filters stick under it once they reach the top (her notes); the screen is cut into slices of the one image */
+  #ac1 .accm{max-height:none}
+  .tsl{display:block;overflow:hidden;aspect-ratio:375/var(--h);background:#fff}
+  .tsl img{display:block;width:100%;height:auto;margin-top:calc(var(--y) / 375 * -100%)}
+  .thd{position:relative;z-index:2;box-shadow:0 1px 0 #E2E8F0}
+  .tvp{display:block;height:min(520px,calc(100svh - 250px));overflow-y:auto;scrollbar-width:none;overscroll-behavior:contain}
+  .tvp::-webkit-scrollbar{display:none}
+  .tst{position:sticky;top:0;z-index:1;box-shadow:0 6px 12px -10px rgba(15,23,42,.25)}
   /* a clearer frame edge (her note) */
   .accm{border-color:#D6D6D6 !important}
+  /* every frame fits on one screen (her note): the phone screens shrink with the screen height, the tracker window is shorter */
+  #ac2 .accm,#ac4 .accm{width:min(100%,calc((100svh - 170px) * 375 / 862))}
   /* each screen sits in a small browser frame in the Warmy colours: a warm bar, coral dots, the app address (her note: the big radius was cutting the screen corners) */
   .abar{position:relative;z-index:1;display:flex;align-items:center;gap:6px;height:30px;padding:0 12px;background:#FFF4EF;border-bottom:1px solid #FBE3D9}
   .abar i{width:8px;height:8px;border-radius:50%;background:#FF7658}
   .abar i:nth-child(2){background:#FFAA8F}.abar i:nth-child(3){background:#FFD2C2}
   .abar span{margin-left:8px;font-size:11px;color:#8A6A5E;background:#fff;border-radius:6px;padding:2px 10px}
 }
-@media (max-width:720px) and (prefers-reduced-motion:reduce){#ac1 .accm img{animation:none}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -587,7 +592,7 @@ html.menu-open{overflow:hidden}
     <div class="g">
       <h3 class="big c1-12" id="pr-big">Turning signals <span class="s">into</span> next steps</h3>
       <ul class="acc c1-5 start rv" id="acc">
-        <li class="open"><button type="button" aria-expanded="true" aria-controls="ac1" id="ab1">Sender tracker<span class="pm" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></button><div class="body" id="ac1" role="region" aria-labelledby="ab1"><div><p>What you send outside Warmy, from any tool: opens, clicks, bounces, spam and unsubscribes in one chart, a warning when campaign mail falls under the at-risk line, and the biggest risk named by provider.</p><span class="accm"><span class="abar" aria-hidden="true"><i></i><i></i><i></i><span>app.warmy.io</span></span><img src="assets/work/warmy/tracker-mobile.webp" alt="Sender tracker on a phone: Connect source, filters stacked, and the cards one under another." width="375" height="3759" loading="lazy"></span></div></div></li>
+        <li class="open"><button type="button" aria-expanded="true" aria-controls="ac1" id="ab1">Sender tracker<span class="pm" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></button><div class="body" id="ac1" role="region" aria-labelledby="ab1"><div><p>What you send outside Warmy, from any tool: opens, clicks, bounces, spam and unsubscribes in one chart, a warning when campaign mail falls under the at-risk line, and the biggest risk named by provider.</p><span class="accm"><span class="abar" aria-hidden="true"><i></i><i></i><i></i><span>app.warmy.io</span></span><span class="tsl thd" style="--y:0;--h:64"><img src="assets/work/warmy/tracker-mobile.webp" alt="Sender tracker on a phone: the header and the filters stay in place while the cards scroll under them." width="375" height="3759" loading="lazy"></span><span class="tvp" aria-hidden="true"><span class="tsl" style="--y:64;--h:215"><img src="assets/work/warmy/tracker-mobile.webp" alt="" width="375" height="3759" loading="lazy"></span><span class="tsl tst" style="--y:279;--h:125"><img src="assets/work/warmy/tracker-mobile.webp" alt="" width="375" height="3759" loading="lazy"></span><span class="tsl" style="--y:404;--h:3355"><img src="assets/work/warmy/tracker-mobile.webp" alt="" width="375" height="3759" loading="lazy"></span></span></span></div></div></li>
         <li><button type="button" aria-expanded="false" aria-controls="ac4" id="ab4">Adeline AI<span class="pm" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></button><div class="body" id="ac4" role="region" aria-labelledby="ab4"><div><p>The first AI agent in email deliverability: it helps improve domain reputation and get emails into the inbox. It answers in plain words, with three starting questions, and a call with an advisor or a human chat is one tap away.</p><span class="accm"><span class="abar" aria-hidden="true"><i></i><i></i><i></i><span>app.warmy.io</span></span><img src="assets/work/warmy/adeline-mobile.webp" alt="Adeline AI on a phone, with three starting questions and a message field." width="375" height="832" loading="lazy"></span></div></div></li>
         <li><button type="button" aria-expanded="false" aria-controls="ac2" id="ab2">Template checker<span class="pm" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></button><div class="body" id="ac2" role="region" aria-labelledby="ab2"><div><p>AI reads the email before a real inbox does: a score out of 100, failed, warning and passed checks by section, and fixes it writes itself, ranked High and Medium.</p><span class="accm"><span class="abar" aria-hidden="true"><i></i><i></i><i></i><span>app.warmy.io</span></span><img src="assets/work/warmy/template-mobile.webp" alt="Template score on a phone: 100 out of 100, Excellent, other improvements and suggestions ranked High and Medium." width="375" height="832" loading="lazy"></span></div></div></li>
         <li><button type="button" aria-expanded="false" aria-controls="ac3" id="ab3">Spintax<span class="pm" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></button><div class="body" id="ac3" role="region" aria-labelledby="ab3"><div><p>Write one template, and every email goes out as a different message. Varied wording keeps a campaign out of spam filters.</p><span class="accm"><span class="abar" aria-hidden="true"><i></i><i></i><i></i><span>app.warmy.io</span></span><span class="sped" role="img" aria-label="The template editor with a message written in spintax: every brace holds alternatives, such as Hi {there | hello | hi | hey}, so each email goes out worded differently."><span class="sptb" aria-hidden="true"><b>Sans Serif</b><b>14</b><b>B</b><b><i>I</i></b><b><u>U</u></b><b class="spx">{ } Spintax</b></span><span class="spbd" aria-hidden="true"><span>Hi <em>{there | hello | hi | hey}</em>,</span><span><em>{I hope this message finds you well | Hope you’re doing great | Trust you’re having a wonderful day | Wishing you a productive week}</em>!</span><span>My name is <em>{Alex | Jordan | Taylor | Morgan}</em>, and I <em>{came across | noticed | found | was reviewing}</em> your <em>{company | business | profile | website}</em> recently.</span><span>I wanted to <em>{reach out | connect | introduce myself | get in touch}</em> because we <em>{help businesses like yours | specialize in supporting companies | work with organizations | partner with teams}</em> to <em>{increase {sales | revenue | conversion rates} | boost {growth | engagement | brand visibility} | optimize operations | streamline your marketing efforts}</em>.</span><span>Would you be open to a <em>{quick chat | short call | brief conversation | 15-minute call}</em> this week?</span><span><em>{Looking forward to your thoughts | Hope to hear from you soon | Excited to connect | Appreciate your time}</em>!</span><span>Best,<br><em>{Alex | Jordan | Taylor | Morgan}</em></span></span></span></span></div></div></li>
@@ -911,6 +916,26 @@ document.querySelectorAll('.big').forEach(function(h){
   var links=[].slice.call(dock.querySelectorAll('a')),tg=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
   function upd(){var y=innerHeight*.5,cur=null;tg.forEach(function(t){if(t&&t.getBoundingClientRect().top<=y)cur=t.id});dock.classList.toggle('show',!!tg[0]&&tg[0].getBoundingClientRect().top<innerHeight*.95);links.forEach(function(a){var on=a.getAttribute('href')==='#'+cur;a.classList.toggle('on',on);if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})}
   addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+})();
+</script>
+<script>
+// phone: the Sender tracker screen scrolls by itself, down and back up, while its card is open and on screen; a touch or the wheel hands it to the reader for a few seconds; reduced motion keeps it still
+(function(){
+  var vp=document.querySelector('#ac1 .tvp');if(!vp||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var dir=1,pause=1000,seen=false,pos=0,last=0,SPEED=36;
+  new IntersectionObserver(function(e){seen=e[0].isIntersecting}).observe(vp);
+  ['touchstart','wheel','pointerdown'].forEach(function(t){vp.addEventListener(t,function(){pause=4000},{passive:true})});
+  (function tick(now){
+    var dt=last?Math.min(now-last,100):0;last=now;
+    if(seen&&vp.offsetParent&&vp.clientHeight){
+      if(pause>0){pause-=dt;pos=vp.scrollTop}else{
+        var max=vp.scrollHeight-vp.clientHeight;
+        pos=Math.max(0,Math.min(max,pos+dir*SPEED*dt/1000));vp.scrollTop=pos;
+        if(dir>0&&pos>=max){dir=-1;pause=1500}else if(dir<0&&pos<=0){dir=1;pause=1500}
+      }
+    }
+    requestAnimationFrame(tick);
+  })(0);
 })();
 </script>
 </body>
