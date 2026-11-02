@@ -316,13 +316,14 @@ html.menu-open{overflow:hidden}
   .hero .hero-meta,.hero .h1box,.hero .hero-sub{position:absolute !important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0}
   /* a poster with the monogram (her calls 2026-11-02): PRODUCT DESIGNER in big capitals at the left with the sub, small, under it; the OB monogram large at the right; the headline runs in the tape at the bottom */
   .hero .wrap{align-items:stretch}
-  .hero-big{display:block;position:relative;flex:1;width:100%;min-height:0;color:var(--ink);user-select:none}
+  .hero-big{display:flex;align-items:center;justify-content:space-between;gap:clamp(32px,4vw,72px);align-self:center;flex:1;width:min(100vw - 2 * var(--gutter) - 16px,1560px);min-height:0;color:var(--ink);user-select:none}
   /* her note: the monogram moves to the right; the sub, small, goes under the title */
-  .hero-big{--fs:min(calc((min(100vw,1320px) - 2 * var(--gutter)) * .108),calc((100vh - 200px) / 3.9))}
+  /* the letters as big as the row allows: the title (about 4.5 letter heights wide) and the monogram (as tall as the two lines, about 2.5 letter heights wide) fill the width side by side (her note: bigger letters, the logo not smaller) */
+  .hero-big{--fs:min(calc((min(100vw - 2 * var(--gutter) - 16px,1560px) - clamp(32px,4vw,72px)) / 7.05),calc((100vh - 260px) / 1.7))}
   /* the monogram is exactly as tall as the two lines of capitals, top of PRODUCT to the foot of DESIGNER (her note) */
-  .hero-big .hb-logo{position:absolute;right:0;top:50%;transform:translateY(calc(-50% + var(--fs) * var(--dy,0)));height:calc(var(--fs) * var(--k,1.665));display:block}
+  .hero-big .hb-logo{flex:none;order:2;height:calc(var(--fs) * 1.665);display:block}
   .hero-big .hb-logo svg{height:100%;width:auto;display:block}
-  .hero-big .hb-t{position:absolute;left:0;top:50%;transform:translateY(-50%);z-index:1;text-align:left}
+  .hero-big .hb-t{flex:none;text-align:left}
   .hero-big .hb-w{display:block;font-weight:800;text-transform:uppercase;letter-spacing:-.045em;line-height:.84;font-size:var(--fs)}
   .hero-big .hb-sub{display:block;margin-top:clamp(20px,2vw,32px);max-width:30ch;font-size:clamp(18px,1.6vw,22px);line-height:1.4;letter-spacing:-.01em;color:var(--muted)}
   .hero-tape{display:block;margin:0 calc(var(--gutter) * -1) 0;margin-inline:calc(50% - 50vw);background:var(--ink);color:#fff;overflow:hidden;white-space:nowrap;font-size:clamp(18px,1.6vw,22px);letter-spacing:-.01em;padding:16px 0}
