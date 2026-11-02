@@ -1217,6 +1217,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (max-width:720px){.wrow .vfp{width:min(100%,calc((100svh - 150px) * 375 / 872 + 14px));margin-inline:auto}.wrow .wfm{padding-inline:14px}}
 /* phone: the phone frame is solid, so the viewfinder crosshair stops at its edge and never runs over the mockup (her note) */
 @media (max-width:720px){.wrow .vfp>.pframe{background:#111}}
+/* phone: "designed with AI." stays on one line in the title, so AI never sits alone (her note) */
+@media (max-width:720px){.nw-m{white-space:nowrap}}
 
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
 .menu-btn{display:none}
@@ -1285,7 +1287,7 @@ html.menu-open{overflow:hidden}
   <div class="wrap head">
     <a class="back" href="Olena%20Bozhenko.html#work">← All work</a>
     <p class="eyebrow">B2C, built with AI tools</p>
-    <h1>Drone services, from research<br class="br2"> to handoff, designed with AI.</h1>
+    <h1>Drone services, from research<br class="br2"> to handoff, <span class="nw-m">designed with AI.</span></h1>
     <dl class="meta">
       <div><dt>Role</dt><dd>Research, UX, UI, design system</dd></div>
       <div><dt>Year</dt><dd>2026</dd></div>
