@@ -213,3 +213,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Phone: the flow phones are bigger (240 px, up to 66% of the screen width) and the rows swipe sideways with a gentle snap to each phone (her note).
 - Phone: the live phone demo is bigger, filling its card inside the viewfinder (30 px side padding).
 - Phone: the "Live prototype" label is centred on the top edge of the phone demo viewfinder (her note).
+- Phone: the persona photos (Kateryna, Andrii) run the full width (her note).

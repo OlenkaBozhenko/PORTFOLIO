@@ -1140,3 +1140,5 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (max-width:720px){.wrow .wfm{padding:44px 30px}.wrow .vfp{width:100%}}
 /* phone: the Live prototype label sits in the middle of the viewfinder's top edge, over the crosshair (her note) */
 @media (max-width:720px){.wrow .vfp>.vf .l1{left:50%;transform:translateX(-50%);white-space:nowrap}.wrow .vfp>.vf .vy{top:28px}}
+/* phone: the persona photos run the full width of the column (her note) */
+@media (max-width:720px){.who2b img{width:100%}}
