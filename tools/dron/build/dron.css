@@ -1158,3 +1158,5 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 }
 /* phone: the Live prototype label sits higher, on the line of the viewfinder's top brackets (her note) */
 @media (max-width:720px){.wrow .vfp>.vf .l1{top:-5px}.wrow .vfp>.vf .vy{top:16px}}
+/* phone: the first screen's crosshair runs only a little past the viewfinder, top and bottom (her note) */
+@media (max-width:720px){.hero1 .vf .vy{top:-12px;bottom:-12px}}
