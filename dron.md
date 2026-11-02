@@ -207,3 +207,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Dock labels: "Tone of Voice" and "Design System" in full (her call).
 - Phone (up to 720 px): no CJM chapter and no desktop live demo (her call); the desktop demo frame is not loaded there. Desktop unchanged.
 - Phone (up to 720 px): the first screen is only the live desktop flow inside its viewfinder, on the white page: no drone photo, no dark backdrop, no caption (her call). Desktop unchanged.
+- Phone first screen: the demo window has the same soft shadow as the cards on the other case pages (0 1px 2px at 6%, 0 24px 48px -24px slate at 28%).
