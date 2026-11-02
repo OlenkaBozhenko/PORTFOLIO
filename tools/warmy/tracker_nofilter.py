@@ -12,3 +12,7 @@ H = im.height; side = im.crop((0, 0, 241, 1024)); bg = side.getpixel((120, 800))
 foot = side.crop((0, 905, 241, 1024))
 ImageDraw.Draw(im).rectangle((0, 905, 239, H), fill=bg); ImageDraw.Draw(im).line((240, 905, 240, H), fill=line)
 im.paste(foot, (0, H-119)); save(im, 'tracker-nofilter')
+
+# the sidebar as its own fixed strip for the phone frame's first view (1440 x 1024): the page scrolls, the sidebar stays (her note)
+side = Image.new('RGB', (241, 1024)); side.paste(im.crop((0, 0, 241, 905)), (0, 0)); side.paste(im.crop((0, H-119, 241, H)), (0, 905))
+save(side, 'tracker-nofilter-side')
