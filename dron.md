@@ -224,3 +224,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Phone: Handoff shows only the release card beside the list (tokens, components, commits, run it and what ships are hidden); the list has no dark backdrop and each file is its own dark card (her call).
 - Phone: in the user flow strip, each screen's caption (1 · Find, Service, where, when…) is centred under its phone (her note).
 - Phone: the step numbers in the flow captions (1 · , 2 · …) are left out; only the step name shows (her note).
+- Phone: the pager under each flow has one bar per screen in the flow (7 and 7), whatever the screen width (her note).

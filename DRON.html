@@ -1576,7 +1576,8 @@ html.menu-open{overflow:hidden}
     var pg=s.nextElementSibling,scr=s.querySelectorAll('.scr'),bs=[],stops=[],sig='';
     function max(){return s.scrollWidth-s.clientWidth}
     function build(){var x0=s.firstElementChild.offsetLeft,mx=max(),st=[0];
-      scr.forEach(function(f){var x=f.offsetLeft-x0;if(x>4&&x<mx-4)st.push(x)});if(mx>4)st.push(mx);
+      if(matchMedia('(max-width:720px)').matches){st=[];scr.forEach(function(f){st.push(Math.min(f.offsetLeft-x0,mx))})} // on a phone, one bar per screen in the flow (her note)
+      else{scr.forEach(function(f){var x=f.offsetLeft-x0;if(x>4&&x<mx-4)st.push(x)});if(mx>4)st.push(mx)}
       var g=st.join(',');if(g===sig)return;sig=g;stops=st;pg.innerHTML='';bs=[];pg.hidden=st.length<2;
       st.forEach(function(x,k){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Step '+(k+1)+' of '+st.length);
         b.addEventListener('click',function(){s.scrollTo({left:stops[k],behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})});pg.appendChild(b);bs.push(b)})}
