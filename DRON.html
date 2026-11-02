@@ -1202,6 +1202,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .mkt .mgrid{gap:12px}
   .mkt .mt{background:#1F1F1F;border-radius:22px;padding:22px}
 }
+/* phone: bigger titles above the market tiles, no Client / Operator badge, and the JTBD chips small like the Warmy chips (her notes; desktop unchanged) */
+@media (max-width:720px){
+  .mcard.mkt .dh{font-size:24px;letter-spacing:-.02em}
+  .mcard.mkt .dh .chip{display:none}
+  .chips2{gap:8px}
+  .chips2 li{font-size:13px;padding:6px 12px}
+}
 
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
 .menu-btn{display:none}
