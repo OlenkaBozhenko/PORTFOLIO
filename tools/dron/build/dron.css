@@ -1113,3 +1113,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .hero1::before,.hero1 .hdrone,.hero1 .tag{display:none}
   .hero1 .hwrap{margin:0}
 }
+/* phone first screen: a bigger demo (the viewfinder sits tight around it), and the window and the viewfinder corners share one radius (her note) */
+@media (max-width:720px){
+  .hero1{padding:14px 8px}
+  .hero1 .hwrap>.vf{inset:-8px}
+  .hero1 .hwin{border-radius:14px}
+  .hero1 .vf i{width:30px;height:30px}
+  .hero1 .vf .c1{border-top-left-radius:14px}.hero1 .vf .c2{border-top-right-radius:14px}.hero1 .vf .c3{border-bottom-left-radius:14px}.hero1 .vf .c4{border-bottom-right-radius:14px}
+}
