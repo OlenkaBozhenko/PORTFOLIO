@@ -219,3 +219,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Phone: the "Live prototype" label sits higher, on the line of the top brackets (her note).
 - Phone: the first-screen crosshair line runs only 12 px past the viewfinder, top and bottom (her note).
 - Phone: the live phone prototype is sized to the screen height, so the whole phone fits on one screen with room around it; then made a little wider (her notes).
+- Phone: the viewfinder crosshair no longer runs over the phone mockup; the phone frame is solid (her note).

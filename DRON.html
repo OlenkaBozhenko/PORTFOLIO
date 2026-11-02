@@ -1215,6 +1215,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (max-width:720px){.hero1 .vf .vy{top:-12px;bottom:-12px}}
 /* phone: the live phone prototype is sized to the screen height, so the whole phone fits on one screen with room around it (her note) */
 @media (max-width:720px){.wrow .vfp{width:min(100%,calc((100svh - 150px) * 375 / 872 + 14px));margin-inline:auto}.wrow .wfm{padding-inline:14px}}
+/* phone: the phone frame is solid, so the viewfinder crosshair stops at its edge and never runs over the mockup (her note) */
+@media (max-width:720px){.wrow .vfp>.pframe{background:#111}}
 
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
 .menu-btn{display:none}
