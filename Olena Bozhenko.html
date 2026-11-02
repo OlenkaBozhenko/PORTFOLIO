@@ -303,8 +303,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 }
 html.menu-open{overflow:hidden}
 .menu-contact{display:none}
-/* first screen, desktop (her calls 2026-11-02): a poster: PRODUCT and DESIGNER in big capitals across the page, the OB monogram of the favicon between them, and the headline with the sub running as a black tape along the bottom; the floating blocks and phrases are gone; the headline and the sub stay in the page for screen readers */
-.hero-logo,.hero-big,.hero-tape{display:none}
+/* first screen, desktop (her calls 2026-11-02): a poster of big capitals, the OB monogram and her photo; no running tape (removed on her note); the floating blocks and phrases are gone; the headline and the sub stay in the page for screen readers */
+.hero-logo,.hero-big{display:none}
 /* the end of the headline in the headline's own type, desktop and phone; grey: products, and people open every day; no full stop after the headline (her calls 2026-11-02; restored after it was lost in the poster rework) */
 .slot-text.serif{font-family:inherit;font-style:normal;letter-spacing:inherit}
 .hero .hg{color:#8F8F8F}
@@ -314,24 +314,16 @@ html.menu-open{overflow:hidden}
   .hero{padding-block:20px 0}
   .hero .wrap{min-height:calc(100vh - 84px);justify-content:flex-start}
   .hero .hero-meta,.hero .h1box,.hero .hero-sub{position:absolute !important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0}
-  /* a poster with the monogram (her calls 2026-11-02): PRODUCT DESIGNER in big capitals at the left with the sub, small, under it; the OB monogram large at the right; the headline runs in the tape at the bottom */
   .hero .wrap{align-items:stretch}
-  /* her mock-up (2026-11-02): her photo fills the right half of the first screen, top to tape; PRODUCT DESIGNER in big capitals on two lines at the left runs onto the photo; the OB monogram, as tall as the two lines, sits on the photo at the right, in black with a true hole in the bowl (her notes); the sub, small and grey, under the title */
-  .hero-big{--W:calc(min(100vw - 16px,1320px) - 2 * var(--gutter));--fs:min(calc((var(--W) - clamp(32px,4vw,72px)) / 7.05),calc((100vh - 300px) / 2.6));--top:calc((100vh - 64px - 66px - 32px - var(--fs) * 1.68) * .36);position:relative;display:flex;align-items:flex-start;justify-content:space-between;gap:clamp(32px,4vw,72px);align-self:center;flex:1;width:var(--W);margin-bottom:clamp(20px,2vw,32px);color:var(--ink);user-select:none}
+  /* her mock-up (2026-11-02): her photo fills the right half of the first screen, top to bottom; PRODUCT DESIGNER in big capitals on two lines at the left runs onto the photo; the OB monogram, as tall as the two lines, sits on the photo at the right, in black with a true hole in the bowl (her notes); the sub, small and grey, under the title */
+  .hero-big{--W:calc(min(100vw - 16px,1320px) - 2 * var(--gutter));--fs:min(calc((var(--W) - clamp(32px,4vw,72px)) / 7.05),calc((100vh - 300px) / 2.6));--top:calc((100vh - 64px - 32px - var(--fs) * 1.68) * .36);position:relative;display:flex;align-items:flex-start;justify-content:space-between;gap:clamp(32px,4vw,72px);align-self:center;flex:1;width:var(--W);margin-bottom:clamp(20px,2vw,32px);color:var(--ink);user-select:none}
   .hero-big .hb-photo{position:absolute;right:0;top:0;bottom:0;width:58%;height:100%;max-width:none;object-fit:cover;object-position:50% 18%;display:block;border-radius:4px;z-index:0}
   .hero-big .hb-t{position:relative;z-index:1;flex:none;text-align:left;margin-top:var(--top)}
   .hero-big .hb-w{display:block;white-space:nowrap;font-weight:800;text-transform:uppercase;letter-spacing:-.045em;line-height:.84;font-size:var(--fs)}
   .hero-big .hb-sub{display:block;margin-top:clamp(24px,2.4vw,40px);max-width:30ch;font-size:clamp(18px,1.5vw,22px);line-height:1.45;color:var(--muted);font-weight:400;letter-spacing:-.005em}
   .hero-big .hb-logo{position:relative;z-index:1;flex:none;margin-top:var(--top);height:calc(var(--fs) * 1.665);display:block;margin-right:calc(var(--fs) * .25)}
   .hero-big .hb-logo svg{height:100%;width:auto;display:block}
-  .hero-tape{display:block;margin:0 calc(var(--gutter) * -1) 0;margin-inline:calc(50% - 50vw);background:var(--ink);color:#fff;overflow:hidden;white-space:nowrap;font-size:clamp(18px,1.6vw,22px);letter-spacing:-.01em;padding:16px 0}
-  .hero-tape .tt{display:inline-flex;gap:0;animation:tape 40s linear infinite}
-  .hero-tape .tt span{padding-right:48px}
-  .hero-tape .tt b{font-weight:400;color:#9A9A9A}
-  .hero-tape .tt em{font-style:normal;color:#A6D157}
-  @keyframes tape{to{transform:translateX(-50%)}}
-}
-@media (min-width:901px) and (prefers-reduced-motion:reduce){.hero-tape .tt{animation:none}}
+  }
 </style>
 </head>
 <body>
@@ -381,7 +373,6 @@ html.menu-open{overflow:hidden}
     </div>
     <p class="hero-sub">Working with research, design, user interviews, prototypes and design systems.</p>
     <div class="hero-big" aria-hidden="true"><img class="hb-photo" src="assets/about/olena-night.webp" alt="" width="584" height="1280"><span class="hb-t"><span class="hb-w">Product<br>designer</span><span class="hb-sub">Working with research, design, user interviews, prototypes and design systems.</span></span><span class="hb-logo"><svg viewBox="2 18 97 64"><mask id="ob-hole"><rect x="0" y="0" width="110" height="100" fill="#fff"/><circle cx="34" cy="50" r="10.4" fill="#000"/></mask><g fill="var(--ink)" stroke="var(--ink)" stroke-width=".8" stroke-linejoin="round" mask="url(#ob-hole)"><path d="M34 50V20a30 30 0 0 0-30 30Z"/><path d="M34 50h30a30 30 0 0 0-30-30Z"/><path d="M34 50H4a30 30 0 0 0 30 30Z"/><rect x="34" y="50" width="30" height="30"/><rect x="72" y="20" width="10" height="60"/><path d="M82 20h0a15 15 0 0 1 15 15H82Z"/><path d="M82 35h15a15 15 0 0 1-15 15Z"/><path d="M82 50a15 15 0 0 1 15 15H82Z"/><path d="M82 65h15a15 15 0 0 1-15 15Z"/></g></svg></span></div>
-    <div class="hero-tape" aria-hidden="true"><div class="tt"><span>I design B2B and B2C <b>products</b> from the idea to a product <b>people open every day</b></span><span>I design B2B and B2C <b>products</b> from the idea to a product <b>people open every day</b></span><span>I design B2B and B2C <b>products</b> from the idea to a product <b>people open every day</b></span><span>I design B2B and B2C <b>products</b> from the idea to a product <b>people open every day</b></span><span>I design B2B and B2C <b>products</b> from the idea to a product <b>people open every day</b></span><span>I design B2B and B2C <b>products</b> from the idea to a product <b>people open every day</b></span></div></div>
 
     <div class="hero-blocks" aria-hidden="true">
       <div class="blk b-ds"><span class="label"><svg class="ico" width="11" height="11" viewBox="0 0 12 12"><path d="M6 .8 7.7 2.5 6 4.2 4.3 2.5zM2.5 4.3 4.2 6 2.5 7.7.8 6zM9.5 4.3 11.2 6 9.5 7.7 7.8 6zM6 7.8 7.7 9.5 6 11.2 4.3 9.5z"/></svg>Design system</span><div class="box">
