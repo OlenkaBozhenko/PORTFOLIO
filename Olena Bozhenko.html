@@ -305,8 +305,10 @@ html.menu-open{overflow:hidden}
 .menu-contact{display:none}
 /* first screen, desktop (her call 2026-11-02): the headline and the sub on the left, the OB monogram of the favicon large on the right; the floating blocks and phrases are gone; the end of the headline in grey in the headline's own type, as on the case pages */
 .hero-logo{display:none}
-/* the end of the headline in grey in the headline's own type, desktop and phone (her calls 2026-11-02) */
-.slot-text.serif{font-family:inherit;font-style:normal;letter-spacing:inherit;color:#8F8F8F}
+/* the end of the headline in the headline's own type, desktop and phone (her calls 2026-11-02) */
+.slot-text.serif{font-family:inherit;font-style:normal;letter-spacing:inherit}
+/* grey: products, and people open every day */
+.hero .hg{color:#8F8F8F}
 @media (min-width:901px){
   .hero-phrases,.hero-blocks,.blk,.pause{display:none !important}
   .hero .wrap{align-items:flex-start;text-align:left;padding-right:clamp(300px,36%,600px)}
@@ -360,7 +362,7 @@ html.menu-open{overflow:hidden}
   <div class="wrap">
     <p class="eyebrow hero-meta">Senior Product Designer</p>
     <div class="h1box">
-      <h1 id="hero-title">I design B2B and B2C products from the idea to <span class="slot" id="slot"><span class="slot-text serif"></span><span class="vh slot-sr">production</span><span class="slot-hint" aria-hidden="true">drop a phrase here</span></span><span class="h1-dot">.</span></h1>
+      <h1 id="hero-title">I design B2B and B2C <span class="hg">products</span> from the idea to <span class="slot" id="slot"><span class="slot-text serif"></span><span class="vh slot-sr">production</span><span class="slot-hint" aria-hidden="true">drop a phrase here</span></span><span class="h1-dot">.</span></h1>
     </div>
     <p class="hero-sub">Working with research, design, user interviews, prototypes and design systems.</p>
     <svg class="hero-logo" viewBox="2 18 97 64" aria-hidden="true"><g fill="var(--ink)" stroke="var(--ink)" stroke-width=".8" stroke-linejoin="round"><path d="M34 50V20a30 30 0 0 0-30 30Z"/><path d="M34 50h30a30 30 0 0 0-30-30Z"/><path d="M34 50H4a30 30 0 0 0 30 30Z"/><rect x="34" y="50" width="30" height="30"/><circle cx="34" cy="50" r="10" fill="var(--bg)" stroke="var(--bg)"/><rect x="72" y="20" width="10" height="60"/><path d="M82 20h0a15 15 0 0 1 15 15H82Z"/><path d="M82 35h15a15 15 0 0 1-15 15Z"/><path d="M82 50a15 15 0 0 1 15 15H82Z"/><path d="M82 65h15a15 15 0 0 1-15 15Z"/></g></svg>
@@ -641,6 +643,7 @@ html.menu-open{overflow:hidden}
     el.classList.add('used');current=el;
     slot.classList.add('filled');
     var txt=slot.querySelector('.slot-text');txt.textContent=t;
+    if(t==='a product people open every day')txt.innerHTML='a product <span class="hg">people open every day</span>'; // the grey words (her call 2026-11-02)
     txt.style.animation='none';txt.getBoundingClientRect();txt.style.animation='';
     slot.querySelector('.slot-sr').textContent='';
     said.textContent='Headline: I design B2B and B2C products from the idea to '+t+'.';
