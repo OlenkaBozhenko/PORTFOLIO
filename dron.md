@@ -206,3 +206,4 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Dock: desktop only, no dock on the phone (her call). Icons: Research is a bar chart (a magnifier read as search), Handoff a zipped file.
 - Dock labels: "Tone of Voice" and "Design System" in full (her call).
 - Phone (up to 720 px): no CJM chapter and no desktop live demo (her call); the desktop demo frame is not loaded there. Desktop unchanged.
+- Phone (up to 720 px): the first screen is only the live desktop flow inside its viewfinder, on the white page: no drone photo, no dark backdrop, no caption (her call). Desktop unchanged.
