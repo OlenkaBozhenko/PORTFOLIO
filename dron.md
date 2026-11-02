@@ -219,7 +219,7 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Phone: the "Live prototype" label sits higher, on the line of the top brackets (her note).
 - Phone: the first-screen crosshair line runs only 12 px past the viewfinder, top and bottom (her note).
 - Phone: the live phone prototype is sized to the screen height, so the whole phone fits on one screen with room around it; then made a little wider (her notes).
-- Phone: the viewfinder crosshair no longer runs over the phone mockup; the phone frame is solid (her note).
+- Phone and, since 2026-11-02, desktop: the viewfinder crosshair no longer runs over the phone mockup; the phone frame is solid (her notes).
 - Phone: the title sits on three lines, "Drone services," / "from research to handoff," / "designed with AI.", so AI never wraps alone; on the narrowest phones the title scales down a little to keep the three lines (her notes).
 - Phone: Handoff shows only the release card beside the list (tokens, components, commits, run it and what ships are hidden); the list has no dark backdrop and each file is its own dark card (her call).
 - Phone: in the user flow strip, each screen's caption (1 · Find, Service, where, when…) is centred under its phone (her note).
