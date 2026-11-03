@@ -40,6 +40,10 @@ Built from [`inspiration.md`](inspiration.md) (decisions D1–D9) and [`cv.md`](
    - `prefers-reduced-motion`: the circle follows the pointer exactly, with no lag and no size transition.
    - *Standards:* no WCAG 2.2 criterion covers the pointer's appearance, so this conforms. The only risk is legibility for low-vision users who enlarge the system pointer — their enlarged pointer is hidden too. Keyboard focus is untouched (2.4.7): the focus ring still shows on every control.
 
+## Link preview
+
+- Page description and Open Graph description (what WhatsApp, Telegram and LinkedIn show under the title when the link is shared), on the landing and on `index.html` (the site root), her text 2026-11-03: *How I turn interviews, prototypes and data into products people actually use.* Was *Olena Bozhenko, senior product designer in Oslo. B2B SaaS from the first interview to the design system.*
+
 ## Hero copy
 - Eyebrow: Olena Bozhenko · Senior Product Designer
 - Headline: **I design B2B and B2C products from the idea to ▢.** (B2C added on her request, 2026-10-23.) — the visitor finishes it (see Structure → Hero). Until then screen readers hear *…to production.* (was *…to the design system.* until 2026-09-26) Was *…from the first interview to the design system.* until 2026-09-25.
