@@ -126,3 +126,5 @@ Dock text: dark text on a light ground reads thinner than light text on the dark
 ## To the top
 
 On desktop (from 901 px) a black **↑ To the top** pill sits at the bottom centre of the landing, the same size and type as the one beside the case docks (#0E0E0E, light text, weight 600). It slides in once the first screen is behind, scrolls to the top (instantly with reduced motion) and moves focus to the name in the header (her call 2026-11-03). Hidden on phones.
+
+The Resume arrow is an inline SVG (not the ↗ character), stroke matched to the weight-500 text (her note 2026-11-03).
