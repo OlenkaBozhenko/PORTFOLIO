@@ -313,13 +313,13 @@
     (function step(t){var k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,3);els.forEach(function(b){b.textContent=Math.round(e*+b.dataset.to)});if(k<1)requestAnimationFrame(step)})(t0);
   },{threshold:.4});io.observe(row);
 })();
-// wireframes: opened from a file on her computer, the frames use her local DRON copy (it already has the latest demo); online, the published one. The live demo starts at the role choice, in the dark theme (on the live site the demo shares this origin and reads the stored 'wf-theme', unless the visitor chose one), so both sides can be clicked; the frames are drawn at device size and scaled to fit
+// wireframes: opened from a file on her computer, the frames use her local DRON copy (it already has the latest demo); online, the published one. The live demo starts at the role choice, in the dark theme (on the live site the demo shares this origin and reads the stored 'wf-theme'; it is set to dark on every visit, so a light theme chosen before never carries over, her note 2026-11-03), so both sides can be clicked; the frames are drawn at device size and scaled to fit
 (function(){
   var wf=document.querySelector('.wf3');if(!wf)return;
   var frames=wf.querySelectorAll('iframe');
   function fit(){frames.forEach(function(f){var w=f.parentNode.clientWidth,base=f.closest('.pframe')?375:1440;var k=w/base;f.style.transform=k>0.999?'none':'scale('+k+')'})}
   new ResizeObserver(fit).observe(wf);fit();
-  var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){try{if(!localStorage.getItem('wf-theme'))localStorage.setItem('wf-theme','dark')}catch(e){}frames.forEach(function(f){if(!f.offsetParent)return;var u=f.dataset.src;if(location.protocol==='file:')u=u.replace('https://olenkabozhenko.github.io/DRON/','../DRON/');f.src=u});io.disconnect()}},{rootMargin:'400px'});io.observe(wf);
+  var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){try{localStorage.setItem('wf-theme','dark')}catch(e){}frames.forEach(function(f){if(!f.offsetParent)return;var u=f.dataset.src;if(location.protocol==='file:')u=u.replace('https://olenkabozhenko.github.io/DRON/','../DRON/');f.src=u});io.disconnect()}},{rootMargin:'400px'});io.observe(wf);
   // on a mouse, a see-through lime Click circle grows under the cursor over a demo and follows it; once the visitor clicks into a demo (the page loses focus to the frame) it is gone for good. The page can follow the cursor inside the frame only when the demo shares its origin (online); opened from a file, the circle shows where the cursor came in and fades
   var cc=wf.querySelector('.clickc'),hide=null,poll=null,done=false;
   function at(x,y){cc.style.left=x+'px';cc.style.top=y+'px'}

@@ -256,3 +256,5 @@ On phones the bottom links read *View previous* and *View next* (the word *proje
 CJM experience chart labels (her note 2026-11-03): each starts with a round badge holding its phase number (01 Attraction to 04 Retention, by where the point sits on the timeline) and, after the words, the face for the mood at that point, the same faces as the Experience column: Curious 1 happy; Diia or BankID 3 neutral (her call); A manual form loses 60–70% 2 unhappy; Live tracking 3 happy; No way to fix an issue 3 unhappy; Book again 4 happy. Screen readers hear "Phase N, mood:" before each label.
 
 CJM labels: the badge, its digit, the words and the face share one centre line (within 0.5 px at 4x, measured 2026-11-03; her note).
+
+Live demo theme (her note 2026-11-03, after the push it showed light): the page now sets the shared `wf-theme` to dark on every visit, not only when it is empty, so a light theme stored by an earlier visit (or by the demo own switch) never carries over. The DRON repo also has two unpushed commits that make the demo honour `?theme=dark` and hide its switch.
