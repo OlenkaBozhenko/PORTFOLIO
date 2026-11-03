@@ -260,3 +260,5 @@ CJM labels: the badge, its digit, the words and the face share one centre line (
 Live demo theme (her note 2026-11-03, after the push it showed light): the page now sets the shared `wf-theme` to dark on every visit, not only when it is empty, so a light theme stored by an earlier visit (or by the demo own switch) never carries over. The DRON repo also has two unpushed commits that make the demo honour `?theme=dark` and hide its switch.
 
 To the top moves focus to the back link (the name on the landing) only when pressed from the keyboard; a tap or a click just scrolls, so no focus ring shows on the back link (her note 2026-11-03).
+
+The demo frames load `?theme=dark&v=<DRON commit>`: a new address each time the demo changes, so a browser never shows a cached older demo page (her note 2026-11-03: she still saw the light theme from the cache).
