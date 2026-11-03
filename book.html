@@ -207,6 +207,10 @@ html.menu-open{overflow:hidden}
 @media (max-width:900px){.dock{display:none}}
 @media (prefers-reduced-motion:reduce){.dock,.dock a,.dock a span{transition:none}}
 @media print{.dock{display:none}}
+/* To the top: only the arrow in a circle; the words slide out on hover or keyboard focus (her call 2026-11-03) */
+.dock a.totop{padding:0 19px;transition:padding .3s cubic-bezier(.22,.61,.36,1),filter .2s ease}.dock a.totop span{max-width:0;opacity:0;margin-left:0;overflow:hidden;transition:max-width .3s cubic-bezier(.22,.61,.36,1),opacity .2s ease,margin .3s cubic-bezier(.22,.61,.36,1)}.dock a.totop:hover,.dock a.totop:focus-visible{padding:0 20px 0 16px}.dock a.totop:hover span,.dock a.totop:focus-visible span{max-width:140px;opacity:1;margin-left:8px}
+/* on phones only the arrow (no hover there); screen readers still hear To the top */
+.mtop{padding:0 16px!important}.mtop span{max-width:0;overflow:hidden;opacity:0;margin-left:-8px}
 </style>
 </head>
 <body>

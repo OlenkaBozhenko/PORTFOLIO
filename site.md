@@ -138,3 +138,5 @@ On the landing (her pick 2026-11-03, variant D of four): the dark map of Kyiv fr
 ## Testimonial pager on phones
 
 The pager under *What owners say* is rectangular lines, not dots: 16 × 3 px, the current one 24 px and ink (her call 2026-11-03).
+
+To the top is collapsed to the arrow in a circle (58 px on desktop, 52 px on phones); on desktop the words *To the top* slide out on hover or keyboard focus; phones show the arrow only, screen readers still hear the words (her call 2026-11-03).

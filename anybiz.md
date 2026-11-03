@@ -155,3 +155,5 @@ On desktop a **↑ To the top** pill sits to the right of the section dock and s
 On phones (up to 900 px) the same **↑ To the top** floats at the bottom centre in the primary colour once the first screen is behind, and hides while the menu is open (her call 2026-11-03).
 
 On phones the previous / next links show no project name, one line each with the arrow (her call 2026-11-03); screen readers still hear the name.
+
+To the top is collapsed to the arrow in a circle (58 px on desktop, 52 px on phones); on desktop the words *To the top* slide out on hover or keyboard focus; phones show the arrow only, screen readers still hear the words (her call 2026-11-03).

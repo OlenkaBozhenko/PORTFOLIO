@@ -356,6 +356,8 @@ html.menu-open{overflow:hidden}
 @media (max-width:900px){.totop{height:52px;padding:0 20px 0 16px;font-size:15px;bottom:calc(16px + env(safe-area-inset-bottom))}.totop svg{stroke-width:1.8}.menu-open .totop{display:none}}
 @media (prefers-reduced-motion:reduce){.totop{transition:none}}
 @media print{.totop{display:none}}
+/* To the top: only the arrow in a circle; the words slide out on hover or keyboard focus, phones show the arrow only (her call 2026-11-03) */
+.totop{gap:0;padding:0 19px}.totop span{max-width:0;opacity:0;margin-left:0;overflow:hidden;transition:max-width .3s cubic-bezier(.22,.61,.36,1),opacity .2s ease,margin .3s cubic-bezier(.22,.61,.36,1)}.totop{transition:transform .45s cubic-bezier(.22,.61,.36,1),opacity .3s ease,background .2s ease,padding .3s cubic-bezier(.22,.61,.36,1)}@media (hover:hover) and (pointer:fine) and (min-width:901px){.totop:hover,.totop:focus-visible{padding:0 22px 0 18px}.totop:hover span,.totop:focus-visible span{max-width:140px;opacity:1;margin-left:8px}}@media (max-width:900px){.totop{padding:0 16px}}
 </style>
 </head>
 <body>

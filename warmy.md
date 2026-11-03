@@ -193,3 +193,5 @@ On phones (up to 900 px) the same **↑ To the top** floats at the bottom centre
 On phones the previous / next links show no project name, one line each with the arrow (her call 2026-11-03); screen readers still hear the name.
 
 - Phones (her calls 2026-11-03): the *Warm-up that knows when it is done* card is not shown; the Adeline AI phone screen uses a 3x export of her Figma frame 207:97391 (`assets/work/warmy/adeline-mobile@3x.webp`, 1125 x 2496), so its text is sharp on phone screens.
+
+To the top is collapsed to the arrow in a circle (58 px on desktop, 52 px on phones); on desktop the words *To the top* slide out on hover or keyboard focus; phones show the arrow only, screen readers still hear the words (her call 2026-11-03).
