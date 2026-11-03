@@ -143,3 +143,11 @@ Desktop is unchanged.
 - Dock: no Visuals item; added Research, Key insight and Behaviour (the My part subsections); the current section is lilac #A78BFA (her call).
 - Dock: see-through glass like on the DRON page (the pill colour at 78% with a 14 px blur behind it).
 - Dock: the pill is the same dark glass as on the DRON page on every case (rgba(22,22,22,.86), 14 px blur, grey icons); only the current-section colour stays the project's (her call).
+
+## Previous and next project
+
+At the bottom of the page (her call 2026-11-03; was *View next work*): left **← View previous project Warmy**, right **View next project Sport Guardian →**, in the landing order (DRON, Warmy, AnyBiz, Sport Guardian, School, Styupan, Book). Where there is no previous or next project, the link goes back to the projects. On desktop the same see-through circle as on the top back link follows the mouse over both links.
+
+## To the top
+
+On desktop a **↑ To the top** pill sits to the right of the section dock and shows with it, always in the page's primary dock colour (violet #A78BFA). It scrolls to the top (instantly with reduced motion) and moves focus to the back link. Hidden on phones, like the dock.

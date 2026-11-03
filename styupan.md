@@ -67,3 +67,11 @@ Desktop is unchanged.
 ## Back link
 
 **← Back to projects** above the eyebrow, back to the Case Studies list on the landing (her call 2026-11-03; was *← All work*). On desktop (mouse), hovering the link shows an empty see-through 64 px circle that follows the cursor, exactly like the circle on the landing View links but in the case colours: Purple #3C1A5B, fill at about 20% and a 1.5 px border. As on the landing View links.
+
+## Previous and next project
+
+At the bottom of the page (her call 2026-11-03; was *View next work*): left **← View previous project School**, right **View next project Book →**, in the landing order (DRON, Warmy, AnyBiz, Sport Guardian, School, Styupan, Book). Where there is no previous or next project, the link goes back to the projects. On desktop the same see-through circle as on the top back link follows the mouse over both links.
+
+## To the top
+
+On desktop a **↑ To the top** pill sits to the right of the section dock and shows with it, always in the page's primary dock colour (Yellow #FFF748). It scrolls to the top (instantly with reduced motion) and moves focus to the back link. Hidden on phones, like the dock.

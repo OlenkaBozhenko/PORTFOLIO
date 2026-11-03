@@ -58,7 +58,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.035em;text-wrap:balance}
 .nav ul a{text-decoration:none;padding-block:12px;display:inline-block}
 .nav ul a:hover{text-decoration:underline;text-underline-offset:4px}
 .back{font-size:15px;text-decoration:none;color:var(--muted);align-self:flex-start;padding-block:10px}
-.back:hover{color:var(--ink)}@media (hover:hover) and (pointer:fine){.back{cursor:none}}.bkc{position:fixed;left:0;top:0;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:rgba(14,14,14,.1);border:1.5px solid var(--ink);pointer-events:none;z-index:1000;opacity:0;transform:translate3d(-100px,-100px,0);transition:opacity .2s ease}.bkc.on{opacity:1}.bkc{background:linear-gradient(90deg,rgba(236,72,153,.18),rgba(139,92,246,.18));border-color:#8B5CF6}
+.back:hover{color:var(--ink)}@media (hover:hover) and (pointer:fine){.back,.pn a{cursor:none}}.bkc{position:fixed;left:0;top:0;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:rgba(14,14,14,.1);border:1.5px solid var(--ink);pointer-events:none;z-index:1000;opacity:0;transform:translate3d(-100px,-100px,0);transition:opacity .2s ease}.bkc.on{opacity:1}.bkc{background:linear-gradient(90deg,rgba(236,72,153,.18),rgba(139,92,246,.18));border-color:#8B5CF6}
 
 /* header (as on every project page) */
 .head{padding-block:clamp(48px,8vw,112px) clamp(32px,5vw,64px);display:flex;flex-direction:column;gap:28px}
@@ -357,7 +357,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 
 .next{display:flex;justify-content:space-between;gap:16px;padding-block:28px;font-size:15px;text-transform:uppercase;letter-spacing:.02em;text-decoration:none}
 .next .nx{color:var(--muted);margin-left:.6em}
-.next:hover .arrow{transform:translateX(6px)}
+.next:hover .arrow{transform:translateX(6px)}.pn{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}.pn .next{justify-content:flex-start;gap:14px}.pn .next:not(.prev){margin-left:auto;text-align:right}.pn .prev:hover .arrow{transform:translateX(-6px)}@media (max-width:720px){.pn{gap:16px}.pn .next{font-size:13px;gap:8px}}
 .arrow{transition:transform .2s ease}
 footer{border-top:1px solid var(--rule);padding-block:28px;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
@@ -444,7 +444,7 @@ html.menu-open{overflow:hidden}
 .dock a span{max-width:0;overflow:hidden;opacity:0;margin-left:0;transition:max-width .3s cubic-bezier(.22,.61,.36,1),opacity .2s ease,margin .3s ease}
 .dock a:hover,.dock a:focus-visible{color:#F7F5F2;background:rgba(255,255,255,.08)}
 .dock a:hover span,.dock a:focus-visible span,.dock a.on span{max-width:180px;opacity:1;margin-left:8px}
-.dock a.on{background:#A78BFA;color:#0F0A1F}
+.dock a.on{background:#A78BFA;color:#0F0A1F}@media (min-width:901px){.dock{display:flex;align-items:center;gap:8px}}.dock a.totop{height:58px;padding:0 20px 0 16px;background:#A78BFA;color:#0F0A1F;box-shadow:0 12px 32px -10px rgba(0,0,0,.45)}.dock a.totop span{max-width:none;opacity:1;margin-left:8px}.dock a.totop:hover,.dock a.totop:focus-visible{background:#A78BFA;color:#0F0A1F;filter:brightness(1.06)}
 .dock a:focus-visible{outline:2px solid #A78BFA;outline-offset:2px}
 .dock-t{scroll-margin-top:96px}
 @media (max-width:900px){.dock{display:none}}
@@ -557,7 +557,7 @@ html.menu-open{overflow:hidden}
 
 <main>
   <div class="wrap head">
-    <a class="back" href="Olena%20Bozhenko.html#work">← Back to projects</a><script>/* an empty see-through circle in the case colours follows the mouse over the back link (case .md, Back link) */(function(){var b=document.querySelector('.back');if(!b||!matchMedia('(hover:hover) and (pointer:fine)').matches)return;var c=document.createElement('span');c.className='bkc';c.setAttribute('aria-hidden','true');document.body.appendChild(c);var still=matchMedia('(prefers-reduced-motion:reduce)').matches,tx=0,ty=0,cx=0,cy=0,r=null,first=true;var p=function(){c.style.transform='translate3d('+cx+'px,'+cy+'px,0)'};var t=function(){cx+=(tx-cx)*.25;cy+=(ty-cy)*.25;p();r=(Math.abs(tx-cx)>.1||Math.abs(ty-cy)>.1)?requestAnimationFrame(t):null};b.addEventListener('pointermove',function(e){if(e.pointerType!=='mouse')return;tx=e.clientX;ty=e.clientY;if(first||still){cx=tx;cy=ty;p();first=false}else if(!r)r=requestAnimationFrame(t);c.classList.add('on')});var off=function(){c.classList.remove('on');first=true};b.addEventListener('pointerleave',off);addEventListener('scroll',off,{passive:true})})();</script>
+    <a class="back" href="Olena%20Bozhenko.html#work">← Back to projects</a><script>/* an empty see-through circle in the case colours follows the mouse over the back link and the previous / next project links (case .md, Back link) */(function(){if(!matchMedia('(hover:hover) and (pointer:fine)').matches)return;var c=document.createElement('span');c.className='bkc';c.setAttribute('aria-hidden','true');document.body.appendChild(c);var still=matchMedia('(prefers-reduced-motion:reduce)').matches,tx=0,ty=0,cx=0,cy=0,r=null,first=true;var p=function(){c.style.transform='translate3d('+cx+'px,'+cy+'px,0)'};var t=function(){cx+=(tx-cx)*.25;cy+=(ty-cy)*.25;p();r=(Math.abs(tx-cx)>.1||Math.abs(ty-cy)>.1)?requestAnimationFrame(t):null};var off=function(){c.classList.remove('on');first=true};document.addEventListener('pointermove',function(e){if(e.pointerType!=='mouse')return;var z=e.target&&e.target.closest&&e.target.closest('.back,.pn a');if(!z){off();return}tx=e.clientX;ty=e.clientY;if(first||still){cx=tx;cy=ty;p();first=false}else if(!r)r=requestAnimationFrame(t);c.classList.add('on')},{passive:true});addEventListener('scroll',off,{passive:true});document.documentElement.addEventListener('mouseleave',off)})();</script>
     <p class="eyebrow">B2B, AI SaaS</p>
     <h1>An AI sales platform that finds leads<br class="br2"> and books meetings.</h1>
     <dl class="meta">
@@ -766,10 +766,10 @@ html.menu-open{overflow:hidden}
   </section></div>
 
   <div class="wrap" style="padding-bottom:clamp(56px,8vw,112px)">
-    <a class="next" href="SportGuardian.html"><span>View next work <span class="vh">: </span><span class="nx">Sport Guardian</span></span><span class="arrow" aria-hidden="true">→</span></a>
+    <nav class="pn" aria-label="More projects"><a class="next prev" href="Warmy.html"><span class="arrow" aria-hidden="true">←</span><span>View previous project<span class="vh">: </span><span class="nx">Warmy</span></span></a><a class="next" href="SportGuardian.html"><span>View next project<span class="vh">: </span><span class="nx">Sport Guardian</span></span><span class="arrow" aria-hidden="true">→</span></a></nav>
   </div>
 </main>
-<nav class="dock" aria-label="Sections of this page"><ul><li><a href="#about"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17.5h6M10 20.5h4"/><path d="M12 3.5a5.5 5.5 0 0 0-3.2 10c.5.4.7 1 .7 1.6v.4h5v-.4c0-.6.2-1.2.7-1.6A5.5 5.5 0 0 0 12 3.5z"/></svg><span>About</span></a></li><li><a href="#h-pr"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="M3.5 9h17M9 9v10.5"/></svg><span>Product</span></a></li><li><a href="#h-part"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.8-3.8 3.6-6 7-6s6.2 2.2 7 6"/></svg><span>My part</span></a></li><li><a href="#h-research"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16"/><path d="M6.5 20v-6M11 20V8M15.5 20v-9M20 20V5"/></svg><span>Research</span></a></li><li><a href="#h-insight"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l8.5-8.5M16 7l2.5 2.5M14 9l2 2"/></svg><span>Key insight</span></a></li><li><a href="#h-behaviour"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5l12 7-5.3 1.4L10.5 17z"/><path d="M13 13l5 5"/></svg><span>Behaviour</span></a></li></ul></nav>
+<nav class="dock" aria-label="Sections of this page"><ul><li><a href="#about"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17.5h6M10 20.5h4"/><path d="M12 3.5a5.5 5.5 0 0 0-3.2 10c.5.4.7 1 .7 1.6v.4h5v-.4c0-.6.2-1.2.7-1.6A5.5 5.5 0 0 0 12 3.5z"/></svg><span>About</span></a></li><li><a href="#h-pr"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="M3.5 9h17M9 9v10.5"/></svg><span>Product</span></a></li><li><a href="#h-part"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.8-3.8 3.6-6 7-6s6.2 2.2 7 6"/></svg><span>My part</span></a></li><li><a href="#h-research"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16"/><path d="M6.5 20v-6M11 20V8M15.5 20v-9M20 20V5"/></svg><span>Research</span></a></li><li><a href="#h-insight"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l8.5-8.5M16 7l2.5 2.5M14 9l2 2"/></svg><span>Key insight</span></a></li><li><a href="#h-behaviour"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5l12 7-5.3 1.4L10.5 17z"/><path d="M13 13l5 5"/></svg><span>Behaviour</span></a></li></ul><a class="totop" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg><span>To the top</span></a></nav><script>/* To the top beside the dock (case .md, Dock) */document.querySelector('.dock .totop').addEventListener('click',function(e){e.preventDefault();scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});var h=document.querySelector('.back');if(h)h.focus({preventScroll:true})});</script>
 
 
 <footer>

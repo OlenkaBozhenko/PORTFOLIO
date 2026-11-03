@@ -317,7 +317,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 
 .next{display:flex;justify-content:space-between;gap:16px;padding-block:28px;font-size:15px;text-transform:uppercase;letter-spacing:.02em;text-decoration:none}
 .next .nx{color:var(--muted);margin-left:.6em}
-.next:hover .arrow{transform:translateX(6px)}
+.next:hover .arrow{transform:translateX(6px)}.pn{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}.pn .next{justify-content:flex-start;gap:14px}.pn .next:not(.prev){margin-left:auto;text-align:right}.pn .prev:hover .arrow{transform:translateX(-6px)}@media (max-width:720px){.pn{gap:16px}.pn .next{font-size:13px;gap:8px}}
 .arrow{transition:transform .2s ease}
 footer{border-top:1px solid var(--rule);padding-block:28px;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
@@ -1194,3 +1194,5 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .mfly.on.lt{opacity:0}
 /* the see-through circle over the back link in DRON's Signal Green (her call 2026-11-03) */
 .bkc{background:rgba(155,207,74,.22);border-color:#9BCF4A}
+/* To the top beside the dock, always in the primary Signal Green (her call 2026-11-03) */
+@media (min-width:901px){.dock{display:flex;align-items:center;gap:8px}}.dock a.totop{height:58px;padding:0 20px 0 16px;background:var(--green);color:#141414;box-shadow:0 12px 32px -10px rgba(0,0,0,.45)}.dock a.totop span{max-width:none;opacity:1;margin-left:8px}.dock a.totop:hover,.dock a.totop:focus-visible{background:var(--green);color:#141414;filter:brightness(1.06)}
