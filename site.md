@@ -133,7 +133,7 @@ On phones the black To the top pill floats at the bottom centre too, 52 px high,
 
 ## DRON thumbnail
 
-On the landing (her pick 2026-11-03, variant D of four): the dark map of Kyiv from the product (`DRON/assets/map/ground-dark.jpg` → `assets/work/dron/thumb-map-dark.webp`) under a 55% dark veil, the camera viewfinder of the case at the edges (corner brackets in Signal Green, REC, ALT 120 m, 4K · 60, N 50.45°; on phones smaller corners and no labels), and the DRON wordmark with the flying drone in Signal Green #9BCF4A (was black on a Signal Green ground).
+On the landing (her pick 2026-11-03, variant D of four): the dark map of Kyiv from the product (`DRON/assets/map/ground-dark.jpg` → `assets/work/dron/thumb-map-dark.webp`) under a 55% dark veil (the viewfinder of variant D was taken off later the same day, her call: no corners, no labels), and the DRON wordmark with the flying drone in Signal Green #9BCF4A (was black on a Signal Green ground).
 
 ## Testimonial pager on phones
 
