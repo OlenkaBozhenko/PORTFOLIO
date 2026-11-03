@@ -1192,3 +1192,5 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media print{.mfly{display:none}}
 /* over a picture, a live frame or a dark ground the mouse drone fades out, and comes back over the white page (her note) */
 .mfly.on.lt{opacity:0}
+/* the Back circle over the back link in DRON's Signal Green (her call 2026-11-03) */
+.bkc{background:#9BCF4A;color:#1A1A1A}

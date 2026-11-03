@@ -66,4 +66,4 @@ Desktop is unchanged.
 
 ## Back link
 
-**← Back to projects** above the eyebrow, back to the Case Studies list on the landing (her call 2026-11-03; was *← All work*). On desktop (mouse), hovering the link shows a 92 px circle saying *Back to projects* that follows the cursor, like the circle on the landing View links.
+**← Back to projects** above the eyebrow, back to the Case Studies list on the landing (her call 2026-11-03; was *← All work*). On desktop (mouse), hovering the link shows a 68 px circle saying *Back* that follows the cursor, in the case colours: Purple #3C1A5B with Yellow #FFF748. Like the circle on the landing View links.
