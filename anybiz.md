@@ -25,7 +25,7 @@ Sources: her Figma file My-projects-new (`YlGWlsWWjKSCxhONMzGG2F`), section 247:
 
 ## Page copy
 No em dashes in visible text (her rule).
-- **Back link:** ← Back to projects
+- **Back link:** ← Back to projects *On desktop (mouse) the whole row is the link, and a 64 px circle with the arrow follows the cursor over it, like the circle on the landing's View links (her call 2026-11-03).*
 - **Eyebrow:** B2B, AI SaaS (the project category only; B2B added on her request, 2026-10-22)
 - **Headline:** An AI sales platform that finds leads and books meetings.
 - **Meta row:** Role · Product Designer · Years · 2021 – present · Platform · Web, mobile web · Product · AnyBiz.io

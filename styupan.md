@@ -63,3 +63,7 @@ Desktop is unchanged.
 - Dock: the opening texts (About, Problem, Solution; on Styupan and Book: About, Objective, Idea) are one item, About, with a light bulb icon (her call).
 - Dock: see-through glass like on the DRON page (the pill colour at 78% with a 14 px blur behind it).
 - Dock: the pill is the same dark glass as on the DRON page on every case (rgba(22,22,22,.86), 14 px blur, grey icons); only the current-section colour stays the project's (her call).
+
+## Back link
+
+**← Back to projects** above the eyebrow, back to the Case Studies list on the landing (her call 2026-11-03; was *← All work*). On desktop (mouse) the whole row is the link, and a 64 px circle with the arrow follows the cursor over it, like the circle on the landing View links.

@@ -226,3 +226,7 @@ Two of the 14 flows (`flows.md`), phone screens from the live demo (dark):
 - Phone: the step numbers in the flow captions (1 · , 2 · …) are left out; only the step name shows (her note).
 - Phone: the pager under each flow has one bar per screen in the flow (7 and 7), whatever the screen width (her note).
 - Desktop (2026-11-02, her call): the drone from the DRON wordmark (the one flying in place of the O on the landing thumbnail) flies after the mouse, a little behind it, leaning into the move, propellers spinning and a slow bob; dark as in the wordmark, with no lime glow around it, and it fades out over a picture, a live frame or a dark ground, coming back over the white page; it flies only from the About section down to the start of the Handoff block: never over the first screen above About, the User Flows section (it got in the way of dragging the screens), the Handoff block or anything below it (her notes); it never takes a click and fades out when the mouse leaves the page. Not on touch screens, below 900 px, or with reduced motion.
+
+## Back link
+
+**← Back to projects** above the eyebrow, back to the Case Studies list on the landing (her call 2026-11-03; was *← All work*). On desktop (mouse) the whole row is the link, and a 64 px circle with the arrow follows the cursor over it, like the circle on the landing View links.
