@@ -191,3 +191,5 @@ On desktop a **↑ To the top** pill sits to the right of the section dock and s
 On phones (up to 900 px) the same **↑ To the top** floats at the bottom centre in the primary colour once the first screen is behind, and hides while the menu is open (her call 2026-11-03).
 
 On phones the previous / next links show no project name, one line each with the arrow (her call 2026-11-03); screen readers still hear the name.
+
+- Phones (her calls 2026-11-03): the *Warm-up that knows when it is done* card is not shown; the Adeline AI phone screen uses a 3x export of her Figma frame 207:97391 (`assets/work/warmy/adeline-mobile@3x.webp`, 1125 x 2496), so its text is sharp on phone screens.
