@@ -1211,3 +1211,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .cd.b em .ph{background:rgba(247,245,242,.16)}
 .cd em .mood{flex:none;width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .cd em .mood *{fill:none}
+/* the digit sits optically centred in its badge (caps ride high in a line-height:1 box) and the words line up with the badge and the face (her note 2026-11-03) */
+.cd em .ph{padding-top:1px;box-sizing:border-box}
+.cd em{line-height:20px;padding-top:6px;padding-bottom:6px}
+.cd em .mood{transform:translateY(-.5px)}
