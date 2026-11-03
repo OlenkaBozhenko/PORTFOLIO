@@ -258,3 +258,5 @@ CJM experience chart labels (her note 2026-11-03): each starts with a round badg
 CJM labels: the badge, its digit, the words and the face share one centre line (within 0.5 px at 4x, measured 2026-11-03; her note).
 
 Live demo theme (her note 2026-11-03, after the push it showed light): the page now sets the shared `wf-theme` to dark on every visit, not only when it is empty, so a light theme stored by an earlier visit (or by the demo own switch) never carries over. The DRON repo also has two unpushed commits that make the demo honour `?theme=dark` and hide its switch.
+
+To the top moves focus to the back link (the name on the landing) only when pressed from the keyboard; a tap or a click just scrolls, so no focus ring shows on the back link (her note 2026-11-03).

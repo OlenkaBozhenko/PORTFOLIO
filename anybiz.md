@@ -161,3 +161,5 @@ To the top is collapsed to the arrow in a circle (58 px on desktop, 52 px on pho
 Arrows next to text (the back link, previous / next project, the landing View links) are one SVG arrow, 1em, stroke 1.4, centred on the capitals, 10 px from the words, the same on desktop and phones (her note 2026-11-03; were the ← → characters, which sat low).
 
 On phones the bottom links read *View previous* and *View next* (the word *project* and the name are hidden; screen readers still hear both; her call 2026-11-03).
+
+To the top moves focus to the back link (the name on the landing) only when pressed from the keyboard; a tap or a click just scrolls, so no focus ring shows on the back link (her note 2026-11-03).

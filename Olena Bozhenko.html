@@ -784,7 +784,7 @@ html.menu-open{overflow:hidden}
 (function(){var b=document.querySelector('.totop');if(!b)return;
   function upd(){b.classList.toggle('show',scrollY>innerHeight*.9)}
   addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
-  b.addEventListener('click',function(e){e.preventDefault();scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});var h=document.querySelector('.brand');if(h)h.focus({preventScroll:true})});
+  b.addEventListener('click',function(e){e.preventDefault();scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});var h=document.querySelector('.brand');if(h&&e.detail===0)h.focus({preventScroll:true})});
 })();
 </script>
 </body>
