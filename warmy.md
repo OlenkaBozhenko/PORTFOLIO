@@ -203,3 +203,4 @@ On phones the bottom links read *View previous* and *View next* (the word *proje
 - Sender tracker on phones (her notes 2026-11-03): the open *Templates* dropdown of the Figma frame is closed in the image (`tools/warmy/tracker_nofilter.py`: the rows under it rebuilt from the identical rows below, the two *Not checked* chips redrawn in Figtree, the chevron turned down), and the page top bar (Figma "Frame 5", 1199 x 64) is its own fixed strip (`tracker-nofilter-head.webp`), so it stays with the sidebar while the screen scrolls.
 
 To the top moves focus to the back link (the name on the landing) only when pressed from the keyboard; a tap or a click just scrolls, so no focus ring shows on the back link (her note 2026-11-03).
+- Desktop (her note 2026-11-03): the *Warm-up that knows when it is done* cards overlap the same way as *Placement you can prove*: Domain health at the top left (44%), the Warm-up card lower right (60%, from 28% down), over it.
