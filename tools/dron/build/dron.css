@@ -1175,11 +1175,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .ho2 .center ul{gap:12px}
   .ho2 .center li{background:#1F1F1F;border-radius:22px;padding:18px}
 }
-/* phone: each flow screen's caption is centred under its phone (her note) */
-@media (max-width:720px){.strip .scr span{text-align:center}}
-/* the step number sits inside the flow caption; on a phone the number is left out, only the name shows (her note) */
-.scr span b .sn{font-style:normal}
-@media (max-width:720px){.scr span b .sn{display:none}}
+/* each flow screen's caption is centred under its phone, on the phone and on desktop (her notes) */
+.strip .scr span{text-align:center}
+/* the step number is left out of the flow caption, only the name shows, on every width (her notes) */
+.scr span b .sn{display:none}
 /* desktop: the DRON drone (the one from the wordmark on the landing) flies after the mouse; dark as in the wordmark, no lime glow (her note); it never takes a click (her call 2026-11-02) */
 .mfly{position:fixed;left:0;top:0;z-index:70;width:84px;margin:-16px 0 0 -42px;pointer-events:none;opacity:0;transition:opacity .3s ease;will-change:transform}
 .mfly.on{opacity:1}
