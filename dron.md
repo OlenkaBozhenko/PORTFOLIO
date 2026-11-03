@@ -252,3 +252,5 @@ Arrows next to text (the back link, previous / next project, the landing View li
 The CJM experience chart: the area under the curves is clipped to rounded bottom corners (14 px) that follow the 22 px card, so no square corner shows (her note 2026-11-03).
 
 On phones the bottom links read *View previous* and *View next* (the word *project* and the name are hidden; screen readers still hear both; her call 2026-11-03).
+
+CJM experience chart labels (her note 2026-11-03): each starts with a round badge holding its phase number (01 Attraction to 04 Retention, by where the point sits on the timeline) and the face for the mood at that point, the same faces as the Experience column: Curious 1 happy; Diia or BankID 2 neutral; A manual form loses 60–70% 2 unhappy; Live tracking 3 happy; No way to fix an issue 3 unhappy; Book again 4 happy. Screen readers hear "Phase N, mood:" before each label.
