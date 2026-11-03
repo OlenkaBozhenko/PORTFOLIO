@@ -351,7 +351,8 @@ html.menu-open{overflow:hidden}
 .totop:hover{background:#2A2A2A}
 .totop:focus-visible{outline:2px solid #0E0E0E;outline-offset:3px}
 .totop svg{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-@media (max-width:900px){.totop{display:none}}
+/* on phones the same black pill floats at the bottom (site.md, To the top) */
+@media (max-width:900px){.totop{height:52px;padding:0 20px 0 16px;font-size:15px;bottom:calc(16px + env(safe-area-inset-bottom))}.totop svg{stroke-width:1.8}.menu-open .totop{display:none}}
 @media (prefers-reduced-motion:reduce){.totop{transition:none}}
 @media print{.totop{display:none}}
 </style>
