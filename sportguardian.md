@@ -22,7 +22,7 @@ Sources: her Figma file My-projects-new (`YlGWlsWWjKSCxhONMzGG2F`), section 3:71
 
 ## Page copy
 No em dashes in visible text (her rule).
-- **Back link:** ← All work
+- **Back link:** ← Back to projects
 - **Eyebrow:** B2B, B2C (her request, 2026-10-22; was Crowdfunding)
 - **Headline:** Crowdfunding that keeps every child in sport. (Two lines, broken after "keeps", her request 2026-10-13; was *A fundraising page any sports club can open in minutes, so no child leaves sport because of money.*)
 - **Meta row:** Role — UX, UI · Year — 2024 · Platform — Web, mobile web · Client — Scale Group AS
