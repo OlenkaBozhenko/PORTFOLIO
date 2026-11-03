@@ -345,6 +345,15 @@ html.menu-open{overflow:hidden}
   .hero-big .hb-logo svg{height:100%;width:auto;display:block}
   .hero-big .hb-photo{display:block;max-width:none;object-fit:cover;object-position:50% 0;border-radius:4px;position:absolute;right:0;top:0;width:62%;height:calc(var(--fs) * 3.9)}
 }
+/* To the top: a black pill at the bottom centre, like the one beside the case docks; desktop only (site.md, To the top) */
+.totop{position:fixed;left:50%;bottom:clamp(14px,2.4vh,24px);z-index:60;display:flex;align-items:center;gap:8px;height:58px;padding:0 22px 0 18px;border-radius:999px;background:#0E0E0E;color:#F7F5F2;text-decoration:none;font-size:14px;font-weight:600;line-height:1;white-space:nowrap;box-shadow:0 12px 32px -10px rgba(0,0,0,.45);transform:translate(-50%,calc(100% + 32px));opacity:0;pointer-events:none;transition:transform .45s cubic-bezier(.22,.61,.36,1),opacity .3s ease,background .2s ease}
+.totop.show{transform:translate(-50%,0);opacity:1;pointer-events:auto}
+.totop:hover{background:#2A2A2A}
+.totop:focus-visible{outline:2px solid #0E0E0E;outline-offset:3px}
+.totop svg{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:900px){.totop{display:none}}
+@media (prefers-reduced-motion:reduce){.totop{transition:none}}
+@media print{.totop{display:none}}
 </style>
 </head>
 <body>
@@ -602,6 +611,7 @@ html.menu-open{overflow:hidden}
   <div class="wrap"><span>© 2026 Olena Bozhenko</span><span>Product Designer</span></div>
 </footer>
 
+<a class="totop" href="#top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg><span>To the top</span></a>
 <div class="cursor" aria-hidden="true"><span>drag</span></div>
 <script>
 (function(){
@@ -759,6 +769,14 @@ html.menu-open{overflow:hidden}
   function mode(){if(mq.matches){box.tabIndex=0;box.setAttribute('role','region');box.setAttribute('aria-label','Testimonials, scroll sideways')}else{box.removeAttribute('tabindex');box.removeAttribute('role');box.removeAttribute('aria-label')}mark()}
   box.addEventListener('scroll',mark,{passive:true});
   mq.addEventListener('change',mode);mode();
+})();
+</script>
+<script>
+/* To the top shows once the first screen is behind (site.md, To the top) */
+(function(){var b=document.querySelector('.totop');if(!b)return;
+  function upd(){b.classList.toggle('show',scrollY>innerHeight*.9)}
+  addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+  b.addEventListener('click',function(e){e.preventDefault();scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});var h=document.querySelector('.brand');if(h)h.focus({preventScroll:true})});
 })();
 </script>
 </body>
