@@ -86,7 +86,7 @@ Maiia Stiupan (Owner, Stiupan Translations ENK) and Amund Gulsvik (Professor eme
 ## Learning
 Two groups, each newest first (her request, 2026-10-23: courses and conferences apart), under small headings in the section.
 - **Courses and certificates:** MD Academy — Design Engineering Pro Max (May – Sep 2026) · Anthropic — Subagents, Agent skills (Jun 2026), Claude (Mar 2026) · Warmy — Email deliverability expert (Nov 2025) · Google — Foundations of UX Design (2022) · Awwwards Academy — Contemporary trends and award-winning experiences (2020).
-- **Conferences** (the place in the right column, "Conference ·" dropped as the heading says it): DOU Day 2026 (May 2026, Kyiv) · STHLM Xperience Conference (2025, Stockholm) · DOU Day 2025 (May 2025, Kyiv) · UX Nordic 2024 (Aug 2024, Aarhus) · UX Nordic 2023 (Aug 2023, Aarhus) · AI in Web Design Conf 23 (Jun 2023, Geekle) · UI UX Online Summit 23 (Feb 2023, Geekle).
+- **Conferences** (the place in the right column, "Conference ·" dropped as the heading says it): Dysarium 2026 (Oct 2026, Lviv) · DOU Day 2026 (May 2026, Kyiv) · STHLM Xperience Conference (Nov 2025, Stockholm) · Dysarium 2025 (Oct 2025, Lviv) · DOU Day 2025 (May 2025, Kyiv) · UX Nordic 2024 (Aug 2024, Aarhus) · UX Nordic 2023 (Aug 2023, Aarhus) · AI in Web Design Conf 23 (Jun 2023, Geekle) · UI UX Online Summit 23 (Feb 2023, Geekle).
 
 ## Type and colour
 - **Typeface: Inter Tight** (Google Fonts, open licence) as a **stand-in** for Aeonik / Neue Haas Grotesk (D8) until she chooses; swapping it is one line.
@@ -137,6 +137,6 @@ On the landing (her pick 2026-11-03, variant D of four): the dark map of Kyiv fr
 
 ## Testimonial pager on phones
 
-The pager under *What owners say* is rectangular lines, not dots: 16 × 3 px, the current one 24 px and ink (her call 2026-11-03).
+The pager under *What owners say* is short lines with round ends, not dots: 16 × 3 px, the current one 24 px and ink, 28 px apart centre to centre (her calls 2026-11-03).
 
 To the top is collapsed to the arrow in a circle (58 px on desktop, 52 px on phones); on desktop the words *To the top* slide out on hover or keyboard focus; phones show the arrow only, screen readers still hear the words (her call 2026-11-03).

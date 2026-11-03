@@ -68,10 +68,12 @@ Freelance and side projects named in the reference letters:
 | May – Sep 2026 | Design Engineering Pro Max — course | MD Academy | LinkedIn screenshot, her message 2026-10-23 |
 | Jun 2026 | Certificate of completion: Subagents | Anthropic | LinkedIn |
 | Jun 2026 | Certificate of completion: Agent skills | Anthropic | LinkedIn |
+| Oct 2026 (24 – 25 Oct) | **Dysarium 2026** — creative festival, Lviv | Dysarium | her message 2026-11-03 ([dysarium.com](https://www.dysarium.com/)); dates from dysarium.com and [mind.ua](https://mind.ua/news/20308315-dizarium-2026-2425-zhovtnya-u-lvovi-vidbudetsya-najbilshij-kreativnij-festival-ukrayini), read 2026-11-03 |
 | May 2026 (15 – 17 May) | **DOU Day 2026** — conference, Kyiv | DOU | her message 2026-10-23; dates from [dou.ua](https://dou.ua/lenta/news/dou-day-2026-program/), read 2026-10-23 |
 | Mar 2026 | Certificate of completion: Claude | Anthropic | LinkedIn |
 | Nov 2025 | Email deliverability expert (Warmy Inbox Academy) | Warmy | LinkedIn |
-| 2025 | **STHLM Xperience Conference (SXC 2025)** — UX conference, Stockholm | SXC | her message 2026-10-23 ([sxc.se/2025](https://www.sxc.se/2025)); month not found: past editions ran in November with World Usability Day, so the month is left out |
+| Nov 2025 (13 Nov) | **STHLM Xperience Conference (SXC 2025)** — UX conference, Stockholm | SXC | her message 2026-10-23 ([sxc.se/2025](https://www.sxc.se/2025)); date from [sthlm-2025.xconf.co](https://sthlm-2025.xconf.co/), read 2026-11-03 |
+| Oct 2025 (11 – 12 Oct) | **Dysarium 2025** — creative festival, Lviv | Dysarium | her message 2026-11-03; dates from [dou.ua](https://dou.ua/calendar/54949/), read 2026-11-03 |
 | May 2025 (16 – 17 May) | **DOU Day 2025** — conference, Kyiv | DOU | her message 2026-10-23; dates from [dou.ua](https://dou.ua/lenta/articles/dou-day-2025-guide/), read 2026-10-23 |
 | Aug 2024 (28 – 30 Aug) | **UX Nordic 2024** — conference, Aarhus | UX Nordic | her message 2026-10-23 ([uxnordic.com](https://www.uxnordic.com/)); dates from third-party conference lists (tella.com), not the official site, read 2026-10-23 |
 | Aug 2023 (24 – 25 Aug) | **UX Nordic 2023** — conference, Aarhus | UX Nordic | her message 2026-10-23; dates from one third-party list (uxwritinghub.com), read 2026-10-23 |
