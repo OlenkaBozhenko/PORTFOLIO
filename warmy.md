@@ -197,3 +197,6 @@ On phones the previous / next links show no project name, one line each with the
 To the top is collapsed to the arrow in a circle (58 px on desktop, 52 px on phones); on desktop the words *To the top* slide out on hover or keyboard focus; phones show the arrow only, screen readers still hear the words (her call 2026-11-03).
 
 Arrows next to text (the back link, previous / next project, the landing View links) are one SVG arrow, 1em, stroke 1.4, centred on the capitals, 10 px from the words, the same on desktop and phones (her note 2026-11-03; were the ← → characters, which sat low).
+
+On phones the bottom links read *View previous* and *View next* (the word *project* and the name are hidden; screen readers still hear both; her call 2026-11-03).
+- Phones (her note 2026-11-03): the Template score screen in the feature list uses a 3x export of her Figma frame 207:96099 (`assets/work/warmy/template-mobile@3x.webp`, 1125 x 2496). With Adeline AI (3x) and Spintax (live HTML), every screen in *Turning signals into next steps* is sharp; the Sender tracker is the 1440 px desktop frame shown at phone width.

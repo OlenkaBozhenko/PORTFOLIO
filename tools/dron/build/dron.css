@@ -317,7 +317,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 
 .next{display:flex;justify-content:space-between;gap:16px;padding-block:28px;font-size:15px;text-transform:uppercase;letter-spacing:.02em;text-decoration:none}
 .next .nx{color:var(--muted);margin-left:.6em}
-.next:hover .arrow{transform:translateX(6px)}.pn{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}.pn .next{justify-content:flex-start;gap:10px}.pn .next:not(.prev){margin-left:auto;text-align:right}.pn .prev:hover .arrow{transform:translateX(-6px)}@media (max-width:720px){.pn{gap:16px;align-items:center}.pn .next{font-size:13px;gap:10px;align-items:center}.pn .nx{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}}
+.next:hover .arrow{transform:translateX(6px)}.pn{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}.pn .next{justify-content:flex-start;gap:10px}.pn .next:not(.prev){margin-left:auto;text-align:right}.pn .prev:hover .arrow{transform:translateX(-6px)}@media (max-width:720px){.pn{gap:16px;align-items:center}.pn .next{font-size:13px;gap:10px;align-items:center}.pn .nx,.pn .pw{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}}
 .arrow{transition:transform .2s ease}.arrow{display:inline-flex;align-items:center;flex:none;transform:translateY(var(--ay,0))}.arrow svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}.back{display:inline-flex;align-items:center;gap:10px}
 footer{border-top:1px solid var(--rule);padding-block:28px;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
@@ -1203,3 +1203,5 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .dock a.totop{padding:0 19px;transition:padding .3s cubic-bezier(.22,.61,.36,1),filter .2s ease}.dock a.totop span{max-width:0;opacity:0;margin-left:0;overflow:hidden;transition:max-width .3s cubic-bezier(.22,.61,.36,1),opacity .2s ease,margin .3s cubic-bezier(.22,.61,.36,1)}.dock a.totop:hover,.dock a.totop:focus-visible{padding:0 20px 0 16px}.dock a.totop:hover span,.dock a.totop:focus-visible span{max-width:140px;opacity:1;margin-left:8px}
 /* on phones only the arrow (no hover there); screen readers still hear To the top */
 .mtop{padding:0 16px!important}.mtop span{max-width:0;overflow:hidden;opacity:0;margin-left:-8px}
+/* the area under the curves ends in rounded corners that follow the card (22 px card, 8 / 12 px inset; her note 2026-11-03) */
+.cjm2 .ex .cv{clip-path:inset(0 round 0 0 14px 14px)}
