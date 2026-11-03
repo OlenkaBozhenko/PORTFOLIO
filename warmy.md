@@ -25,7 +25,7 @@ Sources: her Figma file My-projects-new (`YlGWlsWWjKSCxhONMzGG2F`), section Warm
 
 ## Page copy
 No em dashes in visible text (her rule).
-- **Back link:** ← Back to projects *On desktop (mouse), hovering the link shows a 68 px circle saying *Back* that follows the cursor, in the case colours: the accent gradient #FFA676 → #FF736D with #1A0E08. Like the circle on the landing's View links (her call 2026-11-03).*
+- **Back link:** ← Back to projects *On desktop (mouse), hovering the link shows an empty see-through 64 px circle that follows the cursor, exactly like the circle on the landing View links but in the case colours: the accent gradient #FFA676 → #FF736D, border #FF736D, fill at about 20% and a 1.5 px border. As on the landing's View links (her call 2026-11-03).*
 - **Eyebrow:** B2B SaaS (the project category only, her request 2026-10-22)
 - **Headline:** An email deliverability platform with an AI agent. (Says what the service is, not a slogan, her request 2026-10-20; was *Getting every email into the inbox, not into spam.*)
 - **Meta row:** Role · UI/UX designer (as on the landing and in the resume) · Years · 2021 – present · Platform · Web, mobile web · Product · Warmy.io

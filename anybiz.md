@@ -25,7 +25,7 @@ Sources: her Figma file My-projects-new (`YlGWlsWWjKSCxhONMzGG2F`), section 247:
 
 ## Page copy
 No em dashes in visible text (her rule).
-- **Back link:** ← Back to projects *On desktop (mouse), hovering the link shows a 68 px circle saying *Back* that follows the cursor, in the case colours: a darker logo gradient #DB2777 → #7C3AED with white (AA for small text). Like the circle on the landing's View links (her call 2026-11-03).*
+- **Back link:** ← Back to projects *On desktop (mouse), hovering the link shows an empty see-through 64 px circle that follows the cursor, exactly like the circle on the landing View links but in the case colours: the logo gradient #EC4899 → #8B5CF6, border #8B5CF6, fill at about 20% and a 1.5 px border. As on the landing's View links (her call 2026-11-03).*
 - **Eyebrow:** B2B, AI SaaS (the project category only; B2B added on her request, 2026-10-22)
 - **Headline:** An AI sales platform that finds leads and books meetings.
 - **Meta row:** Role · Product Designer · Years · 2021 – present · Platform · Web, mobile web · Product · AnyBiz.io

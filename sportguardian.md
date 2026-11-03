@@ -22,7 +22,7 @@ Sources: her Figma file My-projects-new (`YlGWlsWWjKSCxhONMzGG2F`), section 3:71
 
 ## Page copy
 No em dashes in visible text (her rule).
-- **Back link:** ← Back to projects *On desktop (mouse), hovering the link shows a 68 px circle saying *Back* that follows the cursor, in the case colours: Green #15EDA3 with deep teal #0E2A2D. Like the circle on the landing's View links (her call 2026-11-03).*
+- **Back link:** ← Back to projects *On desktop (mouse), hovering the link shows an empty see-through 64 px circle that follows the cursor, exactly like the circle on the landing View links but in the case colours: Teal #418B91, fill at about 20% and a 1.5 px border. As on the landing's View links (her call 2026-11-03).*
 - **Eyebrow:** B2B, B2C (her request, 2026-10-22; was Crowdfunding)
 - **Headline:** Crowdfunding that keeps every child in sport. (Two lines, broken after "keeps", her request 2026-10-13; was *A fundraising page any sports club can open in minutes, so no child leaves sport because of money.*)
 - **Meta row:** Role — UX, UI · Year — 2024 · Platform — Web, mobile web · Client — Scale Group AS

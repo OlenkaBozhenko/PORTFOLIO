@@ -80,4 +80,4 @@ Desktop is unchanged.
 
 ## Back link
 
-**← Back to projects** above the eyebrow, back to the Case Studies list on the landing (her call 2026-11-03; was *← All work*). On desktop (mouse), hovering the link shows a 68 px circle saying *Back* that follows the cursor, in the case colours: ink #0E0E0E with cream #F7F6F2 (the book page has no brand colour). Like the circle on the landing View links.
+**← Back to projects** above the eyebrow, back to the Case Studies list on the landing (her call 2026-11-03; was *← All work*). On desktop (mouse), hovering the link shows an empty see-through 64 px circle that follows the cursor, exactly like the circle on the landing View links but in the case colours: ink #0E0E0E (the book page has no brand colour), fill at about 20% and a 1.5 px border. As on the landing View links.
