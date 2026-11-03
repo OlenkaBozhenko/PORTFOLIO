@@ -242,3 +242,5 @@ On desktop a **↑ To the top** pill sits to the right of the section dock and s
 The mouse drone also fades out while the cursor is over the section dock or To the top (her note 2026-11-03).
 
 On phones (up to 900 px) the same **↑ To the top** floats at the bottom centre in the primary colour once the first screen is behind, and hides while the menu is open (her call 2026-11-03).
+
+On phones the previous / next links show no project name, one line each with the arrow (her call 2026-11-03); screen readers still hear the name.

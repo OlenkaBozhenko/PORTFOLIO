@@ -317,7 +317,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 
 .next{display:flex;justify-content:space-between;gap:16px;padding-block:28px;font-size:15px;text-transform:uppercase;letter-spacing:.02em;text-decoration:none}
 .next .nx{color:var(--muted);margin-left:.6em}
-.next:hover .arrow{transform:translateX(6px)}.pn{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}.pn .next{justify-content:flex-start;gap:14px}.pn .next:not(.prev){margin-left:auto;text-align:right}.pn .prev:hover .arrow{transform:translateX(-6px)}@media (max-width:720px){.pn{gap:16px}.pn .next{font-size:13px;gap:8px}}
+.next:hover .arrow{transform:translateX(6px)}.pn{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}.pn .next{justify-content:flex-start;gap:14px}.pn .next:not(.prev){margin-left:auto;text-align:right}.pn .prev:hover .arrow{transform:translateX(-6px)}@media (max-width:720px){.pn{gap:16px;align-items:center}.pn .next{font-size:13px;gap:8px;align-items:center}.pn .nx{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}}
 .arrow{transition:transform .2s ease}
 footer{border-top:1px solid var(--rule);padding-block:28px;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
