@@ -357,7 +357,8 @@
       var cs=getComputedStyle(el);if(cs.backgroundImage!=='none'&&/url\(/.test(cs.backgroundImage))return true;
       var l=lum(cs.backgroundColor);if(l>=0)return l<.45}
     return false}
-  addEventListener('pointermove',function(e){if(e.pointerType!=='mouse')return;tx=e.clientX+26;ty=e.clientY+30;
+  var dk=document.querySelector('.dock'),onDock=false; // over the section dock and To the top it is gone altogether (her note 2026-11-03)
+  addEventListener('pointermove',function(e){if(e.pointerType!=='mouse')return;tx=e.clientX+26;ty=e.clientY+30;if(dk){var q=dk.getBoundingClientRect();onDock=dk.classList.contains('show')&&e.clientX>q.left-24&&e.clientX<q.right+24&&e.clientY>q.top-24&&e.clientY<q.bottom+24;d.classList.toggle('dk',onDock)}
     if(!run&&mq.matches&&!rm.matches){if(x<-100){x=tx;y=ty}run=true;d.classList.add('on');requestAnimationFrame(tick)}},{passive:true});
   document.documentElement.addEventListener('pointerleave',function(){d.classList.remove('on')});
   document.documentElement.addEventListener('pointerenter',function(){if(run)d.classList.add('on')});

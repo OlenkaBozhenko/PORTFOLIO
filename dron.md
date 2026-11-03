@@ -238,3 +238,5 @@ At the bottom of the page (her call 2026-11-03; was *View next work*): left **â†
 ## To the top
 
 On desktop a **â†‘ To the top** pill sits to the right of the section dock and shows with it, always in the page's primary dock colour (Signal Green). It scrolls to the top (instantly with reduced motion) and moves focus to the back link. Hidden on phones, like the dock.
+
+The mouse drone also fades out while the cursor is over the section dock or To the top (her note 2026-11-03).

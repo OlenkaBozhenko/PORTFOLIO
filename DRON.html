@@ -1244,11 +1244,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (max-width:900px),(hover:none),(pointer:coarse),(prefers-reduced-motion:reduce){.mfly{display:none}}
 @media print{.mfly{display:none}}
 /* over a picture, a live frame or a dark ground the mouse drone fades out, and comes back over the white page (her note) */
-.mfly.on.lt{opacity:0}
+.mfly.on.lt,.mfly.on.dk{opacity:0}
 /* the see-through circle over the back link in DRON's Signal Green (her call 2026-11-03) */
 .bkc{background:rgba(155,207,74,.22);border-color:#9BCF4A}
 /* To the top beside the dock, always in the primary Signal Green (her call 2026-11-03) */
 @media (min-width:901px){.dock{display:flex;align-items:center;gap:8px}}.dock a.totop{height:58px;padding:0 20px 0 16px;background:var(--green);color:#141414;box-shadow:0 12px 32px -10px rgba(0,0,0,.45)}.dock a.totop span{max-width:none;opacity:1;margin-left:8px}.dock a.totop:hover,.dock a.totop:focus-visible{background:var(--green);color:#141414;filter:brightness(1.06)}
+/* dark text on the green reads thinner than light text on the dark glass, so the current chapter and To the top are a step bolder (her note 2026-11-03) */
+.dock a.on,.dock a.totop{font-weight:600}
 
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
 .menu-btn{display:none}
@@ -1288,7 +1290,7 @@ html.menu-open{overflow:hidden}
         <li><a href="Olena%20Bozhenko.html#work">My projects</a></li>
         <li><a href="Olena%20Bozhenko.html#about">About</a></li>
         <li><a href="Olena%20Bozhenko.html#contact">Contact</a></li>
-        <li><a href="assets/Olena-Bozhenko-Resume.pdf" target="_blank" rel="noopener">Resume <span class="vh">(PDF, opens in a new tab)</span></a></li>
+        <li><a href="assets/Olena-Bozhenko-Resume.pdf" target="_blank" rel="noopener">Resume <span aria-hidden="true">↗</span><span class="vh"> (PDF, opens in a new tab)</span></a></li>
       </ul>
       <address class="menu-contact">
         <span class="mc"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5"/><path d="M2 4.5l6 4.5 6-4.5"/></svg><a href="mailto:Bozhenko.ui.ux@gmail.com">Bozhenko.ui.ux@gmail.com</a></span>
@@ -1672,7 +1674,8 @@ html.menu-open{overflow:hidden}
       var cs=getComputedStyle(el);if(cs.backgroundImage!=='none'&&/url\(/.test(cs.backgroundImage))return true;
       var l=lum(cs.backgroundColor);if(l>=0)return l<.45}
     return false}
-  addEventListener('pointermove',function(e){if(e.pointerType!=='mouse')return;tx=e.clientX+26;ty=e.clientY+30;
+  var dk=document.querySelector('.dock'),onDock=false; // over the section dock and To the top it is gone altogether (her note 2026-11-03)
+  addEventListener('pointermove',function(e){if(e.pointerType!=='mouse')return;tx=e.clientX+26;ty=e.clientY+30;if(dk){var q=dk.getBoundingClientRect();onDock=dk.classList.contains('show')&&e.clientX>q.left-24&&e.clientX<q.right+24&&e.clientY>q.top-24&&e.clientY<q.bottom+24;d.classList.toggle('dk',onDock)}
     if(!run&&mq.matches&&!rm.matches){if(x<-100){x=tx;y=ty}run=true;d.classList.add('on');requestAnimationFrame(tick)}},{passive:true});
   document.documentElement.addEventListener('pointerleave',function(){d.classList.remove('on')});
   document.documentElement.addEventListener('pointerenter',function(){if(run)d.classList.add('on')});

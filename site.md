@@ -118,3 +118,7 @@ No em dashes (—) in visible text or page titles (2026-10-09, her request: they
 The first nav item on every page reads **My projects** (her call 2026-11-03; was *Work*, which she found unclear). It links to the Case Studies section of the landing. Phones and desktop.
 
 On desktop (from 721 px) the nav links on every case page use the landing type: 17 px, weight 500, letter spacing -0.01em, the same as the name on the left (her call 2026-11-03; the case pages had 15 px, weight 400). Phones unchanged.
+
+The last nav item reads **Resume ↗** (her call 2026-11-03): the arrow says it opens a file in a new tab; screen readers also hear "(PDF, opens in a new tab)". Phones and desktop, every page.
+
+Dock text: dark text on a light ground reads thinner than light text on the dark glass, so the current section and To the top are weight 600, the rest 500 (her note 2026-11-03), on every case page.
