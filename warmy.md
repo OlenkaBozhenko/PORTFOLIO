@@ -208,3 +208,4 @@ To the top moves focus to the back link (the name on the landing) only when pres
 
 The hover circle over the back link and the previous / next links is the same on every case as on the landing: grey see-through fill rgba(14,14,14,.1), ink border, 64 px (her call 2026-11-04; the case colours are dropped).
 - Placement card (her notes 2026-11-04): the chart card reads *Where emails landed · this week*, the split bar now has a legend (Inbox 91%, Spam 6%, Promotions 3%; the same made-up mock figures, the three add up to 100), then *Inbox rate by provider* for Gmail, Outlook and Yahoo; the loose line *Spam 6% · Promotions 3%* is gone. On phones the big *Inbox placement 91%* card is not shown; the chart card carries the figure.
+- Desktop placement chart card (her note 2026-11-04): 66% wide from 24% down (was 58% from 28%), so the legend fits on one line from about 1300 px; narrower screens wrap *Promotions* to a second line.
