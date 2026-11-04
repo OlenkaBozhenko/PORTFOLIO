@@ -911,7 +911,7 @@ document.querySelectorAll('.big').forEach(function(h){
     lap.forEach(function(im,k){im.classList.toggle('on',k===i)});mob.forEach(function(im,k){im.classList.toggle('on',k===i)})})});
 })();
 
-// 7. the Adeline prototype: tap a question, the bubble, Thinking, the answer typing in, the next steps; then again
+// 7. the Adeline prototype: tap a question, the bubble, Thinking, the answer typing in, the next steps; then again. The tap lands on the centre of the question it opens, measured each time, so the press and the highlight are the same item on every screen size (her note 2026-11-04)
 (function(){
   var box=document.getElementById('proto'),sc=document.getElementById('psc'),ans=document.getElementById('ans'),tap=document.getElementById('tap'),q2=document.getElementById('q2');
   var text='Your spam rate at Outlook rose to 14% this week. Two things stand out: your DMARC policy is set to none, and the template Spring offer has three links. Fix DMARC first, then I will check the template.';
@@ -923,7 +923,7 @@ document.querySelectorAll('.big').forEach(function(h){
     var s=steps[i];
     timer=setTimeout(function(){
       timer=0;
-      if(s[1]==='dot'){tap.classList.add('on');tap.style.left=s[2]+'%';tap.style.top=s[3]+'%'}
+      if(s[1]==='dot'){tap.classList.add('on');var op=tap.offsetParent,pr=op.getBoundingClientRect(),qr=q2.getBoundingClientRect(),k=pr.width/op.offsetWidth||1;tap.style.left=(qr.left+qr.width/2-pr.left)/k+'px';tap.style.top=(qr.top+qr.height/2-pr.top)/k+'px'}
       else if(s[1]==='tap'){tap.classList.remove('tap');void tap.offsetWidth;tap.classList.add('tap')}
       else if(s[1]==='hit'){q2.classList.add('hit')}
       else if(s[1]==='s1'){tap.classList.remove('on');sc.classList.add('s1')}
