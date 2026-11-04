@@ -215,6 +215,10 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .vp img.side{z-index:1;width:16.74%;height:100%;inset:0 auto auto 0}
 #lap img.side{opacity:0}
 #lap img.tall.on~img.side{opacity:1}
+/* the page top bar stays put too, right of the sidebar (her note 2026-11-03) */
+.vp img.tbar{z-index:1;width:83.26%;height:auto;inset:0 0 auto auto}
+#lap img.tbar{opacity:0}
+#lap img.tall.on~img.tbar{opacity:1}
 /* the long Sender tracker screens scroll slowly while they are shown and on screen; the pointer over them stops them (WCAG 2.2.2) */
 .vp img.tall{animation:feed var(--t,18s) ease-in-out .8s infinite alternate;animation-play-state:paused}
 .stagefig.play .vp img.tall.on{animation-play-state:running}
@@ -626,8 +630,8 @@ html.menu-open{overflow:hidden}
       </ul>
       <figure class="c6-12 rv stagefig" style="--d:.1s"><div class="stage">
         <div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>app.warmy.io</span></div><div class="vp" id="lap">
-          <img class="on tall" style="--to:-61%;--t:16s" src="assets/work/warmy/tracker-desktop.webp" alt="Sender tracker on desktop: filters for source and campaign, five cards for opened, clicked, bounced, spam and unsubscribed with their change, an overview chart for a week, and a warning that campaign emails open at 9% of sent." width="1440" height="2306">
-          <img class="side" src="assets/work/warmy/tracker-desktop-side.webp" alt="" width="241" height="900">
+          <img class="on tall" style="--to:-61%;--t:16s" src="assets/work/warmy/tracker-desktop.webp?v=2" alt="Sender tracker on desktop: filters for source and campaign, five cards for opened, clicked, bounced, spam and unsubscribed with their change, an overview chart for a week, and a warning that campaign emails open at 9% of sent." width="1440" height="2306">
+          <img class="side" src="assets/work/warmy/tracker-desktop-side.webp?v=2" alt="" width="241" height="900"><img class="tbar" src="assets/work/warmy/tracker-desktop-head.webp" alt="" width="1199" height="64">
           <img src="assets/work/warmy/adeline-desktop.webp" alt="The home screen with the Adeline AI panel open: Supercharge your knowledge, three starting questions, Meet an Advisor and Chat with a Human, and a message field." width="1440" height="1024" loading="lazy">
           <img src="assets/work/warmy/template-desktop.webp" alt="The template editor with the Template score panel: 100 out of 100, Excellent, with checks for subject line, body content, structure and format, compliance and deliverability signals." width="1440" height="1024" loading="lazy">
           <img src="assets/work/warmy/spintax-desktop.webp" alt="A template written in spintax, with a score of 79, Good, and a note: Spintax detected, showing results for 1 of 18 variations, use Preview to explore all versions." width="1440" height="1024" loading="lazy">
@@ -891,7 +895,7 @@ document.querySelectorAll('.big').forEach(function(h){
 
 // 4. the accordion: one item open at a time; the browser and the phone show its screens
 (function(){
-  var items=document.querySelectorAll('#acc li'),lap=document.querySelectorAll('#lap img:not(.side)'),mob=document.querySelectorAll('#mob img');
+  var items=document.querySelectorAll('#acc li'),lap=document.querySelectorAll('#lap img:not(.side):not(.tbar)'),mob=document.querySelectorAll('#mob img');
   items.forEach(function(li,i){li.querySelector('button').addEventListener('click',function(){
     items.forEach(function(o,k){var on=k===i;o.classList.toggle('open',on);o.querySelector('button').setAttribute('aria-expanded',on)});
     lap.forEach(function(im,k){im.classList.toggle('on',k===i)});mob.forEach(function(im,k){im.classList.toggle('on',k===i)})})});
