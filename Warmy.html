@@ -235,6 +235,13 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 .fcard .fpanel{background:var(--well);padding:clamp(24px,3.4vw,48px)}
 .fcard .ui{position:relative;width:100%;height:clamp(260px,26vw,340px)}
 .fcard .cap{max-width:52ch}
+/* the placement chart says what its bar is: a legend for inbox, spam and promotions (her note 2026-11-04) */
+.lgd{display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:10px;font-size:12px;color:#334155}
+.lgd span{white-space:nowrap}
+@media (max-width:720px){.lgd{font-size:12.5px;gap:6px 14px}}
+.lgd span{display:inline-flex;align-items:center;gap:6px}
+.lgd i{width:8px;height:8px;border-radius:50%;flex:none}
+.lgd b{font-weight:600;color:#0F172A}
 .wui{font-family:var(--ui);color:var(--w-ink);text-align:left}
 .wc{position:absolute;background:#fff;border-radius:18px;box-shadow:0 1px 2px rgba(0,0,0,.05),0 24px 48px -24px rgba(15,23,42,.28);padding:18px 20px}
 .wc .lb{font-size:13px;font-weight:500;color:var(--w-mut)}
@@ -387,6 +394,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .fcard .cap{padding-top:0;padding-bottom:20px;order:-1}
   /* the Warm-up card is not shown on phones (her call 2026-11-03) */
   .g figure.fcard#fc2{display:none}
+  /* nor the big Inbox placement card: the chart card below carries the 91% (her call 2026-11-04) */
+  #fc1 .wc:first-child{display:none}
   /* the note that the card figures are made up is left out on phones (her call 2026-11-02) */
   .g>.note{display:none}
   /* spacing by proximity (her request, 2026-10-24): a headline sits close to its content (32 px), a caption close to its picture (20 px),
@@ -653,14 +662,15 @@ html.menu-open{overflow:hidden}
             <div class="lb" style="margin-top:6px">landed in the inbox <span class="up">↗ +12</span></div>
           </div>
           <div class="wc" style="right:0;top:28%;width:58%;z-index:1">
-            <div class="lb">By provider · this week</div>
+            <div class="lb">Where emails landed · this week</div>
             <div class="split"><i style="flex:91;background:#22C55E"></i><i style="flex:6;background:var(--r)"></i><i style="flex:3;background:var(--o)"></i></div>
+            <div class="lgd"><span><i style="background:#22C55E"></i>Inbox <b>91%</b></span><span><i style="background:var(--r)"></i>Spam <b>6%</b></span><span><i style="background:var(--o)"></i>Promotions <b>3%</b></span></div>
+            <div class="lb" style="margin-top:16px">Inbox rate by provider</div>
             <div class="prov">
               <span>Gmail</span><span class="tr"><i style="--v:94%"></i></span><b>94%</b>
               <span>Outlook</span><span class="tr"><i style="--v:86%"></i></span><b>86%</b>
               <span>Yahoo</span><span class="tr"><i style="--v:92%"></i></span><b>92%</b>
             </div>
-            <div class="lb" style="margin-top:12px">Spam 6% · Promotions 3%</div>
           </div>
         </div></div>
         <figcaption class="cap"><h3>Placement you can prove</h3><p>The seed list behaves like real people: it opens, reads and replies, so your emails land in the inbox. The mobile seed list opens them on real phones and raises your domain reputation many times faster.</p></figcaption>
