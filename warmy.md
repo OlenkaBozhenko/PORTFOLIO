@@ -205,3 +205,5 @@ On phones the bottom links read *View previous* and *View next* (the word *proje
 To the top moves focus to the back link (the name on the landing) only when pressed from the keyboard; a tap or a click just scrolls, so no focus ring shows on the back link (her note 2026-11-03).
 - Desktop (her note 2026-11-03): the *Warm-up that knows when it is done* cards overlap the same way as *Placement you can prove*: Domain health at the top left (44%), the Warm-up card lower right (60%, from 28% down), over it.
 - Sender tracker on desktop (her notes 2026-11-04): the stage screen is rebuilt by `tools/warmy/tracker_desktop.py` with the open *Templates* dropdown closed (the same routine as the phone screen, now shared in `tools/warmy/close_dropdown.py`), and the page top bar is its own fixed strip (`tracker-desktop-head.webp`, class `tbar`), so it stays with the sidebar while the screen scrolls.
+
+The hover circle over the back link and the previous / next links is the same on every case as on the landing: grey see-through fill rgba(14,14,14,.1), ink border, 64 px (her call 2026-11-04; the case colours are dropped).

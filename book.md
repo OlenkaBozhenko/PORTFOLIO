@@ -101,3 +101,5 @@ Arrows next to text (the back link, previous / next project, the landing View li
 On phones the bottom links read *View previous* and *View next* (the word *project* and the name are hidden; screen readers still hear both; her call 2026-11-03).
 
 To the top moves focus to the back link (the name on the landing) only when pressed from the keyboard; a tap or a click just scrolls, so no focus ring shows on the back link (her note 2026-11-03).
+
+The hover circle over the back link and the previous / next links is the same on every case as on the landing: grey see-through fill rgba(14,14,14,.1), ink border, 64 px (her call 2026-11-04; the case colours are dropped).

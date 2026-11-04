@@ -1191,8 +1191,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media print{.mfly{display:none}}
 /* over a picture, a live frame or a dark ground the mouse drone fades out, and comes back over the white page (her note) */
 .mfly.on.lt,.mfly.on.dk{opacity:0}
-/* the see-through circle over the back link in DRON's Signal Green (her call 2026-11-03) */
-.bkc{background:rgba(155,207,74,.22);border-color:#9BCF4A}
+
 /* To the top beside the dock, always in the primary Signal Green (her call 2026-11-03) */
 @media (min-width:901px){.dock{display:flex;align-items:center;gap:8px}}.dock a.totop{height:58px;padding:0 20px 0 16px;background:var(--green);color:#141414;box-shadow:0 12px 32px -10px rgba(0,0,0,.45)}.dock a.totop span{max-width:none;opacity:1;margin-left:8px}.dock a.totop:hover,.dock a.totop:focus-visible{background:var(--green);color:#141414;filter:brightness(1.06)}
 /* dark text on the green reads thinner than light text on the dark glass, so the current chapter and To the top are a step bolder (her note 2026-11-03) */

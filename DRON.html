@@ -49,7 +49,7 @@ h1,h2,h3{font-weight:400;letter-spacing:-.035em;text-wrap:balance}
 .nav ul a:hover{text-decoration:underline;text-underline-offset:4px}.nav .ext{width:.72em;height:.72em;margin-left:.28em;vertical-align:-.02em;fill:none;stroke:currentColor;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
 
 .back{font-size:15px;text-decoration:none;color:var(--muted);align-self:flex-start;padding-block:10px}
-.back:hover{color:var(--ink)}@media (hover:hover) and (pointer:fine){.back,.pn a{cursor:none}}.bkc{position:fixed;left:0;top:0;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:rgba(14,14,14,.1);border:1.5px solid var(--ink);pointer-events:none;z-index:1000;opacity:0;transform:translate3d(-100px,-100px,0);transition:opacity .2s ease}.bkc.on{opacity:1}.bkc{background:rgba(65,139,145,.16);border-color:#418B91}
+.back:hover{color:var(--ink)}@media (hover:hover) and (pointer:fine){.back,.pn a{cursor:none}}.bkc{position:fixed;left:0;top:0;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:rgba(14,14,14,.1);border:1.5px solid var(--ink);pointer-events:none;z-index:1000;opacity:0;transform:translate3d(-100px,-100px,0);transition:opacity .2s ease}.bkc.on{opacity:1}
 
 
 /* DRON: the portfolio stays white; the product sits on dark cards in the colours of its dark desktop (dron.md, her brief 2026-10-28) */
@@ -1244,8 +1244,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media print{.mfly{display:none}}
 /* over a picture, a live frame or a dark ground the mouse drone fades out, and comes back over the white page (her note) */
 .mfly.on.lt,.mfly.on.dk{opacity:0}
-/* the see-through circle over the back link in DRON's Signal Green (her call 2026-11-03) */
-.bkc{background:rgba(155,207,74,.22);border-color:#9BCF4A}
+
 /* To the top beside the dock, always in the primary Signal Green (her call 2026-11-03) */
 @media (min-width:901px){.dock{display:flex;align-items:center;gap:8px}}.dock a.totop{height:58px;padding:0 20px 0 16px;background:var(--green);color:#141414;box-shadow:0 12px 32px -10px rgba(0,0,0,.45)}.dock a.totop span{max-width:none;opacity:1;margin-left:8px}.dock a.totop:hover,.dock a.totop:focus-visible{background:var(--green);color:#141414;filter:brightness(1.06)}
 /* dark text on the green reads thinner than light text on the dark glass, so the current chapter and To the top are a step bolder (her note 2026-11-03) */
