@@ -1266,6 +1266,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .cd em .ph{padding-top:1px;box-sizing:border-box}
 .cd em{line-height:20px;padding-top:6px;padding-bottom:6px}
 .cd em .mood{transform:translateY(-.5px)}
+/* the Drag and Click circles in the landing grey, like every other hover circle on the site (her call 2026-11-04): grey see-through with an ink outline and dark text over the white page; over the dark phone screens and the live demos the same circle turns light (white see-through, white outline, white text), so it still reads */
+.dragc{background:rgba(14,14,14,.1);border:1.5px solid #0E0E0E;color:#111;transition:transform .25s cubic-bezier(.22,.61,.36,1),color .15s ease,background-color .15s ease,border-color .15s ease}
+.dragc.lt,.clickc{background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.85);color:#fff}
 
 /* mobile menu: a burger under 720px (her request, 2026-10-24); without JS the links stay in a row */
 .menu-btn{display:none}

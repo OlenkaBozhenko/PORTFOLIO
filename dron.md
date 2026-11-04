@@ -265,3 +265,5 @@ To the top moves focus to the back link (the name on the landing) only when pres
 The demo frames load `?theme=dark&v=<DRON commit>`: a new address each time the demo changes, so a browser never shows a cached older demo page (her note 2026-11-03: she still saw the light theme from the cache).
 
 The hover circle over the back link and the previous / next links is the same on every case as on the landing: grey see-through fill rgba(14,14,14,.1), ink border, 64 px (her call 2026-11-04; the case colours are dropped).
+
+Drag circle on the flows and Click circle on the live demos (her call 2026-11-04): the landing grey like every hover circle on the site (rgba(14,14,14,.1), ink outline, dark Drag) over the white page; over the dark phone screens and the demos it turns light (white see-through, white outline, white words). Was see-through lime.
