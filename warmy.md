@@ -42,35 +42,9 @@ Motion (WCAG 2.2.2): it plays only on screen, stops while the pointer is over it
 - **Problem:** Deliverability fails quietly. An email service provider reports "delivered" even when the email went to spam, and the cause can be a DNS record, a blacklisted link, a sudden jump in volume or a template that reads like a sales blast. Senders see the drop in replies weeks later, with no idea which of these broke.
 - **Solution:** One product that turns every signal into a next step: warm-up that runs by itself, placement tests on live campaigns, a sender tracker that shows what happens outside Warmy, a template score with fixes ranked by impact, and an AI agent that answers in plain words. Each screen ends with an action, not a chart.
 
-### 3. How complex it is
-- **Headline (Ramos style, grey words, round chips):** One email [bolt chip] passes a dozen checks [chart chip] before it reaches the inbox
-- **All big headlines** (her request, 2026-10-20): run across the full width of the grid, no balanced short lines; the letters are never cut (each word rises inside a mask that runs a little past its letters); "the inbox" stays together on one line.
-- **Counters (vendor-reported, warmy.io, read 2026-10-20):** 35,000+ businesses and marketers · 650,000+ domains · 35+ email service providers · 4.9 of 5 on G2. No source line on the page (her request, 2026-10-20); the source stays here: Warmy's own figures, warmy.io, read 2026-10-20.
-- **What sits behind one inbox** (six groups, each a card of chips):
-  - Authentication: SPF, DKIM, DMARC, BIMI, MX records
-  - Reputation: domain and IP reputation, blacklists, Google Postmaster, spam complaints
-  - Sending: warm-up volume, ramp-up schedule, sending windows, seed lists
-  - Content: templates, spintax, links and images, unsubscribe link, AI optimisation
-  - Mailbox providers: Gmail, Outlook, Yahoo, Google Workspace, Microsoft 365, 35+ ESPs
-  - People and plans: founders with one domain, agencies with hundreds of mailboxes, iGaming CRM teams, AI SDRs; custom plans paid through Stripe
+### 3. My part (her role)
 
-### 4. Product (accordion and devices, Ramos)
-Section label: **Product**, with the note on the right: **Powered by AI** (her request, 2026-10-22; was "From a signal to the next step").
-Title: **Turning signals into next steps.** Five items, the first open; opening one shows its screens in a browser frame and a phone screen beside the list (crossfade). The frames are the ones of the Sport Guardian page (her request, 2026-10-20: the laptop and phone bezels were too heavy): a light browser bar with three grey dots and app.warmy.io, 10 px corners and a soft shadow; the phone as a rounded screen with a soft shadow, no bezel.
-Order and names (her request, 2026-10-20): Sender tracker first, then Adeline AI, Template checker and Spintax (the "Voice and thinking states" item was removed, her request 2026-10-20) (the "AI tool" tags were tried and removed, her request).
-1. **Sender tracker** (her Figma frame 207:95979, the whole page; it scrolls slowly in the browser frame while it is shown, under a fixed sidebar (`tracker-desktop-side.webp`, her request) (the phone stays still, showing the top of the page, her request), and stops while the pointer is over it, her request 2026-10-20): What you send outside Warmy, from any tool: opens, clicks, bounces, spam and unsubscribes in one chart, a warning when campaign mail falls under the at-risk line, and the biggest risk named by provider. (`tracker-desktop`, `tracker-mobile`)
-2. **Adeline AI**: The first AI agent in email deliverability: it helps improve domain reputation and get emails into the inbox. It answers in plain words, with three starting questions, and a call with an advisor or a human chat is one tap away. (`adeline-desktop`, `adeline-mobile`)
-3. **Voice and thinking states:** Asking by voice on the phone, and a Thinking state on desktop, so the wait reads as work and not as a frozen screen. (`adeline-thinking`, `chat-mobile`)
-4. **Template checker** (was "Template score"): AI reads the email before a real inbox does: a score out of 100, failed, warning and passed checks by section, and fixes it writes itself, ranked High and Medium. (`template-desktop`, `template-mobile`)
-5. **Spintax** (was "Spintax check", her request): Write one template, and every email goes out as a different message. Varied wording keeps a campaign out of spam filters. (`spintax-desktop`, `template-mobile`)
-Accessibility: the list is real buttons with aria-expanded; the screens change with the open item and carry alt text; keyboard and screen readers get the same content.
-
-### 5. Feature cards (gridded panels with stacked UI pieces, Ramos)
-Two cards side by side, each a plain pale panel (no grid, her request 2026-10-20) with two overlapping UI pieces drawn in HTML in Warmy's style (Figtree, its colours); the pieces start on the panel's left edge, and the title and text sit under the panel as a caption on the same left edge (her request), not centred. Figures are made up for the mockup.
-- **Placement you can prove.** Inbox 91% (+12 this week); by provider: Gmail 94%, Outlook 86%, Yahoo 92%; Spam 6%, Promotions 3%. Text: The seed list behaves like real people: it opens, reads and replies, so your emails land in the inbox. The mobile seed list opens them on real phones and raises your domain reputation many times faster.
-- **Warm-up that knows when it is done.** Health 82 of 100, Day 18 of 21, a rising line; "Ready to send 1,200 a day". Text: Warm-up ramps volume step by step and shows a finish line, so senders know when the domain is ready and what keeps it safe after.
-
-### 6. My part (her role)
+Order, her call 2026-11-06: her role (My part, A/B hypotheses, User interviews) comes right after About / Problem / Solution, so a recruiter sees it first; Complexity and Product follow, before Campaign visuals. Desktop and phones alike; nothing else changed.
 Section label: **My part**, with the note on the right: **What I brought to Warmy** (her request, 2026-10-22; was "Part-time, since August 2021").
 Headline (Ramos): I designed [pen chip] the features, tested [flask chip] the ideas and asked [chat chip] the people who use them
 Five numbered items:
@@ -80,12 +54,12 @@ Five numbered items:
 - 04 **A/B test hypotheses.** Written before anything ships, with one change, one metric and a decision rule.
 - 05 **User interviews.** Planned and run to find the key moments that improve the experience, and to catch problems before a feature is built.
 
-### 7. Dynamic prototype (live, in a phone)
+### 4. Dynamic prototype (live, in a phone)
 A phone playing the Adeline flow in HTML, as her prototypes do, in the thin outline of the Sport Guardian phone (1.5 px, no heavy bezel): the start screen with three questions; a tap on "Why are my emails landing in spam?"; the question as a bubble; Thinking…; the answer typing in: "Your spam rate at Outlook rose to 14% this week. Two things stand out: your DMARC policy is set to none, and the template Spring offer has three links. Fix DMARC first, then I will check the template." with two buttons, Open DMARC check and Analyze template. Then it starts again. Same motion rules as the first screen. Caption: **A prototype, not a picture.** Prototypes in Warmy carry the real states: the typing, the wait, the answer, the next step. Users react to how it behaves, and developers see the timing they need to build. (The figures in the answer are made up.)
 
 The prototype panel takes the dark warm ground of the campaign mosaic (a gradient #1A0E08 → #3A1A0A → #7A3410, her request 2026-10-20), with the phone outlined in white.
 
-### 8. How I write an A/B hypothesis
+### 5. How I write an A/B hypothesis
 Headline: A test is only as good as the sentence written before it.
 Intro (her request, 2026-10-22: why she runs A/B tests): I run A/B tests to learn which design really helps senders and the business, not which one the team likes more. Each test starts from a written hypothesis, and these are the rules it has to pass.
 **The template** (on the same dark warm gradient, her request): Because we saw [evidence], we believe that [one change] for [segment] will [move one metric] by [expected size]. We will know after [sample or time]. We ship it if [decision rule], unless [guardrail] gets worse.
@@ -105,12 +79,40 @@ Intro (her request, 2026-10-22: why she runs A/B tests): I run A/B tests to lear
 **Example (made up for the portfolio):** Because interviews and cancel reasons showed that senders cancel warm-up when they cannot tell whether it worked, we believe that showing a finish line on the warm-up screen ("Day 18 of 21, ready to send 1,200 a day") for new accounts will lower 60-day cancellations from 18% to 14%. We will know after 2 × 1,500 new accounts, about 6 weeks. We ship it if cancellations drop by at least 3 points, unless upgrades fall. Variant A: progress in percent. Variant B: the finish line with the daily volume. Shown as two small cards with an "Example" label; the example text itself is not on the page (her request, 2026-10-20), only here.
 Sources for the method: Ron Kohavi, Diane Tang, Ya Xu, *Trustworthy Online Controlled Experiments* (2020); Nielsen Norman Group on A/B testing.
 
-### 9. How I prepare and run a user interview
+### 6. How I prepare and run a user interview
 Three columns, Before, During, After, laid out like the "My part" items (her request, 2026-10-20): a small grey label (Plan, Listen, Make sense) above the title, plain text like the numbers in "My part", no rules, the points in grey text:
 - **Before:** Write the goal and three to five research questions: what we need to learn, not what we want to hear. Recruit five to eight people per segment. They test a dynamic prototype with real states, not a deck of static screens. Build the discussion guide on user stories for the flow under test, and turn each story into a task the respondent completes on the prototype, thinking aloud, with a clear success criterion. (Points 2 and 3 rewritten on her request, 2026-10-22.) Pilot the guide once, ask for consent to record, and bring a second person to take notes.
 - **During:** Ask about the past, not the future: "Tell me about the last time a campaign went to spam." Keep questions open and neutral, never leading ("Would you use…" teaches nothing). Listen more than you talk, and let silences run. Dig with "why" and "what happened next" until you reach the real reason. Do not pitch or demo, and do not defend the product. Write down exact quotes and what people do, not only what they say.
 - **After:** Write a summary the same day, while it is fresh. Tag the notes and group them on an affinity map across interviews. Count how many people said a thing before calling it a pattern. Turn the patterns into journey map changes, A/B hypotheses and backlog items, and share them with the team with the quotes attached.
 Sources: Steve Portigal, *Interviewing Users* (2nd ed., 2023); Rob Fitzpatrick, *The Mom Test* (2013); Nielsen Norman Group, user interviews. (Not shown on the page, her request, 2026-10-20; kept here as the source.)
+
+### 7. How complex it is
+- **Headline (Ramos style, grey words, round chips):** One email [bolt chip] passes a dozen checks [chart chip] before it reaches the inbox
+- **All big headlines** (her request, 2026-10-20): run across the full width of the grid, no balanced short lines; the letters are never cut (each word rises inside a mask that runs a little past its letters); "the inbox" stays together on one line.
+- **Counters (vendor-reported, warmy.io, read 2026-10-20):** 35,000+ businesses and marketers · 650,000+ domains · 35+ email service providers · 4.9 of 5 on G2. No source line on the page (her request, 2026-10-20); the source stays here: Warmy's own figures, warmy.io, read 2026-10-20.
+- **What sits behind one inbox** (six groups, each a card of chips):
+  - Authentication: SPF, DKIM, DMARC, BIMI, MX records
+  - Reputation: domain and IP reputation, blacklists, Google Postmaster, spam complaints
+  - Sending: warm-up volume, ramp-up schedule, sending windows, seed lists
+  - Content: templates, spintax, links and images, unsubscribe link, AI optimisation
+  - Mailbox providers: Gmail, Outlook, Yahoo, Google Workspace, Microsoft 365, 35+ ESPs
+  - People and plans: founders with one domain, agencies with hundreds of mailboxes, iGaming CRM teams, AI SDRs; custom plans paid through Stripe
+
+### 8. Product (accordion and devices, Ramos)
+Section label: **Product**, with the note on the right: **Powered by AI** (her request, 2026-10-22; was "From a signal to the next step").
+Title: **Turning signals into next steps.** Five items, the first open; opening one shows its screens in a browser frame and a phone screen beside the list (crossfade). The frames are the ones of the Sport Guardian page (her request, 2026-10-20: the laptop and phone bezels were too heavy): a light browser bar with three grey dots and app.warmy.io, 10 px corners and a soft shadow; the phone as a rounded screen with a soft shadow, no bezel.
+Order and names (her request, 2026-10-20): Sender tracker first, then Adeline AI, Template checker and Spintax (the "Voice and thinking states" item was removed, her request 2026-10-20) (the "AI tool" tags were tried and removed, her request).
+1. **Sender tracker** (her Figma frame 207:95979, the whole page; it scrolls slowly in the browser frame while it is shown, under a fixed sidebar (`tracker-desktop-side.webp`, her request) (the phone stays still, showing the top of the page, her request), and stops while the pointer is over it, her request 2026-10-20): What you send outside Warmy, from any tool: opens, clicks, bounces, spam and unsubscribes in one chart, a warning when campaign mail falls under the at-risk line, and the biggest risk named by provider. (`tracker-desktop`, `tracker-mobile`)
+2. **Adeline AI**: The first AI agent in email deliverability: it helps improve domain reputation and get emails into the inbox. It answers in plain words, with three starting questions, and a call with an advisor or a human chat is one tap away. (`adeline-desktop`, `adeline-mobile`)
+3. **Voice and thinking states:** Asking by voice on the phone, and a Thinking state on desktop, so the wait reads as work and not as a frozen screen. (`adeline-thinking`, `chat-mobile`)
+4. **Template checker** (was "Template score"): AI reads the email before a real inbox does: a score out of 100, failed, warning and passed checks by section, and fixes it writes itself, ranked High and Medium. (`template-desktop`, `template-mobile`)
+5. **Spintax** (was "Spintax check", her request): Write one template, and every email goes out as a different message. Varied wording keeps a campaign out of spam filters. (`spintax-desktop`, `template-mobile`)
+Accessibility: the list is real buttons with aria-expanded; the screens change with the open item and carry alt text; keyboard and screen readers get the same content.
+
+### 9. Feature cards (gridded panels with stacked UI pieces, Ramos)
+Two cards side by side, each a plain pale panel (no grid, her request 2026-10-20) with two overlapping UI pieces drawn in HTML in Warmy's style (Figtree, its colours); the pieces start on the panel's left edge, and the title and text sit under the panel as a caption on the same left edge (her request), not centred. Figures are made up for the mockup.
+- **Placement you can prove.** Inbox 91% (+12 this week); by provider: Gmail 94%, Outlook 86%, Yahoo 92%; Spam 6%, Promotions 3%. Text: The seed list behaves like real people: it opens, reads and replies, so your emails land in the inbox. The mobile seed list opens them on real phones and raises your domain reputation many times faster.
+- **Warm-up that knows when it is done.** Health 82 of 100, Day 18 of 21, a rising line; "Ready to send 1,200 a day". Text: Warm-up ramps volume step by step and shows a finish line, so senders know when the domain is ready and what keeps it safe after.
 
 ### 10. Customer Journey Map (taken off the page, kept)
 **Not on the page since 2026-10-20 (her request); kept to put back when she asks.** The block (HTML, CSS and script) is parked in [`tools/warmy/parked/cjm.html`](tools/warmy/parked/cjm.html), with where each part goes; the last page version with it is git commit `f00af7c`. The content below is still the source for it.
