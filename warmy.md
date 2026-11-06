@@ -44,7 +44,7 @@ Motion (WCAG 2.2.2): it plays only on screen, stops while the pointer is over it
 
 ### 3. My part (her role)
 
-Order, her call 2026-11-06: her role (My part, A/B hypotheses, User interviews) comes right after About / Problem / Solution, so a recruiter sees it first; Complexity and Product follow, before Campaign visuals. Desktop and phones alike; nothing else changed.
+Order, her call 2026-11-06: her role (My part, A/B hypotheses, User interviews) comes right after About / Problem / Solution, so a recruiter sees it first; Product follows, then Complexity (her call 2026-11-06), before Campaign visuals. Desktop and phones alike; nothing else changed.
 Section label: **My part**, with the note on the right: **What I brought to Warmy** (her request, 2026-10-22; was "Part-time, since August 2021").
 Headline (Ramos): I designed [pen chip] the features, tested [flask chip] the ideas and asked [chat chip] the people who use them
 Five numbered items:
@@ -86,19 +86,7 @@ Three columns, Before, During, After, laid out like the "My part" items (her req
 - **After:** Write a summary the same day, while it is fresh. Tag the notes and group them on an affinity map across interviews. Count how many people said a thing before calling it a pattern. Turn the patterns into journey map changes, A/B hypotheses and backlog items, and share them with the team with the quotes attached.
 Sources: Steve Portigal, *Interviewing Users* (2nd ed., 2023); Rob Fitzpatrick, *The Mom Test* (2013); Nielsen Norman Group, user interviews. (Not shown on the page, her request, 2026-10-20; kept here as the source.)
 
-### 7. How complex it is
-- **Headline (Ramos style, grey words, round chips):** One email [bolt chip] passes a dozen checks [chart chip] before it reaches the inbox
-- **All big headlines** (her request, 2026-10-20): run across the full width of the grid, no balanced short lines; the letters are never cut (each word rises inside a mask that runs a little past its letters); "the inbox" stays together on one line.
-- **Counters (vendor-reported, warmy.io, read 2026-10-20):** 35,000+ businesses and marketers · 650,000+ domains · 35+ email service providers · 4.9 of 5 on G2. No source line on the page (her request, 2026-10-20); the source stays here: Warmy's own figures, warmy.io, read 2026-10-20.
-- **What sits behind one inbox** (six groups, each a card of chips):
-  - Authentication: SPF, DKIM, DMARC, BIMI, MX records
-  - Reputation: domain and IP reputation, blacklists, Google Postmaster, spam complaints
-  - Sending: warm-up volume, ramp-up schedule, sending windows, seed lists
-  - Content: templates, spintax, links and images, unsubscribe link, AI optimisation
-  - Mailbox providers: Gmail, Outlook, Yahoo, Google Workspace, Microsoft 365, 35+ ESPs
-  - People and plans: founders with one domain, agencies with hundreds of mailboxes, iGaming CRM teams, AI SDRs; custom plans paid through Stripe
-
-### 8. Product (accordion and devices, Ramos)
+### 7. Product (accordion and devices, Ramos)
 Section label: **Product**, with the note on the right: **Powered by AI** (her request, 2026-10-22; was "From a signal to the next step").
 Title: **Turning signals into next steps.** Five items, the first open; opening one shows its screens in a browser frame and a phone screen beside the list (crossfade). The frames are the ones of the Sport Guardian page (her request, 2026-10-20: the laptop and phone bezels were too heavy): a light browser bar with three grey dots and app.warmy.io, 10 px corners and a soft shadow; the phone as a rounded screen with a soft shadow, no bezel.
 Order and names (her request, 2026-10-20): Sender tracker first, then Adeline AI, Template checker and Spintax (the "Voice and thinking states" item was removed, her request 2026-10-20) (the "AI tool" tags were tried and removed, her request).
@@ -109,10 +97,22 @@ Order and names (her request, 2026-10-20): Sender tracker first, then Adeline AI
 5. **Spintax** (was "Spintax check", her request): Write one template, and every email goes out as a different message. Varied wording keeps a campaign out of spam filters. (`spintax-desktop`, `template-mobile`)
 Accessibility: the list is real buttons with aria-expanded; the screens change with the open item and carry alt text; keyboard and screen readers get the same content.
 
-### 9. Feature cards (gridded panels with stacked UI pieces, Ramos)
+### 8. Feature cards (gridded panels with stacked UI pieces, Ramos)
 Two cards side by side, each a plain pale panel (no grid, her request 2026-10-20) with two overlapping UI pieces drawn in HTML in Warmy's style (Figtree, its colours); the pieces start on the panel's left edge, and the title and text sit under the panel as a caption on the same left edge (her request), not centred. Figures are made up for the mockup.
 - **Placement you can prove.** Inbox 91% (+12 this week); by provider: Gmail 94%, Outlook 86%, Yahoo 92%; Spam 6%, Promotions 3%. Text: The seed list behaves like real people: it opens, reads and replies, so your emails land in the inbox. The mobile seed list opens them on real phones and raises your domain reputation many times faster.
 - **Warm-up that knows when it is done.** Health 82 of 100, Day 18 of 21, a rising line; "Ready to send 1,200 a day". Text: Warm-up ramps volume step by step and shows a finish line, so senders know when the domain is ready and what keeps it safe after.
+
+### 9. How complex it is
+- **Headline (Ramos style, grey words, round chips):** One email [bolt chip] passes a dozen checks [chart chip] before it reaches the inbox
+- **All big headlines** (her request, 2026-10-20): run across the full width of the grid, no balanced short lines; the letters are never cut (each word rises inside a mask that runs a little past its letters); "the inbox" stays together on one line.
+- **Counters (vendor-reported, warmy.io, read 2026-10-20):** 35,000+ businesses and marketers · 650,000+ domains · 35+ email service providers · 4.9 of 5 on G2. No source line on the page (her request, 2026-10-20); the source stays here: Warmy's own figures, warmy.io, read 2026-10-20.
+- **What sits behind one inbox** (six groups, each a card of chips):
+  - Authentication: SPF, DKIM, DMARC, BIMI, MX records
+  - Reputation: domain and IP reputation, blacklists, Google Postmaster, spam complaints
+  - Sending: warm-up volume, ramp-up schedule, sending windows, seed lists
+  - Content: templates, spintax, links and images, unsubscribe link, AI optimisation
+  - Mailbox providers: Gmail, Outlook, Yahoo, Google Workspace, Microsoft 365, 35+ ESPs
+  - People and plans: founders with one domain, agencies with hundreds of mailboxes, iGaming CRM teams, AI SDRs; custom plans paid through Stripe
 
 ### 10. Customer Journey Map (taken off the page, kept)
 **Not on the page since 2026-10-20 (her request); kept to put back when she asks.** The block (HTML, CSS and script) is parked in [`tools/warmy/parked/cjm.html`](tools/warmy/parked/cjm.html), with where each part goes; the last page version with it is git commit `f00af7c`. The content below is still the source for it.
