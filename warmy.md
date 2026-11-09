@@ -112,7 +112,7 @@ Two cards side by side, each a plain pale panel (no grid, her request 2026-10-20
   - Sending: warm-up volume, ramp-up schedule, sending windows, seed lists
   - Content: templates, spintax, links and images, unsubscribe link, AI optimisation
   - Mailbox providers: Gmail, Outlook, Yahoo, Google Workspace, Microsoft 365, 35+ ESPs
-  - People and plans: founders with one domain, agencies with hundreds of mailboxes, iGaming CRM teams, AI SDRs; custom plans paid through Stripe
+  - People and plans: founders with one domain, agencies with hundreds of mailboxes, iGaming CRM teams, AI SDRs (the Custom plans on Stripe tag removed, her call 2026-11-09)
 
 ### 10. Customer Journey Map (taken off the page, kept)
 **Not on the page since 2026-10-20 (her request); kept to put back when she asks.** The block (HTML, CSS and script) is parked in [`tools/warmy/parked/cjm.html`](tools/warmy/parked/cjm.html), with where each part goes; the last page version with it is git commit `f00af7c`. The content below is still the source for it.
