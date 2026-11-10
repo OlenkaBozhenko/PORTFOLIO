@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My impact mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* mockup of the My impact modal (impact-modal.md); not part of the site */
+:root{--ink:#0E0E0E;--muted:#6B6B6B;--line:#E4E4E1;--page:#F3F3F1}
+*{box-sizing:border-box;margin:0}
+body{font-family:"Inter Tight",system-ui,sans-serif;background:var(--page);color:var(--ink);padding:40px 24px 80px}
+h1{font-size:15px;font-weight:500;color:var(--muted);margin:0 0 14px}
+.row{display:flex;gap:48px;flex-wrap:wrap;align-items:flex-start}
+.tools{margin:0 0 18px;display:flex;gap:10px}
+.tools button{font:inherit;font-size:14px;padding:10px 16px;border-radius:99px;border:1px solid var(--ink);background:#fff;cursor:pointer}
+
+/* the letters: each row is stretched to the panel width; counters squeeze with it */
+.word{display:flex;flex-direction:column;gap:6px;height:100%}
+.word svg{display:block;width:100%;flex:1;min-height:0}
+.word path{fill:var(--ink);fill-rule:evenodd}
+
+/* desktop modal */
+.dlg{position:relative;width:900px;height:540px;background:#fff;border-radius:20px;box-shadow:0 30px 80px rgba(0,0,0,.12);overflow:hidden}
+.dlg .lt{position:absolute;left:28px;top:28px;bottom:28px;width:330px;transition:width 1.1s cubic-bezier(.7,0,.2,1)}
+.dlg.big .lt{width:calc(100% - 56px)}
+.dlg .rt{position:absolute;left:400px;right:56px;top:120px;transition:opacity .5s .9s}
+.dlg.big .rt{opacity:0;transition:none}
+.ttl{font-size:clamp(28px,3vw,40px);font-weight:400;letter-spacing:-.03em;line-height:1.05;margin-bottom:16px}
+.txt{font-size:17px;line-height:1.5;color:var(--muted);max-width:42ch}
+.x{position:absolute;width:44px;height:44px;border:0;background:none;cursor:pointer;padding:0}
+.x svg{width:100%;height:100%;stroke:var(--ink);stroke-width:1.4;fill:none}
+.dlg .x{right:22px;top:22px}
+.dash{display:flex;gap:8px;justify-content:center}
+.dash i{width:30px;height:4px;border-radius:2px;background:#D9D9D5}
+.dash i.on{width:52px;background:var(--ink)}
+.dlg .dash{position:absolute;left:400px;bottom:40px}
+
+/* phone modal */
+.ph{position:relative;width:375px;height:740px;background:#fff;border-radius:28px;box-shadow:0 30px 80px rgba(0,0,0,.12);overflow:hidden}
+.ph .lt{position:absolute;left:16px;right:16px;top:20px;height:190px}
+.ph .rt{position:absolute;left:16px;right:16px;top:240px}
+.ph .ttl{font-size:32px}
+.ph .txt{font-size:16px}
+.ph .x{left:50%;bottom:66px;margin-left:-22px}
+.ph .dash{position:absolute;left:0;right:0;bottom:38px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- glyphs on a 100-unit cap height, in the manner of the OB logo -->
+    <path id="gM" d="M0,100V0H34L50,38L66,0H100V100H70V52L50,86L30,52V100Z"/>
+    <path id="gY" d="M0,0H32L45,38L58,0H90L62,58V100H28V58Z"/>
+    <path id="gI" d="M0,0H34V100H0Z"/>
+    <path id="gP" d="M0,0H56A32,32 0 0 1 56,64H34V100H0Z M64,32A10,10 0 1 0 44,32A10,10 0 1 0 64,32Z"/>
+    <path id="gA" d="M0,100V44A44,44 0 0 1 88,44V100H56V78H32V100Z M55,46A11,11 0 1 0 33,46A11,11 0 1 0 55,46Z"/>
+    <path id="gC" d="M98.54,38A50,50 0 1 0 98.54,62H50A12,12 0 0 1 50,38Z"/>
+    <path id="gT" d="M0,0H84V34H59V100H25V34H0Z"/>
+  </defs>
+</svg>
+
+<div class="tools"><button type="button" id="play">Play the opening</button></div>
+
+<div class="row">
+<div>
+<h1>Desktop · 900 × 540 · Warmy, slide 3 of 4</h1>
+<div class="dlg" id="dlg">
+  <div class="lt"><div class="word" aria-hidden="true">
+    <svg viewBox="0 0 198 100" preserveAspectRatio="none"><use href="#gM"/><use href="#gY" x="108"/></svg>
+    <svg viewBox="0 0 142 100" preserveAspectRatio="none"><use href="#gI"/><use href="#gM" x="42"/></svg>
+    <svg viewBox="0 0 384 100" preserveAspectRatio="none"><use href="#gP"/><use href="#gA" x="96"/><use href="#gC" x="192"/><use href="#gT" x="300"/></svg>
+  </div></div>
+  <div class="rt">
+    <h2 class="ttl">20% more sales time for buyers</h2>
+    <p class="txt">Many booked sales calls turned out to be support questions. I redesigned the booking form: it shows what the call will cover and lets people switch to the right consultant. Sales got 20% more time for customers ready to buy.</p>
+  </div>
+  <div class="dash" aria-hidden="true"><i></i><i></i><i class="on"></i><i></i></div>
+  <button class="x" type="button" aria-label="Close"><svg viewBox="0 0 44 44"><path d="M12 12l20 20M32 12L12 32"/></svg></button>
+</div>
+</div>
+
+<div>
+<h1>Phone · 375 · Warmy, slide 1 of 4</h1>
+<div class="ph">
+  <div class="lt"><div class="word" aria-hidden="true">
+    <svg viewBox="0 0 198 100" preserveAspectRatio="none"><use href="#gM"/><use href="#gY" x="108"/></svg>
+    <svg viewBox="0 0 534 100" preserveAspectRatio="none"><use href="#gI"/><use href="#gM" x="42"/><use href="#gP" x="150"/><use href="#gA" x="246"/><use href="#gC" x="342"/><use href="#gT" x="450"/></svg>
+  </div></div>
+  <div class="rt">
+    <h2 class="ttl">AI email optimization, shipped as an MVP</h2>
+    <p class="txt">The business wanted far more than engineering could build in time. I interviewed users to find what mattered most, and we agreed on an MVP that worked for users, the business and engineering.</p>
+  </div>
+  <button class="x" type="button" aria-label="Close"><svg viewBox="0 0 44 44"><path d="M12 12l20 20M32 12L12 32"/></svg></button>
+  <div class="dash" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+</div>
+</div>
+</div>
+
+<script>
+document.getElementById('play').addEventListener('click',function(){var d=document.getElementById('dlg');d.classList.add('big');void d.offsetWidth;setTimeout(function(){d.classList.remove('big')},700)});
+</script>
+</body>
+</html>
