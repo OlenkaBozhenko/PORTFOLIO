@@ -90,12 +90,13 @@ var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
 function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
 
 /* rows of letter indices laid out in a box; each row fills the box width */
-function rows(R,box,wt,gx,gy){
-  var out=[],rh=(box.h-gy*(R.length-1))/R.length;
+function rows(R,box,wt,gx,gy,hw){
+  var out=[],hs=hw||R.map(function(){return 1}),ht=hs.reduce(function(a,b){return a+b},0),free=box.h-gy*(R.length-1),y=box.y;
   R.forEach(function(r,ri){
-    var sum=0;r.forEach(function(i){sum+=G[WORD[i]][0]*wt[i]});
+    var rh=free*hs[ri]/ht,sum=0;r.forEach(function(i){sum+=G[WORD[i]][0]*wt[i]});
     var k=(box.w-gx*(r.length-1))/sum,x=box.x;
-    r.forEach(function(i){var w=G[WORD[i]][0]*wt[i]*k;out[i]={x:x,y:box.y+ri*(rh+gy),w:w,h:rh};x+=w+gx});
+    r.forEach(function(i){var w=G[WORD[i]][0]*wt[i]*k;out[i]={x:x,y:y,w:w,h:rh};x+=w+gx});
+    y+=rh+gy;
   });
   return out;
 }
@@ -112,7 +113,9 @@ function Modal(el,cfg){
     return new Promise(function(done){if(reduce||!from){put(L);return done()}
       (function f(now){if(id!==run)return;var o=[];for(var i=0;i<n;i++){var t=Math.min(Math.max((now-t0-i*stag)/ms,0),1),e=ease(t),a=from[i],b=L[i];o.push({x:a.x+(b.x-a.x)*e,y:a.y+(b.y-a.y)*e,w:a.w+(b.w-a.w)*e,h:a.h+(b.h-a.h)*e})}put(o);if(now-t0<tot)requestAnimationFrame(f);else done()})(t0)})}
   function show(k){slide=k;ttl.textContent=SLIDES[k][0];txt.textContent=SLIDES[k][1];[].forEach.call(dash.children,function(d,i){d.classList.toggle('on',i===k)})}
-  function settle(k){return rows(cfg.endRows,cfg.end(),BREATH[k],cfg.gx,cfg.gy)}
+  function settle(k){return rows(cfg.endRows,cfg.end(),BREATH[k],cfg.gx,cfg.gy,cfg.endH)}
+  /* desktop: the title starts at the top of the middle row (IM); its cap height lines up with the letters */
+  if(cfg.alignTo!=null){var L0=settle(0),cap=parseFloat(getComputedStyle(ttl).fontSize),lh=parseFloat(getComputedStyle(ttl).lineHeight);rt.style.top=(L0[cfg.alignTo].y-(lh-cap*.7)/2)+'px'}
   this.play=function(){run++;el.classList.add('wait');rt.classList.add('off');show(0);
     var full=cfg.full(),one=[[0,1,2,3,4,5,6,7]],flat=[1,1,1,1,1,1,1,1];
     if(reduce){put(settle(0));el.classList.remove('wait');rt.classList.remove('off');return}
@@ -133,7 +136,7 @@ function Modal(el,cfg){
 
 var D=new Modal(document.getElementById('dlg'),{gx:6,gy:6,
   full:function(){return {x:28,y:28,w:844,h:484}},end:function(){return {x:28,y:28,w:330,h:484}},
-  midRows:[[0,1],[2,3,4,5,6,7]],endRows:[[0,1],[2,3],[4,5,6,7]]});
+  midRows:[[0,1],[2,3,4,5,6,7]],endRows:[[0,1],[2,3],[4,5,6,7]],endH:[1,1.45,1],alignTo:2});
 var P=new Modal(document.getElementById('ph'),{gx:5,gy:5,
   full:function(){return {x:16,y:20,w:343,h:600}},end:function(){return {x:16,y:20,w:343,h:190}},
   midRows:[[0,1],[2,3],[4,5,6,7]],endRows:[[0,1],[2,3,4,5,6,7]]});
