@@ -1,6 +1,6 @@
 # My impact modal: spec
 
-Source of truth for the "My impact" modal on the case pages (her brief and calls, 2026-11-10). Nothing is on the site yet; the mockup is `tools/impact/mockup.html`.
+Source of truth for the "My impact" modal on the case pages (her brief and calls, 2026-11-10). The mockup is `tools/impact/mockup.html`; the site version is `assets/impact/impact.js` (2026-11-10).
 
 ## Why
 
@@ -26,8 +26,48 @@ A rejection (2026-11-09) said the cases tell too much about the product and too 
 
 ## Slides per case
 
-Drafts, from her texts of 2026-11-09; to be agreed before they go live.
+On the site since 2026-11-10 (her call: "do it for every project, we fix the texts later"). Warmy and AnyBiz come from her texts of 2026-11-09; the others are drafts written from each page's own facts, to be checked by her. The 20% figure on Warmy still needs its source and date.
 
-- **Warmy:** AI email optimization shipped as an MVP · Charts people actually understand · 20% more sales time for buyers (source and date of the figure still needed) · Several audiences, not one.
-- **AnyBiz:** Users trust the agent to write for them · Gaps nobody mentioned in interviews, fixed · Features users asked for, not the ones we assumed.
-- **DRON:** The design system as the brief for AI (one slide, so no dashes).
+Built by `assets/impact/impact.js`; each page carries its slides in a `<script type="application/json" id="impact-data">` block before `</body>`; `after` names the block the reader scrolls past before it opens (DRON: `#made`, the How it was made row; Stiupan: `#idea`; Book: `#objective`; the others: `#solution`). DRON's block lives in `tools/dron/build/dron-main.html`.
+
+### Warmy
+
+- **AI email optimization, shipped as an MVP** The business wanted far more than engineering could build in time. I interviewed users to find what mattered most, and we agreed on an MVP that worked for users, the business and engineering.
+- **Charts people actually understand** Feedback showed that good-looking charts did not mean users followed the logic behind them. I rebuilt the dashboards around the metrics users rely on.
+- **20% more sales time for buyers** Many booked sales calls turned out to be support questions. I redesigned the booking form: it shows what the call will cover and lets people switch to the right consultant. Sales got 20% more time for customers ready to buy.
+- **Several audiences, not one** A customer journey map and an audit of product analytics showed that Warmy serves several distinct groups, each relying on different features. Every team got a clear picture of how to work with each group.
+
+### AnyBiz
+
+- **Users trust the agent to write for them** Interviews showed that people did not trust an AI to write in their company's name. I designed Instructions: tone, language, call to action, signature and custom prompts the agent keeps following. Users set the rules once instead of checking every message.
+- **Gaps nobody mentioned, fixed** Session recordings showed where people got stuck, what they searched for and where they expected to set things up. I added the missing filters and information, and redesigned onboarding so a new user gets to the first campaign fast.
+- **Features users asked for, not the ones we assumed** Before development, I tested new features on prototypes: which tools help, which only clutter the screen, where people look for them and what they call them. We dropped some features before a line of code, built the ones users kept asking for, and renamed things in users' own words.
+
+### DRON
+
+- **The design system is the brief** With AI tools, the design system is the brief the AI works from. I built DRON's first: 372 tokens, 53 component files and 13 patterns, light and dark, every colour pair checked against WCAG AA. Every screen the agents built follows it.
+- **Written rules, one voice** A product written by many AI sessions drifts unless the rules are written down. One voice file decides every string, so the client hears one calm voice on 134 screens, and anyone on the team can add a feature that fits.
+
+### Sport Guardian
+
+- **A donation in four choices** Sport Guardian asks people to give to a club's children. I designed the donation as four choices: a private person or a company, once or every month, the amount, then card or Vipps.
+- **Clubs publish on their own** Clubs had no simple way to ask their community for help. I designed a builder that lets a club publish a campaign without help, and an admin panel with donors, refunds and statistics.
+- **A campaign page that shows who helps** I designed the campaign page around the countdown, the amount raised and the people behind it, so a visitor sees a club with a community, not a request for money.
+
+### School
+
+- **Learning that works like a social network** During the quarantine, lessons moved to Viber and Zoom and young pupils quickly lost interest. I designed an app where pupils and teachers share one space, like a social network.
+- **Challenges pupils set for each other** I designed challenges: small goals that run for a set time and can come from anyone in the class, so pupils build good habits together.
+- **Teachers keep control** Lessons and homework come from the teacher, and teachers control the content, so the social side never takes over the learning.
+
+### Stiupan
+
+- **S and T on an open book** I drew the initials S and T on the two pages of an open book, so the mark says language and text at a glance and still reads at favicon size.
+- **One mark on light and dark** The S is cut out of the solid left page, so it always takes the colour of the ground. The mark swaps cleanly between light and dark, in one colour or two.
+- **The owner's word** “She played a decisive role in creating the company's logo.” Maiia Stiupan, owner of Stiupan Translations, in her reference letter (translated).
+
+### Book
+
+- **300+ photos, one calm read** I laid out a long family history with more than 300 archive photographs and maps, so it reads calmly from the title page to the list of sources.
+- **From the layout to print** I designed the cover and the layout and prepared the book for print with LOS DIGITAL AS.
+- **The author's word** “She has done the work on the book to our great satisfaction and with great accuracy.” Amund Gulsvik, author (translated from Norwegian).
