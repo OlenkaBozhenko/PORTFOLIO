@@ -75,6 +75,7 @@ The owner's quote was dropped from this section (her call 2026-11-11): it is alr
 
 - **300+ photos, one calm read** I laid out a long family history with more than 300 archive photographs and maps, so it reads calmly from the title page to the list of sources.
 - **From the layout to print** I designed the cover and the layout and prepared the print files for LOS DIGITAL AS.
+- **In Norway's National Library** The book was deposited with the National Library of Norway, so the history of four Lofoten families is kept for future readers as part of Norway's written heritage. (her word 2026-11-11: the book is in the National Library of Norway; to confirm with a catalogue link)
 
 The author's quote was dropped from this section (her call 2026-11-11): it is already on the page, and the section is about her own work.
 

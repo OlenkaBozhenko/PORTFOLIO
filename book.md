@@ -15,6 +15,7 @@ Presentation follows [`inspiration.md`](inspiration.md) §2.7: the cover as a 3D
 | Format | Hardcover, A4 portrait, 210 × 297 mm; 34 mm spine |
 | Extent | 432 pages, more than 300 images |
 | Printer | LOS DIGITAL AS, Larvik |
+| Library | Deposited with the National Library of Norway (her word, 2026-11-11) |
 | Language | Norwegian |
 
 Sources: the print files (`omslag_34_18.pdf`, `Slekstbok_Røtter i Blix_for utskrift_.pdf`), measured 2026-09-26, and Amund Gulsvik's reference letter, January 2024 (`cv.md`).
