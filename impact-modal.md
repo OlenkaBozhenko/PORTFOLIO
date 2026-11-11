@@ -78,6 +78,6 @@ The owner's quote was dropped from this section (her call 2026-11-11): it is alr
 
 The author's quote was dropped from this section (her call 2026-11-11): it is already on the page, and the section is about her own work.
 
-A title can mark its own line break with `|` (Stiupan: "One mark / for every product", her call 2026-11-11).
+A title or a text can mark its own line break with `|` (wider screens only; Book: "...the cover and the layout / and prepared the print files...") (Stiupan: "One mark / for every product", her call 2026-11-11).
 
 On Book only (her call 2026-11-11), the titles stay on one line and the texts use the full column width, wrapping in balanced lines (`"titles":"one"` in its data); the other cases keep two-line titles.
