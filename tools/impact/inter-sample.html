@@ -11,7 +11,7 @@
 <style>
 :root{--ink:#0E0E0E;--muted:#6B6B6B;--gutter:clamp(16px,4vw,56px);--cg:clamp(12px,2vw,28px)}
 *{box-sizing:border-box}
-body{margin:0;background:#fff;color:var(--ink);font-family:"Inter Tight",system-ui,sans-serif}
+body{margin:0;background:#fff;color:var(--ink);font:400 17px/1.55 "Inter Tight",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1320px;margin:0 auto;padding:clamp(40px,6vw,96px) var(--gutter)}
 .bar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:clamp(32px,5vw,64px);color:var(--muted);font-size:14px}
 .bar button{font:inherit;font-weight:600;color:#fff;background:var(--ink);border:0;border-radius:999px;height:44px;padding:0 20px;cursor:pointer}
@@ -23,9 +23,10 @@ h2.word{margin:0 0 clamp(40px,5vw,72px);font-weight:400;line-height:.9;white-spa
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--cg);row-gap:clamp(32px,4vw,56px)}
 li{display:flex;flex-direction:column;gap:10px}
-.n{font-size:15px;color:var(--muted)}
+/* the same sizes and colours as the numbered list on the Warmy page (.part): 15 / 22-28 / 16, ink and muted */
+.n{font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums}
 h3{margin:0;font-size:clamp(22px,2.2vw,28px);font-weight:500;letter-spacing:-.02em;line-height:1.15;text-wrap:balance}
-p{margin:0;color:var(--muted);font-size:16px;line-height:1.5;max-width:36ch}
+p{margin:0;color:var(--muted);font-size:16px;max-width:36ch}
 @media (max-width:900px){ol{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:720px){ol{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.ch{transition:none}}
