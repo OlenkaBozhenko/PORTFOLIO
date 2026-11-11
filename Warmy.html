@@ -272,7 +272,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 @media (max-width:560px){.part li{grid-column:1/-1}}
 
 /* 7. the live Adeline prototype in a phone */
-.protopanel{background:var(--dark);border-radius:0;display:flex;justify-content:center;padding:clamp(28px,4vw,64px);position:relative;overflow:hidden;cursor:pointer}
+.protopanel{background:var(--dark);border-radius:0;display:flex;justify-content:center;padding:clamp(28px,4vw,64px);position:relative;overflow:hidden}
 .protopanel::before{content:"";position:absolute;inset:-30%;background:radial-gradient(40% 40% at 80% 20%,rgba(255,118,88,.18),transparent 70%);pointer-events:none}
 .ph{position:relative;width:min(100%,320px);border:1.5px solid rgba(255,255,255,.75);border-radius:46px;padding:9px;background:transparent}
 .ph .sc{position:relative;aspect-ratio:375/760;border-radius:37px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.05),0 24px 44px -24px rgba(60,40,20,.35);overflow:hidden;display:flex;flex-direction:column;font-family:var(--ui);color:var(--w-ink)}
@@ -618,7 +618,7 @@ html.menu-open{overflow:hidden}
 
       <!-- 4. the live prototype -->
       <div class="cap c1-4 end rv"><h3>A prototype, not a picture</h3><p>Prototypes in Warmy carry the real states: the typing, the wait, the answer, the next step. Users react to how it behaves, and developers see the timing they need to build.</p><p>The figures in the answer are made up.</p></div>
-      <figure class="c5-12 rv" style="--d:.1s"><div class="protopanel" id="proto" tabindex="0" aria-describedby="proto-how">
+      <figure class="c5-12 rv" style="--d:.1s"><div class="protopanel" id="proto">
         <div class="ph" role="img" aria-label="A live prototype of Adeline AI on a phone: the start screen with three questions; the user taps Why are my emails landing in spam; Adeline thinks, then answers that the spam rate at Outlook rose to 14% this week because the DMARC policy is set to none and a template has three links, with the buttons Open DMARC check and Analyze template.">
           <div class="sc" id="psc" aria-hidden="true">
             <div class="top"><span class="alogo"><svg><use href="#i-adeline"/></svg></span>Adeline AI<span class="ic"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2"/></svg></span></div>
@@ -638,7 +638,6 @@ html.menu-open{overflow:hidden}
             <span class="tapdot" id="tap"></span>
           </div>
         </div>
-        <span id="proto-how" class="vh">The prototype plays by itself. Press Enter, or click it, to stop or start it.</span>
       </div></figure>
     </div>
   </section>
@@ -918,7 +917,7 @@ document.querySelectorAll('.big').forEach(function(h){
   var text='Your spam rate at Outlook rose to 14% this week. Two things stand out: your DMARC policy is set to none, and the template Spring offer has three links. Fix DMARC first, then I will check the template.';
   if(RM){sc.className='sc s1 s3';ans.textContent=text;return}
   var steps=[[900,'dot',50,62],[900,'tap'],[350,'hit'],[600,'s1'],[700,'s2'],[1800,'type'],[400,'s3'],[4200,'reset']],i=0,timer=0,inView=false,ch=0;
-  function paused(){return box.classList.contains('paused')||box.matches(':hover')||!inView}
+  function paused(){return !inView}
   function run(){
     if(paused()){timer=0;return}
     var s=steps[i];
@@ -938,8 +937,6 @@ document.querySelectorAll('.big').forEach(function(h){
   }
   function play(){if(!timer)run()}
   onScreen(box,function(v){inView=v;v?play():(clearTimeout(timer),timer=0)},.4);
-  box.addEventListener('mouseleave',play);
-  toggler(box,function(p){if(!p)play()});
 })();
 
 // 11. the mosaic: each row is drawn twice so the slide loops; the copy is hidden from screen readers
