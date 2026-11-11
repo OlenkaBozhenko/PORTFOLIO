@@ -77,3 +77,5 @@ The owner's quote was dropped from this section (her call 2026-11-11): it is alr
 - **From the layout to print** I designed the cover and the layout and prepared the print files for LOS DIGITAL AS.
 
 The author's quote was dropped from this section (her call 2026-11-11): it is already on the page, and the section is about her own work.
+
+On Book only (her call 2026-11-11), the titles stay on one line and the texts wrap in balanced lines (`"titles":"one"` in its data); the other cases keep two-line titles.
