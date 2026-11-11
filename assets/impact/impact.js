@@ -40,7 +40,7 @@
   '@media (max-width:720px){.impart{grid-template-columns:1fr}.impart .hb{display:none}}'+
   /* wider screens: every title on two lines, so the texts below start level (her call 2026-11-11) */
   '@media (min-width:721px){.impart h3{min-height:2.3em}.impart.one h3{min-height:0}}'+
-  '.impart.one p{text-wrap:balance}'+
+  '.impart.one p{text-wrap:balance;max-width:none}'+
   /* desktop: the OB button left of the dock */
   '.dock .imb{flex:none;height:58px;border-radius:999px;border:0;padding:0 14px;cursor:pointer;display:flex;align-items:center;background:var(--imc);color:var(--imo);font-family:inherit;font-size:14px;font-weight:600;line-height:1;white-space:nowrap;box-shadow:0 12px 32px -10px rgba(0,0,0,.45);transition:padding .3s cubic-bezier(.22,.61,.36,1),filter .2s}'+
   '.dock .imb span{max-width:0;opacity:0;margin-left:0;overflow:hidden;transition:max-width .3s cubic-bezier(.22,.61,.36,1),opacity .2s,margin .3s cubic-bezier(.22,.61,.36,1)}'+
