@@ -1,6 +1,6 @@
-# My impact modal: spec
+# My impact section: spec
 
-Source of truth for the "My impact" modal on the case pages (her brief and calls, 2026-11-10). The mockup is `tools/impact/mockup.html`; the site version is `assets/impact/impact.js` (2026-11-10).
+Source of truth for the "My impact" section on the case pages (her brief and calls, 2026-11-10/11). It began as a modal (2026-11-10); on 2026-11-11 she moved it into the page as its own section, after a look at NN/g and Apple HIG guidance on modals, popups and scrolljacking. The early modal mockup is `tools/impact/mockup.html`; the site version is `assets/impact/impact.js`.
 
 ## Why
 
@@ -8,27 +8,25 @@ A rejection (2026-11-09) said the cases tell too much about the product and too 
 
 ## Behaviour (her calls)
 
-- Opens by itself once the reader has scrolled past **Solution**.
-- Once closed, it never opens by itself again on that page (remembered in the browser); it folds into a button.
-- **Desktop:** the button carries her OB logo, sits left of the bottom dock, in the project's primary colour. It is a circle that expands on hover or focus to show "My impact", like To the top (her call 2026-11-11).
-- **Phones:** one round button, centred, with a menu icon, in place of To the top; it opens two pills: My impact (OB logo) and To the top.
-- **Slides:** one per contribution, a title and a short text; they change as the reader scrolls on desktop; on phones only a left or right swipe changes them, and the text slides sideways (her call 2026-11-11). The dashes at the bottom only show the position; they are not buttons. A case with one contribution has no slides and no dashes.
-- Accessibility (WCAG 2.2): focus moves into the modal, Esc and the close button close it, the page behind is inert, focus returns to the button on close; the arrow keys change slides too (keyboard users cannot scroll-flip); reduced motion shows the modal settled, with no animation.
+- A section of the page, right after the story block that ends with **Solution** (her call 2026-11-11). Nothing pops up or blocks the page.
+- **Desktop:** the word MY IMPACT spans the full content width; below it the contributions sit as numbered blocks (01, 02, ...), three to a row, like the "My part" list on Warmy (her call 2026-11-11). No slides.
+- **Phones (720px and below):** the word on top, then one contribution at a time, changed by a left or right swipe; the dashes below follow the swipe and are not buttons; the word shifts its letter widths with each contribution. A case with one contribution has no dashes.
+- The opening animation plays once, the first time the word scrolls into view (her call 2026-11-11).
+- **Buttons:** on desktop the OB-logo button left of the dock, in the project's primary colour, expands on hover or focus to show "My impact", like To the top; on phones one round menu button in place of To the top opens two pills, My impact and To the top. My impact scrolls to the section.
+- Accessibility (WCAG 2.2): the word is the section's h2 ("My impact" for screen readers, the drawn letters hidden from them); the contributions are an ordered list; on phones the swipe list is focusable and the left and right arrow keys move it; reduced motion shows the word settled, with no animation.
 
 ## Look (her calls)
 
-- The word: **MY IMPACT** (her pick of four, 2026-11-10), set in rows MY / IM / PACT.
-- The letters are drawn for this, in the manner of her OB logo: ultra heavy, circles and rectangles, small round counters, flat tops and bottoms (her call 2026-11-10: the round-bottomed P, A, C of the first draft looked wrong), small rounded corners (radius 16 on a 100-unit letter, her call 2026-11-10: the first radius was too big) and narrow slit counters. Each row is stretched to fill the panel width, so narrow letters squeeze and the round counters turn into slits (the effect of Resn's "Sculpting Harmony", the BOX block).
-- Desktop: the middle row (IM) is taller than MY and PACT (1.45 to 1), and the slide title starts level with its top (her call 2026-11-10). Desktop titles break into two balanced lines, never one long line (her call 2026-11-10).
-- White background, black letters. **No coloured stripes between the rows** (her call).
-- Phones: full screen, white; the letters sit at the top **inside the screen edges** (her call: the bleed on her sketch was only a render that did not fit); title and text below; the close button and the dashes at the bottom. The phone close button is a black circle with a white cross (her call 2026-11-10).
-- Opening animation, after Resn's "Sculpting Harmony" (her call 2026-11-10): the letters rise one by one in a single row across the modal; their widths swap twice (one letter grows as the others squeeze); the row breaks into lines; the lines settle into the left panel (phones: the top band). On each slide change the letters shift their widths a little, so the word breathes with the slides.
+- The word: **MY IMPACT** (her pick of four, 2026-11-10), set in two rows, MY and IMPACT, the second a little taller (1.3 to 1), each row stretched to the full width.
+- The letters are drawn for this, in the manner of her OB logo: ultra heavy, circles and rectangles, small round counters, flat tops and bottoms (her call 2026-11-10), small rounded corners (radius 16 on a 100-unit letter, her call 2026-11-10) and narrow slit counters. Stretching a row squeezes or widens the letters (the effect of Resn's "Sculpting Harmony", the BOX block).
+- White background, black letters, no coloured stripes (her call).
+- Opening animation, after Resn's "Sculpting Harmony" (her call 2026-11-10): the letters rise one by one in a single row; their widths swap twice; the row breaks into lines; the lines settle into MY / IMPACT.
 
 ## Slides per case
 
 On the site since 2026-11-10 (her call: "do it for every project, we fix the texts later"). Warmy and AnyBiz come from her texts of 2026-11-09; the others are drafts written from each page's own facts, to be checked by her. The 20% figure on Warmy still needs its source and date.
 
-Built by `assets/impact/impact.js`; each page carries its slides in a `<script type="application/json" id="impact-data">` block before `</body>`; `after` names the block the reader scrolls past before it opens (DRON: `#made`, the How it was made row; Stiupan: `#idea`; Book: `#objective`; the others: `#solution`). DRON's block lives in `tools/dron/build/dron-main.html`.
+Built by `assets/impact/impact.js`; each page carries its contributions in a `<script type="application/json" id="impact-data">` block before `</body>`; `after` names the block after which the section is placed (after the story block that holds it) (DRON: `#made`, the How it was made row; Stiupan: `#idea`; Book: `#objective`; the others: `#solution`). DRON's block lives in `tools/dron/build/dron-main.html`.
 
 ### Warmy
 
