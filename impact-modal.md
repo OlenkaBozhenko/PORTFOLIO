@@ -4,7 +4,7 @@ Source of truth for the "My impact" section on the case pages (her brief and cal
 
 ## Why
 
-A rejection (2026-11-09) said the cases tell too much about the product and too little about her role: what she found out, what she decided, what changed. The modal puts her impact on every case in one place, in one style. Research: [`research/case-study-role-examples.md`](research/case-study-role-examples.md).
+A rejection (2026-11-09) said the cases tell too much about the product and too little about her role: what she found out, what she decided, what changed. The section puts her impact on every case in one place, in one style. Research: [`research/case-study-role-examples.md`](research/case-study-role-examples.md).
 
 ## Behaviour (her calls)
 
