@@ -10,9 +10,9 @@ A rejection (2026-11-09) said the cases tell too much about the product and too 
 
 - Opens by itself once the reader has scrolled past **Solution**.
 - Once closed, it never opens by itself again on that page (remembered in the browser); it folds into a button.
-- **Desktop:** the button carries her OB logo, sits left of the bottom dock, in the project's primary colour.
+- **Desktop:** the button carries her OB logo, sits left of the bottom dock, in the project's primary colour. It is a circle that expands on hover or focus to show "My impact", like To the top (her call 2026-11-11).
 - **Phones:** one round button, centred, with a menu icon, in place of To the top; it opens two pills: My impact (OB logo) and To the top.
-- **Slides:** one per contribution, a title and a short text; they change as the reader scrolls (swipe on phones). The dashes at the bottom only show the position; they are not buttons. A case with one contribution has no slides and no dashes.
+- **Slides:** one per contribution, a title and a short text; they change as the reader scrolls on desktop; on phones only a left or right swipe changes them, and the text slides sideways (her call 2026-11-11). The dashes at the bottom only show the position; they are not buttons. A case with one contribution has no slides and no dashes.
 - Accessibility (WCAG 2.2): focus moves into the modal, Esc and the close button close it, the page behind is inert, focus returns to the button on close; the arrow keys change slides too (keyboard users cannot scroll-flip); reduced motion shows the modal settled, with no animation.
 
 ## Look (her calls)
