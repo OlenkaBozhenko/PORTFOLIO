@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100..900&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0E0E0E;--muted:#6B6B6B;--gutter:clamp(16px,4vw,56px);--cg:clamp(12px,2vw,28px)}
+:root{--ink:#0E0E0E;--muted:#6B6B6B;--soft:#8F8F8F;--gutter:clamp(16px,4vw,56px);--cg:clamp(12px,2vw,28px)}
 *{box-sizing:border-box}
 body{margin:0;background:#fff;color:var(--ink);font:400 17px/1.55 "Inter Tight",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1320px;margin:0 auto;padding:clamp(40px,6vw,96px) var(--gutter)}
@@ -20,6 +20,8 @@ h2.word{margin:0 0 clamp(40px,5vw,72px);font-weight:400;line-height:.9;white-spa
 .ch{display:inline-block;font-weight:400;transform:translateY(110%);transition:font-weight .7s cubic-bezier(.65,0,.35,1),transform .8s cubic-bezier(.22,.61,.36,1)}
 .word.up .ch{transform:none}
 .ch.sp{width:.18em}
+/* the grey words, as in the Warmy headline (.big .s, #8F8F8F, 3.3:1, large text only) */
+.ch.s{color:var(--soft)}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--cg);row-gap:clamp(32px,4vw,56px)}
 li{display:flex;flex-direction:column;gap:10px}
@@ -35,7 +37,7 @@ p{margin:0;color:var(--muted);font-size:16px;max-width:36ch}
 <body>
 <main class="wrap">
   <div class="bar"><span>Sample: My impact in Inter Tight</span><button type="button" id="again">Play again</button></div>
-  <h2 class="word" id="word"><span class="vh">My impact</span><span id="letters" aria-hidden="true"></span></h2>
+  <h2 class="word" id="word"><span class="vh">My impact on the product</span><span id="letters" aria-hidden="true"></span></h2>
   <ol>
     <li><span class="n">01</span><h3>AI email optimization, shipped as an MVP</h3><p>The business wanted far more than engineering could build in time. I interviewed users to find what mattered most, and we agreed on an MVP that worked for users, the business and engineering.</p></li>
     <li><span class="n">02</span><h3>Charts people actually understand</h3><p>Feedback showed that good-looking charts did not mean users followed the logic behind them. I rebuilt the dashboards around the metrics users rely on.</p></li>
@@ -44,13 +46,14 @@ p{margin:0;color:var(--muted);font-size:16px;max-width:36ch}
 </main>
 <script>
 (function(){
-  var word=document.getElementById('word'),box=document.getElementById('letters'),TEXT='My impact',FINAL=400;
+  var word=document.getElementById('word'),box=document.getElementById('letters'),TEXT='My impact on the product',GREY=TEXT.indexOf(' on'),FINAL=400;
   var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
-  var chs=TEXT.split('').map(function(c){var s=document.createElement('span');s.className='ch'+(c===' '?' sp':'');s.textContent=c===' '?' ':c;box.appendChild(s);return s});
+  /* "on the product" is set in grey, after "My impact" (her note) */
+  var chs=TEXT.split('').map(function(c,i){var s=document.createElement('span');s.className='ch'+(c===' '?' sp':'')+(i>GREY?' s':'');s.textContent=c===' '?' ':c;box.appendChild(s);return s});
   var letters=chs.filter(function(s){return !s.classList.contains('sp')});
   /* weight patterns: a heavy letter grows wide while a thin one squeezes, as in Resn's "Sculpting Harmony" */
   var A=[900,400,400,900,400,800,400,900],B=[400,900,800,400,900,400,900,400];
-  function weights(w,stag){letters.forEach(function(s,i){s.style.transitionDelay=(stag?i*stag:0)+'ms';s.style.fontWeight=Array.isArray(w)?w[i]:w})}
+  function weights(w,stag){letters.forEach(function(s,i){s.style.transitionDelay=(stag?i*stag:0)+'ms';s.style.fontWeight=Array.isArray(w)?w[i%w.length]:w})}
   function fit(){
     /* the line fills the full width at the final weight */
     chs.forEach(function(s){s.style.transition='none'});var keep=letters.map(function(s){return s.style.fontWeight});
