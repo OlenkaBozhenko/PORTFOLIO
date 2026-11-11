@@ -9,7 +9,7 @@ A rejection (2026-11-09) said the cases tell too much about the product and too 
 ## Behaviour (her calls)
 
 - A section of the page, right after the story block that ends with **Solution** (her call 2026-11-11). Nothing pops up or blocks the page.
-- **Desktop:** the word MY IMPACT spans the full content width; below it the contributions sit as numbered blocks (01, 02, ...), three to a row, like the "My part" list on Warmy (her call 2026-11-11). No slides. Every title breaks into two lines of about the same length, so the texts below start level across the row (her call 2026-11-11); on phones the titles run on. The gap between the columns is 48 px on desktop, the same as on every numbered list of the site (her call 2026-11-11).
+- **Desktop:** the word MY IMPACT spans the full content width; below it the contributions sit as numbered blocks (01, 02, ...), three to a row, like the "My part" list on Warmy (her call 2026-11-11). No slides. Every title breaks into two lines of about the same length, so the texts below start level across the row (her call 2026-11-11); on phones the titles run on. A case with two contributions shows them in two wider columns (her call 2026-11-11). The gap between the columns is 48 px on desktop, the same as on every numbered list of the site (her call 2026-11-11).
 - **Phones (720px and below):** the word on top, then the same numbered blocks one under another; no slider, no dashes (her call 2026-11-11).
 - The opening animation plays once, the first time the word scrolls into view (her call 2026-11-11).
 - **Buttons:** on desktop the OB-logo button left of the dock, in the project's primary colour, expands on hover or focus to show "My impact", like To the top; on phones one round menu button in place of To the top opens two pills, My impact and To the top. My impact scrolls to the section.
@@ -68,7 +68,8 @@ Her brief 2026-11-11: show that brand design is more than drawing a logo; it giv
 
 - **A mark people learn to recognise** A logo is a brand's fastest signal. I designed Stiupan's as a distinctive asset: the initials S and T on an open book, so it says language and text at a glance, belongs only to Stiupan and still reads at favicon size. Seen again and again, it lets clients recognise the company before they read its name.
 - **One mark for every product** The S is cut out of the solid left page, so the mark takes the colour of any ground: light or dark, one colour or two, print or screen. The company can build its website, documents and digital products on it without redrawing the logo, and every new piece adds to the same recognition.
-- **The owner's word** “She played a decisive role in creating the company's logo.” Maiia Stiupan, owner of Stiupan Translations, in her reference letter (translated).
+
+The owner's quote was dropped from this section (her call 2026-11-11): it is already on the page, and the section is about her own work.
 
 ### Book
 

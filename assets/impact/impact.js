@@ -33,6 +33,8 @@
   '.impart h3{margin:0;font-size:clamp(22px,2.2vw,28px);font-weight:500;letter-spacing:-.02em;line-height:1.15;text-wrap:balance}'+
   '.impart p{margin:0;color:var(--muted,#6B6B6B);font-size:16px;line-height:1.5;max-width:36ch}'+
   '@media (min-width:901px){.impart{column-gap:48px}}'+
+  /* two contributions: two wider columns */
+  '@media (min-width:721px){.impart.two{grid-template-columns:repeat(2,minmax(0,1fr))}.impart.two p{max-width:56ch}}'+
   '@media (max-width:900px){.impart{grid-template-columns:repeat(2,minmax(0,1fr))}}'+
   /* phones: the contributions one under another (her call 2026-11-11: no slider) */
   '@media (max-width:720px){.impart{grid-template-columns:1fr}.impart .hb{display:none}}'+
@@ -89,7 +91,7 @@
   function two(t){var w=String(t).split(' '),b=1,d=1e9;if(w.length<2)return esc(t);for(var i=1;i<w.length;i++){var x=Math.abs(w.slice(0,i).join(' ').length-w.slice(i).join(' ').length);if(x<d){d=x;b=i}}return esc(w.slice(0,b).join(' '))+'<br class="hb"> '+esc(w.slice(b).join(' '))}
   var sec=document.createElement('section');sec.className='imsec wrap';sec.id='my-impact';sec.setAttribute('aria-labelledby','im-h');
   sec.innerHTML='<h2 class="imw" id="im-h" tabindex="-1"><span class="vh">My impact</span><span class="iml" aria-hidden="true"></span></h2>'+
-    '<ol class="impart" aria-label="My impact">'+SL.map(function(s,i){return '<li><span class="n">'+(i<9?'0':'')+(i+1)+'</span><h3>'+two(s[0])+'</h3><p>'+esc(s[1])+'</p></li>'}).join('')+'</ol>';
+    '<ol class="impart'+(SL.length===2?' two':'')+'" aria-label="My impact">'+SL.map(function(s,i){return '<li><span class="n">'+(i<9?'0':'')+(i+1)+'</span><h3>'+two(s[0])+'</h3><p>'+esc(s[1])+'</p></li>'}).join('')+'</ol>';
   host.parentNode.insertBefore(sec,host.nextSibling);
   var hd=sec.querySelector('.imw'),lt=sec.querySelector('.iml');
   var svgs=WORD.map(function(c){var s=document.createElementNS('http://www.w3.org/2000/svg','svg');s.setAttribute('viewBox','0 0 '+G[c][0]+' 100');s.setAttribute('preserveAspectRatio','none');var p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('d',G[c][1]);s.appendChild(p);lt.appendChild(s);return s});
