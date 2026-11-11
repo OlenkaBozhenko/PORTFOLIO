@@ -17,7 +17,7 @@ body{margin:0;background:#fff;color:var(--ink);font-family:"Inter Tight",system-
 .bar button{font:inherit;font-weight:600;color:#fff;background:var(--ink);border:0;border-radius:999px;height:44px;padding:0 20px;cursor:pointer}
 .bar button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 h2.word{margin:0 0 clamp(40px,5vw,72px);font-weight:400;line-height:.9;white-space:nowrap;clip-path:inset(0 -50vw);padding-bottom:.08em;letter-spacing:-.06em}
-.ch{display:inline-block;font-weight:100;transform:translateY(110%);transition:font-weight .7s cubic-bezier(.65,0,.35,1),transform .8s cubic-bezier(.22,.61,.36,1)}
+.ch{display:inline-block;font-weight:400;transform:translateY(110%);transition:font-weight .7s cubic-bezier(.65,0,.35,1),transform .8s cubic-bezier(.22,.61,.36,1)}
 .word.up .ch{transform:none}
 .ch.sp{width:.18em}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -62,7 +62,7 @@ p{margin:0;color:var(--muted);font-size:16px;line-height:1.5;max-width:36ch}
     timers.forEach(clearTimeout);timers=[];
     fit();
     if(reduce){weights(FINAL);word.classList.add('up');return}
-    chs.forEach(function(s){s.style.transition='none'});word.classList.remove('up');weights(100);void word.offsetWidth;chs.forEach(function(s){s.style.transition=''});
+    chs.forEach(function(s){s.style.transition='none'});word.classList.remove('up');weights(FINAL);void word.offsetWidth;chs.forEach(function(s){s.style.transition=''});
     chs.forEach(function(s,i){s.style.transitionDelay=(i*70)+'ms'});
     at(30,function(){word.classList.add('up')});
     at(1000,function(){weights(A,0)});
