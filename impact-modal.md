@@ -10,10 +10,10 @@ A rejection (2026-11-09) said the cases tell too much about the product and too 
 
 - A section of the page, right after the story block that ends with **Solution** (her call 2026-11-11). Nothing pops up or blocks the page.
 - **Desktop:** the word MY IMPACT spans the full content width; below it the contributions sit as numbered blocks (01, 02, ...), three to a row, like the "My part" list on Warmy (her call 2026-11-11). No slides.
-- **Phones (720px and below):** the word on top, then one contribution at a time, changed by a left or right swipe; the dashes below follow the swipe and are not buttons; the word shifts its letter widths with each contribution. A case with one contribution has no dashes.
+- **Phones (720px and below):** the word on top, then the same numbered blocks one under another; no slider, no dashes (her call 2026-11-11).
 - The opening animation plays once, the first time the word scrolls into view (her call 2026-11-11).
 - **Buttons:** on desktop the OB-logo button left of the dock, in the project's primary colour, expands on hover or focus to show "My impact", like To the top; on phones one round menu button in place of To the top opens two pills, My impact and To the top. My impact scrolls to the section.
-- Accessibility (WCAG 2.2): the word is the section's h2 ("My impact" for screen readers, the drawn letters hidden from them); the contributions are an ordered list; on phones the swipe list is focusable and the left and right arrow keys move it; reduced motion shows the word settled, with no animation.
+- Accessibility (WCAG 2.2): the word is the section's h2 ("My impact" for screen readers, the drawn letters hidden from them); the contributions are an ordered list; reduced motion shows the word settled, with no animation.
 
 ## Look (her calls)
 

@@ -32,13 +32,9 @@
   '.impart .n{font-size:15px;color:var(--muted,#6B6B6B);font-variant-numeric:tabular-nums}'+
   '.impart h3{margin:0;font-size:clamp(22px,2.2vw,28px);font-weight:500;letter-spacing:-.02em;line-height:1.15;text-wrap:balance}'+
   '.impart p{margin:0;color:var(--muted,#6B6B6B);font-size:16px;line-height:1.5;max-width:36ch}'+
-  '.imdash{display:none}'+
   '@media (max-width:900px){.impart{grid-template-columns:repeat(2,minmax(0,1fr))}}'+
-  /* phones: one contribution at a time, changed by a left or right swipe */
-  '@media (max-width:720px){.impart{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}.impart::-webkit-scrollbar{display:none}'+
-  '.impart li{flex:0 0 100%;scroll-snap-align:start}.impart .n{display:none}.impart h3{font-size:32px;font-weight:400;letter-spacing:-.03em;line-height:1.05}.impart p{max-width:none}'+
-  '.impart:focus-visible{outline:2px solid #0E0E0E;outline-offset:6px;border-radius:4px}'+
-  '.imdash{display:flex;gap:8px;justify-content:center;margin-top:32px}.imdash i{width:30px;height:4px;border-radius:2px;background:#D9D9D5;transition:width .4s,background .4s}.imdash i.on{width:52px;background:#0E0E0E}}'+
+  /* phones: the contributions one under another (her call 2026-11-11: no slider) */
+  '@media (max-width:720px){.impart{grid-template-columns:1fr}}'+
   /* desktop: the OB button left of the dock */
   '.dock .imb{flex:none;height:58px;border-radius:999px;border:0;padding:0 14px;cursor:pointer;display:flex;align-items:center;background:var(--imc);color:var(--imo);font-family:inherit;font-size:14px;font-weight:600;line-height:1;white-space:nowrap;box-shadow:0 12px 32px -10px rgba(0,0,0,.45);transition:padding .3s cubic-bezier(.22,.61,.36,1),filter .2s}'+
   '.dock .imb span{max-width:0;opacity:0;margin-left:0;overflow:hidden;transition:max-width .3s cubic-bezier(.22,.61,.36,1),opacity .2s,margin .3s cubic-bezier(.22,.61,.36,1)}'+
@@ -57,8 +53,8 @@
   '.imfab .impill svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.imfab .impill .imob{width:25px;height:16px;fill:currentColor;stroke:none}'+
   'html.menu-open .imfab{display:none}}'+
   '@keyframes impop{from{opacity:0;transform:translateY(10px) scale(.96)}}'+
-  '@media (prefers-reduced-motion:reduce){.imfab,.imfab .impill,.imdash i{transition:none;animation:none}}'+
-  '@media print{.imfab,.dock .imb,.imdash{display:none!important}}';
+  '@media (prefers-reduced-motion:reduce){.imfab,.imfab .impill{transition:none;animation:none}}'+
+  '@media print{.imfab,.dock .imb{display:none!important}}';
   var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
   document.documentElement.classList.add('has-im');
   document.documentElement.style.setProperty('--imc',dk[0]);document.documentElement.style.setProperty('--imo',dk[1]);
@@ -88,49 +84,40 @@
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
   var sec=document.createElement('section');sec.className='imsec wrap';sec.id='my-impact';sec.setAttribute('aria-labelledby','im-h');
   sec.innerHTML='<h2 class="imw" id="im-h" tabindex="-1"><span class="vh">My impact</span><span class="iml" aria-hidden="true"></span></h2>'+
-    '<ol class="impart" aria-label="My impact">'+SL.map(function(s,i){return '<li><span class="n">'+(i<9?'0':'')+(i+1)+'</span><h3>'+esc(s[0])+'</h3><p>'+esc(s[1])+'</p></li>'}).join('')+'</ol>'+
-    (SL.length>1?'<div class="imdash" aria-hidden="true">'+SL.map(function(){return '<i></i>'}).join('')+'</div>':'');
+    '<ol class="impart" aria-label="My impact">'+SL.map(function(s,i){return '<li><span class="n">'+(i<9?'0':'')+(i+1)+'</span><h3>'+esc(s[0])+'</h3><p>'+esc(s[1])+'</p></li>'}).join('')+'</ol>';
   host.parentNode.insertBefore(sec,host.nextSibling);
-  var hd=sec.querySelector('.imw'),lt=sec.querySelector('.iml'),ol=sec.querySelector('.impart'),dash=sec.querySelector('.imdash'),items=ol.children;
+  var hd=sec.querySelector('.imw'),lt=sec.querySelector('.iml');
   var svgs=WORD.map(function(c){var s=document.createElementNS('http://www.w3.org/2000/svg','svg');s.setAttribute('viewBox','0 0 '+G[c][0]+' 100');s.setAttribute('preserveAspectRatio','none');var p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('d',G[c][1]);s.appendChild(p);lt.appendChild(s);return s});
 
-  var L={},cur=null,run=0,slide=0,played=false,playing=false;
+  var L={},cur=null,run=0,played=false;
   function layout(){
     var ph=phoneQ.matches,W=lt.clientWidth,H=Math.round(W*(ph?.52:.4)),g=ph?5:Math.max(6,Math.round(W*.006));
     lt.style.height=H+'px';
     L={full:{x:0,y:0,w:W,h:H},mid:[[0,1],[2,3],[4,5,6,7]],fin:[[0,1],[2,3,4,5,6,7]],finH:[1,1.3],gx:g,gy:g};
-    if(ph&&SL.length>1)ol.setAttribute('tabindex','0');else ol.removeAttribute('tabindex');
   }
   function put(R){R.forEach(function(r,i){var s=svgs[i].style;s.left=r.x+'px';s.top=r.y+'px';s.width=Math.max(r.w,0)+'px';s.height=Math.max(r.h,0)+'px'});cur=R}
   function to(R,ms,stag){var from=cur,id=run,t0=performance.now(),n=R.length,tot=ms+stag*(n-1);
     return new Promise(function(done){if(reduce||!from){put(R);return done()}
       (function f(now){if(id!==run)return done();var o=[];for(var i=0;i<n;i++){var t=Math.min(Math.max((now-t0-i*stag)/ms,0),1),e=ease(t),a=from[i],b=R[i];o.push({x:a.x+(b.x-a.x)*e,y:a.y+(b.y-a.y)*e,w:a.w+(b.w-a.w)*e,h:a.h+(b.h-a.h)*e})}put(o);if(now-t0<tot)requestAnimationFrame(f);else done()})(t0)})}
-  function settle(){return rows(L.fin,L.full,br(phoneQ.matches?slide:0),L.gx,L.gy,L.finH)}
+  function settle(){return rows(L.fin,L.full,br(0),L.gx,L.gy,L.finH)}
   function hidden(){var a=rows([[0,1,2,3,4,5,6,7]],L.full,[1,1,1,1,1,1,1,1],L.gx,L.gy);return a.map(function(r){return {x:r.x,y:r.y+r.h,w:r.w,h:0}})}
 
   /* the opening, once, the first time the word scrolls into view (after Resn's "Sculpting Harmony") */
   function play(){if(played)return;played=true;run++;var id=run;
     if(reduce){put(settle());return}
-    playing=true;var one=[[0,1,2,3,4,5,6,7]],flat=[1,1,1,1,1,1,1,1],a=rows(one,L.full,flat,L.gx,L.gy);
+    var one=[[0,1,2,3,4,5,6,7]],flat=[1,1,1,1,1,1,1,1],a=rows(one,L.full,flat,L.gx,L.gy);
     put(hidden());
     to(a,520,70)
     .then(function(){return id===run&&to(rows(one,L.full,[2.6,.5,.4,.6,1.8,.5,.5,.6],L.gx,L.gy),620,0)})
     .then(function(){return id===run&&to(rows(one,L.full,[.5,.6,.5,2.2,.5,.6,2.4,.5],L.gx,L.gy),620,0)})
     .then(function(){return id===run&&to(rows(L.mid,L.full,flat,L.gx,L.gy),700,35)})
-    .then(function(){return id===run&&to(settle(),900,45)})
-    .then(function(){if(id===run)playing=false});
+    .then(function(){return id===run&&to(settle(),900,45)});
   }
   layout();
   if(reduce||!('IntersectionObserver' in window)){played=true;put(settle())}
   else{put(hidden());var io=new IntersectionObserver(function(es){if(es.some(function(e){return e.isIntersecting})){io.disconnect();play()}},{threshold:.35});io.observe(lt)}
 
-  /* phones: the dashes follow the swipe, and the word shifts its widths with each contribution */
-  function mark(){if(dash)[].forEach.call(dash.children,function(d,i){d.classList.toggle('on',i===slide)})}
-  mark();
-  ol.addEventListener('scroll',function(){if(!phoneQ.matches||!items.length)return;var step=items[0].offsetWidth+16,k=Math.max(0,Math.min(SL.length-1,Math.round(ol.scrollLeft/step)));
-    if(k===slide)return;slide=k;mark();if(played&&!playing)to(settle(),700,30)},{passive:true});
-  ol.addEventListener('keydown',function(e){if(!phoneQ.matches)return;var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(!d)return;e.preventDefault();var k=Math.max(0,Math.min(SL.length-1,slide+d));ol.scrollTo({left:items[k].offsetLeft-ol.offsetLeft,behavior:reduce?'auto':'smooth'})});
-  var rw=innerWidth;addEventListener('resize',function(){if(innerWidth===rw)return;rw=innerWidth;layout();if(!phoneQ.matches)slide=0;mark();if(played){run++;playing=false;put(settle())}else put(hidden())});
+  var rw=innerWidth;addEventListener('resize',function(){if(innerWidth===rw)return;rw=innerWidth;layout();if(played){run++;put(settle())}else put(hidden())});
 
   /* the buttons take the reader to the section */
   function goTo(e){closeMenu();hd.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});if(e&&e.detail===0)hd.focus({preventScroll:true})}
