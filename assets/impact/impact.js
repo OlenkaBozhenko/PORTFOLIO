@@ -27,11 +27,12 @@
   '.imsec .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}'+
   '.imsec h2.imw{margin:0 0 clamp(40px,5vw,72px);outline:none;scroll-margin-top:80px}'+
   '.imsec .iml{display:block;position:relative;width:100%}.imsec .iml svg{position:absolute;display:block}.imsec .iml path{fill:#0E0E0E;fill-rule:evenodd}'+
-  '.impart{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(24px,4vw,56px);row-gap:clamp(32px,4vw,56px)}'+
+  '.impart{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--cg,24px);row-gap:clamp(32px,4vw,56px)}'+
   '.impart li{display:flex;flex-direction:column;gap:10px;min-width:0}'+
   '.impart .n{font-size:15px;color:var(--muted,#6B6B6B);font-variant-numeric:tabular-nums}'+
   '.impart h3{margin:0;font-size:clamp(22px,2.2vw,28px);font-weight:500;letter-spacing:-.02em;line-height:1.15;text-wrap:balance}'+
   '.impart p{margin:0;color:var(--muted,#6B6B6B);font-size:16px;line-height:1.5;max-width:36ch}'+
+  '@media (min-width:901px){.impart{column-gap:48px}}'+
   '@media (max-width:900px){.impart{grid-template-columns:repeat(2,minmax(0,1fr))}}'+
   /* phones: the contributions one under another (her call 2026-11-11: no slider) */
   '@media (max-width:720px){.impart{grid-template-columns:1fr}.impart .hb{display:none}}'+

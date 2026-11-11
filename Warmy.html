@@ -263,6 +263,7 @@ h1{font-size:clamp(34px,5.6vw,80px);line-height:1.03;letter-spacing:-.045em}
 
 /* 6. her part: five numbered items */
 .part{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));column-gap:var(--cg);row-gap:clamp(32px,4vw,56px)}
+@media (min-width:901px){.part{column-gap:48px}} /* numbered lists: 48px between columns on desktop (her call 2026-11-11) */
 .part li{grid-column:span 2;display:flex;flex-direction:column;gap:10px}
 .part .n{font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums}
 .part h3{font-size:clamp(22px,2.2vw,28px);font-weight:500;letter-spacing:-.02em;line-height:1.15}
@@ -981,5 +982,5 @@ document.querySelectorAll('.big').forEach(function(h){
   });
 })();
 </script>
-<script type="application/json" id="impact-data">{"slides": [["20% less load on sales, more time to win clients", "Many booked sales calls turned out to be support questions. I redesigned the booking form: it shows what the call will cover and lets people switch to the right consultant. Sales got 20% more time for customers ready to buy."], ["AI email optimization, shipped as an MVP", "The business wanted far more than engineering could build in time. I interviewed users to find what mattered most, and we agreed on an MVP that worked for users, the business and engineering."], ["Charts and terms our target audience actually understands", "Feedback showed that good-looking charts did not mean users followed the logic behind them. I rebuilt the dashboards around the metrics users rely on."]], "after": "#solution"}</script><script src="assets/impact/impact.js?v=6" defer></script></body>
+<script type="application/json" id="impact-data">{"slides": [["20% less load on sales, more time to win clients", "Many booked sales calls turned out to be support questions. I redesigned the booking form: it shows what the call will cover and lets people switch to the right consultant. Sales got 20% more time for customers ready to buy."], ["AI email optimization, shipped as an MVP", "The business wanted far more than engineering could build in time. I interviewed users to find what mattered most, and we agreed on an MVP that worked for users, the business and engineering."], ["Charts and terms our target audience actually understands", "Feedback showed that good-looking charts did not mean users followed the logic behind them. I rebuilt the dashboards around the metrics users rely on."]], "after": "#solution"}</script><script src="assets/impact/impact.js?v=7" defer></script></body>
 </html>
