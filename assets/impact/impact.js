@@ -88,13 +88,13 @@
 
   /* the section: the word MY IMPACT across the full width, the contributions below */
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-  /* a title breaks into two lines of about the same length */
-  function two(t){var w=String(t).split(' '),b=1,d=1e9;if(w.length<2)return esc(t);for(var i=1;i<w.length;i++){var x=Math.abs(w.slice(0,i).join(' ').length-w.slice(i).join(' ').length);if(x<d){d=x;b=i}}return esc(w.slice(0,b).join(' '))+'<br class="hb"> '+esc(w.slice(b).join(' '))}
+  /* a title breaks into two lines of about the same length, or where the page marks it with | */
+  function two(t){t=String(t);if(t.indexOf('|')>=0){var q=t.split('|');return esc(q[0].trim())+'<br class="hb"> '+esc(q.slice(1).join(' ').trim())}var w=t.split(' '),b=1,d=1e9;if(w.length<2)return esc(t);for(var i=1;i<w.length;i++){var x=Math.abs(w.slice(0,i).join(' ').length-w.slice(i).join(' ').length);if(x<d){d=x;b=i}}return esc(w.slice(0,b).join(' '))+'<br class="hb"> '+esc(w.slice(b).join(' '))}
   /* a page can ask for one-line titles and balanced texts ("titles":"one"; Book, her call 2026-11-11) */
   var one=DATA.titles==='one';
   var sec=document.createElement('section');sec.className='imsec wrap';sec.id='my-impact';sec.setAttribute('aria-labelledby','im-h');
   sec.innerHTML='<h2 class="imw" id="im-h" tabindex="-1"><span class="vh">My impact</span><span class="iml" aria-hidden="true"></span></h2>'+
-    '<ol class="impart'+(SL.length===2?' two':'')+(one?' one':'')+'" aria-label="My impact">'+SL.map(function(s,i){return '<li><span class="n">'+(i<9?'0':'')+(i+1)+'</span><h3>'+(one?esc(s[0]):two(s[0]))+'</h3><p>'+esc(s[1])+'</p></li>'}).join('')+'</ol>';
+    '<ol class="impart'+(SL.length===2?' two':'')+(one?' one':'')+'" aria-label="My impact">'+SL.map(function(s,i){return '<li><span class="n">'+(i<9?'0':'')+(i+1)+'</span><h3>'+(one?esc(String(s[0]).replace(/\s*\|\s*/g,' ')):two(s[0]))+'</h3><p>'+esc(s[1])+'</p></li>'}).join('')+'</ol>';
   host.parentNode.insertBefore(sec,host.nextSibling);
   var hd=sec.querySelector('.imw'),lt=sec.querySelector('.iml');
   var svgs=WORD.map(function(c){var s=document.createElementNS('http://www.w3.org/2000/svg','svg');s.setAttribute('viewBox','0 0 '+G[c][0]+' 100');s.setAttribute('preserveAspectRatio','none');var p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('d',G[c][1]);s.appendChild(p);lt.appendChild(s);return s});
