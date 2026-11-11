@@ -58,7 +58,7 @@ Her brief 2026-11-11: 01 shows she built the design system for Claude Code, and 
 
 ### School
 
-- **Learning that works like a social network** During the quarantine, lessons moved to Viber and Zoom and young pupils quickly lost interest. I designed an app where pupils and teachers share one space, like a social network.
+- **Learning that works like a social network** During the quarantine, lessons moved online and young pupils quickly lost interest. I designed an app where pupils and teachers share one space, like a social network.
 - **Challenges pupils set for each other** I designed challenges: small goals that run for a set time and can come from anyone in the class, so pupils build good habits together.
 - **Teachers keep control** Lessons and homework come from the teacher, and teachers control the content, so the social side never takes over the learning.
 
