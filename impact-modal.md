@@ -64,8 +64,10 @@ Her brief 2026-11-11: 01 shows she built the design system for Claude Code, and 
 
 ### Stiupan
 
-- **S and T on an open book** I drew the initials S and T on the two pages of an open book, so the mark says language and text at a glance and still reads at favicon size.
-- **One mark on light and dark** The S is cut out of the solid left page, so it always takes the colour of the ground. The mark swaps cleanly between light and dark, in one colour or two.
+Her brief 2026-11-11: show that brand design is more than drawing a logo; it gives the company a base to build recognition and digital products on. Grounded in Jenni Romaniuk, *Building Distinctive Brand Assets* (Oxford University Press, 2018): a logo is a distinctive asset whose job is to trigger the brand name, and it works once it is both famous and unique, learnt through repetition; and Alina Wheeler, *Designing Brand Identity*: the logo is the fastest form of brand communication, and identity is a system applied across touchpoints, favicons and websites among them.
+
+- **A mark people learn to recognise** A logo is a brand's fastest signal. I designed Stiupan's as a distinctive asset: the initials S and T on an open book, so it says language and text at a glance, belongs only to Stiupan and still reads at favicon size. Seen again and again, it lets clients recognise the company before they read its name.
+- **One mark for every product** The S is cut out of the solid left page, so the mark takes the colour of any ground: light or dark, one colour or two, print or screen. The company can build its website, documents and digital products on it without redrawing the logo, and every new piece adds to the same recognition.
 - **The owner's word** “She played a decisive role in creating the company's logo.” Maiia Stiupan, owner of Stiupan Translations, in her reference letter (translated).
 
 ### Book
