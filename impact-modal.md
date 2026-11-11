@@ -32,7 +32,7 @@ Built by `assets/impact/impact.js`; each page carries its contributions in a `<s
 
 Order and the third title: her call 2026-11-11 (the "Several audiences" block dropped).
 
-- **20% more sales time for buyers** Many booked sales calls turned out to be support questions. I redesigned the booking form: it shows what the call will cover and lets people switch to the right consultant. Sales got 20% more time for customers ready to buy.
+- **20% less load on sales, more time for clients** Many booked sales calls turned out to be support questions. I redesigned the booking form: it shows what the call will cover and lets people switch to the right consultant. Sales got 20% more time for customers ready to buy.
 - **AI email optimization, shipped as an MVP** The business wanted far more than engineering could build in time. I interviewed users to find what mattered most, and we agreed on an MVP that worked for users, the business and engineering.
 - **Charts and terms our target audience actually understands** Feedback showed that good-looking charts did not mean users followed the logic behind them. I rebuilt the dashboards around the metrics users rely on.
 
