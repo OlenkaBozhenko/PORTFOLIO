@@ -44,8 +44,11 @@ Order and the third title: her call 2026-11-11 (the "Several audiences" block dr
 
 ### DRON
 
-- **The design system is the brief** With AI tools, the design system is the brief the AI works from. I built DRON's first: 372 tokens, 53 component files and 13 patterns, light and dark, every colour pair checked against WCAG AA. Every screen the agents built follows it.
-- **Written rules, one voice** A product written by many AI sessions drifts unless the rules are written down. One voice file decides every string, so the client hears one calm voice on 134 screens, and anyone on the team can add a feature that fits.
+Her brief 2026-11-11: 01 shows she built the design system for Claude Code, and that AI tools can build any product on brand when it has a clear system made for it; 02 is her text; 03 is the handoff, written from `handoff/README.md` in the DRON repo.
+
+- **A design system Claude Code builds from** I designed DRON's design system to be read by an AI agent as well as by people: 372 tokens, 53 component files and 13 patterns, written as code with documented rules, light and dark themes, and every colour pair checked against WCAG AA. Claude Code reuses what exists instead of guessing. With a system like this behind it, an AI tool can build any product and keep it true to the brand.
+- **Written rules, a unified voice** A product created through numerous sessions utilising artificial intelligence loses its coherence if the rules are not set out in writing. Each line is defined by a single file, ensuring that the user sees a consistent tone and terminology across 134 screens, whilst anyone on the team can add the relevant functionality.
+- **A handoff anyone can pick up** Released as v1.0.0, the handoff holds everything a developer needs: a map of every screen, how each flow behaves, accessibility as built, every string with its key, the design system, and what ships versus what is reference. It runs with one command from a fresh clone, so a developer can join at any stage and keep building without asking me.
 
 ### Sport Guardian
 
