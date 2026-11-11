@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My impact, variant 2</title>
+<!-- Sample for her review (2026-11-11), variant 2: the My impact section as a full-width band on the project's
+     own background (Warmy: the dark gradient of its mosaic), with the drawn MY IMPACT letters from her OB logo
+     and their Resn-style opening, after Resn's "Sculpting Harmony" BOX block. Variant 1 is inter-sample.html.
+     Not on the site. -->
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0E0E0E;--muted:#6B6B6B;--gutter:clamp(16px,4vw,56px);--cg:clamp(12px,2vw,28px);
+  /* Warmy's own background (Warmy.html --dark) and light text on it */
+  --band:linear-gradient(135deg,#1A0E08,#3A1A0A 60%,#7A3410);--on:#FFF8EE;--on-muted:#D9CFC6}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);font:400 17px/1.55 "Inter Tight",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1320px;margin:0 auto;padding-inline:var(--gutter)}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:32px;color:var(--muted);font-size:14px}
+.bar button{font:inherit;font-weight:600;color:#fff;background:var(--ink);border:0;border-radius:999px;height:44px;padding:0 20px;cursor:pointer}
+.bar button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.ctx{color:var(--muted);padding-block:48px}
+/* the band: full width, the project's background */
+.band{background:var(--band);color:var(--on);padding-block:clamp(48px,7vw,104px) clamp(56px,8vw,120px)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+h2.imw{margin:0 0 clamp(40px,5vw,72px)}
+.iml{display:block;position:relative;width:100%}.iml svg{position:absolute;display:block}.iml path{fill:var(--on);fill-rule:evenodd}
+.impart{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--cg);row-gap:clamp(32px,4vw,56px)}
+.impart li{display:flex;flex-direction:column;gap:10px;min-width:0}
+.impart .n{font-size:15px;color:var(--on-muted);font-variant-numeric:tabular-nums}
+.impart h3{margin:0;font-size:clamp(22px,2.2vw,28px);font-weight:500;letter-spacing:-.02em;line-height:1.15;text-wrap:balance;color:var(--on)}
+.impart p{margin:0;color:var(--on-muted);font-size:16px;line-height:1.5;max-width:36ch}
+.imdash{display:none}
+@media (max-width:900px){.impart{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:720px){.impart{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}.impart::-webkit-scrollbar{display:none}
+  .impart li{flex:0 0 100%;scroll-snap-align:start}.impart .n{display:none}.impart h3{font-size:32px;font-weight:400;letter-spacing:-.03em;line-height:1.05}.impart p{max-width:none}
+  .impart:focus-visible{outline:2px solid var(--on);outline-offset:6px;border-radius:4px}
+  .imdash{display:flex;gap:8px;justify-content:center;margin-top:32px}.imdash i{width:30px;height:4px;border-radius:2px;background:rgba(255,248,238,.28);transition:width .4s,background .4s}.imdash i.on{width:52px;background:var(--on)}}
+</style>
+</head>
+<body>
+<div class="wrap bar"><span>Sample: My impact, variant 2 (Warmy)</span><button type="button" id="again">Play again</button></div>
+<div class="wrap ctx">… Solution: One product that turns every signal into a next step …</div>
+
+<section class="band" aria-labelledby="im-h">
+  <div class="wrap">
+    <h2 class="imw" id="im-h"><span class="vh">My impact</span><span class="iml" aria-hidden="true"></span></h2>
+    <ol class="impart" aria-label="My impact">
+      <li><span class="n">01</span><h3>AI email optimization, shipped as an MVP</h3><p>The business wanted far more than engineering could build in time. I interviewed users to find what mattered most, and we agreed on an MVP that worked for users, the business and engineering.</p></li>
+      <li><span class="n">02</span><h3>Charts people actually understand</h3><p>Feedback showed that good-looking charts did not mean users followed the logic behind them. I rebuilt the dashboards around the metrics users rely on.</p></li>
+      <li><span class="n">03</span><h3>20% more sales time for buyers</h3><p>Many booked sales calls turned out to be support questions. I redesigned the booking form: it shows what the call will cover and lets people switch to the right consultant. Sales got 20% more time for customers ready to buy.</p></li>
+      <li><span class="n">04</span><h3>Several audiences, not one</h3><p>A customer journey map and an audit of product analytics showed that Warmy serves several distinct groups, each relying on different features. Every team got a clear picture of how to work with each group.</p></li>
+    </ol>
+    <div class="imdash" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  </div>
+</section>
+
+<div class="wrap ctx">… My part …</div>
+
+<script>
+(function(){
+  /* the glyphs and the opening are the same as on the site (assets/impact/impact.js) */
+  var G={
+   M:[100,'M0,100V0H34L50,38L66,0H100V100H70V52L50,86L30,52V100Z'],
+   Y:[92,'M0,0H33L46,36L59,0H92L63,58V100H29V58Z'],
+   I:[34,'M0,0H34V100H0Z'],
+   P:[82,'M0,0H66A16,16 0 0 1 82,16V50A16,16 0 0 1 66,66H34V100H0Z M50,18A8,8 0 0 1 58,26V40A8,8 0 0 1 50,48A8,8 0 0 1 42,40V26A8,8 0 0 1 50,18Z'],
+   A:[84,'M0,100V16A16,16 0 0 1 16,0H68A16,16 0 0 1 84,16V100H52V74H32V100Z M42,22A8,8 0 0 1 50,30V46A8,8 0 0 1 42,54A8,8 0 0 1 34,46V30A8,8 0 0 1 42,22Z'],
+   C:[84,'M16,0H68A16,16 0 0 1 84,16V40H52V30A8,8 0 0 0 36,30V70A8,8 0 0 0 52,70V60H84V84A16,16 0 0 1 68,100H16A16,16 0 0 1 0,84V16A16,16 0 0 1 16,0Z'],
+   T:[86,'M0,0H86V34H60V100H26V34H0Z']
+  };
+  var WORD='MYIMPACT'.split(''),SLN=4;
+  var BREATH=[[1,1,1,1,1,1,1,1],[1.5,.7,.6,1.4,1.3,.8,.8,1.2],[.7,1.5,1.4,.6,.8,1.3,1.2,.8],[1.2,.9,1,1,.7,1,1.5,.9],[.9,1.2,1.3,.8,1.1,.8,1,1.3]];
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches,phoneQ=matchMedia('(max-width:720px)');
+  function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
+  function rows(R,box,wt,gx,gy,hw){
+    var out=[],hs=hw||R.map(function(){return 1}),ht=hs.reduce(function(a,b){return a+b},0),free=box.h-gy*(R.length-1),y=box.y;
+    R.forEach(function(r,ri){var rh=free*hs[ri]/ht,sum=0;r.forEach(function(i){sum+=G[WORD[i]][0]*wt[i]});
+      var k=(box.w-gx*(r.length-1))/sum,x=box.x;r.forEach(function(i){var w=G[WORD[i]][0]*wt[i]*k;out[i]={x:x,y:y,w:w,h:rh};x+=w+gx});y+=rh+gy});
+    return out;
+  }
+  var lt=document.querySelector('.iml'),ol=document.querySelector('.impart'),items=ol.children,dash=document.querySelector('.imdash');
+  var svgs=WORD.map(function(c){var s=document.createElementNS('http://www.w3.org/2000/svg','svg');s.setAttribute('viewBox','0 0 '+G[c][0]+' 100');s.setAttribute('preserveAspectRatio','none');var p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('d',G[c][1]);s.appendChild(p);lt.appendChild(s);return s});
+  var L={},cur=null,run=0,slide=0,playing=false,played=false;
+  function layout(){var ph=phoneQ.matches,W=lt.clientWidth,H=Math.round(W*(ph?.52:.4)),g=ph?5:Math.max(6,Math.round(W*.006));lt.style.height=H+'px';
+    L={full:{x:0,y:0,w:W,h:H},mid:[[0,1],[2,3],[4,5,6,7]],fin:[[0,1],[2,3,4,5,6,7]],finH:[1,1.3],gx:g,gy:g};
+    if(ph)ol.setAttribute('tabindex','0');else ol.removeAttribute('tabindex')}
+  function put(R){R.forEach(function(r,i){var s=svgs[i].style;s.left=r.x+'px';s.top=r.y+'px';s.width=Math.max(r.w,0)+'px';s.height=Math.max(r.h,0)+'px'});cur=R}
+  function to(R,ms,stag){var from=cur,id=run,t0=performance.now(),n=R.length,tot=ms+stag*(n-1);
+    return new Promise(function(done){if(reduce||!from){put(R);return done()}
+      (function f(now){if(id!==run)return done();var o=[];for(var i=0;i<n;i++){var t=Math.min(Math.max((now-t0-i*stag)/ms,0),1),e=ease(t),a=from[i],b=R[i];o.push({x:a.x+(b.x-a.x)*e,y:a.y+(b.y-a.y)*e,w:a.w+(b.w-a.w)*e,h:a.h+(b.h-a.h)*e})}put(o);if(now-t0<tot)requestAnimationFrame(f);else done()})(t0)})}
+  function settle(){return rows(L.fin,L.full,BREATH[(phoneQ.matches?slide:0)%BREATH.length],L.gx,L.gy,L.finH)}
+  function hidden(){return rows([[0,1,2,3,4,5,6,7]],L.full,[1,1,1,1,1,1,1,1],L.gx,L.gy).map(function(r){return {x:r.x,y:r.y+r.h,w:r.w,h:0}})}
+  function play(){run++;var id=run;played=true;if(reduce){put(settle());return}
+    playing=true;var one=[[0,1,2,3,4,5,6,7]],flat=[1,1,1,1,1,1,1,1];put(hidden());
+    to(rows(one,L.full,flat,L.gx,L.gy),520,70)
+    .then(function(){return id===run&&to(rows(one,L.full,[2.6,.5,.4,.6,1.8,.5,.5,.6],L.gx,L.gy),620,0)})
+    .then(function(){return id===run&&to(rows(one,L.full,[.5,.6,.5,2.2,.5,.6,2.4,.5],L.gx,L.gy),620,0)})
+    .then(function(){return id===run&&to(rows(L.mid,L.full,flat,L.gx,L.gy),700,35)})
+    .then(function(){return id===run&&to(settle(),900,45)})
+    .then(function(){if(id===run)playing=false})}
+  layout();put(hidden());
+  if(reduce||!('IntersectionObserver' in window))play();
+  else{var io=new IntersectionObserver(function(es){if(es.some(function(e){return e.isIntersecting})){io.disconnect();play()}},{threshold:.35});io.observe(lt)}
+  function mark(){[].forEach.call(dash.children,function(d,i){d.classList.toggle('on',i===slide)})}mark();
+  ol.addEventListener('scroll',function(){if(!phoneQ.matches)return;var k=Math.max(0,Math.min(SLN-1,Math.round(ol.scrollLeft/(items[0].offsetWidth+16))));if(k===slide)return;slide=k;mark();if(played&&!playing)to(settle(),700,30)},{passive:true});
+  ol.addEventListener('keydown',function(e){if(!phoneQ.matches)return;var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(!d)return;e.preventDefault();var k=Math.max(0,Math.min(SLN-1,slide+d));ol.scrollTo({left:items[k].offsetLeft-ol.offsetLeft,behavior:reduce?'auto':'smooth'})});
+  var rw=innerWidth;addEventListener('resize',function(){if(innerWidth===rw)return;rw=innerWidth;layout();run++;playing=false;put(played?settle():hidden())});
+  document.getElementById('again').addEventListener('click',function(){lt.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});setTimeout(play,reduce?0:400)});
+})();
+</script>
+</body>
+</html>
