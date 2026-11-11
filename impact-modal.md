@@ -82,3 +82,5 @@ The author's quote was dropped from this section (her call 2026-11-11): it is al
 A title or a text can mark its own line break with `|` (wider screens only; Book: "...the cover and the layout / and prepared the print files...") (Stiupan: "One mark / for every product", her call 2026-11-11).
 
 On Book only (her calls 2026-11-11), the texts use the full column width and wrap in balanced lines (`"texts":"wide"` in its data). Its titles were on one line for a while (`"titles":"one"`, still supported); with three points they are back on two lines like every case.
+
+On Book the printer's name LOS DIGITAL AS never breaks across lines (non-breaking spaces, her call 2026-11-11).
