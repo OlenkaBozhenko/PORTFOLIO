@@ -39,7 +39,7 @@ Order and the third title: her call 2026-11-11 (the "Several audiences" block dr
 ### AnyBiz
 
 - **Users trust the agent to write for them** Interviews showed that people did not trust an AI to write in their company's name. I designed the interface where users work with the AI agent and instruct it how to write their emails: tone, language, call to action, signature and custom prompts it keeps following. Users set the rules once instead of checking every message.
-- **Gaps nobody mentioned, fixed** Session recordings showed where people got stuck, what they searched for and where they expected to set things up. I added the missing filters and information, and redesigned onboarding so a new user gets to the first campaign fast.
+- **Gaps nobody mentioned, fixed** Session recordings showed where people got stuck, what they searched for and where they expected to set things up. Among other things, I added the missing filters and information, and redesigned the onboarding flow so a new user gets to the first campaign faster.
 - **Features users asked for, not the ones we assumed** Before development, I tested new features on prototypes: which tools help, which only clutter the screen, where people look for them and what they call them. We dropped some features before a line of code, built the ones users kept asking for, and renamed things in users' own words.
 
 ### DRON
