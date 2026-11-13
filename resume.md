@@ -30,6 +30,7 @@ Ukrainian and Russian (native) · English (B2) · Norwegian (B1)
 ## Education
 - Yaroslav the Wise National Law Academy — Master of Law, 2009
 - Vinnytsia IT Academy — Web design (UI/UX), 2018 – 2020
+- Oslo VO Skullerud — Norwegian language, B1, 2022 – 2024
 - Google — Foundations of User Experience Design
 
 ## Learning

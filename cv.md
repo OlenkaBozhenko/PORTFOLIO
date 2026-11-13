@@ -80,7 +80,7 @@ Freelance and side projects named in the reference letters:
 | Jun 2023 | **AI in Web Design Conf 23** — conference | Geekle.us | LinkedIn |
 | Feb 2023 | **UI UX Online Summit 23** — conference | Geekle.us | LinkedIn |
 | 2022 – | Foundations of User Experience (UX) Design | Google | 2024 CV |
-| 2022 – Feb 2024 | Norwegian, introductory programme | Oslo VO Skullerud | 2024 CV |
+| Aug 2022 – Feb 2024 | Norwegian language (norsk språk), level B1 | Oslo VO Skullerud | 2024 CV; LinkedIn, her screenshot 2026-11-13 |
 | 2020 | How to embrace contemporary trends and create award-winning experiences | Awwwards Academy | 2024 CV |
 | 2020 | Communication in English for IT | English For IT | 2024 CV |
 | 2020 | Mobile designer | Groward Academy | 2024 CV |
